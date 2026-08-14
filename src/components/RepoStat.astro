@@ -3,30 +3,26 @@
 // week, from src/data/weekly-stats.json (see tools/gen_stats.py). All
 // numbers come from that file — nothing here is hardcoded.
 //
-// NOTE ON USAGE: as of this writing, none of the 8 existing weekly posts
-// (src/content/posts/week-*.md) have a separate, isolated per-repo "stat
-// line" to drop this into — every per-repo number is woven directly into
-// hand-written prose sentences. This component exists, is correct, and is
-// verified (see the delegate reports), ready for any post that wants a
-// discrete stat chip instead of/alongside narrative prose.
+// `week` is the ISO week-START DATE (e.g. "2026-06-22"), NOT an ordinal
+// index — matches the key shape in src/data/weekly-stats.json exactly, so
+// backfilling an older week later is a drop-in, never a renumbering.
 import weeklyStats from '../data/weekly-stats.json';
 
 interface Props {
   org: string;
   name: string;
-  week: number;
+  week: string; // ISO date, e.g. "2026-06-22"
 }
 
 const { org, name, week } = Astro.props;
-const weekKey = `week-${week}`;
-const weekData = weeklyStats[weekKey];
+const weekData = weeklyStats[week];
 if (!weekData) {
-  throw new Error(`RepoStat: no stats for ${weekKey} in src/data/weekly-stats.json`);
+  throw new Error(`RepoStat: no stats for week "${week}" in src/data/weekly-stats.json`);
 }
 const repoKey = `${org}/${name}`;
 const r = weekData.repos[repoKey];
 if (!r) {
-  throw new Error(`RepoStat: no stats for ${repoKey} in ${weekKey}`);
+  throw new Error(`RepoStat: no stats for ${repoKey} in week "${week}"`);
 }
 
 function fmt(n: number) {

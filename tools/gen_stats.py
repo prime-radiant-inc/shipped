@@ -5,6 +5,12 @@ src/data/weekly-stats.json, the single source of truth the Astro components
 (WeekSummary.astro, RepoStat.astro) read at build time. No post should ever
 hand-type a commit count, LOC figure, or release count again.
 
+WEEKS ARE KEYED BY ISO START DATE (e.g. "2026-06-22"), NOT ORDINAL INDEX.
+This is deliberate: ordinal week numbers ('week-1', 'week-2', ...) make
+backfilling an older week later a renumbering exercise across every post,
+component call, and slug. A date key is stable forever — a newly-backfilled
+week just drops in at its own date, nothing else shifts.
+
 Classification logic here is a DELIBERATE, exact match of
 tools/make_briefs_corrected.py's build_week_data()/find_commit_message_only_bumps()
 — same regexes, same featured/second-tier rule, same tagged-vs-message-only
@@ -164,7 +170,8 @@ def main():
     data = json.load(open(args.recon_json))
     out = {}
     for week_idx, bucket in enumerate(data["week_buckets"]):
-        out[f"week-{bucket['index']}"] = build_week(data, week_idx, bucket)
+        # Date key, not ordinal -- e.g. "2026-06-22". See module docstring.
+        out[bucket["start"]] = build_week(data, week_idx, bucket)
 
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w") as f:

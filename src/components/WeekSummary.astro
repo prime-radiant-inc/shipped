@@ -5,21 +5,25 @@
 // hand-typed; regenerate the data file, not this markup, when the
 // underlying repo activity changes.
 //
-// Markup below is an exact match of the hand-typed <ul class="stats">
-// block it replaces in src/content/posts/week-1.md (now week-1.mdx) —
-// same classes, same wording, same U+2212 minus sign (not a hyphen) in
-// the LOC line — so existing CSS styling is unaffected.
+// `week` is the ISO week-START DATE (e.g. "2026-06-22"), NOT an ordinal
+// index — weeks are date-anchored throughout this codebase so backfilling
+// an older week later is a drop-in, never a renumbering. Pass the exact
+// string key as it appears in src/data/weekly-stats.json.
+//
+// Markup below is an exact match of the original hand-typed <ul
+// class="stats"> block it replaces — same classes, same wording, same
+// U+2212 minus sign (not a hyphen) in the LOC line — so existing CSS
+// styling is unaffected.
 import weeklyStats from '../data/weekly-stats.json';
 
 interface Props {
-  week: number;
+  week: string; // ISO date, e.g. "2026-06-22"
 }
 
 const { week } = Astro.props;
-const key = `week-${week}`;
-const data = weeklyStats[key];
+const data = weeklyStats[week];
 if (!data) {
-  throw new Error(`WeekSummary: no stats for ${key} in src/data/weekly-stats.json`);
+  throw new Error(`WeekSummary: no stats for week "${week}" in src/data/weekly-stats.json`);
 }
 const s = data.summary;
 
