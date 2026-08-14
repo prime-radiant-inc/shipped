@@ -136,6 +136,80 @@ article.repo .repo-desc {
   font-style: italic;
 }
 
+/* Per-repo compact "diff stat" widget (RepoStat.astro) — GitHub-style
+   commit/PR/release chips + a proportional green/red LOC bar. */
+.repo-stat {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  margin: 0.35rem 0 0.6rem;
+}
+
+.repo-stat-chip {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: #1c2028;
+  border: 1px solid #2a2f3a;
+  color: var(--fg);
+  white-space: nowrap;
+}
+
+.repo-stat-commits {
+  cursor: default; /* signals the title= author breakdown is hoverable */
+}
+
+.repo-stat-prs {
+  color: var(--accent);
+  border-color: #234454;
+}
+
+.repo-stat-release {
+  color: #facc7a;
+  border-color: #4a3a1a;
+  background: #1f1a10;
+}
+
+.repo-stat-diff {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: default;
+}
+
+.repo-stat-diff-add {
+  color: #3fb950;
+}
+
+.repo-stat-diff-del {
+  color: #f85149;
+}
+
+.repo-stat-diff-bar {
+  display: inline-flex;
+  width: 60px;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #2a2f3a;
+}
+
+.repo-stat-diff-bar-add {
+  display: block;
+  height: 100%;
+  background: #3fb950;
+}
+
+.repo-stat-diff-bar-del {
+  display: block;
+  height: 100%;
+  background: #f85149;
+}
+
 footer.site-footer {
   max-width: var(--max-width);
   margin: 0 auto;

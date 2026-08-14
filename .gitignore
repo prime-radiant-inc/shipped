@@ -2,6 +2,9 @@
 dist/
 .astro/
 
+# local screenshot previews (see /work/shipped-preview/ for the durable copy)
+preview/
+
 # deps
 node_modules/
 
