@@ -1,0 +1,191 @@
+---
+title: "Two tools from scratch: blogosphere and smevals"
+week: "Week of July 13, 2026"
+dateStart: 2026-07-13
+dateEnd: 2026-07-19
+pubDate: 2026-07-19
+summary: "obra/blogosphere — a local-first blogging client — and smevals, a small-model eval framework, are both built from nothing in a single week. teststrip and obol cut releases, and the contributor list widens across both orgs."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+The story this week is two tools that didn't exist on Monday and shipped by Sunday: **blogosphere**, a local-first blogging client built from an empty repo to mobile builds in seven days, and **smevals**, a small-model eval framework Simon Willison stood up from scratch and released twice off the same week's work. Around them, **teststrip** and **obol** cut releases, and commits landed from a noticeably wider circle of contributors across both orgs.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-07-13" />
+
+<p class="caveat"><em>Two of the active repositories this week — <code>terminal-bench-analysis</code> and <code>claude-plugin-stats</code> — are automated daily-scrape jobs. Their churn is bot-generated, not human work, so we've kept it out of the framing below.</em></p>
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/blogosphere](https://github.com/obra/blogosphere)
+
+<p class="repo-desc">A local-first, multi-platform blogging client for an 11ty blog that lives in a GitHub repo — the repo is the database.</p>
+
+<RepoStat org="obra" name="blogosphere" week="2026-07-13" />
+
+New this week — and not a soft launch. The corrected commit log shows a full application built from zero: a Tauri v2 + Vite + React scaffold under TS-strict and Biome, a from-scratch sync engine (serialized pushes, a stale-head guard, an activity log, partial-validation pushes, discard-changes), a rewritten document-style editor surface, image fetch-on-miss resolution, and Android and iOS mobile builds. A late "delight pass" layered on publish-URL previews, ⌘K, a deploy watch, resume, versions, and live view. An adversarial review swept a batch of confirmed findings before ship — rename collisions, push/pull races, quit-flush, SSRF hardening. The public-launch essentials — MIT license, README, a boot-failure screen, platform-honest connect copy — are real too; they're the last layer on top of a much bigger build.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/smevals](https://github.com/prime-radiant-inc/smevals)
+
+<p class="repo-desc">A framework for running evals against small (and large) models.</p>
+
+<RepoStat org="prime-radiant-inc" name="smevals" week="2026-07-13" />
+
+Also new this week: Simon Willison built smevals from scratch and cut two releases off that same-week work. It's a full CLI-plus-reporting tool, not a cleanup pass — initial run and grade commands, a Checklist→Grader rename, an HTML report app with multiple graders and clickable tags, a terminal Markdown report command, multi-grader support, and example evals (haiku, Pelican, markdown-tables). A README-generating docs command, Python 3.10+ support, and the `SMEVAL_*`→`SMEVALS_*` environment rename round it out.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/teststrip](https://github.com/prime-radiant-inc/teststrip)
+
+<p class="repo-desc">A macOS photo-culling app — catalog-first, non-destructive, AI-assisted. Early development; not ready for use.</p>
+
+<RepoStat org="prime-radiant-inc" name="teststrip" week="2026-07-13" />
+
+Cut `v0.2.0` on the back of a culling-workflow redesign: a dedicated culling-workstation shell, simplified verdict copy ("Keep" / "Toss" instead of percentages), reads-card signal ordering, and burst-rail thumbnail and caption polish. It also persisted a burst-stack capture-interval preference, added a run tracker with a full completion summary, fixed Library-grid activation to open the Library loupe rather than the culling loupe, and repositioned and muted the RAW+JPEG badge.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/obol](https://github.com/prime-radiant-inc/obol)
+
+<p class="repo-desc">Read an AI-agent transcript and estimate what it cost — a Rust core with C-ABI bindings for Python, Go, and TypeScript (Bun + Node).</p>
+
+<RepoStat org="prime-radiant-inc" name="obol" week="2026-07-13" />
+
+Cut `v0.8.0`, driven by a pricing-data refresh: the bundled snapshot now includes the `gpt-5.6` model family, alongside CI and lint repairs (cargo-fmt drift, and a version test whose expectation is now derived from the workspace manifest rather than hard-coded).
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-07-13" />
+
+This week's merged work centered on queue and steering UX: edit or cancel an unconsumed queued message, promote a queued follow-up to active steering per-message, render user-sent steering as user messages rather than system dividers, and keep a sticky per-session draft of the unsent composer. On mobile web, the sidebar "⋯" menus now open as a full-width modal sheet and the phone sidebar behaves as a drawer instead of a squeezed rail. Agent-side, delegate-turn limits became configurable with honest occupancy and drive-budget reporting, and subagent inline activity now renders as the tool call's stated purpose. A CI naming-gate fix tidied the snake_case REST contract.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/llm-proxy](https://github.com/prime-radiant-inc/llm-proxy)
+
+<p class="repo-desc">A transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response for debugging, auditing, and analysis.</p>
+
+<RepoStat org="prime-radiant-inc" name="llm-proxy" week="2026-07-13" />
+
+Response-capture and attribution work: stamp the path and termination reason on every response-record exit path (including abort, dial, and body-read failures), stamp `metering_provider` / `upstream` / `capture_version` on request lines, and derive the provider from the host. The Bedrock and Mantle relay legs got hardening — paired request-creation and dial-failure handling, termination-EOF stamping, and new test coverage for the relay legs.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">A behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-07-13" />
+
+A heavy experiment-documentation week, built around verifying the SDD fix-loop redesign that landed in `obra/superpowers` this same week: audits, hardening, codex-precheck routes, hostile-probe verdicts, contingency reruns, and final verdicts with economics. Infrastructure fixes — CI hermeticity, container-build repairs, and a container agent-CLI refresh — kept CI green.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-07-13" />
+
+All merged-PR work, no direct commits. The SDD plan-scoped workspace ledger landed — per-plan artifact directories, a self-identifying ledger, end-of-plan cleanup. Alongside it, a skills editorial pass stripped social-proof and self-selling detritus from a dozen skills (eval-gated), reframed TDD's testing anti-patterns, and modernized the branch-finishing skill's rationalization-table pattern.
+
+</article>
+
+<article class="repo">
+
+### [obra/winpepper](https://github.com/obra/winpepper)
+
+<p class="repo-desc">Windows-native local dictation. Hold a hotkey, speak, release — cleaned-up words appear in the focused app. Parakeet TDT v3 ASR + LlamaSharp cleanup, all local.</p>
+
+<RepoStat org="obra" name="winpepper" week="2026-07-13" />
+
+Two merged PRs, both from an outside contributor: keep the app responsive during model downloads, and fix modifier-only hotkey capture and key-swallowing.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/greenfield](https://github.com/prime-radiant-inc/greenfield)
+
+<p class="repo-desc">A Claude Code plugin that reverse-engineers clean behavioral specs, test vectors, and acceptance criteria from any codebase, with a provenance trail so a fresh team can reimplement without inheriting the original's structure.</p>
+
+<RepoStat org="prime-radiant-inc" name="greenfield" week="2026-07-13" />
+
+An outside contributor restructured the skills into per-skill directories, each with its own `SKILL.md` — a layout fix ahead of wider sharing.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">An AI-powered QA testing framework that uses LLMs to test web apps, CLI tools, and TUI programs from markdown story cards, returning structured pass/fail verdicts with evidence.</p>
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-07-13" />
+
+A LICENSE file, added by an outside contributor — housekeeping ahead of sharing the repo more widely.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/terminal-bench-analysis](https://github.com/prime-radiant-inc/terminal-bench-analysis)
+
+<p class="repo-desc">Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.</p>
+
+<RepoStat org="prime-radiant-inc" name="terminal-bench-analysis" week="2026-07-13" />
+
+An automated README regeneration with no new underlying data — a bot job, not human work this week.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/claude-plugin-stats](https://github.com/prime-radiant-inc/claude-plugin-stats)
+
+<p class="repo-desc">A daily scrape of Claude Code plugin install stats.</p>
+
+<RepoStat org="prime-radiant-inc" name="claude-plugin-stats" week="2026-07-13" />
+
+A routine daily chart-data rebuild.
+
+</article>
+
+</section>

@@ -1,0 +1,201 @@
+---
+title: "Building for a community: a code of conduct and a usage meter"
+week: "Week of July 27, 2026"
+dateStart: 2026-07-27
+dateEnd: 2026-08-02
+pubDate: 2026-08-02
+summary: "Prime Radiant publishes a community code of conduct and opens agentic-usage-meter, a macOS quota tracker. No releases this week — but two new repos that say where things are heading, plus another heavy serf week and a research campaign that closed on a substantial cost cut."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+No releases this week — but two brand-new repositories that both point outward. A community **code of conduct** signals that these projects expect outside contributors, and **agentic-usage-meter**, a macOS menu-bar app for tracking coding-agent subscription quotas, went public. Underneath the new repos, serf logged another heavy direct-push week and a research campaign in superpowers-autoresearch closed out with a measured, substantial cost cut.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-07-27" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/code-of-conduct](https://github.com/prime-radiant-inc/code-of-conduct)
+
+<p class="repo-desc">The Prime Radiant Community Code of Conduct.</p>
+
+<RepoStat org="prime-radiant-inc" name="code-of-conduct" week="2026-07-27" />
+
+A small repo with an outsized signal: the Contributor Covenant (v3) adapted into a Prime Radiant community code of conduct, refined after review feedback. You don't publish a code of conduct for a codebase only you touch — you publish it when you expect people to show up. Given how many of the past few weeks' fixes came from outside contributors, the timing tracks.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/agentic-usage-meter](https://github.com/prime-radiant-inc/agentic-usage-meter)
+
+<p class="repo-desc">A macOS menu-bar meter for coding-agent subscription quotas.</p>
+
+<RepoStat org="prime-radiant-inc" name="agentic-usage-meter" week="2026-07-27" />
+
+Multi-provider quota tracking stood up in a single week: OpenCode account qualification and profile-lifecycle handling, SuperGrok credential refresh without reconnecting, and sample-data marking in account settings. It also arrived with real public-release infrastructure — signed Sparkle auto-update releases with fail-closed automation, confirmation-based updates, privacy-safe product screenshots, and public documentation. Built to be shipped, not just demoed.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-07-27" />
+
+A second consecutive four-figure-commit week, nearly all direct push. The dominant visible thread was the web UI's compact input footer — designed, constrained, documented, then implemented with simplified session-footer facts. Around it: mobile viewport and shell-chrome pinning, job-notification descriptions surfaced in notifications, task-mutation summaries showing task titles, and a refinement of how shell tool-calls are presented.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-autoresearch](https://github.com/prime-radiant-inc/superpowers-autoresearch)
+
+<p class="repo-desc">The automated-research harness for running experiment campaigns against the superpowers methodology.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-autoresearch" week="2026-07-27" />
+
+A heavy week that closed out a "queue campaign" measuring agent cost-pathologies — pre-registered batteries and verdicts across batching, plan-framed prompts, and at-scale queuing, landing on a headline result that a batching arm cut cost substantially while improving completion. A related cost-pathologies thread covered parser-scope limits, an unencrypted "honoring channel" design amendment, and scope-auditability notes.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/teststrip](https://github.com/prime-radiant-inc/teststrip)
+
+<p class="repo-desc">A macOS photo-culling app — catalog-first, non-destructive, AI-assisted. Early development; not ready for use.</p>
+
+<RepoStat org="prime-radiant-inc" name="teststrip" week="2026-07-27" />
+
+Per-face report cards shipped end-to-end: a sharpness/light/facing/prominence analyzer, a staleness-aware `FaceReportStore`, traffic-light chip presentation, and burst-rail roll-up dots. A real dogfooding-found bug got fixed — serialized CoreImage face detection to break a live-only deadlock blocking a culling scenario — alongside a separate "blaze-through" thread: sliding-window burst prefetch and a warm-set planner for the cull loupe.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">A behavioral eval lab (Quorum) that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance against scenario criteria and deterministic post-checks.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-07-27" />
+
+Closed out a "codex-efficiency" measurement campaign with a batch of experiment write-ups, and bumped the pinned Codex CLI version. A small commit count carrying a large documentation payload.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">A lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-07-27" />
+
+Runtime-correctness fixes: stop mislabeling a notification as "a new message," never dispatch an assistant prefill while draining a mid-turn inject, keep persona MCP servers alive across session resume, and forward container mounts so the mount-conflict scan sees the truth.
+
+</article>
+
+<article class="repo">
+
+### [obra/winpepper](https://github.com/obra/winpepper)
+
+<p class="repo-desc">Windows-native local dictation: hold a hotkey, speak, release, and cleaned-up words appear in the focused app — Parakeet TDT v3 ASR with LlamaSharp cleanup, all local.</p>
+
+<RepoStat org="obra" name="winpepper" week="2026-07-27" />
+
+Another heavy week, mostly from outside contributor Dan Shapiro: model-aware cleanup-settings honesty (graying out unsupported controls when a raw-IO cleanup model is active), a CPU-pegged status-pill indicator, a multi-model ASR comparison harness (per-model resource capture, convergence detection, aggregated report), and mid-paste focus-change handling that halts and parks a pending click-to-paste.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/stockyard](https://github.com/prime-radiant-inc/stockyard)
+
+<p class="repo-desc">A coding-agent VM orchestrator: runs coding agents in isolated VMs — Firecracker micro-VMs on Linux with ZFS-based audit-trail snapshots, and Apple's container tool on macOS.</p>
+
+<RepoStat org="prime-radiant-inc" name="stockyard" week="2026-07-27" />
+
+Continued fail-closed task-destruction hardening: scoping the destroy-confirmation claim to the destroy command, and pinning the destroy-output substrings that automation consumes.
+
+</article>
+
+<article class="repo">
+
+### [obra/dotfiles](https://github.com/obra/dotfiles)
+
+<p class="repo-desc">Jesse's personal dotfiles.</p>
+
+<RepoStat org="obra" name="dotfiles" week="2026-07-27" />
+
+A curated Brewfile for one-command new-Mac bootstrap (including the `clearance` cask from Prime Radiant's own Homebrew tap), a Bitwarden clipboard-paste walkthrough, and an Arq snapshot-cleanup utility.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/homebrew-tap](https://github.com/prime-radiant-inc/homebrew-tap)
+
+<p class="repo-desc">A Homebrew tap for Prime Radiant tools, including formulae for llm-proxy and beeper-message-sync.</p>
+
+<RepoStat org="prime-radiant-inc" name="homebrew-tap" week="2026-07-27" />
+
+Added a cask (`clearance`).
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-07-27" />
+
+A quiet week after the release: one merged PR removing the "We're Hiring" section from the README.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/smevals](https://github.com/prime-radiant-inc/smevals)
+
+<p class="repo-desc">A framework for running evals against small (and large) models.</p>
+
+<RepoStat org="prime-radiant-inc" name="smevals" week="2026-07-27" />
+
+Added badges to the README — an outside contributor keeping the front door tidy.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/claude-plugin-stats](https://github.com/prime-radiant-inc/claude-plugin-stats)
+
+<p class="repo-desc">A daily scrape of Claude Code plugin install stats.</p>
+
+<RepoStat org="prime-radiant-inc" name="claude-plugin-stats" week="2026-07-27" />
+
+The daily chart rebuild, on schedule.
+
+</article>
+
+</section>

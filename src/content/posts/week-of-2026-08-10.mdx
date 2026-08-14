@@ -1,0 +1,239 @@
+---
+title: "Tools that help other tools ship: everyharness, proving-it-works, and superpowers v6.3.0"
+week: "Week of August 10, 2026"
+dateStart: 2026-08-10
+dateEnd: 2026-08-16
+pubDate: 2026-08-14
+summary: "The most recent week, still in progress: three new repos go public (everyharness, everyharness-container, proving-it-works), superpowers cuts v6.3.0 with Devin and Hermes support, clipfan and agentic-usage-meter both release, and serf runs a top-to-bottom UX pass — with outside contributions from recognizable names."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+The most recent week in this batch, and it leans toward tooling that helps *other* tools ship. **everyharness** (generate a coding-agent plugin for every harness from one config) and its companion **everyharness-container** went public, as did **proving-it-works** (make a movie that proves your software actually runs). Around them, superpowers cut `v6.3.0`, clipfan and agentic-usage-meter both released, and serf ran a sweeping UX pass — several changes landing from outside contributors, including a couple of recognizable names. This week is still open: the data below runs through mid-week, not the full calendar week.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-08-10" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/everyharness](https://github.com/prime-radiant-inc/everyharness)
+
+<p class="repo-desc">Generate a coding-agent plugin for every harness from one config file.</p>
+
+<RepoStat org="prime-radiant-inc" name="everyharness" week="2026-08-10" />
+
+Creation to a breaking "config v2" in the same week — tagged bootstrap, per-harness settings, a release section — plus per-harness `emitHooks` control, exec-bit preservation checks for installed skill scripts, a `bump` command that replaces per-repo version-bump scripts, and byte-exact dogfood regeneration against hand-written manifests. The tell that it's real: two other repos (`the-elements-of-style`, `proving-it-works`) adopted it the same week it was born. Load-bearing on day one.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/proving-it-works](https://github.com/prime-radiant-inc/proving-it-works)
+
+<p class="repo-desc">Make a movie that proves your software actually works — three recording routes plus a checker that catches frozen pictures, desynced narration, and dropped words before you ship.</p>
+
+<RepoStat org="prime-radiant-inc" name="proving-it-works" week="2026-08-10" />
+
+Built end-to-end in days: three recording routes, an assembler, subtitles by default with a local voice fallback when there's no API key, and a checker that flags frozen frames, desynced narration, and dropped words. It shipped a demo of itself, and picked up `everyharness` support the same week — a tool for proving software works, proving itself works.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/everyharness-container](https://github.com/prime-radiant-inc/everyharness-container)
+
+<p class="repo-desc">A multi-harness container with ~17 coding-agent CLIs preinstalled, shared by everyharness and superpowers-evals.</p>
+
+<RepoStat org="prime-radiant-inc" name="everyharness-container" week="2026-08-10" />
+
+Extracted from `superpowers-evals` into its own shared image: the exact CLI inventory documented, an image-size and platform note, and a first-build digest. Infrastructure de-duplication — one image two projects can lean on instead of two drifting copies.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-08-10" />
+
+`v6.3.0` bundles Devin CLI and Hermes Agent support, a three-path brainstorming router, and a run of SDD and Codex-efficiency fixes. It also adopted the Prime Radiant Community Code of Conduct published two weeks earlier — the loop from "we published a CoC" to "the framework references it" closing on schedule.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clipfan](https://github.com/prime-radiant-inc/clipfan)
+
+<p class="repo-desc">A clipboard-sync daemon for Mac and a remote tmux fleet — mirrors the macOS pasteboard to remote clipboards and tmux paste buffers, enabling image paste into Claude Code/Codex over SSH without OSC 52 or Xvfb.</p>
+
+<RepoStat org="prime-radiant-inc" name="clipfan" week="2026-08-10" />
+
+`v1.0.10`, headlined by an outside contribution: cross-platform install support (per-OS tarballs, optional signing). Alongside it, a macOS mesh-onboarding repair that verifies and repairs the launchd daemon during onboarding and startup, documented manual build/signing modes, and aligned release signing-gate comments.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/agentic-usage-meter](https://github.com/prime-radiant-inc/agentic-usage-meter)
+
+<p class="repo-desc">A macOS menu-bar meter for coding-agent subscription quotas.</p>
+
+<RepoStat org="prime-radiant-inc" name="agentic-usage-meter" week="2026-08-10" />
+
+`v0.2.5`, with an outside contribution from a recognizable name (Joi Ito): hardened decoding of Claude's scoped per-model usage, including decoding scoped per-model limits into labeled weekly windows. Release metadata also moved under the Prime Radiant org.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-08-10" />
+
+A top-to-bottom UX pass: keyboard flow, blocking-approval visibility, needs-you routing, shell chords, inline slash completion, and fixes drawn from typical-user persona testing — dropping the old Conversation view in favor of collapsed action groups. A separate merged PR clarified and hardened the shell execution modes.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">A behavioral eval lab (Quorum) that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-08-10" />
+
+A "Quorum overhaul" program spec pushed through several reviewer rounds (column registry, quota graph, durability barriers, a single sizing authority), plus an empirical OpenAI rate-limit probe showing no throttling at 20-way concurrency. It also rebased its container on the new shared `everyharness-container` image and added Claude subscription auth via OAuth token.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">A lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-08-10" />
+
+A crash-recovery centerpiece: an "interrupted" job status, a crash-recovery job listing scoped to the latest crash generation, and a per-process turn beacon — one flag file per agent process — with a regression test ensuring an idle beacon never clears a busy sibling's flag. An Apache-2.0 license was added by an outside contributor.
+
+</article>
+
+<article class="repo">
+
+### [obra/winpepper](https://github.com/obra/winpepper)
+
+<p class="repo-desc">Windows-native local dictation: hold a hotkey, speak, release, and cleaned-up words appear in the focused app — all local.</p>
+
+<RepoStat org="obra" name="winpepper" week="2026-08-10" />
+
+The week's real work was a user-configurable audio-history-retention feature, built behind an extensive fail-closed hardening effort: the history archiver now refuses destructive I/O on reparse points and junctions (so a junctioned history root can't be deleted through to an external target), validates index-writability before writing, and reports every skip rather than silently dropping recordings. Mostly Dan Shapiro again.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/github-triage](https://github.com/prime-radiant-inc/github-triage)
+
+<p class="repo-desc">A Claude Code plugin for triaging GitHub issues and pull requests, with a security-gated PR review workflow.</p>
+
+<RepoStat org="prime-radiant-inc" name="github-triage" week="2026-08-10" />
+
+Its earliest steps — the first two commits standing up the triage workflow.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/awesome-superpowers](https://github.com/prime-radiant-inc/awesome-superpowers)
+
+<p class="repo-desc">A community index for the superpowers ecosystem.</p>
+
+<RepoStat org="prime-radiant-inc" name="awesome-superpowers" week="2026-08-10" />
+
+Populated with its initial curated list, followed by an image-alignment fix. A week after opening, it has content.
+
+</article>
+
+<article class="repo">
+
+### [obra/the-elements-of-style](https://github.com/obra/the-elements-of-style)
+
+<p class="repo-desc">William Strunk Jr.'s <em>Elements of Style</em> (1918) in markdown, for AI agents.</p>
+
+<RepoStat org="obra" name="the-elements-of-style" week="2026-08-10" />
+
+Packaged as an agent-installable plugin: adopted `everyharness` config v2, regenerated its install docs, and dropped the old session-start bootstrap.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/slackline](https://github.com/prime-radiant-inc/slackline)
+
+<p class="repo-desc">A single-binary Go CLI that gives AI agents a Slack identity — send messages, read channels, stream real-time events — with admin tooling to provision new bots.</p>
+
+<RepoStat org="prime-radiant-inc" name="slackline" week="2026-08-10" />
+
+An Apache-2.0 license added, from an outside contributor.
+
+</article>
+
+<article class="repo">
+
+### [obra/private-journal-mcp](https://github.com/obra/private-journal-mcp)
+
+<p class="repo-desc">A lightweight MCP server that gives an agent a private journaling capability to process thoughts.</p>
+
+<RepoStat org="obra" name="private-journal-mcp" week="2026-08-10" />
+
+An MIT license added, from an outside contributor.
+
+</article>
+
+<article class="repo">
+
+### [obra/dotfiles](https://github.com/obra/dotfiles)
+
+<p class="repo-desc">Jesse's personal dotfiles.</p>
+
+<RepoStat org="obra" name="dotfiles" week="2026-08-10" />
+
+Added a "proving-it-works-with-a-movie" skill, then retired it the next day once it shipped as a proper plugin — the dotfile as a staging ground.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-marketplace](https://github.com/obra/superpowers-marketplace)
+
+<p class="repo-desc">A curated Claude Code plugin marketplace.</p>
+
+<RepoStat org="obra" name="superpowers-marketplace" week="2026-08-10" />
+
+A version bump tracking superpowers `v6.3.0`.
+
+</article>
+
+<p class="caveat"><em>The remaining active repos — <code>homebrew-tap</code>, <code>superpowers-docs</code>, <code>terminal-bench-analysis</code>, <code>claude-plugin-stats</code>, and <code>smevals</code> — had only minimal or bot-driven activity this week (chart and README rebuilds, small doc touches), with no product changes worth a full entry.</em></p>
+
+</section>

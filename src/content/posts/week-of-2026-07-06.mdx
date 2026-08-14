@@ -1,0 +1,175 @@
+---
+title: "First releases: books-for-bots, obol, and teststrip go public"
+week: "Week of July 6, 2026"
+dateStart: 2026-07-06
+dateEnd: 2026-07-12
+pubDate: 2026-07-12
+summary: "Two Rust tools built for AI agents — books-for-bots and obol — cut their first tagged releases, teststrip's macOS photo-culling app goes public with releases of its own, and under the surface serf runs a fuzz-coverage campaign while an outside contributor turns up in smevals."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Three repos cut public releases this week — two of them Rust tools aimed squarely at AI agents, one a macOS photo app making its first public appearance. Beneath the release headlines, the busiest work was quieter: `serf` ran a package-by-package fuzz-coverage campaign, the eval lab deepened its model-compatibility grid, and an outside name or two showed up in the commit logs.
+
+<section class="summary">
+
+<WeekSummary week="2026-07-06" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/books-for-bots](https://github.com/prime-radiant-inc/books-for-bots)
+
+<p class="repo-desc">A Rust CLI that converts EPUBs into a single YAML-headed Markdown file with per-chapter byte and line offsets — a navigation API that lets an LLM agent read a book token-efficiently.</p>
+
+<RepoStat org="prime-radiant-inc" name="books-for-bots" week="2026-07-06" />
+
+books-for-bots shipped its first tagged releases this week. `v0.1.0` brought a CI and tag-triggered release workflow that builds binaries for six platforms, plus an MIT license and a clippy/`cargo fmt` cleanup so CI can enforce lint and formatting going forward. The `v0.1.1` follow-up added a `--version` flag so an agent can self-identify its build, fixed EPUB-internal path normalization at the load boundary, and retired a dead macOS CI runner label. Small, but it's now a tool you can pin a version of.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/obol](https://github.com/prime-radiant-inc/obol)
+
+<p class="repo-desc">Read an AI-agent transcript and estimate what it cost — a Rust core with C-ABI bindings for Python, Go, and TypeScript (Bun and Node).</p>
+
+<RepoStat org="prime-radiant-inc" name="obol" week="2026-07-06" />
+
+obol's `v0.7.0` is a pure pricing-data release: it refreshes the bundled model-price snapshot and adds `claude-sonnet-5` pricing, so cost estimates stay accurate as the model lineup moves.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/teststrip](https://github.com/prime-radiant-inc/teststrip)
+
+<p class="repo-desc">A macOS photo-culling app — catalog-first, non-destructive, AI-assisted. Early development; not ready for use.</p>
+
+<RepoStat org="prime-radiant-inc" name="teststrip" week="2026-07-06" />
+
+teststrip went public this week and cut its first releases — a `models-v1` model-asset release and a `v0.1.0` app build. (The repo object was created this week, but the project already had a full week of history behind it; read this as "went public," not "started.") The week's work hardened the import pipeline for trust: preflight free-space checks before a card import, heartbeated import/scan progress so the watchdog survives slow phases, a persisted default import destination, and a time-bounded preview scan so the photo count it shows you is accurate. Alongside that, security-scoped source bookmarks now persist, restore, and repair themselves across reconnects and relaunches, and the culling signals grew up — Apple feature-print extraction wired into similarity filters, signal-backed similarity stacks, and provider-driven Smart Collection and keyword suggestions.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done — native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-07-06" />
+
+serf's dominant thread this week was a fuzz-coverage completion campaign: closing fuzz-reachable coverage gaps package by package — agent, hub, doctor, contextmgr, execenv, TUI, appsource, jobstore — toward an exact-coverage target. The second real feature line was model-switching: validating a switch up front, gating it on turn state, broadcasting model and effort changes, persisting switch markers, and enforcing replay provenance when a session changes model mid-run. Some mobile-web polish for the spawn UI landed too (viewport handling, composer dock anchoring) — real, but a footnote next to the coverage push.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/stockyard](https://github.com/prime-radiant-inc/stockyard)
+
+<p class="repo-desc">A coding-agent VM orchestrator: runs agents in isolated VMs — Firecracker micro-VMs on Linux (with ZFS-based audit-trail snapshots) and Apple's container tool on macOS.</p>
+
+<RepoStat org="prime-radiant-inc" name="stockyard" week="2026-07-06" />
+
+One targeted reliability fix: stockyard now archives a VM's console logs when it's destroyed, so the audit trail survives teardown.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">An AI-powered QA framework that uses LLMs to test web apps, CLI tools, and TUI programs from markdown story cards, returning structured pass/fail verdicts with evidence.</p>
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-07-06" />
+
+A single fix: give the Claude 5 named tier its full max-output-token cap.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">A behavioral eval lab (Quorum) that drives real coding-agent CLIs — Claude, Codex, Gemini, Kimi, and more — through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-07-06" />
+
+The lab deepened its serf-as-harness coverage — OpenRouter preset-identity attestation and BYOK, a materialized campaign-level model-compatibility grid, and a pinned fix for serf's streamed-response IDs. The launcher grew Mantle/Bedrock credential handling: default Claude calls to Bedrock with a direct opt-out, scrub host `ANTHROPIC_API_KEY` and AWS credentials so seeded credentials win, and reject Mantle credentials on Windows Claude. Grader tooling got a `--grader-model` flag (defaulting to claude-sonnet-5) and a Sonnet 4.6→5 drift screen that showed no behavioral drift.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/smevals](https://github.com/prime-radiant-inc/smevals)
+
+<p class="repo-desc">A framework for running evals against small (and large) models.</p>
+
+<RepoStat org="prime-radiant-inc" name="smevals" week="2026-07-06" />
+
+A small vocabulary addition — notable mainly for who sent it: an outside contribution from Simon Willison.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/claude-plugin-stats](https://github.com/prime-radiant-inc/claude-plugin-stats)
+
+<p class="repo-desc">A daily scrape of Claude Code plugin install stats.</p>
+
+<RepoStat org="prime-radiant-inc" name="claude-plugin-stats" week="2026-07-06" />
+
+Routine automated upkeep — the daily scrape and chart rebuild, `github-actions[bot]` only.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">A lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-07-06" />
+
+Reliability fixes to background-job notifications: a Slack follow-up hint added to every terminal job notification, and the runner's last-seen event sequence used as the inject-drain watermark on the success path.
+
+</article>
+
+<article class="repo">
+
+### [obra/dotfiles](https://github.com/obra/dotfiles)
+
+<p class="repo-desc">Jesse's personal dotfiles.</p>
+
+<RepoStat org="obra" name="dotfiles" week="2026-07-06" />
+
+A new `/story-loop` command — an agentic goal loop driven by end-to-end scenario cards — plus its design spec, and a small shell-env export for a keyring-backed CLI.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-07-06" />
+
+Quiet week here: no direct commits, and the only merged change reverses course from the week before — a PR restoring Gemini CLI support after its removal was reverted.
+
+</article>
+
+</section>

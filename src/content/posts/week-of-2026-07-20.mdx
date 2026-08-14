@@ -1,0 +1,201 @@
+---
+title: "superpowers v6.2.0, winpepper goes streaming, and serf's biggest week"
+week: "Week of July 20, 2026"
+dateStart: 2026-07-20
+dateEnd: 2026-07-26
+pubDate: 2026-07-26
+summary: "superpowers cuts v6.2.0, winpepper ships two alpha releases and adds cloud ASR, and serf logs its heaviest push of the window on session and pane architecture. Repos active across both orgs, with most fixes landing from outside contributors."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Two releases anchor the week: **superpowers** cut `v6.2.0`, rolling up weeks of methodology work, and **winpepper** shipped a pair of alpha releases that quietly turned a local dictation tool into one that can also reach a cloud recognizer. Underneath the releases, **serf** logged its single heaviest push of the whole window — and a striking share of the week's merged fixes came from outside the core team.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-07-20" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-07-20" />
+
+`v6.2.0` is the week's headline release, gathering up work that had been merging over the prior weeks: the spec-driven-development plan-scoped workspace with its resume-based fix loop, a skills-compression sweep, and a Windows `SessionStart` fix that dispatches through Git-Bash. Two outside contributors landed fixes folded into the same release — a `find-polluter.sh` path-matching correction and a dangling-docs-anchor cleanup — a small sign of a framework picking up hands beyond the core team.
+
+</article>
+
+<article class="repo">
+
+### [obra/winpepper](https://github.com/obra/winpepper)
+
+<p class="repo-desc">Windows-native local dictation: hold a hotkey, speak, release, and cleaned-up words appear in the focused app — Parakeet TDT v3 ASR with LlamaSharp cleanup, all local.</p>
+
+<RepoStat org="obra" name="winpepper" week="2026-07-20" />
+
+The week read like a reliability pass — load-bearing-validation hardening for the mid-paste and settings-change races — but it culminated in two tagged alpha releases, and the release-grounded story is bigger than the diligence underneath it. AssemblyAI cloud ASR now sits alongside the local engine, sleep/resume incidents got a proper fix (an error taxonomy, recovery-driven clearing, hook reinstallation), the keyboard hook was hardened, and the app gained a per-user MSI installer plus a round of consumer polish (toast policy, pill fixes, ASR-config consolidation, live model swapping). As with superpowers, most of the commits came from outside — Dan Shapiro, with AI coding agents (Codex, Amplifier) committing alongside him.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-07-20" />
+
+serf's busiest week of the window, almost all of it direct-push work on the session and pane architecture — a delegate-transcript UI audit, pane-routing repairs, nested-session owner promotion, and settings/session-routing placement contracts. Four concrete features merged on top of that rebuild: forking any message into the composer for editing, folding archived sessions behind a single disclosure grouped by project, prepopulating the session-path dropdown with recent projects, and per-turn job-notification parsing. Also in the mix: model-switch replay-parity work (asserting the same event kind in both live and replay paths) and serffuzz compile-gate fixes.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/llm-proxy](https://github.com/prime-radiant-inc/llm-proxy)
+
+<p class="repo-desc">A transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response for debugging, auditing, and analysis.</p>
+
+<RepoStat org="prime-radiant-inc" name="llm-proxy" week="2026-07-20" />
+
+An AWS SigV4 signing mode for the Anthropic passthrough, letting the proxy front Bedrock — hop-by-hop headers stripped before signing, with a clean mode-based rollback path. An Apache-2.0 license landed too.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">A lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-07-20" />
+
+The Bedrock provider was rewritten on `AnthropicBedrockMantle` for full Anthropic parity, SDK connection errors are now treated as retryable, and the integration suite got a test-hygiene fix. Thematically paired with llm-proxy's SigV4 work this same week — both pushing Anthropic-via-AWS support.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/stockyard](https://github.com/prime-radiant-inc/stockyard)
+
+<p class="repo-desc">A coding-agent VM orchestrator: runs coding agents in isolated VMs — Firecracker micro-VMs on Linux with ZFS-based audit-trail snapshots, and Apple's container tool on macOS.</p>
+
+<RepoStat org="prime-radiant-inc" name="stockyard" week="2026-07-20" />
+
+Safe task-destruction work: requiring names to destroy named tasks, failing closed on identity errors, safely quoting destroy-confirmation names, plus hardened orphan-audit reconciliation and durable IP allocation.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">A behavioral eval lab (Quorum) that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance against scenario criteria and deterministic post-checks.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-07-20" />
+
+Two threads. First, Hermes-4 bring-up: a RED bootstrap verdict and mechanism autopsy, a clone-faithful plugin-staging fix, hardened staging (reject symlinks, expand `~`), a provisioning adapter — and the honest negative finding that Hermes-4 via OpenRouter is structurally impossible to eval, because it exposes no tool-use endpoints. Second, a matched pair of "evidence" scenarios grading whether an agent tells the truth about what it built: a working feature with verified proof versus a broken feature with an honest report.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/smevals](https://github.com/prime-radiant-inc/smevals)
+
+<p class="repo-desc">A framework for running evals against small (and large) models.</p>
+
+<RepoStat org="prime-radiant-inc" name="smevals" week="2026-07-20" />
+
+A per-task detail-view page, a `run -n X` flag to repeat runs and distinguish errors from failures, GitHub Actions CI, and a path-traversal fix in the serve command. Contributed from outside the team by Simon Willison.
+
+</article>
+
+<article class="repo">
+
+### [obra/blogosphere](https://github.com/obra/blogosphere)
+
+<p class="repo-desc">A local-first, multi-platform blogging client for an 11ty blog that lives in a GitHub repo — the repo is the database.</p>
+
+<RepoStat org="obra" name="blogosphere" week="2026-07-20" />
+
+A durability week: a "database is locked" publish failure fixed via single-statement rename pairs, and hardening against hard kills (Windows PAT persistence, bounded typing-buffer loss).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/teststrip](https://github.com/prime-radiant-inc/teststrip)
+
+<p class="repo-desc">A macOS photo-culling app — catalog-first, non-destructive, AI-assisted. Early development; not ready for use.</p>
+
+<RepoStat org="prime-radiant-inc" name="teststrip" week="2026-07-20" />
+
+A quiet week: compiling Core ML face models once for a perf win, and a round of dogfood culling and library fixes.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/terminal-bench-analysis](https://github.com/prime-radiant-inc/terminal-bench-analysis)
+
+<p class="repo-desc">Fetches results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.</p>
+
+<RepoStat org="prime-radiant-inc" name="terminal-bench-analysis" week="2026-07-20" />
+
+Automated README regeneration — the bot keeping the page current, no new data.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/claude-plugin-stats](https://github.com/prime-radiant-inc/claude-plugin-stats)
+
+<p class="repo-desc">A daily scrape of Claude Code plugin install stats.</p>
+
+<RepoStat org="prime-radiant-inc" name="claude-plugin-stats" week="2026-07-20" />
+
+The daily chart rebuild, on schedule.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-marketplace](https://github.com/obra/superpowers-marketplace)
+
+<p class="repo-desc">A curated Claude Code plugin marketplace.</p>
+
+<RepoStat org="obra" name="superpowers-marketplace" week="2026-07-20" />
+
+A version bump tracking superpowers `v6.2.0`.
+
+</article>
+
+<article class="repo">
+
+### [obra/dotfiles](https://github.com/obra/dotfiles)
+
+<p class="repo-desc">Jesse's personal dotfiles.</p>
+
+<RepoStat org="obra" name="dotfiles" week="2026-07-20" />
+
+A single commit — but on the list for completeness.
+
+</article>
+
+</section>

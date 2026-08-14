@@ -1,0 +1,167 @@
+---
+title: "The widest week: releases across the board, and the whole org gets mapped"
+week: "Week of August 3, 2026"
+dateStart: 2026-08-03
+dateEnd: 2026-08-09
+pubDate: 2026-08-09
+summary: "The widest week in the window by repo count: obol, agentic-usage-meter, and superpowers-chrome all cut releases, awesome-superpowers opens, serf logs a third four-figure week — and an org-wide service-catalog sweep touched nearly every repo at once. We count the sweep honestly and don't let it masquerade as product work."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+The widest week of the eight, and for two different reasons. Part of it is a genuine surge: obol, agentic-usage-meter, and superpowers-chrome all cut releases, awesome-superpowers opened, and serf logged its third consecutive four-figure-commit week. The other part is a single deliberate event — on August 6, an org-wide sweep added a service-catalog entry (`catalog-info.yaml` + `ABOUT.md`) to nearly every repo at once, one "docs(map)" commit each. That's why the active-repo count jumps. We count both honestly below, and we're careful not to let the sweep stand in for per-repo product work.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-08-03" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/agentic-usage-meter](https://github.com/prime-radiant-inc/agentic-usage-meter)
+
+<p class="repo-desc">A macOS menu-bar meter for coding-agent subscription quotas.</p>
+
+<RepoStat org="prime-radiant-inc" name="agentic-usage-meter" week="2026-08-03" />
+
+A week of rapid iteration — six tagged releases, `v0.1.1` through `v0.2.4` — and the throughline is concurrency hardening, not a single feature. Every persisted-state write was serialized through one mutation queue, reconnect-refresh blocking was reference-counted, in-flight refreshes are now drained before a reconnect touches shared state, and account-removal and cancellation races got closed out. Along the way it also picked up multi-org accounts, a provider-request link, and Node 24 release artifacts. This is what fixing account-management race conditions under fast release cadence looks like.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-chrome](https://github.com/obra/superpowers-chrome)
+
+<p class="repo-desc">A Claude Code plugin for direct Chrome control via the DevTools Protocol — zero dependencies.</p>
+
+<RepoStat org="obra" name="superpowers-chrome" week="2026-08-03" />
+
+Three releases in a week, each with a distinct character. `v3.0.3` honors stringified-JSON payloads for structured actions (Postel's law), contributed from an outside branch with added behavioral test coverage. `v3.0.4` was a dedicated security release, resolving every open Dependabot alert. `v3.0.5` is reliability and hardening across the MCP and CLI launch paths: passing image-tool and port-lookup args directly instead of through a shell, reporting *why* Chrome failed to launch, keeping Chrome's sandbox on except where it genuinely can't work, surfacing spawn failures instead of crashing the server, and isolating test profile and cache paths from the user's real cache dir.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/obol](https://github.com/prime-radiant-inc/obol)
+
+<p class="repo-desc">Read an AI-agent transcript and estimate what it cost — a Rust core with C-ABI bindings for Python, Go, and TypeScript (Bun + Node).</p>
+
+<RepoStat org="prime-radiant-inc" name="obol" week="2026-08-03" />
+
+`v0.9.0`: a pricing refresh adding `claude-opus-5`, plus a CI repair for stale dialects and a clippy lint.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/awesome-superpowers](https://github.com/prime-radiant-inc/awesome-superpowers)
+
+<p class="repo-desc">A community index for the superpowers agentic-skills framework.</p>
+
+<RepoStat org="prime-radiant-inc" name="awesome-superpowers" week="2026-08-03" />
+
+A new repo, opened with an initial commit and README from an outside contributor (Kattni) — and promptly picked up by the catalog sweep. A small thing, but "someone outside the team started the community index" is exactly the kind of small thing worth noticing.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-08-03" />
+
+A third consecutive four-figure-commit week, all direct push. A task-list panel redesign in the web UI — rows grouped by status, latest updates inline, a progress header, timezone-safe timestamps — and a substantial piece of work on recoverable, retained tool output for the agent: bounded retained-output readers, paging and search over that output, artifacts scoped to session trees, and a hardened artifact-lifecycle cleanup.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-08-03" />
+
+Zero direct commits, all of it landing through squash-merged PRs — and the throughline is real: Hermes Agent harness support (eval-verified bootstrap) plus a run of SDD reliability fixes. Event-driven bounded waits drove wait-timeouts down to effectively none, small same-shape tasks now batch into one dispatch, "rule and continue" ledgers a ruling for non-catastrophic conflicts instead of blocking with a question, and a guard keeps dispatched subagents from dispatching further subagents. Devin CLI support landed too, along with multi-agent guidance corrected against the Codex source and docs-navigation improvements.
+
+</article>
+
+<article class="repo">
+
+### [obra/winpepper](https://github.com/obra/winpepper)
+
+<p class="repo-desc">Windows-native local dictation: hold a hotkey, speak, release, and cleaned-up words appear in the focused app — all local.</p>
+
+<RepoStat org="obra" name="winpepper" week="2026-08-03" />
+
+The big story is an ASR engine switch: a move to a "nemotron-first" pipeline (multilingual Nemotron 3.5 as the primary streaming model, Parakeet demoted to an optional backup), a new worker-process architecture with kill/respawn supervision, and an onboarding model-picker with background downloads. Once the new pipeline landed, the week closed with cleanup — deleting dead provisioning services, fixing an engine-load failure message, and evidence-backed verification. Mostly outside contributor Dan Shapiro again.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">A behavioral eval lab (Quorum) that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-08-03" />
+
+A statistical self-correction worth calling out: Fisher tests, a matched-cell token median, and an explicit retraction of an earlier overclaim, alongside token and wall-time deltas showing an opus-5 arm carrying real overhead. The lab also shipped a way to import locally-run eval results onto the shared appliance — a scrubbed-bundle export/import path — plus a fix excluding vendored dependencies from campaign exports (the source of this week's line-count bulge).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-autoresearch](https://github.com/prime-radiant-inc/superpowers-autoresearch)
+
+<p class="repo-desc">The automated-research harness for running experiment campaigns against the superpowers methodology.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-autoresearch" week="2026-08-03" />
+
+A "compounding-trap" experiment battery with signature-first designs and binary ground truth, plus an anti-appeasement probe that returned an honest "INCONCLUSIVE-BY-BASE-RATE" verdict rather than forcing a result. The research harness declining to manufacture a finding is itself the finding worth trusting.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/teststrip](https://github.com/prime-radiant-inc/teststrip)
+
+<p class="repo-desc">A macOS photo-culling app — catalog-first, non-destructive, AI-assisted. Early development; not ready for use.</p>
+
+<RepoStat org="prime-radiant-inc" name="teststrip" week="2026-08-03" />
+
+A "unified shell" design spec and a multi-task plan to consolidate the app's views into one shell — planned before building. And an autopilot "ghost" refactor that dropped a persisted `autopilot_proposals` table in favor of deriving suggestion badges and review-queue state directly from asset metadata: a run persists nothing, and undo just replays the in-memory group.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">A lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-08-03" />
+
+Container-lifecycle work: kill the in-container process tree on abort, adopt existing containers on resume, allow empty-workspace resume, and pin persona across a delegate resume. The model catalog gained `claude-opus-5`, and a cached Anthropic catalog that was shadowing new static metadata got fixed.
+
+</article>
+
+<p class="caveat"><em>The rest of the week's active repos — including <code>clipfan</code>, <code>superpowers-docs</code>, <code>homebrew-tap</code>, <code>llm-proxy</code>, <code>stockyard</code>, <code>sprout</code>, <code>slackline</code>, <code>openai-codex-plugins</code>, <code>greenfield</code>, <code>books-for-bots</code>, <code>toil</code>, and <code>agent-plugin-linear-use</code> — show up in the active count only because of the August 6 catalog sweep; their sole commit that week was the `docs(map)` entry, with no product changes to report. A few had a little real activity underneath it: <code>gauntlet</code> landed a TUI grace-period fix (grace descendants after kill-server, before SIGKILL), <code>dotfiles</code> iterated on Jesse's <code>CLAUDE.md</code>, <code>superpowers-marketplace</code> tracked the <code>superpowers-chrome</code> releases, and <code>code-of-conduct</code> merged the prior week's Contributor Covenant adaptation. <code>terminal-bench-analysis</code> and <code>claude-plugin-stats</code> ran their usual bot-only rebuilds.</em></p>
+
+</section>
