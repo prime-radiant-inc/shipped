@@ -4,25 +4,18 @@ week: "Week of June 22, 2026"
 dateStart: 2026-06-22
 dateEnd: 2026-06-28
 pubDate: 2026-06-28
-summary: "serf cuts its first tagged release, toil lands as a new workflow orchestrator, and a 91-commit credential-axis push reshapes the eval lab. Eleven repos active across both orgs."
+summary: "serf ships v0.1.0 on the back of a 414-commit week, toil lands as a new workflow orchestrator, and a 90-commit credential-axis push reshapes the eval lab. Eleven repos active across both orgs."
 ---
 
-The first week we're recapping opens with a release we'd been building toward: **serf** shipped its `v0.1.0`. But that headline sits on top of a much busier week — eleven repositories saw activity across `prime-radiant-inc` and `obra`, from a brand-new Go workflow orchestrator to a 91-commit reshaping of how the eval lab handles model credentials.
+import WeekSummary from '../../components/WeekSummary.astro';
+
+The first week we're recapping opens with a release we'd been building toward: **serf** shipped its `v0.1.0` — on top of a 414-commit week. And that's one repo of eleven that saw activity across `prime-radiant-inc` and `obra`, from a brand-new Go workflow orchestrator to a 90-commit reshaping of how the eval lab handles model credentials.
 
 <section class="summary">
 
-## The week in numbers
+<WeekSummary week={1} />
 
-<ul class="stats">
-<li><strong>11</strong> repos active (3 featured, 8 also shipped)</li>
-<li><strong>133</strong> commits</li>
-<li><strong>12</strong> merged PRs</li>
-<li><strong>+445,270 / −5,675</strong> lines</li>
-<li><strong>4</strong> contributors</li>
-<li><strong>2</strong> releases cut</li>
-</ul>
-
-<p class="caveat"><em>A note on the line count: this was a going-public week, so most of those added lines are one-time initial-import commits (toil's first release alone is +111,838; gauntlet's OAuth vendoring +119,779) rather than organic day-to-day change. We flag it rather than let the number oversell the week.</em></p>
+<p class="caveat"><em>A note on the line count: this was a going-public week, so a large share of those added lines is toil's one-time initial public release (+111,838 across 519 files) rather than organic day-to-day change. We flag it rather than let the number oversell the week.</em></p>
 
 </section>
 
@@ -36,7 +29,7 @@ The first week we're recapping opens with a release we'd been building toward: *
 
 <p class="repo-desc">A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done — native tool-calling across OpenAI, Anthropic, and Google models.</p>
 
-serf cut two releases on June 22 — a `snapshot` prerelease and then its first real tagged release, `v0.1.0`. There were no direct commits to `main` under our window, but three PRs merged into the tag: a ~58% speed-up to `NewSession` (memoizing the per-session git/schema/uname work), an ATIF-v1.7 conformance fix so orphaned tool results stay valid, and a maintainability cleanup pass (shared helpers, table-driven tests, file splits). This is the agent that does the work when nobody's watching, and it's now something you can pin a version of.
+serf cut two releases on June 22 — a `snapshot` prerelease and then its first real tagged release, `v0.1.0` — and it did so on the back of the busiest week of any repo here: 414 commits from Jesse Vincent. Three of those landed via merged PRs: a ~58% speed-up to `NewSession` (memoizing the per-session git/schema/uname work), an ATIF-v1.7 conformance fix so orphaned tool results stay valid, and a maintainability cleanup pass (shared helpers, table-driven tests, file splits). This is the agent that does the work when nobody's watching, and it's now something you can pin a version of.
 
 </article>
 
@@ -72,7 +65,7 @@ New this week, and honest about what it is: a throwaway test bed for the Codex m
 
 <p class="repo-desc">The Quorum behavioral eval lab — drives real coding-agent CLIs (Claude, Codex, Gemini, Kimi, and more) through a QA agent and grades them on workflow compliance.</p>
 
-The busiest repo of the week by far: 91 commits (Jesse Vincent 75, Drew Ritter 16) and three merged PRs. Almost all of it is a single coherent thread — the "credential axis." The lab learned to describe every model endpoint in a `credentials.yaml` with a `default_credential`, thread that credential through runs, verdicts, and dashboards, and build per-harness provider config (pi, opencode, codex, claude, gemini) from it. Alongside that: a new serf coding-agent harness, per-endpoint concurrency caps keyed on a `limiterKey`, scenario-local fixtures, and a user-preference-override eval suite.
+One of the busiest repos of the week: 90 commits (Jesse Vincent 74, Drew Ritter 16) and three merged PRs. Almost all of it is a single coherent thread — the "credential axis." The lab learned to describe every model endpoint in a `credentials.yaml` with a `default_credential`, thread that credential through runs, verdicts, and dashboards, and build per-harness provider config (pi, opencode, codex, claude, gemini) from it. Alongside that: a new serf coding-agent harness, per-endpoint concurrency caps keyed on a `limiterKey`, scenario-local fixtures, and a user-preference-override eval suite.
 
 </article>
 
@@ -92,7 +85,7 @@ Seven commits, all from Drew Ritter, on a single theme: run attribution. The pro
 
 <p class="repo-desc">An AI-powered QA framework that drives web apps, CLI tools, and TUI programs from markdown story cards and returns structured pass/fail verdicts with evidence.</p>
 
-Two commits from Jesse Vincent, both about authentication: support for Claude subscription OAuth on the Anthropic client (a large vendoring commit), then a fix to pin `apiKey: null` in OAuth mode so the SDK sends only a Bearer token.
+Two commits from Jesse Vincent, both about authentication: support for Claude subscription OAuth on the Anthropic client, then a fix to pin `apiKey: null` in OAuth mode so the SDK sends only a Bearer token.
 
 </article>
 
@@ -132,7 +125,7 @@ One commit from Jesse Vincent: suspend USB devices that report only a model numb
 
 <p class="repo-desc">An agentic skills framework and software-development methodology that actually works.</p>
 
-Seven commits (Jesse Vincent 6, Ada Sen 1) across six merged PRs — a Codex-focused cleanup run: removing Gemini CLI support now that Google has EOLed it, adding a Codex marketplace manifest, pruning per-harness tool-mapping boilerplate, removing Codex hooks, compressing the `using-superpowers` bootstrap, and stopping the `SessionStart` bootstrap from re-firing on resume.
+No direct commits to the default branch in our window, but six PRs merged — a Codex-focused cleanup run: removing Gemini CLI support now that Google has EOLed it, adding a Codex marketplace manifest, pruning per-harness tool-mapping boilerplate, removing Codex hooks, compressing the `using-superpowers` bootstrap, and stopping the `SessionStart` bootstrap from re-firing on resume.
 
 </article>
 

@@ -1,0 +1,48 @@
+---
+// RepoStat.astro — renders ONE repo's generated stat line for a given
+// week, from src/data/weekly-stats.json (see tools/gen_stats.py).
+//
+// NOTE ON USAGE: as of this writing, none of the 8 existing weekly posts
+// (src/content/posts/week-*.md) actually have a separate, isolated
+// "stat line" per repo to replace — every per-repo number (commit counts,
+// author splits, PR counts) is woven directly into hand-written prose
+// sentences (e.g. "414 commits from Jesse Vincent" inside a paragraph
+// about what serf shipped). There was nothing mechanical to swap out
+// without editing prose, so week-1.mdx does NOT call this component
+// inline — see the migration notes in that file and the delegate's
+// report for the full explanation. This component exists, is correct,
+// and is ready to use for any FUTURE post that wants a discrete,
+// non-prose stat line instead of (or alongside) narrative prose.
+import weeklyStats from '../data/weekly-stats.json';
+
+interface Props {
+  org: string;
+  name: string;
+  week: number;
+}
+
+const { org, name, week } = Astro.props;
+const weekKey = `week-${week}`;
+const weekData = weeklyStats[weekKey];
+if (!weekData) {
+  throw new Error(`RepoStat: no stats for ${weekKey} in src/data/weekly-stats.json`);
+}
+const repoKey = `${org}/${name}`;
+const r = weekData.repos[repoKey];
+if (!r) {
+  throw new Error(`RepoStat: no stats for ${repoKey} in ${weekKey}`);
+}
+
+function fmt(n: number) {
+  return n.toLocaleString('en-US');
+}
+
+const authorStr = r.authors.map((a: { name: string; count: number }) => `${a.name} ${a.count}`).join(', ');
+---
+
+<p class="repo-stats">
+  <strong>{fmt(r.commits)}</strong> commit{r.commits === 1 ? '' : 's'}{authorStr ? ` (${authorStr})` : ''}
+  {r.merged_prs.length > 0 && <> · <strong>{r.merged_prs.length}</strong> merged PR{r.merged_prs.length === 1 ? '' : 's'}</>}
+  {(r.loc_added > 0 || r.loc_removed > 0) && <> · <strong>+{fmt(r.loc_added)} / −{fmt(r.loc_removed)}</strong> lines</>}
+  {r.tagged_releases.length > 0 && <> · <strong>{r.tagged_releases.length}</strong> tagged release{r.tagged_releases.length === 1 ? '' : 's'}</>}
+</p>

@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 
 // Deploy target: GitHub Pages, project site at prime-radiant-inc/shipped
 // -> served from https://prime-radiant-inc.github.io/shipped/
@@ -10,4 +11,5 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://prime-radiant-inc.github.io',
   base: '/shipped',
+  integrations: [mdx()],
 });
