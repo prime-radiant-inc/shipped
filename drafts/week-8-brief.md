@@ -1,132 +1,686 @@
 # Week 8 brief — 2026-08-10 to 2026-08-16
 
-**Counts:** 6 featured, 14 second-tier. (Facts only below — pulled verbatim from data/recon-8wk.json. Turn into prose separately.)
+Facts only below, pulled verbatim from data/recon-v2-8wk-20260814.json. Every repo with ANY in-window activity this week is listed — this is exhaustive, not curated. Turn into prose separately; do not invent changelog content beyond what's here.
 
-## Featured
+## Summary
 
-### **clipfan** — Clipboard sync daemon for Mac + remote tmux fleet. Mirrors macOS pasteboard to remote OS clipboards and tmux paste buffers. Enables image paste into Claude Code/Codex over SSH without OSC 52 or Xvfb.
-- org: `prime-radiant-inc` · language: Go · https://github.com/prime-radiant-inc/clipfan
-- **release** `v1.0.10` "v1.0.10" published 2026-08-13T17:44:24Z
-- commits to default branch this week: 14
-- merged PRs this week:
+- repos active: 20 (6 featured, 14 second-tier)
+- commits: 456
+- merged PRs: 12
+- LOC: +96817/-39465 raw
+- LOC (de-botted): same as raw — no bot/generated commits detected this week
+- unique contributors: 8
+- releases cut: 3
+
+## Featured (created this week, or cut a release this week)
+
+### **prime-radiant-inc/clipfan** — Clipboard sync daemon for Mac + remote tmux fleet. Mirrors macOS pasteboard to remote OS clipboards and tmux paste buffers. Enables image paste into Claude Code/Codex over SSH without OSC 52 or Xvfb.
+- language: Go · https://github.com/prime-radiant-inc/clipfan
+- **FEATURED because:** release `v1.0.10` "v1.0.10" published 2026-08-13T17:44:24Z
+- commits this week: 14
+- merged PRs this week (2):
   - #2 "release: v1.0.10" (merged 2026-08-13T17:39:44Z)
   - #1 "Feat/cross platform install" (merged 2026-08-13T17:37:00Z)
-- [needs prose/context from Ada: what shipped / why it matters — the JSON has no changelog or release-notes content]
+- authors this week: Jesse Vincent (11), will wade (3)
+- LOC this week: +1048/-82
+- full commit list (14):
+  - `934c733` Jesse Vincent 2026-08-13T10:39:43-07:00 — Merge pull request #2 from prime-radiant-inc/codex/release-v1.0.10 (+0/-0, 0 file(s))
+  - `f266d51` Jesse Vincent 2026-08-13T10:39:15-07:00 — release: prepare v1.0.10 (+12/-1, 2 file(s))
+  - `351d3b3` Jesse Vincent 2026-08-13T10:37:00-07:00 — Merge pull request #1 from willwade/feat/cross-platform-install (+0/-0, 0 file(s))
+  - `cca9166` Jesse Vincent 2026-08-13T10:31:53-07:00 — fix(release): align signing gate comments (+2/-2, 1 file(s))
+  - `91b3bcc` Jesse Vincent 2026-08-13T10:29:05-07:00 — docs(release): document manual build and signing modes (+36/-14, 1 file(s))
+  - `7ea97ab` Jesse Vincent 2026-08-13T10:28:24-07:00 — fix(mac): discover SwiftPM Sparkle framework output (+39/-7, 2 file(s))
+  - `82340b6` Jesse Vincent 2026-08-13T10:27:00-07:00 — fix(release): make manual signing and Sparkle credentials explicit (+38/-3, 2 file(s))
+  - `d8bfae4` Jesse Vincent 2026-08-13T10:26:16-07:00 — fix(release): resolve tag and manual build versions consistently (+54/-8, 3 file(s))
+  - `3f86697` Jesse Vincent 2026-08-13T10:25:03-07:00 — docs: plan PR 1 release corrections (+263/-0, 1 file(s))
+  - `d7a083d` Jesse Vincent 2026-08-13T10:21:23-07:00 — docs: require Sparkle key for signed release design (+2/-0, 1 file(s))
+  - `b1ce576` Jesse Vincent 2026-08-13T10:19:47-07:00 — docs: design PR 1 release corrections (+85/-0, 1 file(s))
+  - `aba7b03` will wade 2026-08-13T07:55:04+01:00 — fix(install): bootstrap macOS self-SSH so mesh "Add peer" works (+141/-1, 3 file(s))
+  - `ff737ee` will wade 2026-08-13T07:54:35+01:00 — feat(release): cross-platform installer, per-OS tarballs, optional signing (+352/-45, 3 file(s))
+  - `36a62a6` will wade 2026-08-13T07:54:18+01:00 — fix(mac): embed Sparkle.framework + KeyboardShortcuts bundle in app (+24/-1, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **agentic-usage-meter** — macOS menu-bar meter for coding-agent subscription quotas
-- org: `prime-radiant-inc` · language: Swift · https://github.com/prime-radiant-inc/agentic-usage-meter
-- **release** `v0.2.5` "Agentic Usage Meter 0.2.5" published 2026-08-13T17:48:04Z
-- commits to default branch this week: 2
-- merged PRs this week:
+### **prime-radiant-inc/agentic-usage-meter** — macOS menu-bar meter for coding-agent subscription quotas
+- language: Swift · https://github.com/prime-radiant-inc/agentic-usage-meter
+- **FEATURED because:** release `v0.2.5` "Agentic Usage Meter 0.2.5" published 2026-08-13T17:48:04Z
+- commits this week: 2
+- merged PRs this week (1):
   - #10 "Decode Claude's scoped per-model limits into labeled weekly windows" (merged 2026-08-13T17:28:57Z)
-- [needs prose/context from Ada: what shipped / why it matters — the JSON has no changelog or release-notes content]
+- authors this week: Jesse Vincent (1), Joi Ito (1)
+- LOC this week: +928/-61
+- full commit list (2):
+  - `0f11d4a` Jesse Vincent 2026-08-13T10:40:23-07:00 — Move release metadata to Prime Radiant (+53/-51, 10 file(s))
+  - `9989e21` Joi Ito 2026-08-13T23:28:56+06:00 — Harden Claude scoped usage decoding (+875/-10, 16 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **everyharness** — Generate a coding-agent plugin for every harness from one config file
-- org: `prime-radiant-inc` · language: TypeScript · https://github.com/prime-radiant-inc/everyharness
-- **created** 2026-08-11T00:02:23Z
-- commits to default branch this week: 149
+### **prime-radiant-inc/everyharness** — Generate a coding-agent plugin for every harness from one config file
+- language: TypeScript · https://github.com/prime-radiant-inc/everyharness
+- **FEATURED because:** created this week (2026-08-11T00:02:23Z)
+- commits this week: 149
 - merged PRs this week: none
-- [needs prose/context from Ada: what shipped / why it matters — the JSON has no changelog or release-notes content]
+- authors this week: Jesse Vincent (149)
+- LOC this week: +22537/-1771
+- full commit list (149):
+  - `e8dccc8` Jesse Vincent 2026-08-12T22:03:58+00:00 — chore: release 0.7.1 — validate loads the config (#10) (+4/-4, 3 file(s))
+  - `5cbe32e` Jesse Vincent 2026-08-12T22:03:49+00:00 — Merge validate-loads-config: validate refuses what generate refuses (#10) (+0/-0, 0 file(s))
+  - `8180418` Jesse Vincent 2026-08-12T22:01:06+00:00 — fix: validate loads the config first, refusing what generate refuses (#10) (+52/-1, 4 file(s))
+  - `9b9c057` Jesse Vincent 2026-08-12T21:55:25+00:00 — docs: plan for validate loading the config (issue #10) (+45/-0, 1 file(s))
+  - `3b81b17` Jesse Vincent 2026-08-12T21:45:17+00:00 — chore: release 0.7.0 — config v2 (breaking), per-harness hooks control, exec-bit checks, bump command, publishable-descriptor coverage (+4/-4, 3 file(s))
+  - `805ea42` Jesse Vincent 2026-08-12T21:41:08+00:00 — Merge config-v2: clean-break config redesign — tagged bootstrap, per-harness settings, release section (+0/-0, 0 file(s))
+  - `f7c9f16` Jesse Vincent 2026-08-12T21:41:08+00:00 — fix: strict bootstrap object, validate exclude names, drop stale comment (final-review minors) (+33/-4, 3 file(s))
+  - `3b936d9` Jesse Vincent 2026-08-12T21:32:01+00:00 — docs: config v2 reference and design rule (+74/-58, 2 file(s))
+  - `ed68e17` Jesse Vincent 2026-08-12T21:24:00+00:00 — refactor: all consumers read the v2 harness settings model (+84/-110, 15 file(s))
+  - `8d8dc2e` Jesse Vincent 2026-08-12T21:11:27+00:00 — feat!: config v2 — tagged bootstrap, per-harness settings, release section (+605/-295, 22 file(s))
+  - `e7fcbda` Jesse Vincent 2026-08-12T20:52:22+00:00 — docs: plan for config v2 (+105/-0, 1 file(s))
+  - `dacd177` Jesse Vincent 2026-08-12T19:42:17+00:00 — Merge per-harness-emithooks: per-harness emitHooks; key order out of scope, dogfood asserts semantic equality (+0/-0, 0 file(s))
+  - `1f4936f` Jesse Vincent 2026-08-12T19:35:41+00:00 — revert: claude-code key reorder; dogfood asserts semantic JSON equality (key order is not a goal) (+56/-49, 5 file(s))
+  - `b82cb6f` Jesse Vincent 2026-08-12T19:22:55+00:00 — feat: emitHooks is configurable per harness (+159/-27, 8 file(s))
+  - `e9959ad` Jesse Vincent 2026-08-12T19:16:16+00:00 — docs: plan for per-harness emitHooks and semantic dogfood comparison (+94/-0, 1 file(s))
+  - `18ec635` Jesse Vincent 2026-08-12T19:12:00+00:00 — Merge respect-user-hooks: never override hand-crafted hooks; dogfood 8/8 byte-exact (all findings closed) (+0/-0, 0 file(s))
+  - `2853cf7` Jesse Vincent 2026-08-12T19:10:26+00:00 — fix: null sentinel strips at every depth; deepMerge comment and README cleanup (+22/-12, 3 file(s))
+  - `3f739b1` Jesse Vincent 2026-08-12T18:58:02+00:00 — test: superpowers dogfood regenerates all eight manifests byte-for-byte (+125/-37, 3 file(s))
+  - `ef53d66` Jesse Vincent 2026-08-12T18:56:49+00:00 — fix: claude-code manifest key order matches the canonical hand-written files (+20/-15, 2 file(s))
+  - `8315dee` Jesse Vincent 2026-08-12T18:55:00+00:00 — docs: plan Task 4 — claude-code key order (from Task 3 BLOCKED escalation) (+25/-0, 1 file(s))
+  - `b85115b` Jesse Vincent 2026-08-12T18:44:53+00:00 — fix: cursor install-doc caveat tells the truth without emitted hooks; pin emitHooks-with-none contract (+32/-1, 3 file(s))
+  - `1790a6e` Jesse Vincent 2026-08-12T18:36:50+00:00 — feat: bootstrap.emitHooks=false keeps the plugin's hand-crafted hooks (+264/-54, 8 file(s))
+  - `f1b06bc` Jesse Vincent 2026-08-12T18:24:27+00:00 — feat: overrides delete inherited keys via null sentinel (+61/-11, 4 file(s))
+  - `359fd66` Jesse Vincent 2026-08-12T18:21:43+00:00 — docs: plan for respecting user hooks and closing all dogfood findings (+130/-0, 1 file(s))
+  - `58bd63a` Jesse Vincent 2026-08-12T16:54:17+00:00 — Merge bump-command: everyharness bump replaces per-repo version-bump scripts (+0/-0, 0 file(s))
+  - `0fb2def` Jesse Vincent 2026-08-12T16:54:17+00:00 — chore: accurate guard message for the config file, adapter wording in README (+7/-2, 2 file(s))
+  - `5885ab9` Jesse Vincent 2026-08-12T16:49:04+00:00 — docs+test: README bump example uses a non-generated file; audit guard test (+21/-1, 2 file(s))
+  - `3d742b9` Jesse Vincent 2026-08-12T16:45:38+00:00 — fix: bump refuses declared generated files; fixture bumps a real user file (+126/-43, 6 file(s))
+  - `cfa5847` Jesse Vincent 2026-08-12T16:34:14+00:00 — feat: everyharness bump — version bump with check, audit, and regeneration (+643/-1, 8 file(s))
+  - `bb2ce74` Jesse Vincent 2026-08-12T16:19:03+00:00 — fix: field-edit writeField always throws ConfigError, never creates structure (+73/-1, 2 file(s))
+  - `09ee5a1` Jesse Vincent 2026-08-12T16:09:24+00:00 — feat: bump config key and field-path edit helpers (+319/-14, 4 file(s))
+  - `278261f` Jesse Vincent 2026-08-12T16:04:42+00:00 — docs: plan for everyharness bump command (+138/-0, 1 file(s))
+  - `f8c2722` Jesse Vincent 2026-08-12T07:04:56+00:00 — Merge exec-bits-and-unskip: publishable-descriptor deep checks and exec-bit preservation (#8, #9) (+0/-0, 0 file(s))
+  - `85a17b8` Jesse Vincent 2026-08-12T06:56:41+00:00 — feat: deep check that executable skill scripts survive every install (#9) (+171/-0, 3 file(s))
+  - `01b982e` Jesse Vincent 2026-08-12T06:46:33+00:00 — fix: deep checks rewrite the marketplace source in the throwaway copy (#8) (+86/-40, 2 file(s))
+  - `51c53ca` Jesse Vincent 2026-08-12T06:38:43+00:00 — docs: plan for deep-check coverage of publishable descriptors and exec bits (#8, #9) (+91/-0, 1 file(s))
+  - `f04bdcc` Jesse Vincent 2026-08-12T06:24:53+00:00 — chore: release 0.6.0 — deep install checks, publishable marketplace, eval-feedback fixes (+15/-7, 3 file(s))
+  - `db45cd2` Jesse Vincent 2026-08-12T06:20:58+00:00 — Merge publishable-marketplace: configurable claude marketplace descriptor (#7) (+0/-0, 0 file(s))
+  - `3d10d10` Jesse Vincent 2026-08-12T06:15:10+00:00 — fix: copilot install doc uses the .claude-plugin marketplace name (#7) (+79/-22, 5 file(s))
+  - `68b047d` Jesse Vincent 2026-08-12T06:01:30+00:00 — feat: deep checks derive the marketplace name from the emitted descriptor (#7) (+150/-7, 6 file(s))
+  - `71db3d7` Jesse Vincent 2026-08-12T05:44:05+00:00 — feat: claude-code marketplace honors name/description/source/strict (#7) (+84/-6, 2 file(s))
+  - `3dd14a6` Jesse Vincent 2026-08-12T05:37:36+00:00 — feat: widen marketplace config for publishable descriptors (#7) (+85/-2, 2 file(s))
+  - `92c604d` Jesse Vincent 2026-08-12T05:35:29+00:00 — docs: plan for publishable marketplace (issue #7) (+158/-0, 1 file(s))
+  - `bbcd761` Jesse Vincent 2026-08-12T00:04:26+00:00 — Merge cap-oneline: cap oneline() diagnostics at 300 chars (#6) (+0/-0, 0 file(s))
+  - `6b8b7a9` Jesse Vincent 2026-08-12T00:04:26+00:00 — chore: drop dead variable, match test file formatting (+7/-3, 1 file(s))
+  - `b4dfc30` Jesse Vincent 2026-08-12T00:01:28+00:00 — fix: cap oneline() diagnostics at 300 chars (#6) (+15/-3, 2 file(s))
+  - `dd1cd6a` Jesse Vincent 2026-08-11T21:06:45+00:00 — Merge eval-feedback-fixes: issues #1-#5 from the elements-of-style 13-harness port (+0/-0, 0 file(s))
+  - `2f01b3f` Jesse Vincent 2026-08-11T21:06:10+00:00 — chore: remove accidentally committed task report (+0/-67, 1 file(s))
+  - `db9b28a` Jesse Vincent 2026-08-11T20:57:02+00:00 — feat: everyharness test performs real installs and asserts skill enumeration (#1) (+533/-23, 5 file(s))
+  - `78da3ea` Jesse Vincent 2026-08-11T20:34:33+00:00 — fix: handle trailing-slash repository URLs in droid marketplace name, note droid's naming rule in the doc (+107/-1, 4 file(s))
+  - `a2a34d9` Jesse Vincent 2026-08-11T20:28:14+00:00 — fix: droid installs by repo-derived marketplace name, split per-client install docs (#4) (+73/-9, 3 file(s))
+  - `3aa4e66` Jesse Vincent 2026-08-11T20:22:48+00:00 — fix: document hermes install warning, enable-name gotcha, and __pycache__ litter (#3, #5) (+34/-0, 3 file(s))
+  - `c451840` Jesse Vincent 2026-08-11T20:18:43+00:00 — fix: name the install markers in the no-markers warning and import output (#2) (+11/-10, 4 file(s))
+  - `0837006` Jesse Vincent 2026-08-11T20:16:49+00:00 — docs: plan for eval-feedback fixes (issues #1-#5) (+188/-0, 1 file(s))
+  - `3e6bf89` Jesse Vincent 2026-08-11T08:34:13+00:00 — test: 30s timeout for the full-checks run under suite contention (+3/-1, 1 file(s))
+  - `d0fc13b` Jesse Vincent 2026-08-11T08:33:03+00:00 — fix: distinctive check-failure exit code, pi comment accuracy, drop dead --keep, document image pull (+65/-18, 4 file(s))
+  - `aa357b7` Jesse Vincent 2026-08-11T08:21:19+00:00 — chore: v0.5.0 — container-backed install checks (+7/-6, 4 file(s))
+  - `7f665b6` Jesse Vincent 2026-08-11T08:19:45+00:00 — fix: pi check fails loudly when bun import fails; fallback only covers bun absence (+8/-2, 1 file(s))
+  - `24751f2` Jesse Vincent 2026-08-11T08:10:34+00:00 — feat: everyharness test — container-backed offline install checks (+519/-1, 5 file(s))
+  - `cc96fea` Jesse Vincent 2026-08-11T07:48:31+00:00 — docs: add container + test-command implementation plan (plan 5 of series) (+46/-0, 1 file(s))
+  - `4529f30` Jesse Vincent 2026-08-11T07:43:10+00:00 — fix: dogfood cleanup, byte-exact assertions, repo env override; comment accuracy (+35/-11, 2 file(s))
+  - `7d6e08d` Jesse Vincent 2026-08-11T07:41:15+00:00 — docs: record dogfood expressiveness findings durably (+167/-3, 2 file(s))
+  - `1f321f6` Jesse Vincent 2026-08-11T07:39:46+00:00 — fix: build once via vitest globalSetup to kill the parallel-build race (+32/-18, 5 file(s))
+  - `170418d` Jesse Vincent 2026-08-11T07:38:17+00:00 — fix: honest import next-step guidance; clean up extracted files on failed validation (+53/-4, 3 file(s))
+  - `96df049` Jesse Vincent 2026-08-11T07:25:45+00:00 — fix: bump TOOL_VERSION to 0.4.0; guard version sync with a test (+10/-1, 2 file(s))
+  - `146f16b` Jesse Vincent 2026-08-11T07:21:03+00:00 — chore: v0.4.0 — init, import, generated docs, dogfood (+21/-5, 4 file(s))
+  - `0e3bc14` Jesse Vincent 2026-08-11T07:12:15+00:00 — docs: hook double-fire investigation findings (+140/-0, 2 file(s))
+  - `d8991a7` Jesse Vincent 2026-08-11T06:57:11+00:00 — test: superpowers dogfood — regenerate hand-maintained manifests (+248/-0, 1 file(s))
+  - `db3ea46` Jesse Vincent 2026-08-11T06:39:49+00:00 — fix: import extracts inline hooks/mcp, validates output, guards field types (+275/-14, 2 file(s))
+  - `2b2d111` Jesse Vincent 2026-08-11T06:25:05+00:00 — feat: import converts a Claude-format plugin to everyharness.yaml (+408/-1, 4 file(s))
+  - `dd4a39d` Jesse Vincent 2026-08-11T06:13:45+00:00 — fix: init reports partial scaffold on generate failure; honor literal name sanitization (+40/-13, 2 file(s))
+  - `fd6a41d` Jesse Vincent 2026-08-11T06:03:59+00:00 — feat: init command scaffolds a new plugin (+285/-0, 3 file(s))
+  - `4d2c35d` Jesse Vincent 2026-08-11T05:56:24+00:00 — chore: remove accidentally committed task report from repo (+0/-30, 1 file(s))
+  - `a782757` Jesse Vincent 2026-08-11T05:55:46+00:00 — feat: README install-matrix injection between markers (+201/-5, 7 file(s))
+  - `9c07504` Jesse Vincent 2026-08-11T05:50:23+00:00 — test: malformed-mcp fixture exercises the wrong-shape branch it claims to (+5/-1, 1 file(s))
+  - `b8e55e7` Jesse Vincent 2026-08-11T05:45:51+00:00 — fix: install docs track actual emission conditions (+121/-7, 6 file(s))
+  - `02f6be7` Jesse Vincent 2026-08-11T05:35:10+00:00 — feat: install docs for all adapters (+696/-5, 13 file(s))
+  - `c65daea` Jesse Vincent 2026-08-11T05:19:37+00:00 — test: cover docs/install pruning when its adapter is excluded on regenerate (+14/-0, 1 file(s))
+  - `e408233` Jesse Vincent 2026-08-11T05:18:41+00:00 — feat: claude-code install doc (+211/-1, 5 file(s))
+  - `31c20be` Jesse Vincent 2026-08-11T05:16:19+00:00 — feat: installDoc interface and docs emission stage (+236/-16, 6 file(s))
+  - `913b295` Jesse Vincent 2026-08-11T05:13:35+00:00 — fix: agent-plugins skips mcp.json emission when source occupies it (+53/-10, 3 file(s))
+  - `2643259` Jesse Vincent 2026-08-11T05:06:38+00:00 — docs: add init/import/docs/dogfood implementation plan (plan 4 of series) (+79/-0, 1 file(s))
+  - `675bbbd` Jesse Vincent 2026-08-11T05:01:30+00:00 — docs: preserve deferred minors from the task-review ledger (+1/-1, 1 file(s))
+  - `5d706a9` Jesse Vincent 2026-08-11T05:01:08+00:00 — fix: kimi bootstrap honesty, dot-segment rejection, README adapter count (+31/-7, 5 file(s))
+  - `9d8aa42` Jesse Vincent 2026-08-11T04:59:14+00:00 — fix: actionable clobber message for pre-existing package.json (+22/-1, 2 file(s))
+  - `2e148d0` Jesse Vincent 2026-08-11T04:58:37+00:00 — fix: hermes registers skills before bootstrap and tolerates a missing bootstrap file (+102/-6, 3 file(s))
+  - `e9291cb` Jesse Vincent 2026-08-11T04:54:05+00:00 — fix: in-process adapters emit the generated bootstrap file they consume (+60/-0, 7 file(s))
+  - `92427c2` Jesse Vincent 2026-08-11T04:51:36+00:00 — fix: escape backslashes in gemini TOML command bodies (+26/-0, 2 file(s))
+  - `b4fc0a2` Jesse Vincent 2026-08-11T04:39:22+00:00 — chore: v0.3.0 — eleven adapters, generate-mode bootstrap, command translation (+8/-11, 6 file(s))
+  - `6122dca` Jesse Vincent 2026-08-11T04:35:37+00:00 — fix: word-boundary-safe $ARGUMENTS substitution in gemini commands (+23/-1, 2 file(s))
+  - `14ca528` Jesse Vincent 2026-08-11T04:27:07+00:00 — feat: gemini TOML command translation (+197/-7, 4 file(s))
+  - `d83d768` Jesse Vincent 2026-08-11T04:14:17+00:00 — fix: constrain component paths to a source-safe charset (+84/-14, 3 file(s))
+  - `fc943d4` Jesse Vincent 2026-08-11T04:03:36+00:00 — feat: hermes adapter with python plugin (+577/-7, 7 file(s))
+  - `fb34974` Jesse Vincent 2026-08-11T03:53:11+00:00 — fix: explicit pi lifecycle registrations (real SDK overloads); harden type-check stub (+68/-16, 3 file(s))
+  - `adb3b1a` Jesse Vincent 2026-08-11T03:34:16+00:00 — feat: pi adapter with runtime extension (+551/-40, 9 file(s))
+  - `00f8057` Jesse Vincent 2026-08-11T03:20:50+00:00 — docs: marker rule exception for frontmattered markdown (Task 3 correction) (+1/-1, 1 file(s))
+  - `380b920` Jesse Vincent 2026-08-11T03:19:25+00:00 — feat: opencode adapter with runtime plugin, command and agent translation (+654/-7, 9 file(s))
+  - `c85d34e` Jesse Vincent 2026-08-11T03:01:31+00:00 — feat: bootstrap.generate mode with shared generated bootstrap file (+185/-36, 14 file(s))
+  - `553830b` Jesse Vincent 2026-08-11T02:54:46+00:00 — docs: record components.mcp/agent-plugins collision bug for Plan 4 (+1/-1, 1 file(s))
+  - `1faebb0` Jesse Vincent 2026-08-11T02:49:40+00:00 — fix: burn down Plan 2 review backlog (+251/-16, 16 file(s))
+  - `ffdab3a` Jesse Vincent 2026-08-11T02:38:53+00:00 — docs: add in-process adapters implementation plan (plan 3 of series) (+194/-0, 1 file(s))
+  - `5427801` Jesse Vincent 2026-08-11T02:27:24+00:00 — docs: record Plan 3 backlog from whole-branch review (+2/-0, 1 file(s))
+  - `cad1189` Jesse Vincent 2026-08-11T02:27:10+00:00 — docs: reconcile WIP banner with eight-adapter status (+6/-6, 1 file(s))
+  - `1071964` Jesse Vincent 2026-08-11T02:26:45+00:00 — fix: reject non-object hooks/mcp JSON at model build (+35/-1, 2 file(s))
+  - `7ca61e1` Jesse Vincent 2026-08-11T02:25:47+00:00 — fix: generate recovers from corrupt manifest instead of dead-ending (+33/-2, 2 file(s))
+  - `ad863b3` Jesse Vincent 2026-08-11T02:24:51+00:00 — fix: refuse to overwrite user files not created by everyharness; add --force (+81/-12, 4 file(s))
+  - `6bc3eca` Jesse Vincent 2026-08-11T02:09:09+00:00 — chore: v0.2.0 — eight adapters, docs and e2e updated (+25/-7, 5 file(s))
+  - `86829f6` Jesse Vincent 2026-08-11T02:06:12+00:00 — test: cover agents-marketplace override; clarify support-profile comment (+31/-6, 2 file(s))
+  - `a9c8282` Jesse Vincent 2026-08-11T02:00:29+00:00 — feat: agents-marketplace descriptor adapter (droid/grok/copilot channel) (+157/-4, 5 file(s))
+  - `d841817` Jesse Vincent 2026-08-11T01:51:10+00:00 — feat: agent-plugins-1.0 adapter with schema validation (+600/-12, 9 file(s))
+  - `b3e99ca` Jesse Vincent 2026-08-11T01:48:05+00:00 — refactor: extract shared manifest-field helper (+53/-52, 6 file(s))
+  - `87b1125` Jesse Vincent 2026-08-11T01:31:45+00:00 — feat: kimi and gemini adapters (+363/-3, 7 file(s))
+  - `91cf69d` Jesse Vincent 2026-08-11T01:26:58+00:00 — docs: align plan warning text and codex-schema references with implementation (+3/-3, 1 file(s))
+  - `c6ffc02` Jesse Vincent 2026-08-11T01:21:46+00:00 — fix: drop unfit SchemaStore codex schema from validation; document divergence (+12/-248, 5 file(s))
+  - `ce76e19` Jesse Vincent 2026-08-11T01:18:53+00:00 — feat: codex and devin adapters with codex schema validation (+510/-9, 11 file(s))
+  - `b474cbf` Jesse Vincent 2026-08-11T01:03:11+00:00 — feat: cursor adapter with bootstrap hooks (+201/-3, 5 file(s))
+  - `ba9fa25` Jesse Vincent 2026-08-11T00:59:57+00:00 — docs: fix session-start template escaping in plan to match implementation (+1/-1, 1 file(s))
+  - `b375efd` Jesse Vincent 2026-08-11T00:52:39+00:00 — feat: shell-hook bootstrap templates; claude-code emits session-start bootstrap (+300/-7, 5 file(s))
+  - `aa83e85` Jesse Vincent 2026-08-11T00:37:08+00:00 — feat: win32-aware exec-bit drift; source mcp default moves to .mcp.json (+16/-7, 8 file(s))
+  - `8ce1e1e` Jesse Vincent 2026-08-11T00:32:55+00:00 — fix: contain stale-file pruning to the plugin root (+50/-6, 2 file(s))
+  - `0a251fb` Jesse Vincent 2026-08-11T00:24:40+00:00 — feat: prune stale generated files on regenerate (+75/-16, 4 file(s))
+  - `16b4011` Jesse Vincent 2026-08-11T00:21:14+00:00 — fix: normalize trailing slashes on component paths at config load (+40/-6, 3 file(s))
+  - `20ec75c` Jesse Vincent 2026-08-11T00:16:00+00:00 — feat: dedupe identical collisions; guard source files from adapter overwrite (+51/-11, 2 file(s))
+  - `de22dfc` Jesse Vincent 2026-08-11T00:14:20+00:00 — docs: add manifest-adapters implementation plan (plan 2 of series) (+623/-0, 1 file(s))
+  - `1c3fd2c` Jesse Vincent 2026-08-11T00:05:25+00:00 — docs: mark README clearly as work-in-progress (+16/-8, 1 file(s))
+  - `ef73c6f` Jesse Vincent 2026-08-10T23:59:28+00:00 — docs: carry final-review design inputs into Plan 2 roadmap (+1/-1, 1 file(s))
+  - `77c1a0a` Jesse Vincent 2026-08-10T23:59:12+00:00 — test: end-to-end CLI exit-code contract (+59/-0, 1 file(s))
+  - `b5ddc5c` Jesse Vincent 2026-08-10T23:58:09+00:00 — test: cover invalid hooks/mcp JSON error path (+16/-1, 1 file(s))
+  - `10fb807` Jesse Vincent 2026-08-10T23:57:46+00:00 — fix: validate all paths before writing any generated file (+15/-1, 2 file(s))
+  - `3fb157c` Jesse Vincent 2026-08-10T23:57:25+00:00 — fix: report corrupt generation manifest as ConfigError (+26/-2, 2 file(s))
+  - `5d58d84` Jesse Vincent 2026-08-10T23:57:00+00:00 — fix: emit custom skills path in claude-code plugin manifest (+25/-0, 2 file(s))
+  - `e46ae85` Jesse Vincent 2026-08-10T23:46:45+00:00 — chore: CI workflow and usage docs (+29/-1, 2 file(s))
+  - `3738b18` Jesse Vincent 2026-08-10T23:43:30+00:00 — feat: support-matrix rendering and matrix command (+40/-0, 3 file(s))
+  - `d7edf50` Jesse Vincent 2026-08-10T23:40:51+00:00 — fix: silence ajv format warnings, unify validate error handling, add remedy to missing-file drift message (+18/-17, 3 file(s))
+  - `08688c6` Jesse Vincent 2026-08-10T23:33:37+00:00 — feat: validate command with drift and schema checks (+1842/-0, 4 file(s))
+  - `69e6417` Jesse Vincent 2026-08-10T23:28:13+00:00 — test: cover adapter collision and warning surfacing via injectable adapter list (+52/-6, 3 file(s))
+  - `1182d3a` Jesse Vincent 2026-08-10T23:21:38+00:00 — feat: generation pipeline with collision detection and generate CLI (+174/-1, 4 file(s))
+  - `8a4fdbb` Jesse Vincent 2026-08-10T23:15:27+00:00 — feat: adapter interface, registry, and claude-code reference adapter (+168/-0, 4 file(s))
+  - `94be648` Jesse Vincent 2026-08-10T23:11:29+00:00 — fix: contain generated paths to plugin root; track executable bit in drift manifest (+112/-19, 5 file(s))
+  - `98acc06` Jesse Vincent 2026-08-10T22:59:17+00:00 — feat: file writing, deep-merge, and drift-detecting generation manifest (+149/-0, 3 file(s))
+  - `a20652c` Jesse Vincent 2026-08-10T22:54:18+00:00 — feat: build normalized plugin model from config and components (+182/-0, 3 file(s))
+  - `f45591a` Jesse Vincent 2026-08-10T22:49:24+00:00 — feat: add kitchen-sink fixture plugin (+78/-0, 8 file(s))
+  - `37ba132` Jesse Vincent 2026-08-10T22:46:14+00:00 — fix: anchor version regex to full semver; cover YAML-syntax and empty-bootstrap errors (+48/-2, 3 file(s))
+  - `a56b073` Jesse Vincent 2026-08-10T22:24:55+00:00 — feat: load and validate everyharness.yaml (+213/-0, 2 file(s))
+  - `4ac04be` Jesse Vincent 2026-08-10T22:21:05+00:00 — chore: scaffold TypeScript package with vitest (+1822/-0, 7 file(s))
+  - `74ded63` Jesse Vincent 2026-08-10T22:18:21+00:00 — docs: align plan Task 1 .gitignore with committed file (+2/-1, 1 file(s))
+  - `ee1ca61` Jesse Vincent 2026-08-10T22:18:10+00:00 — chore: ignore build outputs and worktrees (+4/-0, 1 file(s))
+  - `863916a` Jesse Vincent 2026-08-10T22:16:43+00:00 — docs: add core-pipeline implementation plan (plan 1 of series) (+1787/-0, 1 file(s))
+  - `138de0a` Jesse Vincent 2026-08-10T22:01:29+00:00 — docs: add everyharness design spec (+169/-0, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **everyharness-container** — Multi-harness container: ~17 coding-agent CLIs preinstalled (shared by everyharness and superpowers-evals)
-- org: `prime-radiant-inc` · language: Dockerfile · https://github.com/prime-radiant-inc/everyharness-container
-- **created** 2026-08-11T08:12:04Z
-- commits to default branch this week: 3
+### **prime-radiant-inc/everyharness-container** — Multi-harness container: ~17 coding-agent CLIs preinstalled (shared by everyharness and superpowers-evals)
+- language: Dockerfile · https://github.com/prime-radiant-inc/everyharness-container
+- **FEATURED because:** created this week (2026-08-11T08:12:04Z)
+- commits this week: 3
 - merged PRs this week: none
-- [needs prose/context from Ada: what shipped / why it matters — the JSON has no changelog or release-notes content]
+- authors this week: Jesse Vincent (3)
+- LOC this week: +393/-7
+- full commit list (3):
+  - `2467bd7` Jesse Vincent 2026-08-11T08:38:57+00:00 — docs: digest line names its build instead of implying a latest pin (+1/-1, 1 file(s))
+  - `ba99fa7` Jesse Vincent 2026-08-11T08:36:13+00:00 — docs: exact CLI inventory, image size/platform note, first-build digest (+14/-6, 1 file(s))
+  - `8034359` Jesse Vincent 2026-08-11T07:52:36+00:00 — feat: multi-harness container extracted from superpowers-evals (+378/-0, 5 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **proving-it-works** — Make a movie that proves your software actually works — three recording routes plus a checker that catches frozen pictures, desynced narration, and dropped words before you ship
-- org: `prime-radiant-inc` · language: Python · https://github.com/prime-radiant-inc/proving-it-works
-- **created** 2026-08-11T17:55:45Z
-- commits to default branch this week: 9
+### **prime-radiant-inc/proving-it-works** — Make a movie that proves your software actually works — three recording routes plus a checker that catches frozen pictures, desynced narration, and dropped words before you ship
+- language: Python · https://github.com/prime-radiant-inc/proving-it-works
+- **FEATURED because:** created this week (2026-08-11T17:55:45Z)
+- commits this week: 9
 - merged PRs this week: none
-- [needs prose/context from Ada: what shipped / why it matters — the JSON has no changelog or release-notes content]
+- authors this week: Jesse Vincent (9)
+- LOC this week: +3306/-84
+- full commit list (9):
+  - `696929d` Jesse Vincent 2026-08-12T21:47:59+00:00 — Adopt everyharness config v2 (+2/-3, 2 file(s))
+  - `4c85841` Jesse Vincent 2026-08-12T06:28:03+00:00 — Support every harness via everyharness (+687/-16, 30 file(s))
+  - `bd21fea` Jesse Vincent 2026-08-11T13:49:13-07:00 — narrate: listen back to every clip, with or without a key (+183/-12, 3 file(s))
+  - `6d8de50` Jesse Vincent 2026-08-11T13:35:40-07:00 — README: show the demo as a GIF, since GitHub strips <video> (+6/-5, 2 file(s))
+  - `1f528e8` Jesse Vincent 2026-08-11T13:34:18-07:00 — Ship the assembler, add a terminal route, and the demo it produced (+900/-4, 14 file(s))
+  - `6d4efa9` Jesse Vincent 2026-08-11T12:57:38-07:00 — burn-subtitles: box the text so it survives a light background (+6/-2, 1 file(s))
+  - `7e79acc` Jesse Vincent 2026-08-11T12:37:50-07:00 — Subtitles by default, a local voice when there is no key (+531/-39, 9 file(s))
+  - `0869595` Jesse Vincent 2026-08-11T11:50:30-07:00 — check-movie: size the contact sheet grid to the frames it has (+8/-3, 1 file(s))
+  - `4cccc1b` Jesse Vincent 2026-08-11T10:55:39-07:00 — proving-it-works: make a movie that proves software works, then verify it (+983/-0, 13 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **superpowers** — An agentic skills framework & software development methodology that works.
-- org: `obra` · language: Shell · https://github.com/obra/superpowers
-- **release** `v6.3.0` "v6.3.0" published 2026-08-12T16:58:30Z
-- commits to default branch this week: 1
-- merged PRs this week:
+### **obra/superpowers** — An agentic skills framework & software development methodology that works.
+- language: Shell · https://github.com/obra/superpowers
+- **FEATURED because:** release `v6.3.0` "v6.3.0" published 2026-08-12T16:58:30Z
+- commits this week: 1
+- merged PRs this week (2):
   - #2122 "Update to Prime Radiant Community Code of Conduct." (merged 2026-08-12T22:31:43Z)
   - #2125 "Release v6.3.0: Devin CLI and Hermes Agent support, brainstorming three-path router, SDD/Codex efficiency fixes" (merged 2026-08-12T16:53:22Z)
-- [needs prose/context from Ada: what shipped / why it matters — the JSON has no changelog or release-notes content]
+- authors this week: Jesse Vincent (1)
+- LOC this week: +2888/-67
+- full commit list (1):
+  - `b36e082` Jesse Vincent 2026-08-12T09:53:21-07:00 — Release v6.3.0: Devin CLI and Hermes Agent support, brainstorming three-path router, SDD/Codex efficiency fixes (#2125) (+2888/-67, 40 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-## Also shipped (second-tier)
+## Also shipped (second-tier — active but not new/released this week)
 
-### **homebrew-tap** — Homebrew tap for Prime Radiant tools, including formulae for llm-proxy and beeper-message-sync.
-- org: `prime-radiant-inc` · language: Ruby · https://github.com/prime-radiant-inc/homebrew-tap
-- commits to default branch this week: 1
-- merged PRs this week: none (commits only)
+### **prime-radiant-inc/homebrew-tap** — Homebrew tap for Prime Radiant tools, including formulae for llm-proxy and beeper-message-sync.
+- language: Ruby · https://github.com/prime-radiant-inc/homebrew-tap
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 1
+- merged PRs this week: none
+- authors this week: Jesse Vincent (1)
+- LOC this week: +19/-0
+- full commit list (1):
+  - `6b79dec` Jesse Vincent 2026-08-13T12:06:28-07:00 — Add Agentic Usage Meter cask (+19/-0, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **serf** — A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.
-- org: `prime-radiant-inc` · language: Go · https://github.com/prime-radiant-inc/serf
-- commits to default branch this week: 122
-- merged PRs this week:
+### **prime-radiant-inc/serf** — A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.
+- language: Go · https://github.com/prime-radiant-inc/serf
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 122
+- merged PRs this week (1):
   - #64 "Clarify and harden shell execution modes" (merged 2026-08-10T03:35:03Z)
+- authors this week: Jesse Vincent (122)
+- LOC this week: +21796/-24232
+- full commit list (122):
+  - `5b869c8e` Jesse Vincent 2026-08-14T00:31:43+00:00 — UX round 2: fixes from typical-user persona testing (+965/-102, 60 file(s))
+  - `4d5d8034` Jesse Vincent 2026-08-13T23:44:57+00:00 — Apply UX-batch review fixes: dialog Escape containment, qualified slash inserts, chord guards (+553/-149, 23 file(s))
+  - `caa6b2c2` Jesse Vincent 2026-08-13T23:11:46+00:00 — UX wave 2: needs-you routing, shell chords, and inline slash completion (+1755/-177, 26 file(s))
+  - `2eda2db9` Jesse Vincent 2026-08-13T22:41:05+00:00 — UX wave 1: keyboard flow, blocking-approval visibility, exits and loaders (+1376/-60, 41 file(s))
+  - `0130fc07` Jesse Vincent 2026-08-13T20:24:45+00:00 — Port the remaining Beautiful UI widgets; add the /dev/surfaces gallery (+2992/-1, 44 file(s))
+  - `4699d0fa` Jesse Vincent 2026-08-13T20:08:58+00:00 — Apply review fixes across the re-theme: AA-true -ink tokens, seam repairs (+253/-125, 27 file(s))
+  - `aaf783a8` Jesse Vincent 2026-08-13T19:47:36+00:00 — Re-theme phase 3: pane hover washes, docs sync, and two Beautiful UI ports (+1214/-76, 24 file(s))
+  - `3da2dcf8` Jesse Vincent 2026-08-13T19:33:41+00:00 — Re-theme phase 2: widget chrome in the Beautiful UI language (+449/-101, 38 file(s))
+  - `a1e91c4c` Jesse Vincent 2026-08-13T19:22:59+00:00 — ThemeFlip panes reset ink along with surface (+21/-0, 2 file(s))
+  - `672cfffc` Jesse Vincent 2026-08-13T19:03:17+00:00 — Re-theme phase 1: adopt the Beautiful UI design language (tokens + fonts) (+254/-132, 9 file(s))
+  - `9b47fb3f` Jesse Vincent 2026-08-13T18:23:58+00:00 — Spec: full adoption of the Beautiful UI design language (PRI-2877 follow-on) (+196/-0, 1 file(s))
+  - `ef99c03e` Jesse Vincent 2026-08-13T18:06:36+00:00 — Apply review fixes: directional sheet shadows, calm tooltip, tighter ring contract (+130/-51, 6 file(s))
+  - `79bf4bd5` Jesse Vincent 2026-08-13T17:51:44+00:00 — Enforce the z-index ladder and focus-ring standard; sync design docs (+180/-4, 3 file(s))
+  - `08e683b2` Jesse Vincent 2026-08-13T17:46:18+00:00 — Converge drifted call sites onto the new design tokens (+71/-64, 43 file(s))
+  - `adaac52f` Jesse Vincent 2026-08-13T17:38:25+00:00 — Add focus-ring, z-index, elevation, and pill-radius tokens (+38/-0, 1 file(s))
+  - `0d9b0fb2` Jesse Vincent 2026-08-13T17:19:01+00:00 — Replace the output tail atomically during prune (+132/-49, 4 file(s))
+  - `a96b7a18` Jesse Vincent 2026-08-13T16:57:57+00:00 — Fix two jobstore test flakes: mid-prune snapshot reads and coarse mtimes (+83/-8, 4 file(s))
+  - `545e3cf4` Jesse Vincent 2026-08-13T16:35:24+00:00 — commit sdd artifacts (+0/-20517, 171 file(s))
+  - `1658aac2` Jesse Vincent 2026-08-13T16:34:54+00:00 — remove reports from a dev project (+0/-153, 4 file(s))
+  - `94727652` Jesse Vincent 2026-08-11T15:51:51-07:00 — Preserve queued self-watch job notifications (+91/-8, 8 file(s))
+  - `eddfb686` Jesse Vincent 2026-08-11T15:29:04-07:00 — Preserve terminal job status durability and ownership (+233/-10, 6 file(s))
+  - `5d6006aa` Jesse Vincent 2026-08-11T15:03:14-07:00 — Continue after persisted terminal job status (+131/-8, 6 file(s))
+  - `a14c387d` Jesse Vincent 2026-08-11T14:01:21-07:00 — Derive raster media types from decoded bytes (+76/-29, 4 file(s))
+  - `cf798451` Jesse Vincent 2026-08-11T13:55:09-07:00 — Fail when Linux build cache invalidation fails (+1/-1, 1 file(s))
+  - `1f85c01d` Jesse Vincent 2026-08-11T13:47:30-07:00 — Reject malformed raster tool results before model calls (+273/-12, 11 file(s))
+  - `f1a1ff51` Jesse Vincent 2026-08-11T13:47:20-07:00 — Build portable Linux evaluation artifacts (+1/-1, 1 file(s))
+  - `8e4fd118` Jesse Vincent 2026-08-10T22:58:54-07:00 — test(shell): consolidate retained foreground coverage (+6/-37, 1 file(s))
+  - `b17bfe9f` Jesse Vincent 2026-08-10T22:36:43-07:00 — agent: ground final verification in primary inputs (+1/-1, 1 file(s))
+  - `8f831cee` Jesse Vincent 2026-08-10T22:12:14-07:00 — fix(shell): preserve foreground mode for retained output (+41/-1, 2 file(s))
+  - `1a1a1afe` Jesse Vincent 2026-08-10T19:06:18-07:00 — agent: drive exploration from a runnable path (+1/-1, 1 file(s))
+  - `64d36533` Jesse Vincent 2026-08-10T19:02:48-07:00 — test: launch recoverable shell with lifecycle mode (+1/-1, 1 file(s))
+  - `bcacbe61` Jesse Vincent 2026-08-10T19:02:14-07:00 — openai: remove dead first-attempt error assignment (+3/-4, 1 file(s))
+  - `f0c94f3d` Jesse Vincent 2026-08-10T18:44:11-07:00 — openai: preserve logical stream retry contracts (+146/-46, 2 file(s))
+  - `faf4eed5` Jesse Vincent 2026-08-10T18:31:17-07:00 — openai: retry one empty Responses stream (+190/-39, 4 file(s))
+  - `cb245817` Jesse Vincent 2026-08-10T18:27:00-07:00 — docs: plan the failed-only capability improvement loop (+165/-0, 1 file(s))
+  - `5adaa20c` Jesse Vincent 2026-08-10T18:23:56-07:00 — build: keep image boundary changes lint-clean (+11/-2, 4 file(s))
+  - `5a166ed0` Jesse Vincent 2026-08-10T18:01:20-07:00 — openai: keep document payloads out of chat image checks (+35/-14, 4 file(s))
+  - `a49acb21` Jesse Vincent 2026-08-10T18:00:21-07:00 — agent: recognize common raster formats by content (+48/-1, 4 file(s))
+  - `5ac9de0c` Jesse Vincent 2026-08-10T17:58:24-07:00 — openai: fully validate native image payloads (+14/-5, 2 file(s))
+  - `1a4cc7fc` Jesse Vincent 2026-08-10T17:38:25-07:00 — agent: keep unsupported extensions out of image side channels (+9/-3, 3 file(s))
+  - `b35fa8fe` Jesse Vincent 2026-08-10T17:37:30-07:00 — openai: flatten animated GIF inputs to PNG (+28/-1, 2 file(s))
+  - `983570a6` Jesse Vincent 2026-08-10T17:36:23-07:00 — openai: transcode TIFF inputs through the image boundary (+42/-0, 2 file(s))
+  - `fab9a01a` Jesse Vincent 2026-08-10T17:34:50-07:00 — openai: normalize images across request builders (+116/-27, 6 file(s))
+  - `02f82215` Jesse Vincent 2026-08-10T17:31:56-07:00 — openai: keep non-image tool payloads out of vision input (+26/-1, 2 file(s))
+  - `d1fbaa8d` Jesse Vincent 2026-08-10T17:31:09-07:00 — openai: preserve valid WebP image inputs (+14/-0, 2 file(s))
+  - `18b0f559` Jesse Vincent 2026-08-10T17:29:31-07:00 — openai: transcode BMP tool images before requests (+185/-13, 9 file(s))
+  - `e7037b0d` Jesse Vincent 2026-08-10T17:35:15-07:00 — fix: retire stale projected turn identities (+33/-5, 3 file(s))
+  - `954e5ff9` Jesse Vincent 2026-08-10T17:31:50-07:00 — fix: publish durable turn identity to session controls (+60/-73, 6 file(s))
+  - `0bb7d21a` Jesse Vincent 2026-08-10T17:23:54-07:00 — test: reproduce unstable session-control turn identity (+280/-0, 1 file(s))
+  - `746dee7c` Jesse Vincent 2026-08-10T17:19:14-07:00 — docs: plan stable session-control identity fix (+371/-0, 1 file(s))
+  - `d8cf8747` Jesse Vincent 2026-08-10T17:14:36-07:00 — docs: design stable session-control turn identity (+112/-0, 1 file(s))
+  - `3fe7aa04` Jesse Vincent 2026-08-10T11:23:00-07:00 — clarify resumable exhaustion notifications (+45/-10, 2 file(s))
+  - `3e42802c` Jesse Vincent 2026-08-10T14:37:05-07:00 — agent: satisfy streamed output lint contracts (+5/-6, 2 file(s))
+  - `d65961e1` Jesse Vincent 2026-08-10T14:27:28-07:00 — agent: deliver job completions at post-tool seams (+52/-0, 2 file(s))
+  - `00adf970` Jesse Vincent 2026-08-10T14:14:53-07:00 — agent: distinguish background jobs from detached services (+4/-0, 1 file(s))
+  - `53cb33d8` Jesse Vincent 2026-08-10T12:57:47-07:00 — agent: drain graceful descendant output (+7/-2, 1 file(s))
+  - `c15a1bbb` Jesse Vincent 2026-08-10T12:55:31-07:00 — agent: own streamed command output lifecycle (+370/-78, 6 file(s))
+  - `ded97b94` Jesse Vincent 2026-08-10T12:27:47-07:00 — agent: finish streamed jobs after leader exit (+105/-6, 3 file(s))
+  - `29bcdfa8` Jesse Vincent 2026-08-10T09:53:44-07:00 — agent: let explorer inherit the selected model (+52/-4, 4 file(s))
+  - `507368b4` Jesse Vincent 2026-08-10T09:52:12-07:00 — docs: plan unbounded eval harness rounds (+74/-0, 2 file(s))
+  - `60dec822` Jesse Vincent 2026-08-10T08:53:10-07:00 — test: express temp normalization without fixed path (+5/-1, 1 file(s))
+  - `a634ee02` Jesse Vincent 2026-08-10T08:49:48-07:00 — chore(agent): finish artifact reference lint (+1/-1, 1 file(s))
+  - `964a314d` Jesse Vincent 2026-08-10T08:49:00-07:00 — chore(agent): clear configured lint findings (+71/-91, 25 file(s))
+  - `5369714a` Jesse Vincent 2026-08-10T08:48:47-07:00 — chore: clear root and identifier lint (+35/-10, 7 file(s))
+  - `d383c5ef` Jesse Vincent 2026-08-10T08:38:34-07:00 — fix(test): normalize module runner temp root (+18/-2, 2 file(s))
+  - `62b14074` Jesse Vincent 2026-08-10T08:37:15-07:00 — docs: plan repository gate cleanup (+127/-0, 2 file(s))
+  - `afb2564a` Jesse Vincent 2026-08-10T08:18:35-07:00 — Merge current main into managed-job drain (+0/-0, 0 file(s))
+  - `8bafa088` Jesse Vincent 2026-08-10T03:01:14-07:00 — fix(subagent): snapshot structured run result (+139/-34, 3 file(s))
+  - `7e3915f5` Jesse Vincent 2026-08-10T02:40:51-07:00 — fix(subagent): gate lifecycle before owned drain (+45/-25, 3 file(s))
+  - `4dca3f5d` Jesse Vincent 2026-08-10T02:25:37-07:00 — fix(subagent): gate drain return handoff (+99/-3, 3 file(s))
+  - `b61fa664` Jesse Vincent 2026-08-10T02:03:58-07:00 — fix(subagent): drop idle fatal watch sends (+147/-10, 2 file(s))
+  - `8d5f9b2c` Jesse Vincent 2026-08-10T01:49:44-07:00 — fix(subagent): serialize retained-child finalization (+256/-4, 5 file(s))
+  - `a07d41ea` Jesse Vincent 2026-08-10T01:21:09-07:00 — fix(subagent): gate fatal notification drives (+171/-10, 2 file(s))
+  - `a84c62fa` Jesse Vincent 2026-08-10T00:49:14-07:00 — fix(subagent): gate fatal runs and stop owned jobs (+299/-27, 6 file(s))
+  - `b8eedefe` Jesse Vincent 2026-08-09T22:57:06-07:00 — test(run): document exact fatal error identity (+1/-1, 1 file(s))
+  - `cbdb71f2` Jesse Vincent 2026-08-09T22:48:34-07:00 — test(drain): prove cancellation after active wait (+54/-9, 1 file(s))
+  - `b592fa20` Jesse Vincent 2026-08-09T22:41:17-07:00 — test(drain): synchronize cancellation after entry (+15/-1, 1 file(s))
+  - `90882426` Jesse Vincent 2026-08-09T22:36:36-07:00 — test(drain): pin terminal lifecycle boundaries (+113/-5, 2 file(s))
+  - `c1ff5970` Jesse Vincent 2026-08-09T22:31:34-07:00 — test(subagent): wait for owned drain entry (+26/-15, 1 file(s))
+  - `f8cbd979` Jesse Vincent 2026-08-09T22:23:58-07:00 — fix(subagent): drain owned jobs before finalizing runs (+293/-0, 2 file(s))
+  - `9ba0552c` Jesse Vincent 2026-08-09T22:11:25-07:00 — test(run): require managed shell notification turns (+277/-2, 4 file(s))
+  - `f312453d` Jesse Vincent 2026-08-09T21:54:54-07:00 — test(drain): cover durable shell notification delivery (+240/-177, 2 file(s))
+  - `f15132ec` Jesse Vincent 2026-08-09T21:05:34-07:00 — test: strengthen inline composer guard (+56/-28, 3 file(s))
+  - `403e812a` Jesse Vincent 2026-08-09T20:47:48-07:00 — test: guard inline composer controls (+190/-254, 4 file(s))
+  - `0d941699` Jesse Vincent 2026-08-09T20:31:23-07:00 — docs: report inline composer controls task (+133/-0, 1 file(s))
+  - `81ad7edb` Jesse Vincent 2026-08-09T20:30:30-07:00 — feat: move session controls into composer (+68/-35, 5 file(s))
+  - `bf8bb37d` Jesse Vincent 2026-08-09T20:19:32-07:00 — fix: preserve inline status query boundary (+71/-7, 4 file(s))
+  - `7c549220` Jesse Vincent 2026-08-09T20:13:23-07:00 — docs: report inline session chrome task (+135/-0, 1 file(s))
+  - `30505920` Jesse Vincent 2026-08-09T20:11:03-07:00 — refactor: embed session chrome controls (+111/-24, 3 file(s))
+  - `8215e9e6` Jesse Vincent 2026-08-09T20:05:15-07:00 — docs: plan inline composer controls (+220/-0, 1 file(s))
+  - `1f51c107` Jesse Vincent 2026-08-09T19:51:25-07:00 — docs: specify inline composer controls (+50/-0, 1 file(s))
+  - `441acdc2` Jesse Vincent 2026-08-09T19:49:20-07:00 — docs: make delegate watch sequences gap-free (+4/-4, 1 file(s))
+  - `198c73ff` Jesse Vincent 2026-08-09T19:49:42-07:00 — web: rename stale conversation view keys in scroll tests (+4/-4, 1 file(s))
+  - `018fe956` Jesse Vincent 2026-08-09T19:47:45-07:00 — web: drop Conversation view, collapse intent runs into action groups (+126/-156, 5 file(s))
+  - `4f1d7a49` Jesse Vincent 2026-08-09T19:34:02-07:00 — docs: close final delegate identity runtime gaps (+8/-6, 1 file(s))
+  - `c42cb95e` Jesse Vincent 2026-08-09T19:23:30-07:00 — docs: finalize delegate identity review semantics (+31/-17, 1 file(s))
+  - `0855b01b` Jesse Vincent 2026-08-09T18:57:01-07:00 — docs: close delegate identity review gaps (+73/-48, 1 file(s))
+  - `45821bae` Jesse Vincent 2026-08-09T18:36:33-07:00 — docs: tighten delegate identity runtime semantics (+91/-65, 1 file(s))
+  - `6a834dea` Jesse Vincent 2026-08-09T18:09:13-07:00 — docs: revise simplified delegate identity design (+395/-323, 1 file(s))
+  - `05adbca2` Jesse Vincent 2026-08-09T17:36:33-07:00 — docs: design simplified delegate identity (+601/-0, 1 file(s))
+  - `02813a43` Jesse Vincent 2026-08-09T21:48:18-07:00 — test(drain): unpin watchdog warning prose (+21/-21, 2 file(s))
+  - `23fbd181` Jesse Vincent 2026-08-09T21:41:07-07:00 — fix(drain): include all managed jobs in liveness (+206/-183, 6 file(s))
+  - `a9576db1` Jesse Vincent 2026-08-09T21:32:35-07:00 — docs: plan owned managed job draining (+669/-1, 2 file(s))
+  - `4319642f` Jesse Vincent 2026-08-09T21:12:35-07:00 — docs: harden owned job drain contract (+64/-20, 1 file(s))
+  - `72485f3a` Jesse Vincent 2026-08-09T20:52:40-07:00 — docs: define one-shot background job draining (+93/-0, 1 file(s))
+  - `2ca0a7f9` Jesse Vincent 2026-08-09T20:06:06-07:00 — remove shell wording assertion (+0/-3, 1 file(s))
+  - `d03b9f63` Jesse Vincent 2026-08-09T20:03:56-07:00 — clarify shell execution mode guidance (+2/-2, 2 file(s))
+  - `126dc3ea` Jesse Vincent 2026-08-09T19:49:41-07:00 — fix(lint): update fuzz harness metadata results (+0/-0, 0 file(s))
+  - `84fab871` Jesse Vincent 2026-08-09T19:31:38-07:00 — fix(jobstore): restore serffuzz metadata harness compilation (+9/-9, 1 file(s))
+  - `d3036bad` Jesse Vincent 2026-08-09T19:23:08-07:00 — feat(shell): add detached execution mode (+0/-0, 0 file(s))
+  - `d95381f8` Jesse Vincent 2026-08-09T18:51:56-07:00 — test(shell): select foreground mode explicitly (+2/-2, 1 file(s))
+  - `af7a60cc` Jesse Vincent 2026-08-09T18:50:45-07:00 — fix(shell): migrate stale background request shapes (+59/-48, 13 file(s))
+  - `bf991aef` Jesse Vincent 2026-08-09T18:43:18-07:00 — test(shell): prove detached process survival (+136/-11, 3 file(s))
+  - `25bae610` Jesse Vincent 2026-08-09T18:42:08-07:00 — test(fuzz): replay renamed shell mode parser coverage (+1/-1, 1 file(s))
+  - `7902f8cc` Jesse Vincent 2026-08-09T18:40:50-07:00 — style(go): restore repository gofmt cleanliness (+4/-4, 3 file(s))
+  - `7a917b3e` Jesse Vincent 2026-08-09T18:31:42-07:00 — feat(shell): expose detached execution mode (+149/-3, 2 file(s))
+  - `199cdc6e` Jesse Vincent 2026-08-09T18:21:40-07:00 — feat(execenv): launch detached commands (+419/-22, 7 file(s))
+  - `d914c8ec` Jesse Vincent 2026-08-09T18:04:26-07:00 — refactor(shell): use one execution mode (+200/-119, 16 file(s))
+  - `46bb248d` Jesse Vincent 2026-08-09T17:50:57-07:00 — Plan detached shell execution (+560/-0, 1 file(s))
+  - `64a7a738` Jesse Vincent 2026-08-09T17:45:11-07:00 — Use a single shell execution mode (+26/-24, 1 file(s))
+  - `d0b14b53` Jesse Vincent 2026-08-09T17:40:01-07:00 — Simplify detach to immediate disownership (+54/-141, 1 file(s))
+  - `431265ec` Jesse Vincent 2026-08-09T17:23:33-07:00 — Design detached shell jobs (+203/-0, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **github-triage** — Claude Code plugin for triaging GitHub issues and pull requests, with a security-gated PR review workflow.
-- org: `prime-radiant-inc` · language: [none set] · https://github.com/prime-radiant-inc/github-triage
-- commits to default branch this week: 2
-- merged PRs this week: none (commits only)
+### **prime-radiant-inc/github-triage** — Claude Code plugin for triaging GitHub issues and pull requests, with a security-gated PR review workflow.
+- language: [none set] · https://github.com/prime-radiant-inc/github-triage
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 2
+- merged PRs this week: none
+- authors this week: Jesse Vincent (2)
+- LOC this week: +712/-0
+- full commit list (2):
+  - `1968e11` Jesse Vincent 2026-08-12T18:32:44+00:00 — move step 2 (+0/-0, 1 file(s))
+  - `a25c720` Jesse Vincent 2026-08-12T18:32:32+00:00 — step 1 (+712/-0, 7 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **slackline** — A single-binary Go CLI that gives AI agents a Slack identity to send messages, read channels, and stream real-time events, with admin tooling to provision new bots.
-- org: `prime-radiant-inc` · language: Go · https://github.com/prime-radiant-inc/slackline
-- commits to default branch this week: 2
-- merged PRs this week:
+### **prime-radiant-inc/slackline** — A single-binary Go CLI that gives AI agents a Slack identity to send messages, read channels, and stream real-time events, with admin tooling to provision new bots.
+- language: Go · https://github.com/prime-radiant-inc/slackline
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 2
+- merged PRs this week (1):
   - #2 "chore: add Apache-2.0 LICENSE" (merged 2026-08-11T18:23:40Z)
+- authors this week: Jesse Vincent (1), ada-sen (1)
+- LOC this week: +201/-0
+- full commit list (2):
+  - `816217f` Jesse Vincent 2026-08-11T11:23:40-07:00 — Merge pull request #2 from prime-radiant-inc/add-apache-2.0-license (+0/-0, 0 file(s))
+  - `ecff82f` ada-sen 2026-08-11T17:51:41+00:00 — chore: add Apache-2.0 LICENSE (+201/-0, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **superpowers-evals** — Behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs (Claude, Codex, Gemini, Kimi, and more) through a QA agent and grades them on workflow compliance against scenario criteria and deterministic post-checks.
-- org: `prime-radiant-inc` · language: TypeScript · https://github.com/prime-radiant-inc/superpowers-evals
-- commits to default branch this week: 34
-- merged PRs this week:
+### **prime-radiant-inc/superpowers-evals** — Behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs (Claude, Codex, Gemini, Kimi, and more) through a QA agent and grades them on workflow compliance against scenario criteria and deterministic post-checks.
+- language: TypeScript · https://github.com/prime-radiant-inc/superpowers-evals
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 32
+- merged PRs this week (1):
   - #42 "Rebase container on shared everyharness-container image" (merged 2026-08-12T06:16:50Z)
+- authors this week: Drew Ritter (22), Jesse Vincent (10)
+- LOC this week: +2789/-1082
+- full commit list (32):
+  - `cb9fd8c` Drew Ritter 2026-08-13T13:23:08-07:00 — spec: final-reviewer amendments — C1/C2 mechanisms, durability barriers, single sizing authority (+79/-32, 1 file(s))
+  - `a4fe788` Drew Ritter 2026-08-13T11:15:07-07:00 — spec: third-reviewer amendments — fixture-first gate, interim bar, scrub descope (+41/-19, 1 file(s))
+  - `e16f43b` Drew Ritter 2026-08-12T18:10:09-07:00 — spec: mark program contract approved (+3/-3, 1 file(s))
+  - `166c96c` Drew Ritter 2026-08-12T17:55:06-07:00 — experiment: OpenAI rate-limit probe — no throttling at 20-way, buckets confirmed, cap 5 was harness-only (+100/-0, 1 file(s))
+  - `89d6c1a` Drew Ritter 2026-08-12T17:16:07-07:00 — spec: apply reviewer P1 redlines — column registry, quota graph, separate observational campaign (+114/-50, 1 file(s))
+  - `782699d` Drew Ritter 2026-08-12T15:54:58-07:00 — spec: coherence-pass fixes — 9x floor propagated, tier reconciliation, DSQ correction, reading guide (+81/-33, 1 file(s))
+  - `dc143ae` Drew Ritter 2026-08-12T15:37:41-07:00 — spec: Drew's rulings on column routes — org already T5, copilot BYOK is tier 1, agy ADC approved (+15/-11, 1 file(s))
+  - `c3caa22` Drew Ritter 2026-08-12T15:32:07-07:00 — spec: column-auth research results — OpenAI org route, copilot BYOK, agy ADC (+32/-9, 1 file(s))
+  - `85f7d03` Drew Ritter 2026-08-12T15:27:52-07:00 — spec: fold verified review findings + Drew's tiering/resource rulings into program contract (+68/-5, 1 file(s))
+  - `b68a2d1` Drew Ritter 2026-08-12T15:20:34-07:00 — spec: make exhausted sample semantics explicit (+7/-1, 1 file(s))
+  - `72e06f4` Drew Ritter 2026-08-12T15:17:46-07:00 — spec: disambiguate post-restore requests (+12/-9, 1 file(s))
+  - `6be6a39` Drew Ritter 2026-08-12T15:16:33-07:00 — spec: fence authority-store recovery (+15/-7, 1 file(s))
+  - `ab01475` Drew Ritter 2026-08-12T15:14:17-07:00 — spec: finish program readiness details (+28/-5, 1 file(s))
+  - `c9b1779` Drew Ritter 2026-08-12T15:13:03-07:00 — spec: preserve fences through terminal classification (+7/-4, 1 file(s))
+  - `e469fad` Drew Ritter 2026-08-12T15:11:34-07:00 — spec: close execution lifecycle edge cases (+35/-21, 1 file(s))
+  - `7f595f4` Drew Ritter 2026-08-12T15:08:44-07:00 — spec: resolve final redline contradictions (+68/-34, 1 file(s))
+  - `ed12870` Drew Ritter 2026-08-12T15:00:42-07:00 — spec: close adversarial review blockers (+579/-303, 1 file(s))
+  - `4696fb9` Drew Ritter 2026-08-12T14:43:11-07:00 — spec: redline quorum overhaul foundations (+629/-164, 1 file(s))
+  - `ee570dd` Drew Ritter 2026-08-12T13:16:08-07:00 — spec: quorum overhaul program — fast, interpretable, multi-user evals (PRI-2874) (+270/-0, 1 file(s))
+  - `1b8ef25` Jesse Vincent 2026-08-12T00:42:23+00:00 — fix: wrap over-length biome line, correct base-image tag reference to full SHA (+8/-5, 2 file(s))
+  - `d5215e3` Jesse Vincent 2026-08-12T00:20:01+00:00 — docs: disclose amd64-only base and slim version-report limitation (+28/-0, 1 file(s))
+  - `16d35ed` Jesse Vincent 2026-08-12T00:20:01+00:00 — test: cover gauntlet config probe and harness-versions-missing fallback (+76/-0, 1 file(s))
+  - `18d399b` Jesse Vincent 2026-08-11T20:04:50+00:00 — docs: describe the everyharness-container base-image relationship (+118/-15, 3 file(s))
+  - `ef3f258` Jesse Vincent 2026-08-11T20:04:50+00:00 — test: assert base-image relationship, not the duplicated harness layer (+34/-133, 2 file(s))
+  - `13fa303` Jesse Vincent 2026-08-11T20:04:41+00:00 — container: rebase image on shared everyharness-container base (+43/-212, 2 file(s))
+  - `e763b0b` Jesse Vincent 2026-08-11T01:04:06+00:00 — fix: hermetic codex runs — disable curated superpowers, the fetch has no gate (+43/-0, 2 file(s))
+  - `9facb18` Jesse Vincent 2026-08-11T00:19:52+00:00 — fix: mirror claude config to the top-level ~/.claude.json claude reads (+24/-4, 2 file(s))
+  - `aed991b` Jesse Vincent 2026-08-11T00:16:48+00:00 — fix: oauth path seeds hasCompletedOnboarding so the token is consulted (+22/-2, 2 file(s))
+  - `eefd0b2` Jesse Vincent 2026-08-11T00:12:59+00:00 — feat: claude subscription auth via CLAUDE_CODE_OAUTH_TOKEN (+154/-1, 4 file(s))
+  - `27dd808` Drew Ritter 2026-08-09T22:43:18-07:00 — campaign: CORRECTION — luna model findings were normalizer blindness, not behavior (+30/-0, 1 file(s))
+  - `bc93108` Drew Ritter 2026-08-09T22:35:46-07:00 — Merge remote-tracking branch 'origin/main' into campaign/fresh-release-gate (+0/-0, 0 file(s))
+  - `12efe1a` Drew Ritter 2026-08-09T22:34:53-07:00 — campaign: pre-register the fractals output-quality comparison protocol (+26/-0, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **claude-plugin-stats** — Daily scrape of Claude Code plugin install stats
-- org: `prime-radiant-inc` · language: Python · https://github.com/prime-radiant-inc/claude-plugin-stats
-- commits to default branch this week: 6
-- merged PRs this week: none (commits only)
+### **prime-radiant-inc/claude-plugin-stats** — Daily scrape of Claude Code plugin install stats
+- language: Python · https://github.com/prime-radiant-inc/claude-plugin-stats
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 6
+- merged PRs this week: none
+- authors this week: github-actions[bot] (6)
+- LOC this week: +13474/-9495
+- full commit list (6):
+  - `402b3ff` github-actions[bot] 2026-08-13T09:26:08+00:00 — Rebuild chart data (+1/-1, 1 file(s))
+  - `7d61d93` github-actions[bot] 2026-08-13T09:26:07+00:00 — Update plugin stats 2026-08-13 (+470/-430, 1 file(s))
+  - `a65c160` github-actions[bot] 2026-08-12T09:25:35+00:00 — Rebuild chart data (+1/-1, 1 file(s))
+  - `793d89c` github-actions[bot] 2026-08-12T09:25:34+00:00 — Update plugin stats 2026-08-12 (+13000/-9061, 1 file(s))
+  - `0700bad` github-actions[bot] 2026-08-11T09:20:40+00:00 — Rebuild chart data (+1/-1, 1 file(s))
+  - `ba87778` github-actions[bot] 2026-08-10T09:31:53+00:00 — Rebuild chart data (+1/-1, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **smevals** — A framework for running evals against small (and large) models
-- org: `prime-radiant-inc` · language: Python · https://github.com/prime-radiant-inc/smevals
-- commits to default branch this week: 1
-- merged PRs this week: none (commits only)
+### **prime-radiant-inc/smevals** — A framework for running evals against small (and large) models
+- language: Python · https://github.com/prime-radiant-inc/smevals
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 1
+- merged PRs this week: none
+- authors this week: Jesse Vincent (1)
+- LOC this week: +3/-0
+- full commit list (1):
+  - `0c28dc6` Jesse Vincent 2026-08-11T13:51:27-07:00 — gitignore .env (+3/-0, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **awesome-superpowers** — An agentic skills framework & software development methodology that works.
-- org: `prime-radiant-inc` · language: [none set] · https://github.com/prime-radiant-inc/awesome-superpowers
-- commits to default branch this week: 5
-- merged PRs this week:
+### **prime-radiant-inc/awesome-superpowers** — An agentic skills framework & software development methodology that works.
+- language: [none set] · https://github.com/prime-radiant-inc/awesome-superpowers
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 5
+- merged PRs this week (2):
   - #2 "Fixes image alignment" (merged 2026-08-12T04:38:33Z)
   - #1 "Create and populate Awesome Superpowers initial list" (merged 2026-08-11T04:06:47Z)
+- authors this week: Kattni (3), Drew Ritter (1), Jesse Vincent (1)
+- LOC this week: +111/-5
+- full commit list (5):
+  - `277dc24` Drew Ritter 2026-08-11T21:38:33-07:00 — Merge pull request #2 from prime-radiant-inc/fix-image-align (+0/-0, 0 file(s))
+  - `e9e046a` Kattni 2026-08-12T00:36:15-04:00 — Fixes image alignment (+3/-4, 1 file(s))
+  - `b441dd1` Jesse Vincent 2026-08-10T21:06:46-07:00 — Merge pull request #1 from prime-radiant-inc/initial-setup (+0/-0, 0 file(s))
+  - `254beca` Kattni 2026-08-10T23:56:22-04:00 — Merge remote-tracking branch 'kattni/main' into initial-setup (+0/-0, 0 file(s))
+  - `2549366` Kattni 2026-08-10T23:55:48-04:00 — Create and populate Awesome Superpowers. (+108/-1, 4 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **dotfiles** — [no description set on GitHub]
-- org: `obra` · language: Shell · https://github.com/obra/dotfiles
-- commits to default branch this week: 2
-- merged PRs this week: none (commits only)
+### **obra/dotfiles** — [no description set on GitHub]
+- language: Shell · https://github.com/obra/dotfiles
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 2
+- merged PRs this week: none
+- authors this week: Jesse Vincent (2)
+- LOC this week: +698/-698
+- full commit list (2):
+  - `df3be56` Jesse Vincent 2026-08-11T13:50:59-07:00 — Retire the local movie skill: it ships as a plugin now (+0/-698, 7 file(s))
+  - `66732a9` Jesse Vincent 2026-08-10T21:29:40-07:00 — Add proving-it-works-with-a-movie skill (+698/-0, 7 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **lace** — Lightweight agentic coding environment
-- org: `obra` · language: TypeScript · https://github.com/obra/lace
-- commits to default branch this week: 18
-- merged PRs this week:
+### **obra/lace** — Lightweight agentic coding environment
+- language: TypeScript · https://github.com/obra/lace
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 18
+- merged PRs this week (1):
   - #365 "Add Apache-2.0 LICENSE" (merged 2026-08-11T18:23:03Z)
+- authors this week: Jesse Vincent (17), ada-sen (1)
+- LOC this week: +1360/-99
+- full commit list (18):
+  - `addea6b` Jesse Vincent 2026-08-12T02:18:34+00:00 — Merge: interrupted job status + crash-recovery job listing + turn beacon (PRI-2871) (+0/-0, 0 file(s))
+  - `5c1f495` Jesse Vincent 2026-08-12T02:17:36+00:00 — Extract canonical per-process flag path so tests pin the invariant (+21/-4, 3 file(s))
+  - `24fcafd` Jesse Vincent 2026-08-12T01:57:40+00:00 — Regression test: idle beacon never removes a busy sibling's flag (+25/-0, 1 file(s))
+  - `bb05db5` Jesse Vincent 2026-08-12T01:55:49+00:00 — Turn beacon: one flag file per agent process (+25/-9, 3 file(s))
+  - `89c2bcb` Jesse Vincent 2026-08-12T01:50:03+00:00 — Anchor the session-recovered marker match to the notification tag (+30/-2, 2 file(s))
+  - `e0592e4` Jesse Vincent 2026-08-12T01:50:02+00:00 — Turn beacon: heartbeat a turn-active flag for the deploy guard (+179/-0, 5 file(s))
+  - `ae84ebf` Jesse Vincent 2026-08-12T01:44:55+00:00 — Scope interrupted-job recovery listing to the latest crash generation (+152/-11, 3 file(s))
+  - `dcfaf60` Jesse Vincent 2026-08-12T01:41:03+00:00 — Handler-level test: orphaned job reports interrupted via ent/job/output (+33/-1, 1 file(s))
+  - `b8c5238` Jesse Vincent 2026-08-12T01:39:12+00:00 — Recovery notice names the jobs the dead process left in flight (+102/-1, 3 file(s))
+  - `64c0829` Jesse Vincent 2026-08-12T01:39:04+00:00 — Propagate interrupted job status through the job RPC contract (PRI-2871) (+50/-3, 3 file(s))
+  - `e2a5c80` Jesse Vincent 2026-08-12T01:34:07+00:00 — jobs_list reports orphaned running jobs as interrupted, not failed (PRI-2871) (+37/-11, 7 file(s))
+  - `43ca537` Jesse Vincent 2026-08-11T22:09:55+00:00 — Merge: digest marker line counts + partial-cut flags (PRI-2865) (+0/-0, 0 file(s))
+  - `d873a5f` Jesse Vincent 2026-08-11T22:05:31+00:00 — Digest marker states elided line count and flags mid-line cuts (PRI-2865) (+80/-1, 2 file(s))
+  - `a90ba56` Jesse Vincent 2026-08-11T21:55:03+00:00 — Merge: always-on job stall detector (PRI-2866) (+0/-0, 0 file(s))
+  - `b597ef5` Jesse Vincent 2026-08-11T21:49:06+00:00 — Jobs: always-on stall detector (PRI-2866) (+377/-8, 12 file(s))
+  - `8b3646b` ada-sen 2026-08-11T11:23:02-07:00 — Add Apache-2.0 LICENSE (#365) (+202/-0, 2 file(s))
+  - `fe0cc88` Jesse Vincent 2026-08-11T18:17:08+00:00 — Merge: fix between-turn inject double-append (idle-arrival notifications doubled) (+0/-0, 0 file(s))
+  - `8827659` Jesse Vincent 2026-08-11T18:13:47+00:00 — Seed the inject tailer at the projection tip, not the last turn_end (+47/-48, 8 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **private-journal-mcp** — A lightweight MCP server that provides Claude with a private journaling capability to process feelings and thoughts
-- org: `obra` · language: TypeScript · https://github.com/obra/private-journal-mcp
-- commits to default branch this week: 2
-- merged PRs this week:
+### **obra/private-journal-mcp** — A lightweight MCP server that provides Claude with a private journaling capability to process feelings and thoughts
+- language: TypeScript · https://github.com/obra/private-journal-mcp
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 1
+- merged PRs this week (1):
   - #26 "Add MIT license file" (merged 2026-08-11T18:24:14Z)
+- authors this week: Jesse Vincent (1)
+- LOC this week: +10158/-0
+- full commit list (1):
+  - `016953f` Jesse Vincent 2026-08-11T11:24:13-07:00 — Merge pull request #26 from ada-sen/add-mit-license (+10158/-0, 29 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **superpowers-marketplace** — Curated Claude Code plugin marketplace
-- org: `obra` · language: [none set] · https://github.com/obra/superpowers-marketplace
-- commits to default branch this week: 1
-- merged PRs this week: none (commits only)
+### **obra/superpowers-marketplace** — Curated Claude Code plugin marketplace
+- language: [none set] · https://github.com/obra/superpowers-marketplace
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 1
+- merged PRs this week: none
+- authors this week: Jesse Vincent (1)
+- LOC this week: +1/-1
+- full commit list (1):
+  - `1ab7b8e` Jesse Vincent 2026-08-12T09:58:34-07:00 — Update superpowers to v6.3.0 (+1/-1, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **the-elements-of-style** — William Strunk Jr.'s Elements of Style (1918) in markdown format for AI agents
-- org: `obra` · language: HTML · https://github.com/obra/the-elements-of-style
-- commits to default branch this week: 5
-- merged PRs this week: none (commits only)
+### **obra/the-elements-of-style** — William Strunk Jr.'s Elements of Style (1918) in markdown format for AI agents
+- language: HTML · https://github.com/obra/the-elements-of-style
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 5
+- merged PRs this week: none
+- authors this week: Jesse Vincent (5)
+- LOC this week: +4746/-376
+- full commit list (5):
+  - `05fc4f0` Jesse Vincent 2026-08-12T21:47:28+00:00 — Adopt everyharness config v2 (+4/-5, 3 file(s))
+  - `0b98158` Jesse Vincent 2026-08-11T23:27:22+00:00 — Regenerate install docs with the fixed everyharness (+25/-4, 3 file(s))
+  - `21e37ad` Jesse Vincent 2026-08-11T17:35:29+00:00 — Drop .gitattributes: no shell hooks left to pin to LF (+0/-4, 1 file(s))
+  - `90cacbc` Jesse Vincent 2026-08-11T17:35:18+00:00 — Drop the session-start bootstrap (+29/-363, 21 file(s))
+  - `eb7b6b9` Jesse Vincent 2026-08-11T17:33:13+00:00 — Support every harness via everyharness (+4688/-0, 40 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
-### **winpepper** — Windows-native local dictation. Hold a hotkey, speak, release — cleaned-up words appear in the focused app. Parakeet TDT v3 ASR + LlamaSharp cleanup, all local.
-- org: `obra` · language: C# · https://github.com/obra/winpepper
-- commits to default branch this week: 79
-- merged PRs this week: none (commits only)
+### **obra/winpepper** — Windows-native local dictation. Hold a hotkey, speak, release — cleaned-up words appear in the focused app. Parakeet TDT v3 ASR + LlamaSharp cleanup, all local.
+- language: C# · https://github.com/obra/winpepper
+- **second-tier:** had commits/merged PRs this week but was not created this week and cut no release this week
+- commits this week: 80
+- merged PRs this week: none
+- authors this week: danshapiro (80)
+- LOC this week: +9649/-1405
+- full commit list (80):
+  - `7f739c5` danshapiro 2026-08-13T13:19:46-07:00 — fix(gate): retry windows-gate legs on the WSL vsock transport flake (+44/-3, 1 file(s))
+  - `4ad9157` danshapiro 2026-08-13T10:12:53-07:00 — Merge the-usual/dismiss-paste-on-record: dismiss the click-to-paste park when a new recording starts (dismiss-paste-on-record) (+0/-0, 0 file(s))
+  - `d058a26` danshapiro 2026-08-12T23:23:08-07:00 — fix(app): log pending-paste dismissal (not retention) when a new dictation starts (+2/-2, 1 file(s))
+  - `a629afd` danshapiro 2026-08-12T23:08:52-07:00 — feat(core): dismiss the pending click-to-paste park when a new recording starts (+113/-75, 4 file(s))
+  - `7320dd5` danshapiro 2026-08-12T22:53:31-07:00 — docs: fix plan self-contradicting stale-wording grep and evidence citation (fresh eyes round 1) (+20/-4, 1 file(s))
+  - `b107ad8` danshapiro 2026-08-12T22:42:46-07:00 — docs: harden dismiss-paste-on-record plan against xunit zero-match trap (load-bearing validation) (+8/-2, 1 file(s))
+  - `d66c135` danshapiro 2026-08-12T22:29:41-07:00 — docs: add implementation plan for dismiss-paste-on-record (+507/-0, 1 file(s))
+  - `938e984` danshapiro 2026-08-12T21:47:40-07:00 — fix(cleanup): stop cleanup LLM rearranging/answering dictation; strengthen Default prompt (+64/-29, 2 file(s))
+  - `1f45178` danshapiro 2026-08-12T14:29:13-07:00 — cleanup: log prompt budget at Information (system/user/maxTokens per dictation) so slow cleanups can be correlated with prompt size (byqe no-brainer 1/4) (+1/-1, 1 file(s))
+  - `f47293c` danshapiro 2026-08-12T13:50:51-07:00 — docs(evidence): window-context verification m1yk - chain map, real runner demo (qwen chatml: measurable; sotto raw-io: structurally never receives), 5xp6 filed, y301 gate-skip defeat pinned (+88/-0, 1 file(s))
+  - `7e5b6bf` danshapiro 2026-08-12T13:25:01-07:00 — Merge the-usual/gzcc-unc-build-race: serialized 9P-interop build/test wrapper (gzcc) (+0/-0, 0 file(s))
+  - `bef5d37` danshapiro 2026-08-12T12:46:15-07:00 — docs(evidence): silence-gate real-audio verification (8whk): 9/9 production drops re-judged silent, 10/10 shortest real utterances kept, 2x RMS separation at floors; residual noise case filed as msbj (+89/-0, 1 file(s))
+  - `8f50308` danshapiro 2026-08-12T12:37:04-07:00 — Merge the-usual/eqrr-audio-retention: user-configurable audio history retention (eqrr) (+0/-0, 0 file(s))
+  - `88fdfae` danshapiro 2026-08-11T22:27:25-07:00 — fix(history): archiver brackets WAV write + save through every IO/permission failure (no partial or unindexed recordings; all skips reported) (delta review round 11) (+159/-9, 3 file(s))
+  - `8d5abd7` danshapiro 2026-08-11T21:41:57-07:00 — fix(history): generation-guard retention applies across view-model lifetimes (stale abandoned chains never prune); archiver validates index-writability BEFORE writing the WAV and reports failed orphan cleanup (delta review round 10) (+97/-12, 5 file(s))
+  - `6bc2682` danshapiro 2026-08-11T20:36:16-07:00 — fix(history,app): append refuses a corrupt/unreadable existing index (never smash into one-entry replacement); archiver reports every skip and contains the refusal without orphaning a WAV; delete-all result text survives later empty retention-applied events (delta review round 9) (+213/-12, 7 file(s))
+  - `c61e61c` danshapiro 2026-08-11T19:27:30-07:00 — fix(history): archiver degrades to text-only when the day directory is a reparse point (delta review round 8) (+68/-0, 2 file(s))
+  - `e99e2b1` danshapiro 2026-08-11T18:29:27-07:00 — fix(history): routine archive/append/delete also fail closed on a reparse-point root (archiver skips, store throws) (delta review round 7) (+102/-0, 4 file(s))
+  - `ff8bccb` danshapiro 2026-08-11T14:51:17-07:00 — fix(build): delta round-5 (post-cap, not independently re-reviewed) — the production PowerShell command could print a false BUILD OK when Windows dotnet is unresolvable: CommandNotFoundException is non-terminating and an unset $LASTEXITCODE exits 0 (premise reproduced live on the host: rc 0 without guard, rc 2 with Get-Command preflight, rc 1 with $null guard); add both, plus WINPEPPER_APP_PRINT_BUILD_CMD inspection seam with selftest case 13; timeout message no longer lies about suffixed durations; plan's -nr:false rejection reworded (no lag was ever shown) (+53/-9, 3 file(s))
+  - `06ea73a` danshapiro 2026-08-11T14:34:05-07:00 — fix(history): fail closed before ANY destructive IO when the history root is a reparse point; regressions prove external target wholly unchanged (delta review round 6) (+50/-11, 2 file(s))
+  - `183d31b` danshapiro 2026-08-11T13:41:29-07:00 — fix(build): delta round-4 — validate WINPEPPER_APP_BUILD_TIMEOUT_S before use (leading '-' lands in GNU timeout's option position and would exit 0 without building — a false BUILD OK; zero/nonnumeric rejected too); selftest case 11 pins option-injection/invalid overrides, case 12 covers the 30 s kill cap with a matching orphan row; two evidence-CSV extraction slips repaired line-verified against the review transcript (+77/-3, 3 file(s))
+  - `c4c9f8b` danshapiro 2026-08-11T13:18:39-07:00 — fix(history): include the root itself in the reparse-point walk so a junctioned history root fails closed instead of deleting through to an external target (delta review round 5) (+92/-2, 2 file(s))
+  - `07bc8aa` danshapiro 2026-08-11T12:39:43-07:00 — docs(build): delta round-3 — evidence-bounded root-cause wording in DEVELOPMENT.md (reproduced transport fault vs inferred CS0006/WMC1006), evidence references moved from lost /tmp scratch to preserved reports/phase1-evidence/, percentile wording corrected (p99 53 ms, max 64 ms) (+17/-10, 3 file(s))
+  - `506d0d4` danshapiro 2026-08-11T12:32:24-07:00 — docs(plan): HEAD-agnostic gate-verification record in the execution addendum (delta review round 3 tail) (+4/-4, 1 file(s))
+  - `6d79b53` danshapiro 2026-08-11T11:32:02-07:00 — docs(plan): tick tasks 1-3 step checkboxes — all complete and verified (ledger: run-state.md); docs-only, no executable content (green suite: precommit-linux-15.log at identical code state) (+21/-21, 1 file(s))
+  - `125bb9b` danshapiro 2026-08-11T11:30:13-07:00 — fix(build): delta round-2 — timeout-cap orphan cleanup (list 60 s / kill 30 s) so a stalled WSL interop can never hang the documented exit-1 TIMEOUT result; selftest case 10 pins the bound; case-count wording ten not eight; -m:1 paragraph re-grounded as contention reducer (v1 lag claim withdrawn) (+37/-12, 4 file(s))
+  - `27d37ad` danshapiro 2026-08-11T11:27:04-07:00 — fix(history): enumeration failure no longer poses as index failure; coherent aaaa8e5 gate verdict recorded (delta review round 3) (+63/-6, 3 file(s))
+  - `d1911b1` danshapiro 2026-08-11T08:52:33-07:00 — test(integration): assert the pathological (>=500ms July-scale) contention regime is absent; 250ms counts report-only on shared VMs (+23/-14, 1 file(s))
+  - `5a4bca3` danshapiro 2026-08-11T08:37:01-07:00 — docs(build): document the transient WSL-vsock interop outage signature and its honest recovery in troubleshooting (+7/-0, 1 file(s))
+  - `aaaa8e5` danshapiro 2026-08-11T08:36:58-07:00 — fix(history,app): fail-closed top-level-null index load; truthful distinct retention-vs-index warnings on the page; plan addendum records intact c388725 gate green (delta review round 2) (+166/-24, 6 file(s))
+  - `5f1903d` danshapiro 2026-08-11T08:35:11-07:00 — test(integration): warm the worker before the contention arms so the cold-start call cannot land in a measured arm (+7/-0, 1 file(s))
+  - `243a90b` danshapiro 2026-08-11T08:18:18-07:00 — fix(integrationtests): clear Directory.Build.props' TargetFramework before dual-targeting so bare builds emit both TFMs (+4/-0, 1 file(s))
+  - `9f171c8` danshapiro 2026-08-11T07:48:44-07:00 — fix(build): delta round-1 — rerun probe correctly (falsifies visibility-lag: 0/300 first-attempt 9P misses incl. contention; latency only), -m:1 re-grounded as contention reducer; tee failure can never certify a run (case 9) (+89/-55, 4 file(s))
+  - `a8ba54a` danshapiro 2026-08-11T07:44:00-07:00 — test(gate): run the IntegrationTests windows TFM (13 runs) so the real contention test executes on the host (+9/-6, 2 file(s))
+  - `c388725` danshapiro 2026-08-11T07:36:57-07:00 — fix(history,app): honest prune results (load failure, retained-after-failed-delete), async initial disk usage, plan/code parity (delta review round 1) (+284/-16, 7 file(s))
+  - `76ce6d1` danshapiro 2026-08-11T07:18:13-07:00 — docs(build): branch-review nit — precise run-dir print semantics on retries and usage exits (+3/-2, 1 file(s))
+  - `28671dd` danshapiro 2026-08-11T07:16:31-07:00 — test(integration): real Windows contention evidence — listen-start OCR bursts overlapping a real streamed worker utterance (delta review round 1) (+188/-0, 2 file(s))
+  - `bea61b0` danshapiro 2026-08-11T06:33:44-07:00 — test(platform): windows-TFM-conditioned refs, foreground-observable skip honesty, non-vacuous regime comparison (whole-branch review F1/F2/F4/F5) (+32/-9, 3 file(s))
+  - `cadd095` danshapiro 2026-08-11T06:07:21-07:00 — test(history): normalize path separators in lock-observation assertion (windows-gate fail fix) (+4/-1, 1 file(s))
+  - `b080a89` danshapiro 2026-08-11T05:59:41-07:00 — docs(build): task-2 review minors — wrapper-vs-gate recipe wording, test-script disambiguation in clean-step section, run-log dir availability note (+13/-10, 1 file(s))
+  - `8748f12` danshapiro 2026-08-11T05:46:14-07:00 — fix(history): component-wise atomic slot publication so unrelated setters can't republish stale audio state (whole-branch re-review #2) (+57/-10, 4 file(s))
+  - `d968717` danshapiro 2026-08-11T05:29:10-07:00 — docs(build): teach build-app-windows-from-wsl.sh for WSL app builds (kata gzcc) (+58/-2, 3 file(s))
+  - `1f7dda3` danshapiro 2026-08-11T05:25:55-07:00 — fix(history): atomic slot snapshot consumed once by the retention VM (whole-branch re-review) (+43/-2, 3 file(s))
+  - `092cedc` danshapiro 2026-08-11T05:17:16-07:00 — test(integration,platform): measure window-context wait under stop-launch vs listen-start regimes, incl. real-UIA/OCR Windows invariants (kata tbc0) (+395/-0, 3 file(s))
+  - `8ce9e83` danshapiro 2026-08-11T05:09:35-07:00 — fix(history,app): source retention VM from the runtime slot; fail-closed on null index entries (whole-branch review) (+76/-11, 5 file(s))
+  - `45f92c2` danshapiro 2026-08-11T05:06:59-07:00 — docs(plan): align Step-3 structure text with review-hardened wrapper (override guard order, separator-normalized filter, tee); task-1 review round 4 PASS, 3 hygiene minors (+11/-7, 1 file(s))
+  - `e844905` danshapiro 2026-08-11T04:38:31-07:00 — fix(build): normalize separators before orphan-tag filtering (mixed \// worktrees can no longer slip the kill scope), extend selftest case 6 with mixed rows, complete verbatim RED capture; plan doc text aligned (+52/-39, 3 file(s))
+  - `8260755` danshapiro 2026-08-11T04:18:38-07:00 — fix(build): task-1 re-review corrections — exclude slash-form nested worktrees from orphan kills, reject set-but-empty root override (never fall back to the real checkout), harden selftest setup failures, extend cases 6/8; plan doc aligned (+48/-19, 3 file(s))
+  - `250a0b0` danshapiro 2026-08-11T04:16:32-07:00 — feat(app): recordings privacy card on History page (store-audio toggle, limits, disk usage, delete-all) (+219/-46, 2 file(s))
+  - `66c6b2a` danshapiro 2026-08-11T04:07:05-07:00 — docs(app,platform): truthful capture/teardown comments; drop tautological test local; final newlines (task-003 review minors/nits) (+10/-13, 3 file(s))
+  - `99ed0f8` danshapiro 2026-08-11T04:02:04-07:00 — fix(history,core): report dropped-mutator outcome truthfully; prove serialized retention applies (task-3 review) (+27/-6, 3 file(s))
+  - `c1ef65f` danshapiro 2026-08-11T03:56:21-07:00 — fix(build): task-1 review corrections — boundary-aware orphan tag (kills \gzcc, spares \gzcc2; selftest row), tee attempt output with PIPESTATUS preservation, attempts integer cap, PowerShell apostrophe escaping; plan doc aligned (+36/-18, 3 file(s))
+  - `7fb2fd7` danshapiro 2026-08-11T03:50:34-07:00 — feat(app,platform): launch window-context prefetch at listen-start via pure sequencer (both hotkey arms) (kata tbc0) (+257/-49, 4 file(s))
+  - `73f5080` danshapiro 2026-08-11T03:41:12-07:00 — feat(history): retention settings view-model with outcome-tracked prune-on-save; WAV-less detail rerun guard (+809/-8, 8 file(s))
+  - `7385f0e` danshapiro 2026-08-11T03:38:31-07:00 — test(cleanup): pin faulted-task cleaned output (task-002 review minor #3) (+4/-0, 1 file(s))
+  - `208c524` danshapiro 2026-08-11T03:34:22-07:00 — feat(build): add build-app-windows-from-wsl.sh — pre-clean + serialized UNC app build with bounded transient retry (kata gzcc) (+397/-0, 2 file(s))
+  - `b1a30e1` danshapiro 2026-08-11T03:20:12-07:00 — test(history): prove WAV write stays inside the exclusive lock (task-2 review) (+13/-2, 1 file(s))
+  - `a9d7bfd` danshapiro 2026-08-11T03:05:22-07:00 — feat(history): store-audio on/off gate in HistoryArchiver; silent-drop skip; exclusive write+append; wire live settings (+234/-23, 6 file(s))
+  - `4f267ae` danshapiro 2026-08-11T03:02:10-07:00 — docs(plan): fix round-3 fresheyes blockers — honest reproduced-vs-inferred causation wording, bash-side full-path orphan-kill filter with .worktrees exclusion replacing the gate basename pattern, always-on pre-clean with disposable-root seam + sentinel selftest, --attempts validation; finalize phase-1 report staleness noted in review (+84/-42, 1 file(s))
+  - `84f16a7` danshapiro 2026-08-11T02:48:38-07:00 — test(history): make inaccessible-root sweep test discriminate via parent chmod (task-1 re-review) (+24/-13, 1 file(s))
+  - `99a5104` danshapiro 2026-08-11T02:36:12-07:00 — fix(history): fail-closed strict index load on null entries; report inaccessible sweep roots (task-1 review) (+88/-16, 2 file(s))
+  - `a572061` danshapiro 2026-08-11T02:34:23-07:00 — docs(plan): fix 5 blocking round-2 fresheyes findings — retry default 5 (kata worst case) with boundary/exhaustion selftest cases, orphan-kill seam + timeout-path selftest, cross-OS wipe sequencing in every Step 6, add DEVELOPMENT.md to Task 2 commit, new R4 + Task 4 (kata comment, never close) (+115/-51, 1 file(s))
+  - `6327651` danshapiro 2026-08-11T02:15:05-07:00 — feat(history): configurable retention policy in HistoryStore + AppSettings fields (+1228/-33, 6 file(s))
+  - `73f2d1b` danshapiro 2026-08-11T02:13:34-07:00 — feat(cleanup,core): ctx_wait telemetry — measure the bounded window-context wait per dictation (kata tbc0) (+228/-10, 5 file(s))
+  - `0a375f4` danshapiro 2026-08-11T02:12:39-07:00 — docs(plan): fix 4 blocking fresheyes findings — accurate -m:1 mechanism (single-node scheduling, not single-process), DEVELOPMENT.md in docs task, deterministic retry selftest seam, per-invocation run dirs; matched serialized-twin arm evidence (SS1 3/3, SS2 2/2-builds OK) vs parallel-twin repro (1/6) (+126/-67, 1 file(s))
+  - `eb3221b` danshapiro 2026-08-11T01:54:56-07:00 — docs(plan): fix plan-review round-3 blockers (queue-first ordering, failure surfacing, deterministic concurrency test) (+15/-10, 1 file(s))
+  - `5a29b72` danshapiro 2026-08-11T01:43:04-07:00 — style(cleanup): final newlines + precise hwnd-zero docstring wording (task-001 review F1/F2) (+6/-6, 2 file(s))
+  - `737df36` danshapiro 2026-08-11T01:37:41-07:00 — docs(plan): fix plan-review round-2 blockers (published runtime gate, never-throw results, serialized chains) (+53/-38, 1 file(s))
+  - `a21bb7d` danshapiro 2026-08-11T01:32:37-07:00 — feat(cleanup): WindowContextListenStartPolicy — pure listen-start prefetch launch decision (kata tbc0) (+84/-0, 2 file(s))
+  - `99a1889` danshapiro 2026-08-11T01:30:50-07:00 — docs(plan): add kata-gzcc UNC app-build race mitigation plan (+308/-0, 1 file(s))
+  - `315d8e7` danshapiro 2026-08-11T01:25:29-07:00 — docs: fix faulted-task semantics spec, regime-3 budget arithmetic, windows-real OCR invariant test, post-join dispose placement, restored task-3 commit step (review round 3) (+114/-33, 1 file(s))
+  - `c9ef62b` danshapiro 2026-08-11T01:21:00-07:00 — docs(plan): fix plan-review round-1 blockers (durability outcome, atomic archive, reparse safety, consistent delete contract, scrollable page) (+89/-56, 1 file(s))
+  - `d041178` danshapiro 2026-08-11T01:11:55-07:00 — docs: restructure plan around a pure behavior-tested listen-start sequencer; regime-level measured evidence; absolute paths; suite-before-commit ordering (review round 2) (+329/-259, 1 file(s))
+  - `9275909` danshapiro 2026-08-11T01:03:00-07:00 — docs(plan): harden retention plan per load-bearing finder round 1 (D5-D9) (+36/-16, 1 file(s))
+  - `93bec70` danshapiro 2026-08-11T00:55:15-07:00 — docs: harden plan against review round 1 (SDK-prefixed commands, pre-commit suite, nullable-safe single-home launch helper, structural wiring greps, measured before/after wait tests) (+289/-132, 1 file(s))
+  - `2ee9a63` danshapiro 2026-08-11T00:40:01-07:00 — docs: add implementation plan for eqrr-audio-retention (+326/-0, 1 file(s))
+  - `b07475e` danshapiro 2026-08-11T00:32:53-07:00 — docs: add implementation plan for tbc0-ocr-listen-start (+483/-0, 1 file(s))
+  - `fb1f538` danshapiro 2026-08-09T19:14:38-07:00 — Merge feat/nemotron-first-asr: Nemotron-first ASR with subprocess-isolated transcribe.cpp worker, onboarding model picker (English/multilingual), council fix batch (+0/-0, 0 file(s))
+  - `3944b81` danshapiro 2026-08-09T19:13:56-07:00 — docs(evidence): record gate GREEN at 476c2ac (run 7, 2705 tests, 0 failures) superseding BLOCKED-ENVIRONMENTAL; note Models dispatch-test flake determination (+56/-1, 1 file(s))
+  - `476c2ac` danshapiro 2026-08-09T17:00:11-07:00 — docs(evidence): reconcile the run-3 gate prose with its quoted summary block; label the smoke row with -SkipLaunch (+4/-3, 1 file(s))
+- [needs prose/context from Ada: what this release/these commits actually mean for users — the JSON has no changelog or release-notes content, only commit subjects and PR titles]
 
