@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>New tools, more contributors, and a three-million-line mirage · Shipped</title><meta name="description" content="blogosphere goes public, obol and smevals cut releases, teststrip keeps sprinting, and the contributor list widens to Simon Willison, Eden, Dan Shapiro, and more. Fourteen repos active — and a bot that 'changed' 3.5M lines without changing anything."><link rel="icon" type="image/svg+xml" href="/shipped/preview/favicon.svg"><style>:root{--bg: #0f1115;--fg: #e8e9ec;--muted: #9aa0aa;--accent: #7dd3fc;--featured-bg: #16241f;--featured-border: #34d399;--second-bg: #171a21;--second-border: #3a3f4b;--max-width: 720px}*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.6}main{max-width:var(--max-width);margin:0 auto;padding:2rem 1.25rem 4rem}header.site-header{max-width:var(--max-width);margin:0 auto;padding:2rem 1.25rem 0}header.site-header h1{margin:0;font-size:1.75rem}header.site-header p.tagline{color:var(--muted);margin:.25rem 0 0}header.site-header a{color:inherit;text-decoration:none}a{color:var(--accent)}h1,h2,h3{line-height:1.25}.post-list{list-style:none;padding:0;margin:2rem 0 0}.post-list li{margin-bottom:1.75rem;border-bottom:1px solid #262a33;padding-bottom:1.5rem}.post-list h2{margin:0 0 .25rem;font-size:1.25rem}.post-list .meta{color:var(--muted);font-size:.875rem;margin:0 0 .5rem}.post-list .summary{margin:0;color:var(--fg)}.post-meta{color:var(--muted);font-size:.9rem;margin-bottom:2rem}section.featured,section.second-tier{border-radius:8px;padding:.25rem 1.25rem 1.25rem;margin:1.5rem 0}section.featured{background:var(--featured-bg);border:1px solid var(--featured-border)}section.featured>h2:before{content:"🚀 "}section.second-tier{background:var(--second-bg);border:1px solid var(--second-border)}section.second-tier>h2:before{content:"📦 "}article.repo{margin:1rem 0}article.repo h3{margin:0 0 .25rem;font-size:1.05rem}article.repo .repo-desc{color:var(--muted);margin:0 0 .4rem;font-style:italic}.repo-stat{display:inline-flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-size:.8rem;color:var(--muted);font-family:ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;margin:.35rem 0 .6rem}.repo-stat-chip{display:inline-block;padding:.1rem .5rem;border-radius:999px;background:#1c2028;border:1px solid #2a2f3a;color:var(--fg);white-space:nowrap}.repo-stat-commits{cursor:default}.repo-stat-prs{color:var(--accent);border-color:#234454}.repo-stat-release{color:#facc7a;border-color:#4a3a1a;background:#1f1a10}.repo-stat-diff{display:inline-flex;align-items:center;gap:.35rem;cursor:default}.repo-stat-diff-add{color:#3fb950}.repo-stat-diff-del{color:#f85149}.repo-stat-diff-bar{display:inline-flex;width:60px;height:6px;border-radius:3px;overflow:hidden;background:#2a2f3a}.repo-stat-diff-bar-add{display:block;height:100%;background:#3fb950}.repo-stat-diff-bar-del{display:block;height:100%;background:#f85149}footer.site-footer{max-width:var(--max-width);margin:0 auto;padding:2rem 1.25rem;color:var(--muted);font-size:.85rem;border-top:1px solid #262a33}
+</style></head> <body> <header class="site-header"> <a href="/shipped/preview/"> <h1>📦 Shipped</h1> </a> <p class="tagline">Weekly recap of public-repo activity across prime-radiant-inc and obra.</p> </header> <main>  <article> <h1>New tools, more contributors, and a three-million-line mirage</h1> <p class="post-meta"> Week of July 13, 2026 &middot; Jul 13, 2026&ndash;Jul 19, 2026
+&middot; published Jul 19, 2026 </p> <p>This week the contributor list is the story as much as the code: alongside the core team, commits landed from Simon Willison, Dan Shapiro, Eden, and Gaurav Dubey. A new local-first blogging client went public, <code>obol</code> and <code>smevals</code> cut releases, and <code>teststrip</code> kept up its relentless pace. Fourteen repositories were active across both orgs — and one of them produced a line count worth explaining before we do anything else.</p>
+<section class="summary">
+<h2 id="the-week-in-numbers">The week in numbers</h2>
+<ul class="stats">
+<li><strong>14</strong> repos active (4 featured, 10 also shipped)</li>
+<li><strong>1,035</strong> commits</li>
+<li><strong>23</strong> merged PRs</li>
+<li><strong>4</strong> releases cut</li>
+<li><strong>7</strong> unique contributors</li>
+<li><strong>+290,540 / −53,585</strong> lines changed<sup><a href="#loc-note">*</a></sup></li>
+</ul>
+<p class="loc-note" id="loc-note"><em>* We report <strong>+290,540</strong> — the "de-botted" figure — as the real number. The raw diff was +3,778,040, but +3,487,500 of that is a single <code>github-actions[bot]</code> commit in <code>terminal-bench-analysis</code> that regenerated a README across 33,477 files with, per its own commit message, "no new data." We exclude generated bot commits like that from the headline rather than let them inflate it. The de-botted figure is what people actually wrote.</em></p>
+</section>
+<section class="featured">
+<h2 id="featured">Featured</h2>
+<article class="repo">
+<h3 id="prime-radiant-incobol"><a href="https://github.com/prime-radiant-inc/obol">prime-radiant-inc/obol</a></h3>
+<p class="repo-desc">Read an AI-agent transcript and estimate what it cost — a Rust core with C-ABI bindings for Python, Go, and TypeScript.</p>
+<p><code>v0.8.0</code> (Drew). The release refreshes the bundled price snapshot to add the gpt-5.6 family and repairs some CI lint drift. Cost estimation is only useful if the price data is current, so a steady cadence of price refreshes is exactly the maintenance this tool needs.</p>
+</article>
+<article class="repo">
+<h3 id="prime-radiant-incteststrip"><a href="https://github.com/prime-radiant-inc/teststrip">prime-radiant-inc/teststrip</a></h3>
+<p class="repo-desc">macOS photo-culling app — catalog-first, non-destructive, AI-assisted. Early development; not ready for use.</p>
+<p>246 commits and another release. The week’s work is deep in the culling UI: a persisted burst-stack capture-interval preference, standalone frames showing their own thumbnail in the cull burst rail, a repositioned muted RAW+JPEG badge, and a fix so Library-grid activation opens the Library loupe rather than the culling loupe. Detail work — the kind that separates a demo from a tool you’d trust with your photos.</p>
+</article>
+<article class="repo">
+<h3 id="prime-radiant-incsmevals"><a href="https://github.com/prime-radiant-inc/smevals">prime-radiant-inc/smevals</a></h3>
+<p class="repo-desc">A framework for running evals against small (and large) models.</p>
+<p>30 commits from Simon Willison, capped by a <code>0.2.0</code> release. The week is a real polish pass: a much-improved README, an environment-variable rename (<code>SMEVAL_*</code> → <code>SMEVALS_*</code>), accepting a single string where a list was expected, and Python 3.10+ compatibility. An outside maintainer taking a project from rough to releasable.</p>
+</article>
+<article class="repo">
+<h3 id="obrablogosphere"><a href="https://github.com/obra/blogosphere">obra/blogosphere</a></h3>
+<p class="repo-desc">Local-first, multi-platform blogging client for an 11ty blog that lives in a GitHub repo — the repo is the database.</p>
+<p>New and public this week (35 commits, Jesse). The premise: a local-first blogging client where the GitHub repo <em>is</em> the database — an 11ty blog you edit from any device. The week’s commits are the public-launch essentials: an MIT license, a README for the public repo, a boot-failure screen, and “platform-honest” connect copy that stops assuming you’re on a Mac when you’re on a phone.</p>
+</article>
+</section>
+<section class="second-tier">
+<h2 id="also-shipped">Also shipped</h2>
+<article class="repo">
+<h3 id="prime-radiant-incllm-proxy"><a href="https://github.com/prime-radiant-inc/llm-proxy">prime-radiant-inc/llm-proxy</a></h3>
+<p class="repo-desc">Transparent logging proxy for LLM API traffic that records every request and response for debugging, auditing, and analysis.</p>
+<p>Eleven commits from Drew, focused on the Bedrock relay and capture accuracy: stamping capture facts on mantle response records, pairing the relay’s request-creation and dial failures, and stopping aborted relays from mis-stamping a clean termination. Correctness work on the audit trail.</p>
+</article>
+<article class="repo">
+<h3 id="prime-radiant-incserf"><a href="https://github.com/prime-radiant-inc/serf">prime-radiant-inc/serf</a></h3>
+<p class="repo-desc">A non-interactive coding agent that reads, writes, runs commands, and searches code in a loop across OpenAI, Anthropic, and Google models.</p>
+<p>589 commits across eight merged PRs. The theme is quality-of-life in the spawn interface: a “recent projects” list (the 15 most recently used project dirs) prepopulating both the TUI spawn field and the web session-creation picker, plus the ability to edit or cancel an unconsumed queued message. A snake_case REST contract cleanup keeps the CI naming gate happy.</p>
+</article>
+<article class="repo">
+<h3 id="prime-radiant-incgauntlet"><a href="https://github.com/prime-radiant-inc/gauntlet">prime-radiant-inc/gauntlet</a></h3>
+<p class="repo-desc">AI-powered QA testing framework that drives web apps, CLI tools, and TUI programs from markdown story cards.</p>
+<p>One commit from Eden: creating the LICENSE. Small, but it’s the kind of housekeeping that has to happen before a repo can be shared.</p>
+</article>
+<article class="repo">
+<h3 id="prime-radiant-incterminal-bench-analysis"><a href="https://github.com/prime-radiant-inc/terminal-bench-analysis">prime-radiant-inc/terminal-bench-analysis</a></h3>
+<p class="repo-desc">Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.</p>
+<p>One commit this week — and it’s the one from the note above. <code>github-actions[bot]</code> regenerated the README across 33,477 files with, in its own words, “no new data.” That’s the +3.49M-line mirage we excluded from the headline. The repo itself is a genuinely useful thing (queryable Terminal Bench 2 analysis via Datasette); this particular commit just wasn’t human work.</p>
+</article>
+<article class="repo">
+<h3 id="prime-radiant-incgreenfield"><a href="https://github.com/prime-radiant-inc/greenfield">prime-radiant-inc/greenfield</a></h3>
+<p class="repo-desc">A Claude Code plugin that reverse-engineers clean behavioral specs, test vectors, and acceptance criteria from any codebase — with a provenance trail so a fresh team can reimplement without inheriting the original's structure.</p>
+<p>One merged PR (Eden, from an outside contributor’s branch) fixing the skills-directory layout. A small structural correction to a genuinely interesting plugin.</p>
+</article>
+<article class="repo">
+<h3 id="prime-radiant-incsuperpowers-evals"><a href="https://github.com/prime-radiant-inc/superpowers-evals">prime-radiant-inc/superpowers-evals</a></h3>
+<p class="repo-desc">Behavioral eval lab (Quorum) that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+<p>89 commits across three merged PRs (Drew 77, Jesse 12). Mostly experiment documentation: a contingency wave of protocol re-runs, structural-blocks confirmation batches, and final verdicts with economics for a specific PR review. The lab is increasingly a record of what was measured and why, not just the harness that measures it.</p>
+</article>
+<article class="repo">
+<h3 id="prime-radiant-incclaude-plugin-stats"><a href="https://github.com/prime-radiant-inc/claude-plugin-stats">prime-radiant-inc/claude-plugin-stats</a></h3>
+<p class="repo-desc">A daily scrape of Claude Code plugin install stats.</p>
+<p>Seven commits, all <code>github-actions[bot]</code> — the daily chart rebuild. The robot, as ever.</p>
+</article>
+<article class="repo">
+<h3 id="obradotfiles"><a href="https://github.com/obra/dotfiles">obra/dotfiles</a></h3>
+<p class="repo-desc">Jesse's personal dotfiles.</p>
+<p>Seven commits building a safe Arq snapshot cleaner: a tested cleanup lifecycle, failing closed when APFS snapshot inspection fails, and restoring services across a bootout interruption. Careful backup tooling — “fail closed” is the right instinct for anything that deletes.</p>
+</article>
+<article class="repo">
+<h3 id="obrasuperpowers"><a href="https://github.com/obra/superpowers">obra/superpowers</a></h3>
+<p class="repo-desc">An agentic skills framework and software-development methodology that works.</p>
+<p>Eleven commits across nine merged PRs (Jesse 10, Gaurav Dubey 1). The centerpiece is an SDD lifecycle restructure: a resume-based fix loop, a five-round breaker to stop endless fix cycles, and the rationalization-table pattern applied again — landed with a full design spec and implementation plan.</p>
+</article>
+<article class="repo">
+<h3 id="obrawinpepper"><a href="https://github.com/obra/winpepper">obra/winpepper</a></h3>
+<p class="repo-desc">Windows-native local dictation. Hold a hotkey, speak, release — cleaned-up words appear in the focused app. Parakeet TDT v3 ASR + LlamaSharp cleanup, all local.</p>
+<p>Three commits across two merged PRs, all from Dan Shapiro: keeping the app responsive during model downloads, and fixing modifier-only hotkey capture and key swallowing. Fully-local dictation on Windows, moving forward under an outside contributor’s hand.</p>
+</article>
+</section> </article>  </main> <footer class="site-footer"> <p>
+Generated from public GitHub activity data. Source data and tooling in
+<a href="https://github.com/prime-radiant-inc/shipped">prime-radiant-inc/shipped</a>.
+</p> </footer> </body></html>
