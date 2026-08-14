@@ -1,0 +1,51 @@
+# Diff summary: original briefs vs ground-truth-corrected
+
+- prime-radiant-inc/llm-proxy week 1: commits 7->7, LOC +34427/-135 -> +1128/-141
+- prime-radiant-inc/llm-proxy week 5: commits 4->4, LOC +29784/-31 -> +795/-31
+- prime-radiant-inc/homebrew-tap week 6: commits 1->1, LOC +153/-0 -> +18/-0
+- prime-radiant-inc/stockyard week 3: commits 1->2, LOC +82593/-0 -> +1344/-15  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- prime-radiant-inc/serf week 1: commits 0->414, LOC +0/-0 -> +102827/-37991
+- prime-radiant-inc/serf week 2: commits 371->959, LOC +826526/-9781 -> +224560/-27815
+- prime-radiant-inc/serf week 3: commits 971->964, LOC +156139/-13163 -> +155590/-13125
+- prime-radiant-inc/serf week 4: commits 589->593, LOC +119015/-34747 -> +119000/-34774
+- prime-radiant-inc/serf week 5: commits 1467->1470, LOC +196003/-91074 -> +196567/-91085
+- prime-radiant-inc/serf week 8: commits 122->140, LOC +21796/-24232 -> +25942/-25329
+- prime-radiant-inc/sprout week 7: commits 1->1, LOC +231613/-0 -> +1/-1  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- prime-radiant-inc/github-triage week 8: commits 2->2, LOC +712/-0 -> +0/-0
+- prime-radiant-inc/gauntlet week 1: commits 2->2, LOC +119822/-8 -> +209/-29  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- prime-radiant-inc/slackline week 7: commits 1->1, LOC +16324/-0 -> +1/-1  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- prime-radiant-inc/terminal-bench-analysis week 4: commits 1->1, LOC +3487500/-0 -> +1/-2  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- prime-radiant-inc/terminal-bench-analysis week 8: commits 0->1, LOC +0/-0 -> +1/-1
+- prime-radiant-inc/greenfield week 4: commits 1->1, LOC +11711/-0 -> +0/-0
+- prime-radiant-inc/books-for-bots week 3: commits 8->8, LOC +12053/-373 -> +1348/-373
+- prime-radiant-inc/superpowers-evals week 1: commits 91->90, LOC +13483/-2912 -> +13386/-2868
+- prime-radiant-inc/superpowers-evals week 2: commits 6->2, LOC +417/-41 -> +27/-0
+- prime-radiant-inc/superpowers-evals week 5: commits 14->19, LOC +3343/-84 -> +3830/-169
+- prime-radiant-inc/superpowers-evals week 7: commits 94->92, LOC +212945/-199992 -> +212905/-199992
+- prime-radiant-inc/superpowers-evals week 8: commits 32->34, LOC +2789/-1082 -> +2829/-1082
+- prime-radiant-inc/clipfan week 7: commits 1->1, LOC +84946/-0 -> +4/-4  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- prime-radiant-inc/clipfan week 8: commits 14->21, LOC +1048/-82 -> +1441/-100
+- prime-radiant-inc/obol week 3: commits 2->2, LOC +48731/-5 -> +10873/-9097
+- prime-radiant-inc/superpowers-docs week 7: commits 1->1, LOC +3576/-0 -> +34/-0  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- prime-radiant-inc/superpowers-docs week 8: commits 0->1, LOC +0/-0 -> +23/-5
+- prime-radiant-inc/superpowers-autoresearch week 1: commits 5->5, LOC +90512/-0 -> +4563/-0
+- prime-radiant-inc/agentic-usage-meter week 6: commits 139->136, LOC +51624/-6917 -> +51491/-6883
+- prime-radiant-inc/agentic-usage-meter week 7: commits 61->64, LOC +8124/-965 -> +8257/-999
+- obra/dotfiles week 2: commits 1->1, LOC +10609/-0 -> +19/-20  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- obra/dotfiles week 4: commits 7->0, LOC +638/-4 -> +0/-0
+- obra/dotfiles week 6: commits 16->23, LOC +977/-20 -> +1615/-24
+- obra/narcolepsyd week 1: commits 1->1, LOC +1390/-0 -> +49/-7
+- obra/private-journal-mcp week 8: commits 1->2, LOC +10158/-0 -> +21/-0  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- obra/superpowers week 1: commits 7->0, LOC +35107/-409 -> +0/-0
+- obra/superpowers week 2: commits 36->19, LOC +1475/-1223 -> +890/-568
+- obra/superpowers week 3: commits 12->0, LOC +2615/-568 -> +0/-0
+- obra/superpowers week 4: commits 11->0, LOC +2349/-226 -> +0/-0
+- obra/superpowers week 5: commits 4->51, LOC +145/-13 -> +5808/-1872
+- obra/superpowers-chrome week 7: commits 18->24, LOC +69313/-8730 -> +19407/-9107
+- obra/superpowers-marketplace week 2: commits 2->2, LOC +266/-1 -> +2/-2  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- obra/temp-sp-codex week 1: commits 2->2, LOC +35084/-9 -> +91/-10  <-- WHOLE-REPO-SIZE LOC INFLATION (bug 1)
+- obra/the-elements-of-style week 8: commits 5->5, LOC +4746/-376 -> +1049/-397
+- obra/winpepper week 4: commits 3->3, LOC +45679/-48 -> +1433/-120
+- obra/winpepper week 5: commits 368->369, LOC +78563/-5912 -> +78693/-5918
+- obra/winpepper week 6: commits 182->175, LOC +39369/-1686 -> +37527/-1629
+- obra/winpepper week 7: commits 121->128, LOC +27410/-3518 -> +29252/-3575
