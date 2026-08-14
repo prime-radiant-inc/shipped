@@ -11,6 +11,17 @@ guessing, so whoever writes the real post knows what to go fill in by hand.
 Usage:
     python3 tools/make_briefs.py data/recon-8wk.json
     python3 tools/make_briefs.py data/recon-8wk.json --out-dir drafts
+
+NOTE (v2): this script reads the v1 JSON schema (repo-level
+`commits_in_window.weekly[]` / `merged_prs_in_window.weekly[]` arrays,
+PR/release-driven FEATURED/SECOND-TIER tiering). gather.py was rewritten for
+v2 to be exhaustive and commit-driven (see its docstring) and produces a
+different, richer schema (`repo['weeks'][i]['commits']` with full per-commit
+subject/sha/author/date/LOC, no tiering) at data/recon-v2-*.json — this
+script has NOT been ported to that schema and will not run against it
+as-is. Left untouched because this task's deliverable was the v2 data +
+coverage report, not new prose-input briefs; update this script (or write a
+v2 equivalent) before relying on it again.
 """
 
 import argparse
