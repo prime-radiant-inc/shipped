@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Shipped — weekly public-repo activity across prime-radiant-inc and obra.' } = Astro.props;
+const siteTitle = 'Shipped';
+const pageTitle = title === siteTitle ? siteTitle : `${title} · ${siteTitle}`;
+// BASE_URL is '/shipped' (no trailing slash) in this project-page config;
+// normalize defensively so links work whether or not Astro adds one.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href={`${base}/`}>
+        <h1>📦 Shipped</h1>
+      </a>
+      <p class="tagline">Weekly recap of public-repo activity across prime-radiant-inc and obra.</p>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>
+        Generated from public GitHub activity data. Source data and tooling in
+        <a href="https://github.com/prime-radiant-inc/shipped">prime-radiant-inc/shipped</a>.
+      </p>
+    </footer>
+  </body>
+</html>

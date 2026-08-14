@@ -1,0 +1,21 @@
+# build output
+dist/
+.astro/
+
+# deps
+node_modules/
+
+# logs
+npm-debug.log*
+
+# python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# env
+.env
+.env.*
+!.env.example

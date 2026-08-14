@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+const posts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+function fmt(d: Date) {
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+function postHref(slug: string) {
+  return `${base}/posts/${slug}`;
+}
+---
+
+<BaseLayout title="Shipped">
+  <p class="post-meta">
+    {posts.length} post{posts.length === 1 ? '' : 's'}, newest first.
+  </p>
+  <ul class="post-list">
+    {posts.map((post) => (
+      <li>
+        <h2>
+          <a href={postHref(post.slug)}>{post.data.title}</a>
+        </h2>
+        <p class="meta">
+          {post.data.week} &middot; {fmt(post.data.dateStart)}&ndash;{fmt(post.data.dateEnd)}
+        </p>
+        <p class="summary">{post.data.summary}</p>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
