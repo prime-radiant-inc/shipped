@@ -1,0 +1,277 @@
+/* ============================================================================
+ * Corporate chrome: `cosmos-header` / `cosmos-nav`
+ *
+ * Ported verbatim (colors, spacing, breakpoints, and the specificity fix
+ * below) from prime-radiant-inc/prime-radiant-inc.github.io, branch
+ * `nav-rearchitecture` @ f028c5f (templates/_header.html + the cosmos-*
+ * rules in static/site.css). That repo is a Jinja2 site styled with
+ * Tailwind utility classes; this repo has no Tailwind, so every utility
+ * class used inline in the source markup (`px-6 py-3 flex items-center
+ * justify-between sticky top-0`, `text-sm transition-colors`, `h-6`, ...)
+ * has been translated into literal declarations here so the two sites
+ * carry the exact same chrome instead of a utility-class dependency.
+ *
+ * Structure/behavior this drives (see src/components/SiteHeader.astro and
+ * public/nav-groups.js, also ported from the same commit):
+ *   - Product [Superpowers, Projects, GitHub] / Updates [Blog, Shipped] /
+ *     Company [About, Community, Contact] grouped dropdowns.
+ *   - One-at-a-time desktop dropdowns (native `<details name=...>` exclusive
+ *     accordion + JS fallback), click-outside / Esc to dismiss.
+ *   - Mobile: single hamburger flyout with the same three groups rendered
+ *     as static labeled sections instead of nested toggles.
+ * ========================================================================= */
+
+.cosmos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem; /* py-3 px-6 */
+  position: sticky;
+  top: 0;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(91, 163, 163, 0.12);
+}
+
+/* The source repo learned this the hard way (nav-rearchitecture history):
+   a single-class `.cosmos-header { z-index: N }` rule sits at specificity
+   0-1-0, the same tier as plenty of other page-level rules, and a same-tier
+   tie resolves on source order / DOM order -- not intent. On an inner page
+   whose main content starts close enough to the top, that let content
+   silently paint (and hit-test) over the header and open dropdowns, eating
+   clicks meant for nav links. Doubling the class raises specificity to
+   0-2-0 so nothing added later to this stylesheet (or to page-specific
+   styles) can quietly claw the header's stacking order back down. */
+.cosmos-header.cosmos-header {
+  z-index: 1000;
+}
+
+.cosmos-header a.cosmos-wordmark {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+.cosmos-header a.cosmos-wordmark img {
+  height: 1.5rem; /* h-6 */
+  display: block;
+  filter: drop-shadow(0 0 20px rgba(26, 107, 90, 0.4));
+}
+
+.cosmos-header nav a {
+  font-size: 0.875rem; /* text-sm */
+  color: rgba(200, 214, 229, 0.6);
+  text-decoration: none;
+  /* Real <a href> links already show a hand cursor in most browsers by
+     default, but that default isn't guaranteed across engines and is easy
+     to lose to a future reset -- make it explicit, matching the dropdown
+     triggers below. */
+  cursor: pointer;
+  transition: color 0.15s ease, background-color 0.15s ease; /* transition-colors */
+}
+.cosmos-header nav a:hover {
+  color: #e8f0f8;
+  text-shadow: 0 0 12px rgba(26, 107, 90, 0.5);
+}
+
+/* Header navigation: inline row by default, hamburger dropdown on small screens */
+.cosmos-nav {
+  position: relative;
+}
+.cosmos-nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+.cosmos-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+/* Groups (Product / Updates / Company) are each their own <details>/<summary>
+   disclosure, same idiom as the outer .cosmos-nav toggle. On desktop this is a
+   real per-cluster dropdown: the row shows ~4 top-level items (3 group labels
+   + GitHub) instead of every link flattened out. On mobile the group content
+   is forced always-visible (see the max-width block below) so the stacked
+   dropdown keeps showing every link under a static section label, same as
+   before desktop dropdowns existed. */
+.cosmos-nav-group {
+  position: relative;
+}
+.cosmos-nav-group-label {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  /* Extra vertical padding widens the clickable summary (and therefore the
+     caret's hit area) without changing the row's visual height, matching
+     the rest of the nav's tap-friendly sizing. */
+  padding: 0.35rem 0;
+}
+.cosmos-nav-group-label::-webkit-details-marker {
+  display: none;
+}
+.cosmos-nav-group-label::after {
+  content: "\25be";
+  font-size: 1rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+.cosmos-nav-group[open] > .cosmos-nav-group-label::after {
+  transform: rotate(180deg);
+}
+/* Desktop dropdown panel: hidden until the group's <details> is [open]. */
+@media (min-width: 640px) {
+  .cosmos-nav-group-links {
+    display: none;
+  }
+  .cosmos-nav-group[open] .cosmos-nav-group-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    min-width: 9rem;
+    padding: 0.375rem;
+    border-radius: 0.5rem;
+    background: #141b26;
+    border: 1px solid rgba(91, 163, 163, 0.28);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    /* Nested within .cosmos-header's own (now very high) stacking context;
+       this only needs to clear other header-internal elements, but is kept
+       generously high for headroom. */
+    z-index: 50;
+  }
+  /* The rightmost cluster (Company) sits near the right edge of the
+     viewport, so a panel anchored `left: 0` on its trigger grows further
+     right and overruns/clips against the viewport edge. Anchor the last
+     group's panel to the trigger's right edge instead, so it grows
+     leftward and stays on-screen. Product/Updates are unaffected --
+     they keep the default `left: 0` growth, which already lands fine
+     mid-row. */
+  .cosmos-nav-group:last-child .cosmos-nav-group-links {
+    left: auto;
+    right: 0;
+  }
+  .cosmos-nav-group-links a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    white-space: nowrap;
+  }
+  .cosmos-nav-group-links a:hover {
+    background: rgba(91, 163, 163, 0.12);
+  }
+}
+/* A closed <details> hides its content (display:none in some engines, or
+   content-visibility:hidden via ::details-content in Chromium). On desktop the
+   links must always show, so override both mechanisms above the breakpoint. */
+.cosmos-nav::details-content {
+  content-visibility: visible;
+}
+
+@media (max-width: 639.98px) {
+  /* Keep the bar the same height as desktop; the 44px tap target overflows it harmlessly */
+  .cosmos-nav {
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+  }
+  .cosmos-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    width: 44px;
+    height: 44px;
+    margin-right: -0.5rem;
+    cursor: pointer;
+    color: rgba(200, 214, 229, 0.85);
+  }
+  .cosmos-nav-toggle::-webkit-details-marker {
+    display: none;
+  }
+  .cosmos-nav-toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+  .cosmos-nav-icon-close {
+    display: none;
+  }
+  .cosmos-nav[open] .cosmos-nav-icon-open {
+    display: none;
+  }
+  .cosmos-nav[open] .cosmos-nav-icon-close {
+    display: inline-flex;
+  }
+
+  .cosmos-nav:not([open]) .cosmos-nav-links {
+    display: none;
+  }
+  .cosmos-nav[open] .cosmos-nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.125rem;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 0.75rem;
+    min-width: 11rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: #141b26;
+    border: 1px solid rgba(91, 163, 163, 0.28);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  }
+  .cosmos-nav-links a {
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.375rem;
+  }
+  .cosmos-nav-links a:hover {
+    background: rgba(91, 163, 163, 0.12);
+  }
+  /* In the stacked mobile dropdown, each group renders as a static labeled
+     section, not a second layer of collapsible toggles: force the group's
+     <details> content to always show (same `::details-content` override the
+     outer .cosmos-nav already relies on to stay open-looking on desktop),
+     and neutralize the summary as a tap target so it reads as a plain
+     section header rather than an inert-looking nested accordion. */
+  .cosmos-nav-group {
+    display: block;
+  }
+  .cosmos-nav-group + .cosmos-nav-group {
+    margin-top: 0.375rem;
+    border-top: 1px solid rgba(91, 163, 163, 0.15);
+    padding-top: 0.375rem;
+  }
+  .cosmos-nav-group::details-content {
+    content-visibility: visible;
+  }
+  .cosmos-nav-group-label {
+    pointer-events: none;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(200, 214, 229, 0.4);
+    padding: 0.5rem 0.75rem 0.25rem;
+  }
+  .cosmos-nav-group-label::after {
+    display: none;
+  }
+  .cosmos-nav-group-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+  .cosmos-nav-group-links a {
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.375rem;
+  }
+  .cosmos-nav-group-links a:hover {
+    background: rgba(91, 163, 163, 0.12);
+  }
+}
