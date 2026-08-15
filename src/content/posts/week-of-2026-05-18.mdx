@@ -30,7 +30,7 @@ The last of the backfill's pre-launch weeks — the week immediately before this
 
 <RepoStat org="obra" name="episodic-memory" week="2026-05-18" />
 
-`v1.4.2` was a cross-platform install pass: a postinstall script fixed for non-macOS/Linux, a single-instance lock for `sync --background`, and per-required-package manifest probing before launching the MCP server — plus a retryable-error sentinel written on summarizer failure, closing a silent-failure gap. Jesse Vincent (staff) drove the release; two outside contributors landed fixes the same week — **Andy Wright** (GitHub login `minyek`, the same account credited the prior week) fixed a summarizer-cwd / resume-fallback bug, and **K. Z.** (`monsterxz9`) fixed the Codex summarizer ignoring a deprecated model from history.
+`v1.4.2` was a cross-platform install pass: a postinstall script fixed for non-macOS/Linux, a single-instance lock for `sync --background`, and per-required-package manifest probing before launching the MCP server — plus a retryable-error sentinel written on summarizer failure, closing a silent-failure gap. Jesse Vincent drove the release; two outside contributors landed fixes the same week — **Andy Wright** (GitHub login `minyek`, the same account credited the prior week) fixed a summarizer-cwd / resume-fallback bug, and **K. Z.** (`monsterxz9`) fixed the Codex summarizer ignoring a deprecated model from history.
 
 </article>
 
@@ -42,7 +42,7 @@ The last of the backfill's pre-launch weeks — the week immediately before this
 
 <RepoStat org="prime-radiant-inc" name="slackline" week="2026-05-18" />
 
-Releases `v0.2.1` and `v0.2.2`: a default-recipient fix so thread replies to bot-authored messages now emit by default, plus a lint-cleanup pass that named several previously-magic wire-format error codes and Slack scopes as exported constants. Sole contributor: Jesse Vincent (staff).
+Releases `v0.2.1` and `v0.2.2`: a default-recipient fix so thread replies to bot-authored messages now emit by default, plus a lint-cleanup pass that named several previously-magic wire-format error codes and Slack scopes as exported constants. Sole contributor: Jesse Vincent.
 
 </article>
 
@@ -60,7 +60,7 @@ Releases `v0.2.1` and `v0.2.2`: a default-recipient fix so thread replies to bot
 
 <RepoStat org="prime-radiant-inc" name="serf" week="2026-05-18" />
 
-A TUI visual-redesign wave: theme tokens replacing the legacy `colorTheme` / `tuiStyles`, terminal-native fg/bg painting via OSC 10/11 to match the active theme, a WCAG-contrast rebalancing, and a large "roborev" fix-response sweep working through numbered review rounds in sequence. Sole contributor: Jesse Vincent (staff).
+A TUI visual-redesign wave: theme tokens replacing the legacy `colorTheme` / `tuiStyles`, terminal-native fg/bg painting via OSC 10/11 to match the active theme, a WCAG-contrast rebalancing, and a large "roborev" fix-response sweep working through numbered review rounds in sequence. Sole contributor: Jesse Vincent.
 
 </article>
 
@@ -72,7 +72,7 @@ A TUI visual-redesign wave: theme tokens replacing the legacy `colorTheme` / `tu
 
 <RepoStat org="prime-radiant-inc" name="sprout" week="2026-05-18" />
 
-An OpenAI/Codex OAuth provider, end-to-end: credential-lifecycle management, refresh-race hardening, and macOS-keychain-direct secret writes (kept out of argv), with a Codex adapter handling streamed tool calls. Active-subagent status was surfaced in both terminal and web UIs and scoped correctly per session, fixing several status-leak-across-sessions bugs. Sole contributor: Jesse Vincent (staff).
+An OpenAI/Codex OAuth provider, end-to-end: credential-lifecycle management, refresh-race hardening, and macOS-keychain-direct secret writes (kept out of argv), with a Codex adapter handling streamed tool calls. Active-subagent status was surfaced in both terminal and web UIs and scoped correctly per session, fixing several status-leak-across-sessions bugs. Sole contributor: Jesse Vincent.
 
 </article>
 
@@ -84,7 +84,7 @@ An OpenAI/Codex OAuth provider, end-to-end: credential-lifecycle management, ref
 
 <RepoStat org="prime-radiant-inc" name="stockyard" week="2026-05-18" />
 
-Added Apple's `container` tool as a third macOS VM backend alongside Firecracker and the outgoing vfkit path: a full `AppleContainerBackend` (start / stop / delete / list, a log-follower, a PTY-backed exec session), plus fixes for real-world container-CLI JSON quirks and multi-arch image builds caught by an actual arm64 build. Sole contributor: Matt Windbrook (staff).
+Added Apple's `container` tool as a third macOS VM backend alongside Firecracker and the outgoing vfkit path: a full `AppleContainerBackend` (start / stop / delete / list, a log-follower, a PTY-backed exec session), plus fixes for real-world container-CLI JSON quirks and multi-arch image builds caught by an actual arm64 build. Sole contributor: Matt Windbrook.
 
 </article>
 
@@ -96,7 +96,7 @@ Added Apple's `container` tool as a third macOS VM backend alongside Firecracker
 
 <RepoStat org="obra" name="lace" week="2026-05-18" />
 
-Security and reliability hardening on the `recall` subsystem: file modes (`0o600`/`0o700`) applied to the SQLite index and transcript files, a SQLite `busy_timeout` so contending writers wait instead of erroring, FTS5 query-error wrapping, persona-name validation (rejecting leading dashes, whitespace, and control characters), and a `search order: recent` option. Sole contributor: Jesse Vincent (staff).
+Security and reliability hardening on the `recall` subsystem: file modes (`0o600`/`0o700`) applied to the SQLite index and transcript files, a SQLite `busy_timeout` so contending writers wait instead of erroring, FTS5 query-error wrapping, persona-name validation (rejecting leading dashes, whitespace, and control characters), and a `search order: recent` option. Sole contributor: Jesse Vincent.
 
 </article>
 
@@ -108,7 +108,7 @@ Security and reliability hardening on the `recall` subsystem: file modes (`0o600
 
 <RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-05-18" />
 
-README and harness documentation expansion, Codex-auth-per-run seeding (no more checked-in fixture), and a wave of scenario ports into the `setup-helpers` / `preflight.sh` shape. Sole contributor: Matt Windbrook (staff).
+README and harness documentation expansion, Codex-auth-per-run seeding (no more checked-in fixture), and a wave of scenario ports into the `setup-helpers` / `preflight.sh` shape. Sole contributor: Matt Windbrook.
 
 </article>
 
@@ -120,10 +120,10 @@ README and harness documentation expansion, Codex-auth-per-run seeding (no more 
 
 <RepoStat org="obra" name="superpowers" week="2026-05-18" />
 
-Two PRs merged (credited by PR author, the in-window commit rollup empty as in prior weeks): one fixes a false-trigger in the "ultrathink" keyword scanner for the systematic-debugging skill, the other responds to a bug report from `mhat` (staff) about Claude conflating "debugging" as noun vs. verb. Outside contributor **`ngalatis`** authored the keyword-scanner fix; Jesse Vincent (staff) authored and merged the other.
+Two PRs merged (credited by PR author, the in-window commit rollup empty as in prior weeks): one fixes a false-trigger in the "ultrathink" keyword scanner for the systematic-debugging skill, the other responds to a bug report from `mhat` about Claude conflating "debugging" as noun vs. verb. Outside contributor **`ngalatis`** authored the keyword-scanner fix; Jesse Vincent authored and merged the other.
 
 </article>
 
-Smaller changes closed out the pre-launch stretch: [gauntlet](https://github.com/prime-radiant-inc/gauntlet) gained a static single-file HTML build target (`gauntlet render <run-id>`, Matt Windbrook and Jesse Vincent, staff); [llm-proxy](https://github.com/prime-radiant-inc/llm-proxy) fixed gzipped responses being logged uncompressed; [claude-session-driver](https://github.com/obra/claude-session-driver) landed a unified-CLI redesign (`v3.0.0`); [superpowers-chrome](https://github.com/obra/superpowers-chrome) migrated every module onto a shared `pageSession` model; and [ghost-pepper](https://github.com/obra/ghost-pepper) cut a `v2.4.0` from outside contributor **Matt Hartman** (`matthartman`). The following week — May 25 — is where this blog's live coverage begins.
+Smaller changes closed out the pre-launch stretch: [gauntlet](https://github.com/prime-radiant-inc/gauntlet) gained a static single-file HTML build target (`gauntlet render <run-id>`, Matt Windbrook and Jesse Vincent); [llm-proxy](https://github.com/prime-radiant-inc/llm-proxy) fixed gzipped responses being logged uncompressed; [claude-session-driver](https://github.com/obra/claude-session-driver) landed a unified-CLI redesign (`v3.0.0`); [superpowers-chrome](https://github.com/obra/superpowers-chrome) migrated every module onto a shared `pageSession` model; and [ghost-pepper](https://github.com/obra/ghost-pepper) cut a `v2.4.0` from outside contributor **Matt Hartman** (`matthartman`). The following week — May 25 — is where this blog's live coverage begins.
 
 </section>

@@ -30,7 +30,7 @@ Two things anchor the week. **episodic-memory** — the memory/recall layer for 
 
 <RepoStat org="obra" name="episodic-memory" week="2026-04-27" />
 
-Three tagged releases in one week (`v1.1.0` → `v1.1.1` → `v1.1.2`), the last a same-day emergency hotfix for a recursive process cascade. The feature work: search filters by project, session, and git branch; a schema migration; and a summarizer-hygiene pass that stopped polluting `~/.claude/projects` with summarizer session JSONLs and added a cascade-delete on the tool-calls foreign key. `v1.1.1` folded version numbers down to a single source of truth. Jesse Vincent (staff) drove the week; two outside contributors each landed a PR — **Matt Van Horn** (`mvanhorn`) fixed an npm-install flag, and **Asish Kumar** (`officialasishkumar`) fixed Windows `SessionStart`-hook path quoting.
+Three tagged releases in one week (`v1.1.0` → `v1.1.1` → `v1.1.2`), the last a same-day emergency hotfix for a recursive process cascade. The feature work: search filters by project, session, and git branch; a schema migration; and a summarizer-hygiene pass that stopped polluting `~/.claude/projects` with summarizer session JSONLs and added a cascade-delete on the tool-calls foreign key. `v1.1.1` folded version numbers down to a single source of truth. Jesse Vincent drove the week; two outside contributors each landed a PR — **Matt Van Horn** (`mvanhorn`) fixed an npm-install flag, and **Asish Kumar** (`officialasishkumar`) fixed Windows `SessionStart`-hook path quoting.
 
 </article>
 
@@ -42,7 +42,7 @@ Three tagged releases in one week (`v1.1.0` → `v1.1.1` → `v1.1.2`), the last
 
 <RepoStat org="prime-radiant-inc" name="books-for-bots" week="2026-04-27" />
 
-New this week, and shipped a full v1 in a single push: heading and whitespace normalization, duplicate-heading and running-header detection, cross-chapter link slugging, byte/line offset verification, and a determinism test that runs the conversion twice and asserts the output is byte-identical. Project Gutenberg's *Alice in Wonderland* rides along as the in-repo example. Sole contributor: Jesse Vincent (staff).
+New this week, and shipped a full v1 in a single push: heading and whitespace normalization, duplicate-heading and running-header detection, cross-chapter link slugging, byte/line offset verification, and a determinism test that runs the conversion twice and asserts the output is byte-identical. Project Gutenberg's *Alice in Wonderland* rides along as the in-repo example. Sole contributor: Jesse Vincent.
 
 </article>
 
@@ -60,7 +60,7 @@ New this week, and shipped a full v1 in a single push: heading and whitespace no
 
 <RepoStat org="obra" name="ghost-pepper" week="2026-04-27" />
 
-A big week for a fork with genuine ahead-of-parent work. An agentic meeting-Q&A mode landed — a tool-using agent (grep / read-file / list-dir, path-sandboxed to the archive root) that answers questions across loaded transcripts over Anthropic's Messages API with SSE accumulation — alongside a people-and-meeting indexing system (incremental index builder, sidebar browsing, markdown "dossier" pages with wikilinks and a two-step LLM-merge "apply to dossier" flow), Google Calendar OAuth for a today's-meetings list, and a Cmd+K command palette. Outside contributor **Matt Hartman** (`matthartman`) did the overwhelming majority of the work; Jesse Vincent (staff) contributed a handful of commits, including merging a diarization duplicate-speakers fix and a sidebar-hit-target PR from **Matt Van Horn** (`mvanhorn`, also outside).
+A big week for a fork with genuine ahead-of-parent work. An agentic meeting-Q&A mode landed — a tool-using agent (grep / read-file / list-dir, path-sandboxed to the archive root) that answers questions across loaded transcripts over Anthropic's Messages API with SSE accumulation — alongside a people-and-meeting indexing system (incremental index builder, sidebar browsing, markdown "dossier" pages with wikilinks and a two-step LLM-merge "apply to dossier" flow), Google Calendar OAuth for a today's-meetings list, and a Cmd+K command palette. Outside contributor **Matt Hartman** (`matthartman`) did the overwhelming majority of the work; Jesse Vincent contributed a handful of commits, including merging a diarization duplicate-speakers fix and a sidebar-hit-target PR from **Matt Van Horn** (`mvanhorn`, also outside).
 
 </article>
 
@@ -72,7 +72,7 @@ A big week for a fork with genuine ahead-of-parent work. An agentic meeting-Q&A 
 
 <RepoStat org="obra" name="superpowers" week="2026-04-27" />
 
-Eleven PRs merged this week. (The per-week commit rollup reads empty — the underlying commit dates fall just outside the window even though the merges landed inside it — so the credit here is by each PR's actual author, not the commit tally.) The shipped work: Gemini CLI subagent support, a Factory Droid plugin, a session-transcript requirement for new-harness PRs, and several Codex-track fixes (install guidance, marketplace-metadata preservation, OpenCode integration tests). Jesse Vincent (staff) merged much of it, alongside four distinct outside contributors with one PR each — **Sathvik-1007** (Gemini CLI subagent support), **starumiQAQ** (Windows `SessionStart`-hook fix), **leonsong09** (a Codex subagent-wait-mapping doc fix), and **Skyline-9** (Factory Droid plugin support).
+Eleven PRs merged this week. (The per-week commit rollup reads empty — the underlying commit dates fall just outside the window even though the merges landed inside it — so the credit here is by each PR's actual author, not the commit tally.) The shipped work: Gemini CLI subagent support, a Factory Droid plugin, a session-transcript requirement for new-harness PRs, and several Codex-track fixes (install guidance, marketplace-metadata preservation, OpenCode integration tests). Jesse Vincent merged much of it, alongside four distinct outside contributors with one PR each — **Sathvik-1007** (Gemini CLI subagent support), **starumiQAQ** (Windows `SessionStart`-hook fix), **leonsong09** (a Codex subagent-wait-mapping doc fix), and **Skyline-9** (Factory Droid plugin support).
 
 </article>
 
@@ -84,7 +84,7 @@ Eleven PRs merged this week. (The per-week commit rollup reads empty — the und
 
 <RepoStat org="obra" name="superpowers-chrome" week="2026-04-27" />
 
-A foundational refactor, not yet user-facing: every consumer migrated off a module-level singleton onto a `createSession()` factory, clearing the way for a per-session `createOverride()` factory for isolation. Sole contributor: Matt Windbrook (staff).
+A foundational refactor, not yet user-facing: every consumer migrated off a module-level singleton onto a `createSession()` factory, clearing the way for a per-session `createOverride()` factory for isolation. Sole contributor: Matt Windbrook.
 
 </article>
 
@@ -96,7 +96,7 @@ A foundational refactor, not yet user-facing: every consumer migrated off a modu
 
 <RepoStat org="prime-radiant-inc" name="sprout" week="2026-04-27" />
 
-The week continued sprout's memory-relationship work: atomic incorporation of extracted memories, relationship classification during incorporation, link-direction preservation, and discovery of links for new memory batches. Sole contributor: Jesse Vincent (staff).
+The week continued sprout's memory-relationship work: atomic incorporation of extracted memories, relationship classification during incorporation, link-direction preservation, and discovery of links for new memory batches. Sole contributor: Jesse Vincent.
 
 </article>
 
@@ -108,7 +108,7 @@ The week continued sprout's memory-relationship work: atomic incorporation of ex
 
 <RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-04-27" />
 
-Multi-pass runs arrived: a `RunSet` orchestrator (a cards-by-attempts loop), set-level WebSocket broadcasting, a cancel-token registry, a `--passes` CLI flag, and a `/run-sets/:id` web page. Sole contributor: Matt Windbrook (staff).
+Multi-pass runs arrived: a `RunSet` orchestrator (a cards-by-attempts loop), set-level WebSocket broadcasting, a cancel-token registry, a `--passes` CLI flag, and a `/run-sets/:id` web page. Sole contributor: Matt Windbrook.
 
 </article>
 
@@ -120,10 +120,10 @@ Multi-pass runs arrived: a `RunSet` orchestrator (a cards-by-attempts loop), set
 
 <RepoStat org="prime-radiant-inc" name="ts-libghostty" week="2026-04-27" />
 
-"bobbihack": a NetHack-playing coding-agent demo built up in phases — journal and query tools, autopilot navigation, a compaction-and-cost module, and a 51-turn periodic-compaction integration test. Sole contributor: Matt Windbrook (staff).
+"bobbihack": a NetHack-playing coding-agent demo built up in phases — journal and query tools, autopilot navigation, a compaction-and-cost module, and a 51-turn periodic-compaction integration test. Sole contributor: Matt Windbrook.
 
 </article>
 
-A pair of one-commit housekeeping changes rounded out the week: [claude-plugin-stats](https://github.com/prime-radiant-inc/claude-plugin-stats) recovered a data file from an Arq backup, and [github-triage](https://github.com/prime-radiant-inc/github-triage) reframed its triage prompt to treat bug reports as bug reports rather than product defects — both from Jesse Vincent (staff).
+A pair of one-commit housekeeping changes rounded out the week: [claude-plugin-stats](https://github.com/prime-radiant-inc/claude-plugin-stats) recovered a data file from an Arq backup, and [github-triage](https://github.com/prime-radiant-inc/github-triage) reframed its triage prompt to treat bug reports as bug reports rather than product defects — both from Jesse Vincent.
 
 </section>
