@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Shipped</title>
+  <subtitle>A weekly recap of public-repo activity across prime-radiant-inc and obra.</subtitle>
+  <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
+  <link href="https://prime-radiant-inc.github.io/shipped/" />
+  <id>https://prime-radiant-inc.github.io/shipped/</id>
+  <updated>2026-08-14T00:00:00.000Z</updated>
+  <entry>
+    <title>Tools that help other tools ship: everyharness, proving-it-works, and superpowers v6.3.0</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-10" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-10</id>
+    <updated>2026-08-14T00:00:00.000Z</updated>
+    <published>2026-08-14T00:00:00.000Z</published>
+    <summary>The most recent week, still in progress: three new repos go public (everyharness, everyharness-container, proving-it-works), superpowers cuts v6.3.0 with Devin and Hermes support, clipfan and agentic-usage-meter both release, and serf runs a top-to-bottom UX pass — with outside contributions from recognizable names.</summary>
+  </entry>
+  <entry>
+    <title>The widest week: releases across the board, and the whole org gets mapped</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-03" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-03</id>
+    <updated>2026-08-09T00:00:00.000Z</updated>
+    <published>2026-08-09T00:00:00.000Z</published>
+    <summary>The widest week in the window by repo count: obol, agentic-usage-meter, and superpowers-chrome all cut releases, awesome-superpowers opens, serf logs a third four-figure week — and an org-wide service-catalog sweep touched nearly every repo at once. We count the sweep honestly and don&apos;t let it masquerade as product work.</summary>
+  </entry>
+  <entry>
+    <title>Building for a community: a code of conduct and a usage meter</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-07-27" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-07-27</id>
+    <updated>2026-08-02T00:00:00.000Z</updated>
+    <published>2026-08-02T00:00:00.000Z</published>
+    <summary>Prime Radiant publishes a community code of conduct and opens agentic-usage-meter, a macOS quota tracker. No releases this week — but two new repos that say where things are heading, plus another heavy serf week and a research campaign that closed on a substantial cost cut.</summary>
+  </entry>
+  <entry>
+    <title>superpowers v6.2.0, winpepper goes streaming, and serf&apos;s biggest week</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-07-20" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-07-20</id>
+    <updated>2026-07-26T00:00:00.000Z</updated>
+    <published>2026-07-26T00:00:00.000Z</published>
+    <summary>superpowers cuts v6.2.0, winpepper ships two alpha releases and adds cloud ASR, and serf logs its heaviest push of the window on session and pane architecture. Repos active across both orgs, with outside contributors landing on both superpowers and winpepper.</summary>
+  </entry>
+  <entry>
+    <title>Two tools from scratch: blogosphere and smevals</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-07-13" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-07-13</id>
+    <updated>2026-07-19T00:00:00.000Z</updated>
+    <published>2026-07-19T00:00:00.000Z</published>
+    <summary>obra/blogosphere — a local-first blogging client — and smevals, a small-model eval framework, are both built from nothing in a single week. teststrip and obol cut releases, and the contributor list widens across both orgs.</summary>
+  </entry>
+  <entry>
+    <title>First releases: books-for-bots, obol, and teststrip go public</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-07-06" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-07-06</id>
+    <updated>2026-07-12T00:00:00.000Z</updated>
+    <published>2026-07-12T00:00:00.000Z</published>
+    <summary>Two Rust tools built for AI agents — books-for-bots and obol — cut their first tagged releases, teststrip&apos;s macOS photo-culling app goes public with releases of its own, and under the surface serf runs a fuzz-coverage campaign and smevals gains a contribution from Simon Willison.</summary>
+  </entry>
+  <entry>
+    <title>Two new repos go public, and superpowers turns to Codex</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-29" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-29</id>
+    <updated>2026-07-05T00:00:00.000Z</updated>
+    <published>2026-07-05T00:00:00.000Z</published>
+    <summary>A Linear-tracking plugin and a native-Linux terminal workspace manager both go public, superpowers ships two Codex-focused releases, and under the headlines serf runs a coverage-hardening campaign while teststrip races through its culling workflow. Active repos across both orgs.</summary>
+  </entry>
+  <entry>
+    <title>serf goes public, toil arrives</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-22" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-22</id>
+    <updated>2026-06-28T00:00:00.000Z</updated>
+    <published>2026-06-28T00:00:00.000Z</published>
+    <summary>serf ships v0.1.0, toil lands as a new workflow orchestrator, and a credential-axis push reshapes the eval lab. Active repos across both orgs.</summary>
+  </entry>
+  <entry>
+    <title>Superpowers 6 ships, claude-session-driver hits 4.0</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-15" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-15</id>
+    <updated>2026-06-21T00:00:00.000Z</updated>
+    <published>2026-06-21T00:00:00.000Z</published>
+    <summary>A release-train week: Superpowers 6 lands, claude-session-driver ships its TypeScript rewrite as v4.0.0, and obol and slackline both cut new releases. The last week before our first published recap.</summary>
+  </entry>
+  <entry>
+    <title>clipfan reaches 1.0, and a research-methodology stack takes shape</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-08" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-08</id>
+    <updated>2026-06-14T00:00:00.000Z</updated>
+    <published>2026-06-14T00:00:00.000Z</published>
+    <summary>clipfan crosses v1.0.0, three new repos appear — a plugin-stats scraper and the superpowers-autoresearch / superpowers-docs evidence-methodology pair — and a full Quorum TypeScript port lands in the eval lab.</summary>
+  </entry>
+  <entry>
+    <title>obol arrives, clipfan grows a self-healing mesh</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-01" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-06-01</id>
+    <updated>2026-06-07T00:00:00.000Z</updated>
+    <published>2026-06-07T00:00:00.000Z</published>
+    <summary>obol launches — a multi-language agent-cost estimator — homedir-manager splits out of dotfiles, and slackline, clearance, and clipfan all cut releases. A launch-and-release-heavy week across both orgs.</summary>
+  </entry>
+  <entry>
+    <title>clipfan launches, winpepper finds its voice</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-05-25" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-05-25</id>
+    <updated>2026-05-31T00:00:00.000Z</updated>
+    <published>2026-05-31T00:00:00.000Z</published>
+    <summary>clipfan ships its first tagged release — a Mac-to-fleet clipboard daemon — and winpepper&apos;s local dictation reaches v0.6.1-alpha. A broad week across both orgs, from eval-lab economics to VM-orchestrator surgery.</summary>
+  </entry>
+  <entry>
+    <title>slackline and episodic-memory cut releases</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-05-18" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-05-18</id>
+    <updated>2026-05-24T00:00:00.000Z</updated>
+    <published>2026-05-24T00:00:00.000Z</published>
+    <summary>episodic-memory hardens its cross-platform install, slackline ships default-recipient fixes, and a broad week spans a serf TUI redesign, a Codex OAuth provider in sprout, and a third VM backend in stockyard — the last stop before the blog&apos;s live coverage begins.</summary>
+  </entry>
+  <entry>
+    <title>winpepper is born, claude-session-driver hits v2</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-05-11" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-05-11</id>
+    <updated>2026-05-17T00:00:00.000Z</updated>
+    <published>2026-05-17T00:00:00.000Z</published>
+    <summary>winpepper&apos;s Windows dictation tool is created and built out in a single week, claude-session-driver drops its fake approval gate for a real v2, episodic-memory lands end-to-end Codex support, and superpowers-evals splits out as its own lab.</summary>
+  </entry>
+  <entry>
+    <title>bot-toolkit and parallel-adversarial-review launch</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-05-04" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-05-04</id>
+    <updated>2026-05-10T00:00:00.000Z</updated>
+    <published>2026-05-10T00:00:00.000Z</published>
+    <summary>Two new repos ship to npm and GitHub the same week they&apos;re created, superpowers cuts v5.1.0 and seeds its eval harness, and streamlinear cuts its first packaged release.</summary>
+  </entry>
+  <entry>
+    <title>books-for-bots arrives, episodic-memory hotfixes</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-04-27" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-04-27</id>
+    <updated>2026-05-03T00:00:00.000Z</updated>
+    <published>2026-05-03T00:00:00.000Z</published>
+    <summary>A new Rust CLI turns EPUBs into agent-navigable Markdown, episodic-memory ships three point releases ending in an emergency hotfix, and outside contributors show up early across both orgs.</summary>
+  </entry>
+</feed>
