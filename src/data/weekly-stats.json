@@ -6,8 +6,8 @@
       "second_tier_count": 9,
       "commits": 414,
       "merged_prs": 13,
-      "loc_added": 155374,
-      "loc_removed": 26213,
+      "loc_added": 122404,
+      "loc_removed": 24553,
       "contributors": 5,
       "tagged_releases": 3,
       "commit_only_bumps": 0
@@ -57,8 +57,8 @@
             "count": 89
           }
         ],
-        "loc_added": 28383,
-        "loc_removed": 2053,
+        "loc_added": 14506,
+        "loc_removed": 1350,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -75,8 +75,8 @@
             "count": 37
           }
         ],
-        "loc_added": 16915,
-        "loc_removed": 815,
+        "loc_added": 12526,
+        "loc_removed": 795,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -93,8 +93,8 @@
             "count": 44
           }
         ],
-        "loc_added": 17899,
-        "loc_removed": 290,
+        "loc_added": 10959,
+        "loc_removed": 288,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -192,8 +192,8 @@
             "count": 3
           }
         ],
-        "loc_added": 20366,
-        "loc_removed": 2241,
+        "loc_added": 12602,
+        "loc_removed": 1306,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -321,8 +321,8 @@
       "second_tier_count": 9,
       "commits": 642,
       "merged_prs": 5,
-      "loc_added": 190709,
-      "loc_removed": 40934,
+      "loc_added": 172272,
+      "loc_removed": 35189,
       "contributors": 4,
       "tagged_releases": 5,
       "commit_only_bumps": 5
@@ -427,8 +427,8 @@
             "count": 4
           }
         ],
-        "loc_added": 35684,
-        "loc_removed": 11999,
+        "loc_added": 20601,
+        "loc_removed": 6370,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -445,8 +445,8 @@
             "count": 92
           }
         ],
-        "loc_added": 18259,
-        "loc_removed": 1030,
+        "loc_added": 14905,
+        "loc_removed": 914,
         "merged_prs": [
           {
             "number": 1,
@@ -708,10 +708,10 @@
       "repos_active": 19,
       "featured_count": 6,
       "second_tier_count": 13,
-      "commits": 728,
+      "commits": 729,
       "merged_prs": 18,
-      "loc_added": 1817698,
-      "loc_removed": 47145,
+      "loc_added": 1743243,
+      "loc_removed": 41596,
       "contributors": 10,
       "tagged_releases": 9,
       "commit_only_bumps": 4
@@ -753,8 +753,8 @@
             "count": 123
           }
         ],
-        "loc_added": 161223,
-        "loc_removed": 14060,
+        "loc_added": 117593,
+        "loc_removed": 9818,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -771,8 +771,8 @@
             "count": 153
           }
         ],
-        "loc_added": 48193,
-        "loc_removed": 3390,
+        "loc_added": 31113,
+        "loc_removed": 2402,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1086,7 +1086,7 @@
         "html_url": "https://github.com/obra/ghost-pepper"
       },
       "obra/lace": {
-        "commits": 15,
+        "commits": 16,
         "authors": [
           {
             "name": "Jesse Vincent",
@@ -1267,8 +1267,8 @@
             "count": 156
           }
         ],
-        "loc_added": 56451,
-        "loc_removed": 746,
+        "loc_added": 42706,
+        "loc_removed": 427,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -1294,8 +1294,8 @@
       "second_tier_count": 13,
       "commits": 1588,
       "merged_prs": 8,
-      "loc_added": 284482,
-      "loc_removed": 65477,
+      "loc_added": 262998,
+      "loc_removed": 60414,
       "contributors": 7,
       "tagged_releases": 3,
       "commit_only_bumps": 4
@@ -1333,8 +1333,8 @@
             "count": 46
           }
         ],
-        "loc_added": 11889,
-        "loc_removed": 766,
+        "loc_added": 6187,
+        "loc_removed": 554,
         "merged_prs": [
           {
             "number": 1,
@@ -1361,8 +1361,8 @@
             "count": 248
           }
         ],
-        "loc_added": 86228,
-        "loc_removed": 18120,
+        "loc_added": 84868,
+        "loc_removed": 18049,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1401,8 +1401,8 @@
             "count": 7
           }
         ],
-        "loc_added": 16851,
-        "loc_removed": 3838,
+        "loc_added": 8732,
+        "loc_removed": 2025,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1566,8 +1566,8 @@
             "count": 542
           }
         ],
-        "loc_added": 113584,
-        "loc_removed": 29599,
+        "loc_added": 107281,
+        "loc_removed": 26632,
         "merged_prs": [
           {
             "number": 345,
@@ -1698,10 +1698,10 @@
       "repos_active": 17,
       "featured_count": 2,
       "second_tier_count": 15,
-      "commits": 630,
+      "commits": 632,
       "merged_prs": 23,
-      "loc_added": 167870,
-      "loc_removed": 362046,
+      "loc_added": 151408,
+      "loc_removed": 356213,
       "contributors": 7,
       "tagged_releases": 2,
       "commit_only_bumps": 1
@@ -1737,8 +1737,8 @@
             "count": 2
           }
         ],
-        "loc_added": 1236,
-        "loc_removed": 9700,
+        "loc_added": 665,
+        "loc_removed": 4896,
         "merged_prs": [
           {
             "number": 5,
@@ -1771,8 +1771,8 @@
             "count": 266
           }
         ],
-        "loc_added": 66177,
-        "loc_removed": 34190,
+        "loc_added": 61020,
+        "loc_removed": 33549,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1782,7 +1782,7 @@
         "html_url": "https://github.com/prime-radiant-inc/serf"
       },
       "prime-radiant-inc/clearance": {
-        "commits": 1,
+        "commits": 3,
         "authors": [
           {
             "name": "Jesse Vincent",
@@ -1813,8 +1813,8 @@
             "count": 11
           }
         ],
-        "loc_added": 5980,
-        "loc_removed": 66,
+        "loc_added": 2995,
+        "loc_removed": 38,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1853,8 +1853,8 @@
             "count": 1
           }
         ],
-        "loc_added": 13368,
-        "loc_removed": 13798,
+        "loc_added": 10453,
+        "loc_removed": 13713,
         "merged_prs": [
           {
             "number": 8,
@@ -1892,8 +1892,8 @@
             "count": 131
           }
         ],
-        "loc_added": 24043,
-        "loc_removed": 2492,
+        "loc_added": 20748,
+        "loc_removed": 2286,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -1983,8 +1983,8 @@
             "count": 93
           }
         ],
-        "loc_added": 32601,
-        "loc_removed": 301312,
+        "loc_added": 31175,
+        "loc_removed": 301259,
         "merged_prs": [
           {
             "number": 348,
@@ -2117,8 +2117,8 @@
             "count": 4
           }
         ],
-        "loc_added": 471,
-        "loc_removed": 107,
+        "loc_added": 358,
+        "loc_removed": 91,
         "merged_prs": [
           {
             "number": 28,
@@ -2190,8 +2190,8 @@
       "second_tier_count": 38,
       "commits": 962,
       "merged_prs": 15,
-      "loc_added": 266196,
-      "loc_removed": 80333,
+      "loc_added": 224038,
+      "loc_removed": 75040,
       "contributors": 11,
       "tagged_releases": 36,
       "commit_only_bumps": 7
@@ -2349,8 +2349,8 @@
             "count": 181
           }
         ],
-        "loc_added": 46975,
-        "loc_removed": 43761,
+        "loc_added": 41157,
+        "loc_removed": 43492,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -2479,8 +2479,8 @@
             "count": 1
           }
         ],
-        "loc_added": 1331,
-        "loc_removed": 179,
+        "loc_added": 851,
+        "loc_removed": 94,
         "merged_prs": [
           {
             "number": 52,
@@ -2820,8 +2820,8 @@
             "count": 2
           }
         ],
-        "loc_added": 35592,
-        "loc_removed": 2156,
+        "loc_added": 33055,
+        "loc_removed": 2083,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -3207,8 +3207,8 @@
             "count": 36
           }
         ],
-        "loc_added": 5845,
-        "loc_removed": 147,
+        "loc_added": 4336,
+        "loc_removed": 129,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -3225,8 +3225,8 @@
             "count": 202
           }
         ],
-        "loc_added": 75154,
-        "loc_removed": 23397,
+        "loc_added": 43340,
+        "loc_removed": 18549,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -3447,8 +3447,8 @@
       "second_tier_count": 23,
       "commits": 1553,
       "merged_prs": 52,
-      "loc_added": 428650,
-      "loc_removed": 101182,
+      "loc_added": 392183,
+      "loc_removed": 89112,
       "contributors": 7,
       "tagged_releases": 20,
       "commit_only_bumps": 9
@@ -3484,8 +3484,8 @@
             "count": 53
           }
         ],
-        "loc_added": 14373,
-        "loc_removed": 10115,
+        "loc_added": 6270,
+        "loc_removed": 5051,
         "merged_prs": [
           {
             "number": 12,
@@ -3578,8 +3578,8 @@
             "count": 3
           }
         ],
-        "loc_added": 109154,
-        "loc_removed": 21516,
+        "loc_added": 100345,
+        "loc_removed": 20227,
         "merged_prs": [
           {
             "number": 7,
@@ -3660,8 +3660,8 @@
             "count": 6
           }
         ],
-        "loc_added": 5964,
-        "loc_removed": 797,
+        "loc_added": 3000,
+        "loc_removed": 429,
         "merged_prs": [
           {
             "number": 11,
@@ -3782,8 +3782,8 @@
             "count": 48
           }
         ],
-        "loc_added": 85018,
-        "loc_removed": 44621,
+        "loc_added": 73741,
+        "loc_removed": 40071,
         "merged_prs": [
           {
             "number": 21,
@@ -3946,8 +3946,8 @@
             "count": 51
           }
         ],
-        "loc_added": 41614,
-        "loc_removed": 8376,
+        "loc_added": 40353,
+        "loc_removed": 8258,
         "merged_prs": [
           {
             "number": 11,
@@ -4219,8 +4219,8 @@
             "count": 27
           }
         ],
-        "loc_added": 3015,
-        "loc_removed": 300,
+        "loc_added": 1559,
+        "loc_removed": 161,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -4237,8 +4237,8 @@
             "count": 42
           }
         ],
-        "loc_added": 7207,
-        "loc_removed": 2834,
+        "loc_added": 4610,
+        "loc_removed": 2292,
         "merged_prs": [
           {
             "number": 352,
@@ -4493,8 +4493,8 @@
       "second_tier_count": 10,
       "commits": 813,
       "merged_prs": 15,
-      "loc_added": 269320,
-      "loc_removed": 79189,
+      "loc_added": 162740,
+      "loc_removed": 67055,
       "contributors": 4,
       "tagged_releases": 10,
       "commit_only_bumps": 7
@@ -4526,8 +4526,8 @@
             "count": 327
           }
         ],
-        "loc_added": 114978,
-        "loc_removed": 47455,
+        "loc_added": 69401,
+        "loc_removed": 43376,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -4581,8 +4581,8 @@
             "count": 42
           }
         ],
-        "loc_added": 95057,
-        "loc_removed": 21769,
+        "loc_added": 65752,
+        "loc_removed": 17433,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -4701,8 +4701,8 @@
             "count": 21
           }
         ],
-        "loc_added": 22029,
-        "loc_removed": 3489,
+        "loc_added": 1241,
+        "loc_removed": 177,
         "merged_prs": [
           {
             "number": 22,
@@ -4750,8 +4750,8 @@
             "count": 83
           }
         ],
-        "loc_added": 24627,
-        "loc_removed": 1595,
+        "loc_added": 13717,
+        "loc_removed": 1188,
         "merged_prs": [
           {
             "number": 353,
@@ -4985,8 +4985,8 @@
       "second_tier_count": 8,
       "commits": 568,
       "merged_prs": 12,
-      "loc_added": 286576,
-      "loc_removed": 50088,
+      "loc_added": 246342,
+      "loc_removed": 44698,
       "contributors": 4,
       "tagged_releases": 2,
       "commit_only_bumps": 0
@@ -5018,8 +5018,8 @@
             "count": 435
           }
         ],
-        "loc_added": 145118,
-        "loc_removed": 42905,
+        "loc_added": 111260,
+        "loc_removed": 38987,
         "merged_prs": [
           {
             "number": 11,
@@ -5089,8 +5089,8 @@
             "count": 16
           }
         ],
-        "loc_added": 19754,
-        "loc_removed": 4381,
+        "loc_added": 13483,
+        "loc_removed": 2912,
         "merged_prs": [
           {
             "number": 26,
@@ -5177,8 +5177,8 @@
             "count": 2
           }
         ],
-        "loc_added": 210,
-        "loc_removed": 6,
+        "loc_added": 105,
+        "loc_removed": 3,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -5285,8 +5285,8 @@
       "second_tier_count": 7,
       "commits": 1687,
       "merged_prs": 10,
-      "loc_added": 522728,
-      "loc_removed": 57978,
+      "loc_added": 303075,
+      "loc_removed": 37482,
       "contributors": 3,
       "tagged_releases": 2,
       "commit_only_bumps": 0
@@ -5300,8 +5300,8 @@
             "count": 8
           }
         ],
-        "loc_added": 690,
-        "loc_removed": 29,
+        "loc_added": 402,
+        "loc_removed": 26,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -5318,8 +5318,8 @@
             "count": 938
           }
         ],
-        "loc_added": 436758,
-        "loc_removed": 47765,
+        "loc_added": 217393,
+        "loc_removed": 27272,
         "merged_prs": [
           {
             "number": 12,
@@ -5557,8 +5557,8 @@
       "second_tier_count": 9,
       "commits": 1764,
       "merged_prs": 4,
-      "loc_added": 387243,
-      "loc_removed": 42707,
+      "loc_added": 282747,
+      "loc_removed": 35496,
       "contributors": 7,
       "tagged_releases": 5,
       "commit_only_bumps": 0
@@ -5572,8 +5572,8 @@
             "count": 2
           }
         ],
-        "loc_added": 2688,
-        "loc_removed": 30,
+        "loc_added": 1344,
+        "loc_removed": 15,
         "merged_prs": [
           {
             "number": 14,
@@ -5604,8 +5604,8 @@
             "count": 3
           }
         ],
-        "loc_added": 228828,
-        "loc_removed": 18735,
+        "loc_added": 156139,
+        "loc_removed": 13163,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -5741,8 +5741,8 @@
             "count": 675
           }
         ],
-        "loc_added": 120023,
-        "loc_removed": 12756,
+        "loc_added": 89735,
+        "loc_removed": 11146,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -5810,8 +5810,8 @@
             "count": 3
           }
         ],
-        "loc_added": 350,
-        "loc_removed": 28,
+        "loc_added": 175,
+        "loc_removed": 14,
         "merged_prs": [
           {
             "number": 354,
@@ -5867,8 +5867,8 @@
       "second_tier_count": 10,
       "commits": 1035,
       "merged_prs": 23,
-      "loc_added": 328508,
-      "loc_removed": 64066,
+      "loc_added": 234606,
+      "loc_removed": 53681,
       "contributors": 7,
       "tagged_releases": 4,
       "commit_only_bumps": 0
@@ -5904,8 +5904,8 @@
             "count": 1
           }
         ],
-        "loc_added": 169422,
-        "loc_removed": 40516,
+        "loc_added": 119015,
+        "loc_removed": 34747,
         "merged_prs": [
           {
             "number": 41,
@@ -6105,8 +6105,8 @@
             "count": 246
           }
         ],
-        "loc_added": 85146,
-        "loc_removed": 10327,
+        "loc_added": 41651,
+        "loc_removed": 5711,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -6298,8 +6298,8 @@
       "second_tier_count": 12,
       "commits": 1902,
       "merged_prs": 19,
-      "loc_added": 615307,
-      "loc_removed": 186929,
+      "loc_added": 291558,
+      "loc_removed": 99072,
       "contributors": 9,
       "tagged_releases": 3,
       "commit_only_bumps": 1
@@ -6313,7 +6313,7 @@
             "count": 4
           }
         ],
-        "loc_added": 996,
+        "loc_added": 795,
         "loc_removed": 31,
         "merged_prs": [
           {
@@ -6365,8 +6365,8 @@
             "count": 1467
           }
         ],
-        "loc_added": 442075,
-        "loc_removed": 176330,
+        "loc_added": 197087,
+        "loc_removed": 91164,
         "merged_prs": [
           {
             "number": 62,
@@ -6530,8 +6530,8 @@
             "count": 5
           }
         ],
-        "loc_added": 1263,
-        "loc_removed": 813,
+        "loc_added": 736,
+        "loc_removed": 421,
         "merged_prs": [
           {
             "number": 357,
@@ -6649,8 +6649,8 @@
             "count": 1
           }
         ],
-        "loc_added": 156596,
-        "loc_removed": 8211,
+        "loc_added": 78563,
+        "loc_removed": 5912,
         "merged_prs": [
           {
             "number": 56,
@@ -6716,8 +6716,8 @@
       "second_tier_count": 12,
       "commits": 1833,
       "merged_prs": 5,
-      "loc_added": 574817,
-      "loc_removed": 76751,
+      "loc_added": 370575,
+      "loc_removed": 48783,
       "contributors": 6,
       "tagged_releases": 0,
       "commit_only_bumps": 0
@@ -6767,8 +6767,8 @@
             "count": 1176
           }
         ],
-        "loc_added": 275491,
-        "loc_removed": 62206,
+        "loc_added": 158943,
+        "loc_removed": 36618,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -6803,7 +6803,7 @@
             "count": 202
           }
         ],
-        "loc_added": 136714,
+        "loc_added": 94251,
         "loc_removed": 1377,
         "merged_prs": [],
         "tagged_releases": [],
@@ -6839,8 +6839,8 @@
             "count": 94
           }
         ],
-        "loc_added": 29049,
-        "loc_removed": 3696,
+        "loc_added": 19423,
+        "loc_removed": 2086,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -6992,8 +6992,8 @@
             "count": 182
           }
         ],
-        "loc_added": 74974,
-        "loc_removed": 2456,
+        "loc_added": 39369,
+        "loc_removed": 1686,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -7011,8 +7011,8 @@
       "second_tier_count": 26,
       "commits": 1650,
       "merged_prs": 26,
-      "loc_added": 709131,
-      "loc_removed": 549868,
+      "loc_added": 584215,
+      "loc_removed": 522289,
       "contributors": 9,
       "tagged_releases": 10,
       "commit_only_bumps": 0
@@ -7092,8 +7092,8 @@
             "count": 1
           }
         ],
-        "loc_added": 356584,
-        "loc_removed": 321603,
+        "loc_added": 257166,
+        "loc_removed": 296659,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -7414,8 +7414,8 @@
             "count": 40
           }
         ],
-        "loc_added": 14072,
-        "loc_removed": 2693,
+        "loc_added": 11808,
+        "loc_removed": 1432,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -7478,8 +7478,8 @@
             "count": 61
           }
         ],
-        "loc_added": 12470,
-        "loc_removed": 1446,
+        "loc_added": 8124,
+        "loc_removed": 965,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -7579,8 +7579,8 @@
             "count": 19
           }
         ],
-        "loc_added": 2777,
-        "loc_removed": 144,
+        "loc_added": 1614,
+        "loc_removed": 91,
         "merged_prs": [
           {
             "number": 364,
@@ -7731,8 +7731,8 @@
             "count": 6
           }
         ],
-        "loc_added": 21238,
-        "loc_removed": 9339,
+        "loc_added": 19407,
+        "loc_removed": 9107,
         "merged_prs": [
           {
             "number": 43,
@@ -7795,8 +7795,8 @@
             "count": 121
           }
         ],
-        "loc_added": 43304,
-        "loc_removed": 4126,
+        "loc_added": 27410,
+        "loc_removed": 3518,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -7812,24 +7812,24 @@
       "repos_active": 20,
       "featured_count": 6,
       "second_tier_count": 14,
-      "commits": 457,
+      "commits": 511,
       "merged_prs": 12,
-      "loc_added": 112032,
-      "loc_removed": 43043,
+      "loc_added": 97663,
+      "loc_removed": 45173,
       "contributors": 8,
       "tagged_releases": 3,
       "commit_only_bumps": 3
     },
     "repos": {
       "prime-radiant-inc/homebrew-tap": {
-        "commits": 1,
+        "commits": 2,
         "authors": [
           {
             "name": "Jesse Vincent",
             "count": 1
           }
         ],
-        "loc_added": 19,
+        "loc_added": 54,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -7840,15 +7840,15 @@
         "html_url": "https://github.com/prime-radiant-inc/homebrew-tap"
       },
       "prime-radiant-inc/serf": {
-        "commits": 122,
+        "commits": 149,
         "authors": [
           {
             "name": "Jesse Vincent",
             "count": 122
           }
         ],
-        "loc_added": 25313,
-        "loc_removed": 24915,
+        "loc_added": 26977,
+        "loc_removed": 25383,
         "merged_prs": [
           {
             "number": 64,
@@ -7893,7 +7893,7 @@
             "count": 1
           }
         ],
-        "loc_added": 402,
+        "loc_added": 201,
         "loc_removed": 0,
         "merged_prs": [
           {
@@ -7938,7 +7938,7 @@
         "html_url": "https://github.com/prime-radiant-inc/superpowers-evals"
       },
       "prime-radiant-inc/clipfan": {
-        "commits": 14,
+        "commits": 26,
         "authors": [
           {
             "name": "Jesse Vincent",
@@ -7949,8 +7949,8 @@
             "count": 3
           }
         ],
-        "loc_added": 2078,
-        "loc_removed": 146,
+        "loc_added": 1654,
+        "loc_removed": 102,
         "merged_prs": [
           {
             "number": 2,
@@ -7979,15 +7979,15 @@
         "html_url": "https://github.com/prime-radiant-inc/clipfan"
       },
       "prime-radiant-inc/claude-plugin-stats": {
-        "commits": 6,
+        "commits": 10,
         "authors": [
           {
             "name": "github-actions[bot]",
             "count": 6
           }
         ],
-        "loc_added": 13474,
-        "loc_removed": 9495,
+        "loc_added": 15364,
+        "loc_removed": 11596,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -8066,8 +8066,8 @@
             "count": 1
           }
         ],
-        "loc_added": 256,
-        "loc_removed": 10,
+        "loc_added": 145,
+        "loc_removed": 5,
         "merged_prs": [
           {
             "number": 2,
@@ -8088,15 +8088,15 @@
         "html_url": "https://github.com/prime-radiant-inc/awesome-superpowers"
       },
       "prime-radiant-inc/everyharness": {
-        "commits": 149,
+        "commits": 153,
         "authors": [
           {
             "name": "Jesse Vincent",
             "count": 149
           }
         ],
-        "loc_added": 27516,
-        "loc_removed": 2494,
+        "loc_added": 22995,
+        "loc_removed": 1807,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [
@@ -8179,7 +8179,7 @@
         "html_url": "https://github.com/obra/dotfiles"
       },
       "obra/lace": {
-        "commits": 18,
+        "commits": 22,
         "authors": [
           {
             "name": "Jesse Vincent",
@@ -8190,8 +8190,8 @@
             "count": 1
           }
         ],
-        "loc_added": 2492,
-        "loc_removed": 172,
+        "loc_added": 6037,
+        "loc_removed": 2443,
         "merged_prs": [
           {
             "number": 365,
@@ -8218,7 +8218,7 @@
             "count": 1
           }
         ],
-        "loc_added": 42,
+        "loc_added": 21,
         "loc_removed": 0,
         "merged_prs": [
           {
@@ -8308,15 +8308,15 @@
         "html_url": "https://github.com/obra/the-elements-of-style"
       },
       "obra/winpepper": {
-        "commits": 80,
+        "commits": 82,
         "authors": [
           {
             "name": "danshapiro",
             "count": 80
           }
         ],
-        "loc_added": 26096,
-        "loc_removed": 3412,
+        "loc_added": 9871,
+        "loc_removed": 1438,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
