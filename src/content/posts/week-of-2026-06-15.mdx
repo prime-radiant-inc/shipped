@@ -1,0 +1,201 @@
+---
+title: "Superpowers 6 ships, claude-session-driver hits 4.0"
+week: "Week of June 15, 2026"
+dateStart: 2026-06-15
+dateEnd: 2026-06-21
+pubDate: 2026-06-21
+summary: "A release-train week: Superpowers 6 lands, claude-session-driver ships its TypeScript rewrite as v4.0.0, and obol and slackline both cut new releases. The last week before our first published recap."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+A week of releases landing. **Superpowers 6** shipped its full release train, **claude-session-driver** cut `v4.0.0` — the release that ships the bash-to-TypeScript rewrite from the week before — and **obol** and **slackline** both stepped their versions. This is the last of the weeks we're reaching back to fill in; the [week of June 22](/shipped/posts/week-of-2026-06-22/) picks up right after it as our first originally-published recap.
+
+<section class="summary">
+
+<WeekSummary week="2026-06-15" />
+
+<p class="caveat"><em>A few of this week's tagged releases are incremental point releases within active release trains (Superpowers 6's `.1`/`.2`/`.3` follow-ups, obol's and slackline's steady cadence), so the release count reflects a busy publishing week rather than that many distinct milestones.</em></p>
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology that actually works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-06-15" />
+
+A full Superpowers 6 release train in one week: `v6.0.0` unified the evals submodule across per-agent bootstrap scenarios and brought Prime Radiant branding to the visual companion; `v6.0.1` fixed Codex plugin-version display; `v6.0.2` stopped shipping the evals submodule after it turned out to break plugin installs; and `v6.0.3` moved spec-driven-development artifacts out of the git-protected `.git/` path into the working tree, with per-worktree isolation tests. (A "Job posting" commit also landed mid-week — recruiting, not code.)
+
+</article>
+
+<article class="repo">
+
+### [obra/claude-session-driver](https://github.com/obra/claude-session-driver)
+
+<p class="repo-desc">Launch, control, and monitor other Claude Code sessions as workers via tmux.</p>
+
+<RepoStat org="obra" name="claude-session-driver" week="2026-06-15" />
+
+`v4.0.0` — the release that ships the previous week's full TypeScript core rewrite (Claude parity plus Codex and Pi drivers). It came with follow-on fixes: Codex `apply_patch` rendering in `read-turn`, Pi tool-name casing normalized to the Bash/Read convention, an unregistered-derive-workers listing, a `--last N` cap on `read-events --follow` backlog, and a mixed-fleet `HARNESS` column in `list`.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/obol](https://github.com/prime-radiant-inc/obol)
+
+<p class="repo-desc">Reads an AI-agent transcript and estimates what it cost — a Rust core with bindings for Python, Go, and TypeScript.</p>
+
+<RepoStat org="prime-radiant-inc" name="obol" week="2026-06-15" />
+
+Releases `v0.5.0` and `v0.6.0`. obol added an ATIF trajectory dialect and then — a breaking change — removed the per-agent raw-log dialects entirely, leaving ATIF and obol's own dialect as the only two supported formats. Plus a cost-accuracy fix: an empty model now signals "unknown" rather than "unpriced," and an explicit `final_metrics.total_cost_usd` overrides the rate-table lookup when present.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/slackline](https://github.com/prime-radiant-inc/slackline)
+
+<p class="repo-desc">A single-binary Go CLI that gives AI agents a Slack identity.</p>
+
+<RepoStat org="prime-radiant-inc" name="slackline" week="2026-06-15" />
+
+Releases `v0.4.0` and `v0.5.0`, mostly user-facing polish: `@handle` mention linkification (in both `read` and `ask`), user-ID resolution, a new `users` command, an `auth whoami`, and message permalinks. It also defaulted `read`/`listen` output to compact text and fixed a dropped `message_replied` parent-event bug plus a Socket Mode listener-failure visibility gap.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clipfan](https://github.com/prime-radiant-inc/clipfan)
+
+<p class="repo-desc">A clipboard-sync daemon for a Mac plus a remote tmux fleet.</p>
+
+<RepoStat org="prime-radiant-inc" name="clipfan" week="2026-06-15" />
+
+A small, focused `v1.0.9` after the big 1.0 push: an idle-CPU regression fixed, and tmux fanout guarded against stale buffer hooks.
+
+</article>
+
+<article class="repo">
+
+### [obra/private-journal-mcp](https://github.com/obra/private-journal-mcp)
+
+<p class="repo-desc">An MCP server for a private journaling capability.</p>
+
+<RepoStat org="obra" name="private-journal-mcp" week="2026-06-15" />
+
+Two releases went out this week, `v2.0.0` and `v2.0.1` — but honestly, that's the whole story here: the underlying code landed in an earlier week, and these were the tags being cut. We'd rather say that plainly than invent a feature narrative the week's data doesn't support.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">A lightweight agentic coding environment (TypeScript).</p>
+
+<RepoStat org="obra" name="lace" week="2026-06-15" />
+
+A "session-state architecture" pass: an O(tail) incremental turn-projection cache that avoids full-log rescans, a cross-process monotonic sequence authority (flock plus a head file, with self-healing detection of pid reuse on stale locks), and a non-lossy verbatim `event_journal` recall store. Plus prompt-cache byte-stability guardrails — golden-fixture determinism tests pinning exact request bytes for Anthropic, OpenAI, and Gemini, closing a parallel-tool-call cache-invalidation bug.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">A non-interactive coding agent that loops until the work is done, with native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-06-15" />
+
+Still the week's largest raw commit volume even without a release. A new `serf-doctor` diagnostic subsystem landed — tree/watches/transcript/forensics views over a session's delegate and observer state, with a dedicated `doctoring-serf` skill — alongside a tool-fluency experimentation framework (live harness, prompt iteration, fixed-prompt reruns) and passive-observer sidecars that idle without generating tool-call churn. Install now defaults to a home-prefix layout.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">The Quorum behavioral eval lab — drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-06-15" />
+
+Design and early build of a "shared eval appliance": a containerized, detached-worker job model with its own CLI, cancellation handling, git-ref preflight, and a trust-hardening pass (wrapper-environment trust, path validation, sanitation-bypass closure) — the eval harness's own container story, distinct from stockyard. Plus Quorum dashboard decoupling (a standalone `dashboard` entrypoint, an OS-aware eligibility grid, 5-state cells) and a full-fidelity Pi normalizer.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/llm-proxy](https://github.com/prime-radiant-inc/llm-proxy)
+
+<p class="repo-desc">A transparent logging proxy for LLM API traffic — records every request and response for debugging, auditing, and analysis.</p>
+
+<RepoStat org="prime-radiant-inc" name="llm-proxy" week="2026-06-15" />
+
+"Mantle" telemetry-contract work: run-scoped mantle routing required for cloud builds, telemetry-observation logging with pass-through provenance preserved on upstream failures, and safer cloud-build run-ID decoding.
+
+</article>
+
+<article class="repo">
+
+### [obra/dotfiles](https://github.com/obra/dotfiles)
+
+<p class="repo-desc">Jesse's personal dotfiles.</p>
+
+<RepoStat org="obra" name="dotfiles" week="2026-06-15" />
+
+Small quality-of-life fixes: Homebrew on `PATH` for non-interactive zsh, a guard against an inert stray root `~/.zshrc`, and `kimi-code` added to the managed `PATH`.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-marketplace](https://github.com/obra/superpowers-marketplace)
+
+<p class="repo-desc">A curated Claude Code plugin marketplace.</p>
+
+<RepoStat org="obra" name="superpowers-marketplace" week="2026-06-15" />
+
+Version-pin bumps only, tracking Superpowers `v6.0.0`/`6.0.2`/`6.0.3` and claude-session-driver `v4.0.0`.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/obol-go](https://github.com/prime-radiant-inc/obol-go)
+
+<p class="repo-desc">The generated Go binding for obol.</p>
+
+<RepoStat org="prime-radiant-inc" name="obol-go" week="2026-06-15" />
+
+A single machine-generated release commit, keeping the Go binding in step with obol's release train.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/claude-plugin-stats](https://github.com/prime-radiant-inc/claude-plugin-stats)
+
+<p class="repo-desc">A daily scrape of Claude Code plugin install stats.</p>
+
+<RepoStat org="prime-radiant-inc" name="claude-plugin-stats" week="2026-06-15" />
+
+A quiet week — the daily scrape and chart rebuild running on schedule, all `github-actions[bot]`, no human-authored change. The robot doing its job.
+
+</article>
+
+</section>

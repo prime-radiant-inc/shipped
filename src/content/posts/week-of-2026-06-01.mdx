@@ -1,0 +1,191 @@
+---
+title: "obol arrives, clipfan grows a self-healing mesh"
+week: "Week of June 1, 2026"
+dateStart: 2026-06-01
+dateEnd: 2026-06-07
+pubDate: 2026-06-07
+summary: "obol launches — a multi-language agent-cost estimator — homedir-manager splits out of dotfiles, and slackline, clearance, and clipfan all cut releases. A launch-and-release-heavy week across both orgs."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+A launch-heavy week. **obol** — a cost estimator that reads an agent transcript and tells you what it cost, with bindings for Python, Go, and TypeScript — appeared and shipped a `v0.1.1` with a full multi-channel release pipeline behind it. **homedir-manager** split out of the dotfiles repo into a standalone deploy-and-audit engine. And a run of releases landed across `slackline`, `clearance`, and `clipfan`, the last of which grew a self-healing SSH mesh.
+
+<section class="summary">
+
+<WeekSummary week="2026-06-01" />
+
+<p class="caveat"><em>Two numbers to read carefully this week. The active-repo count is inflated by an org-wide housekeeping commit — a single "project-map" doc added to dozens of otherwise-quiet repos — so many of those repos saw no feature work. And the tagged-release count is dominated by clipfan, which tags a release per merged change (29 patch tags this week alone); that's a packaging cadence, not 29 distinct milestones. The real feature work is in the repos called out below.</em></p>
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/homedir-manager](https://github.com/obra/homedir-manager)
+
+<p class="repo-desc">A symlink-deploy and audit tool for dotfiles content repos, plus a macOS defaults helper (POSIX sh and Swift).</p>
+
+<RepoStat org="obra" name="homedir-manager" week="2026-06-01" />
+
+New this week — the "management machinery" carved out of `obra/dotfiles` into its own standalone engine: multi-repo discovery, deploy and audit engines, and a marker-based content-repo registry. It added a `merge-children` manifest directive that expands a directory's children into a symlink target, with drift-checking and orphan detection, and shipped Shellcheck-clean CI across Linux/macOS/Swift plus a pre-push secret-audit hook.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/obol](https://github.com/prime-radiant-inc/obol)
+
+<p class="repo-desc">Reads an AI-agent transcript and estimates what it cost — a Rust core with C-ABI bindings for Python, Go, and TypeScript.</p>
+
+<RepoStat org="prime-radiant-inc" name="obol" week="2026-06-01" />
+
+New this week, and it launched with distribution already solved: alongside the `v0.1.1` release came a full multi-channel publish pipeline built in the same window — PyPI (four platform wheels via OIDC), crates.io (OIDC trusted publishing), and npm (`@primeradianthq/obol`). Naming a cost estimator "obol" — the coin you pay the ferryman — is the kind of detail that tells you who built it.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/obol-go](https://github.com/prime-radiant-inc/obol-go)
+
+<p class="repo-desc">The generated Go binding for obol — loads the native library at runtime via <code>purego</code>, no cgo.</p>
+
+<RepoStat org="prime-radiant-inc" name="obol-go" week="2026-06-01" />
+
+New this week: the bootstrap of obol's Go binding target, tag-generated automatically from `prime-radiant-inc/obol`'s releases. Its commits are machine-generated release artifacts, so this repo is really the automation half of obol's launch rather than a separate project.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clearance](https://github.com/prime-radiant-inc/clearance)
+
+<p class="repo-desc">The Clearance product workspace — a Markdown viewer monorepo, currently a native Swift/macOS app.</p>
+
+<RepoStat org="prime-radiant-inc" name="clearance" week="2026-06-01" />
+
+Two tagged releases (`v1.3.5` and `v1.3.4`). A local CLI install option landed, macOS download instructions got clearer, and a native-appearance polish pass fixed dark-appearance handling, preserved transparent icon corners, added a standard zoom shortcut, and opened bundled release notes read-only. External contributor **Jonah** (`alibi85`) is credited on one commit, and a macOS open-app fix (`#51`) came in via a Codex-authored branch.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/slackline](https://github.com/prime-radiant-inc/slackline)
+
+<p class="repo-desc">A single-binary Go CLI that gives AI agents a Slack identity.</p>
+
+<RepoStat org="prime-radiant-inc" name="slackline" week="2026-06-01" />
+
+A busy release week (`v0.3.3`, `v0.3.2`, `v0.3.0`, `v0.2.3`, plus a commit-only `v0.3.1`), all aimed at cutting jq friction: a `listen --type` allowlist filter, `reaction_added`/`removed` unified into one `reaction` event with an action field, and a distinct timeout exit code for `ask`. The Slack skill set consolidated too — `slackline-provision-bot` folded into `using-slack`, the plugin made self-distributing — and a `read --thread` tail-omission bug got fixed.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clipfan](https://github.com/prime-radiant-inc/clipfan)
+
+<p class="repo-desc">A clipboard-sync daemon for a Mac plus a remote tmux fleet.</p>
+
+<RepoStat org="prime-radiant-inc" name="clipfan" week="2026-06-01" />
+
+The release count here is a packaging artifact (a tag per merged change), but the week's real headline is a self-healing SSH mesh: `mesh-heal` brought decentralized roster discovery, host-key trust hardening (closing a TOCTOU and a truncation gap), resilient sync-pin host prep, and Go-daemon restart recovery. Fleet UX picked up an About window, an explicit Add-Peer success state, and SSH-aware outbound indicators, alongside reliability fixes to launchd `PATH`/`tmux` resolution and stale-session handling.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">A non-interactive coding agent that loops until the work is done, with native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-06-01" />
+
+A "goal" objective engine: an objective that persists across restart and resume, shows as a live status chip in both the TUI and the web hub, gets re-injected on compaction, and was hardened against adversarial review. Plus resumed-session fixes — the active turn id is now preserved, and the task-status UI got a cleanup.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">The Quorum behavioral eval lab — drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-06-01" />
+
+Two new eval targets came into the harness — Copilot and Kimi — each with isolated auth/session preflight, capture diagnostics, and rate-limit handling. The `agy` path got fail-fast reliability work (rate-limit detection, kill, and verdict path, with credential backup/restore around mid-run kills), and a suite-tiering mechanism landed (sentinel/adhoc tiers, `run-all --tier` filtering).
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">A lightweight agentic coding environment (TypeScript).</p>
+
+<RepoStat org="obra" name="lace" week="2026-06-01" />
+
+An environment-based container-role refactor: role→environment resolution now drives the container spec, replacing ad hoc identity params, and the credential-broker socket threads through `ToolContext` per environment. The now-redundant `sen-cred` mount gate and a vestigial identity param came out.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology that actually works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-06-01" />
+
+Ten merged PRs and the week's most community-driven repo. The core work — multi-harness expansion (Antigravity CLI `agy` support, a Kimi Code plugin manifest), Windows polyglot-hook fixes, and a WebSocket-frame-payload cap in brainstorming — was driven by Drew Ritter, with a notable run of external contributions: small fixes and manifest additions from **Matt Van Horn** (`mvanhorn`), **`dev_Hakaze`** (`arimu1`), **`nestorluiscamachopaz`**, **`nawfal`** (`nawfalaf`), and **`qer`** (`wbxl2000`), and a PR opened by **Rahul** (`therahul-yo`). A good week for the project's contributor base.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">An AI-powered QA framework that drives web apps, CLI tools, and TUI programs from markdown story cards.</p>
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-06-01" />
+
+Housekeeping only this week — the org-wide project-map commit, no feature work.
+
+</article>
+
+<article class="repo">
+
+### [obra/dotfiles](https://github.com/obra/dotfiles)
+
+<p class="repo-desc">Jesse's personal dotfiles.</p>
+
+<RepoStat org="obra" name="dotfiles" week="2026-06-01" />
+
+The biggest "quiet" repo by volume, and mostly a secrets-management overhaul: `fnox` adopted as the single lazy per-command secret mechanism (replacing the old by-title resolver), with a vault-agnostic (`op`/`rbw`/`bw`) dispatch helper. Plus a cross-OS shell refactor (zsh config under `ZDOTDIR`, a Linux drop-in, `gh` as the cross-platform git credential helper) and a new documentation-maintenance skill.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-testing](https://github.com/prime-radiant-inc/superpowers-testing)
+
+<p class="repo-desc">A development and testing marketplace for Superpowers.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-testing" week="2026-06-01" />
+
+Housekeeping only — a single maintenance commit, no feature work.
+
+</article>
+
+<p class="caveat"><em>Beyond the repos above, roughly two dozen more across both orgs saw a single identical commit this week — an org-wide "project-map" catalog rollout (a <code>catalog-info.yaml</code> and <code>ABOUT.md</code> added to each). It's infrastructure hygiene rather than shipped features, so we've grouped it here rather than give each repo its own entry. A handful also had version-pin bumps or release-note-only tags (<code>superpowers-chrome</code>, <code>claude-session-driver</code>, <code>superpowers-marketplace</code>, <code>superpowers-lab</code>).</em></p>
+
+</section>
