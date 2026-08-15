@@ -1,0 +1,167 @@
+---
+title: "winpepper is born, claude-session-driver hits v2"
+week: "Week of May 11, 2026"
+dateStart: 2026-05-11
+dateEnd: 2026-05-17
+pubDate: 2026-05-17
+summary: "winpepper's Windows dictation tool is created and built out in a single week, claude-session-driver drops its fake approval gate for a real v2, episodic-memory lands end-to-end Codex support, and superpowers-evals splits out as its own lab."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+A dense week. **winpepper** — Windows-native local dictation — was created and built out through numbered milestones in seven days, all of it staff-authored before outside contributors join later. **claude-session-driver** cut a real `v2.0.0`, dropping its "fake tool-approval gate," and **episodic-memory** landed end-to-end Codex support across four point releases. The eval harness lifted into superpowers the week before split out into its own repo, **superpowers-evals**, and **superpowers-chrome** made browser-dialog handling a first-class concern.
+
+<section class="summary">
+
+<WeekSummary week="2026-05-11" />
+
+<p class="caveat"><em>A note on the line count: this week's raw added-lines figure is dominated by a single automated commit — a bot regenerating a large leaderboard data file in an analysis repo (~1.5M generated lines). That's data, not hand-written code; read the headline total with that in mind and look to the per-repo work below for the real shape of the week.</em></p>
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/claude-session-driver](https://github.com/obra/claude-session-driver)
+
+<p class="repo-desc">Launch, control, and monitor other Claude Code sessions as workers via tmux.</p>
+
+<RepoStat org="obra" name="claude-session-driver" week="2026-05-11" />
+
+`v2.0.0` dropped the fake tool-approval gate; `v2.0.1` disallowed `AskUserQuestion` inside workers. In between came three rounds of user-feedback fixes: a universal worker handle, spec-aligned paths, status and handoff commands, and a default worker listing. Sole contributor: Jesse Vincent (staff).
+
+</article>
+
+<article class="repo">
+
+### [obra/episodic-memory](https://github.com/obra/episodic-memory)
+
+<p class="repo-desc">A memory and recall layer for coding-agent sessions.</p>
+
+<RepoStat org="obra" name="episodic-memory" week="2026-05-11" />
+
+Codex support landed end-to-end across four releases (`v1.3.0` → `v1.4.1`): transcript parsing, session summarization, plugin packaging, hook synchronicity, and production hardening (raw-HTML escaping, local-shell-output handling). On the reliability side, `v1.4.1` drained a zero-exchange sync backlog that had been silently stalling summarization, recall-trigger reliability improved, and the `/search-conversations` slash command was dropped. Jesse Vincent (staff) drove it; one commit came from outside contributor **`minyek`**.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-chrome](https://github.com/obra/superpowers-chrome)
+
+<p class="repo-desc">A Chrome-control plugin via the DevTools Protocol.</p>
+
+<RepoStat org="obra" name="superpowers-chrome" week="2026-05-11" />
+
+`v2.1.0` made dialog handling first-class: a `DialogRefusedError` thrown rather than silently swallowed on browser dialogs, a permission shim registered at attach, dialog-awareness threaded through the mouse / keyboard / capture / CDP-connection attachers, and Tier-C smoke tests against real Chrome. Sole contributor: Jesse Vincent (staff).
+
+</article>
+
+<article class="repo">
+
+### [obra/winpepper](https://github.com/obra/winpepper)
+
+<p class="repo-desc">Windows-native local dictation — hold a hotkey, speak, release. Parakeet TDT v3 ASR plus LlamaSharp cleanup, entirely local.</p>
+
+<RepoStat org="obra" name="winpepper" week="2026-05-11" />
+
+This is winpepper's creation week — and unlike every later week already covered on this blog, all of it is Jesse Vincent (staff), before the outside contributors arrive. The README is loud about its own provenance ("entirely agentic, never human-tested"), and the tool was built out in plan-numbered milestones in a single week: Plan 4 (history / lab / models tab plus a downloader), Plan 5 (post-paste learning, a Diagnostics page, crash handling via `MiniDumpWriter`), and Plan 6 (WiX MSI packaging, autostart, a code-signing wrapper, nightly CI smoke), cutting a `v0.6.0-alpha`. Sole contributor: Jesse Vincent (staff).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">A behavioral eval lab (Quorum) for the superpowers project.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-05-11" />
+
+Split out this week from the `drill`/`evals/` harness that had been lifted into superpowers the week before. It shipped a Codex-native-hook eval backend and Pi backend support in the same week, plus initial security hardening — one of three merged PRs explicitly targeting Codex security controls ahead of wider use. Contributors: Drew Ritter (staff) and Matt Windbrook (staff).
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">A lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-05-11" />
+
+Persona-bundle support took shape: `Ent` initialization and a `session/create` that accepts persona config, ordered user search paths, and frontmatter-plus-body parsing — plus a provider tool-name sanitizer. Sole contributor: Jesse Vincent (staff).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">An AI-powered QA testing framework.</p>
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-05-11" />
+
+A `bash` tool for agents (allowlisted env, output caps, process-tree reaping) and a "shell-as-session" model for the TUI and CLI adapters (spawn bash in a tmux pane or scratch cwd, single-SIGKILL close escalation), plus a `fetch_credential` tool threaded through the orchestrator and an eight-story-card TodoMVC example fixture. Sole contributor: Matt Windbrook (staff).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">A non-interactive coding agent.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-05-11" />
+
+A JSON-naming convention pass (camelCase JSON, kebab-case TOML/CLI, enforced by a new `serf-namingcheck` lint), OpenAI device-code login for headless sessions, and OAuth-state-over-env-var precedence fixes. Sole contributor: Jesse Vincent (staff).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/scribble](https://github.com/prime-radiant-inc/scribble)
+
+<p class="repo-desc">A self-hosted Slack knowledge bot.</p>
+
+<RepoStat org="prime-radiant-inc" name="scribble" week="2026-05-11" />
+
+A public-repo hardening pass merged — pinned Actions, Dependabot, `CODEOWNERS`, trimmed internal references — alongside disabling the Claude Agent SDK's built-in auto-memory (Scribble owns its own wiki-backed memory) and an OpenTelemetry advisory patch. Sole contributor: Drew Ritter (staff).
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-05-11" />
+
+Eleven PRs merged (credited by PR author — the in-window commit rollup reads empty, same squash/backdate pattern as prior weeks): cross-platform skill-compatibility prose with source-verified per-runtime tool references, a Pi extension plus eval backend, and several Codex-track fixes. Jesse Vincent (staff) merged much of it; two outside contributors landed one PR each — **fuleinist** (a stale `.cursor-plugin` reference cleanup) and **stablegenius49** (a writing-skills `@`-reference fix).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/greenfield](https://github.com/prime-radiant-inc/greenfield)
+
+<p class="repo-desc">A Claude Code plugin that reverse-engineers behavioral specs from a codebase.</p>
+
+<RepoStat org="prime-radiant-inc" name="greenfield" week="2026-05-11" />
+
+One commit, from outside contributor **`uwumarogie`**: restructured the skills into per-skill directories, each with its own `SKILL.md`.
+
+</article>
+
+Smaller changes filled out the week: [slackline](https://github.com/prime-radiant-inc/slackline) took a Node-24 CI bump and an app-provisioning fix; [ts-libghostty](https://github.com/prime-radiant-inc/ts-libghostty) landed two more "bobbihack" fixes (both Matt Windbrook, staff); [bot-toolkit](https://github.com/prime-radiant-inc/bot-toolkit) added an `autoMemory` opt-out (Drew Ritter, staff); [ghost-pepper](https://github.com/obra/ghost-pepper) saw a usage report and Granola auto-import from outside contributor **Matt Hartman** (`matthartman`); and [superpowers-marketplace](https://github.com/obra/superpowers-marketplace) bumped its version pins. A `github-actions[bot]` commit in [terminal-bench-analysis](https://github.com/prime-radiant-inc/terminal-bench-analysis) regenerated a leaderboard data file — the automated line-count spike noted above.
+
+</section>
