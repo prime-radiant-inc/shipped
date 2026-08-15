@@ -37,6 +37,20 @@ WHY v2 EXISTS — THE TWO BUGS THIS FIXES
    dormant fork now correctly reports zero commits regardless of how much
    the upstream project has shipped in the same window.
 
+   HARDENING (this fix): the original v2 code only took this safe path when
+   the per-repo GET returned a `parent` field. If that GET call itself
+   *failed* (rate limit, transient network error, revoked scope — `ferr` in
+   process_repo), the old code treated the failure identically to "no
+   parent info" and fell back to an unfiltered `git log` of the whole
+   default branch — silently reintroducing the exact v1 bug on every
+   transient API hiccup. Fixed to: (a) never fall back to the unfiltered
+   log on a fetch *error* — report zero and note the error instead; (b) for
+   the genuinely-no-parent case (upstream deleted), bound the fallback log
+   to commits authored after the fork's own creation date, since a fork's
+   history before that date is by definition inherited, not fixing the
+   fallback's blind spot to synced-after-creation history but closing the
+   dominant "created once, never touched" overcount case.
+
 APPROACH
 --------
 - Non-fork repos: shallow `git clone --shallow-since=<window start - 3d>`
@@ -454,54 +468,84 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
     commits = []
     if is_fork:
         full, ferr = get_full_repo(login, name, token)
-        parent = (full or {}).get("parent") if full else None
-        if not parent:
+        if ferr:
+            # get_full_repo FAILED (network blip, rate limit, transient 5xx,
+            # revoked scope, ...) — this is NOT the same thing as "no parent".
+            # The old code treated any failure here identically to "no parent
+            # info" and fell back to an unfiltered default-branch git log —
+            # i.e. exactly the fork-inherited-history bug this script exists
+            # to avoid (see module docstring: v1 reported ~90-100 commits/wk
+            # for the dormant obra/freshell fork this way). Surface the error
+            # and count zero rather than silently re-introduce that bug.
+            errors["get_full_repo"] = ferr
             entry["notes"].append(
-                "fork with no accessible parent info (deleted upstream?) — "
-                "falling back to raw default-branch log; counts MAY include inherited history"
+                f"fork: could not fetch parent info ({ferr}) — counting zero "
+                "in-window commits rather than risk inheriting upstream history"
             )
-            dest = os.path.join(tmp_root, name)
-            ok, cerr0 = clone_shallow(repo["clone_url"], default_branch, window_start, dest)
-            if ok:
-                commits, cerr = git_log_numstat(dest, window_start, window_end)
-                if cerr:
-                    errors["git_log"] = cerr
-                    commits = []
-            else:
-                errors["clone"] = cerr0
-            if os.path.isdir(dest):
-                shutil.rmtree(dest, ignore_errors=True)
         else:
-            parent_full_name = parent["full_name"]
-            parent_owner = parent_full_name.split("/")[0]
-            parent_branch = parent.get("default_branch") or default_branch
-            entry["fork_parent"] = parent_full_name
-            cmp_data, cerr = get_compare(login, name, parent_owner, parent_branch, default_branch, token)
-            if cerr:
-                errors["compare"] = cerr
+            parent = (full or {}).get("parent")
+            if not parent:
+                # Genuinely no parent (e.g. upstream repo deleted). Without a
+                # parent to compare against we can't use the compare-API
+                # ahead-of-parent approach below, but we can still rule out
+                # the dominant inheritance case: a fork's default branch is
+                # frozen at whatever upstream looked like at fork time unless
+                # the owner later synced/pushed, so pre-fork-creation commits
+                # are never this fork's own work. Bound the raw log to commits
+                # authored strictly after the fork's creation date — weaker
+                # than the compare-API method (a manual post-creation sync
+                # from upstream could still slip through) but far safer than
+                # the old unfiltered fallback, and correctly zeroes a fork
+                # that was created and never touched again.
+                entry["notes"].append(
+                    "fork with no accessible parent info (deleted upstream?) — "
+                    "falling back to default-branch log bounded to commits after "
+                    "the fork's creation date, to avoid counting pre-fork inherited history"
+                )
+                dest = os.path.join(tmp_root, name)
+                ok, cerr0 = clone_shallow(repo["clone_url"], default_branch, window_start, dest)
+                if ok:
+                    commits, cerr = git_log_numstat(dest, window_start, window_end)
+                    if cerr:
+                        errors["git_log"] = cerr
+                        commits = []
+                    else:
+                        commits = [c for c in commits if parse_dt(c["date"]) > created_dt]
+                else:
+                    errors["clone"] = cerr0
+                if os.path.isdir(dest):
+                    shutil.rmtree(dest, ignore_errors=True)
             else:
-                entry["fork_ahead_by"] = cmp_data.get("ahead_by", 0)
-                ahead_commits = cmp_data.get("commits", []) or []
-                for c in ahead_commits:
-                    cdate = c.get("commit", {}).get("author", {}).get("date")
-                    if not cdate:
-                        continue
-                    dt = parse_dt(cdate)
-                    if not (window_start <= dt <= window_end):
-                        continue
-                    sha = c["sha"]
-                    stats, serr = get_commit_stats(login, name, sha, token)
-                    if serr:
-                        stats = {"additions": 0, "deletions": 0, "files_changed": 0}
-                    commits.append(
-                        {
-                            "sha": sha, "short_sha": sha[:7],
-                            "author": c.get("commit", {}).get("author", {}).get("name", "unknown"),
-                            "date": cdate,
-                            "subject": (c.get("commit", {}).get("message") or "").split("\n", 1)[0],
-                            **stats,
-                        }
-                    )
+                parent_full_name = parent["full_name"]
+                parent_owner = parent_full_name.split("/")[0]
+                parent_branch = parent.get("default_branch") or default_branch
+                entry["fork_parent"] = parent_full_name
+                cmp_data, cerr = get_compare(login, name, parent_owner, parent_branch, default_branch, token)
+                if cerr:
+                    errors["compare"] = cerr
+                else:
+                    entry["fork_ahead_by"] = cmp_data.get("ahead_by", 0)
+                    ahead_commits = cmp_data.get("commits", []) or []
+                    for c in ahead_commits:
+                        cdate = c.get("commit", {}).get("author", {}).get("date")
+                        if not cdate:
+                            continue
+                        dt = parse_dt(cdate)
+                        if not (window_start <= dt <= window_end):
+                            continue
+                        sha = c["sha"]
+                        stats, serr = get_commit_stats(login, name, sha, token)
+                        if serr:
+                            stats = {"additions": 0, "deletions": 0, "files_changed": 0}
+                        commits.append(
+                            {
+                                "sha": sha, "short_sha": sha[:7],
+                                "author": c.get("commit", {}).get("author", {}).get("name", "unknown"),
+                                "date": cdate,
+                                "subject": (c.get("commit", {}).get("message") or "").split("\n", 1)[0],
+                                **stats,
+                            }
+                        )
     else:
         dest = os.path.join(tmp_root, name)
         ok, cerr0 = clone_shallow(repo["clone_url"], default_branch, window_start, dest)
