@@ -1,0 +1,68 @@
+---
+// Shared corporate chrome. Ported 1:1 from
+// prime-radiant-inc/prime-radiant-inc.github.io, branch `nav-rearchitecture`
+// @ f028c5f (templates/_header.html), so every primeradiant.com property --
+// including this one -- carries identical nav chrome. Matching CSS lives in
+// src/styles/cosmos-header.css; matching JS (one-at-a-time dropdowns +
+// click-outside/Esc dismiss) lives in public/nav-groups.js, also ported
+// verbatim from the same source commit.
+//
+// Nav hrefs are deliberately root-absolute (e.g. `/blog/`, `/about/`), not
+// prefixed with this site's `/shipped` base: they point at sibling sections
+// of the same primeradiant.com domain, same as they do in the source repo.
+//
+// The logo image IS base-prefixed (unlike the source repo's root-absolute
+// `/brand/logo-horizontal.png`): this repo builds and can preview standalone
+// (e.g. a PR-preview deploy not mounted under the corporate site's origin),
+// so it ships its own copy of the asset under public/brand/ and references
+// it relative to this site's own base rather than assuming the corporate
+// root is reachable at build/preview time.
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<header class="cosmos-header">
+  <div class="cosmos-wordmark-wrap">
+    <a href="/" class="cosmos-wordmark">
+      <img src={`${base}/brand/logo-horizontal.png`} alt="Prime Radiant" />
+    </a>
+  </div>
+  <details class="cosmos-nav">
+    <summary class="cosmos-nav-toggle" aria-label="Toggle navigation menu">
+      <svg class="cosmos-nav-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg class="cosmos-nav-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+      </svg>
+    </summary>
+    <nav class="cosmos-nav-links">
+      <details class="cosmos-nav-group" name="cosmos-nav-cluster">
+        <summary class="cosmos-nav-group-label">Product</summary>
+        <div class="cosmos-nav-group-links">
+          <a href="/superpowers/">Superpowers</a>
+          <a href="/projects/">Projects</a>
+          <a href="https://github.com/prime-radiant-inc" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </details>
+      <details class="cosmos-nav-group" name="cosmos-nav-cluster">
+        <summary class="cosmos-nav-group-label">Updates</summary>
+        <div class="cosmos-nav-group-links">
+          <a href="/blog/">Blog</a>
+          <a href="/shipped/">Shipped</a>
+        </div>
+      </details>
+      <details class="cosmos-nav-group" name="cosmos-nav-cluster">
+        <summary class="cosmos-nav-group-label">Company</summary>
+        <div class="cosmos-nav-group-links">
+          <a href="/about/">About</a>
+          <a href="/community/">Community</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </details>
+    </nav>
+  </details>
+</header>
+<script src={`${base}/nav-groups.js`} defer></script>
