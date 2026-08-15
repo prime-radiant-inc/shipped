@@ -12,7 +12,7 @@ window is anchored) and writes:
   - data/recon-v2-<weeks>wk-<YYYYMMDD>.json  (full per-repo, per-week data)
   - data/coverage-report.md                  (human-readable summary)
 
-WHY v2 EXISTS — THE TWO BUGS THIS FIXES
+WHY v2 EXISTS — THE BUGS THIS FIXES
 ----------------------------------------
 1. EXHAUSTIVENESS. v1 fetched commit/PR/release detail only for repos whose
    `pushed_at`/`created_at` looked like they might have activity, which is a
@@ -51,13 +51,48 @@ WHY v2 EXISTS — THE TWO BUGS THIS FIXES
    fallback's blind spot to synced-after-creation history but closing the
    dominant "created once, never touched" overcount case.
 
+3. MERGE-COMMIT LOC BUG. Local `git log --numstat` for a merge commit is
+   normally empty (its content is fully represented by the non-merge
+   commits on the branch it merged, which get their own correct numstat in
+   the same walk) — but `clone_shallow`'s `--shallow-since` boundary is a
+   calendar cutoff over the WHOLE reachable graph, and a merge's two parent
+   chains can need different amounts of history to satisfy it. When one
+   side needs more history than the shallow boundary allows, git's shallow
+   negotiation can graft the merge commit itself as a synthetic root (no
+   parents) instead of cutting cleanly behind both parents. `git log
+   --numstat` diffs a parentless commit against an empty tree, so EVERY
+   file in the repo at that point shows as a fresh addition — the whole
+   tree's line count gets attributed to one commit, not a small overcount.
+   Proven on `obra/lace`@`ad01889` (week of 2026-05-11): local numstat
+   reported 459,422 additions / 0 deletions; GitHub's own commit API
+   reports the real diff as 630/266. See fix_merge_commit_loc()'s docstring
+   for the full diagnosis and why the fix is a GitHub-API-per-merge-commit
+   fallback rather than `--no-merges`.
+
+   The graft ERASES the real parent list, so detection can't be "does %P
+   show 2+ hashes" (confirmed: inside the actual shallow clone, `ad01889`'s
+   `%P` comes back empty, not two hashes) — it has to be "parent count !=
+   1", catching both the 2-parent case (an untouched, correctly-diffless
+   real merge) and the 0-parent graft case in one rule.
+   v2's fix: every commit's parent count is captured from `git log`'s `%P`
+   (see parse_git_log's `loc_untrusted` flag), and any commit whose parent
+   count isn't exactly one has its local additions/deletions/files_changed
+   UNCONDITIONALLY replaced by GitHub's own per-commit diff stats
+   (fix_merge_commit_loc, called from both the non-fork and
+   fork-no-parent-fallback clone paths — the only two paths that trust
+   local `git log --numstat` at all; the fork-with-parent path already
+   always uses the commits API and was never affected).
+
 APPROACH
 --------
 - Non-fork repos: shallow `git clone --shallow-since=<window start - 3d>`
   of the default branch, then local `git log --numstat` for exact
   commit/author/date/LOC data. Cloning avoids one API call per commit for
   stats (`GET /commits/{sha}`), which would be prohibitively slow for
-  high-velocity repos (some of these have 1000+ commits in 8 weeks).
+  high-velocity repos (some of these have 1000+ commits in 8 weeks). Merge
+  commits are the one exception: their LOC always comes from a per-commit
+  API call (fix_merge_commit_loc), never local numstat — see bug 3 above.
+  Cheap in practice since merges are a small fraction of weekly commits.
 - Fork repos: no clone of the (often much larger, unrelated-velocity)
   upstream. Uses the compare API to get the exact list of commits ahead of
   parent; only fetches per-commit stats for those (usually zero, sometimes
@@ -308,10 +343,14 @@ def clone_shallow(clone_url, branch, since_dt, dest):
 def git_log_numstat(repo_dir, since_dt, until_dt, ref_range="HEAD"):
     since_iso = since_dt.strftime("%Y-%m-%dT%H:%M:%SZ")
     until_iso = until_dt.strftime("%Y-%m-%dT%H:%M:%SZ")
+    # %P (parent hashes) is included so parse_git_log can flag merge commits
+    # (2+ parents) -- see MERGE-COMMIT LOC BUG in fix_merge_commit_loc()'s
+    # docstring for why that flag matters: local numstat is not trustworthy
+    # for merges.
     cmd = [
         "git", "log", ref_range, f"--since={since_iso}", f"--until={until_iso}",
         "--numstat", "--no-color",
-        "--pretty=format:COMMIT\t%H\t%h\t%an\t%aI\t%s",
+        "--pretty=format:COMMIT\t%H\t%h\t%an\t%aI\t%P\t%s",
     ]
     ok, out, err = run_git(cmd, cwd=repo_dir, timeout=120)
     if not ok:
@@ -326,13 +365,30 @@ def parse_git_log(text):
         if line.startswith("COMMIT\t"):
             if cur:
                 commits.append(cur)
-            parts = line.split("\t", 5)
-            if len(parts) < 6:
+            parts = line.split("\t", 6)
+            if len(parts) < 7:
                 continue
-            _, sha, short, author, date, subject = parts
+            _, sha, short, author, date, parents, subject = parts
+            n_parents = len(parents.split())
             cur = {
                 "sha": sha, "short_sha": short, "author": author, "date": date,
                 "subject": subject, "additions": 0, "deletions": 0, "files_changed": 0,
+                # A normal, non-merge commit has EXACTLY one parent. Anything
+                # else is untrustworthy for local-numstat LOC purposes:
+                #   - 2+ parents: a real merge (git shows no diff for these
+                #     locally without -m/-c, which is fine -- but flag it
+                #     anyway so a genuine local diff, should one somehow
+                #     appear, never gets trusted either).
+                #   - 0 parents: EITHER the repo's real first-ever commit
+                #     (rare, and cheap to re-verify) OR -- the actual bug
+                #     this guards against -- a merge that a `--shallow-since`
+                #     clone grafted as a synthetic root because one of its
+                #     parent chains needed more history than the shallow
+                #     boundary allowed. The graft ERASES the real parent
+                #     list, so a plain "2+ parents" check can never catch
+                #     this case -- it has to be "parents != 1". See
+                #     fix_merge_commit_loc() for the full diagnosis.
+                "loc_untrusted": n_parents != 1,
             }
         elif line.strip() and cur is not None:
             fields = line.split("\t")
@@ -346,6 +402,92 @@ def parse_git_log(text):
     if cur:
         commits.append(cur)
     return commits
+
+
+def fix_merge_commit_loc(commits, login, name, token):
+    """Replace the local (untrustworthy) numstat for every commit flagged
+    `loc_untrusted` (parent count != 1) with GitHub's own per-commit diff
+    stats, via the same `get_commit_stats` API call already used for fork
+    ahead-of-parent commits.
+
+    WHY THIS EXISTS -- MERGE-COMMIT LOC BUG
+    ---------------------------------------
+    `git log --numstat` (no `-m`/`-c`/`--diff-merges`) normally prints NO
+    diff at all for an ordinary merge commit -- its content is already fully
+    represented by the non-merge commits on the branch that got merged in,
+    which appear separately in the same log walk with their own correct
+    numstat. That's the normal, correct case, and it's why v2 never added
+    `--no-merges`: doing so would also drop merge commits from the commit
+    list entirely (subject lines used in the narrative briefs, commit
+    counts, etc.), not just their (already-empty) diff.
+
+    But `clone_shallow`'s `--shallow-since` boundary is a CALENDAR cutoff
+    applied across the whole reachable graph, and a merge has two parent
+    chains that can need very different amounts of history to satisfy it.
+    When one side needs to go back further than the shallow boundary allows,
+    git's shallow negotiation can land the graft point ON the merge commit
+    itself rather than cleanly behind both parents -- i.e. the merge commit
+    gets grafted as if it had NO parents (a synthetic root). `git log
+    --numstat` for a parentless commit diffs it against an EMPTY tree, so
+    EVERY file in the repo at that point shows as a fresh 100% addition --
+    not a small double-count, but the entire tree's line count attributed to
+    one commit.
+
+    Proven on `obra/lace`@`ad01889` (week of 2026-05-11): local numstat
+    reported 459,422 additions / 0 deletions for that merge; `.git/shallow`
+    in the shallow clone showed it grafted as a root (`git log -1 --format
+    %P` on it, INSIDE the shallow clone, returns empty -- zero parents, not
+    two); GitHub's own commit API reports its real diff as 630 additions /
+    266 deletions. Confirmed isolated to commits that hit this graft case --
+    a full (non-shallow) clone of the same repo shows the merge itself
+    contributing zero numstat lines, as normal, with the real 630/266
+    correctly attributed to its actual second-parent commit instead.
+
+    THE DETECTION HAS TO BE "parents != 1", NOT "parents >= 2": the whole
+    point of the graft is that it ERASES the merge's real parent list down
+    to zero, so a naive "does %P show 2+ hashes" check never fires for the
+    exact commit that needs fixing -- confirmed empirically (see gather.py's
+    test history / PR description): checking `%P` inside the actual shallow
+    clone for `ad01889` returns an EMPTY string, not two hashes. Flagging
+    every non-exactly-one-parent commit (0 or 2+) closes that gap. A 0-parent
+    commit that's genuinely the repo's real first-ever commit gets the same
+    treatment (one harmless extra API call that confirms the same small,
+    correct number) rather than trying to cheaply distinguish the two cases
+    locally, which the shallow clone doesn't have enough information for.
+
+    FIX CHOICE: exclude-from-numstat (`--no-merges`) vs. GitHub-API fallback
+    --------------------------------------------------------------------
+    Both were considered. `--no-merges` is simpler (one flag) but (a) also
+    removes merges from the commit walk entirely -- losing subject-line
+    material like "Merge plan-6/packaging: ..." that the narrative briefs
+    already lean on -- and (b) in the shallow-graft case, the merge's real
+    content is on a now-*unreachable* second parent, so the corrected total
+    would be 0, not the true 630/266: an undercount, not a match to GitHub's
+    numbers. The API fallback here is more code but is the only option that
+    actually satisfies "LOC matches GitHub's reported diff" for a merge
+    commit, and it costs one extra API call per flagged commit found in a
+    week's window (small: most weeks have a handful of merges, not
+    thousands) -- the same amortized cost model the fork path already uses.
+    """
+    fixed, failed = [], []
+    for c in commits:
+        if not c.get("loc_untrusted"):
+            continue
+        stats, err = get_commit_stats(login, name, c["sha"], token)
+        if err:
+            # Do not fall back to the local (untrusted-for-merges) numstat --
+            # that's the exact silent-reintroduction mistake this function
+            # exists to avoid. Zero it out and record the miss instead.
+            c["additions"] = 0
+            c["deletions"] = 0
+            c["files_changed"] = 0
+            failed.append((c["short_sha"], err))
+        else:
+            c["additions"] = stats["additions"]
+            c["deletions"] = stats["deletions"]
+            c["files_changed"] = stats["files_changed"]
+            fixed.append(c["short_sha"])
+    return fixed, failed
 
 
 # --------------------------------------------------------------- per-repo --
@@ -511,6 +653,9 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
                         commits = []
                     else:
                         commits = [c for c in commits if parse_dt(c["date"]) > created_dt]
+                        merge_fixed, merge_failed = fix_merge_commit_loc(commits, login, name, token)
+                        if merge_failed:
+                            errors["merge_loc"] = f"{len(merge_failed)} merge commit(s) LOC lookup failed, zeroed"
                 else:
                     errors["clone"] = cerr0
                 if os.path.isdir(dest):
@@ -554,6 +699,15 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
             if cerr:
                 errors["git_log"] = cerr
                 commits = []
+            else:
+                # MERGE-COMMIT LOC BUG fix -- see fix_merge_commit_loc()
+                # docstring. Local numstat is untrustworthy for merges (a
+                # shallow-clone graft can turn one into a synthetic root and
+                # attribute the whole tree to it); always replace with
+                # GitHub's own per-commit diff instead.
+                merge_fixed, merge_failed = fix_merge_commit_loc(commits, login, name, token)
+                if merge_failed:
+                    errors["merge_loc"] = f"{len(merge_failed)} merge commit(s) LOC lookup failed, zeroed"
         else:
             errors["clone"] = cerr0
         if os.path.isdir(dest):
