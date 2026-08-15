@@ -6,8 +6,8 @@
       "second_tier_count": 9,
       "commits": 414,
       "merged_prs": 13,
-      "loc_added": 229141,
-      "loc_removed": 25466,
+      "loc_added": 155374,
+      "loc_removed": 26213,
       "contributors": 5,
       "tagged_releases": 3,
       "commit_only_bumps": 0
@@ -39,8 +39,8 @@
             "count": 1
           }
         ],
-        "loc_added": 678,
-        "loc_removed": 0,
+        "loc_added": 85,
+        "loc_removed": 20,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -57,8 +57,8 @@
             "count": 89
           }
         ],
-        "loc_added": 14506,
-        "loc_removed": 1350,
+        "loc_added": 28383,
+        "loc_removed": 2053,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -75,8 +75,8 @@
             "count": 37
           }
         ],
-        "loc_added": 12526,
-        "loc_removed": 795,
+        "loc_added": 16915,
+        "loc_removed": 815,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -93,8 +93,8 @@
             "count": 44
           }
         ],
-        "loc_added": 10959,
-        "loc_removed": 288,
+        "loc_added": 17899,
+        "loc_removed": 290,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -137,8 +137,8 @@
             "count": 1
           }
         ],
-        "loc_added": 49532,
-        "loc_removed": 10291,
+        "loc_added": 24591,
+        "loc_removed": 10292,
         "merged_prs": [
           {
             "number": 86,
@@ -210,7 +210,7 @@
             "count": 1
           }
         ],
-        "loc_added": 22951,
+        "loc_added": 60,
         "loc_removed": 0,
         "merged_prs": [
           {
@@ -284,8 +284,8 @@
             "count": 7
           }
         ],
-        "loc_added": 30445,
-        "loc_removed": 2527,
+        "loc_added": 2788,
+        "loc_removed": 2528,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -302,7 +302,7 @@
             "count": 1
           }
         ],
-        "loc_added": 22951,
+        "loc_added": 60,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -319,11 +319,11 @@
       "repos_active": 14,
       "featured_count": 5,
       "second_tier_count": 9,
-      "commits": 584,
+      "commits": 642,
       "merged_prs": 5,
-      "loc_added": 243464,
-      "loc_removed": 23249,
-      "contributors": 3,
+      "loc_added": 190709,
+      "loc_removed": 40934,
+      "contributors": 4,
       "tagged_releases": 5,
       "commit_only_bumps": 5
     },
@@ -336,7 +336,7 @@
             "count": 14
           }
         ],
-        "loc_added": 31561,
+        "loc_added": 2903,
         "loc_removed": 231,
         "merged_prs": [],
         "tagged_releases": [
@@ -369,8 +369,8 @@
             "count": 1
           }
         ],
-        "loc_added": 28745,
-        "loc_removed": 0,
+        "loc_added": 79,
+        "loc_removed": 13,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -387,8 +387,8 @@
             "count": 40
           }
         ],
-        "loc_added": 33718,
-        "loc_removed": 2441,
+        "loc_added": 11096,
+        "loc_removed": 4291,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -427,8 +427,8 @@
             "count": 4
           }
         ],
-        "loc_added": 20601,
-        "loc_removed": 6370,
+        "loc_added": 35684,
+        "loc_removed": 11999,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -445,8 +445,8 @@
             "count": 92
           }
         ],
-        "loc_added": 14905,
-        "loc_removed": 914,
+        "loc_added": 18259,
+        "loc_removed": 1030,
         "merged_prs": [
           {
             "number": 1,
@@ -570,15 +570,23 @@
         "html_url": "https://github.com/obra/episodic-memory"
       },
       "obra/superpowers": {
-        "commits": 1,
+        "commits": 30,
         "authors": [
           {
             "name": "Jesse Vincent",
+            "count": 25
+          },
+          {
+            "name": "Drew Ritter",
+            "count": 4
+          },
+          {
+            "name": "robotsnh",
             "count": 1
           }
         ],
-        "loc_added": 2642,
-        "loc_removed": 787,
+        "loc_added": 19568,
+        "loc_removed": 4543,
         "merged_prs": [
           {
             "number": 1488,
@@ -619,8 +627,8 @@
             "count": 87
           }
         ],
-        "loc_added": 38987,
-        "loc_removed": 3710,
+        "loc_added": 14153,
+        "loc_removed": 6274,
         "merged_prs": [
           {
             "number": 33,
@@ -650,8 +658,8 @@
             "count": 3
           }
         ],
-        "loc_added": 268,
-        "loc_removed": 3,
+        "loc_added": 4,
+        "loc_removed": 4,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -661,15 +669,23 @@
         "html_url": "https://github.com/obra/superpowers-marketplace"
       },
       "obra/temp-sp-codex": {
-        "commits": 1,
+        "commits": 30,
         "authors": [
           {
             "name": "Jesse Vincent",
+            "count": 25
+          },
+          {
+            "name": "Drew Ritter",
+            "count": 4
+          },
+          {
+            "name": "robotsnh",
             "count": 1
           }
         ],
-        "loc_added": 2642,
-        "loc_removed": 787,
+        "loc_added": 19568,
+        "loc_removed": 4543,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [
@@ -689,14 +705,14 @@
   },
   "2026-05-11": {
     "summary": {
-      "repos_active": 18,
+      "repos_active": 19,
       "featured_count": 6,
-      "second_tier_count": 12,
-      "commits": 704,
+      "second_tier_count": 13,
+      "commits": 728,
       "merged_prs": 18,
-      "loc_added": 2202729,
-      "loc_removed": 16011,
-      "contributors": 8,
+      "loc_added": 1817698,
+      "loc_removed": 47145,
+      "contributors": 10,
       "tagged_releases": 9,
       "commit_only_bumps": 4
     },
@@ -737,8 +753,8 @@
             "count": 123
           }
         ],
-        "loc_added": 117593,
-        "loc_removed": 9818,
+        "loc_added": 161223,
+        "loc_removed": 14060,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -755,8 +771,8 @@
             "count": 153
           }
         ],
-        "loc_added": 30883,
-        "loc_removed": 2243,
+        "loc_added": 48193,
+        "loc_removed": 3390,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -938,8 +954,8 @@
             "count": 1
           }
         ],
-        "loc_added": 4411,
-        "loc_removed": 794,
+        "loc_added": 2229,
+        "loc_removed": 798,
         "merged_prs": [
           {
             "number": 17,
@@ -1077,8 +1093,8 @@
             "count": 15
           }
         ],
-        "loc_added": 462051,
-        "loc_removed": 169,
+        "loc_added": 3259,
+        "loc_removed": 435,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1088,10 +1104,23 @@
         "html_url": "https://github.com/obra/lace"
       },
       "obra/superpowers": {
-        "commits": 0,
-        "authors": [],
-        "loc_added": 0,
-        "loc_removed": 0,
+        "commits": 12,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 10
+          },
+          {
+            "name": "Rahul",
+            "count": 1
+          },
+          {
+            "name": "fuleinist",
+            "count": 1
+          }
+        ],
+        "loc_added": 629,
+        "loc_removed": 12578,
         "merged_prs": [
           {
             "number": 1486,
@@ -1204,6 +1233,32 @@
         "description": "Curated Claude Code plugin marketplace",
         "html_url": "https://github.com/obra/superpowers-marketplace"
       },
+      "obra/temp-sp-codex": {
+        "commits": 12,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 10
+          },
+          {
+            "name": "Rahul",
+            "count": 1
+          },
+          {
+            "name": "fuleinist",
+            "count": 1
+          }
+        ],
+        "loc_added": 629,
+        "loc_removed": 12578,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Temporary Superpowers Codex marketplace test repo",
+        "html_url": "https://github.com/obra/temp-sp-codex"
+      },
       "obra/winpepper": {
         "commits": 156,
         "authors": [
@@ -1212,8 +1267,8 @@
             "count": 156
           }
         ],
-        "loc_added": 42706,
-        "loc_removed": 427,
+        "loc_added": 56451,
+        "loc_removed": 746,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -1234,14 +1289,14 @@
   },
   "2026-05-18": {
     "summary": {
-      "repos_active": 14,
+      "repos_active": 15,
       "featured_count": 2,
-      "second_tier_count": 12,
-      "commits": 1547,
+      "second_tier_count": 13,
+      "commits": 1588,
       "merged_prs": 8,
-      "loc_added": 329281,
-      "loc_removed": 58275,
-      "contributors": 6,
+      "loc_added": 284482,
+      "loc_removed": 65477,
+      "contributors": 7,
       "tagged_releases": 3,
       "commit_only_bumps": 4
     },
@@ -1278,8 +1333,8 @@
             "count": 46
           }
         ],
-        "loc_added": 84790,
-        "loc_removed": 548,
+        "loc_added": 11889,
+        "loc_removed": 766,
         "merged_prs": [
           {
             "number": 1,
@@ -1306,8 +1361,8 @@
             "count": 248
           }
         ],
-        "loc_added": 84868,
-        "loc_removed": 18049,
+        "loc_added": 86228,
+        "loc_removed": 18120,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1346,8 +1401,8 @@
             "count": 7
           }
         ],
-        "loc_added": 8732,
-        "loc_removed": 2025,
+        "loc_added": 16851,
+        "loc_removed": 3838,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1390,15 +1445,15 @@
         "html_url": "https://github.com/prime-radiant-inc/slackline"
       },
       "prime-radiant-inc/superpowers-evals": {
-        "commits": 64,
+        "commits": 74,
         "authors": [
           {
             "name": "Matt Windbrook",
-            "count": 64
+            "count": 74
           }
         ],
-        "loc_added": 10506,
-        "loc_removed": 3630,
+        "loc_added": 19659,
+        "loc_removed": 5476,
         "merged_prs": [
           {
             "number": 4,
@@ -1504,15 +1559,15 @@
         "html_url": "https://github.com/obra/ghost-pepper"
       },
       "obra/lace": {
-        "commits": 531,
+        "commits": 542,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 531
+            "count": 542
           }
         ],
-        "loc_added": 104338,
-        "loc_removed": 26499,
+        "loc_added": 113584,
+        "loc_removed": 29599,
         "merged_prs": [
           {
             "number": 345,
@@ -1533,10 +1588,19 @@
         "html_url": "https://github.com/obra/lace"
       },
       "obra/superpowers": {
-        "commits": 0,
-        "authors": [],
-        "loc_added": 0,
-        "loc_removed": 0,
+        "commits": 10,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 9
+          },
+          {
+            "name": "Nick Galatis",
+            "count": 1
+          }
+        ],
+        "loc_added": 112,
+        "loc_removed": 77,
         "merged_prs": [
           {
             "number": 1558,
@@ -1604,6 +1668,28 @@
         "featured_reason": null,
         "description": "Curated Claude Code plugin marketplace",
         "html_url": "https://github.com/obra/superpowers-marketplace"
+      },
+      "obra/temp-sp-codex": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 9
+          },
+          {
+            "name": "Nick Galatis",
+            "count": 1
+          }
+        ],
+        "loc_added": 112,
+        "loc_removed": 77,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Temporary Superpowers Codex marketplace test repo",
+        "html_url": "https://github.com/obra/temp-sp-codex"
       }
     }
   },
@@ -1612,10 +1698,10 @@
       "repos_active": 17,
       "featured_count": 2,
       "second_tier_count": 15,
-      "commits": 629,
+      "commits": 630,
       "merged_prs": 23,
-      "loc_added": 3881309,
-      "loc_removed": 356097,
+      "loc_added": 167870,
+      "loc_removed": 362046,
       "contributors": 7,
       "tagged_releases": 2,
       "commit_only_bumps": 1
@@ -1651,8 +1737,8 @@
             "count": 2
           }
         ],
-        "loc_added": 665,
-        "loc_removed": 4896,
+        "loc_added": 1236,
+        "loc_removed": 9700,
         "merged_prs": [
           {
             "number": 5,
@@ -1685,8 +1771,8 @@
             "count": 266
           }
         ],
-        "loc_added": 59115,
-        "loc_removed": 33474,
+        "loc_added": 66177,
+        "loc_removed": 34190,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1703,8 +1789,8 @@
             "count": 1
           }
         ],
-        "loc_added": 16997,
-        "loc_removed": 0,
+        "loc_added": 36,
+        "loc_removed": 2,
         "merged_prs": [
           {
             "number": 50,
@@ -1727,8 +1813,8 @@
             "count": 11
           }
         ],
-        "loc_added": 2995,
-        "loc_removed": 38,
+        "loc_added": 5980,
+        "loc_removed": 66,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1745,8 +1831,8 @@
             "count": 1
           }
         ],
-        "loc_added": 3487467,
-        "loc_removed": 0,
+        "loc_added": 1,
+        "loc_removed": 1,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1767,8 +1853,8 @@
             "count": 1
           }
         ],
-        "loc_added": 10453,
-        "loc_removed": 13713,
+        "loc_added": 13368,
+        "loc_removed": 13798,
         "merged_prs": [
           {
             "number": 8,
@@ -1806,8 +1892,8 @@
             "count": 131
           }
         ],
-        "loc_added": 20748,
-        "loc_removed": 2286,
+        "loc_added": 24043,
+        "loc_removed": 2492,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -1832,7 +1918,7 @@
             "count": 1
           }
         ],
-        "loc_added": 20870,
+        "loc_added": 19180,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -1854,8 +1940,8 @@
             "count": 1
           }
         ],
-        "loc_added": 7060,
-        "loc_removed": 75,
+        "loc_added": 872,
+        "loc_removed": 77,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [
@@ -1879,8 +1965,8 @@
             "count": 5
           }
         ],
-        "loc_added": 910,
-        "loc_removed": 52,
+        "loc_added": 113,
+        "loc_removed": 64,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -1897,8 +1983,8 @@
             "count": 93
           }
         ],
-        "loc_added": 31175,
-        "loc_removed": 301259,
+        "loc_added": 32601,
+        "loc_removed": 301312,
         "merged_prs": [
           {
             "number": 348,
@@ -1945,8 +2031,8 @@
             "count": 1
           }
         ],
-        "loc_added": 25688,
-        "loc_removed": 9,
+        "loc_added": 886,
+        "loc_removed": 13,
         "merged_prs": [
           {
             "number": 1651,
@@ -2009,8 +2095,8 @@
             "count": 1
           }
         ],
-        "loc_added": 25688,
-        "loc_removed": 9,
+        "loc_added": 886,
+        "loc_removed": 13,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -2020,19 +2106,19 @@
         "html_url": "https://github.com/obra/temp-sp-codex"
       },
       "obra/winpepper": {
-        "commits": 14,
+        "commits": 15,
         "authors": [
           {
             "name": "Nat Torkington",
-            "count": 10
+            "count": 11
           },
           {
             "name": "Jesse Vincent",
             "count": 4
           }
         ],
-        "loc_added": 169458,
-        "loc_removed": 75,
+        "loc_added": 471,
+        "loc_removed": 107,
         "merged_prs": [
           {
             "number": 28,
@@ -2099,13 +2185,13 @@
   },
   "2026-06-01": {
     "summary": {
-      "repos_active": 43,
+      "repos_active": 44,
       "featured_count": 6,
-      "second_tier_count": 37,
-      "commits": 960,
+      "second_tier_count": 38,
+      "commits": 962,
       "merged_prs": 15,
-      "loc_added": 845972,
-      "loc_removed": 74823,
+      "loc_added": 266196,
+      "loc_removed": 80333,
       "contributors": 11,
       "tagged_releases": 36,
       "commit_only_bumps": 7
@@ -2119,7 +2205,7 @@
             "count": 1
           }
         ],
-        "loc_added": 31364,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2155,7 +2241,7 @@
             "count": 1
           }
         ],
-        "loc_added": 135,
+        "loc_added": 37,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2191,7 +2277,7 @@
             "count": 1
           }
         ],
-        "loc_added": 32650,
+        "loc_added": 37,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2227,7 +2313,7 @@
             "count": 1
           }
         ],
-        "loc_added": 8717,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2245,7 +2331,7 @@
             "count": 1
           }
         ],
-        "loc_added": 14853,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2263,8 +2349,8 @@
             "count": 181
           }
         ],
-        "loc_added": 41157,
-        "loc_removed": 43492,
+        "loc_added": 46975,
+        "loc_removed": 43761,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -2281,7 +2367,7 @@
             "count": 1
           }
         ],
-        "loc_added": 7565,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2299,7 +2385,7 @@
             "count": 1
           }
         ],
-        "loc_added": 11054,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2317,7 +2403,7 @@
             "count": 1
           }
         ],
-        "loc_added": 230836,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2335,7 +2421,7 @@
             "count": 1
           }
         ],
-        "loc_added": 712,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2353,7 +2439,7 @@
             "count": 1
           }
         ],
-        "loc_added": 1650,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2371,7 +2457,7 @@
             "count": 1
           }
         ],
-        "loc_added": 8358,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2393,8 +2479,8 @@
             "count": 1
           }
         ],
-        "loc_added": 851,
-        "loc_removed": 94,
+        "loc_added": 1331,
+        "loc_removed": 179,
         "merged_prs": [
           {
             "number": 52,
@@ -2460,8 +2546,8 @@
             "count": 27
           }
         ],
-        "loc_added": 13860,
-        "loc_removed": 262,
+        "loc_added": 2534,
+        "loc_removed": 275,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -2532,7 +2618,7 @@
             "count": 1
           }
         ],
-        "loc_added": 45172,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2550,7 +2636,7 @@
             "count": 1
           }
         ],
-        "loc_added": 11977,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2586,7 +2672,7 @@
             "count": 1
           }
         ],
-        "loc_added": 5227,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2604,7 +2690,7 @@
             "count": 1
           }
         ],
-        "loc_added": 60217,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2614,6 +2700,24 @@
         "description": "Dogfood example of the Greenfield + Iterative Development toolchain: GhostPepper, a macOS app built with Swift, WhisperKit, FluidAudio, and Sparkle from clean specs.",
         "html_url": "https://github.com/prime-radiant-inc/iterative-development-example-ghost-pepper"
       },
+      "prime-radiant-inc/greenfield": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 36,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A Claude Code plugin that reverse-engineers clean behavioral specs, test vectors, and acceptance criteria from any codebase, producing a provenance trail so a fresh team can reimplement without inheriting the original's internal structure.",
+        "html_url": "https://github.com/prime-radiant-inc/greenfield"
+      },
       "prime-radiant-inc/ts-libghostty": {
         "commits": 1,
         "authors": [
@@ -2622,7 +2726,7 @@
             "count": 1
           }
         ],
-        "loc_added": 101107,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2640,7 +2744,7 @@
             "count": 1
           }
         ],
-        "loc_added": 293,
+        "loc_added": 37,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2658,7 +2762,7 @@
             "count": 1
           }
         ],
-        "loc_added": 10705,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2676,7 +2780,7 @@
             "count": 1
           }
         ],
-        "loc_added": 23519,
+        "loc_added": 34,
         "loc_removed": 0,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2694,7 +2798,7 @@
             "count": 2
           }
         ],
-        "loc_added": 3453,
+        "loc_added": 36,
         "loc_removed": 2,
         "merged_prs": [],
         "tagged_releases": [],
@@ -2716,8 +2820,8 @@
             "count": 2
           }
         ],
-        "loc_added": 33055,
-        "loc_removed": 2083,
+        "loc_added": 35592,
+        "loc_removed": 2156,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -3103,8 +3207,8 @@
             "count": 36
           }
         ],
-        "loc_added": 4336,
-        "loc_removed": 129,
+        "loc_added": 5845,
+        "loc_removed": 147,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -3121,8 +3225,8 @@
             "count": 202
           }
         ],
-        "loc_added": 43340,
-        "loc_removed": 18549,
+        "loc_added": 75154,
+        "loc_removed": 23397,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -3257,8 +3361,8 @@
             "count": 1
           }
         ],
-        "loc_added": 1779,
-        "loc_removed": 0,
+        "loc_added": 8,
+        "loc_removed": 202,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [
@@ -3341,11 +3445,11 @@
       "repos_active": 29,
       "featured_count": 6,
       "second_tier_count": 23,
-      "commits": 1552,
+      "commits": 1553,
       "merged_prs": 52,
-      "loc_added": 402056,
-      "loc_removed": 89103,
-      "contributors": 6,
+      "loc_added": 428650,
+      "loc_removed": 101182,
+      "contributors": 7,
       "tagged_releases": 20,
       "commit_only_bumps": 9
     },
@@ -3380,8 +3484,8 @@
             "count": 53
           }
         ],
-        "loc_added": 6270,
-        "loc_removed": 5051,
+        "loc_added": 14373,
+        "loc_removed": 10115,
         "merged_prs": [
           {
             "number": 12,
@@ -3474,8 +3578,8 @@
             "count": 3
           }
         ],
-        "loc_added": 100345,
-        "loc_removed": 20227,
+        "loc_added": 109154,
+        "loc_removed": 21516,
         "merged_prs": [
           {
             "number": 7,
@@ -3556,8 +3660,8 @@
             "count": 6
           }
         ],
-        "loc_added": 3000,
-        "loc_removed": 429,
+        "loc_added": 5964,
+        "loc_removed": 797,
         "merged_prs": [
           {
             "number": 11,
@@ -3678,8 +3782,8 @@
             "count": 48
           }
         ],
-        "loc_added": 73741,
-        "loc_removed": 40071,
+        "loc_added": 85018,
+        "loc_removed": 44621,
         "merged_prs": [
           {
             "number": 21,
@@ -3842,8 +3946,8 @@
             "count": 51
           }
         ],
-        "loc_added": 40353,
-        "loc_removed": 8258,
+        "loc_added": 41614,
+        "loc_removed": 8376,
         "merged_prs": [
           {
             "number": 11,
@@ -4115,8 +4219,8 @@
             "count": 27
           }
         ],
-        "loc_added": 1559,
-        "loc_removed": 161,
+        "loc_added": 3015,
+        "loc_removed": 300,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -4133,8 +4237,8 @@
             "count": 42
           }
         ],
-        "loc_added": 4610,
-        "loc_removed": 2292,
+        "loc_added": 7207,
+        "loc_removed": 2834,
         "merged_prs": [
           {
             "number": 352,
@@ -4172,8 +4276,8 @@
             "count": 3
           }
         ],
-        "loc_added": 10147,
-        "loc_removed": 10,
+        "loc_added": 144,
+        "loc_removed": 13,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -4271,15 +4375,19 @@
         "html_url": "https://github.com/obra/temp-sp-codex"
       },
       "obra/winpepper": {
-        "commits": 16,
+        "commits": 17,
         "authors": [
           {
             "name": "danshapiro",
             "count": 16
+          },
+          {
+            "name": "Dan Shapiro",
+            "count": 1
           }
         ],
-        "loc_added": 2771,
-        "loc_removed": 999,
+        "loc_added": 2901,
+        "loc_removed": 1005,
         "merged_prs": [
           {
             "number": 48,
@@ -4385,8 +4493,8 @@
       "second_tier_count": 10,
       "commits": 813,
       "merged_prs": 15,
-      "loc_added": 160900,
-      "loc_removed": 66874,
+      "loc_added": 269320,
+      "loc_removed": 79189,
       "contributors": 4,
       "tagged_releases": 10,
       "commit_only_bumps": 7
@@ -4418,8 +4526,8 @@
             "count": 327
           }
         ],
-        "loc_added": 69401,
-        "loc_removed": 43376,
+        "loc_added": 114978,
+        "loc_removed": 47455,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -4473,8 +4581,8 @@
             "count": 42
           }
         ],
-        "loc_added": 63912,
-        "loc_removed": 17252,
+        "loc_added": 95057,
+        "loc_removed": 21769,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -4593,8 +4701,8 @@
             "count": 21
           }
         ],
-        "loc_added": 1241,
-        "loc_removed": 177,
+        "loc_added": 22029,
+        "loc_removed": 3489,
         "merged_prs": [
           {
             "number": 22,
@@ -4642,8 +4750,8 @@
             "count": 83
           }
         ],
-        "loc_added": 13717,
-        "loc_removed": 1188,
+        "loc_added": 24627,
+        "loc_removed": 1595,
         "merged_prs": [
           {
             "number": 353,
@@ -4875,11 +4983,11 @@
       "repos_active": 11,
       "featured_count": 3,
       "second_tier_count": 8,
-      "commits": 539,
+      "commits": 568,
       "merged_prs": 12,
-      "loc_added": 237698,
-      "loc_removed": 43248,
-      "contributors": 3,
+      "loc_added": 286576,
+      "loc_removed": 50088,
+      "contributors": 4,
       "tagged_releases": 2,
       "commit_only_bumps": 0
     },
@@ -4903,15 +5011,15 @@
         "html_url": "https://github.com/prime-radiant-inc/llm-proxy"
       },
       "prime-radiant-inc/serf": {
-        "commits": 414,
+        "commits": 435,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 414
+            "count": 435
           }
         ],
-        "loc_added": 102827,
-        "loc_removed": 37991,
+        "loc_added": 145118,
+        "loc_removed": 42905,
         "merged_prs": [
           {
             "number": 11,
@@ -4970,19 +5078,19 @@
         "html_url": "https://github.com/prime-radiant-inc/gauntlet"
       },
       "prime-radiant-inc/superpowers-evals": {
-        "commits": 90,
+        "commits": 91,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 74
+            "count": 75
           },
           {
             "name": "Drew Ritter",
             "count": 16
           }
         ],
-        "loc_added": 13386,
-        "loc_removed": 2868,
+        "loc_added": 19754,
+        "loc_removed": 4381,
         "merged_prs": [
           {
             "number": 26,
@@ -5069,8 +5177,8 @@
             "count": 2
           }
         ],
-        "loc_added": 105,
-        "loc_removed": 3,
+        "loc_added": 210,
+        "loc_removed": 6,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -5098,10 +5206,19 @@
         "html_url": "https://github.com/obra/narcolepsyd"
       },
       "obra/superpowers": {
-        "commits": 0,
-        "authors": [],
-        "loc_added": 0,
-        "loc_removed": 0,
+        "commits": 7,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 6
+          },
+          {
+            "name": "Ada Sen",
+            "count": 1
+          }
+        ],
+        "loc_added": 114,
+        "loc_removed": 410,
         "merged_prs": [
           {
             "number": 1846,
@@ -5168,9 +5285,9 @@
       "second_tier_count": 7,
       "commits": 1687,
       "merged_prs": 10,
-      "loc_added": 309267,
-      "loc_removed": 37329,
-      "contributors": 4,
+      "loc_added": 522728,
+      "loc_removed": 57978,
+      "contributors": 3,
       "tagged_releases": 2,
       "commit_only_bumps": 0
     },
@@ -5183,8 +5300,8 @@
             "count": 8
           }
         ],
-        "loc_added": 402,
-        "loc_removed": 26,
+        "loc_added": 690,
+        "loc_removed": 29,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -5194,15 +5311,15 @@
         "html_url": "https://github.com/prime-radiant-inc/llm-proxy"
       },
       "prime-radiant-inc/serf": {
-        "commits": 959,
+        "commits": 938,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 959
+            "count": 938
           }
         ],
-        "loc_added": 224560,
-        "loc_removed": 27815,
+        "loc_added": 436758,
+        "loc_removed": 47765,
         "merged_prs": [
           {
             "number": 12,
@@ -5218,15 +5335,19 @@
         "html_url": "https://github.com/prime-radiant-inc/serf"
       },
       "prime-radiant-inc/superpowers-evals": {
-        "commits": 2,
+        "commits": 6,
         "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 4
+          },
           {
             "name": "Drew Ritter",
             "count": 2
           }
         ],
-        "loc_added": 27,
-        "loc_removed": 0,
+        "loc_added": 417,
+        "loc_removed": 41,
         "merged_prs": [
           {
             "number": 28,
@@ -5337,23 +5458,19 @@
         "html_url": "https://github.com/obra/insanitty"
       },
       "obra/superpowers": {
-        "commits": 19,
+        "commits": 36,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 9
+            "count": 27
           },
           {
             "name": "Drew Ritter",
             "count": 9
-          },
-          {
-            "name": "Ada Sen",
-            "count": 1
           }
         ],
-        "loc_added": 890,
-        "loc_removed": 568,
+        "loc_added": 1475,
+        "loc_removed": 1223,
         "merged_prs": [
           {
             "number": 1897,
@@ -5438,11 +5555,11 @@
       "repos_active": 12,
       "featured_count": 3,
       "second_tier_count": 9,
-      "commits": 1745,
+      "commits": 1764,
       "merged_prs": 4,
-      "loc_added": 279583,
-      "loc_removed": 34890,
-      "contributors": 5,
+      "loc_added": 387243,
+      "loc_removed": 42707,
+      "contributors": 7,
       "tagged_releases": 5,
       "commit_only_bumps": 0
     },
@@ -5455,8 +5572,8 @@
             "count": 2
           }
         ],
-        "loc_added": 1344,
-        "loc_removed": 15,
+        "loc_added": 2688,
+        "loc_removed": 30,
         "merged_prs": [
           {
             "number": 14,
@@ -5472,11 +5589,11 @@
         "html_url": "https://github.com/prime-radiant-inc/stockyard"
       },
       "prime-radiant-inc/serf": {
-        "commits": 964,
+        "commits": 971,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 944
+            "count": 951
           },
           {
             "name": "Test",
@@ -5487,8 +5604,8 @@
             "count": 3
           }
         ],
-        "loc_added": 155590,
-        "loc_removed": 13125,
+        "loc_added": 228828,
+        "loc_removed": 18735,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -5624,8 +5741,8 @@
             "count": 675
           }
         ],
-        "loc_added": 89735,
-        "loc_removed": 11146,
+        "loc_added": 120023,
+        "loc_removed": 12756,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -5693,8 +5810,8 @@
             "count": 3
           }
         ],
-        "loc_added": 175,
-        "loc_removed": 14,
+        "loc_added": 350,
+        "loc_removed": 28,
         "merged_prs": [
           {
             "number": 354,
@@ -5710,10 +5827,23 @@
         "html_url": "https://github.com/obra/lace"
       },
       "obra/superpowers": {
-        "commits": 0,
-        "authors": [],
-        "loc_added": 0,
-        "loc_removed": 0,
+        "commits": 12,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 10
+          },
+          {
+            "name": "Gaurav Dubey",
+            "count": 1
+          },
+          {
+            "name": "Ada Sen",
+            "count": 1
+          }
+        ],
+        "loc_added": 2615,
+        "loc_removed": 568,
         "merged_prs": [
           {
             "number": 1959,
@@ -5732,14 +5862,14 @@
   },
   "2026-07-13": {
     "summary": {
-      "repos_active": 13,
+      "repos_active": 14,
       "featured_count": 4,
-      "second_tier_count": 9,
-      "commits": 1021,
+      "second_tier_count": 10,
+      "commits": 1035,
       "merged_prs": 23,
-      "loc_added": 231582,
-      "loc_removed": 53456,
-      "contributors": 6,
+      "loc_added": 328508,
+      "loc_removed": 64066,
+      "contributors": 7,
       "tagged_releases": 4,
       "commit_only_bumps": 0
     },
@@ -5763,19 +5893,19 @@
         "html_url": "https://github.com/prime-radiant-inc/llm-proxy"
       },
       "prime-radiant-inc/serf": {
-        "commits": 593,
+        "commits": 589,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 592
+            "count": 588
           },
           {
             "name": "Drew Ritter",
             "count": 1
           }
         ],
-        "loc_added": 119000,
-        "loc_removed": 34774,
+        "loc_added": 169422,
+        "loc_removed": 40516,
         "merged_prs": [
           {
             "number": 41,
@@ -5869,8 +5999,8 @@
             "count": 1
           }
         ],
-        "loc_added": 0,
-        "loc_removed": 0,
+        "loc_added": 22,
+        "loc_removed": 22,
         "merged_prs": [
           {
             "number": 3,
@@ -5975,8 +6105,8 @@
             "count": 246
           }
         ],
-        "loc_added": 41651,
-        "loc_removed": 5711,
+        "loc_added": 85146,
+        "loc_removed": 10327,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -6044,11 +6174,38 @@
         "description": "Local-first, multi-platform blogging client for an 11ty blog that lives in a GitHub repo \u2014 the repo is the database",
         "html_url": "https://github.com/obra/blogosphere"
       },
+      "obra/dotfiles": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 7
+          }
+        ],
+        "loc_added": 638,
+        "loc_removed": 4,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/dotfiles"
+      },
       "obra/superpowers": {
-        "commits": 0,
-        "authors": [],
-        "loc_added": 0,
-        "loc_removed": 0,
+        "commits": 11,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 10
+          },
+          {
+            "name": "Gaurav Dubey",
+            "count": 1
+          }
+        ],
+        "loc_added": 2349,
+        "loc_removed": 226,
         "merged_prs": [
           {
             "number": 1998,
@@ -6139,11 +6296,11 @@
       "repos_active": 14,
       "featured_count": 2,
       "second_tier_count": 12,
-      "commits": 1958,
+      "commits": 1902,
       "merged_prs": 19,
-      "loc_added": 296136,
-      "loc_removed": 100293,
-      "contributors": 12,
+      "loc_added": 615307,
+      "loc_removed": 186929,
+      "contributors": 9,
       "tagged_releases": 3,
       "commit_only_bumps": 1
     },
@@ -6156,7 +6313,7 @@
             "count": 4
           }
         ],
-        "loc_added": 795,
+        "loc_added": 996,
         "loc_removed": 31,
         "merged_prs": [
           {
@@ -6201,15 +6358,15 @@
         "html_url": "https://github.com/prime-radiant-inc/stockyard"
       },
       "prime-radiant-inc/serf": {
-        "commits": 1470,
+        "commits": 1467,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 1470
+            "count": 1467
           }
         ],
-        "loc_added": 196567,
-        "loc_removed": 91085,
+        "loc_added": 442075,
+        "loc_removed": 176330,
         "merged_prs": [
           {
             "number": 62,
@@ -6258,15 +6415,15 @@
         "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
       },
       "prime-radiant-inc/superpowers-evals": {
-        "commits": 19,
+        "commits": 14,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 19
+            "count": 14
           }
         ],
-        "loc_added": 3830,
-        "loc_removed": 169,
+        "loc_added": 3343,
+        "loc_removed": 84,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -6301,8 +6458,8 @@
             "count": 3
           }
         ],
-        "loc_added": 1,
-        "loc_removed": 0,
+        "loc_added": 1183,
+        "loc_removed": 650,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -6373,8 +6530,8 @@
             "count": 5
           }
         ],
-        "loc_added": 736,
-        "loc_removed": 421,
+        "loc_added": 1263,
+        "loc_removed": 813,
         "merged_prs": [
           {
             "number": 357,
@@ -6400,14 +6557,10 @@
         "html_url": "https://github.com/obra/lace"
       },
       "obra/superpowers": {
-        "commits": 51,
+        "commits": 4,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 46
-          },
-          {
-            "name": "Gaurav Dubey",
             "count": 2
           },
           {
@@ -6417,14 +6570,10 @@
           {
             "name": "Mark Rada",
             "count": 1
-          },
-          {
-            "name": "Ada Sen",
-            "count": 1
           }
         ],
-        "loc_added": 5808,
-        "loc_removed": 1872,
+        "loc_added": 145,
+        "loc_removed": 13,
         "merged_prs": [
           {
             "number": 2028,
@@ -6481,7 +6630,7 @@
         "html_url": "https://github.com/obra/superpowers-marketplace"
       },
       "obra/winpepper": {
-        "commits": 369,
+        "commits": 368,
         "authors": [
           {
             "name": "danshapiro",
@@ -6498,14 +6647,10 @@
           {
             "name": "Jesse Vincent",
             "count": 1
-          },
-          {
-            "name": "Dan Shapiro",
-            "count": 1
           }
         ],
-        "loc_added": 78693,
-        "loc_removed": 5918,
+        "loc_added": 156596,
+        "loc_removed": 8211,
         "merged_prs": [
           {
             "number": 56,
@@ -6569,10 +6714,10 @@
       "repos_active": 14,
       "featured_count": 2,
       "second_tier_count": 12,
-      "commits": 1830,
+      "commits": 1833,
       "merged_prs": 5,
-      "loc_added": 369238,
-      "loc_removed": 48696,
+      "loc_added": 574817,
+      "loc_removed": 76751,
       "contributors": 6,
       "tagged_releases": 0,
       "commit_only_bumps": 0
@@ -6622,8 +6767,8 @@
             "count": 1176
           }
         ],
-        "loc_added": 158943,
-        "loc_removed": 36618,
+        "loc_added": 275491,
+        "loc_removed": 62206,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -6658,7 +6803,7 @@
             "count": 202
           }
         ],
-        "loc_added": 94251,
+        "loc_added": 136714,
         "loc_removed": 1377,
         "merged_prs": [],
         "tagged_releases": [],
@@ -6694,8 +6839,8 @@
             "count": 94
           }
         ],
-        "loc_added": 19423,
-        "loc_removed": 2086,
+        "loc_added": 29049,
+        "loc_removed": 3696,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -6741,15 +6886,15 @@
         "html_url": "https://github.com/prime-radiant-inc/code-of-conduct"
       },
       "prime-radiant-inc/agentic-usage-meter": {
-        "commits": 136,
+        "commits": 139,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 136
+            "count": 139
           }
         ],
-        "loc_added": 51491,
-        "loc_removed": 6883,
+        "loc_added": 51624,
+        "loc_removed": 6917,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -6759,15 +6904,15 @@
         "html_url": "https://github.com/prime-radiant-inc/agentic-usage-meter"
       },
       "obra/dotfiles": {
-        "commits": 23,
+        "commits": 16,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 23
+            "count": 16
           }
         ],
-        "loc_added": 1615,
-        "loc_removed": 24,
+        "loc_added": 977,
+        "loc_removed": 20,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -6840,15 +6985,15 @@
         "html_url": "https://github.com/obra/superpowers"
       },
       "obra/winpepper": {
-        "commits": 175,
+        "commits": 182,
         "authors": [
           {
             "name": "danshapiro",
-            "count": 175
+            "count": 182
           }
         ],
-        "loc_added": 37527,
-        "loc_removed": 1629,
+        "loc_added": 74974,
+        "loc_removed": 2456,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -6864,10 +7009,10 @@
       "repos_active": 30,
       "featured_count": 4,
       "second_tier_count": 26,
-      "commits": 1658,
+      "commits": 1650,
       "merged_prs": 26,
-      "loc_added": 586020,
-      "loc_removed": 522380,
+      "loc_added": 709131,
+      "loc_removed": 549868,
       "contributors": 9,
       "tagged_releases": 10,
       "commit_only_bumps": 0
@@ -6947,8 +7092,8 @@
             "count": 1
           }
         ],
-        "loc_added": 257166,
-        "loc_removed": 296659,
+        "loc_added": 356584,
+        "loc_removed": 321603,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -7092,18 +7237,18 @@
         "html_url": "https://github.com/prime-radiant-inc/books-for-bots"
       },
       "prime-radiant-inc/superpowers-evals": {
-        "commits": 92,
+        "commits": 94,
         "authors": [
           {
             "name": "Drew Ritter",
-            "count": 83
+            "count": 85
           },
           {
             "name": "Jesse Vincent",
             "count": 9
           }
         ],
-        "loc_added": 212905,
+        "loc_added": 212945,
         "loc_removed": 199992,
         "merged_prs": [
           {
@@ -7269,8 +7414,8 @@
             "count": 40
           }
         ],
-        "loc_added": 11808,
-        "loc_removed": 1432,
+        "loc_added": 14072,
+        "loc_removed": 2693,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -7309,7 +7454,7 @@
             "count": 1
           }
         ],
-        "loc_added": 44,
+        "loc_added": 174,
         "loc_removed": 0,
         "merged_prs": [
           {
@@ -7326,15 +7471,15 @@
         "html_url": "https://github.com/prime-radiant-inc/code-of-conduct"
       },
       "prime-radiant-inc/agentic-usage-meter": {
-        "commits": 64,
+        "commits": 61,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 64
+            "count": 61
           }
         ],
-        "loc_added": 8257,
-        "loc_removed": 999,
+        "loc_added": 12470,
+        "loc_removed": 1446,
         "merged_prs": [],
         "tagged_releases": [
           {
@@ -7434,8 +7579,8 @@
             "count": 19
           }
         ],
-        "loc_added": 1614,
-        "loc_removed": 91,
+        "loc_added": 2777,
+        "loc_removed": 144,
         "merged_prs": [
           {
             "number": 364,
@@ -7586,8 +7731,8 @@
             "count": 6
           }
         ],
-        "loc_added": 19407,
-        "loc_removed": 9107,
+        "loc_added": 21238,
+        "loc_removed": 9339,
         "merged_prs": [
           {
             "number": 43,
@@ -7643,15 +7788,15 @@
         "html_url": "https://github.com/obra/superpowers-marketplace"
       },
       "obra/winpepper": {
-        "commits": 128,
+        "commits": 121,
         "authors": [
           {
             "name": "danshapiro",
-            "count": 128
+            "count": 121
           }
         ],
-        "loc_added": 29252,
-        "loc_removed": 3575,
+        "loc_added": 43304,
+        "loc_removed": 4126,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
@@ -7664,13 +7809,13 @@
   },
   "2026-08-10": {
     "summary": {
-      "repos_active": 22,
+      "repos_active": 20,
       "featured_count": 6,
-      "second_tier_count": 16,
-      "commits": 486,
+      "second_tier_count": 14,
+      "commits": 457,
       "merged_prs": 12,
-      "loc_added": 86874,
-      "loc_removed": 40607,
+      "loc_added": 112032,
+      "loc_removed": 43043,
       "contributors": 8,
       "tagged_releases": 3,
       "commit_only_bumps": 3
@@ -7695,15 +7840,15 @@
         "html_url": "https://github.com/prime-radiant-inc/homebrew-tap"
       },
       "prime-radiant-inc/serf": {
-        "commits": 140,
+        "commits": 122,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 140
+            "count": 122
           }
         ],
-        "loc_added": 25942,
-        "loc_removed": 25329,
+        "loc_added": 25313,
+        "loc_removed": 24915,
         "merged_prs": [
           {
             "number": 64,
@@ -7748,7 +7893,7 @@
             "count": 1
           }
         ],
-        "loc_added": 201,
+        "loc_added": 402,
         "loc_removed": 0,
         "merged_prs": [
           {
@@ -7764,38 +7909,20 @@
         "description": "A single-binary Go CLI that gives AI agents a Slack identity to send messages, read channels, and stream real-time events, with admin tooling to provision new bots.",
         "html_url": "https://github.com/prime-radiant-inc/slackline"
       },
-      "prime-radiant-inc/terminal-bench-analysis": {
-        "commits": 1,
-        "authors": [
-          {
-            "name": "github-actions[bot]",
-            "count": 1
-          }
-        ],
-        "loc_added": 1,
-        "loc_removed": 1,
-        "merged_prs": [],
-        "tagged_releases": [],
-        "commit_only_bumps": [],
-        "featured": false,
-        "featured_reason": null,
-        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
-        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
-      },
       "prime-radiant-inc/superpowers-evals": {
-        "commits": 34,
+        "commits": 32,
         "authors": [
           {
             "name": "Drew Ritter",
-            "count": 24
+            "count": 22
           },
           {
             "name": "Jesse Vincent",
             "count": 10
           }
         ],
-        "loc_added": 2829,
-        "loc_removed": 1082,
+        "loc_added": 5078,
+        "loc_removed": 1084,
         "merged_prs": [
           {
             "number": 42,
@@ -7811,19 +7938,19 @@
         "html_url": "https://github.com/prime-radiant-inc/superpowers-evals"
       },
       "prime-radiant-inc/clipfan": {
-        "commits": 21,
+        "commits": 14,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 18
+            "count": 11
           },
           {
             "name": "will wade",
             "count": 3
           }
         ],
-        "loc_added": 1441,
-        "loc_removed": 100,
+        "loc_added": 2078,
+        "loc_removed": 146,
         "merged_prs": [
           {
             "number": 2,
@@ -7850,24 +7977,6 @@
         "featured_reason": "tagged release v1.0.10 published 2026-08-13T17:44:24Z",
         "description": "Clipboard sync daemon for Mac + remote tmux fleet. Mirrors macOS pasteboard to remote OS clipboards and tmux paste buffers. Enables image paste into Claude Code/Codex over SSH without OSC 52 or Xvfb.",
         "html_url": "https://github.com/prime-radiant-inc/clipfan"
-      },
-      "prime-radiant-inc/superpowers-docs": {
-        "commits": 1,
-        "authors": [
-          {
-            "name": "Jesse Vincent",
-            "count": 1
-          }
-        ],
-        "loc_added": 23,
-        "loc_removed": 5,
-        "merged_prs": [],
-        "tagged_releases": [],
-        "commit_only_bumps": [],
-        "featured": false,
-        "featured_reason": null,
-        "description": null,
-        "html_url": "https://github.com/prime-radiant-inc/superpowers-docs"
       },
       "prime-radiant-inc/claude-plugin-stats": {
         "commits": 6,
@@ -7957,8 +8066,8 @@
             "count": 1
           }
         ],
-        "loc_added": 111,
-        "loc_removed": 5,
+        "loc_added": 256,
+        "loc_removed": 10,
         "merged_prs": [
           {
             "number": 2,
@@ -7986,8 +8095,8 @@
             "count": 149
           }
         ],
-        "loc_added": 22537,
-        "loc_removed": 1771,
+        "loc_added": 27516,
+        "loc_removed": 2494,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [
@@ -8081,8 +8190,8 @@
             "count": 1
           }
         ],
-        "loc_added": 1360,
-        "loc_removed": 99,
+        "loc_added": 2492,
+        "loc_removed": 172,
         "merged_prs": [
           {
             "number": 365,
@@ -8109,7 +8218,7 @@
             "count": 1
           }
         ],
-        "loc_added": 21,
+        "loc_added": 42,
         "loc_removed": 0,
         "merged_prs": [
           {
@@ -8206,8 +8315,8 @@
             "count": 80
           }
         ],
-        "loc_added": 9649,
-        "loc_removed": 1405,
+        "loc_added": 26096,
+        "loc_removed": 3412,
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
