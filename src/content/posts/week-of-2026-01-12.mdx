@@ -1,16 +1,16 @@
 ---
-title: "Skills, todos, and thinking blocks land in lace; llm-proxy ships v0.1.0"
+title: "stockyard's foundation lands, lace gains skills and todos, llm-proxy v0.1.0"
 week: "Week of January 12, 2026"
 dateStart: 2026-01-12
 dateEnd: 2026-01-18
 pubDate: 2026-01-18
-summary: "lace grows a skills system, task-tracking tools, and thinking blocks across 180 commits, and llm-proxy — a Go logging proxy for LLM APIs — cuts its first release."
+summary: "stockyard's microVM-orchestration daemon gets built from scratch in a 329-commit week, lace grows a skills system and task-tracking tools, and llm-proxy — a Go logging proxy for LLM APIs — cuts its first release."
 ---
 
 import WeekSummary from '../../components/WeekSummary.astro';
 import RepoStat from '../../components/RepoStat.astro';
 
-lace kept its pace with another 180-commit week, this one adding capabilities rather than restructuring: a skills system, task-tracking tools, and inline thinking blocks. Alongside it, **llm-proxy** — a Go reverse proxy that logs LLM API traffic — shipped its first release.
+The week's biggest push was **stockyard** — a microVM-orchestration daemon built from nothing across 329 commits. Alongside it, lace kept its pace with another 180-commit week adding capabilities rather than restructuring — a skills system, task-tracking tools, and inline thinking blocks — and **llm-proxy**, a Go reverse proxy that logs LLM API traffic, shipped its first release.
 
 <section class="summary">
 
@@ -21,6 +21,18 @@ lace kept its pace with another 180-commit week, this one adding capabilities ra
 <section class="featured">
 
 ## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/stockyard](https://github.com/prime-radiant-inc/stockyard)
+
+<p class="repo-desc">A microVM-orchestration daemon — ZFS-backed, Flintlock-driven Firecracker VM management exposed over a gRPC API.</p>
+
+<RepoStat org="prime-radiant-inc" name="stockyard" week="2026-01-12" />
+
+The biggest repo of the week, built from scratch in 329 commits. The foundation went in end to end: a Go project with a Cobra CLI and config package, a secrets-provider interface with a 1Password backend, a ZFS management package, and a daemon with SQLite state management. On top of that came the VM layer — a gRPC API defined in protobuf with server and client packages, a Flintlock client wrapper for Firecracker VM management, a cloud-init generator, VM networking, a base VM image and init system, and a `stockyard-snapshot` vsock client for talking to VMs. Sole contributor: Jesse Vincent.
+
+</article>
 
 <article class="repo">
 
