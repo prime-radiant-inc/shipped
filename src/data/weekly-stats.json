@@ -9432,5 +9432,597 @@
         "html_url": "https://github.com/obra/superpowers"
       }
     }
+  },
+  "2025-12-22": {
+    "summary": {
+      "repos_active": 8,
+      "featured_count": 1,
+      "second_tier_count": 7,
+      "commits": 40,
+      "merged_prs": 6,
+      "loc_added": 2127,
+      "loc_removed": 98,
+      "contributors": 6,
+      "tagged_releases": 0,
+      "commit_only_bumps": 3
+    },
+    "repos": {
+      "prime-radiant-inc/streamlinear": {
+        "commits": 14,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 14
+          }
+        ],
+        "loc_added": 27581,
+        "loc_removed": 3924,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2025-12-27T15:59:23Z)",
+        "description": "A lightweight Linear MCP server for Claude Code that exposes one tool with action dispatch (search, get, update, comment, create, graphql, help) using ~500 tokens instead of the standard MCP's ~17,000.",
+        "html_url": "https://github.com/prime-radiant-inc/streamlinear",
+        "loc_suppressed": true
+      },
+      "obra/double-shot-latte": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          },
+          {
+            "name": "Ralph Bean",
+            "count": 1
+          }
+        ],
+        "loc_added": 28,
+        "loc_removed": 4,
+        "merged_prs": [
+          {
+            "number": 5,
+            "title": "Make the model configurable",
+            "merged_at": "2025-12-24T23:17:35Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Claude Code plugin that automatically evaluates whether Claude should continue working instead of stopping prematurely",
+        "html_url": "https://github.com/obra/double-shot-latte"
+      },
+      "obra/episodic-memory": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "techjoec",
+            "count": 2
+          }
+        ],
+        "loc_added": 12936,
+        "loc_removed": 6902,
+        "merged_prs": [
+          {
+            "number": 38,
+            "title": "fix: Honor exclude.txt in sync and verify commands",
+            "merged_at": "2025-12-22T18:37:38Z"
+          },
+          {
+            "number": 37,
+            "title": "feat: Add API configuration support for summarization",
+            "merged_at": "2025-12-22T18:36:57Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/episodic-memory",
+        "loc_suppressed": true
+      },
+      "obra/external-subagents": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Sky",
+            "count": 1
+          }
+        ],
+        "loc_added": 1,
+        "loc_removed": 1,
+        "merged_prs": [
+          {
+            "number": 1,
+            "title": "Fix README clone URL for Codex skill install",
+            "merged_at": "2025-12-24T23:07:15Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Codex subagent CLI and tooling",
+        "html_url": "https://github.com/obra/external-subagents"
+      },
+      "obra/superpowers": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 8
+          },
+          {
+            "name": "egornomic",
+            "count": 1
+          },
+          {
+            "name": "Mike Harrison",
+            "count": 1
+          }
+        ],
+        "loc_added": 1626,
+        "loc_removed": 31,
+        "merged_prs": [
+          {
+            "number": 160,
+            "title": "fix: use git check-ignore for worktree gitignore verification",
+            "merged_at": "2025-12-23T19:26:33Z"
+          },
+          {
+            "number": 144,
+            "title": "fix: properly inherit agent model from main",
+            "merged_at": "2025-12-24T05:46:15Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "b9e1649",
+            "date": "2025-12-26T22:55:32-06:00",
+            "subject": "Release v4.0.3: Strengthen using-superpowers for explicit skill requests",
+            "version": "4.0.3"
+          },
+          {
+            "sha": "f6d50c7",
+            "date": "2025-12-26T22:53:58-06:00",
+            "subject": "Bump version to 4.0.3",
+            "version": "4.0.3"
+          },
+          {
+            "sha": "131c1f1",
+            "date": "2025-12-23T23:03:31-08:00",
+            "subject": "Release v4.0.2: Make slash commands user-only",
+            "version": "4.0.2"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-lab": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 376,
+        "loc_removed": 1,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Experimental skills for Claude Code Superpowers - new techniques and tools",
+        "html_url": "https://github.com/obra/superpowers-lab"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 3
+          }
+        ],
+        "loc_added": 3,
+        "loc_removed": 3,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      },
+      "obra/wordiest": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 7
+          }
+        ],
+        "loc_added": 93,
+        "loc_removed": 58,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Wordiest iOS port",
+        "html_url": "https://github.com/obra/wordiest"
+      }
+    }
+  },
+  "2025-12-29": {
+    "summary": {
+      "repos_active": 3,
+      "featured_count": 1,
+      "second_tier_count": 2,
+      "commits": 237,
+      "merged_prs": 0,
+      "loc_added": 55863,
+      "loc_removed": 76578,
+      "contributors": 1,
+      "tagged_releases": 8,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "obra/dotfiles": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 3,
+        "loc_removed": 21,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/dotfiles"
+      },
+      "obra/lace": {
+        "commits": 155,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 155
+          }
+        ],
+        "loc_added": 38411,
+        "loc_removed": 67881,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/winby": {
+        "commits": 81,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 81
+          }
+        ],
+        "loc_added": 17449,
+        "loc_removed": 8676,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v1.3.1",
+            "name": "Winby v1.3.1",
+            "published_at": "2026-01-03T00:01:34Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.3.0",
+            "name": "Winby v1.3.0",
+            "published_at": "2026-01-02T20:03:34Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.2.2",
+            "name": "Winby v1.2.2",
+            "published_at": "2026-01-02T03:47:17Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.2.1",
+            "name": "Winby v1.2.1",
+            "published_at": "2026-01-02T03:29:18Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.2.0",
+            "name": "Winby v1.2.0",
+            "published_at": "2026-01-02T02:54:46Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.1.1",
+            "name": "Winby v1.1.1",
+            "published_at": "2026-01-01T03:58:13Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.1.0",
+            "name": "Winby v1.1.0",
+            "published_at": "2026-01-01T03:42:03Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.0.0",
+            "name": "Winby v1.0.0",
+            "published_at": "2025-12-31T03:04:49Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2025-12-30T03:04:50Z); tagged release v1.3.1 published 2026-01-03T00:01:34Z; tagged release v1.3.0 published 2026-01-02T20:03:34Z; tagged release v1.2.2 published 2026-01-02T03:47:17Z; tagged release v1.2.1 published 2026-01-02T03:29:18Z; tagged release v1.2.0 published 2026-01-02T02:54:46Z; tagged release v1.1.1 published 2026-01-01T03:58:13Z; tagged release v1.1.0 published 2026-01-01T03:42:03Z; tagged release v1.0.0 published 2025-12-31T03:04:49Z",
+        "description": "A fast window manager for macOS with fuzzy search",
+        "html_url": "https://github.com/obra/winby"
+      }
+    }
+  },
+  "2026-01-05": {
+    "summary": {
+      "repos_active": 3,
+      "featured_count": 0,
+      "second_tier_count": 3,
+      "commits": 351,
+      "merged_prs": 0,
+      "loc_added": 4128,
+      "loc_removed": 73,
+      "contributors": 3,
+      "tagged_releases": 0,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "obra/amplifier-bundle-superpowers": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Sam Schillace",
+            "count": 4
+          }
+        ],
+        "loc_added": 4123,
+        "loc_removed": 72,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Superpowers workflow system for Amplifier - disciplined software development with TDD, systematic debugging, and structured planning. Ported from obra/superpowers.",
+        "html_url": "https://github.com/obra/amplifier-bundle-superpowers"
+      },
+      "obra/lace": {
+        "commits": 346,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 346
+          }
+        ],
+        "loc_added": 162936,
+        "loc_removed": 343618,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace",
+        "loc_suppressed": true
+      },
+      "obra/superpowers-chrome": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Dan Shapiro",
+            "count": 1
+          }
+        ],
+        "loc_added": 5,
+        "loc_removed": 1,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Claude Code plugin for direct Chrome browser control via DevTools Protocol - zero dependencies",
+        "html_url": "https://github.com/obra/superpowers-chrome"
+      }
+    }
+  },
+  "2026-01-12": {
+    "summary": {
+      "repos_active": 7,
+      "featured_count": 3,
+      "second_tier_count": 4,
+      "commits": 593,
+      "merged_prs": 1,
+      "loc_added": 126176,
+      "loc_removed": 18111,
+      "contributors": 2,
+      "tagged_releases": 1,
+      "commit_only_bumps": 1
+    },
+    "repos": {
+      "prime-radiant-inc/llm-proxy": {
+        "commits": 79,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 79
+          }
+        ],
+        "loc_added": 19114,
+        "loc_removed": 1271,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.1.0",
+            "name": "v0.1.0",
+            "published_at": "2026-01-14T06:25:33Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-01-13T19:55:44Z); tagged release v0.1.0 published 2026-01-14T06:25:33Z",
+        "description": "Transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response to Claude, OpenAI, and other providers for debugging, auditing, and analysis.",
+        "html_url": "https://github.com/prime-radiant-inc/llm-proxy"
+      },
+      "prime-radiant-inc/homebrew-tap": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 44,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-01-14T06:36:45Z)",
+        "description": "Homebrew tap for Prime Radiant tools, including formulae for llm-proxy and beeper-message-sync.",
+        "html_url": "https://github.com/prime-radiant-inc/homebrew-tap"
+      },
+      "prime-radiant-inc/stockyard": {
+        "commits": 329,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 329
+          }
+        ],
+        "loc_added": 67246,
+        "loc_removed": 6094,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Coding-agent VM orchestrator: runs coding agents in isolated VMs \u2014 Firecracker micro-VMs on Linux (with ZFS-based audit-trail snapshots) and Apple's container tool on macOS.",
+        "html_url": "https://github.com/prime-radiant-inc/stockyard"
+      },
+      "obra/amplifier-frontend-ent": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 128,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-01-13T06:57:49Z)",
+        "description": "Minimal scaffold for an Ent JSON-RPC agent server backed by Amplifier",
+        "html_url": "https://github.com/obra/amplifier-frontend-ent"
+      },
+      "obra/lace": {
+        "commits": 180,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 180
+          }
+        ],
+        "loc_added": 38855,
+        "loc_removed": 10731,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/superpowers": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          },
+          {
+            "name": "Joshua Shanks",
+            "count": 1
+          }
+        ],
+        "loc_added": 2,
+        "loc_removed": 13,
+        "merged_prs": [
+          {
+            "number": 157,
+            "title": "docs: fix documentation accuracy issues in skills",
+            "merged_at": "2026-01-14T22:21:22Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-lab": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 787,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "344b079",
+            "date": "2026-01-11T18:42:18-08:00",
+            "subject": "Release v0.2.0: Add finding-duplicate-functions skill",
+            "version": "0.2.0"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Experimental skills for Claude Code Superpowers - new techniques and tools",
+        "html_url": "https://github.com/obra/superpowers-lab"
+      }
+    }
   }
 }
