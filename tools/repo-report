@@ -1,0 +1,881 @@
+#!/usr/bin/env python3
+"""
+repo-report <repo> <since> <until> [-o OUTPUT]
+
+Writes a single source-material Markdown file for a GitHub repo + date
+window, for authoring blog posts from — so nobody has to hand-transcribe
+commit/contributor/diffstat facts out of GitHub into prose again.
+
+For that repo + window, the report contains:
+  - full commit messages + per-commit SHA
+  - per-commit diffstat computed from a FULL (non-shallow) local clone's
+    `git log --numstat` combined diff — not GitHub's per-commit-page/API
+    diff, and not a shallow clone's numstat either. See "DIFFSTAT SOURCE
+    OF TRUTH" in main() for a real bug (found + fixed during validation)
+    explaining why neither of those alternates is safe.
+  - releases and tags landing in-window
+  - contributors resolved to GitHub LOGINS (not raw git author-name
+    strings), each annotated with prime-radiant-inc org membership; anyone
+    who isn't a member of prime-radiant-inc and isn't obra is flagged
+    EXTERNAL. A commit whose author has no linked GitHub account is
+    flagged UNRESOLVED rather than silently guessed at.
+  - merged/opened PR activity in-window
+  - for the `superpowers` repo specifically: which plan/skill files
+    (paths under a `skills/` or `plans/` directory, or named SKILL.md)
+    were touched, and by which commit.
+
+LINEAGE AND A CORRECTION TO IT — READ "DIFFSTAT SOURCE OF TRUTH" IN main()
+---------------------------------------------------------------------------
+The original diagnosis this tool reused came from prime-radiant-inc/shipped's
+tools/gather.py (the "generating-shipped-posts" skill's data-gathering
+script): a merge commit's real parent list can get grafted away by a
+shallow clone's `--shallow-since` boundary (landing the merge as a
+synthetic 0-parent root), and `git log --numstat` diffs a 0-parent commit
+against an empty tree — so the WHOLE tree's line count gets attributed to
+one commit. gather.py's fix: for any commit whose parent count != 1,
+distrust local numstat unconditionally and use GitHub's own per-commit
+diff instead. Proven there on `obra/lace`@`ad01889`: local numstat said
+459,422/0 (graft artifact), GitHub's per-commit diff said 630/266.
+
+This tool's FIRST version reused that rule verbatim — and it was WRONG for
+this tool's architecture, discovered via the batch-2 validation run (see
+main()'s "DIFFSTAT SOURCE OF TRUTH" comment for the full postmortem, proven
+again on the very same lace@ad01889 commit): this tool never makes a
+shallow clone, so a merge's parent list here is never grafted, and git's
+local combined diff for a real 2-parent merge is already correct (usually
+0, because the merge's content is already fully represented by the
+separately-walked non-merge commit(s) it merged in). GitHub's per-commit
+diff for that same merge is a FIRST-PARENT diff instead, which on a clean
+merge reproduces exactly what the merged branch's own tip commit already
+contributed — so overriding local's correct 0 with it DOUBLE-COUNTS that
+content. Fixed: local numstat is now the diffstat source of truth
+unconditionally; GraphQL is used only for login resolution, full commit
+messages, and an informational (not overriding) cross-check.
+
+NOTE ON PROVENANCE: the task that originally produced this tool described
+the parents!=1 fix as "committed as c091ceb" in prime-radiant-inc/shipped.
+That SHA is real but is a DIFFERENT fix (the fork-parent-lookup-failure
+hardening). The parents != 1 / graft fix actually landed in commit
+113ab09 ("Correct LOC across all weeks: fix git numstat graft/merge
+over-count"). Flagging the discrepancy here rather than silently repeating
+it.
+
+GraphQL is still used, batched across all in-window commits in a handful
+of calls, for: (a) GitHub-login resolution per commit (impossible from
+local git alone), (b) full commit messages (redundant with local but
+convenient to fetch alongside), and (c) as a cross-check against local
+numstat that's logged as a data-quality note — expected to disagree on
+merges (see above; not an error) but worth surfacing if it ever disagrees
+on an ordinary single-parent commit. Local `git log --numstat` also
+supplies per-commit touched-file paths, needed for the superpowers
+plan/skill-file section — GraphQL's Commit type has no such field.
+
+WHY AUTHOR DATE, NOT GIT'S OWN --since/--until
+-----------------------------------------------
+`git log --since/--until` (and GitHub's REST "list commits" since/until
+params) filter by COMMIT (committer) date, not author date. For a repo
+that lands work via rebase-merged or squash-merged PRs, the committer
+date is the merge time, which can land in a completely different week
+than the actual authored-and-reviewed work. Verified empirically against
+obra/superpowers, week of 2026-05-04: filtering by committer date finds
+1 commit; filtering by author date finds the correct 30 (matching
+shipped's own weekly-stats.json ground truth for that week exactly,
+including LOC totals). So this tool walks the full local history with NO
+git-level date filter and does the [since, until) comparison itself in
+Python against each commit's author date.
+
+Requires: git, gh (authenticated — this box already has `gh auth login`
+done; if not, export GH_TOKEN/GITHUB_TOKEN, obtained via Ada's credential
+broker, host api.github.com, use=http).
+"""
+
+import argparse
+import datetime
+import json
+import os
+import re
+import subprocess
+import sys
+import textwrap
+
+CACHE_ROOT = os.path.expanduser("~/repos")  # checked first for an existing checkout
+BARE_CACHE_ROOT = "/work/repo-report/cache"  # fallback persistent bare-clone cache
+INTERNAL_EXTRA = {"obra"}  # always-internal logins beyond the org roster
+
+# --------------------------------------------------------------------- utils --
+
+def die(msg):
+    sys.exit(f"repo-report: ERROR: {msg}")
+
+
+def parse_boundary(s):
+    """Accept YYYY-MM-DD or a full ISO8601 timestamp; treat a bare date as
+    UTC midnight."""
+    try:
+        if re.fullmatch(r"\d{4}-\d{2}-\d{2}", s):
+            return datetime.datetime.fromisoformat(s + "T00:00:00+00:00")
+        dt = datetime.datetime.fromisoformat(s.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=datetime.timezone.utc)
+        return dt
+    except ValueError:
+        die(f"could not parse date/time {s!r} (want YYYY-MM-DD or ISO8601)")
+
+
+def run(cmd, cwd=None, timeout=300, check=True, env=None):
+    e = dict(os.environ)
+    if env:
+        e.update(env)
+    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=timeout, env=e)
+    if check and r.returncode != 0:
+        die(f"command failed ({' '.join(cmd)}):\n{r.stderr.strip()[:2000]}")
+    return r
+
+
+def gh_api(path, paginate=True, method="GET"):
+    cmd = ["gh", "api", path]
+    if paginate:
+        cmd.append("--paginate")
+    if method != "GET":
+        cmd += ["-X", method]
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+    if r.returncode != 0:
+        return None, (r.stderr.strip()[:400] or "unknown gh api error")
+    txt = r.stdout.strip()
+    if not txt:
+        return [], None
+    try:
+        data = json.loads(txt)
+        return (data if isinstance(data, list) else [data]), None
+    except json.JSONDecodeError:
+        # --paginate concatenates multiple JSON arrays back-to-back
+        decoder = json.JSONDecoder()
+        out, idx = [], 0
+        while idx < len(txt):
+            chunk = txt[idx:].lstrip()
+            if not chunk:
+                break
+            obj, end = decoder.raw_decode(chunk)
+            out.extend(obj if isinstance(obj, list) else [obj])
+            idx = len(txt) - len(chunk) + end
+        return out, None
+
+
+def gh_graphql(query):
+    r = subprocess.run(["gh", "api", "graphql", "-f", f"query={query}"],
+                        capture_output=True, text=True, timeout=180)
+    if r.returncode != 0:
+        return None, r.stderr.strip()[:800]
+    try:
+        data = json.loads(r.stdout)
+    except json.JSONDecodeError:
+        return None, f"non-JSON graphql response: {r.stdout[:400]}"
+    if "errors" in data:
+        return data.get("data"), json.dumps(data["errors"])[:800]
+    return data.get("data"), None
+
+
+def check_gh_auth():
+    r = subprocess.run(["gh", "auth", "status"], capture_output=True, text=True, timeout=30)
+    if r.returncode != 0:
+        die(
+            "gh is not authenticated and no working GH_TOKEN/GITHUB_TOKEN found.\n"
+            "Load the request-credential skill: request_credential(host=api.github.com,"
+            " use=http, purpose=...) to obtain a token, export it as GH_TOKEN, and retry."
+        )
+
+
+# --------------------------------------------------------------- repo resolve --
+
+def resolve_repo(spec):
+    """Accept 'owner/name', a full GitHub URL, or a bare repo name (checked
+    against local checkouts under ~/repos, then prime-radiant-inc, then
+    obra)."""
+    spec = spec.strip()
+    m = re.match(r"^(?:https?://github\.com/)?([\w.-]+)/([\w.-]+?)(?:\.git)?/?$", spec)
+    if m:
+        return m.group(1), m.group(2)
+
+    name = spec
+    # 1) an existing local checkout under ~/repos tells us the real owner
+    if os.path.isdir(CACHE_ROOT):
+        for d in os.listdir(CACHE_ROOT):
+            if d.lower() != name.lower():
+                continue
+            r = subprocess.run(["git", "-C", os.path.join(CACHE_ROOT, d), "remote", "get-url", "origin"],
+                                capture_output=True, text=True, timeout=15)
+            mm = re.search(r"github\.com[:/]([\w.-]+)/([\w.-]+?)(?:\.git)?$", r.stdout.strip())
+            if mm:
+                return mm.group(1), mm.group(2)
+
+    # 2) try the two known accounts directly against the API
+    for owner in ("prime-radiant-inc", "obra"):
+        data, err = gh_api(f"repos/{owner}/{name}", paginate=False)
+        if not err:
+            return owner, name
+
+    die(f"could not resolve repo {spec!r} to owner/name (not a local checkout, "
+        f"not prime-radiant-inc/{name}, not obra/{name})")
+
+
+def get_repo_meta(owner, name):
+    data, err = gh_api(f"repos/{owner}/{name}", paginate=False)
+    if err:
+        die(f"GET repos/{owner}/{name} failed: {err}")
+    return data[0]
+
+
+# ---------------------------------------------------------------- local clone --
+
+def local_checkout_dir(owner, name):
+    """Reuse an existing checkout under ~/repos if its origin matches, else
+    None."""
+    if not os.path.isdir(CACHE_ROOT):
+        return None
+    for d in os.listdir(CACHE_ROOT):
+        path = os.path.join(CACHE_ROOT, d)
+        r = subprocess.run(["git", "-C", path, "remote", "get-url", "origin"],
+                            capture_output=True, text=True, timeout=15)
+        if r.returncode != 0:
+            continue
+        mm = re.search(r"github\.com[:/]([\w.-]+)/([\w.-]+?)(?:\.git)?$", r.stdout.strip())
+        if mm and mm.group(1).lower() == owner.lower() and mm.group(2).lower() == name.lower():
+            return path
+    return None
+
+
+def ensure_repo(owner, name, clone_url, default_branch, log):
+    """Return (git_dir_args, ref) where git_dir_args is a list to splice into
+    a `git` invocation (e.g. ["-C", path]) and ref is the log-able ref for
+    the default branch. Never mutates a shared checkout's HEAD/working tree
+    — only `git fetch` (additive) is run against it."""
+    existing = local_checkout_dir(owner, name)
+    if existing:
+        print(f"[repo-report] reusing existing checkout {existing}", file=log)
+        r = subprocess.run(["git", "-C", existing, "fetch", "--quiet", "--tags", "origin"],
+                            capture_output=True, text=True, timeout=300)
+        if r.returncode != 0:
+            print(f"[repo-report] warning: fetch failed on {existing}: {r.stderr.strip()[:300]}", file=log)
+        return ["-C", existing], f"origin/{default_branch}"
+
+    os.makedirs(BARE_CACHE_ROOT, exist_ok=True)
+    dest = os.path.join(BARE_CACHE_ROOT, f"{owner}__{name}.git")
+    if os.path.isdir(dest):
+        print(f"[repo-report] refreshing cached bare clone {dest}", file=log)
+        r = subprocess.run(["git", "--git-dir", dest, "fetch", "--quiet", "--tags",
+                             "origin", "+refs/heads/*:refs/heads/*"],
+                            capture_output=True, text=True, timeout=600)
+        if r.returncode != 0:
+            print(f"[repo-report] warning: fetch failed on {dest}: {r.stderr.strip()[:300]}", file=log)
+    else:
+        print(f"[repo-report] cloning {clone_url} -> {dest} (bare, full history, first use only)", file=log)
+        r = subprocess.run(["git", "clone", "--bare", "--quiet", clone_url, dest],
+                            capture_output=True, text=True, timeout=1800)
+        if r.returncode != 0:
+            die(f"git clone --bare {clone_url} failed: {r.stderr.strip()[:500]}")
+    return ["--git-dir", dest], default_branch
+
+
+# ------------------------------------------------------------------ git log --
+
+REC_SEP = "\x1e"
+FIELD_SEP = "\x1f"
+
+
+def walk_commits(git_dir_args, ref, log):
+    """Full-history walk (no git-level date filter — see module docstring for
+    why). Returns list of dicts: sha, short, author_name, author_email,
+    author_date(dt), parents(list), subject, files (list of paths touched,
+    numstat-derived)."""
+    fmt = f"COMMIT{FIELD_SEP}%H{FIELD_SEP}%h{FIELD_SEP}%an{FIELD_SEP}%ae{FIELD_SEP}%aI{FIELD_SEP}%P{FIELD_SEP}%s"
+    cmd = ["git", *git_dir_args, "log", ref, "--no-color", "--numstat", f"--pretty=format:{fmt}"]
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=1800)
+    if r.returncode != 0:
+        die(f"git log failed: {r.stderr.strip()[:500]}")
+    commits = []
+    cur = None
+    for line in r.stdout.splitlines():
+        if line.startswith("COMMIT" + FIELD_SEP):
+            if cur:
+                commits.append(cur)
+            parts = line.split(FIELD_SEP)
+            if len(parts) < 8:
+                continue
+            _, sha, short, an, ae, aI, parents, subject = parts[:8]
+            cur = {
+                "sha": sha, "short": short, "author_name": an, "author_email": ae,
+                "author_date": datetime.datetime.fromisoformat(aI),
+                "parents": parents.split(), "subject": subject,
+                "local_add": 0, "local_del": 0, "files": [],
+            }
+        elif line.strip() and cur is not None:
+            f = line.split("\t")
+            if len(f) == 3:
+                add, dele, path = f
+                if add.isdigit():
+                    cur["local_add"] += int(add)
+                if dele.isdigit():
+                    cur["local_del"] += int(dele)
+                cur["files"].append(path)
+    if cur:
+        commits.append(cur)
+    return commits
+
+
+def merge_branch_overlaps_window(git_dir_args, sha, parents, inwindow_shas):
+    """For a merge commit (parents != 1): does ANY commit exclusive to a
+    non-first parent (i.e. reachable from that parent but not from the
+    first parent -- the branch(es) this merge brought in) also appear in our
+    own in-window commit set?
+
+    This is the deciding question for whether local numstat's combined diff
+    (usually 0 for a clean merge) or GitHub's first-parent-basis diff is the
+    non-double-counting choice for THIS merge -- see "DIFFSTAT SOURCE OF
+    TRUTH" in main(). Audited empirically across the full batch-2 validation
+    set (87 non-1-parent commits across 9 repos/18 report-weeks): 78/87 had
+    this overlap (their branch's commits are separately walked in the same
+    window -- local 0 is correct, GitHub's diff would double-count); a
+    handful did not (the branch predates the window entirely -- GitHub's
+    diff is the only way to see that it landed this week at all)."""
+    if len(parents) < 2:
+        return False  # 0-parent: nothing to compare against, not this rule's concern
+    p1 = parents[0]
+    for p2 in parents[1:]:
+        r = subprocess.run(["git", *git_dir_args, "log", "--format=%H", f"{p1}..{p2}"],
+                            capture_output=True, text=True, timeout=120)
+        if r.returncode != 0:
+            continue
+        excl = set(r.stdout.strip().splitlines())
+        if excl & inwindow_shas:
+            return True
+    return False
+
+
+# -------------------------------------------------------------- GraphQL fetch --
+
+def batched(seq, n):
+    for i in range(0, len(seq), n):
+        yield seq[i:i + n]
+
+
+def fetch_commit_stats_graphql(owner, name, shas, log, batch_size=50):
+    """One GraphQL call per batch_size shas. Returns dict sha -> {
+    additions, deletions, changed_files, n_parents, author_name,
+    author_email, login (or None)}. Any sha graphql can't resolve is
+    simply absent from the result (caller must handle)."""
+    out = {}
+    errors = []
+    for batch in batched(shas, batch_size):
+        parts = []
+        for i, sha in enumerate(batch):
+            parts.append(
+                f'c{i}: object(oid: "{sha}") {{ ... on Commit {{ oid additions deletions '
+                f'changedFilesIfAvailable parents {{ totalCount }} '
+                f'author {{ name email user {{ login }} }} }} }}'
+            )
+        query = f'query {{ repository(owner: "{owner}", name: "{name}") {{ ' + " ".join(parts) + " } }"
+        data, err = gh_graphql(query)
+        if err:
+            errors.append(err)
+            continue
+        repo = (data or {}).get("repository") or {}
+        for i, sha in enumerate(batch):
+            c = repo.get(f"c{i}")
+            if not c:
+                continue
+            author = c.get("author") or {}
+            user = author.get("user") or {}
+            out[sha] = {
+                "additions": c.get("additions", 0),
+                "deletions": c.get("deletions", 0),
+                "changed_files": c.get("changedFilesIfAvailable"),
+                "n_parents": (c.get("parents") or {}).get("totalCount", 1),
+                "author_name": author.get("name"),
+                "author_email": author.get("email"),
+                "login": user.get("login"),
+            }
+    if errors:
+        print(f"[repo-report] warning: {len(errors)} graphql batch(es) failed: {errors[:2]}", file=log)
+    return out, errors
+
+
+# ------------------------------------------------------------------- members --
+
+def get_org_members(org, log):
+    data, err = gh_api(f"orgs/{org}/members", paginate=True)
+    if err:
+        print(f"[repo-report] warning: could not list {org} members ({err}); "
+              f"external/internal flags will be marked unknown", file=log)
+        return None
+    return {m["login"] for m in data}
+
+
+# ------------------------------------------------------------------ releases --
+
+def get_releases_in_window(owner, name, since, until, log):
+    data, err = gh_api(f"repos/{owner}/{name}/releases?per_page=100", paginate=True)
+    if err:
+        print(f"[repo-report] warning: could not list releases: {err}", file=log)
+        return []
+    out = []
+    for rel in data:
+        pub = rel.get("published_at")
+        if not pub:
+            continue
+        dt = datetime.datetime.fromisoformat(pub.replace("Z", "+00:00"))
+        if since <= dt < until:
+            out.append({
+                "tag": rel.get("tag_name"), "name": rel.get("name"),
+                "published_at": pub, "prerelease": rel.get("prerelease"),
+                "draft": rel.get("draft"), "html_url": rel.get("html_url"),
+            })
+    out.sort(key=lambda r: r["published_at"])
+    return out
+
+
+def get_tags_in_window(owner, name, since, until, log):
+    """Tags landing in-window, resolved by the date of the commit/tag object
+    they point at (not just release-published tags)."""
+    tags, err = gh_api(f"repos/{owner}/{name}/tags?per_page=100", paginate=True)
+    if err:
+        print(f"[repo-report] warning: could not list tags: {err}", file=log)
+        return []
+    if not tags:
+        return []
+    # Resolve each tag's underlying object date via GraphQL, batched.
+    out = []
+    parts = []
+    for i, t in enumerate(tags):
+        sha = t["commit"]["sha"]
+        parts.append(
+            f'c{i}: object(oid: "{sha}") {{ '
+            f'... on Commit {{ authoredDate }} '
+            f'... on Tag {{ tagger {{ date }} target {{ ... on Commit {{ authoredDate }} }} }} }}'
+        )
+    for batch_start in range(0, len(parts), 50):
+        chunk = parts[batch_start:batch_start + 50]
+        query = f'query {{ repository(owner: "{owner}", name: "{name}") {{ ' + " ".join(chunk) + " } }"
+        data, err = gh_graphql(query)
+        if err:
+            print(f"[repo-report] warning: tag date resolution graphql error: {err}", file=log)
+            continue
+        repo = (data or {}).get("repository") or {}
+        for j in range(len(chunk)):
+            idx = batch_start + j
+            c = repo.get(f"c{idx}")
+            if not c:
+                continue
+            date_str = c.get("authoredDate") or ((c.get("tagger") or {}).get("date")) \
+                or ((c.get("target") or {}).get("authoredDate"))
+            if not date_str:
+                continue
+            dt = datetime.datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+            if since <= dt < until:
+                out.append({"tag": tags[idx]["name"], "date": date_str, "sha": tags[idx]["commit"]["sha"][:8]})
+    out.sort(key=lambda t: t["date"])
+    return out
+
+
+# ------------------------------------------------------------------- pr/branch --
+
+def get_pr_activity(owner, name, since, until, log):
+    """Merged-in-window and opened-in-window PRs (state=all, paginated,
+    stopping once we're well past the window on both created_at and
+    updated_at)."""
+    merged, opened = [], []
+    page = 1
+    while page <= 20:
+        data, err = gh_api(f"repos/{owner}/{name}/pulls?state=all&sort=created&direction=desc"
+                            f"&per_page=100&page={page}", paginate=False)
+        if err:
+            print(f"[repo-report] warning: pulls page {page} failed: {err}", file=log)
+            break
+        if not data:
+            break
+        stop = True
+        for pr in data:
+            created = datetime.datetime.fromisoformat(pr["created_at"].replace("Z", "+00:00"))
+            if created >= since:
+                stop = False
+            if since <= created < until:
+                opened.append({
+                    "number": pr["number"], "title": pr["title"], "created_at": pr["created_at"],
+                    "user": (pr.get("user") or {}).get("login"), "state": pr["state"],
+                    "head": (pr.get("head") or {}).get("ref"), "base": (pr.get("base") or {}).get("ref"),
+                    "merged_at": pr.get("merged_at"),
+                })
+            merged_at = pr.get("merged_at")
+            if merged_at:
+                mdt = datetime.datetime.fromisoformat(merged_at.replace("Z", "+00:00"))
+                if since <= mdt < until and not any(m["number"] == pr["number"] for m in merged):
+                    merged.append({
+                        "number": pr["number"], "title": pr["title"], "merged_at": merged_at,
+                        "user": (pr.get("user") or {}).get("login"),
+                        "head": (pr.get("head") or {}).get("ref"), "base": (pr.get("base") or {}).get("ref"),
+                    })
+        if stop:
+            break
+        page += 1
+    merged.sort(key=lambda p: p["merged_at"])
+    opened.sort(key=lambda p: p["created_at"])
+    return merged, opened
+
+
+# --------------------------------------------------------------- plan/skill --
+
+PLAN_SKILL_RE = re.compile(r"(^|/)(skills?|plans?)(/|$)", re.IGNORECASE)
+
+
+def is_plan_or_skill_path(path):
+    if PLAN_SKILL_RE.search(path):
+        return True
+    if os.path.basename(path).upper() == "SKILL.MD":
+        return True
+    return False
+
+
+# --------------------------------------------------------------------- main --
+
+def main():
+    ap = argparse.ArgumentParser(prog="repo-report", description=__doc__,
+                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("repo", help="owner/name, a github.com URL, or a bare repo name")
+    ap.add_argument("since", help="window start, inclusive (YYYY-MM-DD or ISO8601, UTC if no tz)")
+    ap.add_argument("until", help="window end, EXCLUSIVE (YYYY-MM-DD or ISO8601, UTC if no tz)")
+    ap.add_argument("-o", "--out", help="output path (default: ./<owner>-<name>_<since>_<until>.repo-report.md)")
+    args = ap.parse_args()
+
+    log = sys.stderr
+    check_gh_auth()
+
+    since = parse_boundary(args.since)
+    until = parse_boundary(args.until)
+    if until <= since:
+        die("until must be after since")
+
+    owner, name = resolve_repo(args.repo)
+    print(f"[repo-report] resolved repo: {owner}/{name}", file=log)
+    meta = get_repo_meta(owner, name)
+    default_branch = meta.get("default_branch") or "main"
+    clone_url = meta.get("clone_url")
+
+    # Fork/vendor WARNING (not a hard fail) -- the batch DISCOVERY driver
+    # (~/tools/shipped-discovery/gather.py) auto-EXCLUDES external forks and
+    # created-after-window/vendored repos before repo-report ever runs on
+    # them. This is a single explicitly-named repo run, though, so we still
+    # generate the report -- just loudly flag it, since the exclusion is a
+    # discovery/batch concern, not a repo-report one.
+    INTERNAL_OWNERS = {"prime-radiant-inc", "obra"}
+    if meta.get("fork"):
+        upstream = meta.get("source") or meta.get("parent")
+        upstream_full_name = upstream["full_name"] if upstream else None
+        upstream_owner = upstream_full_name.split("/")[0] if upstream_full_name else None
+        if upstream_owner and upstream_owner not in INTERNAL_OWNERS:
+            print(
+                f"[repo-report] WARNING: {owner}/{name} is a FORK of external "
+                f"upstream {upstream_full_name} (owner {upstream_owner!r} is "
+                "outside prime-radiant-inc/obra). Batch discovery would EXCLUDE "
+                "this repo; proceeding anyway because you named it explicitly. "
+                "Do not attribute this repo's work to us in a blog post without "
+                "checking whether it's vendored-external content.",
+                file=log,
+            )
+        else:
+            print(
+                f"[repo-report] note: {owner}/{name} is a fork"
+                + (f" of {upstream_full_name} (internal upstream, OK)" if upstream_full_name else " (no accessible upstream info)")
+                + ".",
+                file=log,
+            )
+
+    git_dir_args, ref = ensure_repo(owner, name, clone_url, default_branch, log)
+
+    print(f"[repo-report] walking full history of {ref}...", file=log)
+    all_commits = walk_commits(git_dir_args, ref, log)
+    commits = [c for c in all_commits if since <= c["author_date"] < until]
+    print(f"[repo-report] {len(commits)} commit(s) by author-date in [{since.isoformat()}, {until.isoformat()})"
+          f" out of {len(all_commits)} total reachable from {ref}", file=log)
+
+    shas = [c["sha"] for c in commits]
+    print(f"[repo-report] fetching authoritative per-commit stats + logins for {len(shas)} commit(s) via GraphQL...",
+          file=log)
+    gql_stats, gql_errors = fetch_commit_stats_graphql(owner, name, shas, log)
+
+    # Full commit messages (subject+body) — REST single-commit calls are the
+    # simplest reliable source (GraphQL Commit.message also works but we
+    # already pay a REST round trip for nothing else, so batch via GraphQL
+    # too, reusing the same query as stats since message is cheap to add).
+    # (Folded into fetch_commit_stats_graphql would have required a second
+    # pass; simplest correct thing: re-run with message included is wasteful,
+    # so pull message from a second lightweight GraphQL batch here.)
+    messages = fetch_commit_messages_graphql(owner, name, shas, log)
+
+    data_quality_notes = list(gql_errors)
+    inwindow_shas = set(shas)
+
+    # DIFFSTAT SOURCE OF TRUTH -- overlap-aware, per merge commit.
+    #
+    # POSTMORTEM, ROUND 1 (batch-2 validation, obra/lace week of 2026-05-11):
+    # this tool's first version reused gather.py's rule verbatim -- "parent
+    # count != 1 => local numstat is untrustworthy, replace with GitHub's
+    # per-commit diff" (gather.py needs this because its SHALLOW clone can
+    # graft a merge into a synthetic 0-parent root, severing its real second
+    # parent -- and everything that parent contributed -- from history
+    # entirely). Blindly applying that same override on this tool's FULL,
+    # non-shallow clone double-counted lace@ad01889: the merge's local
+    # combined diff was genuinely 0 (correct -- its content was already
+    # counted via its separately-walked second-parent commit), and
+    # overriding that correct 0 with GitHub's first-parent diff (630/266)
+    # double-counted that same content. GT's number for that week only
+    # avoided this because gather.py's OWN shallow clone happened to graft
+    # that exact merge (its own documented example) -- a correct total via a
+    # different bug canceling out, not evidence the override is safe.
+    #
+    # POSTMORTEM, ROUND 2 (fixing round 1 by unconditionally trusting local
+    # instead broke OTHER repos): trusting local unconditionally undercounts
+    # whenever a merge brings in a branch whose commits are NOT separately
+    # walked in this window -- which happens whenever the branch predates
+    # the window (authored earlier, merged this week). There, local's
+    # combined diff really is 0, but that 0 hides real work that just
+    # landed on the default branch this week and appears nowhere else in
+    # the report. GitHub's first-parent diff is the ONLY way to see that.
+    #
+    # RESOLUTION: for each merge, ask whether ANY commit exclusive to a
+    # non-first parent (`git log first_parent..other_parent`) is ALSO in
+    # this window's own commit set (merge_branch_overlaps_window). If yes,
+    # that content is already being counted via its own entry -- trust
+    # local (avoid the double count). If no, the branch's content isn't
+    # visible anywhere else in this report -- trust GitHub's per-commit
+    # diff (avoid the undercount). Audited empirically across the full
+    # batch-2 set: 78/87 non-1-parent commits had the overlap (local
+    # correct); a handful didn't (GitHub's diff correct) -- both failure
+    # modes are real and this is the actual decision the data requires,
+    # not a constant either way.
+    for c in commits:
+        sha = c["sha"]
+        stats = gql_stats.get(sha)
+        c["n_parents_confirmed"] = len(c["parents"])
+        if len(c["parents"]) == 1:
+            c["additions"], c["deletions"], c["changed_files"] = c["local_add"], c["local_del"], len(c["files"])
+            c["stats_source"] = "local-numstat (single parent, full clone, trustworthy)"
+        else:
+            overlaps = merge_branch_overlaps_window(git_dir_args, sha, c["parents"], inwindow_shas)
+            if overlaps or stats is None:
+                c["additions"], c["deletions"], c["changed_files"] = c["local_add"], c["local_del"], len(c["files"])
+                c["stats_source"] = ("local-numstat (merge; branch commit(s) also counted separately "
+                                      "in-window, so trusting local's combined diff avoids double-counting)")
+            else:
+                c["additions"], c["deletions"] = stats["additions"], stats["deletions"]
+                c["changed_files"] = stats["changed_files"] if stats["changed_files"] is not None else len(c["files"])
+                c["stats_source"] = ("github-per-commit-diff (merge; branch commit(s) are NOT separately "
+                                      "in-window -- this merge is the only in-window trace of that work landing)")
+        if stats is None:
+            c["login"] = None
+            data_quality_notes.append(f"{c['short']}: GraphQL login/message lookup missing for this sha "
+                                       f"(login left unresolved, message fell back to subject line only)")
+        else:
+            c["login"] = stats["login"]
+            if stats["n_parents"] != len(c["parents"]):
+                data_quality_notes.append(f"{c['short']}: local parent count ({len(c['parents'])}) disagrees with "
+                                           f"GraphQL's ({stats['n_parents']}) -- unexpected on a full clone, investigate")
+            elif len(c["parents"]) == 1 and (c["local_add"] != stats["additions"] or c["local_del"] != stats["deletions"]):
+                data_quality_notes.append(
+                    f"{c['short']}: local numstat ({c['local_add']}+/{c['local_del']}-) disagrees with "
+                    f"GitHub's per-commit diff ({stats['additions']}+/{stats['deletions']}-) despite "
+                    f"exactly 1 parent -- using local numbers (trusted on a full clone); investigate if this recurs")
+        c["message"] = messages.get(sha, c["subject"])
+
+    org_members = get_org_members("prime-radiant-inc", log)
+    internal_logins = (org_members or set()) | INTERNAL_EXTRA
+
+    contributors = {}  # key: login or "unresolved:<name>|<email>"
+    for c in commits:
+        login = c.get("login")
+        key = login if login else f"unresolved:{c['author_name']}|{c['author_email']}"
+        if key not in contributors:
+            if login:
+                if org_members is None:
+                    status = "unknown (could not list org members)"
+                elif login in (org_members or set()):
+                    status = "internal (prime-radiant-inc member)"
+                elif login in INTERNAL_EXTRA:
+                    status = "internal (obra)"
+                else:
+                    status = "EXTERNAL"
+            else:
+                status = "UNRESOLVED (no linked GitHub account for this commit's author identity)"
+            contributors[key] = {
+                "login": login, "display": login or c["author_name"],
+                "identities": set(), "count": 0, "status": status,
+            }
+        contributors[key]["identities"].add(f"{c['author_name']} <{c['author_email']}>")
+        contributors[key]["count"] += 1
+
+    releases = get_releases_in_window(owner, name, since, until, log)
+    tags = get_tags_in_window(owner, name, since, until, log)
+    merged_prs, opened_prs = get_pr_activity(owner, name, since, until, log)
+
+    plan_skill_touches = []
+    if name.lower() == "superpowers":
+        for c in commits:
+            hits = [p for p in c["files"] if is_plan_or_skill_path(p)]
+            if hits:
+                plan_skill_touches.append({"sha": c["short"], "subject": c["subject"], "files": hits})
+
+    write_report(args.out, owner, name, meta, since, until, commits, contributors,
+                 releases, tags, merged_prs, opened_prs, plan_skill_touches,
+                 data_quality_notes, org_members)
+
+
+def fetch_commit_messages_graphql(owner, name, shas, log, batch_size=50):
+    out = {}
+    for batch in batched(shas, batch_size):
+        parts = [f'c{i}: object(oid: "{sha}") {{ ... on Commit {{ message }} }}' for i, sha in enumerate(batch)]
+        query = f'query {{ repository(owner: "{owner}", name: "{name}") {{ ' + " ".join(parts) + " } }"
+        data, err = gh_graphql(query)
+        if err:
+            print(f"[repo-report] warning: message-fetch graphql batch failed: {err}", file=log)
+            continue
+        repo = (data or {}).get("repository") or {}
+        for i, sha in enumerate(batch):
+            c = repo.get(f"c{i}")
+            if c and c.get("message"):
+                out[sha] = c["message"]
+    return out
+
+
+def write_report(out_path, owner, name, meta, since, until, commits, contributors,
+                  releases, tags, merged_prs, opened_prs, plan_skill_touches,
+                  data_quality_notes, org_members):
+    since_s, until_s = since.date().isoformat(), until.date().isoformat()
+    if not out_path:
+        out_path = f"{owner}-{name}_{since_s}_{until_s}.repo-report.md"
+
+    total_add = sum(c["additions"] for c in commits)
+    total_del = sum(c["deletions"] for c in commits)
+    external = [v for v in contributors.values() if v["status"] == "EXTERNAL"]
+    unresolved = [v for v in contributors.values() if v["status"].startswith("UNRESOLVED")]
+
+    lines = []
+    a = lines.append
+    a(f"# Repo report: {owner}/{name}")
+    a("")
+    a(f"Window: `{since.isoformat()}` to `{until.isoformat()}` (until exclusive)")
+    a(f"Generated: {datetime.datetime.now(datetime.timezone.utc).isoformat()}")
+    a(f"Default branch: `{meta.get('default_branch')}`  Fork: {meta.get('fork')}"
+      + (f"  Parent: {meta['parent']['full_name']}" if meta.get("fork") and meta.get("parent") else ""))
+    a(f"Description: {meta.get('description') or '(none)'}")
+    a("")
+    a("## Summary")
+    a("")
+    a(f"- Commits in window: **{len(commits)}**")
+    a(f"- LOC: **+{total_add} / -{total_del}** (GitHub per-commit-diff numbers, not raw `git log --numstat`)")
+    a(f"- Contributors: **{len(contributors)}** ({len(external)} external, {len(unresolved)} unresolved)")
+    a(f"- Releases landing in-window: **{len(releases)}**  Tags landing in-window: **{len(tags)}**")
+    a(f"- Merged PRs in-window: **{len(merged_prs)}**  Opened PRs in-window: **{len(opened_prs)}**")
+    if org_members is None:
+        a("- ⚠ could not fetch prime-radiant-inc member roster — all membership flags below are UNKNOWN, not asserted")
+    a("")
+
+    a("## Contributors (GitHub login, org-membership-resolved)")
+    a("")
+    a("| login | git identities seen | commits | status |")
+    a("|---|---|---|---|")
+    for v in sorted(contributors.values(), key=lambda x: -x["count"]):
+        idents = "; ".join(sorted(v["identities"]))
+        a(f"| {v['display']} | {idents} | {v['count']} | {v['status']} |")
+    a("")
+    if external:
+        a(f"**External contributors this window:** {', '.join(v['display'] for v in external)}")
+        a("")
+    if unresolved:
+        a(f"**Unresolved (no linked GitHub account found) — do not silently attribute:** "
+          f"{', '.join(v['display'] for v in unresolved)}")
+        a("")
+
+    a("## Releases landing in-window")
+    a("")
+    if releases:
+        for r in releases:
+            flags = " (prerelease)" if r["prerelease"] else ""
+            flags += " (draft)" if r["draft"] else ""
+            a(f"- `{r['tag']}` — {r['name']} — {r['published_at']}{flags}")
+    else:
+        a("(none)")
+    a("")
+
+    a("## Tags landing in-window (may include tags with no published release)")
+    a("")
+    if tags:
+        for t in tags:
+            a(f"- `{t['tag']}` @ `{t['sha']}` — {t['date']}")
+    else:
+        a("(none)")
+    a("")
+
+    a("## PR activity in-window")
+    a("")
+    a("### Merged")
+    a("")
+    if merged_prs:
+        for pr in merged_prs:
+            a(f"- #{pr['number']} {pr['title']} — @{pr['user']} — `{pr['head']}` → `{pr['base']}` — merged {pr['merged_at']}")
+    else:
+        a("(none)")
+    a("")
+    a("### Opened (any state)")
+    a("")
+    if opened_prs:
+        for pr in opened_prs:
+            state = f"merged {pr['merged_at']}" if pr.get("merged_at") else pr["state"]
+            a(f"- #{pr['number']} {pr['title']} — @{pr['user']} — `{pr['head']}` → `{pr['base']}` — opened {pr['created_at']} ({state})")
+    else:
+        a("(none)")
+    a("")
+
+    if name.lower() == "superpowers":
+        a("## Plan/skill files touched (superpowers-specific)")
+        a("")
+        if plan_skill_touches:
+            for t in plan_skill_touches:
+                a(f"- `{t['sha']}` {t['subject']}")
+                for f in t["files"]:
+                    a(f"    - {f}")
+        else:
+            a("(none touched in-window)")
+        a("")
+
+    a("## Commits (chronological)")
+    a("")
+    for c in sorted(commits, key=lambda x: x["author_date"]):
+        login = c.get("login") or f"unresolved:{c['author_name']}"
+        a(f"### `{c['short']}` ({c['sha']})")
+        a("")
+        a(f"- Author: {c['author_name']} <{c['author_email']}> (GitHub: {login})")
+        a(f"- Date: {c['author_date'].isoformat()}")
+        a(f"- Parents: {c['n_parents_confirmed']}"
+          + ("  (merge — see diffstat source note below for how a double-count vs. an undercount was avoided)"
+             if c["n_parents_confirmed"] != 1 else ""))
+        a(f"- Diffstat: +{c['additions']} / -{c['deletions']}, {c['changed_files']} file(s) changed  "
+          f"(source: {c['stats_source']})")
+        a("")
+        a("```")
+        a(c["message"].rstrip())
+        a("```")
+        a("")
+
+    if data_quality_notes:
+        a("## Data-quality notes")
+        a("")
+        for n in data_quality_notes:
+            a(f"- {n}")
+        a("")
+
+    with open(out_path, "w") as f:
+        f.write("\n".join(lines) + "\n")
+    print(f"[repo-report] wrote {out_path}", file=sys.stderr)
+    print(out_path)
+
+
+if __name__ == "__main__":
+    main()

@@ -81,6 +81,15 @@ def build_week(data, week_idx, bucket):
     commit_only_bump_count = 0
 
     for r in data["repos"]:
+        if r.get("excluded"):
+            # Discovery already dropped this repo (external-fork /
+            # created-after-window) and logged why in
+            # discovery-exclusions.log -- re-affirm it here too so the
+            # exclusion is visible at every stage, not just the earliest
+            # one. Its "weeks" are all-zero anyway (set by gather.py), so
+            # this is belt-and-suspenders, not the primary enforcement.
+            print(f"[gen_stats] skipping excluded repo {r['full_name']}: {r.get('exclude_reason')}")
+            continue
         weeks = r.get("weeks")
         if not weeks or week_idx >= len(weeks):
             continue

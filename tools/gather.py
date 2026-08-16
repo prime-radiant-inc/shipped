@@ -137,6 +137,99 @@ ACCOUNTS = [
     {"login": "obra", "kind": "user"},
 ]
 
+# Owners we consider "ours" for fork-upstream purposes. A fork whose
+# ultimate upstream owner is outside this set is EXTERNAL and gets excluded
+# at discovery time -- see EXCLUSION RULES in process_repo() below. Per
+# Jesse's directive (2026-08): work landing on a vendored/forked external
+# codebase doesn't count as our shipping. KEEPS forks whose upstream is
+# still one of these owners (e.g. prime-radiant-inc/superpowers-testing ->
+# obra/superpowers) -- that's internal work moved between our own accounts,
+# not adoption of someone else's project.
+INTERNAL_OWNERS = {"prime-radiant-inc", "obra"}
+
+# --- PUBLIC-ONLY / PRIVATE-MIRROR FINALIZATION (2026-08, per Jesse's ruling) ---
+# Jesse's ruling on the batch-3 discovery rework: "Shipped" audits
+# PUBLIC-repo activity only. The type=all experiment (see list_public_repos()
+# below) that pulled private org repos into discovery is REVERTED here --
+# it was explored to avoid under-counting real work, but the ruling is that
+# a repo currently private is out of scope full stop, and a repo that is
+# private-during-the-window-then-later-made-public is *still* out of scope
+# for the window it was private in (most commonly: a private incident/
+# security-issue mirror of a public repo, unfrozen and made public well
+# after the fact). Two independent, fail-closed mechanisms enforce this:
+#
+#   (a) NEVER PRIVATE: the org/user listing itself is filtered to public
+#       visibility only (list_public_repos), PLUS a defensive per-repo
+#       filter right after fetch (see the `visibility_dropped` handling in
+#       list_public_repos) in case a caller ever passes type=all again --
+#       belt-and-suspenders, not just a query-string change.
+#
+#   (b) NEVER PRIVATE-MIRROR-OF-PUBLIC: even a repo that reads as public
+#       RIGHT NOW can be a private mirror that was only unfrozen later
+#       (these are often security-issue repos: embargoed while the issue is
+#       live, made public post-disclosure). Two signals catch this, used
+#       TOGETHER since neither alone is complete:
+#         1. NAME_MIRROR_MARKERS / DESC_MIRROR_MARKERS (below): a repo whose
+#            name or description says outright that it's a mirror/private
+#            copy of something public.
+#         2. The existing CREATED-AFTER-WINDOW rule (Rule 2 in process_repo):
+#            most real-world private-mirror-made-public-later repos were
+#            RE-CREATED (not just re-visibilitied) after the window, so
+#            created_after_window already catches them without any name
+#            heuristic at all.
+#
+#       HONEST LIMITATION (see AMBIGUOUS_SIGNALS below): `gh api` only ever
+#       reports a repo's CURRENT visibility -- there is no general API for
+#       "was this repo private on date X" short of an enterprise audit log
+#       (checked: GET /orgs/{org}/audit-log 404s for this org's plan). So a
+#       repo that was genuinely private during the window, was NOT recreated
+#       (created_at predates the window), is public now, and carries none of
+#       the name/description markers is UNDETECTABLE by this tool with
+#       certainty. Rule 3 below flags such repos for a human rather than
+#       silently keeping them.
+
+# Rule 4: any repo whose name starts with this prefix is provisional/scratch
+# by convention (generalizes the one-off "temp-sp-codex" case rather than
+# hardcoding that single name) and is excluded regardless of visibility,
+# fork status, or dates.
+TEMP_NAME_PREFIX = "temp-"
+
+# Rule 2b markers -- NAME is matched as case-insensitive SUBSTRING (a repo
+# literally named e.g. "foo-private" or "security-mirror-bar"). DESCRIPTION
+# is matched only against the specific curated PHRASE below, not the bare
+# word "mirror": a bare-substring check on description text produced real
+# false positives when validated against the live org/user listing --
+# prime-radiant-inc/clipfan ("Mirrors macOS pasteboard to remote OS
+# clipboards") and obra/wayback-restorer ("Wayback Machine mirror recovery
+# toolkit") both use "mirror" as an ordinary English verb/noun describing
+# what the TOOL does, not a marker that the REPO is a private mirror of a
+# public one. obra/mirror-quickstart-go (a literal fork-flavored copy of a
+# Google Mirror API quickstart) DOES legitimately fire the NAME rule below --
+# accepted fail-closed, since it's an ancient, unrelated, ours-owned repo
+# with no batch-3 relevance either way.
+NAME_MIRROR_MARKERS = ("mirror", "-private", "private-branches", "-test-harness")
+DESC_MIRROR_MARKERS = ("mirrors the public",)
+
+# Rule 3 (ambiguous-flag, NOT an exclusion): weak, narrow signals that a
+# public/pre-window repo might have been private in-window without tripping
+# the hard markers above. Deliberately short and specific (not "security",
+# which also matches ordinary security-tooling PRODUCTS like
+# prime-radiant-inc/scenarios or .../github-triage) to keep the false-positive
+# rate low enough that a flagged repo is actually worth a human's time.
+AMBIGUOUS_NAME_DESC_SIGNALS = ("embargo", "disclosure", "cve-", "redacted", "incident-response")
+
+# Populated by process_repo() every time it excludes a repo at discovery
+# time. Dumped into the recon JSON's top-level "discovery_exclusions" key
+# and a human-readable log file by main() -- never silent.
+EXCLUSIONS = []
+
+# Populated by process_repo() every time Rule 3 flags a KEPT repo as
+# ambiguous (public now, pre-window created_at, no hard marker, but a weak
+# signal or no signal at all was available to rule out an in-window private
+# period with certainty). Never auto-excluded on this basis alone -- dumped
+# for human review, same never-silent treatment as EXCLUSIONS.
+AMBIGUOUS = []
+
 
 # ---------------------------------------------------------------- plumbing --
 
@@ -223,11 +316,67 @@ def run_git(cmd, cwd=None, timeout=180):
 # ------------------------------------------------------------- GitHub data --
 
 def list_public_repos(login, kind, token):
-    endpoint = f"orgs/{login}/repos" if kind == "org" else f"users/{login}/repos"
-    data, err = gh_api(f"{endpoint}?type=public&per_page=100", token)
+    """REVERTED (2026-08, per Jesse's ruling finalizing batch-3 discovery):
+    a prior version of this function hard-coded type=all for the org
+    endpoint specifically to pull ~68 private prime-radiant-inc repos
+    (brainstorm, drill, terminus, wishsong, superpowers-private, ...) into
+    discovery, reasoning that Shipped should audit private org repos too.
+    Jesse's ruling overrides that: Shipped is PUBLIC-repo activity only,
+    full stop -- see the PUBLIC-ONLY / PRIVATE-MIRROR block above
+    INTERNAL_OWNERS for the full reasoning (private-mirror-of-public repos,
+    often security-issue mirrors, are exactly the case this reverts to
+    excluding). Back to type=public for the org endpoint.
+
+    User endpoint (/users/{user}/repos) -> type=owner (NOT all): tried
+    all once and found it pulls in repos the user is a MEMBER of but
+    doesn't own -- concretely, users/obra/repos?type=all returns
+    prime-radiant-inc/agentic-usage-meter, .../github-triage, .../scribble,
+    .../streamlinear (org repos obra has member access to). Those are
+    already covered by the prime-radiant-inc org's own listing; including
+    them again here would double-process and double-attribute them under
+    org=obra in the output. owner restricts to repos obra actually owns.
+    Separately verified (2026-08) that obra the user account owns zero
+    private repos (type=all on the user endpoint returns 248 with zero
+    private, vs. 224 under type=owner -- the extra 24 are exactly the
+    member-access org repos above, all public), so type=owner was never
+    silently hiding a private repo the way org type=public was.
+
+    WHY THE ORG SIDE STILL FETCHES type=all AND FILTERS IN PYTHON, NOT
+    type=public IN THE QUERY STRING: a query-string type=public silently
+    omits every private repo with NO record that it ever existed --
+    correct for what gets PROCESSED, but it means "never silent" (every
+    exclusion logged with repo + reason) is unenforceable for the ~68
+    currently-private prime-radiant-inc repos, since gather.py never even
+    learns their names. So for the ORG we fetch the full type=all listing
+    (same one the reverted version used) and apply the public-only filter
+    ourselves, logging every private repo dropped to EXCLUSIONS exactly
+    like any other discovery-time exclusion. Net effect on what gets
+    PROCESSED is identical to type=public; the difference is purely that
+    every drop now has a name and a reason instead of being invisible.
+    """
+    if kind == "org":
+        endpoint, repo_type = f"orgs/{login}/repos", "all"
+    else:
+        endpoint, repo_type = f"users/{login}/repos", "owner"
+    data, err = gh_api(f"{endpoint}?type={repo_type}&per_page=100", token)
     if err:
-        sys.exit(f"ERROR: could not list public repos for {login} ({kind}): {err}")
-    return data
+        sys.exit(f"ERROR: could not list repos for {login} ({kind}): {err}")
+
+    public_only = []
+    for r in data:
+        is_private = r.get("private", False) or r.get("visibility") == "private"
+        if is_private:
+            reason = (
+                f"not_public: repo is currently private (visibility={r.get('visibility')!r}) "
+                "-- public-only discovery policy (Jesse's ruling); enumerated via type=all so this "
+                "exclusion has a name and reason instead of being an invisible query-string omission, "
+                "never silently skipped"
+            )
+            EXCLUSIONS.append({"repo": r["full_name"], "reason": reason})
+            print(f"[discovery] EXCLUDE {r['full_name']}: {reason}", file=sys.stderr)
+            continue
+        public_only.append(r)
+    return public_only
 
 
 def get_full_repo(login, name, token):
@@ -564,10 +713,147 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
         "non_dormant": non_dormant,
         "fork_parent": None,
         "fork_ahead_by": None,
+        "excluded": False,
+        "exclude_reason": None,
+        "fork_upstream": None,
+        "ambiguous_flag": False,
+        "ambiguous_reason": None,
         "notes": [],
     }
 
     errors = {}
+
+    # ---------------------------------------------------------- EXCLUSION RULES --
+    # Applied at DISCOVERY time, before any window/commit/PR/release analysis,
+    # so an excluded repo never makes it into weekly-stats.json "by
+    # construction" -- not because it happens to have zero commits, but
+    # because we refuse to attribute ANY of its activity to us. Every drop is
+    # logged (never silent): see EXCLUSIONS / main()'s exclusions log file.
+    exclude_reason = None
+    fetched_full = None  # cache: reused below by the ahead-of-parent path so a
+                          # KEPT (internal-upstream) fork isn't double-fetched.
+
+    # Rule 4: TEMP-PREFIX. Any repo whose name starts with "temp-" is
+    # provisional/scratch by naming convention and is never our shipped work,
+    # regardless of what its commits look like. Generalizes the earlier
+    # one-off exclusion of obra/temp-sp-codex to the whole naming pattern --
+    # also catches obra/temp-jifty-angular-demo and obra/temp-lufa-hacking,
+    # found when validating this rule against the live obra listing.
+    name_lower = name.lower()
+    if name_lower.startswith(TEMP_NAME_PREFIX):
+        exclude_reason = f"temp_prefix: name starts with {TEMP_NAME_PREFIX!r} -- provisional/scratch repo by convention"
+
+    # Rule 2b: PRIVATE-MIRROR NAME/DESCRIPTION MARKER. See the PUBLIC-ONLY /
+    # PRIVATE-MIRROR block above INTERNAL_OWNERS for why this exists and why
+    # description matching is deliberately narrowed to one curated phrase
+    # rather than a bare "mirror" substring.
+    if exclude_reason is None:
+        desc_lower = (repo.get("description") or "").lower()
+        name_hit = next((m for m in NAME_MIRROR_MARKERS if m in name_lower), None)
+        desc_hit = next((m for m in DESC_MIRROR_MARKERS if m in desc_lower), None)
+        if name_hit or desc_hit:
+            where = f"name (marker {name_hit!r})" if name_hit else f"description (marker {desc_hit!r})"
+            exclude_reason = (
+                f"private_mirror_marker: {where} signals this may be a private mirror of a public "
+                "repo (often a security-issue mirror unfrozen after the fact) -- excluding fail-closed"
+            )
+
+    # Rule 2: CREATED-AFTER-WINDOW. A repo can't have produced in-window work
+    # before it existed. Catches re-hosted/vendored external history landing
+    # under historical commit dates -- e.g. prime-radiant-inc/shisad: GitHub
+    # reports fork=false (it's a manually re-hosted copy, not a GitHub-button
+    # fork), but it was created 2026-05-13 and its git history is a wholesale
+    # import of shisa-ai/shisad's own commits/dates from before that. Without
+    # this rule those commits would land in whatever window their dates fall
+    # into even though prime-radiant-inc/shisad didn't exist yet.
+    if exclude_reason is None and created_dt > window_end:
+        exclude_reason = (
+            f"created_after_window: created_at={created_dt.isoformat()} is after "
+            f"this window's end={window_end.isoformat()} -- repo did not exist "
+            "during the window being audited; any in-window-dated commits are "
+            "imported/vendored history, not first-party work done in this window"
+        )
+
+    # Rule 1: EXTERNAL FORK. fork=true and the ultimate upstream owner
+    # (.source.full_name, falling back to .parent.full_name) is NOT
+    # prime-radiant-inc/obra. KEEPS forks whose upstream is still internal
+    # (e.g. prime-radiant-inc/superpowers-testing -> obra/superpowers).
+    if exclude_reason is None and is_fork:
+        fetched_full, ferr = get_full_repo(login, name, token)
+        if ferr:
+            # Can't resolve the upstream -- fail CLOSED (exclude) rather than
+            # silently keep a fork whose provenance we couldn't verify.
+            exclude_reason = (
+                f"fork_upstream_unresolvable: get_full_repo failed ({ferr}) -- "
+                "excluding fail-closed pending manual check"
+            )
+        else:
+            upstream = (fetched_full or {}).get("source") or (fetched_full or {}).get("parent")
+            if upstream:
+                upstream_full_name = upstream["full_name"]
+                upstream_owner = upstream_full_name.split("/")[0]
+                entry["fork_upstream"] = upstream_full_name
+                if upstream_owner not in INTERNAL_OWNERS:
+                    exclude_reason = (
+                        f"external_fork: upstream={upstream_full_name} (owner "
+                        f"{upstream_owner!r} is outside {sorted(INTERNAL_OWNERS)})"
+                    )
+            # else: genuinely no parent/source (upstream deleted) -- not
+            # excluded by THIS rule; the existing ahead-of-parent-or-fallback
+            # commit-counting logic further down still handles that case.
+
+    if exclude_reason:
+        entry["excluded"] = True
+        entry["exclude_reason"] = exclude_reason
+        entry["notes"].append(f"EXCLUDED at discovery: {exclude_reason}")
+        entry["weeks"] = [
+            {"index": i + 1, "commit_count": 0, "commits": [], "authors": {}, "loc_added": 0, "loc_removed": 0,
+             "merged_prs": []}
+            for i in range(len(buckets))
+        ]
+        entry["releases_in_window"] = []
+        EXCLUSIONS.append({"repo": repo["full_name"], "reason": exclude_reason})
+        print(f"[discovery] EXCLUDE {repo['full_name']}: {exclude_reason}", file=sys.stderr)
+        return entry
+    # ------------------------------------------------------ end EXCLUSION RULES --
+
+    # -------------------------------------------------- RULE 3: AMBIGUOUS FLAG --
+    # NOT an exclusion -- this repo survived every hard rule above (public,
+    # not a temp-/marker-named mirror, not created after the window, not an
+    # external fork) and stays KEPT. But per the HONEST LIMITATION documented
+    # above INTERNAL_OWNERS, `gh api` only reports CURRENT visibility, so a
+    # repo created before the window that was genuinely private DURING the
+    # window and made public later without leaving any name/description
+    # trace is invisible to every rule above. Flag it for a human instead of
+    # silently trusting the absence of evidence as evidence of absence.
+    if not created_in_window and created_dt < window_start:
+        weak_hit = next(
+            (m for m in AMBIGUOUS_NAME_DESC_SIGNALS if m in name_lower or m in (repo.get("description") or "").lower()),
+            None,
+        )
+        if weak_hit:
+            entry["ambiguous_flag"] = True
+            entry["ambiguous_reason"] = (
+                f"weak_signal_marker: {weak_hit!r} found in name/description -- possible embargoed/"
+                "incident-mirror history; gh api cannot confirm historical visibility, flagging for "
+                "human review rather than silently keeping"
+            )
+        else:
+            # No marker at all -- this is the honest-limitation default case,
+            # not a detected signal. Recorded on the entry (visible in the
+            # recon JSON / coverage report) but NOT pushed into the AMBIGUOUS
+            # list, which is reserved for repos with an actual, if weak,
+            # signal -- otherwise every one of the ~300+ pre-window public
+            # repos would be "flagged" and the list would be useless noise.
+            entry["notes"].append(
+                "no historical-visibility signal available (gh api reports current visibility only) -- "
+                "kept on the strength of current public status + no mirror markers + pre-window created_at; "
+                "see Rule 3 / HONEST LIMITATION in gather.py"
+            )
+        if entry["ambiguous_flag"]:
+            AMBIGUOUS.append({"repo": repo["full_name"], "reason": entry["ambiguous_reason"]})
+            print(f"[discovery] AMBIGUOUS {repo['full_name']}: {entry['ambiguous_reason']}", file=sys.stderr)
+    # ---------------------------------------------------- end RULE 3: AMBIGUOUS --
 
     # Releases: unconditional, cheap.
     rels, err = get_releases(login, name, token, window_start, window_end)
@@ -609,7 +895,11 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
 
     commits = []
     if is_fork:
-        full, ferr = get_full_repo(login, name, token)
+        # Reuse the fetch done by the EXCLUSION RULES block above (which ran
+        # for every fork, dormant or not) instead of hitting the API again.
+        # We only get here at all when that fetch succeeded (a failure would
+        # have set exclude_reason and returned early above).
+        full, ferr = fetched_full, None
         if ferr:
             # get_full_repo FAILED (network blip, rate limit, transient 5xx,
             # revoked scope, ...) — this is NOT the same thing as "no parent".
@@ -771,9 +1061,30 @@ def build_coverage_report(data):
         for b in data["week_buckets"]
     ]
 
+    lines.append("## Discovery rules applied (public-only, finalized per Jesse's ruling)")
+    lines.append("")
+    lines.append("1. PUBLIC ONLY -- org/user listing filtered to public visibility (list_public_repos).")
+    lines.append("2. NEVER PRIVATE / NEVER PRIVATE-MIRROR-OF-PUBLIC -- currently-private repos excluded "
+                 "at listing time; name/description mirror markers + created-after-window jointly catch "
+                 "private-mirror-of-public repos even if since made public.")
+    lines.append("3. PRIVATE\u2192PUBLIC-LATER LIMITATION -- gh api reports only CURRENT visibility; a repo "
+                 "genuinely private in-window, not recreated, now public, with no marker is UNDETECTABLE "
+                 "with certainty. Flagged for human review (see Ambiguous section below) rather than "
+                 "silently kept.")
+    lines.append("4. temp- PREFIX -- any repo whose name starts with temp- is excluded (generalizes "
+                 "temp-sp-codex).")
+    lines.append("5. INTERNAL-UPSTREAM FORKS KEPT -- a fork is excluded only if its ultimate upstream owner "
+                 "is outside {prime-radiant-inc, obra}; forks of our own repos (e.g. superpowers-testing -> "
+                 "obra/superpowers) are kept.")
+    lines.append("")
+    lines.append("See discovery-exclusions.log for every excluded repo + reason, and "
+                 "ambiguous-flags.log for every repo flagged (not excluded) under rule 3.")
+    lines.append("")
+
     lines.append("## Per-org totals")
     lines.append("")
     total_active_all = 0
+    all_active = []
     for org, rs in by_org.items():
         active = [r for r in rs if r.get("total_commits_in_window", 0) > 0
                   or r.get("total_merged_prs_in_window", 0) > 0 or r.get("releases_in_window")]
@@ -781,6 +1092,7 @@ def build_coverage_report(data):
         empty = [r for r in rs if any("empty repo" in n for n in r.get("notes", []))]
         errored = [r for r in rs if r.get("_errors")]
         total_active_all += len(active)
+        all_active.extend(active)
         lines.append(f"### {org}")
         lines.append(f"- total public repos scanned: {len(rs)}")
         lines.append(f"- repos with ANY in-window activity (commits/PRs/releases): {len(active)}")
@@ -793,6 +1105,22 @@ def build_coverage_report(data):
         lines.append("")
 
     lines.append(f"## Total distinct repos with in-window activity: {total_active_all}")
+    lines.append("")
+    lines.append("### KEEP set (public, first-party, in-window-active)")
+    lines.append("")
+    for r in sorted(all_active, key=lambda r: r["full_name"]):
+        flag = " [AMBIGUOUS -- see ambiguous-flags.log]" if r.get("ambiguous_flag") else ""
+        lines.append(f"- {r['full_name']}{flag}")
+    lines.append("")
+
+    ambiguous_active = [r for r in all_active if r.get("ambiguous_flag")]
+    lines.append(f"## Ambiguous (flagged for human review, KEPT not excluded): {len(ambiguous_active)}")
+    lines.append("")
+    if not ambiguous_active:
+        lines.append("(none in this run's active set)")
+    else:
+        for r in ambiguous_active:
+            lines.append(f"- {r['full_name']}: {r.get('ambiguous_reason')}")
     lines.append("")
 
     lines.append("## Per-week totals (both orgs combined)")
@@ -878,17 +1206,58 @@ def main():
         ],
         "accounts_queried": {a["login"]: a["kind"] for a in accounts},
         "repos": all_results,
+        # Every repo dropped by the discovery-time exclusion rules (temp-
+        # prefix / private-mirror-marker / created-after-window /
+        # external-fork / not-public), with its reason. Never silent -- see
+        # EXCLUSIONS / process_repo()'s EXCLUSION RULES block.
+        "discovery_exclusions": EXCLUSIONS,
+        # Every KEPT repo Rule 3 flagged as ambiguous (public now,
+        # pre-window created_at, no hard marker, but a weak signal) for
+        # human review. NOT excluded on this basis alone. Never silent.
+        "ambiguous_flags": AMBIGUOUS,
     }
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     with open(out_path, "w") as f:
         json.dump(out, f, indent=2)
-    print(f"wrote {out_path} ({len(all_results)} repos)", file=sys.stderr)
+    print(f"wrote {out_path} ({len(all_results)} repos, {len(EXCLUSIONS)} excluded)", file=sys.stderr)
 
     report = build_coverage_report(out)
     os.makedirs(os.path.dirname(args.report_out) or ".", exist_ok=True)
     with open(args.report_out, "w") as f:
         f.write(report)
     print(f"wrote {args.report_out}", file=sys.stderr)
+
+    # Standalone human-readable exclusions log, next to the coverage report --
+    # the durable, always-produced record of every drop and why. Never
+    # silent: this file exists (possibly empty-bodied) on every run.
+    exclusions_log_path = os.path.join(os.path.dirname(args.report_out) or ".", "discovery-exclusions.log")
+    with open(exclusions_log_path, "w") as f:
+        f.write(f"# Discovery exclusions -- window {window_start.date()} to {window_end.date()}\n")
+        f.write(f"# Generated {datetime.datetime.now(datetime.timezone.utc).isoformat()}\n")
+        f.write(f"# {len(EXCLUSIONS)} repo(s) excluded (of {len(all_results)} discovered)\n\n")
+        if not EXCLUSIONS:
+            f.write("(none)\n")
+        else:
+            for ex in EXCLUSIONS:
+                f.write(f"{ex['repo']}: {ex['reason']}\n")
+    print(f"wrote {exclusions_log_path} ({len(EXCLUSIONS)} exclusion(s))", file=sys.stderr)
+
+    # Standalone human-readable ambiguous-flags log, same never-silent
+    # treatment as the exclusions log above -- these repos are KEPT, but
+    # Rule 3 could not rule out an in-window private period with certainty
+    # (see HONEST LIMITATION above INTERNAL_OWNERS), so they need a human's
+    # judgment call, not a silent auto-include.
+    ambiguous_log_path = os.path.join(os.path.dirname(args.report_out) or ".", "ambiguous-flags.log")
+    with open(ambiguous_log_path, "w") as f:
+        f.write(f"# Ambiguous (KEPT, flagged for human review) -- window {window_start.date()} to {window_end.date()}\n")
+        f.write(f"# Generated {datetime.datetime.now(datetime.timezone.utc).isoformat()}\n")
+        f.write(f"# {len(AMBIGUOUS)} repo(s) flagged (of {len(all_results)} discovered)\n\n")
+        if not AMBIGUOUS:
+            f.write("(none)\n")
+        else:
+            for amb in AMBIGUOUS:
+                f.write(f"{amb['repo']}: {amb['reason']}\n")
+    print(f"wrote {ambiguous_log_path} ({len(AMBIGUOUS)} ambiguous flag(s))", file=sys.stderr)
 
 
 if __name__ == "__main__":

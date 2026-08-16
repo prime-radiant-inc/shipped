@@ -1,0 +1,237 @@
+# Discovery exclusions -- window 2026-03-30 to 2026-04-26
+# Generated 2026-08-16T02:57:48.856521+00:00
+# 233 repo(s) excluded (of 275 discovered)
+
+prime-radiant-inc/dev.repeatably.com: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/tommy-tester: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/philharmonic: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/claude-pa: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/claude-pa-matrix-bot: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/claude-pa-scheduler: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/claude-pa-deploy: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/claude-pa-dashboard: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/claude-pa-browser: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/claude-pa-ios-client: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/greenfield-legacy: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/seneschal: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-agent: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-dashboard: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-orchestrator: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-infra: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-cli: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-deploy: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/scribble-wiki: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/specs: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/spec-docs: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/spec-together: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-deploy-plugin: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/cc-plugin-primeradiant-ops: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-auth: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/brooks: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/obsidian-sync: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/brainstorm: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/toil-internal: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/brainstorm-artifacts: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/openai-agents-go: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/prime-radiant-inc.github.io: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/brooks-gateway: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/harbor-runner: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/terminus: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/terminus-stockyard: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/terminus-brooks-preview: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/camel: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/bot-toolkit-archive: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/nanoclaw-nora-voss: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/drill: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/ghostpepper-rewrite-temp: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/wishsong: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/greenfield-archive-pre-launch: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/job-listing-tools: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/internal-agent-plugin-marketplace: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/agent-school: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/superpowers-test-harness: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/study-skills: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/agent-school-student-tpm: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/agentic-engineering-guide-notes: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/shisad: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-core: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-core-v2: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/prudence: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/superpowers-private: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/superpowers-cloud-server: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/tpm-baseline-eval: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/small-model-evals: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/charon: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/tatters: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/code-system-prompts: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/superpowers-cloud-build: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/sen-evals: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/superpowers-chrome-private-branches: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/smevals-haiku-example: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/serf-harbor-runner: not_public: repo is currently private (visibility='private') -- public-only discovery policy (Jesse's ruling); enumerated via type=all so this exclusion has a name and reason instead of being an invisible query-string omission, never silently skipped
+prime-radiant-inc/gsuite-mcp: external_fork: upstream=2389-research/gsuite-mcp (owner '2389-research' is outside ['obra', 'prime-radiant-inc'])
+prime-radiant-inc/openai-codex-plugins: external_fork: upstream=openai/plugins (owner 'openai' is outside ['obra', 'prime-radiant-inc'])
+prime-radiant-inc/books-for-bots: created_after_window: created_at=2026-05-01T19:25:25+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/bot-toolkit: created_after_window: created_at=2026-05-04T20:44:13+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/parallel-adversarial-review: created_after_window: created_at=2026-05-08T19:34:36+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/superpowers-evals: created_after_window: created_at=2026-05-13T18:56:29+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/clipfan: created_after_window: created_at=2026-05-28T18:57:26+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/obol: created_after_window: created_at=2026-06-05T17:42:34+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/obol-go: created_after_window: created_at=2026-06-05T21:39:50+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/superpowers-docs: created_after_window: created_at=2026-06-11T02:45:33+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/superpowers-autoresearch: created_after_window: created_at=2026-06-11T16:24:51+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/claude-plugin-stats: created_after_window: created_at=2026-06-11T20:10:10+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/toil: created_after_window: created_at=2026-06-23T02:16:47+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/agent-plugin-linear-use: created_after_window: created_at=2026-06-30T17:52:10+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/teststrip: created_after_window: created_at=2026-07-10T16:26:17+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/smevals: created_after_window: created_at=2026-07-17T22:57:27+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/code-of-conduct: created_after_window: created_at=2026-07-31T00:37:21+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/agentic-usage-meter: created_after_window: created_at=2026-08-02T19:19:34+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/awesome-superpowers: created_after_window: created_at=2026-08-04T19:51:21+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/everyharness: created_after_window: created_at=2026-08-11T00:02:23+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/everyharness-container: created_after_window: created_at=2026-08-11T08:12:04+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/proving-it-works: created_after_window: created_at=2026-08-11T17:55:45+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/shipped: created_after_window: created_at=2026-08-14T02:29:33+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/ledger: created_after_window: created_at=2026-08-15T04:42:52+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+prime-radiant-inc/ledger-memory: created_after_window: created_at=2026-08-16T00:51:59+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/acp-relay: external_fork: upstream=2389-research/acp-relay (owner '2389-research' is outside ['obra', 'prime-radiant-inc'])
+obra/Adafruit_nRF52_Arduino: external_fork: upstream=adafruit/Adafruit_nRF52_Arduino (owner 'adafruit' is outside ['obra', 'prime-radiant-inc'])
+obra/Adafruit_nRF52_Bootloader: external_fork: upstream=adafruit/Adafruit_nRF52_Bootloader (owner 'adafruit' is outside ['obra', 'prime-radiant-inc'])
+obra/adnw: external_fork: upstream=frobiac/adnw (owner 'frobiac' is outside ['obra', 'prime-radiant-inc'])
+obra/agent-building-playbook: created_after_window: created_at=2026-06-30T16:21:28+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/agentsview: created_after_window: created_at=2026-06-19T02:18:30+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/amplifier: external_fork: upstream=microsoft/amplifier (owner 'microsoft' is outside ['obra', 'prime-radiant-inc'])
+obra/amplifier-app-cli: external_fork: upstream=microsoft/amplifier-app-cli (owner 'microsoft' is outside ['obra', 'prime-radiant-inc'])
+obra/amplifier-module-hooks-streaming-ui: external_fork: upstream=microsoft/amplifier-module-hooks-streaming-ui (owner 'microsoft' is outside ['obra', 'prime-radiant-inc'])
+obra/apple-on-device-openai: external_fork: upstream=gety-ai/apple-on-device-openai (owner 'gety-ai' is outside ['obra', 'prime-radiant-inc'])
+obra/aqi-wtf: external_fork: upstream=skalnik/aqi-wtf (owner 'skalnik' is outside ['obra', 'prime-radiant-inc'])
+obra/Arduino: external_fork: upstream=arduino/Arduino (owner 'arduino' is outside ['obra', 'prime-radiant-inc'])
+obra/arduino-cli: external_fork: upstream=arduino/arduino-cli (owner 'arduino' is outside ['obra', 'prime-radiant-inc'])
+obra/arduino-pico: external_fork: upstream=earlephilhower/arduino-pico (owner 'earlephilhower' is outside ['obra', 'prime-radiant-inc'])
+obra/ArduinoCore-API: external_fork: upstream=arduino/ArduinoCore-API (owner 'arduino' is outside ['obra', 'prime-radiant-inc'])
+obra/ArduinoCore-mbed: external_fork: upstream=arduino/ArduinoCore-mbed (owner 'arduino' is outside ['obra', 'prime-radiant-inc'])
+obra/ArduinoTrace: external_fork: upstream=bblanchon/ArduinoTrace (owner 'bblanchon' is outside ['obra', 'prime-radiant-inc'])
+obra/arq_restore: external_fork: upstream=arqbackup/arq_restore (owner 'arqbackup' is outside ['obra', 'prime-radiant-inc'])
+obra/attractor: external_fork: upstream=strongdm/attractor (owner 'strongdm' is outside ['obra', 'prime-radiant-inc'])
+obra/authenticator: external_fork: upstream=al177/twostep (owner 'al177' is outside ['obra', 'prime-radiant-inc'])
+obra/autohotkey-windows-mac-keyboard: external_fork: upstream=stroebjo/autohotkey-windows-mac-keyboard (owner 'stroebjo' is outside ['obra', 'prime-radiant-inc'])
+obra/autoresearch-claude-code: external_fork: upstream=drivelineresearch/autoresearch-claude-code (owner 'drivelineresearch' is outside ['obra', 'prime-radiant-inc'])
+obra/AVR-Keyboard: external_fork: upstream=BathroomEpiphanies/AVR-Keyboard (owner 'BathroomEpiphanies' is outside ['obra', 'prime-radiant-inc'])
+obra/avrdude: external_fork: upstream=mariusgreuel/avrdude (owner 'mariusgreuel' is outside ['obra', 'prime-radiant-inc'])
+obra/beepy-hardware: external_fork: upstream=sqfmi/beepy-hardware (owner 'sqfmi' is outside ['obra', 'prime-radiant-inc'])
+obra/betrusted-wiki: external_fork: upstream=betrusted-io/betrusted-wiki (owner 'betrusted-io' is outside ['obra', 'prime-radiant-inc'])
+obra/blogosphere: created_after_window: created_at=2026-07-17T04:12:07+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/cherry-mx-keycaps: external_fork: upstream=ConstantinoSchillebeeckx/cherry-mx-keycaps (owner 'ConstantinoSchillebeeckx' is outside ['obra', 'prime-radiant-inc'])
+obra/cherrymaint: external_fork: upstream=rgs/cherrymaint (owner 'rgs' is outside ['obra', 'prime-radiant-inc'])
+obra/Chrysalis-test: external_fork: upstream=keyboardio/Chrysalis (owner 'keyboardio' is outside ['obra', 'prime-radiant-inc'])
+obra/clippy-jquery: external_fork: upstream=jimmysawczuk/clippy-jquery (owner 'jimmysawczuk' is outside ['obra', 'prime-radiant-inc'])
+obra/colemak: external_fork: upstream=insidewhy/colemak (owner 'insidewhy' is outside ['obra', 'prime-radiant-inc'])
+obra/config-ini: external_fork: upstream=rjbs/Config-INI (owner 'rjbs' is outside ['obra', 'prime-radiant-inc'])
+obra/cpanpm: external_fork: upstream=andk/cpanpm (owner 'andk' is outside ['obra', 'prime-radiant-inc'])
+obra/crosspoint-reader: external_fork: upstream=crosspoint-reader/crosspoint-reader (owner 'crosspoint-reader' is outside ['obra', 'prime-radiant-inc'])
+obra/cwac-parcel: external_fork: upstream=vsoftphuong/cwac-parcel (owner 'vsoftphuong' is outside ['obra', 'prime-radiant-inc'])
+obra/cwac-richedit: external_fork: upstream=commonsguy/cwac-richedit (owner 'commonsguy' is outside ['obra', 'prime-radiant-inc'])
+obra/cwac-touchlist: external_fork: upstream=timsu/cwac-touchlist (owner 'timsu' is outside ['obra', 'prime-radiant-inc'])
+obra/cwac-viewswiper: external_fork: upstream=medampudi/cwac-viewswiper (owner 'medampudi' is outside ['obra', 'prime-radiant-inc'])
+obra/data-uuid: external_fork: upstream=bleargh45/Data-UUID (owner 'bleargh45' is outside ['obra', 'prime-radiant-inc'])
+obra/DebugEdge: external_fork: upstream=debug-edge/DebugEdge (owner 'debug-edge' is outside ['obra', 'prime-radiant-inc'])
+obra/digitalIOPerformance: external_fork: upstream=projectgus/digitalIOPerformance (owner 'projectgus' is outside ['obra', 'prime-radiant-inc'])
+obra/electron-builder: external_fork: upstream=electron-userland/electron-builder (owner 'electron-userland' is outside ['obra', 'prime-radiant-inc'])
+obra/electron-universal: external_fork: upstream=electron/universal (owner 'electron' is outside ['obra', 'prime-radiant-inc'])
+obra/ergodox-firmware: external_fork: upstream=benblazak/ergodox-firmware (owner 'benblazak' is outside ['obra', 'prime-radiant-inc'])
+obra/FabMo-Engine: external_fork: upstream=FabMo/FabMo-Engine (owner 'FabMo' is outside ['obra', 'prime-radiant-inc'])
+obra/Fastboot-Kindle: external_fork: upstream=yifanlu/Fastboot-Kindle (owner 'yifanlu' is outside ['obra', 'prime-radiant-inc'])
+obra/fastclick: external_fork: upstream=ftlabs/fastclick (owner 'ftlabs' is outside ['obra', 'prime-radiant-inc'])
+obra/firmware: external_fork: upstream=humblehacker/firmware (owner 'humblehacker' is outside ['obra', 'prime-radiant-inc'])
+obra/FlashStorage: external_fork: upstream=cmaglie/FlashStorage (owner 'cmaglie' is outside ['obra', 'prime-radiant-inc'])
+obra/freshell: created_after_window: created_at=2026-07-18T05:16:15+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/GD32F103: external_fork: upstream=SoCXin/GD32F103 (owner 'SoCXin' is outside ['obra', 'prime-radiant-inc'])
+obra/GD32F303: external_fork: upstream=SoCXin/GD32F303 (owner 'SoCXin' is outside ['obra', 'prime-radiant-inc'])
+obra/ghost-pepper: external_fork: upstream=matthartman/ghost-pepper (owner 'matthartman' is outside ['obra', 'prime-radiant-inc'])
+obra/github-todotxt: external_fork: upstream=evanp/github-todotxt (owner 'evanp' is outside ['obra', 'prime-radiant-inc'])
+obra/glass_share: external_fork: upstream=harperreed/glass_share (owner 'harperreed' is outside ['obra', 'prime-radiant-inc'])
+obra/goread: external_fork: upstream=madelynnblue/goread (owner 'madelynnblue' is outside ['obra', 'prime-radiant-inc'])
+obra/hackfoldr: external_fork: upstream=hackfoldr/hackfoldr (owner 'hackfoldr' is outside ['obra', 'prime-radiant-inc'])
+obra/heroku-buildpack-perl: external_fork: upstream=lstoll/heroku-buildpack-perl (owner 'lstoll' is outside ['obra', 'prime-radiant-inc'])
+obra/heroku-buildpack-perl-1: external_fork: upstream=miyagawa/heroku-buildpack-perl (owner 'miyagawa' is outside ['obra', 'prime-radiant-inc'])
+obra/HoloEverywhere: external_fork: upstream=Prototik/HoloEverywhere (owner 'Prototik' is outside ['obra', 'prime-radiant-inc'])
+obra/homebrew: external_fork: upstream=Homebrew/legacy-homebrew (owner 'Homebrew' is outside ['obra', 'prime-radiant-inc'])
+obra/homebrew-avr: external_fork: upstream=osx-cross/homebrew-avr (owner 'osx-cross' is outside ['obra', 'prime-radiant-inc'])
+obra/homedir-manager: created_after_window: created_at=2026-06-07T01:37:12+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/idno: external_fork: upstream=idno/idno (owner 'idno' is outside ['obra', 'prime-radiant-inc'])
+obra/ievms: external_fork: upstream=xdissent/ievms (owner 'xdissent' is outside ['obra', 'prime-radiant-inc'])
+obra/ink: external_fork: upstream=vadimdemedes/ink (owner 'vadimdemedes' is outside ['obra', 'prime-radiant-inc'])
+obra/insanitty: created_after_window: created_at=2026-06-30T17:04:35+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/irssiconnectbot: external_fork: upstream=irssiconnectbot/irssiconnectbot (owner 'irssiconnectbot' is outside ['obra', 'prime-radiant-inc'])
+obra/is31io7326_clone: external_fork: upstream=numist/is31io7326_clone (owner 'numist' is outside ['obra', 'prime-radiant-inc'])
+obra/jmap-mcp: external_fork: upstream=wyattjoh/jmap-mcp (owner 'wyattjoh' is outside ['obra', 'prime-radiant-inc'])
+obra/Kaleidoscope-Hardware-Shortcut: external_fork: upstream=Dygmalab/Kaleidoscope-Hardware-Shortcut (owner 'Dygmalab' is outside ['obra', 'prime-radiant-inc'])
+obra/kata: created_after_window: created_at=2026-05-08T19:33:58+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/keyboard-layouter: external_fork: upstream=yskoht/keyboard-layouter (owner 'yskoht' is outside ['obra', 'prime-radiant-inc'])
+obra/keyboardio-xkb: external_fork: upstream=andrewgdotcom/keyboardio-xkb (owner 'andrewgdotcom' is outside ['obra', 'prime-radiant-inc'])
+obra/KeyRemap4MacBook: external_fork: upstream=pqrs-org/Karabiner-archived (owner 'pqrs-org' is outside ['obra', 'prime-radiant-inc'])
+obra/keyswitch-kicad-library: external_fork: upstream=kiswitch/kiswitch (owner 'kiswitch' is outside ['obra', 'prime-radiant-inc'])
+obra/KeyV2: external_fork: upstream=rsheldiii/KeyV2 (owner 'rsheldiii' is outside ['obra', 'prime-radiant-inc'])
+obra/kicad-automation-scripts: external_fork: upstream=productize/kicad-automation-scripts (owner 'productize' is outside ['obra', 'prime-radiant-inc'])
+obra/kicad-footprint-kailh-pg1425-x-switch: external_fork: upstream=shikamiya/kicad-footprint-kailh-pg1425-x-switch (owner 'shikamiya' is outside ['obra', 'prime-radiant-inc'])
+obra/kicad-jlcpcb-tools: external_fork: upstream=Bouni/kicad-jlcpcb-tools (owner 'Bouni' is outside ['obra', 'prime-radiant-inc'])
+obra/KindleTool: external_fork: upstream=yifanlu/KindleTool (owner 'yifanlu' is outside ['obra', 'prime-radiant-inc'])
+obra/libfprint-egismoc-sdcp: created_after_window: created_at=2026-04-27T23:47:21+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/libopencm3-gd32f3: external_fork: upstream=libopencm3/libopencm3 (owner 'libopencm3' is outside ['obra', 'prime-radiant-inc'])
+obra/llm-prices: external_fork: upstream=simonw/llm-prices (owner 'simonw' is outside ['obra', 'prime-radiant-inc'])
+obra/locale-maketext-lexicon: external_fork: upstream=bestpractical/locale-maketext-lexicon (owner 'bestpractical' is outside ['obra', 'prime-radiant-inc'])
+obra/magma.classic: external_fork: upstream=lavabit/magma (owner 'lavabit' is outside ['obra', 'prime-radiant-inc'])
+obra/Manual: external_fork: upstream=Bloomberg-Beta/Manual (owner 'Bloomberg-Beta' is outside ['obra', 'prime-radiant-inc'])
+obra/martian-clock: external_fork: upstream=dkallen78/martian-clock (owner 'dkallen78' is outside ['obra', 'prime-radiant-inc'])
+obra/mighty-1284p: external_fork: upstream=maniacbug/mighty-1284p (owner 'maniacbug' is outside ['obra', 'prime-radiant-inc'])
+obra/mira-OSS: external_fork: upstream=taylorsatula/mira-OSS (owner 'taylorsatula' is outside ['obra', 'prime-radiant-inc'])
+obra/Miracle-Grue: external_fork: upstream=makerbot/Miracle-Grue (owner 'makerbot' is outside ['obra', 'prime-radiant-inc'])
+obra/mirror-quickstart-go: private_mirror_marker: name (marker 'mirror') signals this may be a private mirror of a public repo (often a security-issue mirror unfrozen after the fact) -- excluding fail-closed
+obra/mlx-audio-swift: created_after_window: created_at=2026-07-27T00:50:09+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/mousetest: external_fork: upstream=judascleric/mousetest (owner 'judascleric' is outside ['obra', 'prime-radiant-inc'])
+obra/msgvault: created_after_window: created_at=2026-07-14T15:37:48+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/multiarch-crossbuild: external_fork: upstream=multiarch/crossbuild (owner 'multiarch' is outside ['obra', 'prime-radiant-inc'])
+obra/MX_Alps_Hybrid: external_fork: upstream=ai03-2725/MX_Alps_Hybrid (owner 'ai03-2725' is outside ['obra', 'prime-radiant-inc'])
+obra/nanotweeter: external_fork: upstream=kevinmarks/nanotweeter (owner 'kevinmarks' is outside ['obra', 'prime-radiant-inc'])
+obra/openfarmgame: external_fork: upstream=e14n/openfarmgame (owner 'e14n' is outside ['obra', 'prime-radiant-inc'])
+obra/phonegap-topcoat-angular-template: external_fork: upstream=calendee/phonegap-topcoat-angular-template (owner 'calendee' is outside ['obra', 'prime-radiant-inc'])
+obra/pi-gen-fabmo: external_fork: upstream=RPi-Distro/pi-gen (owner 'RPi-Distro' is outside ['obra', 'prime-radiant-inc'])
+obra/pidcodes.github.com: external_fork: upstream=pidcodes/pidcodes.github.com (owner 'pidcodes' is outside ['obra', 'prime-radiant-inc'])
+obra/Playtris: external_fork: upstream=thacuber2a03/BlockDate (owner 'thacuber2a03' is outside ['obra', 'prime-radiant-inc'])
+obra/plotkicadsch: external_fork: upstream=jnavila/plotkicadsch (owner 'jnavila' is outside ['obra', 'prime-radiant-inc'])
+obra/powertop: external_fork: upstream=fenrus75/powertop (owner 'fenrus75' is outside ['obra', 'prime-radiant-inc'])
+obra/PS2-Mouse-Arduino: external_fork: upstream=kristopher/PS2-Mouse-Arduino (owner 'kristopher' is outside ['obra', 'prime-radiant-inc'])
+obra/pt: external_fork: upstream=raul/pt (owner 'raul' is outside ['obra', 'prime-radiant-inc'])
+obra/pump.io: external_fork: upstream=pump-io/pump.io (owner 'pump-io' is outside ['obra', 'prime-radiant-inc'])
+obra/remux: created_after_window: created_at=2026-07-25T03:16:19+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/remux-ghostty: created_after_window: created_at=2026-07-28T06:05:12+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/rms-open-letter.github.io: external_fork: upstream=rms-open-letter/rms-open-letter.github.io (owner 'rms-open-letter' is outside ['obra', 'prime-radiant-inc'])
+obra/ShareJS: external_fork: upstream=josephg/ShareJS (owner 'josephg' is outside ['obra', 'prime-radiant-inc'])
+obra/Shipwrong: external_fork: upstream=rbuels/Shipwrong (owner 'rbuels' is outside ['obra', 'prime-radiant-inc'])
+obra/simavr: external_fork: upstream=buserror/simavr (owner 'buserror' is outside ['obra', 'prime-radiant-inc'])
+obra/Slic3r: external_fork: upstream=slic3r/Slic3r (owner 'slic3r' is outside ['obra', 'prime-radiant-inc'])
+obra/SOICbite: external_fork: upstream=SimonMerrett/SOICbite (owner 'SimonMerrett' is outside ['obra', 'prime-radiant-inc'])
+obra/sovereign: external_fork: upstream=sovereign/sovereign (owner 'sovereign' is outside ['obra', 'prime-radiant-inc'])
+obra/sshuttle: external_fork: upstream=apenwarr/sshuttle (owner 'apenwarr' is outside ['obra', 'prime-radiant-inc'])
+obra/stately: external_fork: upstream=mobomo/stately (owner 'mobomo' is outside ['obra', 'prime-radiant-inc'])
+obra/subvim: external_fork: upstream=fatih/subvim (owner 'fatih' is outside ['obra', 'prime-radiant-inc'])
+obra/SX1509_IO-Expander: external_fork: upstream=sparkfun/SX1509_IO-Expander (owner 'sparkfun' is outside ['obra', 'prime-radiant-inc'])
+obra/temp-jifty-angular-demo: temp_prefix: name starts with 'temp-' -- provisional/scratch repo by convention
+obra/temp-lufa-hacking: temp_prefix: name starts with 'temp-' -- provisional/scratch repo by convention
+obra/temp-sp-codex: temp_prefix: name starts with 'temp-' -- provisional/scratch repo by convention
+obra/temp_kbio_aruduino_gd32: external_fork: upstream=rogerclarkmelbourne/Arduino_STM32 (owner 'rogerclarkmelbourne' is outside ['obra', 'prime-radiant-inc'])
+obra/tkmx-client: external_fork: upstream=plow-pbc/tkmx-client (owner 'plow-pbc' is outside ['obra', 'prime-radiant-inc'])
+obra/tmk_keyboard: external_fork: upstream=tmk/tmk_keyboard (owner 'tmk' is outside ['obra', 'prime-radiant-inc'])
+obra/tools: created_after_window: created_at=2026-06-05T22:52:01+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/triggered-whisper: external_fork: upstream=ekg/triggered-whisper (owner 'ekg' is outside ['obra', 'prime-radiant-inc'])
+obra/twbudget: external_fork: upstream=g0v/twbudget (owner 'g0v' is outside ['obra', 'prime-radiant-inc'])
+obra/tweet-faves-py: external_fork: upstream=kellan/tweet-faves-py (owner 'kellan' is outside ['obra', 'prime-radiant-inc'])
+obra/twitterpub: external_fork: upstream=aral/twitterpub (owner 'aral' is outside ['obra', 'prime-radiant-inc'])
+obra/usb2-power-hub: external_fork: upstream=dilshan/usb2-power-hub (owner 'dilshan' is outside ['obra', 'prime-radiant-inc'])
+obra/utron: external_fork: upstream=gernest/utron (owner 'gernest' is outside ['obra', 'prime-radiant-inc'])
+obra/whisper-asr-webservice: external_fork: upstream=ahmetoner/whisper-asr-webservice (owner 'ahmetoner' is outside ['obra', 'prime-radiant-inc'])
+obra/WiFiDiary: external_fork: upstream=binx/WiFiDiary (owner 'binx' is outside ['obra', 'prime-radiant-inc'])
+obra/winpepper: created_after_window: created_at=2026-05-17T04:27:51+00:00 is after this window's end=2026-04-26T23:59:59+00:00 -- repo did not exist during the window being audited; any in-window-dated commits are imported/vendored history, not first-party work done in this window
+obra/yrmcds: external_fork: upstream=cybozu/yrmcds (owner 'cybozu' is outside ['obra', 'prime-radiant-inc'])
+obra/z: external_fork: upstream=rupa/z (owner 'rupa' is outside ['obra', 'prime-radiant-inc'])
