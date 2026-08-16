@@ -1,0 +1,117 @@
+---
+title: "gauntlet reaches v1.5, hearthstone grows an admin and locks down"
+week: "Week of April 13, 2026"
+dateStart: 2026-04-13
+dateEnd: 2026-04-19
+pubDate: 2026-04-19
+summary: "gauntlet lands its v1.5 transition — server-owned runs, a real configuration system, and browser isolation — while hearthstone matures on the operations side with an admin console, careful house deletion, rate limiting, a security pass, and a relicense. Plus a new Kindle-highlight exporter and tooling to mirror superpowers as a Codex plugin."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Two heavyweights defined the week. **gauntlet** landed its v1.5 transition — server-owned runs, a real configuration system, and per-run browser isolation — across sixty-nine commits. **hearthstone** matured on the operations side: an admin console, house deletion with proper `410 Gone` semantics, token-bucket rate limiting, a security pass that stopped leaking owner PINs, and a relicense to Apache 2.0. Elsewhere, a new **kindle-highlight-exporter** turned Kindle annotations into Markdown, and **superpowers** built tooling to mirror itself as a Codex plugin.
+
+<section class="summary">
+
+<WeekSummary week="2026-04-13" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">An AI-powered QA testing framework.</p>
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-04-13" />
+
+Sixty-nine commits drove the v1.5 transition. Runs became server-owned — an `ActiveRunRegistry` tracks in-flight runs, execution detaches behind a `202`, and a fresh WebSocket connection receives a snapshot on open — with the UI rebuilt around URL-driven live runs and run IDs as the primary identity. A real configuration system landed alongside: an `AppConfig` type with precedence and source tracking, a `gauntlet config` subcommand, a `/api/config/effective` inspection endpoint, and loud rejection of unknown CLI flags. v1.5 itself brought a context module, per-run browser isolation, profiles with passkey support, and hardened HTTP/CLI boundary validation. Matt Windbrook drove the week; Simon Willison contributed two commits.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/hearthstone](https://github.com/prime-radiant-inc/hearthstone)
+
+<p class="repo-desc">A household knowledge assistant — a retrieval service over your own documents, with an iOS client and a guest-sharing model.</p>
+
+<RepoStat org="prime-radiant-inc" name="hearthstone" week="2026-04-13" />
+
+Seventy commits shifted hearthstone toward operability and safety. A shareable join flow arrived — `join_url`s, a `/join/:pin` landing page, and QR codes that encode them — alongside an admin console (a boot-minted admin token, a `requireAdmin` middleware, and an admin UI) for managing houses. House deletion was built out carefully: cascade deletes, `410 Gone` for removed houses (which the app detects and prunes from its sidebar), and a last-owner guard. A token-bucket rate limiter landed with tiered limits, Fly/XFF client-IP resolution, and an admin panel for live throttles. A security pass scrubbed placeholder emails from API responses and stopped leaking owner PINs to an external QR-code service by rendering QR codes server-side. And the project relicensed to Apache 2.0. Sole contributor: Matt Windbrook.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/kindle-highlight-exporter](https://github.com/prime-radiant-inc/kindle-highlight-exporter)
+
+<p class="repo-desc">A bookmarklet that scrapes your Kindle highlights and notes and exports them as Markdown.</p>
+
+<RepoStat org="prime-radiant-inc" name="kindle-highlight-exporter" week="2026-04-13" />
+
+New this week: a bookmarklet that scrapes the Kindle notebook — the book list, then per-book highlights and notes with library pagination — formats a Markdown file per book, packages them into a zip organized by author, and triggers a download, with a progress overlay throughout. A branded GitHub Pages install page ships the bookmarklet. Jesse Vincent did nearly all of it; Simon Willison contributed one commit.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-04-13" />
+
+Sixteen commits, mostly tooling to mirror superpowers as a Codex plugin — a sync tool that clones the fork, opens a PR, and regenerates overlays inline — plus terminology and README cleanups. `arittr` did the bulk of the sync work, with Jesse Vincent alongside and one commit from outside contributor `shaanmajid`.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-chrome](https://github.com/obra/superpowers-chrome)
+
+<p class="repo-desc">A Claude Code plugin for direct Chrome control via the DevTools Protocol.</p>
+
+<RepoStat org="obra" name="superpowers-chrome" week="2026-04-13" />
+
+Two releases (`v1.11.0`, `v1.12.0`): visibility-aware element selection that prefers visible elements over hidden ones, an `evaluate()` that now awaits async expressions, a crash fix when Chrome returns a non-array tabs response, and `human_type` merged into the plain `type` action. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">An agent runtime and subagent orchestration layer.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-04-13" />
+
+Eleven commits of workflow and runtime tuning: experiment-driven parameter tuning and provider expansion, a "deslopification" and prompt-cleanup pass, a requirement that every runtime issue `communicate` tool calls, simplified subagent orchestration, and a transcript viewer added to serf-tui. Sole contributor: Jesse Vincent. (Line counts are omitted here — generated and data files dominate the diff.)
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clearance](https://github.com/prime-radiant-inc/clearance)
+
+<p class="repo-desc">A macOS Markdown app.</p>
+
+<RepoStat org="prime-radiant-inc" name="clearance" week="2026-04-13" />
+
+Two point releases (`v1.3.2`, `v1.3.3`) fixing macOS WKWebView print-modal handling and local image loading. Sole contributor: Jesse Vincent.
+
+</article>
+
+A few smaller changes closed out the week: [LLM.swift](https://github.com/obra/LLM.swift) exposed context-prefill APIs on `LLMCore`; [iterative-development](https://github.com/prime-radiant-inc/iterative-development) added engineering principles to its implementer and code-quality reviewer prompts; [superpowers-marketplace](https://github.com/obra/superpowers-marketplace) tracked the superpowers-chrome releases; and [superpowers-testing](https://github.com/prime-radiant-inc/superpowers-testing) landed a single commit adding Codex plugin support.
+
+</section>

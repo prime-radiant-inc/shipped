@@ -1,0 +1,129 @@
+---
+title: "hearthstone learns Drive and PIN sign-in, a methodology proves itself"
+week: "Week of April 6, 2026"
+dateStart: 2026-04-06
+dateEnd: 2026-04-12
+pubDate: 2026-04-12
+summary: "hearthstone keeps its blistering pace — Google Drive import, PIN-and-QR sign-in, multi-household support, and a first cloud deploy — while iterative-development grows from a scaffold into a real spec-driven methodology and a companion repo dogfoods it by building a working macOS dictation app across twenty-one iterations."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Week two was about depth. **hearthstone** kept its blistering pace — 116 commits — adding Google Drive document import, PIN-and-QR sign-in, multi-household and multi-owner support, dark mode, and a first cloud deploy. **iterative-development** grew from last week's scaffold into a genuine spec-driven methodology — an extraction pipeline, parallel adversarial review, quality gates, and a behavior-evidence redesign — while a companion repo dogfooded the whole thing by building a working macOS dictation app across twenty-one iterations. Around them, **superpowers-chrome** taught its browser agent human-like mouse and keyboard control, and **private-journal-mcp** cut a 2.0.
+
+<section class="summary">
+
+<WeekSummary week="2026-04-06" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/hearthstone](https://github.com/prime-radiant-inc/hearthstone)
+
+<p class="repo-desc">A household knowledge assistant — a retrieval service over your own documents, with an iOS client and a guest-sharing model.</p>
+
+<RepoStat org="prime-radiant-inc" name="hearthstone" week="2026-04-06" />
+
+116 commits carried hearthstone from prototype toward something you could hand to a family. Google Drive integration landed end to end — an OAuth flow that returns to a custom `hearthstone://` URL scheme, a Drive file picker in the iOS app, and server-side docx-to-Markdown conversion. Authentication was reworked around PINs: a unified PIN-redemption endpoint, a CLI that generates owner PINs, and QR codes an owner can scan to onboard a guest (with an AVFoundation scanner in the app). The data model opened up to multiple households and multiple owners — a `household_members` table, owner invite/list/remove endpoints, and a sidebar to switch between houses. The interface gained dark mode through a `ResolvedTheme` migration across every view, plus lightweight chat persistence. And it left the laptop: a Fly.io deploy, a TestFlight upload script, and optional OpenTelemetry tracing to Honeycomb. Sole contributor: Matt Windbrook.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/iterative-development](https://github.com/prime-radiant-inc/iterative-development)
+
+<p class="repo-desc">A Claude Code plugin encoding an iterative, spec-driven development methodology.</p>
+
+<RepoStat org="prime-radiant-inc" name="iterative-development" week="2026-04-06" />
+
+Seventy-two commits turned last week's scaffold into a full methodology. An extraction pipeline chunks a spec, dispatches parallel subagents, and aggregates deduplicated stories. "Parallel adversarial review" (PAR) pits a competitive auditor against each work product. Quality gates verify that every roadmap item cites a requirement and flag scope creep. An implementing-tasks skill forked in a two-stage review cycle — spec-compliance, then code-quality — and the orchestrator gained autonomy, an interrupt protocol, and crash resumption. The week closed on a "behavior evidence" redesign that reframes the whole pipeline around provable scenarios and proof obligations rather than prose requirements. Sole contributor: Jesse Vincent.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/iterative-development-example-ghost-pepper](https://github.com/prime-radiant-inc/iterative-development-example-ghost-pepper)
+
+<p class="repo-desc">A dogfood project — building a macOS dictation app end to end using the iterative-development methodology.</p>
+
+<RepoStat org="prime-radiant-inc" name="iterative-development-example-ghost-pepper" week="2026-04-06" />
+
+The methodology's proof: sixty-three commits building a real speech-to-text app across twenty-one numbered iterations, from a walking-skeleton startup and hotkey monitor through Whisper transcription dispatch, pasteboard-preserving paste delivery, onboarding, settings persistence, corrections learning, OCR screen context, and a real-use smoke suite. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-chrome](https://github.com/obra/superpowers-chrome)
+
+<p class="repo-desc">A Claude Code plugin for direct Chrome control via the DevTools Protocol.</p>
+
+<RepoStat org="obra" name="superpowers-chrome" week="2026-04-06" />
+
+Two releases (`v1.9.0`, `v1.10.0`) gave the browser agent a far fuller input repertoire: CDP-level `hover`, `drag_drop`, `mouse_move`, and `scroll`, plus `human_type` (human-like keystroke timing), `double_click`, `right_click`, and `file_upload` — with `human_type` recommended as the preferred way to enter text. `CHROME_EXTRA_ARGS` was added for custom Chrome launch flags. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [obra/private-journal-mcp](https://github.com/obra/private-journal-mcp)
+
+<p class="repo-desc">An MCP server that gives an agent a private, searchable journal.</p>
+
+<RepoStat org="obra" name="private-journal-mcp" week="2026-04-06" />
+
+Three releases in a week, ending at `v2.0.0`. The 2.0 renamed the `feelings` field to `reflections` and added an `observations` field for short atomic notes; along the way came a CommonJS-to-ESM migration, a configurable `PRIVATE_JOURNAL_PATH`, an embedding-init timeout, and a `read_recent_entries` tool. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/stockyard](https://github.com/prime-radiant-inc/stockyard)
+
+<p class="repo-desc">A VM manager for agent workloads.</p>
+
+<RepoStat org="prime-radiant-inc" name="stockyard" week="2026-04-06" />
+
+Stockyard's VM work continued toward faster boots — an Alpine VM image with a minimal kernel config for quicker Firecracker starts, and a switch away from Tailscale pre-registration to a `WaitForPeer` handshake. Sole contributor: Matt Windbrook.
+
+</article>
+
+<article class="repo">
+
+### [obra/mutter-butter](https://github.com/obra/mutter-butter)
+
+<p class="repo-desc">A GNOME Shell extension that turns minimized windows into draggable "stamps" on a shelf.</p>
+
+<RepoStat org="obra" name="mutter-butter" week="2026-04-06" />
+
+Seventeen commits polished the stamp interaction: stamps now slide correctly across workspace switches, expand in place on hover to reveal the real interactive window, and dismiss cleanly on mouse-out. The extension also got its first GitHub release, with a README, a license, and detailed install instructions. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clearance](https://github.com/prime-radiant-inc/clearance)
+
+<p class="repo-desc">A macOS Markdown app.</p>
+
+<RepoStat org="prime-radiant-inc" name="clearance" week="2026-04-06" />
+
+Two fixes, both from outside contributors: `rodbegbie` registered imported-type declarations so macOS offers Clearance in "Open With" for Markdown files, and `dpbrinkm` removed a stray divider from the outline pane.
+
+</article>
+
+A handful of smaller changes rounded out the week: [pepper-x](https://github.com/obra/pepper-x) added a CI workflow and quieted a cleanup helper, with outside contributor Matt Van Horn (`mvanhorn`) pitching in; [superpowers](https://github.com/obra/superpowers) fixed its Discord invite link; [narcolepsyd](https://github.com/obra/narcolepsyd) landed a poll-event fix; [superpowers-marketplace](https://github.com/obra/superpowers-marketplace) tracked the week's releases; and [terminal-bench-analysis](https://github.com/prime-radiant-inc/terminal-bench-analysis) regenerated its README.
+
+</section>

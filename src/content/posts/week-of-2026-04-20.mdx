@@ -1,0 +1,93 @@
+---
+title: "sprout builds a memory, ts-libghostty binds a terminal — and watches NetHack"
+week: "Week of April 20, 2026"
+dateStart: 2026-04-20
+dateEnd: 2026-04-26
+pubDate: 2026-04-26
+summary: "The batch's biggest week: sprout stands up 'mira,' a full agent-memory system, across ten phases; ts-libghostty goes from a spec to a released TypeScript binding stack over Ghostty's terminal engine, topped by an agent that watches an LLM play NetHack; gauntlet grows an evidence-and-transcript system; and several tools get flattened and licensed for a new public marketplace."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+The busiest week of the backfill. **sprout** built "mira," a full agent-memory system, across ten phases and 143 commits — embeddings, vector search, extraction, consolidation, and a subcortical-recall prepass — then hardened it exhaustively. **ts-libghostty** went from nothing to a released TypeScript binding stack over Ghostty's terminal engine, capped by a runner and an agent that watches an LLM play NetHack. **gauntlet** grew a full evidence-and-transcript system. And several tools were flattened, licensed, and pointed at a brand-new prime-radiant-marketplace for public release.
+
+<section class="summary">
+
+<WeekSummary week="2026-04-20" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/sprout](https://github.com/prime-radiant-inc/sprout)
+
+<p class="repo-desc">An experimental self-improving multi-agent coding system.</p>
+
+<RepoStat org="prime-radiant-inc" name="sprout" week="2026-04-20" />
+
+143 commits stood up "mira," a memory and recall layer, in ten numbered phases: a memory foundation and index cache, an embedding-provider abstraction defaulting to a local model, SQLite vector search, extraction prompts with deduplication, a segment store that collapses sessions into memory segments, a surfacing pipeline with usage tracking, an archivist agent, a memory link graph, per-project scoring, consolidation maintenance, and an opt-in "subcortical recall" prepass. Most of the week, though, went into hardening it — dozens of commits scoping authorization, serializing index rebuilds, redacting secrets before collapse, healing pruned references, and gating memory mutations on trusted authorization. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/ts-libghostty](https://github.com/prime-radiant-inc/ts-libghostty)
+
+<p class="repo-desc">TypeScript bindings around Ghostty's VT state machine.</p>
+
+<RepoStat org="prime-radiant-inc" name="ts-libghostty" week="2026-04-20" />
+
+206 commits, built pass by pass with an adversarial code review at each gate, carried ts-libghostty from a design spec to a released binding stack. Pass 1 established a lazy FFI loader with symbol-manifest verification, a `Terminal` class with zero-copy byte ingestion, and a `Formatter`; later passes added effect callbacks, a `RenderState` with hot-path cell iterators, and a `KeyEncoder`. The project restructured into a monorepo (`libghostty-vt`), shipped five point releases through `v0.5.1`, and grew two consumers: `blinkyterm`, a terminal-driving runner, and `bobbihack`, an agentic TUI that watches an LLM play NetHack in a rendered pane. Sole contributor: Matt Windbrook.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">An AI-powered QA testing framework.</p>
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-04-20" />
+
+86 commits built a full evidence-and-transcript system: typed event emitters writing a structured `run.jsonl` (run start, per-turn LLM request and response, tool calls, run end), a transcript UI with its own reducer and parser, TUI screen captures promoted to first-class evidence, and a CLI streaming transcript with both pretty and JSONL renderers. Hermetic run snapshots now capture the story and full context tree into the run directory before the agent starts. Matt Windbrook drove it; Simon Willison contributed one commit.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/slackline](https://github.com/prime-radiant-inc/slackline)
+
+<p class="repo-desc">A command-line tool and Claude Code plugin for driving a Slack bot.</p>
+
+<RepoStat org="prime-radiant-inc" name="slackline" week="2026-04-20" />
+
+19 commits extended slackline into a fuller Slack surface — threading, reactions (add and remove, with idempotent handling), and file attachments with batched multi-file upload. Bot setup split into a `provision` command, a `download` command landed with atomic writes and a size cap, and `listen` learned to include files and filter by thread. It also got packaged as a Claude Code plugin with a provisioning skill. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">An agent runtime and subagent orchestration layer.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-04-20" />
+
+Eight commits: normalized usage and token semantics across providers, cache-tier pricing with a `GetPrice` API, an `--output-schema` flag for structured `communicate` output, and — notably — a `RootDir` boundary enforced on `write_file`, `edit_file`, and shell working directories. Sole contributor: Jesse Vincent.
+
+</article>
+
+Several repos moved toward public release: [prime-radiant-marketplace](https://github.com/prime-radiant-inc/prime-radiant-marketplace) opened as an initial marketplace carrying iterative-development and greenfield; [iterative-development](https://github.com/prime-radiant-inc/iterative-development) prepped for public release and pointed its install instructions there; and [greenfield](https://github.com/prime-radiant-inc/greenfield) was flattened for public release. Rounding out the week, [superpowers](https://github.com/obra/superpowers) tweaked its Codex-plugin sync script, and [terminal-bench-analysis](https://github.com/prime-radiant-inc/terminal-bench-analysis) regenerated its README.
+
+</section>

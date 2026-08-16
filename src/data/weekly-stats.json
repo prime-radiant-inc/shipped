@@ -9207,8 +9207,8 @@
       "second_tier_count": 7,
       "commits": 469,
       "merged_prs": 1,
-      "loc_added": 196550,
-      "loc_removed": 75905,
+      "loc_added": 49387,
+      "loc_removed": 3791,
       "contributors": 4,
       "tagged_releases": 0,
       "commit_only_bumps": 4
@@ -9386,7 +9386,8 @@
         "featured": true,
         "featured_reason": "created this week (2026-04-23T21:30:12Z)",
         "description": "Bun-workspaces monorepo of TypeScript bindings around Ghostty's VT state machine: libghostty-vt (Terminal/RenderState/Formatter model layer) and blinkyterm (agent-facing terminal Runner).",
-        "html_url": "https://github.com/prime-radiant-inc/ts-libghostty"
+        "html_url": "https://github.com/prime-radiant-inc/ts-libghostty",
+        "loc_suppressed": true
       },
       "prime-radiant-inc/prime-radiant-marketplace": {
         "commits": 1,

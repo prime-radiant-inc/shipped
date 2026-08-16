@@ -1,0 +1,117 @@
+---
+title: "hearthstone builds a household RAG, mutter-butter stamps your windows"
+week: "Week of March 30, 2026"
+dateStart: 2026-03-30
+dateEnd: 2026-04-05
+pubDate: 2026-04-05
+summary: "A ninety-commit build stands up an entire household document-Q&A product — backend, iOS app, and an evaluation harness — while a new GNOME extension turns minimized windows into draggable 'stamps,' and stockyard tunes a macOS microVM down to a 1.24-second cold boot."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+This was a from-scratch-products week. **hearthstone** went from its first commit to a working household knowledge assistant — a retrieval backend, a full iOS client, and an evaluation harness — in ninety commits. **mutter-butter** reimagined GNOME window management, turning minimized windows into draggable "stamps" on a shelf. And **stockyard** rebuilt its VM manager around a hypervisor-agnostic backend, then tuned a macOS microVM down to a 1.24-second cold boot to a live SSH session.
+
+<section class="summary">
+
+<WeekSummary week="2026-03-30" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/hearthstone](https://github.com/prime-radiant-inc/hearthstone)
+
+<p class="repo-desc">A household knowledge assistant — a retrieval service over your own documents, with an iOS client and a guest-sharing model.</p>
+
+<RepoStat org="prime-radiant-inc" name="hearthstone" week="2026-03-30" />
+
+Ninety commits, starting from the repo's very first, built an entire product end to end. The backend came up as a provider-abstracted embed/chat layer, a section-aware Markdown chunker that preserves tables and prepends heading breadcrumbs, vector search via `sqlite-vec` scoped per household, and Google Drive ingestion that exports docs and converts them to Markdown through Pandoc. Authentication evolved mid-week from Google sign-in to passkeys plus email verification, with owner JWTs and short-lived guest sessions. The iOS app landed in parallel: Keychain-backed token storage, an SSE client streaming chat deltas, a numbered-citation system that surfaces only the sources the model actually cited, and a read-only in-app viewer that scrolls to and highlights the cited passage. The week closed on evaluation — a retrieval harness comparing four strategies (plain RAG, multi-query, multi-document, and full-context), an LLM-as-judge scoring answers against key facts, and a GEPA-inspired prompt optimizer running all its questions in parallel. Sole contributor: Matt Windbrook. (Line counts are omitted for this repo — the diff is dominated by generated and vendored files, so a raw total would mislead more than it informs.)
+
+</article>
+
+<article class="repo">
+
+### [obra/mutter-butter](https://github.com/obra/mutter-butter)
+
+<p class="repo-desc">A GNOME Shell extension that turns minimized windows into draggable "stamps" on a shelf and snaps live windows to a grid.</p>
+
+<RepoStat org="obra" name="mutter-butter" week="2026-03-30" />
+
+A new GNOME 50 extension that went through five rounds of design review before a line of implementation, then came together from focused subsystems: a grid engine with cell math and occupancy tracking, a focus-rank list, stamp-placement strategies, a scale manager handling clone lifecycle and auto-shrink, an input router with stable z-ordering and a reentrancy guard, and a drag handler that intercepts grab operations. The result is a window manager where minimized windows become "stamps" you drag around a shelf, live windows snap to a grid on any move, and dropping a window onto an occupied cell swaps the two. Sole contributor: Jesse Vincent.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/stockyard](https://github.com/prime-radiant-inc/stockyard)
+
+<p class="repo-desc">A VM manager for agent workloads.</p>
+
+<RepoStat org="prime-radiant-inc" name="stockyard" week="2026-03-30" />
+
+Stockyard grew a hypervisor-agnostic backend — a `VMBackend` interface with adapters for Firecracker and, new this week, macOS via vfkit, plus a rootfs-provisioner interface with ZFS, copy-based, and APFS-clonefile implementations. The macOS path got an Alpine arm64 rootfs tuned hard for boot speed (kernel-level DHCP, static-IP VirtioFS, SIGKILL-based instant destroy), landing a 1.24-second cold boot to a running SSH session. Sole contributor: Matt Windbrook.
+
+</article>
+
+<article class="repo">
+
+### [obra/pepper-x](https://github.com/obra/pepper-x)
+
+<p class="repo-desc">A local dictation app — the GUI sibling to ghost-pepper's speech-to-text.</p>
+
+<RepoStat org="obra" name="pepper-x" week="2026-03-30" />
+
+Nineteen commits brought pepper-x to feature parity with ghost-pepper: streaming ASR, Qwen 3.5 cleanup, a full settings overhaul, an onboarding wizard, prerequisite-recovery flows, microphone controls with level feedback, and a GNOME Shell status-pill overlay. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/iterative-development](https://github.com/prime-radiant-inc/iterative-development)
+
+<p class="repo-desc">A Claude Code plugin encoding an iterative, spec-driven development methodology.</p>
+
+<RepoStat org="prime-radiant-inc" name="iterative-development" week="2026-03-30" />
+
+A new plugin scaffolded around a "walking skeleton" approach: format validators for requirements indexes, roadmaps, iteration logs, and skill files (each with fixtures), and a set of skill stubs — extracting requirements, scoping the simplest core, running an iteration, implementing tasks, and auditing progress. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">An AI-powered QA testing framework.</p>
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-03-30" />
+
+Configuration moved into an API endpoint with a model dropdown in the UI, error handling gained a server-side error log with its own UI panel and a type-safe error-source union, and the interface picked up a persistent live-run banner and clearer "generate test cards" controls. Jesse Vincent did the bulk; Simon Willison contributed one commit.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-03-30" />
+
+Shipped `v5.0.7` — Copilot CLI support and OpenCode fixes — and added contributor guidelines aimed at reducing agentic-slop PRs, including agent-facing guardrails. The companion [superpowers-marketplace](https://github.com/obra/superpowers-marketplace) tracked the release. Sole contributor: Jesse Vincent.
+
+</article>
+
+A couple of smaller notes round out the week: [narcolepsyd](https://github.com/obra/narcolepsyd) tagged its first release, `v0.1.0`; and [terminal-bench-analysis](https://github.com/prime-radiant-inc/terminal-bench-analysis) took in several thousand new benchmark trial results through automated commits, while Simon Willison wired a commit-message generator into its CI and added a link to the atom feed.
+
+</section>
