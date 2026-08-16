@@ -1,0 +1,20 @@
+{
+  "_comment": "Single source of truth for GitHub logins that should be treated as internal/staff for Shipped's discovery+report tooling even though they are NOT members of the prime-radiant-inc GitHub org. tools/repo-report reads this file directly (see load_staff_override()) instead of hardcoding the roster. Any other tool -- e.g. a gate-worker doing its own staff/external classification -- should read this same file rather than keeping a second copy of the list.",
+  "staff": [
+    {
+      "login": "obra",
+      "name": "Jesse Vincent",
+      "note": "always-internal beyond the org roster (originally hardcoded as repo-report's INTERNAL_EXTRA)"
+    },
+    {
+      "login": "mhat",
+      "name": "Matt Windbrook",
+      "note": "internal/staff per Jesse; not a prime-radiant-inc org member, tool's own org-membership heuristic would otherwise flag him EXTERNAL"
+    },
+    {
+      "login": "simonw",
+      "name": "Simon Willison",
+      "note": "internal/staff, confirmed by Jesse; not a prime-radiant-inc org member"
+    }
+  ]
+}

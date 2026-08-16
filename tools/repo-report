@@ -100,7 +100,31 @@ import textwrap
 
 CACHE_ROOT = os.path.expanduser("~/repos")  # checked first for an existing checkout
 BARE_CACHE_ROOT = "/work/repo-report/cache"  # fallback persistent bare-clone cache
-INTERNAL_EXTRA = {"obra"}  # always-internal logins beyond the org roster
+
+# Staff-override roster (logins to treat as always-internal even though
+# they're not prime-radiant-inc org members) lives in tools/staff-override.json,
+# a sibling of this script -- NOT hardcoded here. That file is the single
+# source of truth: any other tool (e.g. a gate-worker doing the same
+# staff/external classification) should read it directly rather than keep a
+# second copy of the list in sync by hand.
+STAFF_OVERRIDE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "staff-override.json")
+
+
+def load_staff_override():
+    """Returns {login: display_name} for always-internal staff logins beyond
+    the org roster, read from STAFF_OVERRIDE_PATH. Dies loudly if the file is
+    missing or malformed -- silently falling back to an empty override would
+    misclassify real staff as EXTERNAL with no indication why."""
+    try:
+        with open(STAFF_OVERRIDE_PATH) as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        die(f"could not read staff override file {STAFF_OVERRIDE_PATH}: {e}")
+    try:
+        return {entry["login"]: entry.get("name", entry["login"]) for entry in data["staff"]}
+    except (KeyError, TypeError) as e:
+        die(f"malformed staff override file {STAFF_OVERRIDE_PATH}: {e}")
+
 
 # --------------------------------------------------------------------- utils --
 
@@ -686,7 +710,8 @@ def main():
         c["message"] = messages.get(sha, c["subject"])
 
     org_members = get_org_members("prime-radiant-inc", log)
-    internal_logins = (org_members or set()) | INTERNAL_EXTRA
+    staff_override = load_staff_override()  # {login: display_name}, from tools/staff-override.json
+    internal_logins = (org_members or set()) | set(staff_override)
 
     contributors = {}  # key: login or "unresolved:<name>|<email>"
     for c in commits:
@@ -698,8 +723,8 @@ def main():
                     status = "unknown (could not list org members)"
                 elif login in (org_members or set()):
                     status = "internal (prime-radiant-inc member)"
-                elif login in INTERNAL_EXTRA:
-                    status = "internal (obra)"
+                elif login in staff_override:
+                    status = f"internal (staff override: {staff_override[login]})"
                 else:
                     status = "EXTERNAL"
             else:
