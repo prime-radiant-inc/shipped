@@ -8326,5 +8326,1110 @@
         "html_url": "https://github.com/obra/winpepper"
       }
     }
+  },
+  "2026-03-30": {
+    "summary": {
+      "repos_active": 10,
+      "featured_count": 3,
+      "second_tier_count": 7,
+      "commits": 241,
+      "merged_prs": 2,
+      "loc_added": 38602,
+      "loc_removed": 4230,
+      "contributors": 4,
+      "tagged_releases": 2,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "prime-radiant-inc/stockyard": {
+        "commits": 34,
+        "authors": [
+          {
+            "name": "Matt Windbrook",
+            "count": 34
+          }
+        ],
+        "loc_added": 6360,
+        "loc_removed": 527,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Coding-agent VM orchestrator: runs coding agents in isolated VMs \u2014 Firecracker micro-VMs on Linux (with ZFS-based audit-trail snapshots) and Apple's container tool on macOS.",
+        "html_url": "https://github.com/prime-radiant-inc/stockyard"
+      },
+      "prime-radiant-inc/gauntlet": {
+        "commits": 11,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 10
+          },
+          {
+            "name": "Simon Willison",
+            "count": 1
+          }
+        ],
+        "loc_added": 1427,
+        "loc_removed": 212,
+        "merged_prs": [
+          {
+            "number": 1,
+            "title": "Fix all user feedback issues from first external test",
+            "merged_at": "2026-04-04T02:47:54Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "AI-powered QA testing framework that uses LLMs (Claude or GPT) to test web apps, CLI tools, and TUI programs from markdown story cards, returning structured pass/fail verdicts with evidence.",
+        "html_url": "https://github.com/prime-radiant-inc/gauntlet"
+      },
+      "prime-radiant-inc/terminal-bench-analysis": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 3
+          },
+          {
+            "name": "Simon Willison",
+            "count": 2
+          }
+        ],
+        "loc_added": 268740,
+        "loc_removed": 539,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
+        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis",
+        "loc_suppressed": true
+      },
+      "prime-radiant-inc/hearthstone": {
+        "commits": 90,
+        "authors": [
+          {
+            "name": "Matt Windbrook",
+            "count": 90
+          }
+        ],
+        "loc_added": 555314,
+        "loc_removed": 537950,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-04-03T01:02:23Z)",
+        "description": "Hearthstone gives babysitters and family instant answers to household questions, grounded in your Google Docs with cited sources; Bun backend plus iOS app with PIN-based guest access.",
+        "html_url": "https://github.com/prime-radiant-inc/hearthstone",
+        "loc_suppressed": true
+      },
+      "prime-radiant-inc/iterative-development": {
+        "commits": 21,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 21
+          }
+        ],
+        "loc_added": 4249,
+        "loc_removed": 9,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Iterative development methodology plugin for Claude Code \u2014 extracts requirements, defines walking skeleton, loops through audited sprints autonomously",
+        "html_url": "https://github.com/prime-radiant-inc/iterative-development"
+      },
+      "obra/mutter-butter": {
+        "commits": 53,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 53
+          }
+        ],
+        "loc_added": 7170,
+        "loc_removed": 804,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "GNOME Shell extension for grid-based window management with live-scaling stamps",
+        "html_url": "https://github.com/obra/mutter-butter"
+      },
+      "obra/narcolepsyd": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 1346,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.1.0",
+            "name": "v0.1.0",
+            "published_at": "2026-03-31T00:33:26Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-03-31T00:32:43Z); tagged release v0.1.0 published 2026-03-31T00:33:26Z",
+        "description": "Idle power optimizer for Linux laptops with Intel hybrid CPUs",
+        "html_url": "https://github.com/obra/narcolepsyd"
+      },
+      "obra/pepper-x": {
+        "commits": 19,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 19
+          }
+        ],
+        "loc_added": 17714,
+        "loc_removed": 2659,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "GNOME-first local Linux dictation utility inspired by Ghost Pepper",
+        "html_url": "https://github.com/obra/pepper-x"
+      },
+      "obra/superpowers": {
+        "commits": 6,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 6
+          }
+        ],
+        "loc_added": 335,
+        "loc_removed": 18,
+        "merged_prs": [
+          {
+            "number": 1029,
+            "title": "Add release announcements link, consolidate Community section",
+            "merged_at": "2026-04-02T02:34:37Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v5.0.7",
+            "name": "v5.0.7",
+            "published_at": "2026-03-31T19:25:11Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v5.0.7 published 2026-03-31T19:25:11Z",
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 1,
+        "loc_removed": 1,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      }
+    }
+  },
+  "2026-04-06": {
+    "summary": {
+      "repos_active": 13,
+      "featured_count": 3,
+      "second_tier_count": 10,
+      "commits": 313,
+      "merged_prs": 2,
+      "loc_added": 111912,
+      "loc_removed": 8625,
+      "contributors": 6,
+      "tagged_releases": 1,
+      "commit_only_bumps": 5
+    },
+    "repos": {
+      "prime-radiant-inc/stockyard": {
+        "commits": 9,
+        "authors": [
+          {
+            "name": "Matt Windbrook",
+            "count": 9
+          }
+        ],
+        "loc_added": 7495,
+        "loc_removed": 653,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Coding-agent VM orchestrator: runs coding agents in isolated VMs \u2014 Firecracker micro-VMs on Linux (with ZFS-based audit-trail snapshots) and Apple's container tool on macOS.",
+        "html_url": "https://github.com/prime-radiant-inc/stockyard"
+      },
+      "prime-radiant-inc/clearance": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Rod Begbie",
+            "count": 1
+          },
+          {
+            "name": "dpbrinkm",
+            "count": 1
+          }
+        ],
+        "loc_added": 23,
+        "loc_removed": 3,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Clearance product workspace: a monorepo for the Markdown viewer, currently shipping a native Swift/macOS app with structure for future shared Tauri implementations on Windows, Linux, and Android.",
+        "html_url": "https://github.com/prime-radiant-inc/clearance"
+      },
+      "prime-radiant-inc/terminal-bench-analysis": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 1
+          }
+        ],
+        "loc_added": 2,
+        "loc_removed": 3,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
+        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
+      },
+      "prime-radiant-inc/hearthstone": {
+        "commits": 116,
+        "authors": [
+          {
+            "name": "Matt Windbrook",
+            "count": 116
+          }
+        ],
+        "loc_added": 22040,
+        "loc_removed": 2457,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "60ed955",
+            "date": "2026-04-10T21:37:45-07:00",
+            "subject": "chore: bump version to 0.2.0",
+            "version": "0.2.0"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Hearthstone gives babysitters and family instant answers to household questions, grounded in your Google Docs with cited sources; Bun backend plus iOS app with PIN-based guest access.",
+        "html_url": "https://github.com/prime-radiant-inc/hearthstone"
+      },
+      "prime-radiant-inc/iterative-development": {
+        "commits": 72,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 72
+          }
+        ],
+        "loc_added": 15538,
+        "loc_removed": 1867,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-04-08T19:50:46Z)",
+        "description": "Iterative development methodology plugin for Claude Code \u2014 extracts requirements, defines walking skeleton, loops through audited sprints autonomously",
+        "html_url": "https://github.com/prime-radiant-inc/iterative-development"
+      },
+      "prime-radiant-inc/iterative-development-example-ghost-pepper": {
+        "commits": 63,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 63
+          }
+        ],
+        "loc_added": 63006,
+        "loc_removed": 2823,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Dogfood example of the Greenfield + Iterative Development toolchain: GhostPepper, a macOS app built with Swift, WhisperKit, FluidAudio, and Sparkle from clean specs.",
+        "html_url": "https://github.com/prime-radiant-inc/iterative-development-example-ghost-pepper"
+      },
+      "obra/mutter-butter": {
+        "commits": 17,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 17
+          }
+        ],
+        "loc_added": 790,
+        "loc_removed": 439,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-04-07T04:44:04Z)",
+        "description": "GNOME Shell extension for grid-based window management with live-scaling stamps",
+        "html_url": "https://github.com/obra/mutter-butter"
+      },
+      "obra/narcolepsyd": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 3,
+        "loc_removed": 1,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Idle power optimizer for Linux laptops with Intel hybrid CPUs",
+        "html_url": "https://github.com/obra/narcolepsyd"
+      },
+      "obra/pepper-x": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          },
+          {
+            "name": "Matt Van Horn",
+            "count": 2
+          }
+        ],
+        "loc_added": 90,
+        "loc_removed": 2,
+        "merged_prs": [
+          {
+            "number": 8,
+            "title": "Add GitHub Actions CI workflow",
+            "merged_at": "2026-04-07T15:24:34Z"
+          },
+          {
+            "number": 7,
+            "title": "Suppress cleanup helper stderr output",
+            "merged_at": "2026-04-07T15:24:11Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "GNOME-first local Linux dictation utility inspired by Ghost Pepper",
+        "html_url": "https://github.com/obra/pepper-x"
+      },
+      "obra/private-journal-mcp": {
+        "commits": 15,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 15
+          }
+        ],
+        "loc_added": 1562,
+        "loc_removed": 288,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v1.1.0",
+            "name": "v1.1.0",
+            "published_at": "2026-04-06T15:58:37Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [
+          {
+            "sha": "65b1828",
+            "date": "2026-04-11T14:33:11-07:00",
+            "subject": "Release v2.0.0",
+            "version": "2.0.0"
+          },
+          {
+            "sha": "568118a",
+            "date": "2026-04-09T09:07:09-07:00",
+            "subject": "Release v1.2.0",
+            "version": "1.2.0"
+          }
+        ],
+        "featured": true,
+        "featured_reason": "tagged release v1.1.0 published 2026-04-06T15:58:37Z",
+        "description": "A lightweight MCP server that provides Claude with a private journaling capability to process feelings and thoughts",
+        "html_url": "https://github.com/obra/private-journal-mcp"
+      },
+      "obra/superpowers": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 4,
+        "loc_removed": 4,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-chrome": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 7
+          }
+        ],
+        "loc_added": 1324,
+        "loc_removed": 81,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "6c46b70",
+            "date": "2026-04-10T00:22:54-07:00",
+            "subject": "Release v1.10.0: CHROME_EXTRA_ARGS for custom Chrome launch flags (#32)",
+            "version": "1.10.0"
+          },
+          {
+            "sha": "1edfaf7",
+            "date": "2026-04-09T17:26:16-07:00",
+            "subject": "Release v1.9.0: CDP mouse actions, human-like typing, file upload",
+            "version": "1.9.0"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Claude Code plugin for direct Chrome browser control via DevTools Protocol - zero dependencies",
+        "html_url": "https://github.com/obra/superpowers-chrome"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 4
+          }
+        ],
+        "loc_added": 35,
+        "loc_removed": 4,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      }
+    }
+  },
+  "2026-04-13": {
+    "summary": {
+      "repos_active": 11,
+      "featured_count": 3,
+      "second_tier_count": 8,
+      "commits": 221,
+      "merged_prs": 13,
+      "loc_added": 42100,
+      "loc_removed": 8383,
+      "contributors": 5,
+      "tagged_releases": 4,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "prime-radiant-inc/serf": {
+        "commits": 11,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 11
+          }
+        ],
+        "loc_added": 33968,
+        "loc_removed": 46903,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/serf",
+        "loc_suppressed": true
+      },
+      "prime-radiant-inc/clearance": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 5
+          }
+        ],
+        "loc_added": 338,
+        "loc_removed": 17,
+        "merged_prs": [
+          {
+            "number": 39,
+            "title": "Add UTImportedTypeDeclarations for Markdown UTI",
+            "merged_at": "2026-04-14T04:56:51Z"
+          },
+          {
+            "number": 40,
+            "title": "Fix: remove errant horizontal line from outline pane",
+            "merged_at": "2026-04-14T03:46:29Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v1.3.3",
+            "name": "Clearance 1.3.3",
+            "published_at": "2026-04-14T15:36:58Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.3.2",
+            "name": "Clearance 1.3.2",
+            "published_at": "2026-04-14T05:43:41Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v1.3.3 published 2026-04-14T15:36:58Z; tagged release v1.3.2 published 2026-04-14T05:43:41Z",
+        "description": "Clearance product workspace: a monorepo for the Markdown viewer, currently shipping a native Swift/macOS app with structure for future shared Tauri implementations on Windows, Linux, and Android.",
+        "html_url": "https://github.com/prime-radiant-inc/clearance"
+      },
+      "prime-radiant-inc/gauntlet": {
+        "commits": 69,
+        "authors": [
+          {
+            "name": "Matt Windbrook",
+            "count": 67
+          },
+          {
+            "name": "Simon Willison",
+            "count": 2
+          }
+        ],
+        "loc_added": 17826,
+        "loc_removed": 3648,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "AI-powered QA testing framework that uses LLMs (Claude or GPT) to test web apps, CLI tools, and TUI programs from markdown story cards, returning structured pass/fail verdicts with evidence.",
+        "html_url": "https://github.com/prime-radiant-inc/gauntlet"
+      },
+      "prime-radiant-inc/hearthstone": {
+        "commits": 70,
+        "authors": [
+          {
+            "name": "Matt Windbrook",
+            "count": 70
+          }
+        ],
+        "loc_added": 16286,
+        "loc_removed": 3484,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Hearthstone gives babysitters and family instant answers to household questions, grounded in your Google Docs with cited sources; Bun backend plus iOS app with PIN-based guest access.",
+        "html_url": "https://github.com/prime-radiant-inc/hearthstone"
+      },
+      "prime-radiant-inc/iterative-development": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 53,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Iterative development methodology plugin for Claude Code \u2014 extracts requirements, defines walking skeleton, loops through audited sprints autonomously",
+        "html_url": "https://github.com/prime-radiant-inc/iterative-development"
+      },
+      "prime-radiant-inc/superpowers-testing": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 51,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Development/testing marketplace for Superpowers, an agentic skills framework and software-development workflow for coding agents covering brainstorming, TDD, planning, and subagent-driven development.",
+        "html_url": "https://github.com/prime-radiant-inc/superpowers-testing"
+      },
+      "prime-radiant-inc/kindle-highlight-exporter": {
+        "commits": 40,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 39
+          },
+          {
+            "name": "Simon Willison",
+            "count": 1
+          }
+        ],
+        "loc_added": 6156,
+        "loc_removed": 878,
+        "merged_prs": [
+          {
+            "number": 1,
+            "title": "\"Copy markdown to clipboard\" button",
+            "merged_at": "2026-04-17T21:54:30Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-04-17T03:18:57Z)",
+        "description": "A browser bookmarklet that exports your Kindle Notebook highlights and notes to local markdown files, one book per file, bundled into a ZIP, with no backend.",
+        "html_url": "https://github.com/prime-radiant-inc/kindle-highlight-exporter"
+      },
+      "obra/LLM.swift": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 3,
+        "loc_removed": 3,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fork of eastriverlee/LLM.swift with Qwen support fixes",
+        "html_url": "https://github.com/obra/LLM.swift"
+      },
+      "obra/superpowers": {
+        "commits": 16,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 8
+          },
+          {
+            "name": "Jesse Vincent",
+            "count": 7
+          },
+          {
+            "name": "Shaan Majid",
+            "count": 1
+          }
+        ],
+        "loc_added": 995,
+        "loc_removed": 243,
+        "merged_prs": [
+          {
+            "number": 1180,
+            "title": "sync-to-codex-plugin: seed interface.defaultPrompt",
+            "merged_at": "2026-04-15T17:59:39Z"
+          },
+          {
+            "number": 1165,
+            "title": "Mirror codex plugin tooling",
+            "merged_at": "2026-04-14T21:13:31Z"
+          },
+          {
+            "number": 1183,
+            "title": "Fixes for Codex house style",
+            "merged_at": "2026-04-15T19:41:40Z"
+          },
+          {
+            "number": 1200,
+            "title": "README updates for Codex, other cleanup",
+            "merged_at": "2026-04-16T19:50:46Z"
+          },
+          {
+            "number": 1188,
+            "title": "Remove the deprecated legacy slash commands",
+            "merged_at": "2026-04-16T02:01:40Z"
+          },
+          {
+            "number": 1163,
+            "title": "chore: remove vestigial CHANGELOG.md",
+            "merged_at": "2026-04-14T20:22:24Z"
+          },
+          {
+            "number": 1121,
+            "title": "adjust worktree handling and defer to harness tools when avail (PRI-974)",
+            "merged_at": "2026-04-13T23:57:07Z"
+          },
+          {
+            "number": 1124,
+            "title": "enhance worktree consent during implementation (PRI-974)",
+            "merged_at": "2026-04-13T23:49:55Z"
+          },
+          {
+            "number": 1123,
+            "title": "feat: add multi-repo worktree guidance (#710)",
+            "merged_at": "2026-04-13T23:48:44Z"
+          },
+          {
+            "number": 1122,
+            "title": "fix: replace hardcoded /Users/jesse with generic placeholders (#858)",
+            "merged_at": "2026-04-13T23:48:28Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-chrome": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 5
+          }
+        ],
+        "loc_added": 390,
+        "loc_removed": 106,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v1.12.0",
+            "name": "v1.12.0",
+            "published_at": "2026-04-14T17:50:35Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.11.0",
+            "name": "v1.11.0",
+            "published_at": "2026-04-13T20:31:55Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v1.12.0 published 2026-04-14T17:50:35Z; tagged release v1.11.0 published 2026-04-13T20:31:55Z",
+        "description": "Claude Code plugin for direct Chrome browser control via DevTools Protocol - zero dependencies",
+        "html_url": "https://github.com/obra/superpowers-chrome"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 2,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      }
+    }
+  },
+  "2026-04-20": {
+    "summary": {
+      "repos_active": 10,
+      "featured_count": 3,
+      "second_tier_count": 7,
+      "commits": 469,
+      "merged_prs": 1,
+      "loc_added": 196550,
+      "loc_removed": 75905,
+      "contributors": 4,
+      "tagged_releases": 0,
+      "commit_only_bumps": 4
+    },
+    "repos": {
+      "prime-radiant-inc/serf": {
+        "commits": 8,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 8
+          }
+        ],
+        "loc_added": 1733,
+        "loc_removed": 467,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/serf"
+      },
+      "prime-radiant-inc/sprout": {
+        "commits": 143,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 143
+          }
+        ],
+        "loc_added": 23707,
+        "loc_removed": 1978,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Experimental self-improving multi-agent coding system: a root agent recursively decomposes goals and delegates to specialist subagents, learning from failures by mutating a git-backed agent genome. Supports Claude, GPT, and Gemini.",
+        "html_url": "https://github.com/prime-radiant-inc/sprout"
+      },
+      "prime-radiant-inc/gauntlet": {
+        "commits": 86,
+        "authors": [
+          {
+            "name": "Matt Windbrook",
+            "count": 85
+          },
+          {
+            "name": "Simon Willison",
+            "count": 1
+          }
+        ],
+        "loc_added": 15922,
+        "loc_removed": 871,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "AI-powered QA testing framework that uses LLMs (Claude or GPT) to test web apps, CLI tools, and TUI programs from markdown story cards, returning structured pass/fail verdicts with evidence.",
+        "html_url": "https://github.com/prime-radiant-inc/gauntlet"
+      },
+      "prime-radiant-inc/slackline": {
+        "commits": 19,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 19
+          }
+        ],
+        "loc_added": 6698,
+        "loc_removed": 342,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A single-binary Go CLI that gives AI agents a Slack identity to send messages, read channels, and stream real-time events, with admin tooling to provision new bots.",
+        "html_url": "https://github.com/prime-radiant-inc/slackline"
+      },
+      "prime-radiant-inc/terminal-bench-analysis": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 2
+          }
+        ],
+        "loc_added": 5,
+        "loc_removed": 5,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
+        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
+      },
+      "prime-radiant-inc/iterative-development": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 287,
+        "loc_removed": 8,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Iterative development methodology plugin for Claude Code \u2014 extracts requirements, defines walking skeleton, loops through audited sprints autonomously",
+        "html_url": "https://github.com/prime-radiant-inc/iterative-development"
+      },
+      "prime-radiant-inc/greenfield": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 11677,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-04-23T06:25:56Z)",
+        "description": "A Claude Code plugin that reverse-engineers clean behavioral specs, test vectors, and acceptance criteria from any codebase, producing a provenance trail so a fresh team can reimplement without inheriting the original's internal structure.",
+        "html_url": "https://github.com/prime-radiant-inc/greenfield",
+        "loc_suppressed": true
+      },
+      "prime-radiant-inc/ts-libghostty": {
+        "commits": 206,
+        "authors": [
+          {
+            "name": "Matt Windbrook",
+            "count": 206
+          }
+        ],
+        "loc_added": 147163,
+        "loc_removed": 72114,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "f4890a9",
+            "date": "2026-04-25T19:19:29-07:00",
+            "subject": "chore(release): libghostty-vt v0.5.1",
+            "version": "0.5.1"
+          },
+          {
+            "sha": "6829bcb",
+            "date": "2026-04-25T17:06:19-07:00",
+            "subject": "chore(libghostty-vt): release v0.5.0 \u2014 render-rect",
+            "version": "0.5.0"
+          },
+          {
+            "sha": "8f39d64",
+            "date": "2026-04-24T21:46:14-07:00",
+            "subject": "chore(release): libghostty-vt@0.4.0",
+            "version": "0.4.0"
+          },
+          {
+            "sha": "63e6a1d",
+            "date": "2026-04-24T01:01:26-07:00",
+            "subject": "chore(release): v0.3.0",
+            "version": "0.3.0"
+          }
+        ],
+        "featured": true,
+        "featured_reason": "created this week (2026-04-23T21:30:12Z)",
+        "description": "Bun-workspaces monorepo of TypeScript bindings around Ghostty's VT state machine: libghostty-vt (Terminal/RenderState/Formatter model layer) and blinkyterm (agent-facing terminal Runner).",
+        "html_url": "https://github.com/prime-radiant-inc/ts-libghostty"
+      },
+      "prime-radiant-inc/prime-radiant-marketplace": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 256,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-04-24T17:04:33Z)",
+        "description": "Prime Radiant's Claude Code plugin marketplace.",
+        "html_url": "https://github.com/prime-radiant-inc/prime-radiant-marketplace"
+      },
+      "obra/superpowers": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 779,
+        "loc_removed": 120,
+        "merged_prs": [
+          {
+            "number": 1261,
+            "title": "sync-to-codex-plugin: use committed Codex plugin files",
+            "merged_at": "2026-04-24T02:02:38Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      }
+    }
   }
 }

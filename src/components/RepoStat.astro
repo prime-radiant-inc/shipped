@@ -31,7 +31,12 @@ function fmt(n: number) {
 
 const authorTitle = r.authors.map((a: { name: string; count: number }) => `${a.name} (${a.count})`).join(', ');
 
-const hasDiff = r.loc_added > 0 || r.loc_removed > 0;
+// loc_suppressed: set by tools/gen_stats.py's crazy-LOC guard when a
+// cell's churn is wildly disproportionate to its commit count (e.g. a
+// vendored dump or bulk rewrite masquerading as "work"). The raw numbers
+// stay in weekly-stats.json for the record, but we never render them here
+// — commit count only, no +/- figure, so no absurd LOC total ever shows.
+const hasDiff = !r.loc_suppressed && (r.loc_added > 0 || r.loc_removed > 0);
 const diffTotal = r.loc_added + r.loc_removed;
 // GitHub-style proportional split; if removed is ~0 this naturally comes
 // out as 100% green. Guard div-by-zero for the (hasDiff-gated) render.
