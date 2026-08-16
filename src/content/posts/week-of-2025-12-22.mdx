@@ -1,0 +1,117 @@
+---
+title: "streamlinear: the first Prime Radiant repo"
+week: "Week of December 22, 2025"
+dateStart: 2025-12-22
+dateEnd: 2025-12-28
+pubDate: 2025-12-28
+summary: "The company's public record starts here — prime-radiant-inc's first repository, streamlinear, a Linear MCP tool — while the obra side cuts two superpowers releases and outside contributors turn up across the ecosystem."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+This is where the company's public record starts: the week **prime-radiant-inc**'s first repository, **streamlinear**, landed — a Model Context Protocol tool that hands an agent a clean interface to Linear. Around it, the obra ecosystem kept moving, with **superpowers** cutting two releases and outside contributors landing fixes across half a dozen repos.
+
+<section class="summary">
+
+<WeekSummary week="2025-12-22" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/streamlinear](https://github.com/prime-radiant-inc/streamlinear)
+
+<p class="repo-desc">A Model Context Protocol tool that gives a coding agent a clean interface to Linear.</p>
+
+<RepoStat org="prime-radiant-inc" name="streamlinear" week="2025-12-22" />
+
+Fourteen commits from a standing start — the repo's first commit through a working, npx-installable MCP tool. The arc: a `searchIssues` fix (use `term`, not `query`), a discoverability pass (me/help actions, better errors, and teams/states baked into the tool description at startup so an agent sees them without a round-trip), and npx packaging — a pre-commit hook that auto-builds and commits `dist/`, plus a `bin` field and shebang. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+<RepoStat org="obra" name="superpowers" week="2025-12-22" />
+
+Ten commits and two releases (`v4.0.2`, `v4.0.3`). The work sharpened the framework's edges: slash commands made user-only via `disable-model-invocation`, agent-model inheritance fixed, `git check-ignore` adopted for worktree gitignore verification, and guidance added to the writing-skills and using-superpowers skills (automation-over-documentation, stronger handling of explicit skill requests). Jesse Vincent drove it; outside contributors **egornomic** and **mycarrysun** each landed a commit.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [obra/episodic-memory](https://github.com/obra/episodic-memory)
+
+<p class="repo-desc">A memory and recall layer for coding-agent sessions.</p>
+
+<RepoStat org="obra" name="episodic-memory" week="2025-12-22" />
+
+Two merged PRs, both from outside contributor **techjoec**: API configuration support for summarization, and honoring `exclude.txt` in the sync and verify commands.
+
+</article>
+
+<article class="repo">
+
+### [obra/wordiest](https://github.com/obra/wordiest)
+
+<p class="repo-desc">A word game.</p>
+
+<RepoStat org="obra" name="wordiest" week="2025-12-22" />
+
+Seven commits of interaction polish: a taller tile fountain, confetti-and-tile settle timing, and a bottom-inset fix to stop the board jumping at the top — tagged as build 5. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [obra/double-shot-latte](https://github.com/obra/double-shot-latte)
+
+<p class="repo-desc">A tool around Claude Code output.</p>
+
+<RepoStat org="obra" name="double-shot-latte" week="2025-12-22" />
+
+A fix for parsing Claude Code 2.0.55+ structured output, and a configurable model — the latter from outside contributor **ralphbean**.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-marketplace](https://github.com/obra/superpowers-marketplace)
+
+<p class="repo-desc">The distribution marketplace for superpowers.</p>
+
+<RepoStat org="obra" name="superpowers-marketplace" week="2025-12-22" />
+
+Tracked the week's superpowers releases through `v4.0.1` → `v4.0.3`. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-lab](https://github.com/obra/superpowers-lab)
+
+<p class="repo-desc">A workbench for experimental superpowers skills.</p>
+
+<RepoStat org="obra" name="superpowers-lab" week="2025-12-22" />
+
+A new `mcp-cli` skill for on-demand MCP server usage. Sole contributor: Jesse Vincent.
+
+</article>
+
+A one-fix week for [external-subagents](https://github.com/obra/external-subagents) rounded things out: a README clone-URL correction from outside contributor **sky-xo**.
+
+</section>

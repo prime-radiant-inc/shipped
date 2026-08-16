@@ -1,0 +1,47 @@
+---
+title: "lace becomes standalone: core dissolution, async jobs, ACP alignment"
+week: "Week of January 5, 2026"
+dateStart: 2026-01-05
+dateEnd: 2026-01-11
+pubDate: 2026-01-11
+summary: "lace's biggest week yet — the agent package absorbs core and stands alone, the protocol aligns to ACP, an async background-jobs system lands, and the TUI gets a ground-up redesign."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+One repository owned the week: **lace** put up 346 commits as its architecture consolidated. The agent package absorbed everything from core and became standalone, the protocol aligned to ACP, an async background-jobs system landed, and the Rust TUI got a ground-up redesign.
+
+<section class="summary">
+
+<WeekSummary week="2026-01-05" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">An agent runtime — the harness that runs coding-agent sessions.</p>
+
+<RepoStat org="obra" name="lace" week="2026-01-05" />
+
+The structural story is *core dissolution*. Tools, providers, MCP, workspace, config, utils, token-management, and the compaction strategies all moved out of `@lace/core` into `@lace/agent`; the web layer dropped its core imports; and `@lace/core` was deleted outright — the agent now stands alone. The protocol aligned to ACP along the way: new `session/update` event types, `session/fork`, `$/cancel_request` replacing the old cancel, a tightened `SessionId` format, token-usage and context-breakdown methods, and per-agent tool policies.
+
+Two systems landed that shape how the runtime works day to day. An **async background-jobs** system: `bash` and `delegate` gained a `background` parameter, with `job_output` / `jobs_list` / `job_kill` tools, a notification queue, completion and progress notifications, job resume for `delegate`, and concurrency and output-size limits. And a ground-up **TUI redesign**: semantic color tokens, conversation-as-primary view, inline tool-call and permission display, token usage in the status bar, image paste, a slash-command picker, and MCP-config and context-usage panels. Underneath, an *agent-as-library* refactor introduced `Agent` / `Session` / `ConversationRunner` classes and decomposed the monolithic server into focused RPC handler modules. Sole contributor: Jesse Vincent.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+A one-commit fix to [superpowers-chrome](https://github.com/obra/superpowers-chrome), from outside contributor **DanMoraes**: ship the chrome-ws support files in the npm package.
+
+</section>
