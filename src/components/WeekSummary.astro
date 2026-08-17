@@ -27,6 +27,31 @@ if (!data) {
 }
 const s = data.summary;
 
+// Belt-and-suspenders guard: this component only READS the pre-aggregated
+// s.loc_added/s.loc_removed -- it does not sum per-repo cells itself (that
+// happens once, in tools/gen_stats.py, when weekly-stats.json is
+// generated/regenerated). That is exactly how the site-wide leak happened:
+// RepoStat.astro correctly hides the +/- LOC chip for any cell flagged
+// loc_suppressed (a data-dump / vendored / generated-artifact / revert-of-
+// revert cell), but this shared "week in numbers" total kept summing those
+// suppressed cells' raw LOC anyway, on every week that had one.
+//
+// Since WeekSummary is the ONE place every week's headline number renders,
+// re-derive the correct total from data.repos here too and hard-fail the
+// build if it ever disagrees with the stored summary -- so a future
+// regen that forgets to exclude a loc_suppressed cell breaks the build
+// instead of silently shipping a leaked number.
+const repos = Object.values(data.repos) as { loc_added: number; loc_removed: number; loc_suppressed?: boolean }[];
+const expectedLocAdded = repos.reduce((sum, r) => sum + (r.loc_suppressed ? 0 : r.loc_added), 0);
+const expectedLocRemoved = repos.reduce((sum, r) => sum + (r.loc_suppressed ? 0 : r.loc_removed), 0);
+if (expectedLocAdded !== s.loc_added || expectedLocRemoved !== s.loc_removed) {
+  throw new Error(
+    `WeekSummary: stored summary LOC for week "${week}" (+${s.loc_added}/-${s.loc_removed}) ` +
+      `does not match the sum of non-suppressed repo cells (+${expectedLocAdded}/-${expectedLocRemoved}). ` +
+      `Re-run: python3 tools/gen_stats.py --recompute-summaries src/data/weekly-stats.json`
+  );
+}
+
 function fmt(n: number) {
   return n.toLocaleString('en-US');
 }

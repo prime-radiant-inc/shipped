@@ -10298,8 +10298,8 @@
       "second_tier_count": 9,
       "commits": 763,
       "merged_prs": 4,
-      "loc_added": 202895,
-      "loc_removed": 55530,
+      "loc_added": 43058,
+      "loc_removed": 5739,
       "contributors": 6,
       "tagged_releases": 0,
       "commit_only_bumps": 3
@@ -10913,8 +10913,8 @@
       "second_tier_count": 8,
       "commits": 276,
       "merged_prs": 5,
-      "loc_added": 149423,
-      "loc_removed": 108263,
+      "loc_added": 58574,
+      "loc_removed": 20115,
       "contributors": 12,
       "tagged_releases": 5,
       "commit_only_bumps": 4
@@ -11257,8 +11257,8 @@
       "second_tier_count": 6,
       "commits": 408,
       "merged_prs": 3,
-      "loc_added": 187771,
-      "loc_removed": 152265,
+      "loc_added": 32899,
+      "loc_removed": 9638,
       "contributors": 7,
       "tagged_releases": 12,
       "commit_only_bumps": 0
@@ -11617,9 +11617,9 @@
       "second_tier_count": 9,
       "commits": 288,
       "merged_prs": 10,
-      "loc_added": 1895042,
-      "loc_removed": 24615,
-      "contributors": 12,
+      "loc_added": 61626,
+      "loc_removed": 11067,
+      "contributors": 14,
       "tagged_releases": 2,
       "commit_only_bumps": 0
     },
@@ -11843,6 +11843,14 @@
           {
             "name": "Schuyler Erle",
             "count": 1
+          },
+          {
+            "name": "shahabzohaib",
+            "count": 1
+          },
+          {
+            "name": "Tapiocapioca",
+            "count": 1
           }
         ],
         "loc_added": 7300,
@@ -11859,7 +11867,8 @@
         "featured": false,
         "featured_reason": null,
         "description": null,
-        "html_url": "https://github.com/obra/episodic-memory"
+        "html_url": "https://github.com/obra/episodic-memory",
+        "loc_suppressed": true
       },
       "obra/LLM.swift": {
         "commits": 5,
