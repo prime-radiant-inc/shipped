@@ -167,6 +167,54 @@
     <summary>A ninety-commit build stands up an entire household document-Q&amp;A product — backend, iOS app, and an evaluation harness — while a new GNOME extension turns minimized windows into draggable &apos;stamps,&apos; and stockyard tunes a macOS microVM down to a 1.24-second cold boot.</summary>
   </entry>
   <entry>
+    <title>serf tunes its way to 82% on terminal-bench, pepper-x brings voice dictation to GNOME</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-03-23" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-03-23</id>
+    <updated>2026-03-29T00:00:00.000Z</updated>
+    <published>2026-03-29T00:00:00.000Z</published>
+    <summary>serf spends 126 commits tuning its agents against terminal-bench 2.0 — from ~54% to a final 82% — a new leaderboard-analysis tool grows up alongside it, and pepper-x arrives as a GNOME voice-dictation app.</summary>
+  </entry>
+  <entry>
+    <title>serf learns task dependencies, sprout tunes for mixed models, slackline and knowledge-graph arrive</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-03-16" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-03-16</id>
+    <updated>2026-03-22T00:00:00.000Z</updated>
+    <published>2026-03-22T00:00:00.000Z</published>
+    <summary>serf gains a dependency-aware task system, sprout spends the week hardening delegation across mixed models, and two new projects land: slackline, a Go CLI for Slack, and knowledge-graph, a local vault indexer with an MCP server.</summary>
+  </entry>
+  <entry>
+    <title>superpowers reaches v5.0, sprout adds live pricing, stockyard gets command queues</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-03-09" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-03-09</id>
+    <updated>2026-03-15T00:00:00.000Z</updated>
+    <published>2026-03-15T00:00:00.000Z</published>
+    <summary>superpowers ships a major v5.0 release with visual brainstorming and a zero-dependency server, drawing contributions from half a dozen people outside the org; sprout wires in live model pricing; and stockyard builds a custom Firecracker kernel and a command-queue system.</summary>
+  </entry>
+  <entry>
+    <title>clearance ships a v1 editor, sprout restructures its genome, and agent-eval tooling takes off</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-03-02" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-03-02</id>
+    <updated>2026-03-08T00:00:00.000Z</updated>
+    <published>2026-03-08T00:00:00.000Z</published>
+    <summary>clearance — a native macOS markdown editor — goes from bootstrap to v1.1.0 in a week, sprout restructures how its genome resolves agents, and a cluster of agent-evaluation tools (gauntlet, a new harbor dashboard, serf&apos;s eval instrumentation) all advance together.</summary>
+  </entry>
+  <entry>
+    <title>sprout&apos;s 545-commit sprint, serf grows a TUI, and a wave of new agent tooling</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-23" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-23</id>
+    <updated>2026-03-01T00:00:00.000Z</updated>
+    <published>2026-03-01T00:00:00.000Z</published>
+    <summary>sprout — a self-improving agent framework — lands the single largest repo-week in the whole backfill at 545 commits, serf gains a terminal UI and model picker, the engineering-notebook gets a three-panel redesign, and a cluster of new plugins and tiny tools ship alongside external contributions.</summary>
+  </entry>
+  <entry>
+    <title>serf grows a TUI, sprout begins, and the engineering notebook lands</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-16" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-16</id>
+    <updated>2026-02-22T00:00:00.000Z</updated>
+    <published>2026-02-22T00:00:00.000Z</published>
+    <summary>serf&apos;s biggest week yet — a full terminal UI, append-only transcript logging, and live model listing across 120 commits. A second agent framework, sprout, starts from scratch with a self-rewriting genome, and a new engineering-notebook turns session logs into a searchable journal.</summary>
+  </entry>
+  <entry>
     <title>serf begins, Wayback recovery, Beeper sync, llm-proxy adds Bedrock</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-09" />
     <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-09</id>
