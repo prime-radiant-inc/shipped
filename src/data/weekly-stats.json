@@ -10024,5 +10024,1015 @@
         "html_url": "https://github.com/obra/superpowers-lab"
       }
     }
+  },
+  "2026-01-19": {
+    "summary": {
+      "repos_active": 9,
+      "featured_count": 4,
+      "second_tier_count": 5,
+      "commits": 126,
+      "merged_prs": 6,
+      "loc_added": 38458,
+      "loc_removed": 4056,
+      "contributors": 7,
+      "tagged_releases": 1,
+      "commit_only_bumps": 2
+    },
+    "repos": {
+      "prime-radiant-inc/streamlinear": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 5650,
+        "loc_removed": 623,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A lightweight Linear MCP server for Claude Code that exposes one tool with action dispatch (search, get, update, comment, create, graphql, help) using ~500 tokens instead of the standard MCP's ~17,000.",
+        "html_url": "https://github.com/prime-radiant-inc/streamlinear"
+      },
+      "prime-radiant-inc/llm-proxy": {
+        "commits": 13,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 13
+          }
+        ],
+        "loc_added": 5503,
+        "loc_removed": 94,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.2.0",
+            "name": "v0.2.0",
+            "published_at": "2026-01-25T23:52:31Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.2.0 published 2026-01-25T23:52:31Z",
+        "description": "Transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response to Claude, OpenAI, and other providers for debugging, auditing, and analysis.",
+        "html_url": "https://github.com/prime-radiant-inc/llm-proxy"
+      },
+      "prime-radiant-inc/homebrew-tap": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 2
+          }
+        ],
+        "loc_added": 11,
+        "loc_removed": 4,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Homebrew tap for Prime Radiant tools, including formulae for llm-proxy and beeper-message-sync.",
+        "html_url": "https://github.com/prime-radiant-inc/homebrew-tap"
+      },
+      "prime-radiant-inc/stockyard": {
+        "commits": 17,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 17
+          }
+        ],
+        "loc_added": 4012,
+        "loc_removed": 95,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-01-19T05:07:11Z)",
+        "description": "Coding-agent VM orchestrator: runs coding agents in isolated VMs \u2014 Firecracker micro-VMs on Linux (with ZFS-based audit-trail snapshots) and Apple's container tool on macOS.",
+        "html_url": "https://github.com/prime-radiant-inc/stockyard"
+      },
+      "prime-radiant-inc/scribble": {
+        "commits": 68,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 67
+          },
+          {
+            "name": "Drew Ritter",
+            "count": 1
+          }
+        ],
+        "loc_added": 20926,
+        "loc_removed": 2490,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-01-19T21:06:28Z)",
+        "description": "Self-hosted Slack knowledge bot that watches invited conversations, keeps durable notes in a Git-backed wiki, and answers when mentioned; built on the Claude Agent SDK, Bolt Socket Mode, and MCP servers.",
+        "html_url": "https://github.com/prime-radiant-inc/scribble"
+      },
+      "prime-radiant-inc/scenarios": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Simon Willison",
+            "count": 4
+          }
+        ],
+        "loc_added": 1363,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-01-24T01:36:56Z)",
+        "description": "A portable, model-agnostic test suite of declarative YAML scenarios for evaluating AI assistant security against prompt-injection and data-exfiltration attacks, with Python tools and pluggable harnesses.",
+        "html_url": "https://github.com/prime-radiant-inc/scenarios"
+      },
+      "obra/superpowers": {
+        "commits": 17,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 14
+          },
+          {
+            "name": "Daniel E.",
+            "count": 1
+          },
+          {
+            "name": "oribi",
+            "count": 1
+          },
+          {
+            "name": "Vinicius da Motta",
+            "count": 1
+          }
+        ],
+        "loc_added": 943,
+        "loc_removed": 746,
+        "merged_prs": [
+          {
+            "number": 349,
+            "title": "fix(opencode): standardize on plugins/ directory, fix symlink docs",
+            "merged_at": "2026-01-23T20:09:13Z"
+          },
+          {
+            "number": 335,
+            "title": "fix: OpenCode native skills + Windows hook execution",
+            "merged_at": "2026-01-23T04:06:45Z"
+          },
+          {
+            "number": 331,
+            "title": "fix: Windows hook execution for Claude Code 2.1.x",
+            "merged_at": "2026-01-22T21:29:41Z"
+          },
+          {
+            "number": 330,
+            "title": "feat(opencode): use native skills and fix agent reset bug (#226)",
+            "merged_at": "2026-01-22T21:29:30Z"
+          },
+          {
+            "number": 297,
+            "title": "fix: respect OPENCODE_CONFIG_DIR for personal skills lookup",
+            "merged_at": "2026-01-19T21:54:50Z"
+          },
+          {
+            "number": 290,
+            "title": "fix use_skill agent context",
+            "merged_at": "2026-01-19T01:02:49Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "4b6cef9",
+            "date": "2026-01-23T20:08:47+00:00",
+            "subject": "chore: bump version to 4.1.1",
+            "version": "4.1.1"
+          },
+          {
+            "sha": "19c70af",
+            "date": "2026-01-23T04:07:35+00:00",
+            "subject": "chore: release v4.1.0",
+            "version": "4.1.0"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-chrome": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Dan Shapiro",
+            "count": 1
+          }
+        ],
+        "loc_added": 46,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Claude Code plugin for direct Chrome browser control via DevTools Protocol - zero dependencies",
+        "html_url": "https://github.com/obra/superpowers-chrome"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 4,
+        "loc_removed": 4,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      }
+    }
+  },
+  "2026-01-26": {
+    "summary": {
+      "repos_active": 10,
+      "featured_count": 3,
+      "second_tier_count": 7,
+      "commits": 146,
+      "merged_prs": 7,
+      "loc_added": 24612,
+      "loc_removed": 4552,
+      "contributors": 4,
+      "tagged_releases": 5,
+      "commit_only_bumps": 3
+    },
+    "repos": {
+      "prime-radiant-inc/llm-proxy": {
+        "commits": 14,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 14
+          }
+        ],
+        "loc_added": 4977,
+        "loc_removed": 124,
+        "merged_prs": [
+          {
+            "number": 1,
+            "title": "feat(loki): add extended labels for richer Grafana querying (PRI-298)",
+            "merged_at": "2026-01-27T21:26:56Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v0.6.0",
+            "name": "v0.6.0 - Agent event emission",
+            "published_at": "2026-01-29T19:03:16Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.5.0",
+            "name": "v0.5.0",
+            "published_at": "2026-01-29T01:25:53Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.4.0",
+            "name": "v0.4.0",
+            "published_at": "2026-01-27T21:31:52Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.0",
+            "name": "v0.3.0",
+            "published_at": "2026-01-27T03:23:23Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.2.1",
+            "name": "v0.2.1",
+            "published_at": "2026-01-26T00:39:58Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.6.0 published 2026-01-29T19:03:16Z; tagged release v0.5.0 published 2026-01-29T01:25:53Z; tagged release v0.4.0 published 2026-01-27T21:31:52Z; tagged release v0.3.0 published 2026-01-27T03:23:23Z; tagged release v0.2.1 published 2026-01-26T00:39:58Z",
+        "description": "Transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response to Claude, OpenAI, and other providers for debugging, auditing, and analysis.",
+        "html_url": "https://github.com/prime-radiant-inc/llm-proxy"
+      },
+      "prime-radiant-inc/homebrew-tap": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 4
+          }
+        ],
+        "loc_added": 12,
+        "loc_removed": 12,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Homebrew tap for Prime Radiant tools, including formulae for llm-proxy and beeper-message-sync.",
+        "html_url": "https://github.com/prime-radiant-inc/homebrew-tap"
+      },
+      "prime-radiant-inc/scribble": {
+        "commits": 55,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 55
+          }
+        ],
+        "loc_added": 10020,
+        "loc_removed": 3852,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Self-hosted Slack knowledge bot that watches invited conversations, keeps durable notes in a Git-backed wiki, and answers when mentioned; built on the Claude Agent SDK, Bolt Socket Mode, and MCP servers.",
+        "html_url": "https://github.com/prime-radiant-inc/scribble"
+      },
+      "obra/amplifier-module-hooks-concise-display": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 1041,
+        "loc_removed": 3,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-02-01T06:22:05Z)",
+        "description": "Cleaner, more condensed terminal output for Amplifier sessions",
+        "html_url": "https://github.com/obra/amplifier-module-hooks-concise-display"
+      },
+      "obra/dotfiles": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 6,
+        "loc_removed": 3,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/dotfiles"
+      },
+      "obra/moltipass": {
+        "commits": 47,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 47
+          }
+        ],
+        "loc_added": 7629,
+        "loc_removed": 488,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-01-31T03:29:50Z)",
+        "description": "An iOS client for human users of Moltbook, a social network for Agents",
+        "html_url": "https://github.com/obra/moltipass"
+      },
+      "obra/superpowers": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "CL Kao",
+            "count": 8
+          },
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 86,
+        "loc_removed": 10,
+        "merged_prs": [
+          {
+            "number": 361,
+            "title": "Codex: clarify subagent tool mapping in bootstrap + README",
+            "merged_at": "2026-01-30T17:48:29Z"
+          },
+          {
+            "number": 382,
+            "title": "fix: require worktree setup before subagent-driven-development and executing-plans",
+            "merged_at": "2026-01-30T17:51:30Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-chrome": {
+        "commits": 8,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 7
+          },
+          {
+            "name": "r@l",
+            "count": 1
+          }
+        ],
+        "loc_added": 628,
+        "loc_removed": 53,
+        "merged_prs": [
+          {
+            "number": 17,
+            "title": "feat: add CHROME_WS_BROWSER env var to override browser executable",
+            "merged_at": "2026-01-30T17:47:12Z"
+          },
+          {
+            "number": 15,
+            "title": "docs: Add Linux/WSL2 DISPLAY configuration guide",
+            "merged_at": "2026-01-28T21:29:10Z"
+          },
+          {
+            "number": 11,
+            "title": "Fix: include chrome-ws support files in npm package",
+            "merged_at": "2026-01-28T21:28:54Z"
+          },
+          {
+            "number": 13,
+            "title": "Fix npm package to include chrome-ws support files",
+            "merged_at": "2026-01-28T21:28:52Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "ac8d84d",
+            "date": "2026-01-31T10:49:55-08:00",
+            "subject": "Release v1.6.4: Clarify auto-capture in tool description and skill",
+            "version": "1.6.4"
+          },
+          {
+            "sha": "f714ff7",
+            "date": "2026-01-28T13:46:04-08:00",
+            "subject": "Release v1.6.3: Bug fixes and auto-downscale screenshots",
+            "version": "1.6.3"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Claude Code plugin for direct Chrome browser control via DevTools Protocol - zero dependencies",
+        "html_url": "https://github.com/obra/superpowers-chrome"
+      },
+      "obra/superpowers-lab": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 208,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "897eebf",
+            "date": "2026-01-31T12:00:10-08:00",
+            "subject": "Bump version to 0.3.0",
+            "version": "0.3.0"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Experimental skills for Claude Code Superpowers - new techniques and tools",
+        "html_url": "https://github.com/obra/superpowers-lab"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 3
+          }
+        ],
+        "loc_added": 5,
+        "loc_removed": 5,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      }
+    }
+  },
+  "2026-02-02": {
+    "summary": {
+      "repos_active": 6,
+      "featured_count": 1,
+      "second_tier_count": 5,
+      "commits": 106,
+      "merged_prs": 6,
+      "loc_added": 19293,
+      "loc_removed": 2228,
+      "contributors": 4,
+      "tagged_releases": 0,
+      "commit_only_bumps": 1
+    },
+    "repos": {
+      "prime-radiant-inc/scribble": {
+        "commits": 17,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 17
+          }
+        ],
+        "loc_added": 1097,
+        "loc_removed": 291,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Self-hosted Slack knowledge bot that watches invited conversations, keeps durable notes in a Git-backed wiki, and answers when mentioned; built on the Claude Agent SDK, Bolt Socket Mode, and MCP servers.",
+        "html_url": "https://github.com/prime-radiant-inc/scribble"
+      },
+      "prime-radiant-inc/scenarios": {
+        "commits": 8,
+        "authors": [
+          {
+            "name": "Claude",
+            "count": 4
+          },
+          {
+            "name": "Simon Willison",
+            "count": 4
+          }
+        ],
+        "loc_added": 1914,
+        "loc_removed": 393,
+        "merged_prs": [
+          {
+            "number": 3,
+            "title": "Add all scenario tools to MCP server",
+            "merged_at": "2026-02-07T00:07:10Z"
+          },
+          {
+            "number": 2,
+            "title": "Calendar assistant and support representative scenarios",
+            "merged_at": "2026-02-06T23:35:18Z"
+          },
+          {
+            "number": 1,
+            "title": "MCP server and Claude Code demo setup",
+            "merged_at": "2026-02-06T21:25:49Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A portable, model-agnostic test suite of declarative YAML scenarios for evaluating AI assistant security against prompt-injection and data-exfiltration attacks, with Python tools and pluggable harnesses.",
+        "html_url": "https://github.com/prime-radiant-inc/scenarios"
+      },
+      "prime-radiant-inc/claude-session-viewer": {
+        "commits": 64,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 64
+          }
+        ],
+        "loc_added": 15480,
+        "loc_removed": 671,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-02-04T23:29:36Z)",
+        "description": "Session Explorer: a local web app for browsing Claude Code and OpenAI Codex CLI session histories, built with React Router, Express, and SQLite.",
+        "html_url": "https://github.com/prime-radiant-inc/claude-session-viewer"
+      },
+      "obra/moltipass": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 361,
+        "loc_removed": 136,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An iOS client for human users of Moltbook, a social network for Agents",
+        "html_url": "https://github.com/obra/moltipass"
+      },
+      "obra/superpowers": {
+        "commits": 15,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 11
+          },
+          {
+            "name": "Jesse Vincent",
+            "count": 4
+          }
+        ],
+        "loc_added": 440,
+        "loc_removed": 736,
+        "merged_prs": [
+          {
+            "number": 428,
+            "title": "Fix ~/ path expansion on Windows \u2014 use $HOME instead",
+            "merged_at": "2026-02-05T20:11:11Z"
+          },
+          {
+            "number": 427,
+            "title": "Fix Windows/PowerShell invocation of superpowers-codex",
+            "merged_at": "2026-02-05T19:54:57Z"
+          },
+          {
+            "number": 430,
+            "title": "Migrate Codex integration from bootstrap CLI to native skill discovery",
+            "merged_at": "2026-02-06T01:21:25Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "a98c5df",
+            "date": "2026-02-05T17:34:36-08:00",
+            "subject": "Release v4.2.0: Windows fixes, Codex native skill discovery, worktree requirements",
+            "version": "4.2.0"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 1,
+        "loc_removed": 1,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      }
+    }
+  },
+  "2026-02-09": {
+    "summary": {
+      "repos_active": 12,
+      "featured_count": 6,
+      "second_tier_count": 6,
+      "commits": 443,
+      "merged_prs": 6,
+      "loc_added": 19108,
+      "loc_removed": 1218,
+      "contributors": 5,
+      "tagged_releases": 1,
+      "commit_only_bumps": 1
+    },
+    "repos": {
+      "prime-radiant-inc/llm-proxy": {
+        "commits": 14,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 14
+          }
+        ],
+        "loc_added": 1690,
+        "loc_removed": 49,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.7.0",
+            "name": "v0.7.0",
+            "published_at": "2026-02-11T17:05:36Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.7.0 published 2026-02-11T17:05:36Z",
+        "description": "Transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response to Claude, OpenAI, and other providers for debugging, auditing, and analysis.",
+        "html_url": "https://github.com/prime-radiant-inc/llm-proxy"
+      },
+      "prime-radiant-inc/homebrew-tap": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 1
+          }
+        ],
+        "loc_added": 3,
+        "loc_removed": 3,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Homebrew tap for Prime Radiant tools, including formulae for llm-proxy and beeper-message-sync.",
+        "html_url": "https://github.com/prime-radiant-inc/homebrew-tap"
+      },
+      "prime-radiant-inc/scribble": {
+        "commits": 9,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 8
+          },
+          {
+            "name": "Drew Ritter",
+            "count": 1
+          }
+        ],
+        "loc_added": 623,
+        "loc_removed": 45,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Self-hosted Slack knowledge bot that watches invited conversations, keeps durable notes in a Git-backed wiki, and answers when mentioned; built on the Claude Agent SDK, Bolt Socket Mode, and MCP servers.",
+        "html_url": "https://github.com/prime-radiant-inc/scribble"
+      },
+      "prime-radiant-inc/claude-session-viewer": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 12,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Session Explorer: a local web app for browsing Claude Code and OpenAI Codex CLI session histories, built with React Router, Express, and SQLite.",
+        "html_url": "https://github.com/prime-radiant-inc/claude-session-viewer"
+      },
+      "prime-radiant-inc/serf": {
+        "commits": 344,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 344
+          }
+        ],
+        "loc_added": 226969,
+        "loc_removed": 27586,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-02-10T05:44:12Z)",
+        "description": "A non-interactive coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/serf",
+        "loc_suppressed": true
+      },
+      "prime-radiant-inc/beeper-message-sync": {
+        "commits": 31,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 31
+          }
+        ],
+        "loc_added": 4986,
+        "loc_removed": 272,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-02-14T02:03:36Z)",
+        "description": "A macOS command-line tool that syncs your Beeper chat history to local JSONL files, downloading attachments and organizing messages by network, chat, and date for backup, search, or LLM use.",
+        "html_url": "https://github.com/prime-radiant-inc/beeper-message-sync"
+      },
+      "obra/cc-plugin-decision-log": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 5
+          }
+        ],
+        "loc_added": 5132,
+        "loc_removed": 502,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/cc-plugin-decision-log"
+      },
+      "obra/claude-session-driver": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 4
+          }
+        ],
+        "loc_added": 2130,
+        "loc_removed": 56,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-02-12T22:41:27Z)",
+        "description": "Launch, control, and monitor other Claude Code sessions as workers via tmux",
+        "html_url": "https://github.com/obra/claude-session-driver"
+      },
+      "obra/comic-ocr": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 461,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-02-13T01:22:48Z)",
+        "description": "OCR comic strips on macOS using Apple Vision, then clean up transcripts with Claude",
+        "html_url": "https://github.com/obra/comic-ocr"
+      },
+      "obra/superpowers": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 7
+          },
+          {
+            "name": "ericzakariasson",
+            "count": 1
+          },
+          {
+            "name": "coltwindy",
+            "count": 1
+          },
+          {
+            "name": "chengfei.jin",
+            "count": 1
+          }
+        ],
+        "loc_added": 220,
+        "loc_removed": 56,
+        "merged_prs": [
+          {
+            "number": 462,
+            "title": "Enforce brainstorming workflow with hard gates and process flow",
+            "merged_at": "2026-02-12T19:01:55Z"
+          },
+          {
+            "number": 457,
+            "title": "fix(writing-plans): use 4-backtick fence for nested code blocks in Task Structure template",
+            "merged_at": "2026-02-12T16:22:00Z"
+          },
+          {
+            "number": 452,
+            "title": "Fix: add --verbose flag for stream-json output in SDD test runner",
+            "merged_at": "2026-02-12T16:21:10Z"
+          },
+          {
+            "number": 450,
+            "title": "enable superpowers to use subagents in codex via collab",
+            "merged_at": "2026-02-12T00:10:17Z"
+          },
+          {
+            "number": 443,
+            "title": "Add project-level scope assessment to brainstorming pipeline",
+            "merged_at": "2026-02-10T18:42:20Z"
+          },
+          {
+            "number": 441,
+            "title": "Add architecture guidance and capability-aware escalation",
+            "merged_at": "2026-02-10T18:40:57Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "e16d611",
+            "date": "2026-02-12T11:03:32-08:00",
+            "subject": "Release v4.3.0: Enforce brainstorming workflow, prevent unintended plan mode",
+            "version": "4.3.0"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 4
+          }
+        ],
+        "loc_added": 24,
+        "loc_removed": 3,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      },
+      "obra/wayback-restorer": {
+        "commits": 19,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 19
+          }
+        ],
+        "loc_added": 3827,
+        "loc_removed": 230,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-02-13T00:12:40Z)",
+        "description": "Wayback Machine mirror recovery toolkit (archive-friendly, provenance-first).",
+        "html_url": "https://github.com/obra/wayback-restorer"
+      }
+    }
   }
 }

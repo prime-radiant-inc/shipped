@@ -1,0 +1,93 @@
+---
+title: "Scribble comes online, faster VM boots, llm-proxy v0.2.0"
+week: "Week of January 19, 2026"
+dateStart: 2026-01-19
+dateEnd: 2026-01-25
+pubDate: 2026-01-25
+summary: "A Slack-native assistant bot lands its first orchestrator, the Firecracker VM stack roughly halves its boot time, llm-proxy ships Loki export in v0.2.0, and superpowers reaches v4.1.x with outside contributors turning up across the ecosystem."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+This was the week Prime Radiant's Slack presence started to take shape — the assistant bot landed its first real orchestrator, the microVM stack roughly halved its boot time, and llm-proxy cut a Loki-export release.
+
+<section class="summary">
+
+<WeekSummary week="2026-01-19" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/scribble](https://github.com/prime-radiant-inc/scribble)
+
+<p class="repo-desc">A Slack-native assistant bot — the coworker that lives in the workspace.</p>
+
+<RepoStat org="prime-radiant-inc" name="scribble" week="2026-01-19" />
+
+Scribble landed its first real orchestrator across a sixty-eight-commit week: a text-file `StateStore` (SQLite retired for EFS compatibility), an `AttentionTracker` for engagement, and a three-stage message pipeline (classify → extract → assemble). A wiki-editing toolset arrived with a "WikiGardener" that proposes maintenance and waits for confirmation, Linear ticketing came in over the StreamLinear MCP, structured JSON logging and OpenTelemetry metrics went in, and the bot moved onto Claude Sonnet 4.5. Jesse Vincent drove nearly all of it, with one commit from Drew Ritter.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/stockyard](https://github.com/prime-radiant-inc/stockyard)
+
+<p class="repo-desc">A microVM-orchestration daemon — ZFS-backed, Flintlock-driven Firecracker VM management over a gRPC API.</p>
+
+<RepoStat org="prime-radiant-inc" name="stockyard" week="2026-01-19" />
+
+With the foundation in place, the week went to boot performance — cutting VM boot from roughly 6.2s to 3.1s by starting `stockyard-init` earlier and auditing systemd as the bottleneck — plus Tailscale node pre-registration so VMs come up already on the network. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/llm-proxy](https://github.com/prime-radiant-inc/llm-proxy)
+
+<p class="repo-desc">A Go reverse proxy that sits in front of LLM APIs and logs the traffic.</p>
+
+<RepoStat org="prime-radiant-inc" name="llm-proxy" week="2026-01-19" />
+
+Shipped `v0.2.0`, adding Loki log export with async batching and a `MultiWriter` fan-out, a `/health/loki` endpoint, and config auto-discovery — thirteen commits from Drew Ritter, who also updated the Homebrew tap to match.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/scenarios](https://github.com/prime-radiant-inc/scenarios)
+
+<p class="repo-desc">A prompt-injection test suite for LLM agents.</p>
+
+<RepoStat org="prime-radiant-inc" name="scenarios" week="2026-01-19" />
+
+Began as a prototype built on `llm --functions` — four commits from Simon Willison laying down the first spec and docs.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-01-19" />
+
+Reached `v4.1.0` and `v4.1.1` — fixes to `use_skill` agent context, an instruction-priority hierarchy, Windows hook execution for Claude Code 2.1.x, and native-skills work for opencode. Alongside Jesse Vincent's fourteen commits, the week drew three outside contributors: Daniel E., `oribarilan`, and `vmotta8`.
+
+</article>
+
+A pair of one-commit changes rounded out the week: [superpowers-chrome](https://github.com/obra/superpowers-chrome) picked up a Linux/WSL2 display-configuration guide from outside contributor `DanMoraes`, and [superpowers-marketplace](https://github.com/obra/superpowers-marketplace) and [homebrew-tap](https://github.com/prime-radiant-inc/homebrew-tap) tracked the superpowers and llm-proxy version bumps (the tap from Drew Ritter).
+
+</section>

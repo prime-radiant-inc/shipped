@@ -1,0 +1,81 @@
+---
+title: "The session viewer arrives, superpowers v4.2.0, scenarios tests prompt injection"
+week: "Week of February 2, 2026"
+dateStart: 2026-02-02
+dateEnd: 2026-02-08
+pubDate: 2026-02-08
+summary: "A session-explorer web app lands in a single week of heavy building, superpowers ships v4.2.0 with Windows fixes and Codex native skill discovery, and the scenarios project turns into a real prompt-injection test suite."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+A tool for reading agent transcripts got built in a single heavy week, superpowers cut a Windows-and-Codex release, and scenarios turned into a real prompt-injection test suite.
+
+<section class="summary">
+
+<WeekSummary week="2026-02-02" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/claude-session-viewer](https://github.com/prime-radiant-inc/claude-session-viewer)
+
+<p class="repo-desc">A web app for reading agent session transcripts — indexed, full-text-searchable, with sidechain visualization.</p>
+
+<RepoStat org="prime-radiant-inc" name="claude-session-viewer" week="2026-02-02" />
+
+The centerpiece of the week — from scaffolding to a genuinely capable tool in sixty-four commits. A JSONL parser builds conversation threads; a directory scanner indexes projects, sessions, and subagents; and a SQLite database with FTS5 gives full-text search. On top of that came sidechain visualization (a tree structure for alternate conversation branches with a branch-point switcher and a minimap), multi-user support keyed by hostname, a Codex session parser and importer with its own tool renderers, message permalinks, secret masking, and an admin mode for hiding noise. All sixty-four commits from Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-02-02" />
+
+Shipped `v4.2.0`, focused on Windows and Codex: async `SessionStart` hooks to stop a Windows terminal freeze, `$HOME`-based path expansion, an O(n²) escape routine replaced with parameter substitution, and a minimal Codex installer for native skill discovery that let the project drop its bootstrap CLI and gatekeeper entirely. Eleven of the fifteen commits came from Drew Ritter, four from Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/scenarios](https://github.com/prime-radiant-inc/scenarios)
+
+<p class="repo-desc">A prompt-injection test suite for LLM agents.</p>
+
+<RepoStat org="prime-radiant-inc" name="scenarios" week="2026-02-02" />
+
+Matured from prototype into a real security test suite — redesigning its email scenario around subtle social engineering, adding calendar-assistant and support-assistant injection scenarios with model scoreboards (GPT 4.1 failing several, GPT 5.2 blocking all), and exposing every scenario tool through an MCP server. Simon Willison led the work.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/scribble](https://github.com/prime-radiant-inc/scribble)
+
+<p class="repo-desc">A Slack-native assistant bot — the coworker that lives in the workspace.</p>
+
+<RepoStat org="prime-radiant-inc" name="scribble" week="2026-02-02" />
+
+A steadier seventeen-commit week of refinement: pronoun disambiguation in its engagement rules, graceful handling of empty model responses, a `log_decision` tool that posts business decisions to a `#decision-log` channel, a switch from structured output to an explicit `respond` tool for engagement decisions, and a fix to only add the checkmark reaction for write tools rather than read-only queries. All Jesse Vincent.
+
+</article>
+
+Rounding out the week: [moltipass](https://github.com/obra/moltipass) got a UX-and-reliability pass, and [superpowers-marketplace](https://github.com/obra/superpowers-marketplace) tracked superpowers to `v4.2.0` — both from Jesse Vincent.
+
+</section>

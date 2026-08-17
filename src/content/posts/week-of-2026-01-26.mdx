@@ -1,0 +1,93 @@
+---
+title: "Moltipass takes shape, Scribble migrates to the Agent SDK, llm-proxy's release train"
+week: "Week of January 26, 2026"
+dateStart: 2026-01-26
+dateEnd: 2026-02-01
+pubDate: 2026-02-01
+summary: "A new iOS client for Moltbook lands its first build, the Scribble bot migrates onto the Agent SDK with a dual-session architecture, and llm-proxy shipped five releases in a week as it grew agent-observability features."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+A new iOS app appeared from nothing, the Scribble bot re-platformed onto the Agent SDK, and llm-proxy ran a five-release train in seven days.
+
+<section class="summary">
+
+<WeekSummary week="2026-01-26" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/moltipass](https://github.com/obra/moltipass)
+
+<p class="repo-desc">A SwiftUI iOS client for the Moltbook social network, built with xtool.</p>
+
+<RepoStat org="obra" name="moltipass" week="2026-01-26" />
+
+The week's biggest new thing — Jesse Vincent took it from empty project to a working app across forty-seven commits: a `KeychainService` for secure credentials, the full API layer (feed, posts, comments, voting, submolts, search, profile), the whole view stack from Welcome and Registration through feed, post detail, and profiles, session persistence, an app icon, and a build script — plus the steady round of fixes to match the real Moltbook API shape.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/scribble](https://github.com/prime-radiant-inc/scribble)
+
+<p class="repo-desc">A Slack-native assistant bot — the coworker that lives in the workspace.</p>
+
+<RepoStat org="prime-radiant-inc" name="scribble" week="2026-01-26" />
+
+Scribble kept maturing into the assistant it was becoming. This week it migrated onto a shared `bot-toolkit` submodule and the Claude Agent SDK, restructured conversation logging into a main/thread split, and grew a `ScribbleOrchestrator` with dual-session logic and an explicit engagement schema — so the bot decides *whether* to respond before it does, replies in-thread under the triggering message, and injects cross-channel context in the background. Session files and config were moved onto EFS for durability. Fifty-five commits, all Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/llm-proxy](https://github.com/prime-radiant-inc/llm-proxy)
+
+<p class="repo-desc">A Go reverse proxy that sits in front of LLM APIs and logs the traffic.</p>
+
+<RepoStat org="prime-radiant-inc" name="llm-proxy" week="2026-01-26" />
+
+A remarkable cadence — five tagged releases from `v0.2.1` through `v0.6.0` in a single week. The throughline was agent observability: a container image published to GHCR, extended Loki labels for richer Grafana queries, pattern-state persistence, and an event-emission pipeline (with a SHA-256 request-body hash for deterministic replay) landing in `v0.6.0`. Fourteen commits from Drew Ritter, who kept the Homebrew tap tracking each bump.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-01-26" />
+
+A round of subagent-driven-development and worktree-discipline docs — eight of the ten commits from outside contributor `clkao`.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-chrome](https://github.com/obra/superpowers-chrome)
+
+<p class="repo-desc">A Claude Code plugin for direct Chrome control via the DevTools Protocol.</p>
+
+<RepoStat org="obra" name="superpowers-chrome" week="2026-01-26" />
+
+Shipped `v1.6.3` and `v1.6.4` — Enter-key form submission, screenshot auto-downscaling, and a `CHROME_WS_BROWSER` override to point at a different browser executable. Seven commits from Jesse Vincent, plus one from an outside contributor.
+
+</article>
+
+A cluster of housekeeping rounded out the week, all from Jesse Vincent: [superpowers-lab](https://github.com/obra/superpowers-lab) added a CLI slack-messaging skill, [superpowers-marketplace](https://github.com/obra/superpowers-marketplace) tracked the chrome and lab bumps, the [homebrew-tap](https://github.com/prime-radiant-inc/homebrew-tap) followed llm-proxy's releases (from Drew Ritter), and `amplifier-module-hooks-concise-display` and a dotfiles tweak landed on the side.
+
+</section>

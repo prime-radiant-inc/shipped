@@ -1,0 +1,105 @@
+---
+title: "serf begins, Wayback recovery, Beeper sync, llm-proxy adds Bedrock"
+week: "Week of February 9, 2026"
+dateStart: 2026-02-09
+dateEnd: 2026-02-15
+pubDate: 2026-02-15
+summary: "An agent framework called serf lands its foundation in a single enormous week, a Wayback Machine recovery tool and a Beeper message archiver both ship, llm-proxy gains AWS Bedrock support, and superpowers reaches v4.3.0 with outside contributors."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+A new agent framework landed its foundation in one enormous push, two more tools shipped from scratch, and llm-proxy grew an AWS Bedrock transport.
+
+<section class="summary">
+
+<WeekSummary week="2026-02-09" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">An agent framework — multi-provider, session-persistent, with a plugin system and an evaluation harness.</p>
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-02-09" />
+
+The defining project of the week. serf began by importing an earlier codebase (Kilroy) as its foundation, rebranding it, and then building outward fast: a CLI with non-interactive task execution, a canonical error hierarchy, an OpenAI-compatible Chat Completions adapter alongside the Anthropic path, streaming structured output, session snapshots with `--resume`/`--list-sessions`, a bundled LiteLLM model catalog, a plugin system with plugin-defined agent types and hook lifecycle events, and a growing SWE-bench evaluation harness (Codex and GPT-5.2 like-for-like runs with failure-to-pass scoring). A 344-commit week from Jesse Vincent — one of the largest single-week pushes in Prime Radiant's history.
+
+</article>
+
+<article class="repo">
+
+### [obra/wayback-restorer](https://github.com/obra/wayback-restorer)
+
+<p class="repo-desc">A general Wayback Machine recovery CLI — discover, capture, and rebuild a browsable mirror.</p>
+
+<RepoStat org="obra" name="wayback-restorer" week="2026-02-09" />
+
+Grew into a general recovery tool across nineteen commits: CDX discovery with resume-key pagination, canonical capture selection, internal-link rewriting for standalone mirror browsing, provenance logging, and atomic writes. Sole contributor: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/beeper-message-sync](https://github.com/prime-radiant-inc/beeper-message-sync)
+
+<p class="repo-desc">A Swift tool that archives Beeper chats to per-chat JSONL with attachments and contact resolution.</p>
+
+<RepoStat org="prime-radiant-inc" name="beeper-message-sync" week="2026-02-09" />
+
+Landed across thirty-one commits: per-chat JSONL logging with attachments, contact resolution, and both backfill and watch modes. Sole contributor: Jesse Vincent.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/llm-proxy](https://github.com/prime-radiant-inc/llm-proxy)
+
+<p class="repo-desc">A Go reverse proxy that sits in front of LLM APIs and logs the traffic.</p>
+
+<RepoStat org="prime-radiant-inc" name="llm-proxy" week="2026-02-09" />
+
+Shipped `v0.7.0`, adding an AWS Bedrock transport: SigV4 signing, eventstream decoding, region validation, and Bedrock requests wired through the same Loki observability pipeline with a transport label. Fourteen commits from Drew Ritter.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-02-09" />
+
+Shipped `v4.3.0` — enforcing a brainstorming workflow with hard gates, making the `SessionStart` hook synchronous so skills load before the first turn, and adding a Cursor plugin manifest. Three outside contributors joined the release: `ericzakariasson`, `ColtWindy`, and Chengfei Jin.
+
+</article>
+
+<article class="repo">
+
+### [obra/cc-plugin-decision-log](https://github.com/obra/cc-plugin-decision-log)
+
+<p class="repo-desc">A Claude Code plugin that records decisions to a running decision-log.</p>
+
+<RepoStat org="obra" name="cc-plugin-decision-log" week="2026-02-09" />
+
+A new plugin, five commits: an initial session-memory implementation renamed to decision-log with clearer terminology, a README and distribution build, a CI workflow with a dist-rebuild pre-commit hook, and Biome linting. Sole contributor: Jesse Vincent.
+
+</article>
+
+Rounding out a busy week, all from Jesse Vincent: [claude-session-driver](https://github.com/obra/claude-session-driver) was extracted from superpowers-lab into a standalone plugin, [comic-ocr](https://github.com/obra/comic-ocr) landed an initial OCR-plus-cleanup pipeline, and [scribble](https://github.com/prime-radiant-inc/scribble) put in a nine-commit refinement pass (proactive `log_decision`, tighter engagement) — with marketplace, session-viewer, and Homebrew-tap housekeeping alongside.
+
+</section>
