@@ -1,0 +1,105 @@
+---
+title: "serf learns task dependencies, sprout tunes for mixed models, slackline and knowledge-graph arrive"
+week: "Week of March 16, 2026"
+dateStart: 2026-03-16
+dateEnd: 2026-03-22
+pubDate: 2026-03-22
+summary: "serf gains a dependency-aware task system, sprout spends the week hardening delegation across mixed models, and two new projects land: slackline, a Go CLI for Slack, and knowledge-graph, a local vault indexer with an MCP server."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+<section class="summary">
+
+A week about coordination — between tasks, between models, and between tools. **serf** built a dependency graph into its task system, **sprout** spent 131 commits making delegation reliable when different models play different roles, and two brand-new repos appeared: **slackline**, a command-line Slack client, and **knowledge-graph**, a local note-vault indexer.
+
+<WeekSummary week="2026-03-16" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/sprout](https://github.com/prime-radiant-inc/sprout)
+
+<p class="repo-desc">A self-improving agent framework that detects its own failures and rewrites its genome to avoid them.</p>
+
+131 commits, almost all in service of one problem: making delegation reliable when a cheaper model does the work a stronger model planned. The recurring fix was faithful information flow — preserving exact literals through orchestrator, engineer, and worker prompts; carrying prerequisite and decisive execution facts into delegated work; and not re-checking facts already established. It also delayed the verifier until implementation evidence actually exists and trimmed noisy helper-capability probes. Much of the week is documented as "mixed-model regression cycles" — measured runs against the harbor eval harness.
+
+<RepoStat org="prime-radiant-inc" name="sprout" week="2026-03-16" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">An agent framework in Go — this week, its task-tracking system.</p>
+
+87 commits centered on task dependencies: a `DependsOn` field on tasks with ID validation and cycle rejection, a `NextEligible` method and progress summary, and dependencies carried through into the compaction snapshot. Around it came a task-reminder system wired into the session loop, and a steady thread of prompt engineering in `core.md` — pre/post-implementation checks, broader test discovery, delegation-strategy guidance, and a pass to say the same things in fewer bytes. (Line counts are suppressed this week: a revert-of-a-revert nets to roughly zero but dominates the raw diff.)
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-03-16" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/slackline](https://github.com/prime-radiant-inc/slackline)
+
+<p class="repo-desc">A command-line Slack client in Go — list channels, read threads, send-and-wait, and stream events.</p>
+
+A new project from staff engineer **Drew Ritter**: 48 commits from design spec to a tagged v0.1.0. Built on cobra and slack-go, it grew commands for listing channels, reading channel and thread history, an "ask" send-and-wait-for-reply workflow, interactive token setup, admin app provisioning, and a `listen` command that streams events over Socket Mode as JSONL. The work was decomposed into five parallel waves and includes a full distribution spec.
+
+<RepoStat org="prime-radiant-inc" name="slackline" week="2026-03-16" />
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [obra/knowledge-graph](https://github.com/obra/knowledge-graph)
+
+<p class="repo-desc">A local note-vault indexer that builds a searchable knowledge graph, with an MCP server.</p>
+
+A new repo, 26 commits: it parses an Obsidian-style vault (frontmatter, wiki links, inline tags), stores it in SQLite with FTS5 and sqlite-vec, generates embeddings locally with transformers.js, and runs graph operations — paths, communities, centrality — via graphology. It exposes a 10-command CLI, an MCP server, and a Claude Code plugin with a "prove-claim" skill that does provenance checking.
+
+<RepoStat org="obra" name="knowledge-graph" week="2026-03-16" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clearance](https://github.com/prime-radiant-inc/clearance)
+
+<p class="repo-desc">A native macOS markdown editor — local-first, with a network-blocked rendering view.</p>
+
+36 commits of continued polish following the v1 release two weeks earlier.
+
+<RepoStat org="prime-radiant-inc" name="clearance" week="2026-03-16" />
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+20 commits, including a contribution from outside contributor **sarbojitrana**.
+
+<RepoStat org="obra" name="superpowers" week="2026-03-16" />
+
+</article>
+
+Also this week: **beeper-message-sync** (25 commits) and **stockyard** (29) both kept moving, while **scribble**, **packnplay**, and the superpowers-marketplace/homebrew-tap release repos saw small maintenance commits.
+
+</section>

@@ -1,0 +1,105 @@
+---
+title: "clearance ships a v1 editor, sprout restructures its genome, and agent-eval tooling takes off"
+week: "Week of March 2, 2026"
+dateStart: 2026-03-02
+dateEnd: 2026-03-08
+pubDate: 2026-03-08
+summary: "clearance — a native macOS markdown editor — goes from bootstrap to v1.1.0 in a week, sprout restructures how its genome resolves agents, and a cluster of agent-evaluation tools (gauntlet, a new harbor dashboard, serf's eval instrumentation) all advance together."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+<section class="summary">
+
+Two threads ran through the week. One was a new native app — **clearance**, a local-first macOS markdown editor — going from an empty repo to a tagged v1.1.0 in seven days. The other was agent *evaluation*: **serf** poured most of its week into an eval dashboard and a trajectory-export format, a new harness called **gauntlet** appeared, and the dashboard itself was spun out into its own repo. Underneath it all, **sprout** kept 165 commits of self-improvement work moving.
+
+<WeekSummary week="2026-03-02" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/sprout](https://github.com/prime-radiant-inc/sprout)
+
+<p class="repo-desc">A self-improving agent framework that detects its own failures and rewrites its genome to avoid them.</p>
+
+165 commits, centered on a genome restructure: a `rootDir` + overlay resolution model for merged agent lookup, per-project genome data directories, and export-learnings simplified to overlay-only resolution — all pushed through several rounds of code review. Alongside the plumbing came safety work: guardrails injected dynamically into system prompts at the tool boundary, a fix preventing agent hallucination when tool resolution returns zero tools, support for workspace-tool-only agents, and a project-memory agent added to the root agent tree.
+
+<RepoStat org="prime-radiant-inc" name="sprout" week="2026-03-02" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clearance](https://github.com/prime-radiant-inc/clearance)
+
+<p class="repo-desc">A native macOS markdown editor — local-first, with a network-blocked rendering view.</p>
+
+A new app that shipped fast: 93 commits from "bootstrap clearance macos app" through a string of releases ending at v1.1.0. Along the way it grew a recent-files model, markdown frontmatter parsing and a rendered view with a frontmatter table, a CodeMirror editor with syntax highlighting (assets vendored for a fully local editor), a solarized light/dark theme, drag-to-popout windows with disk-change reload, and a security posture that blocks network resources in both the rendered view and the runtime webview. Outside contributors **acme** (2 commits) and **rodbegbie** (1) pitched in.
+
+<RepoStat org="prime-radiant-inc" name="clearance" week="2026-03-02" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">An agent framework in Go — this week, mostly its evaluation dashboard and trajectory export.</p>
+
+85 commits, with staff engineer **Drew Ritter** contributing 9. The bulk went into the eval dashboard: proper task-lifecycle states (queued/running/verifying/pass/fail), run metadata and task deduplication, tool-call duration instrumentation surfaced in trajectories, and detecting task status from agent output rather than result-file timestamps. The other strand was ATIF — a native trajectory-export format — with v1.6 types, a converter handling thinking blocks and redacted content, and an `--export-atif` flag that writes a trajectory at session close for the harbor viewer.
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-03-02" />
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">An LLM-agent evaluation harness ("vet") — runs scenarios against agents through CLI, web, and TUI adapters.</p>
+
+A new project, 63 commits from design doc to a working harness: a story-card parser, an evidence logger, an LLM provider abstraction (Anthropic + OpenAI), and three adapters — a subprocess CLI adapter, a web adapter wrapping a forked superpowers-chrome CDP library, and a TUI adapter driving tmux sessions. It also gained an API server with scenario CRUD, containerized execution via Docker, a "fanout" generator for producing scenario variations, and the beginnings of a React UI.
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-03-02" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/harbor-eval-analysis-dashboard](https://github.com/prime-radiant-inc/harbor-eval-analysis-dashboard)
+
+<p class="repo-desc">A web dashboard for analyzing agent evaluation runs.</p>
+
+13 commits, starting by extracting the eval dashboard out of serf into a standalone repo. It added per-trial result dots, filtering/sorting/grouping in the task-history view, trajectory-step timestamps, an `/api/containers` endpoint that parses `docker ps`, and an active-containers view with auto-refresh and run linking.
+
+<RepoStat org="prime-radiant-inc" name="harbor-eval-analysis-dashboard" week="2026-03-02" />
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+22 commits, including work from outside contributor **karuturi** (2 commits).
+
+<RepoStat org="obra" name="superpowers" week="2026-03-02" />
+
+</article>
+
+Elsewhere: **lace** took 8 commits; **scribble** (5) gained a `slack_reply` tool for threaded replies to arbitrary messages, documented in its constitution; **packnplay** (2) took contributions from outside contributors **clkao** and **schuyler**; and **beeper-message-sync** and **smallest-agent** each saw a couple of commits.
+
+</section>

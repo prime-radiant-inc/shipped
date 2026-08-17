@@ -1,0 +1,75 @@
+---
+title: "serf grows a TUI, sprout begins, and the engineering notebook lands"
+week: "Week of February 16, 2026"
+dateStart: 2026-02-16
+dateEnd: 2026-02-22
+pubDate: 2026-02-22
+summary: "serf's biggest week yet — a full terminal UI, append-only transcript logging, and live model listing across 120 commits. A second agent framework, sprout, starts from scratch with a self-rewriting genome, and a new engineering-notebook turns session logs into a searchable journal."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+This was an agent-infrastructure week end to end: two agent frameworks built in parallel, a tool to read back what they did, and a desktop app on the side.
+
+<section class="summary">
+<WeekSummary week="2026-02-16" />
+</section>
+
+<section class="featured">
+## Featured
+
+<article class="repo">
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+<p class="repo-desc">An agent framework in Go — sessions, tools, multi-provider model adapters, and a benchmark harness.</p>
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-02-16" />
+
+serf's largest week so far. It grew a real front end — a Bubble Tea terminal UI driven by an SSE server (ring buffer, reconnect catch-up, `/status`, `/interrupt`, `/input`), with a session picker, slash commands, theming, and rich tool renderers. Underneath, an append-only JSONL transcript system landed for durable session logging and transcript-based resume, including parent–child linkage for sub-agent transcripts. Live model listing arrived across the Anthropic, OpenAI, and Google adapters, the four-layer compaction collapsed to two, and a long run of prompt-and-steering work — TDD discipline, verification steps, content-filter recovery — came straight out of terminal-bench failure analysis.
+</article>
+
+<article class="repo">
+### [prime-radiant-inc/sprout](https://github.com/prime-radiant-inc/sprout)
+<p class="repo-desc">A self-improving agent framework in TypeScript — agents that detect their own stumbles and rewrite a versioned "genome" to learn.</p>
+<RepoStat org="prime-radiant-inc" name="sprout" week="2026-02-16" />
+
+A brand-new project, built up phase by phase in 87 commits. It starts with a unified LLM client routing across native Anthropic, OpenAI, and Gemini adapters, then adds a core agent loop with delegation, a git-versioned Genome storing agents/routing/memories, keyword and embedding recall wired into the system prompt, and — the interesting part — a Learn process: it watches for "stumbles," emits learn signals, and applies mutations to its own genome while the agent runs, with programmatic rollback and pruning.
+</article>
+
+<article class="repo">
+### [prime-radiant-inc/engineering-notebook](https://github.com/prime-radiant-inc/engineering-notebook)
+<p class="repo-desc">A tool that ingests agent session logs into a searchable, day-by-day journal.</p>
+<RepoStat org="prime-radiant-inc" name="engineering-notebook" week="2026-02-16" />
+
+Also new this week: a Bun project that parses JSONL session logs, stores them in SQLite, summarizes them with an LLM, and serves the result as a Hono web app — a journal rendered as a day-by-day timeline, with conversations split on logical day boundaries rather than the wall clock.
+</article>
+</section>
+
+<section class="second-tier">
+## Also shipped
+
+<article class="repo">
+### [obra/iMessagePrinter](https://github.com/obra/iMessagePrinter)
+<p class="repo-desc">A macOS app that reads iMessage history and exports conversations to PDF.</p>
+<RepoStat org="obra" name="iMessagePrinter" week="2026-02-16" />
+
+Zero to `v1.0.0` in a week — a macOS iMessage viewer and PDF exporter, with a build-and-release workflow, an app icon, and fixes for message cross-contamination during export.
+</article>
+
+<article class="repo">
+### [prime-radiant-inc/scenarios](https://github.com/prime-radiant-inc/scenarios)
+<p class="repo-desc">A prompt-injection and evaluation test suite for LLM agents.</p>
+<RepoStat org="prime-radiant-inc" name="scenarios" week="2026-02-16" />
+
+Simon Willison kept scenarios moving — a document-analysis scenario, automated tool-call extraction and evaluation scoring in `run-scenario`, and a demo walkthrough pitting gpt-4o-mini against gpt-5.2 across the set.
+</article>
+
+<article class="repo">
+### [obra/superpowers](https://github.com/obra/superpowers)
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+<RepoStat org="obra" name="superpowers" week="2026-02-16" />
+
+superpowers cut `v4.3.1` — Cursor support and a Windows hook fix — with contributions from Drew Ritter and outside contributor `abzhaw`.
+</article>
+
+Rounding out the week: `streamlinear` tagged `v1.1.0` with multi-workspace support (added, reverted, and readied for another pass), and there were small maintenance commits to `cc-plugin-decision-log` and the `superpowers-marketplace` registry.
+</section>

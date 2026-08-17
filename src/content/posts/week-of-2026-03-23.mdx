@@ -1,0 +1,93 @@
+---
+title: "serf tunes its way to 82% on terminal-bench, pepper-x brings voice dictation to GNOME"
+week: "Week of March 23, 2026"
+dateStart: 2026-03-23
+dateEnd: 2026-03-29
+pubDate: 2026-03-29
+summary: "serf spends 126 commits tuning its agents against terminal-bench 2.0 — from ~54% to a final 82% — a new leaderboard-analysis tool grows up alongside it, and pepper-x arrives as a GNOME voice-dictation app."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+<section class="summary">
+
+A week defined by measurement. **serf** ran experiment after experiment against the terminal-bench 2.0 benchmark, tuning prompts and coordination until its pass rate climbed from the mid-50s to 82%. **Simon Willison** built a companion tool to analyze the public leaderboard, and a wholly different project — **pepper-x**, a GNOME voice-dictation app — landed 82 commits of its own.
+
+<WeekSummary week="2026-03-23" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">An agent framework in Go — this week, tuning its agents against a public benchmark.</p>
+
+126 commits, almost entirely a documented tuning campaign against terminal-bench 2.0. It started with a gpt-5.4-mini eval passing reliably around 54%, followed by a root-cause pass over every failing task and a series of controlled experiments: "write-early" (produce deliverables before verification), deeper coordinator verification (check file contents, not just existence), preferring standard defaults over custom configuration, and stopping the coordinator from overriding a correct implementer answer. Each round shipped the fixes that helped and rejected the ones that didn't — ending at a final combined **72/87 reliable (82%)** on terminal-bench 2.0. It's a rare public look at the actual loop of making an agent measurably better.
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-03-23" />
+
+</article>
+
+<article class="repo">
+
+### [obra/pepper-x](https://github.com/obra/pepper-x)
+
+<p class="repo-desc">A voice-dictation desktop app for GNOME — Rust and GTK, local transcription, text insertion into any app.</p>
+
+A new project, 82 commits from design doc to a working dictation loop. Built as a Rust workspace with a GTK app shell, a session state machine, and a GNOME 48 extension for modifier-only recording triggers, it transcribes locally via sherpa-onnx and then faces the hard part — getting text into whatever app has focus. That drove a layered insertion strategy with several fallbacks: accessibility APIs, terminal string injection, clipboard, and a uinput helper.
+
+<RepoStat org="obra" name="pepper-x" week="2026-03-23" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/terminal-bench-analysis](https://github.com/prime-radiant-inc/terminal-bench-analysis)
+
+<p class="repo-desc">A Datasette-powered analysis of the terminal-bench 2.0 leaderboard.</p>
+
+A new repo from **Simon Willison** (12 commits): a GitHub Actions workflow mirrors result files from the terminal-bench-2 leaderboard, builds them into a SQLite database, and deploys it via Datasette Lite on GitHub Pages — with COG-powered SQL queries embedded right in the README and "Run query" links after each block. The data-fetch commits are automated. (Line counts are suppressed here: the bulk of the diff is mirrored leaderboard data, not authored code.)
+
+<RepoStat org="prime-radiant-inc" name="terminal-bench-analysis" week="2026-03-23" />
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/engineering-notebook](https://github.com/prime-radiant-inc/engineering-notebook)
+
+<p class="repo-desc">A local tool that turns agent session transcripts into a searchable, summarized journal.</p>
+
+A quieter 7 commits, but the week's best for outside participation: contributions from **rodbegbie** (2), **peteror**, **gcarothers**, and **dimdasci**.
+
+<RepoStat org="prime-radiant-inc" name="engineering-notebook" week="2026-03-23" />
+
+</article>
+
+<article class="repo">
+
+### [obra/episodic-memory](https://github.com/obra/episodic-memory)
+
+<p class="repo-desc">A memory system that gives agents recall across sessions.</p>
+
+4 commits, including one from outside contributor **schuyler**.
+
+<RepoStat org="obra" name="episodic-memory" week="2026-03-23" />
+
+</article>
+
+Rounding out the week: **superpowers** (17 commits), **clearance** (10), and **sprout** (10) all kept ticking; **LLM.swift** took a Qwen template fix; and **github-triage**, **scribble**, **stockyard**, and the superpowers-lab/marketplace repos saw small maintenance commits.
+
+</section>
