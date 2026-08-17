@@ -1,0 +1,129 @@
+---
+title: "sprout's 545-commit sprint, serf grows a TUI, and a wave of new agent tooling"
+week: "Week of February 23, 2026"
+dateStart: 2026-02-23
+dateEnd: 2026-03-01
+pubDate: 2026-03-01
+summary: "sprout — a self-improving agent framework — lands the single largest repo-week in the whole backfill at 545 commits, serf gains a terminal UI and model picker, the engineering-notebook gets a three-panel redesign, and a cluster of new plugins and tiny tools ship alongside external contributions."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+<section class="summary">
+
+The busiest week in the entire backfill, driven by one repo. **sprout** — a from-scratch agent framework that watches its own failures and rewrites itself to avoid them — landed 545 commits in seven days, more than any other repo-week we've recorded. Around it, **serf** grew a real terminal UI, the **engineering-notebook** got a ground-up redesign, and a scatter of new plugins and single-purpose tools shipped across both orgs.
+
+<WeekSummary week="2026-02-23" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/sprout](https://github.com/prime-radiant-inc/sprout)
+
+<p class="repo-desc">A self-improving agent framework: it detects its own "stumbles" — retries, repeated tool calls, dead ends — and rewrites its genome to avoid repeating them.</p>
+
+545 commits in a single week — the largest repo-week in the backfill. The work is visibly spec-driven, with commit after commit citing section numbers: retry-stumble detection (§7.3), improvement evaluation that compares stumble rates before and after a change (§8.6), concurrent delegation (§2.5), an immutable kernel that rejects agent names shadowing primitives, and a collapse of per-agent tools down to a single `delegate` primitive restricted to subagents. Midweek it grew an interactive terminal — Ink/React, a model picker, ULID-based session IDs, a session picker, and scroll-mode indicators. (Line counts are suppressed for this card: a large block of the diff is recorded VCR test cassettes, not hand-authored code.)
+
+<RepoStat org="prime-radiant-inc" name="sprout" week="2026-02-23" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/serf](https://github.com/prime-radiant-inc/serf)
+
+<p class="repo-desc">An agent framework in Go — the runtime, prompt engineering, and now a terminal UI.</p>
+
+127 commits of steady building. A heavy strand of prompt engineering — capability-confidence logging, an "analysis paralysis circuit breaker," adversarial self-review, TDD enforcement against pre-judging a task infeasible, and a running theme that every task is solvable and should be decomposed rather than declared impossible. On the runtime side: parallel tool calls for OpenAI, superpowers skills embedded directly into the binary, a ModelPicker and `/model` command, session-identity reset via `/clear`, AbortSignal threaded through primitive execution, and resumed-conversation history in the TUI.
+
+<RepoStat org="prime-radiant-inc" name="serf" week="2026-02-23" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/engineering-notebook](https://github.com/prime-radiant-inc/engineering-notebook)
+
+<p class="repo-desc">A local tool that turns agent session transcripts into a searchable, summarized journal.</p>
+
+30 commits and a full UX redesign: a three-panel layout shell with an "Ink & Paper" style, rewritten conversation, journal, and project views wired together with HTMX partial routes. It also learned to extract "open questions" during summarization and surface them in entry cards, to skip non-journal-worthy and sub-agent sessions, and to ingest Codex sessions. A calendar Gantt view with an iCal feed landed, and the project was prepared for open-source release.
+
+<RepoStat org="prime-radiant-inc" name="engineering-notebook" week="2026-02-23" />
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/claude-plugin-cxdb-integration](https://github.com/prime-radiant-inc/claude-plugin-cxdb-integration)
+
+<p class="repo-desc">A plugin that streams Claude Code session events into cxdb for observability.</p>
+
+A new repo, 19 commits from initial commit to a working observability plugin: a hooks-routing manifest, a canonical type bundle for ConversationItem v3, and the full set of lifecycle hooks — session start/stop, pre-compact, post-tool-use buffering, user-prompt, and subagent-stop — with defensive `jq` guards and atomic writes throughout.
+
+<RepoStat org="prime-radiant-inc" name="claude-plugin-cxdb-integration" week="2026-02-23" />
+
+</article>
+
+<article class="repo">
+
+### [obra/packnplay](https://github.com/obra/packnplay)
+
+<p class="repo-desc">A Go tool for running Claude Code inside throwaway Docker containers.</p>
+
+7 commits, and the week's busiest for outside contributions: **adamehirsch** (2 commits), **AlexEdgcomb** (1), and **statico** (1) landed work alongside Jesse — a native Claude Code installer with PATH handling and short flags, Docker container-name sanitization, and a warning when gitconfig has SSH `insteadOf` rules without SSH keys.
+
+<RepoStat org="obra" name="packnplay" week="2026-02-23" />
+
+</article>
+
+<article class="repo">
+
+### [obra/smallest-agent](https://github.com/obra/smallest-agent)
+
+<p class="repo-desc">A code-golf project: a working coding agent in as few bytes as possible.</p>
+
+10 commits of pure golfing — 719 bytes down to a 498-byte safe variant, via a `for`-init packing trick and variable hoisting, with the TypeScript variant dropped to keep the sources aligned.
+
+<RepoStat org="obra" name="smallest-agent" week="2026-02-23" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/scenarios](https://github.com/prime-radiant-inc/scenarios)
+
+<p class="repo-desc">A prompt-injection test suite for LLM agents.</p>
+
+6 commits from Simon Willison — an Apache 2.0 license, a fix removing a `|| true` that had been hiding execution failures, and documentation tidying.
+
+<RepoStat org="prime-radiant-inc" name="scenarios" week="2026-02-23" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/github-triage](https://github.com/prime-radiant-inc/github-triage)
+
+<p class="repo-desc">A Claude Code plugin for triaging and reviewing GitHub PRs.</p>
+
+A new plugin, 6 commits: the initial version plus review-workflow skills — checking in with the user before merging, test-writing and prototype patterns, and rebase/"REVIEW NEEDED" nuance.
+
+<RepoStat org="prime-radiant-inc" name="github-triage" week="2026-02-23" />
+
+</article>
+
+Rounding out the week were a run of releases in the superpowers ecosystem: **superpowers-chrome** v1.8.0 (dynamic CDP port allocation, viewport emulation, full-page screenshots, HiDPI fixes), **claude-session-driver** v1.0.1, and **double-shot-latte** v1.2.0, all tracked by version bumps in **superpowers-marketplace**. **superpowers** itself took a single-line hook fix from outside contributor **atian8179**.
+
+</section>

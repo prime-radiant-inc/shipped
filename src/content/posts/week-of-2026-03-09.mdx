@@ -1,0 +1,93 @@
+---
+title: "superpowers reaches v5.0, sprout adds live pricing, stockyard gets command queues"
+week: "Week of March 9, 2026"
+dateStart: 2026-03-09
+dateEnd: 2026-03-15
+pubDate: 2026-03-15
+summary: "superpowers ships a major v5.0 release with visual brainstorming and a zero-dependency server, drawing contributions from half a dozen people outside the org; sprout wires in live model pricing; and stockyard builds a custom Firecracker kernel and a command-queue system."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+<section class="summary">
+
+A release-heavy week. **superpowers** crossed into v5.0 — three releases in seven days — with a visible surge of outside contributors. **sprout** taught itself to price its own token usage from live data, and **stockyard** returned with low-level VM infrastructure: a custom Firecracker kernel and an arbitrary-command execution system.
+
+<WeekSummary week="2026-03-09" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework and software-development methodology.</p>
+
+The week's biggest community moment: superpowers shipped **v5.0.0** — visual brainstorming, document review loops, architecture guidance — followed quickly by v5.0.1 and v5.0.2. Highlights included a native Gemini CLI extension (replacing an MCP server), a rewrite of the brainstorm server to zero runtime dependencies, subagent context-isolation principles across the delegation skills, and a run of cross-platform hook fixes spanning Windows, Linux, and bash 5.3+. Jesse wrote the bulk (47 commits), with a steady stream of outside help: **savvyinsight** and **mvanhorn** (2 each), plus **ynyyn**, **samuelcsouza**, and **daniel-graham**; staff engineer **Drew Ritter** contributed one. (Line counts are suppressed here — a large swing in the diff is a vendored-dependency swap, not authored code.)
+
+<RepoStat org="obra" name="superpowers" week="2026-03-09" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/sprout](https://github.com/prime-radiant-inc/sprout)
+
+<p class="repo-desc">A self-improving agent framework that detects its own failures and rewrites its genome to avoid them.</p>
+
+116 commits. The headline feature was live model pricing: OpenRouter added as a pricing source with dual-source fetching, a cache-fallback path, cached-token pricing folded into cost computation, and the pricing table threaded through the WebSocket snapshot to the web client. Elsewhere sprout gained human-friendly mnemonic names for agents (shown in the sidebar, thread header, and delegation cards), inactivity-based agent timeouts built on `AbortController`, and a batch of TUI and web display refinements.
+
+<RepoStat org="prime-radiant-inc" name="sprout" week="2026-03-09" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/stockyard](https://github.com/prime-radiant-inc/stockyard)
+
+<p class="repo-desc">A microVM-orchestration daemon — ZFS-backed, Firecracker VMs managed over gRPC.</p>
+
+39 commits, all from staff engineer **Matt Windbrook**. Low-level infrastructure work: a custom Firecracker kernel built with TUN and nftables support, ephemeral Tailscale nodes for VMs, and native Claude Code installed into each VM. The larger effort was a command-queue system — a SQLite-backed schedule of arbitrary commands executed in VMs over vsock, with privilege dropping, gRPC handlers, and matching CLI subcommands — which also let the daemon shed its old coupling to a specific git repo and ref.
+
+<RepoStat org="prime-radiant-inc" name="stockyard" week="2026-03-09" />
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">An LLM-agent evaluation harness — runs scenarios against agents through CLI, web, and TUI adapters.</p>
+
+30 commits building out the web UI: an app shell with sidebar navigation, a story-card editor, a runs list with detail views, a "New Run" modal, and a live run view streaming CDP screencast frames over WebSocket with video playback. It also hardened several path-traversal vulnerabilities, added product-grade UX polish, and — notably — renamed the product from "vet" to gauntlet.
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-03-09" />
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clearance](https://github.com/prime-radiant-inc/clearance)
+
+<p class="repo-desc">A native macOS markdown editor — local-first, with a network-blocked rendering view.</p>
+
+11 commits of follow-up after last week's v1, including a contribution from outside contributor **gigamonkey**.
+
+<RepoStat org="prime-radiant-inc" name="clearance" week="2026-03-09" />
+
+</article>
+
+Also this week: **beeper-message-sync** took 9 commits; **scribble** (4) and **serf** (6) had quieter weeks; **llm-proxy** took a single commit; and the **superpowers-marketplace** and **homebrew-tap** repos saw their usual release-automation bumps (the homebrew tap's version bump was pushed by CI).
+
+</section>
