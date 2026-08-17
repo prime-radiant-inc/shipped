@@ -167,6 +167,38 @@
     <summary>A ninety-commit build stands up an entire household document-Q&amp;A product — backend, iOS app, and an evaluation harness — while a new GNOME extension turns minimized windows into draggable &apos;stamps,&apos; and stockyard tunes a macOS microVM down to a 1.24-second cold boot.</summary>
   </entry>
   <entry>
+    <title>serf begins, Wayback recovery, Beeper sync, llm-proxy adds Bedrock</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-09" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-09</id>
+    <updated>2026-02-15T00:00:00.000Z</updated>
+    <published>2026-02-15T00:00:00.000Z</published>
+    <summary>An agent framework called serf lands its foundation in a single enormous week, a Wayback Machine recovery tool and a Beeper message archiver both ship, llm-proxy gains AWS Bedrock support, and superpowers reaches v4.3.0 with outside contributors.</summary>
+  </entry>
+  <entry>
+    <title>The session viewer arrives, superpowers v4.2.0, scenarios tests prompt injection</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-02" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-02-02</id>
+    <updated>2026-02-08T00:00:00.000Z</updated>
+    <published>2026-02-08T00:00:00.000Z</published>
+    <summary>A session-explorer web app lands in a single week of heavy building, superpowers ships v4.2.0 with Windows fixes and Codex native skill discovery, and the scenarios project turns into a real prompt-injection test suite.</summary>
+  </entry>
+  <entry>
+    <title>Moltipass takes shape, Scribble migrates to the Agent SDK, llm-proxy&apos;s release train</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-01-26" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-01-26</id>
+    <updated>2026-02-01T00:00:00.000Z</updated>
+    <published>2026-02-01T00:00:00.000Z</published>
+    <summary>A new iOS client for Moltbook lands its first build, the Scribble bot migrates onto the Agent SDK with a dual-session architecture, and llm-proxy shipped five releases in a week as it grew agent-observability features.</summary>
+  </entry>
+  <entry>
+    <title>Scribble comes online, faster VM boots, llm-proxy v0.2.0</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-01-19" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-01-19</id>
+    <updated>2026-01-25T00:00:00.000Z</updated>
+    <published>2026-01-25T00:00:00.000Z</published>
+    <summary>A Slack-native assistant bot lands its first orchestrator, the Firecracker VM stack roughly halves its boot time, llm-proxy ships Loki export in v0.2.0, and superpowers reaches v4.1.x with outside contributors turning up across the ecosystem.</summary>
+  </entry>
+  <entry>
     <title>stockyard&apos;s foundation lands, lace gains skills and todos, llm-proxy v0.1.0</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-01-12" />
     <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-01-12</id>
