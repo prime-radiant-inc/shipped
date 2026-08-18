@@ -15,6 +15,13 @@ src/pages/            index + per-post routes
 src/styles/           global.css (featured vs second-tier styling lives here)
 data/                 recon JSON (raw activity data pulled from the GitHub API)
 tools/gather.py       regenerates data/recon-*.json for an arbitrary N-week window
+tools/gen_stats.py    reads a (ground-truth-corrected) recon JSON, emits
+                      src/data/weekly-stats.json
+tools/repo-report     <repo> <since> <until> [-o OUTPUT] — one source-material
+                      Markdown file per repo+window (full commit messages,
+                      resolved GitHub-login contributors, diffstat) for
+                      authoring posts/backfills/corrections from; see its own
+                      docstring for the diffstat-source-of-truth details
 drafts/               per-week FACTUAL briefs (bullet facts, not prose) —
                       turn these into the actual posts in src/content/posts/
 ```
@@ -59,6 +66,15 @@ no access to the broker and expects the token to already be in the
 environment when it runs; see the docstring in `tools/gather.py`. Public
 repos only; forks are excluded from the "created in window" FEATURED trigger
 (their `created_at` is the fork date, not the upstream project's).
+
+`tools/repo-report` needs the same token and produces per-repo/per-window
+source material (full commit list, resolved contributor logins, diffstat) —
+used to hand-correct `data/recon-*.json`/`src/data/weekly-stats.json` cells
+when `gather.py`'s shallow-clone numstat gets a diffstat wrong (e.g. a
+merge-commit LOC over/under-count, or a fork inheriting upstream history).
+It was previously only a box-local script; this is the checked-in, versioned
+copy that produced the currently-published numbers — use this one, not a
+local copy anywhere else, so the site's own history can regenerate itself.
 
 Output: `data/recon-<N>wk-<YYYYMMDD>.json`.
 
