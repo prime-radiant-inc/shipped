@@ -1,0 +1,155 @@
+---
+title: "Two renames and a new mount: evener (formerly serf), ledger's move to chit, and automatic-sshfs"
+week: "Week of August 17, 2026"
+dateStart: 2026-08-17
+dateEnd: 2026-08-23
+pubDate: 2026-08-21
+summary: "The most recent week, still in progress: automatic-sshfs goes public and gets built partly by its own coding-agent tooling, ledger cuts v0.2.0 and v0.3.0 while renaming itself to chit at the packaging layer, winpepper cuts an outside-contributed alpha, and serf completes a full rename to evener across a very large week of commits."
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Two unrelated renames collided this week, so it's worth naming them up front so they don't get tangled in the reading: **`prime-radiant-inc/serf` is now `prime-radiant-inc/evener`** — a full GitHub repo rename, same non-interactive coding agent covered in past posts as "serf," wearing its new name from here on. Separately, **the `ledger` tool is becoming `chit`** at the packaging and binary layer — the GitHub repo is still named `ledger`, but the Homebrew formula, release assets, and command surface all now say `chit`. Around those two, **automatic-sshfs** went public — built in large part by the (recently renamed) evener agent working alongside its owner — and **winpepper** cut an outside-contributed alpha. This week is still open: the data below runs through midday Friday, not the full calendar week.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-08-17" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/automatic-sshfs](https://github.com/prime-radiant-inc/automatic-sshfs)
+
+<p class="repo-desc">Automatically mount remote filesystems over SSH on macOS via FUSE-T and ControlMaster.</p>
+
+<RepoStat org="prime-radiant-inc" name="automatic-sshfs" week="2026-08-17" />
+
+Built start-to-finish in about a day: SSH-config enumeration with `Include`-directive support, a pure reconcile diff of desired vs. actual mount sets, control-path resolution, FUSE-T mount/unmount wiring, a `launchd` install/uninstall path with `WatchPaths`, and a CLI `list` command — capped with a review-findings cleanup pass (cycle guard, prereq check, control-path detection, naming). A meaningful share of the docs and fix commits are authored under the `evener` identity rather than a human name — the `evener` coding-agent tool (see below) committing autonomously while helping build this repo, not an outside contributor.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/ledger](https://github.com/prime-radiant-inc/ledger)
+
+<p class="repo-desc">Durable, git-backed working-state for coding agents: append-only ledgers with identity, evidence, cursors, and agent-curated roll-ups.</p>
+
+<RepoStat org="prime-radiant-inc" name="ledger" week="2026-08-17" />
+
+Two tagged releases, and the headline is the in-flight rename to `chit` landing across the CLI surface, release assets, and doctrine harnesses (the bare `ledger` name collides with homebrew-core's own `ledger-cli`) in the same window as a large issue-tracking feature arc: a self-service cycle-breaker for a deadlocked board (holder-blind detection, paste-ready break suggestions), a GitHub-issues bridge built through several spec-revision rounds with a live acceptance trial, and an offline-first sync design — git-remote-based, deterministic merge plus lease-push — that went through two corrective rewrite rounds before landing.
+
+</article>
+
+<article class="repo">
+
+### [obra/winpepper](https://github.com/obra/winpepper)
+
+<p class="repo-desc">Windows-native local dictation: hold a hotkey, speak, release — cleaned-up words appear in the focused app. Parakeet TDT v3 ASR + LlamaSharp cleanup, all local.</p>
+
+<RepoStat org="obra" name="winpepper" week="2026-08-17" />
+
+A small alpha bump: dropped the Windows 11 22H2+ install gate, plus a packaging fix. Both commits are from outside contributor **Dan Shapiro** — this is a personal project of Jesse's, not a fork, that an outside contributor is actively shipping into.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-08-17" />
+
+By far the highest-volume repo this week, even without a release: **the serf → evener rename** swept the entire codebase — Go module path, identifiers, `cmd/` directories, the frontend package and manifest, markdown docs. Several of the largest diffs this week are this mechanical rename, not net-new feature lines. Underneath it: a Makefile decomposition into self-documenting per-family targets, an inline-subagent widget redesign, transcript-autoscroll fixes, an OpenAI Responses effort-ladder catalog resolution, a hub-frontend sidebar chrome pass, and a string of issue closures. Every commit and every sampled merged PR this week resolves to Jesse Vincent as author and merger, plus routine dependency bumps — no outside PR authors turned up in a spot-check across the range.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">Behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-08-17" />
+
+Two threads: an env-credential-scoping arc (scoped container leases, immutable rollback, canonical auth-type validation, several review-driven fix rounds) and a "quorum campaign platform" spec that went through an adversarial multi-reviewer round before an expected-check manifest extractor and multiset-compare feature landed on top of it.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/homebrew-tap](https://github.com/prime-radiant-inc/homebrew-tap)
+
+<p class="repo-desc">Homebrew tap for Prime Radiant tools, including formulae for llm-proxy and beeper-message-sync.</p>
+
+<RepoStat org="prime-radiant-inc" name="homebrew-tap" week="2026-08-17" />
+
+Retired the `ledger` formula in favor of `chit` — the name collision with homebrew-core's `ledger-cli` finally forcing the issue — tying directly into the rename above. The release-automation bot picked up `ledger`'s last release under the old name and `chit`'s first release under the new one.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/ledger-memory](https://github.com/prime-radiant-inc/ledger-memory)
+
+<p class="repo-desc">Ledger-backed persistent memory plugin for Claude Code.</p>
+
+<RepoStat org="prime-radiant-inc" name="ledger-memory" week="2026-08-17" />
+
+One commit, itself a small release, whose whole content is following the `ledger` → `chit` rename: binary resolution now prefers `chit` with a `ledger` fallback, and the raw-write guard was extended to deny both binary names.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/teststrip](https://github.com/prime-radiant-inc/teststrip)
+
+<p class="repo-desc">macOS photo culling app — catalog-first, non-destructive, AI-assisted. Early development; not ready for use.</p>
+
+<RepoStat org="prime-radiant-inc" name="teststrip" week="2026-08-17" />
+
+A debt-cull pass closing out a batch of tracked issues: import-test flakiness, a stack-partition cache, saved-search wording, a dead `timelineDays` field, a test-fixture consolidation into one shared support file, a persistence hazard fix, and a view-modifier-chain refactor.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/shipped](https://github.com/prime-radiant-inc/shipped)
+
+<p class="repo-desc">A weekly log of what Prime Radiant and obra shipped.</p>
+
+<RepoStat org="prime-radiant-inc" name="shipped" week="2026-08-17" />
+
+Self-referential this week: backfill work landed for earlier historical weeks, plus a fix for a week-total LOC leak where the week-summary widget was summing suppressed cells it should have excluded.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">A lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-08-17" />
+
+Five merged PRs, all internally ticket-tagged: pinning what bare model aliases and defaults mean in the catalog, sizing the preserved compaction tail to a model's real context window, letting an over-context-window session compact itself back out, marking which restart interrupted a job so the job list stays readable, and a lint-breaking unused-import cleanup.
+
+</article>
+
+<p class="caveat"><em>The remaining active repo — <code>claude-plugin-stats</code> — had only bot-driven activity this week (the daily install-stats scrape and chart rebuild), with no human commits.</em></p>
+
+</section>

@@ -13004,5 +13004,959 @@
         "html_url": "https://github.com/obra/wayback-restorer"
       }
     }
+  },
+  "2026-08-17": {
+    "summary": {
+      "repos_active": 11,
+      "featured_count": 3,
+      "second_tier_count": 8,
+      "commits": 1122,
+      "merged_prs": 137,
+      "loc_added": 466672,
+      "loc_removed": 223965,
+      "contributors": 7,
+      "tagged_releases": 3,
+      "commit_only_bumps": 2
+    },
+    "repos": {
+      "prime-radiant-inc/homebrew-tap": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 2
+          },
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 44,
+        "loc_removed": 44,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Homebrew tap for Prime Radiant tools, including formulae for llm-proxy and beeper-message-sync.",
+        "html_url": "https://github.com/prime-radiant-inc/homebrew-tap"
+      },
+      "prime-radiant-inc/evener": {
+        "commits": 872,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 865
+          },
+          {
+            "name": "dependabot[bot]",
+            "count": 5
+          },
+          {
+            "name": "Ada Sen",
+            "count": 2
+          }
+        ],
+        "loc_added": 338788,
+        "loc_removed": 204254,
+        "merged_prs": [
+          {
+            "number": 309,
+            "title": "Split the Makefile into six family files and make every target self-documenting",
+            "merged_at": "2026-08-21T06:05:13Z"
+          },
+          {
+            "number": 295,
+            "title": "feat(web): redesign the inline subagent widget as the Rail \u00d7 Quote card",
+            "merged_at": "2026-08-21T02:22:21Z"
+          },
+          {
+            "number": 292,
+            "title": "Fix transcript autoscroll: open at bottom, disable when scrolled back",
+            "merged_at": "2026-08-20T23:04:46Z"
+          },
+          {
+            "number": 294,
+            "title": "Resolve OpenAI Responses web search and effort ladder from the catalog",
+            "merged_at": "2026-08-20T22:37:40Z"
+          },
+          {
+            "number": 291,
+            "title": "feat(hub-frontend): sidebar chrome modernization + shared row right slot (revival of #250)",
+            "merged_at": "2026-08-20T18:50:35Z"
+          },
+          {
+            "number": 287,
+            "title": "build(deps): bump goreleaser/goreleaser-action from 6 to 7",
+            "merged_at": "2026-08-20T07:35:55Z"
+          },
+          {
+            "number": 286,
+            "title": "build(deps): bump actions/checkout from 6 to 7",
+            "merged_at": "2026-08-20T07:35:35Z"
+          },
+          {
+            "number": 285,
+            "title": "build(deps): bump actions/download-artifact from 4 to 8",
+            "merged_at": "2026-08-20T07:35:32Z"
+          },
+          {
+            "number": 284,
+            "title": "build(deps): bump actions/setup-node from 6 to 7",
+            "merged_at": "2026-08-20T07:35:28Z"
+          },
+          {
+            "number": 283,
+            "title": "build(deps): bump actions/upload-artifact from 4 to 7",
+            "merged_at": "2026-08-20T07:35:24Z"
+          },
+          {
+            "number": 278,
+            "title": "infra: standardize build/test/lint/release tooling",
+            "merged_at": "2026-08-20T07:02:02Z"
+          },
+          {
+            "number": 269,
+            "title": "chore(coverage): re-bless fuzz coverage ratchets, honestly (supersedes #238)",
+            "merged_at": "2026-08-20T05:31:51Z"
+          },
+          {
+            "number": 272,
+            "title": "fix(agent): remove unused Session.SetTimeout public API",
+            "merged_at": "2026-08-20T05:23:32Z"
+          },
+          {
+            "number": 279,
+            "title": "fix(fuzz): register TestForceCompactDoubleLayerSeqFuzz and gate the registry check",
+            "merged_at": "2026-08-20T04:53:07Z"
+          },
+          {
+            "number": 271,
+            "title": "Fixes #157: widen the symbol audit to TS/TSX/JS/JSX",
+            "merged_at": "2026-08-20T04:52:26Z"
+          },
+          {
+            "number": 280,
+            "title": "Fixes #153: unify Makefile and scripts delete-safety audits on one hardened predicate",
+            "merged_at": "2026-08-20T04:46:42Z"
+          },
+          {
+            "number": 259,
+            "title": "test(serve): await published model on the G2 premise read (#251)",
+            "merged_at": "2026-08-20T04:21:09Z"
+          },
+          {
+            "number": 273,
+            "title": "Fixes #168: land dk86 double-layer compaction sweep as property coverage",
+            "merged_at": "2026-08-20T01:51:05Z"
+          },
+          {
+            "number": 268,
+            "title": "test: rebuild the assertion audit \u2014 8 files, mutation-checked",
+            "merged_at": "2026-08-20T01:48:12Z"
+          },
+          {
+            "number": 274,
+            "title": "Fixes #156",
+            "merged_at": "2026-08-20T01:33:52Z"
+          },
+          {
+            "number": 275,
+            "title": "Fixes #183: enforce trap-before-mkdir ordering and path-key the rm allowlist",
+            "merged_at": "2026-08-20T01:27:42Z"
+          },
+          {
+            "number": 258,
+            "title": "test: retry npm-shim execs on ETXTBSY (#248)",
+            "merged_at": "2026-08-20T00:40:52Z"
+          },
+          {
+            "number": 253,
+            "title": "feat(hub): render read_file image reads at up to 600px square, no byte-count header",
+            "merged_at": "2026-08-19T21:37:30Z"
+          },
+          {
+            "number": 267,
+            "title": "revert: back out the unreviewed RailRow chrome commits that broke main (Fixes #266, fixes #265)",
+            "merged_at": "2026-08-19T21:37:15Z"
+          },
+          {
+            "number": 260,
+            "title": "test(e2e): join daemon shutdown in hub-stack teardown (#249)",
+            "merged_at": "2026-08-19T21:35:03Z"
+          },
+          {
+            "number": 262,
+            "title": "test(agent): deterministic regression test for the #243 drain-return flake",
+            "merged_at": "2026-08-19T21:32:31Z"
+          },
+          {
+            "number": 261,
+            "title": "fuzz-bisect: parse git's quoted 'bad' term in the convergence line (#245)",
+            "merged_at": "2026-08-19T21:24:58Z"
+          },
+          {
+            "number": 236,
+            "title": "fix(wave): group-kill suite process group on green exit",
+            "merged_at": "2026-08-19T20:55:53Z"
+          },
+          {
+            "number": 256,
+            "title": "test(agent): deflake cold-attention run-open assertion (#239)",
+            "merged_at": "2026-08-19T20:54:07Z"
+          },
+          {
+            "number": 247,
+            "title": "Go dev tooling, done properly: supersedes #222 and #226",
+            "merged_at": "2026-08-19T18:55:57Z"
+          },
+          {
+            "number": 250,
+            "title": "Sidebar UX: flush layout, footer-only branding, one \u2630 toggle, bigger icons, shared row right slot",
+            "merged_at": "2026-08-19T18:47:39Z"
+          },
+          {
+            "number": 242,
+            "title": "fix(web): give spawn the composer's control row on a phone (#198)",
+            "merged_at": "2026-08-19T17:57:36Z"
+          },
+          {
+            "number": 244,
+            "title": "fix(gate): ungate the transcript generator tests so the merge gate runs them",
+            "merged_at": "2026-08-19T17:38:14Z"
+          },
+          {
+            "number": 240,
+            "title": "fix(guard): kill Crashpad helper process that escapes the process group",
+            "merged_at": "2026-08-19T17:27:19Z"
+          },
+          {
+            "number": 234,
+            "title": "fix(ui): cap welcome .actions width and override resume button nowrap",
+            "merged_at": "2026-08-19T17:23:10Z"
+          },
+          {
+            "number": 232,
+            "title": "fix(hub): extend Claude 5 request shape to Opus 4.7/4.8",
+            "merged_at": "2026-08-19T17:11:26Z"
+          },
+          {
+            "number": 231,
+            "title": "fix(hub): stamp DivergenceTurn on hub-synthesized fork SessionMetas",
+            "merged_at": "2026-08-19T17:11:21Z"
+          },
+          {
+            "number": 237,
+            "title": "fix(agent): close drain re-enqueue race during finalization",
+            "merged_at": "2026-08-19T17:08:19Z"
+          },
+          {
+            "number": 233,
+            "title": "fix(test): reset toast store between LaunchConfigForm tests",
+            "merged_at": "2026-08-19T16:54:11Z"
+          },
+          {
+            "number": 230,
+            "title": "fix(test): empty the deadline-audit allowlist",
+            "merged_at": "2026-08-19T16:54:07Z"
+          },
+          {
+            "number": 229,
+            "title": "fix(delegate): preserve durable status in send result against packet clobber",
+            "merged_at": "2026-08-19T16:54:03Z"
+          },
+          {
+            "number": 228,
+            "title": "fix(test): derive testmain scrub lists from envvars.All()",
+            "merged_at": "2026-08-19T16:54:00Z"
+          },
+          {
+            "number": 223,
+            "title": "fix(test): drop dead 5s handler sleep in cancel tests",
+            "merged_at": "2026-08-19T16:53:57Z"
+          },
+          {
+            "number": 227,
+            "title": "fix(test): finish the deadline sweep's 5s/10s residue and restore periodicity",
+            "merged_at": "2026-08-19T16:52:57Z"
+          },
+          {
+            "number": 235,
+            "title": "fix(e2e): keep hub-stack tests off the marketplace network (teardown race)",
+            "merged_at": "2026-08-19T16:52:53Z"
+          },
+          {
+            "number": 224,
+            "title": "fix(gate): preflight fails closed when the capability script can't run",
+            "merged_at": "2026-08-19T16:16:56Z"
+          },
+          {
+            "number": 225,
+            "title": "fix(layoutguard): reject a widthMatrix placeholder with no matrix declared",
+            "merged_at": "2026-08-19T16:05:03Z"
+          },
+          {
+            "number": 220,
+            "title": "fix(build): cross-compile cmd/evener-dev for GOOS=windows",
+            "merged_at": "2026-08-19T15:50:06Z"
+          },
+          {
+            "number": 218,
+            "title": "scripts/ audit: reorganize into subdirectories, extract registry, fix crazy-pants items",
+            "merged_at": "2026-08-19T05:34:26Z"
+          },
+          {
+            "number": 217,
+            "title": "Retire ~/.evener: consolidate into XDG config/state layout",
+            "merged_at": "2026-08-19T05:46:06Z"
+          },
+          {
+            "number": 211,
+            "title": "fix(hub): queue RPC calls during AppwireClient reconnecting state",
+            "merged_at": "2026-08-19T05:00:03Z"
+          },
+          {
+            "number": 216,
+            "title": "fix(scenarios): repoint stale interrupt-marker citation (session_lifecycle.go:715 -> :720)",
+            "merged_at": "2026-08-19T04:48:02Z"
+          },
+          {
+            "number": 215,
+            "title": "fix(web): exclude issue-number refs from the hex-literal contract check",
+            "merged_at": "2026-08-19T04:43:01Z"
+          },
+          {
+            "number": 210,
+            "title": "fix(agent): pin delegate tool call rendering in session transcript",
+            "merged_at": "2026-08-19T04:34:20Z"
+          },
+          {
+            "number": 206,
+            "title": "fix(hub): keep sidebar disclosure triangle clickable over hover kebab menu",
+            "merged_at": "2026-08-19T04:12:38Z"
+          },
+          {
+            "number": 208,
+            "title": "fix(agent): park pending user steering behind SteeringHeld gate on Stop",
+            "merged_at": "2026-08-19T04:12:17Z"
+          },
+          {
+            "number": 205,
+            "title": "fix(agent): reset release-retry budget on exhaustion and reword warning",
+            "merged_at": "2026-08-19T04:08:04Z"
+          },
+          {
+            "number": 213,
+            "title": "test(agent): make Close_JoinsInFlightDispose actually prove the dispose/sweep join",
+            "merged_at": "2026-08-19T04:02:27Z"
+          },
+          {
+            "number": 212,
+            "title": "test(agent): drain FakeClock AfterFunc goroutines deterministically in sweep-cancel test",
+            "merged_at": "2026-08-19T04:02:23Z"
+          },
+          {
+            "number": 214,
+            "title": "fix(test): teach FuzzInstallScript's fake archive about evener-migrate",
+            "merged_at": "2026-08-19T04:02:19Z"
+          },
+          {
+            "number": 209,
+            "title": "fix(agent): surface specific constraint failures in ask_user argument validation",
+            "merged_at": "2026-08-19T04:02:08Z"
+          },
+          {
+            "number": 207,
+            "title": "test(agent): assert conforming event observed in ToolNameMapping_EventsUseCanonicalName",
+            "merged_at": "2026-08-19T03:51:22Z"
+          },
+          {
+            "number": 204,
+            "title": "fix(e2e): add missing need_value guard to ratelimited-provider option parsing",
+            "merged_at": "2026-08-19T03:51:17Z"
+          },
+          {
+            "number": 203,
+            "title": "fix(migrate): repair legacy-path config left over from the Serf rename",
+            "merged_at": "2026-08-19T03:14:52Z"
+          },
+          {
+            "number": 202,
+            "title": "fix(build): build-all builds evener-migrate, and the audit pins it",
+            "merged_at": "2026-08-19T02:50:51Z"
+          },
+          {
+            "number": 201,
+            "title": "fix(scripts): actually unset CI in test-timing-budget-selftest.sh",
+            "merged_at": "2026-08-19T02:44:24Z"
+          },
+          {
+            "number": 200,
+            "title": "rename: Serf \u2192 Evener (flag day)",
+            "merged_at": "2026-08-19T02:40:26Z"
+          },
+          {
+            "number": 138,
+            "title": "fix(agent): close the drain's attention/finalizing straddle race",
+            "merged_at": "2026-08-18T19:05:07Z"
+          },
+          {
+            "number": 137,
+            "title": "fix(appserver): size the outbound buffer for a real burst; log evictions",
+            "merged_at": "2026-08-18T18:27:45Z"
+          },
+          {
+            "number": 132,
+            "title": "feat(tooling): port run-module-lint to serf-dev",
+            "merged_at": "2026-08-18T17:48:16Z"
+          },
+          {
+            "number": 136,
+            "title": "fix(tui): replay coalesced key bursts as the keystrokes the sender typed (kata fazd)",
+            "merged_at": "2026-08-18T17:24:31Z"
+          },
+          {
+            "number": 123,
+            "title": "Testing-trust kata batch: gate preflight, timing budgets, deadline audit + 432-site sweep, contract audits, flake root causes",
+            "merged_at": "2026-08-18T16:59:00Z"
+          },
+          {
+            "number": 122,
+            "title": "Test-infrastructure truth batch: five katas plus a tautology excision",
+            "merged_at": "2026-08-18T16:55:59Z"
+          },
+          {
+            "number": 134,
+            "title": "chore(testing): delete the fuzz-family fake-toolchain selftests",
+            "merged_at": "2026-08-18T16:32:02Z"
+          },
+          {
+            "number": 128,
+            "title": "fix(agent): preserve cancellation evidence for externally stopped delegates",
+            "merged_at": "2026-08-18T16:21:28Z"
+          },
+          {
+            "number": 129,
+            "title": "fix(agent): give the steering-only carrier turn a real identity",
+            "merged_at": "2026-08-18T16:20:15Z"
+          },
+          {
+            "number": 126,
+            "title": "docs(testing): executed-vs-tested for cov_* drivers; assert cov_auth_instances projections",
+            "merged_at": "2026-08-18T16:04:43Z"
+          },
+          {
+            "number": 131,
+            "title": "Runtime-correctness kata batch: 96cp, g422, sc17, tbqd, fbmy",
+            "merged_at": "2026-08-18T16:04:30Z"
+          },
+          {
+            "number": 135,
+            "title": "fix(devtool): ReclaimOwn refuses the prefixes Acquire refuses",
+            "merged_at": "2026-08-18T15:59:30Z"
+          },
+          {
+            "number": 125,
+            "title": "scripts: CAS-enforced merge-into-branch, refusing merges onto a moved ref",
+            "merged_at": "2026-08-18T15:53:42Z"
+          },
+          {
+            "number": 127,
+            "title": "feat(prompts): positive phase-transition rules for diagnostic work",
+            "merged_at": "2026-08-18T15:53:30Z"
+          },
+          {
+            "number": 124,
+            "title": "fix(web): allow-list the shared node_modules realpath for Vite's dev fs guard",
+            "merged_at": "2026-08-18T15:52:09Z"
+          },
+          {
+            "number": 133,
+            "title": "fix(tooling): test-cost cleans up its own scratch",
+            "merged_at": "2026-08-18T15:51:07Z"
+          },
+          {
+            "number": 121,
+            "title": "test(hub): clear Serf's whole env so e2e reads its own fixtures",
+            "merged_at": "2026-08-18T06:30:55Z"
+          },
+          {
+            "number": 120,
+            "title": "fix(serf-dev): review fixes for the agent-shards port (follow-up to #118)",
+            "merged_at": "2026-08-18T05:50:51Z"
+          },
+          {
+            "number": 118,
+            "title": "feat(tooling): port agent-test-shards to serf-dev and retire the janitor",
+            "merged_at": "2026-08-18T05:26:42Z"
+          },
+          {
+            "number": 116,
+            "title": "Test-reliability kata batch: flake root causes, hermetic audits, guard hardening (8 katas)",
+            "merged_at": "2026-08-18T05:45:18Z"
+          },
+          {
+            "number": 115,
+            "title": "scripts: give e2e-ratelimited-provider --stop its sibling's marker gate",
+            "merged_at": "2026-08-18T04:52:46Z"
+          },
+          {
+            "number": 117,
+            "title": "docs(prompts): say when a delegate should take a worktree lane",
+            "merged_at": "2026-08-18T04:46:48Z"
+          },
+          {
+            "number": 114,
+            "title": "agent: shared-workspace delegate advisory and two posture prompt sections",
+            "merged_at": "2026-08-18T04:25:27Z"
+          },
+          {
+            "number": 102,
+            "title": "scripts: delete the selftest- selftest layers and make variable-fed deletes unrepresentable",
+            "merged_at": "2026-08-18T03:52:25Z"
+          },
+          {
+            "number": 113,
+            "title": "fix(frontend): keep interstitial steering text positioned between notification cards",
+            "merged_at": "2026-08-18T04:14:29Z"
+          },
+          {
+            "number": 112,
+            "title": "fix(google): nest Gemini tool-result images under functionResponse.parts",
+            "merged_at": "2026-08-18T04:11:57Z"
+          },
+          {
+            "number": 111,
+            "title": "fix(web): show request arguments on read_transcript and find_session_transcripts cards",
+            "merged_at": "2026-08-18T04:11:23Z"
+          },
+          {
+            "number": 110,
+            "title": "fix(tui): show recent-project dropdown while spawn Dir prefill is untouched",
+            "merged_at": "2026-08-18T04:10:24Z"
+          },
+          {
+            "number": 109,
+            "title": "fix(tui): tie every job-notification block in a joined steering event",
+            "merged_at": "2026-08-18T04:10:17Z"
+          },
+          {
+            "number": 107,
+            "title": "fix(openai): dedup trailing /v1 in modelsURL",
+            "merged_at": "2026-08-18T04:05:06Z"
+          },
+          {
+            "number": 100,
+            "title": "fix(shell): restructure AppShell workspace subscription to drop setState-during-render (kata 9r5y)",
+            "merged_at": "2026-08-18T03:24:50Z"
+          },
+          {
+            "number": 99,
+            "title": "fix(agent): fence attention wakes behind the closed-ancestor policy",
+            "merged_at": "2026-08-18T03:11:35Z"
+          },
+          {
+            "number": 105,
+            "title": "Coverage runners clean up after themselves; the janitor stops sweeping them",
+            "merged_at": "2026-08-18T03:03:33Z"
+          },
+          {
+            "number": 104,
+            "title": "test(serve): pin the mid-turn Stop park through the daemon's wake plumbing",
+            "merged_at": "2026-08-18T03:02:27Z"
+          },
+          {
+            "number": 93,
+            "title": "namer/apilog: stop retrying a spent allowance, and record the class the adapter already knew",
+            "merged_at": "2026-08-18T02:59:43Z"
+          },
+          {
+            "number": 101,
+            "title": "fix(composer): two windows where a pending send lost its queue route",
+            "merged_at": "2026-08-18T02:51:13Z"
+          },
+          {
+            "number": 96,
+            "title": "scripts: no recursive delete takes a clobberable path (third attempt at landing #75)",
+            "merged_at": "2026-08-18T02:49:27Z"
+          },
+          {
+            "number": 98,
+            "title": "test(serve): a boot-drained idle no longer satisfies the restoration milestone",
+            "merged_at": "2026-08-18T02:38:17Z"
+          },
+          {
+            "number": 92,
+            "title": "cmd/serf: stop the fake LLM reading the system prompt as a delivered frame",
+            "merged_at": "2026-08-18T02:37:19Z"
+          },
+          {
+            "number": 97,
+            "title": "e2e: a steering item is written at incorporation, not acceptance",
+            "merged_at": "2026-08-18T02:35:44Z"
+          },
+          {
+            "number": 95,
+            "title": "fakellm: name the session on every round line the driver logs",
+            "merged_at": "2026-08-18T02:35:14Z"
+          },
+          {
+            "number": 91,
+            "title": "fix(tooling): close four confirmed coverage-tooling gaps from the adversarial review",
+            "merged_at": "2026-08-17T23:52:45Z"
+          },
+          {
+            "number": 90,
+            "title": "fix(execenv): drain leader output before forced stream cleanup",
+            "merged_at": "2026-08-17T23:37:46Z"
+          },
+          {
+            "number": 88,
+            "title": "fix(agent): give the stand-down harness's warning oracle a drain barrier",
+            "merged_at": "2026-08-17T23:25:03Z"
+          },
+          {
+            "number": 86,
+            "title": "serf-doctor: post-merge follow-ups for --full-text/--text-max (PR #69)",
+            "merged_at": "2026-08-17T23:16:08Z"
+          },
+          {
+            "number": 85,
+            "title": "fix(agent): a Stop parks the queued message instead of running it (wms7)",
+            "merged_at": "2026-08-17T23:15:29Z"
+          },
+          {
+            "number": 84,
+            "title": "fix(scenarios): repair six clusters of scenario-card rot against shipped behavior",
+            "merged_at": "2026-08-17T23:08:20Z"
+          },
+          {
+            "number": 75,
+            "title": "scripts: no recursive delete takes a clobberable path",
+            "merged_at": "2026-08-17T23:03:38Z"
+          },
+          {
+            "number": 83,
+            "title": "fix(fakellm): keep a cancelled round's goroutine off the session's state",
+            "merged_at": "2026-08-17T23:00:40Z"
+          },
+          {
+            "number": 73,
+            "title": "scripts: give selftest scratch a guard, and its cleanup no path to get wrong",
+            "merged_at": "2026-08-17T22:58:12Z"
+          },
+          {
+            "number": 82,
+            "title": "fix(web): terminal protocol reason on initial connect + ticking delegate quiet age",
+            "merged_at": "2026-08-17T22:52:44Z"
+          },
+          {
+            "number": 81,
+            "title": "fix(delegatestore): recover from a torn version header instead of failing every Open",
+            "merged_at": "2026-08-17T22:52:36Z"
+          },
+          {
+            "number": 74,
+            "title": "agent: decide before claiming the queue head on an interrupt",
+            "merged_at": "2026-08-17T22:51:37Z"
+          },
+          {
+            "number": 72,
+            "title": "agent: weigh conversation, not hook records, in the re-injection detector",
+            "merged_at": "2026-08-17T22:48:38Z"
+          },
+          {
+            "number": 71,
+            "title": "server: guarantee the queued-input wake instead of dropping it",
+            "merged_at": "2026-08-17T22:48:13Z"
+          },
+          {
+            "number": 76,
+            "title": "composer: track a submit for its whole duration, not just its refresh",
+            "merged_at": "2026-08-17T22:46:48Z"
+          },
+          {
+            "number": 80,
+            "title": "test: seed real directories in the recent-projects RPC test",
+            "merged_at": "2026-08-17T22:40:17Z"
+          },
+          {
+            "number": 79,
+            "title": "fix(web): let the goal chip yield the composer row to Stop at phone widths",
+            "merged_at": "2026-08-17T22:40:15Z"
+          },
+          {
+            "number": 78,
+            "title": "fix(tooling): arm the scratch cleanup trap before the scratch exists",
+            "merged_at": "2026-08-17T22:40:12Z"
+          },
+          {
+            "number": 77,
+            "title": "docs: correct three delegate-doc provenance pointers against git",
+            "merged_at": "2026-08-17T22:40:08Z"
+          },
+          {
+            "number": 69,
+            "title": "doctor: let an operator read a whole turn, so an in-response loop is visible",
+            "merged_at": "2026-08-17T22:25:33Z"
+          },
+          {
+            "number": 68,
+            "title": "fix(hub): drop deleted project dirs from the recent-projects list (fixes #50)",
+            "merged_at": "2026-08-17T22:25:29Z"
+          },
+          {
+            "number": 67,
+            "title": "fix(openaicompat): reject tool-result images instead of dropping them (fixes #18)",
+            "merged_at": "2026-08-17T22:25:23Z"
+          },
+          {
+            "number": 70,
+            "title": "fix(lint): convert backward slice loops to slices.Backward",
+            "merged_at": "2026-08-17T22:24:43Z"
+          },
+          {
+            "number": 66,
+            "title": "openai: normalize a trailing /v1 in the Responses API URL (fixes #65)",
+            "merged_at": "2026-08-17T22:15:13Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/superpowers-evals": {
+        "commits": 112,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 112
+          }
+        ],
+        "loc_added": 61188,
+        "loc_removed": 7517,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs (Claude, Codex, Gemini, Kimi, and more) through a QA agent and grades them on workflow compliance against scenario criteria and deterministic post-checks.",
+        "html_url": "https://github.com/prime-radiant-inc/superpowers-evals"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 10
+          }
+        ],
+        "loc_added": 3147,
+        "loc_removed": 2909,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/teststrip": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 7
+          }
+        ],
+        "loc_added": 5545,
+        "loc_removed": 3330,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "macOS photo culling app \u2014 catalog-first, non-destructive, AI-assisted. Early development; not ready for use.",
+        "html_url": "https://github.com/prime-radiant-inc/teststrip"
+      },
+      "prime-radiant-inc/shipped": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Ada Sen",
+            "count": 3
+          }
+        ],
+        "loc_added": 4073,
+        "loc_removed": 14,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A weekly log of what Prime Radiant and obra shipped.",
+        "html_url": "https://github.com/prime-radiant-inc/shipped"
+      },
+      "prime-radiant-inc/ledger": {
+        "commits": 90,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 90
+          }
+        ],
+        "loc_added": 45456,
+        "loc_removed": 5484,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.3.0",
+            "name": "v0.3.0",
+            "published_at": "2026-08-20T20:48:09Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.2.0",
+            "name": "v0.2.0",
+            "published_at": "2026-08-20T18:55:14Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.3.0 published 2026-08-20T20:48:09Z; tagged release v0.2.0 published 2026-08-20T18:55:14Z",
+        "description": "Durable, git-backed working-state for coding agents: append-only ledgers with identity, evidence, cursors, and agent-curated roll-ups",
+        "html_url": "https://github.com/prime-radiant-inc/ledger"
+      },
+      "prime-radiant-inc/ledger-memory": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 23,
+        "loc_removed": 9,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "329422f",
+            "date": "2026-08-20T13:51:31-07:00",
+            "subject": "release 0.1.4 \u2014 the tool renamed to chit (ledger v0.3.0): binary resolution prefers chit with ledger fallback (LEDGER_BIN still wins); the raw-write guard denies BOTH names (a lingering ledger binary and the new chit can each write the store raw); chit-denial pinned by test",
+            "version": "0.1.4"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Ledger-backed persistent memory plugin for Claude Code",
+        "html_url": "https://github.com/prime-radiant-inc/ledger-memory"
+      },
+      "prime-radiant-inc/automatic-sshfs": {
+        "commits": 17,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 10
+          },
+          {
+            "name": "evener",
+            "count": 7
+          }
+        ],
+        "loc_added": 6099,
+        "loc_removed": 157,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-08-21T19:08:50Z)",
+        "description": "Automatically mount remote filesystems over SSH on macOS via FUSE-T and ControlMaster",
+        "html_url": "https://github.com/prime-radiant-inc/automatic-sshfs"
+      },
+      "obra/lace": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 5
+          }
+        ],
+        "loc_added": 2287,
+        "loc_removed": 196,
+        "merged_prs": [
+          {
+            "number": 376,
+            "title": "feat(catalog): pin what the bare model aliases and defaults mean (PRI-2918)",
+            "merged_at": "2026-08-19T03:56:59Z"
+          },
+          {
+            "number": 375,
+            "title": "fix(compaction): size the preserved tail to the model's context window (PRI-2906)",
+            "merged_at": "2026-08-19T03:53:18Z"
+          },
+          {
+            "number": 374,
+            "title": "fix(agent): let a session over the context window compact itself out of it (PRI-2903)",
+            "merged_at": "2026-08-17T06:07:47Z"
+          },
+          {
+            "number": 372,
+            "title": "fix(jobs): mark which restart interrupted a job, so the list stays readable (PRI-2902)",
+            "merged_at": "2026-08-17T02:17:47Z"
+          },
+          {
+            "number": 373,
+            "title": "fix(test): drop unused imports that broke lint on main",
+            "merged_at": "2026-08-17T01:26:21Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/winpepper": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "danshapiro",
+            "count": 2
+          }
+        ],
+        "loc_added": 22,
+        "loc_removed": 51,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.7.1-alpha",
+            "name": "v0.7.1-alpha",
+            "published_at": "2026-08-19T03:05:05Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [
+          {
+            "sha": "cfe8c42",
+            "date": "2026-08-18T19:45:32-07:00",
+            "subject": "chore(release): bump version to 0.7.1-alpha",
+            "version": "0.7.1"
+          }
+        ],
+        "featured": true,
+        "featured_reason": "tagged release v0.7.1-alpha published 2026-08-19T03:05:05Z",
+        "description": "Windows-native local dictation. Hold a hotkey, speak, release \u2014 cleaned-up words appear in the focused app. Parakeet TDT v3 ASR + LlamaSharp cleanup, all local.",
+        "html_url": "https://github.com/obra/winpepper"
+      }
+    }
   }
 }
