@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-08-14T00:00:00.000Z</updated>
+  <updated>2026-08-21T00:00:00.000Z</updated>
+  <entry>
+    <title>Two renames and a new mount: evener (formerly serf), ledger&apos;s move to chit, and automatic-sshfs</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-17" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-17</id>
+    <updated>2026-08-21T00:00:00.000Z</updated>
+    <published>2026-08-21T00:00:00.000Z</published>
+    <summary>The most recent week, still in progress: automatic-sshfs goes public and gets built partly by its own coding-agent tooling, ledger cuts v0.2.0 and v0.3.0 while renaming itself to chit at the packaging layer, winpepper cuts an outside-contributed alpha, and serf completes a full rename to evener across a very large week of commits.</summary>
+  </entry>
   <entry>
     <title>Tools that help other tools ship: everyharness, proving-it-works, and superpowers v6.3.0</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-10" />
