@@ -1,0 +1,108 @@
+---
+title: "automatic-sshfs's first real release, three winpepper alphas, and evener's REST-to-AppWire migration"
+week: "Week of August 24, 2026"
+dateStart: 2026-08-24
+dateEnd: 2026-08-30
+pubDate: 2026-08-28
+summary: "The most recent week, still in progress: automatic-sshfs cuts its first real release (known_hosts enumeration, reliable polling), winpepper ships three alpha releases fixing a dead-end first-run install and trimming its default footprint, evener spends the week migrating REST endpoints to typed AppWire, and a new toy AArch64 C compiler shows up on obra with an open question about who — or what — is driving it."
+draft: true
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Two repos earn the featured treatment this week for the same reason — a tagged release — but they're otherwise unrelated: **`prime-radiant-inc/automatic-sshfs`** cut its second release since launching last week, and **`obra/winpepper`** cut three alpha releases in quick succession. Underneath them, **`prime-radiant-inc/evener`** had its highest-velocity week yet without a release of its own, migrating a long list of REST endpoints onto a typed transport, and a new, undescribed repo — **`obra/toy-c-compiler`** — showed up authored entirely by a git identity this blog hasn't seen before. This week is still open: the data below runs through Friday evening, not the full calendar week.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-08-24" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/automatic-sshfs](https://github.com/prime-radiant-inc/automatic-sshfs)
+
+<p class="repo-desc">Automatically mount remote filesystems over SSH on macOS via FUSE-T and ControlMaster.</p>
+
+<RepoStat org="prime-radiant-inc" name="automatic-sshfs" week="2026-08-24" />
+
+A reliability-focused follow-up to last week's launch: hosts that share a control socket now symlink to one canonical mount instead of duplicating it, hosts show up from `known_hosts` even when they have no explicit config entry, and the polling loop switched to `KeepAlive` plus a watch daemon (with `StartInterval`, `PATH`, and `Setsid` fixes) so `sshfs` survives instead of silently dying. All of it shipped as v0.2.0. As with last week, every commit here is authored under the `evener` identity — the coding-agent tool, not a human — continuing to work this repo without an accompanying human commit this particular week.
+
+</article>
+
+<article class="repo">
+
+### [obra/winpepper](https://github.com/obra/winpepper)
+
+<p class="repo-desc">Windows-native local dictation: hold a hotkey, speak, release — cleaned-up words appear in the focused app. Parakeet TDT v3 ASR + LlamaSharp cleanup, all local.</p>
+
+<RepoStat org="obra" name="winpepper" week="2026-08-24" />
+
+A real feature week disguised as three alpha bumps: the MSI installer's exit dialog now offers to launch Winpepper directly, closing a dead end where a fresh install left no window open and onboarding never ran; the WinRT OCR engine pre-warms at app start; the default install shrank to a minimal, streaming-only footprint; and by the third release, the backup ASR model defaults to `None` outright, so nothing downloads without an explicit opt-in gesture. A test-robustness thread ran alongside — deterministic test-owned-window reads for the real UIA/OCR gate facts, wider scheduler-slippage margins for listen-start latency — plus one CI fix for flaky timing-sensitive tests. Every commit this week is outside contributor **Dan Shapiro** (committing under both `danshapiro` and `Dan Shapiro`) — still a personal project of Jesse's, not a fork, that an outside contributor is actively driving.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-08-24" />
+
+By far the highest-velocity repo this week, even without a release. The main thread is a REST-to-typed-AppWire migration: session deletion and rename, project archive/favorites/deletion, navigation reads, the command palette, the model catalog, git-HEAD lookups, and mobile pairing all moved off ad-hoc REST endpoints onto one typed transport, with the now-superseded REST surfaces (spawn, upgrade, tree validation, path validation) torn out once each migration landed. Alongside it: per-session vision-model configuration, inline slash-mention plugin exposure, a CI lint-lane split across runners, and a long tail of hardening fixes (delegate-attention draining, interrupt-cleanup ownership, forgiving `ask_user` headers, excluding provider retries from drain liveness). A large share of this week's raw diff is delegate-branch integration merges reintegrating work back into the mainline rather than net-new authored lines, so the line-count widget above intentionally doesn't show a diff figure for this repo this week — commits and merged PRs are unaffected and accurate. Contributors: Jesse Vincent overwhelmingly. One outside contribution landed too — **`WilliamK112`** merged a fuzz-gap-closing test PR (#474); and two commits came from Ada Sen (a release-download error-message fix and an `OLLAMA_HOST` normalization fix), under both her `ada-sen` and `Ada Sen` git identities.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">Behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-08-24" />
+
+One continuous arc: a "kernel D2" provisioning-and-instrument-snapshot design went through two competing spec revisions — a five-seat panel review absorbed into the second — before landing as a worktree-materializer module, itself hardened across four review rounds (SHA validation, symlink-safe lock reclamation, ownership-safe locking, loud failure reporting) and capped with attempt-scoped crash/seal-terminality fixes and a final multi-wave review pass. Sole author: Drew Ritter.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">Lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-08-24" />
+
+Six merged PRs, all internally ticket-tagged: a `file_find` fix for a bug that wedged a coworker session for over an hour (one container exec per entry), sizing the preserved compaction tail against a model's own self-reported context window instead of a guess, skipping a compaction breakpoint when compaction did nothing, putting the last-call input-context-token count on the usage wire, resolving personas through the session's own registry by name, and making persona failures loud with a bounded fallback. Sole author and merger: Jesse Vincent.
+
+</article>
+
+<article class="repo">
+
+### [obra/toy-c-compiler](https://github.com/obra/toy-c-compiler)
+
+<p class="repo-desc">A toy C compiler targeting AArch64 assembly output, with its own IR optimizer (no repository description set).</p>
+
+<RepoStat org="obra" name="toy-c-compiler" week="2026-08-24" />
+
+A new repo this week, though not new enough to trigger the "created this week" featured flag — it first appeared a couple of days before the window opened. Once active, it moved fast: a run of assembler-parsing fixes (`movk`/`sxtb`/`sxth`/floating-point register forms), then pass after pass of peephole optimization — self-add-chain folding, dead sign-extension elimination, redundant stack-pointer-restore elimination, load/store-pair coalescing, mov-store fusion, load-target folding — each tracked against a running in-repo notebook logging instruction-count reduction as the week went on. Every commit resolves to a single git identity, `C Compiler Builder` — which is `evener` itself, running GLM 5.2, authoring the whole repo autonomously. It's a deliberate showcase: a coding agent building a working AArch64 C compiler, IR optimizer and all, end to end. So the compiler-craft here is agent work rather than an outside human's — the same tool driving `evener`'s own high-velocity week above, pointed at a fresh target.
+
+</article>
+
+<p class="caveat"><em>The remaining active repo — <code>claude-plugin-stats</code> — had only bot-driven activity this week (the daily install-stats scrape and chart rebuild), with no human commits.</em></p>
+
+</section>

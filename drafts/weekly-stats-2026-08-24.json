@@ -1,0 +1,958 @@
+{
+  "2026-08-24": {
+    "summary": {
+      "repos_active": 7,
+      "featured_count": 2,
+      "second_tier_count": 5,
+      "commits": 1091,
+      "merged_prs": 149,
+      "loc_added": 53811,
+      "loc_removed": 4977,
+      "contributors": 10,
+      "tagged_releases": 4,
+      "commit_only_bumps": 3
+    },
+    "repos": {
+      "prime-radiant-inc/evener": {
+        "commits": 773,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 770
+          },
+          {
+            "name": "WilliamK112",
+            "count": 1
+          },
+          {
+            "name": "ada-sen",
+            "count": 1
+          },
+          {
+            "name": "Ada Sen",
+            "count": 1
+          }
+        ],
+        "loc_added": 748646,
+        "loc_removed": 135032,
+        "merged_prs": [
+          {
+            "number": 564,
+            "title": "test: isolate concurrent web process records",
+            "merged_at": "2026-08-28T21:36:12Z"
+          },
+          {
+            "number": 562,
+            "title": "refactor(server): remove daemon REST control routes",
+            "merged_at": "2026-08-28T21:35:45Z"
+          },
+          {
+            "number": 563,
+            "title": "refactor(hub): migrate daemon status to AppWire",
+            "merged_at": "2026-08-28T21:08:52Z"
+          },
+          {
+            "number": 557,
+            "title": "fix(status): replace legacy Hooks map with HookEvents slice",
+            "merged_at": "2026-08-28T19:54:25Z"
+          },
+          {
+            "number": 559,
+            "title": "fix: consolidate 11 firstNonEmpty copies into envvars.FirstNonEmpty",
+            "merged_at": "2026-08-28T19:47:36Z"
+          },
+          {
+            "number": 558,
+            "title": "fix(schema): remove Deprecated marker from TurnTool constant",
+            "merged_at": "2026-08-28T19:28:33Z"
+          },
+          {
+            "number": 560,
+            "title": "fix(llm): consolidate provider side-effect imports into providers/all",
+            "merged_at": "2026-08-28T19:14:03Z"
+          },
+          {
+            "number": 552,
+            "title": "feat(web): move verbosity to session menu",
+            "merged_at": "2026-08-28T19:01:52Z"
+          },
+          {
+            "number": 556,
+            "title": "fix(schema): remove SessionMeta original_task legacy fallback",
+            "merged_at": "2026-08-28T18:48:06Z"
+          },
+          {
+            "number": 555,
+            "title": "fix(plugins): remove legacypaths load-time self-healing",
+            "merged_at": "2026-08-28T17:50:29Z"
+          },
+          {
+            "number": 561,
+            "title": "fix(llm): extract shared apiLogCredentialMaterial helper",
+            "merged_at": "2026-08-28T17:29:25Z"
+          },
+          {
+            "number": 554,
+            "title": "fix(launchconfig): remove deprecated singular Hash field from MetaTrust",
+            "merged_at": "2026-08-28T17:28:48Z"
+          },
+          {
+            "number": 553,
+            "title": "fix(plugins): remove legacy 'git' source-kind alias",
+            "merged_at": "2026-08-28T17:27:52Z"
+          },
+          {
+            "number": 548,
+            "title": "Remove unused session REST API",
+            "merged_at": "2026-08-28T16:55:25Z"
+          },
+          {
+            "number": 549,
+            "title": "Migrate navigation pinning to AppWire",
+            "merged_at": "2026-08-28T16:00:57Z"
+          },
+          {
+            "number": 551,
+            "title": "fix(web): hide vision selector in composer",
+            "merged_at": "2026-08-28T15:45:40Z"
+          },
+          {
+            "number": 547,
+            "title": "Migrate session deletion to typed AppWire",
+            "merged_at": "2026-08-28T14:58:13Z"
+          },
+          {
+            "number": 546,
+            "title": "Migrate session rename to AppWire",
+            "merged_at": "2026-08-28T14:24:51Z"
+          },
+          {
+            "number": 545,
+            "title": "Move project deletion to typed AppWire",
+            "merged_at": "2026-08-28T14:09:25Z"
+          },
+          {
+            "number": 544,
+            "title": "Move mobile pairing read to AppWire",
+            "merged_at": "2026-08-28T06:34:01Z"
+          },
+          {
+            "number": 532,
+            "title": "Correct transcript detail configuration design system",
+            "merged_at": "2026-08-28T04:59:08Z"
+          },
+          {
+            "number": 538,
+            "title": "Remove unused /api/spawn REST launch API",
+            "merged_at": "2026-08-28T04:48:42Z"
+          },
+          {
+            "number": 535,
+            "title": "feat: migrate project archive mutation to AppWire",
+            "merged_at": "2026-08-28T04:30:34Z"
+          },
+          {
+            "number": 534,
+            "title": "Migrate git HEAD lookup to typed AppWire",
+            "merged_at": "2026-08-28T03:49:27Z"
+          },
+          {
+            "number": 542,
+            "title": "test: extend outgoing-chrome sync to remaining no-op \"enter send\" waits",
+            "merged_at": "2026-08-28T03:34:43Z"
+          },
+          {
+            "number": 537,
+            "title": "feat: add per-session vision model configuration",
+            "merged_at": "2026-08-28T03:23:51Z"
+          },
+          {
+            "number": 541,
+            "title": "test: sync TUI e2e mode transitions on outgoing chrome, not \"enter send\"",
+            "merged_at": "2026-08-28T02:58:35Z"
+          },
+          {
+            "number": 536,
+            "title": "fix: ride the delegate card's open affordance on the disclosure line",
+            "merged_at": "2026-08-28T02:26:05Z"
+          },
+          {
+            "number": 539,
+            "title": "feat: move project favorites to AppWire",
+            "merged_at": "2026-08-28T01:36:28Z"
+          },
+          {
+            "number": 533,
+            "title": "Migrate /api/dirs/create to AppWire",
+            "merged_at": "2026-08-28T00:38:06Z"
+          },
+          {
+            "number": 531,
+            "title": "Remove stale tree REST residue",
+            "merged_at": "2026-08-27T23:59:10Z"
+          },
+          {
+            "number": 530,
+            "title": "Fix steering after hub restart",
+            "merged_at": "2026-08-27T23:44:31Z"
+          },
+          {
+            "number": 529,
+            "title": "Migrate model catalog to typed AppWire",
+            "merged_at": "2026-08-27T23:26:15Z"
+          },
+          {
+            "number": 528,
+            "title": "fix: preserve steering after terminal communicate",
+            "merged_at": "2026-08-27T21:28:43Z"
+          },
+          {
+            "number": 524,
+            "title": "feat: show resolved defaults in all launch-config surfaces",
+            "merged_at": "2026-08-27T21:26:27Z"
+          },
+          {
+            "number": 523,
+            "title": "feat: expose skills as inline slash mentions",
+            "merged_at": "2026-08-27T21:25:40Z"
+          },
+          {
+            "number": 526,
+            "title": "test(cmd): synchronize managed shell drain fixture completion",
+            "merged_at": "2026-08-27T21:03:40Z"
+          },
+          {
+            "number": 527,
+            "title": "Cleanup plugins-for-this-session UI and preview robustness",
+            "merged_at": "2026-08-27T20:41:56Z"
+          },
+          {
+            "number": 525,
+            "title": "Move command palette search to AppWire",
+            "merged_at": "2026-08-27T20:38:22Z"
+          },
+          {
+            "number": 522,
+            "title": "Fix live session project hydration in navigation",
+            "merged_at": "2026-08-27T19:20:11Z"
+          },
+          {
+            "number": 520,
+            "title": "Remove superseded path validation REST surface",
+            "merged_at": "2026-08-27T17:06:12Z"
+          },
+          {
+            "number": 519,
+            "title": "Move navigation reads to AppWire",
+            "merged_at": "2026-08-27T16:40:05Z"
+          },
+          {
+            "number": 513,
+            "title": "refactor: centralize delegate delivery aborts",
+            "merged_at": "2026-08-27T16:15:48Z"
+          },
+          {
+            "number": 518,
+            "title": "Remove superseded upgrade REST surface",
+            "merged_at": "2026-08-27T16:15:35Z"
+          },
+          {
+            "number": 515,
+            "title": "refactor(web): remove superseded Crashpad filter seam",
+            "merged_at": "2026-08-27T15:55:13Z"
+          },
+          {
+            "number": 514,
+            "title": "fix(web): bound interrupt cleanup ownership",
+            "merged_at": "2026-08-27T15:49:15Z"
+          },
+          {
+            "number": 509,
+            "title": "Simplify vision failure cleanup state",
+            "merged_at": "2026-08-27T15:48:44Z"
+          },
+          {
+            "number": 517,
+            "title": "refactor: remove spawn-schema REST surface",
+            "merged_at": "2026-08-27T15:35:04Z"
+          },
+          {
+            "number": 510,
+            "title": "refactor: deduplicate communicate preview bookkeeping",
+            "merged_at": "2026-08-27T15:30:11Z"
+          },
+          {
+            "number": 516,
+            "title": "refactor(appserver): remove inert keepalive durations",
+            "merged_at": "2026-08-27T15:29:42Z"
+          },
+          {
+            "number": 512,
+            "title": "docs: mark navigation transport design implemented",
+            "merged_at": "2026-08-27T15:28:09Z"
+          },
+          {
+            "number": 511,
+            "title": "ci: remove inert binaries concurrency policy",
+            "merged_at": "2026-08-27T15:27:37Z"
+          },
+          {
+            "number": 482,
+            "title": "feat: add per-session plugin selection",
+            "merged_at": "2026-08-27T15:26:43Z"
+          },
+          {
+            "number": 507,
+            "title": "Simplify split lint lane setup",
+            "merged_at": "2026-08-27T06:53:25Z"
+          },
+          {
+            "number": 508,
+            "title": "Codex/pr 490 followup",
+            "merged_at": "2026-08-27T06:37:27Z"
+          },
+          {
+            "number": 493,
+            "title": "test(serve): await foreground shell settle events",
+            "merged_at": "2026-08-27T06:19:54Z"
+          },
+          {
+            "number": 505,
+            "title": "agent: trim model snapshot capture work",
+            "merged_at": "2026-08-27T05:54:03Z"
+          },
+          {
+            "number": 506,
+            "title": "test(hub): trigger fingerprint deadline deterministically",
+            "merged_at": "2026-08-27T05:38:42Z"
+          },
+          {
+            "number": 504,
+            "title": "docs: remove idle steer provider turn",
+            "merged_at": "2026-08-27T04:47:46Z"
+          },
+          {
+            "number": 490,
+            "title": "Navigation transport optimization: bounded resources + zero-legacy retirement",
+            "merged_at": "2026-08-27T04:39:50Z"
+          },
+          {
+            "number": 503,
+            "title": "docs: remove PR 480 residual audit record",
+            "merged_at": "2026-08-27T04:24:38Z"
+          },
+          {
+            "number": 502,
+            "title": "refactor: simplify degraded delegate boundary helpers",
+            "merged_at": "2026-08-27T03:32:47Z"
+          },
+          {
+            "number": 492,
+            "title": "fix(agent): degrade an unenforceable read-only delegate instead of refusing it",
+            "merged_at": "2026-08-27T01:54:39Z"
+          },
+          {
+            "number": 480,
+            "title": "docs: retire delegate job handoff scenario",
+            "merged_at": "2026-08-27T01:38:50Z"
+          },
+          {
+            "number": 479,
+            "title": "docs: remove retired idle steer refusal scenario",
+            "merged_at": "2026-08-27T01:31:57Z"
+          },
+          {
+            "number": 475,
+            "title": "feat(agent): advertise bounded startup model availability",
+            "merged_at": "2026-08-27T01:23:01Z"
+          },
+          {
+            "number": 474,
+            "title": "test: close auth and job formatter fuzz gaps",
+            "merged_at": "2026-08-27T00:36:59Z"
+          },
+          {
+            "number": 494,
+            "title": "Split lint families across CI runners",
+            "merged_at": "2026-08-26T23:55:39Z"
+          },
+          {
+            "number": 478,
+            "title": "Own one-shot deadlines for rate-limit retries",
+            "merged_at": "2026-08-26T23:00:28Z"
+          },
+          {
+            "number": 476,
+            "title": "fix(agent): expose vision side-channel failures",
+            "merged_at": "2026-08-26T21:59:07Z"
+          },
+          {
+            "number": 473,
+            "title": "fix(agent): exclude provider retries from drain liveness",
+            "merged_at": "2026-08-26T21:40:37Z"
+          },
+          {
+            "number": 471,
+            "title": "fix: keep communicate previews provisional",
+            "merged_at": "2026-08-26T21:28:50Z"
+          },
+          {
+            "number": 491,
+            "title": "ci: split the remaining merge-gate lanes",
+            "merged_at": "2026-08-26T21:19:33Z"
+          },
+          {
+            "number": 487,
+            "title": "fix(openai): a stalled /v1/responses stream is not an unsupported endpoint",
+            "merged_at": "2026-08-26T20:53:11Z"
+          },
+          {
+            "number": 485,
+            "title": "fix: strip encrypted reasoning on cross-provider openai replay",
+            "merged_at": "2026-08-26T20:51:17Z"
+          },
+          {
+            "number": 489,
+            "title": "ci: run merge checks in parallel without stale revisions",
+            "merged_at": "2026-08-26T20:50:25Z"
+          },
+          {
+            "number": 470,
+            "title": "test: remove banned merge gate selftest",
+            "merged_at": "2026-08-26T19:58:24Z"
+          },
+          {
+            "number": 488,
+            "title": "fix: defer delegate delivery through input drain",
+            "merged_at": "2026-08-26T19:41:24Z"
+          },
+          {
+            "number": 477,
+            "title": "test: repair interrupt terminalization oracle",
+            "merged_at": "2026-08-26T18:07:13Z"
+          },
+          {
+            "number": 468,
+            "title": "test: harden basename allowlist collision fixture",
+            "merged_at": "2026-08-26T18:06:48Z"
+          },
+          {
+            "number": 463,
+            "title": "fix: idle subagents fold into inactive list, not active",
+            "merged_at": "2026-08-26T05:11:31Z"
+          },
+          {
+            "number": 462,
+            "title": "fix: resolve claimed delegate send waiters inline",
+            "merged_at": "2026-08-26T04:39:29Z"
+          },
+          {
+            "number": 461,
+            "title": "fix(agent): make ask_user headers forgiving",
+            "merged_at": "2026-08-26T02:37:38Z"
+          },
+          {
+            "number": 453,
+            "title": "test(mcp): remove coverage-only timeout override",
+            "merged_at": "2026-08-26T00:32:53Z"
+          },
+          {
+            "number": 458,
+            "title": "fix(web): synchronize interrupt cleanup ownership",
+            "merged_at": "2026-08-26T00:32:06Z"
+          },
+          {
+            "number": 459,
+            "title": "fix: keep WebSocket heartbeat responsive during long requests",
+            "merged_at": "2026-08-25T23:30:12Z"
+          },
+          {
+            "number": 408,
+            "title": "fix(delegate): make sandbox contract capability-honest",
+            "merged_at": "2026-08-25T23:00:06Z"
+          },
+          {
+            "number": 456,
+            "title": "fix(agent): reject invalid task reasoning efforts",
+            "merged_at": "2026-08-25T22:47:26Z"
+          },
+          {
+            "number": 455,
+            "title": "fix(agent): simplify vision intent contract",
+            "merged_at": "2026-08-25T22:46:41Z"
+          },
+          {
+            "number": 454,
+            "title": "fix(agent-shards): fail closed on explicit run files",
+            "merged_at": "2026-08-25T22:46:01Z"
+          },
+          {
+            "number": 452,
+            "title": "fix(identifier): remove mutable UUIDv7 seam",
+            "merged_at": "2026-08-25T22:45:06Z"
+          },
+          {
+            "number": 416,
+            "title": "fix(llm): normalize provider-qualified Claude catalog overlays",
+            "merged_at": "2026-08-25T22:44:21Z"
+          },
+          {
+            "number": 411,
+            "title": "fix(llm): bound rate-limit retries by wall clock",
+            "merged_at": "2026-08-25T22:43:25Z"
+          },
+          {
+            "number": 444,
+            "title": "fix(web): resolve aria-hidden focus and summary nesting a11y warnings",
+            "merged_at": "2026-08-25T21:16:12Z"
+          },
+          {
+            "number": 447,
+            "title": "fix(agent): drain delegate attention after pending ask",
+            "merged_at": "2026-08-25T21:15:23Z"
+          },
+          {
+            "number": 445,
+            "title": "fix(jobstore): classify pending prune handoff as concurrent change",
+            "merged_at": "2026-08-25T21:14:29Z"
+          },
+          {
+            "number": 438,
+            "title": "test: prevent detached fixture maintenance races",
+            "merged_at": "2026-08-25T19:14:32Z"
+          },
+          {
+            "number": 424,
+            "title": "fix(agent): stop one-shot drain after terminal communicate",
+            "merged_at": "2026-08-25T19:13:41Z"
+          },
+          {
+            "number": 446,
+            "title": "test(server): measure bounded transcript header reads",
+            "merged_at": "2026-08-25T18:30:49Z"
+          },
+          {
+            "number": 443,
+            "title": "fix(web): drop codeblock copy-icon resting background",
+            "merged_at": "2026-08-25T17:43:12Z"
+          },
+          {
+            "number": 415,
+            "title": "fix(agent): make vision transcription caveat explicit",
+            "merged_at": "2026-08-25T17:34:57Z"
+          },
+          {
+            "number": 429,
+            "title": "fix: normalize OLLAMA_HOST before it reaches providers.json, not just in the adapter",
+            "merged_at": "2026-08-25T17:34:18Z"
+          },
+          {
+            "number": 414,
+            "title": "fix(agent): expose delegate agent capabilities",
+            "merged_at": "2026-08-25T17:33:35Z"
+          },
+          {
+            "number": 405,
+            "title": "fix(agent): reject ignored delegation waits",
+            "merged_at": "2026-08-25T17:32:40Z"
+          },
+          {
+            "number": 397,
+            "title": "docs: plan mechanism response to recitation failures",
+            "merged_at": "2026-08-25T16:37:23Z"
+          },
+          {
+            "number": 399,
+            "title": "fix: warn on live detached processes at end turn",
+            "merged_at": "2026-08-25T16:36:41Z"
+          },
+          {
+            "number": 430,
+            "title": "fix: report a 404 on the release download as an actionable message, not a bare curl error",
+            "merged_at": "2026-08-25T16:35:53Z"
+          },
+          {
+            "number": 412,
+            "title": "fix(llm): bound streaming provider attempts by wall clock",
+            "merged_at": "2026-08-25T16:13:41Z"
+          },
+          {
+            "number": 402,
+            "title": "fix(agent): surface effective resource caps in prompts",
+            "merged_at": "2026-08-25T16:12:37Z"
+          },
+          {
+            "number": 420,
+            "title": "fix(agent): bound interactive drain and hopeless close joins",
+            "merged_at": "2026-08-25T16:11:37Z"
+          },
+          {
+            "number": 437,
+            "title": "fix(web): make Chrome guard readiness race-free",
+            "merged_at": "2026-08-25T16:08:58Z"
+          },
+          {
+            "number": 433,
+            "title": "test(llm): make provider adapter tests load-safe under -race",
+            "merged_at": "2026-08-25T16:05:44Z"
+          },
+          {
+            "number": 426,
+            "title": "test(web): make Rail rename refresh deterministic",
+            "merged_at": "2026-08-25T16:03:50Z"
+          },
+          {
+            "number": 434,
+            "title": "fix(hub): fence stale relay epoch publications",
+            "merged_at": "2026-08-25T15:41:46Z"
+          },
+          {
+            "number": 442,
+            "title": "test(hubstart): honor production immediate-exit window",
+            "merged_at": "2026-08-25T08:20:25Z"
+          },
+          {
+            "number": 441,
+            "title": "test: remove prompt prose oracles from watch coverage",
+            "merged_at": "2026-08-25T07:38:49Z"
+          },
+          {
+            "number": 439,
+            "title": "test(web): remove pipefail prose oracle",
+            "merged_at": "2026-08-25T07:11:42Z"
+          },
+          {
+            "number": 440,
+            "title": "test(agent): lock rematerialize hook fixture assignment",
+            "merged_at": "2026-08-25T06:51:12Z"
+          },
+          {
+            "number": 422,
+            "title": "test: improve statement coverage across all Go modules and frontend",
+            "merged_at": "2026-08-25T06:01:43Z"
+          },
+          {
+            "number": 436,
+            "title": "test(agent): serialize watch announcement episode boundary",
+            "merged_at": "2026-08-25T05:48:14Z"
+          },
+          {
+            "number": 386,
+            "title": "Bound the whole one-shot run, not just its drain",
+            "merged_at": "2026-08-25T05:28:41Z"
+          },
+          {
+            "number": 435,
+            "title": "test(tui): rendezvous with ready hub handlers",
+            "merged_at": "2026-08-25T05:05:47Z"
+          },
+          {
+            "number": 419,
+            "title": "fix(agent): report effective container resources",
+            "merged_at": "2026-08-25T04:06:14Z"
+          },
+          {
+            "number": 417,
+            "title": "fix(agent): enforce read-only delegate workspace boundary",
+            "merged_at": "2026-08-25T04:03:41Z"
+          },
+          {
+            "number": 418,
+            "title": "fix(execenv): authorize structured edits in session scratch",
+            "merged_at": "2026-08-25T04:01:15Z"
+          },
+          {
+            "number": 410,
+            "title": "fix: make Grep walks cancellable",
+            "merged_at": "2026-08-25T03:58:45Z"
+          },
+          {
+            "number": 398,
+            "title": "Preserve web_fetch when both auxiliary models refuse",
+            "merged_at": "2026-08-25T03:55:49Z"
+          },
+          {
+            "number": 428,
+            "title": "fix(tooling): avoid SIGPIPE in help selftests",
+            "merged_at": "2026-08-25T03:51:39Z"
+          },
+          {
+            "number": 425,
+            "title": "fix(server): bound live transcript snapshot copies",
+            "merged_at": "2026-08-25T02:32:37Z"
+          },
+          {
+            "number": 427,
+            "title": "fix(web): preserve richer Spawn model catalog metadata",
+            "merged_at": "2026-08-25T02:19:34Z"
+          },
+          {
+            "number": 421,
+            "title": "test: make process rendezvous load-safe",
+            "merged_at": "2026-08-25T01:50:03Z"
+          },
+          {
+            "number": 409,
+            "title": "fix: keep task completion reminders open for blocking delegates",
+            "merged_at": "2026-08-25T01:27:25Z"
+          },
+          {
+            "number": 401,
+            "title": "fix(agent): bound vision side-channel effort and latency",
+            "merged_at": "2026-08-25T00:42:26Z"
+          },
+          {
+            "number": 406,
+            "title": "lint: catch Linux-only evenerfuzz and eval sources on macOS",
+            "merged_at": "2026-08-25T00:08:13Z"
+          },
+          {
+            "number": 423,
+            "title": "docs: prohibit prompt-prose test oracles",
+            "merged_at": "2026-08-24T19:21:46Z"
+          },
+          {
+            "number": 403,
+            "title": "fix: distinguish signal-killed shell jobs",
+            "merged_at": "2026-08-24T23:46:11Z"
+          },
+          {
+            "number": 413,
+            "title": "fix: keep task reasoning effort round-local",
+            "merged_at": "2026-08-24T23:10:52Z"
+          },
+          {
+            "number": 404,
+            "title": "fix(cheapmodel): deduplicate concurrent refusal probes",
+            "merged_at": "2026-08-24T22:55:18Z"
+          },
+          {
+            "number": 400,
+            "title": "fix(prompts): preserve observable delivery and bounded verification",
+            "merged_at": "2026-08-24T22:19:59Z"
+          },
+          {
+            "number": 407,
+            "title": "fix(lint): isolate golangci-lint cache per worktree",
+            "merged_at": "2026-08-24T21:31:37Z"
+          },
+          {
+            "number": 396,
+            "title": "feat(hub): add mobile pairing endpoint and QR settings",
+            "merged_at": "2026-08-24T20:32:45Z"
+          },
+          {
+            "number": 371,
+            "title": "test: improve statement coverage across all Go modules",
+            "merged_at": "2026-08-24T05:33:46Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener",
+        "loc_suppressed": true
+      },
+      "prime-radiant-inc/superpowers-evals": {
+        "commits": 70,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 70
+          }
+        ],
+        "loc_added": 33042,
+        "loc_removed": 1727,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs (Claude, Codex, Gemini, Kimi, and more) through a QA agent and grades them on workflow compliance against scenario criteria and deterministic post-checks.",
+        "html_url": "https://github.com/prime-radiant-inc/superpowers-evals"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 10
+          }
+        ],
+        "loc_added": 825,
+        "loc_removed": 395,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/automatic-sshfs": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "evener",
+            "count": 4
+          }
+        ],
+        "loc_added": 286,
+        "loc_removed": 40,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.2.0",
+            "name": "v0.2.0 \u2014 reliable mounting + known_hosts + symlinks",
+            "published_at": "2026-08-25T16:46:52Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.2.0 published 2026-08-25T16:46:52Z",
+        "description": "Automatically mount remote filesystems over SSH on macOS via FUSE-T and ControlMaster",
+        "html_url": "https://github.com/prime-radiant-inc/automatic-sshfs"
+      },
+      "obra/lace": {
+        "commits": 6,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 6
+          }
+        ],
+        "loc_added": 2804,
+        "loc_removed": 341,
+        "merged_prs": [
+          {
+            "number": 382,
+            "title": "fix(file_find): one container exec per entry wedged a coworker for 96 minutes (PRI-2975)",
+            "merged_at": "2026-08-26T03:17:12Z"
+          },
+          {
+            "number": 381,
+            "title": "fix(compaction): size the preserved tail against the model's own report (PRI-2947)",
+            "merged_at": "2026-08-25T03:04:17Z"
+          },
+          {
+            "number": 380,
+            "title": "fix(compaction): don't spend a breakpoint on a compaction that did nothing (PRI-2945)",
+            "merged_at": "2026-08-25T02:27:58Z"
+          },
+          {
+            "number": 379,
+            "title": "feat(protocol): put lastCallInputContextTokens on the usage wire (PRI-2945)",
+            "merged_at": "2026-08-25T02:01:15Z"
+          },
+          {
+            "number": 378,
+            "title": "fix(compaction): resolve personas through the session's registry, taking the persona name (PRI-2943)",
+            "merged_at": "2026-08-25T01:26:53Z"
+          },
+          {
+            "number": 377,
+            "title": "fix(compaction): loud persona failures, bounded fallback, and a progress postcondition (PRI-2943)",
+            "merged_at": "2026-08-24T19:31:00Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/toy-c-compiler": {
+        "commits": 212,
+        "authors": [
+          {
+            "name": "C Compiler Builder",
+            "count": 212
+          }
+        ],
+        "loc_added": 14799,
+        "loc_removed": 2179,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/toy-c-compiler"
+      },
+      "obra/winpepper": {
+        "commits": 16,
+        "authors": [
+          {
+            "name": "danshapiro",
+            "count": 15
+          },
+          {
+            "name": "Dan Shapiro",
+            "count": 1
+          }
+        ],
+        "loc_added": 2055,
+        "loc_removed": 295,
+        "merged_prs": [
+          {
+            "number": 58,
+            "title": "ci: make timing-sensitive tests machine-robust; fix GitHub main CI redness",
+            "merged_at": "2026-08-25T03:58:40Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v0.7.4-alpha",
+            "name": "v0.7.4-alpha",
+            "published_at": "2026-08-25T06:21:30Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.7.3-alpha",
+            "name": "v0.7.3-alpha",
+            "published_at": "2026-08-25T00:00:23Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.7.2-alpha",
+            "name": "v0.7.2-alpha",
+            "published_at": "2026-08-24T20:24:00Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [
+          {
+            "sha": "5afd636",
+            "date": "2026-08-24T23:17:54-07:00",
+            "subject": "release: 0.7.4-alpha (backup ASR defaults to None)",
+            "version": "0.7.4"
+          },
+          {
+            "sha": "451d275",
+            "date": "2026-08-24T16:56:53-07:00",
+            "subject": "release: 0.7.3-alpha (minimal-footprint default install)",
+            "version": "0.7.3"
+          },
+          {
+            "sha": "9690de4",
+            "date": "2026-08-24T13:17:23-07:00",
+            "subject": "chore(release): bump version to 0.7.2-alpha",
+            "version": "0.7.2"
+          }
+        ],
+        "featured": true,
+        "featured_reason": "tagged release v0.7.4-alpha published 2026-08-25T06:21:30Z; tagged release v0.7.3-alpha published 2026-08-25T00:00:23Z; tagged release v0.7.2-alpha published 2026-08-24T20:24:00Z",
+        "description": "Windows-native local dictation. Hold a hotkey, speak, release \u2014 cleaned-up words appear in the focused app. Parakeet TDT v3 ASR + LlamaSharp cleanup, all local.",
+        "html_url": "https://github.com/obra/winpepper"
+      }
+    }
+  }
+}
