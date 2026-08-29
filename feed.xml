@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-08-21T00:00:00.000Z</updated>
+  <updated>2026-08-28T00:00:00.000Z</updated>
+  <entry>
+    <title>automatic-sshfs&apos;s first real release, three winpepper alphas, and evener&apos;s REST-to-AppWire migration</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-24" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-24</id>
+    <updated>2026-08-28T00:00:00.000Z</updated>
+    <published>2026-08-28T00:00:00.000Z</published>
+    <summary>The most recent week, still in progress: automatic-sshfs cuts its first real release (known_hosts enumeration, reliable polling), winpepper ships three alpha releases fixing a dead-end first-run install and trimming its default footprint, evener spends the week migrating REST endpoints to typed AppWire, and a new toy AArch64 C compiler shows up on obra with an open question about who — or what — is driving it.</summary>
+  </entry>
   <entry>
     <title>Two renames and a new mount: evener (formerly serf), ledger&apos;s move to chit, and automatic-sshfs</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-17" />
