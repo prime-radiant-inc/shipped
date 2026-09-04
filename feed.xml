@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-08-28T00:00:00.000Z</updated>
+  <updated>2026-09-04T00:00:00.000Z</updated>
+  <entry>
+    <title>A light week: evener&apos;s busiest repo again, superpowers-evals&apos; campaign push</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-31" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-31</id>
+    <updated>2026-09-04T00:00:00.000Z</updated>
+    <published>2026-09-04T00:00:00.000Z</published>
+    <summary>A light week: no new repos, no tagged releases. evener is the busiest repo again, working through a provider-registry migration and a long tail of hub/agent/web hardening; superpowers-evals runs a fast-moving campaign-infrastructure arc. alltheagents.org gets a polish-and-launch-prep pass, and gauntlet and lace each land a single small fix. Partial week — data runs through Friday evening, not the full calendar week.</summary>
+  </entry>
   <entry>
     <title>automatic-sshfs&apos;s first real release, three winpepper alphas, and evener&apos;s REST-to-AppWire migration</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-08-24" />
