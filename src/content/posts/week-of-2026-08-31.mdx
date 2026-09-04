@@ -1,0 +1,90 @@
+---
+title: "A light week: evener's busiest repo again, superpowers-evals' campaign push"
+week: "Week of August 31, 2026"
+dateStart: 2026-08-31
+dateEnd: 2026-09-06
+pubDate: 2026-09-04
+summary: "A light week: no new repos, no tagged releases. evener is the busiest repo again, working through a provider-registry migration and a long tail of hub/agent/web hardening; superpowers-evals runs a fast-moving campaign-infrastructure arc. alltheagents.org gets a polish-and-launch-prep pass, and gauntlet and lace each land a single small fix. Partial week — data runs through Friday evening, not the full calendar week."
+draft: true
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+A light week. No repo was created in-window and none cut a tagged release, so nothing gets the featured treatment this time — everything below is also-shipped. **`prime-radiant-inc/evener`** is the busiest repo again, cutting over to a new provider registry and working through a long tail of hardening across its hub, agent, and web layers. **`prime-radiant-inc/superpowers-evals`** runs one continuous campaign-infrastructure arc. The rest of the week is brief. As with the last couple of posts, this week is still open: the data below runs through Friday evening, not the full calendar week.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-08-31" />
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-08-31" />
+
+By far the most active repo this week, with broad simultaneous work across the hub, agent, and web layers. The headline is a models.dev-backed provider registry cut over as a flag-day migration, landing a new `providers.toml` schema with an auto-conversion path from the old one. Alongside it: per-connection serial worker dispatch for the app server, unified tool-call disclosure and verbosity controls in the web UI, job_watch timers, and delegate task-list handling (presence-based add/update, seeded task lists). Underneath, a long tail of hardening: drain/completion race fixes, scratch-disposal cleanup, credential-leak guards (never harvest a credential carried in a URL path; stop echoing pasted secrets from malformed refs), mobile web fixes (composer above the keyboard, larger tap targets), and test-suite robustness work (real-completion waits, ETXTBSY guards, deterministic cancel classification). Contributor: **Jesse Vincent (staff)**, with one `dependabot[bot]` dependency-bump commit.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">Behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-08-31" />
+
+The second-most active repo this week, all direct pushes rather than merged PRs. One continuous campaign-infrastructure arc: sealing a multiharness signature campaign (codex/kimi/pi vs. a Claude baseline, later folding in Copilot and cutting Kimi), and an Opus 5 vs. Opus 4.8 signature campaign run through two launches — one cancelled on platform findings, one sealed. Underneath both, a run of fixes to the campaign "seal act" (digest-verified regeneration, atomic markdown-then-JSON publication, sealed-state preservation across a post-append cancel race, orphan-kill and verified-death reaching the tmux subject host), credential routing for Bedrock-backed graders, and a new "descriptive fold" report schema (counts, medians, contention counters, provenance findings). Sole author: **Drew Ritter (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/alltheagents.org](https://github.com/prime-radiant-inc/alltheagents.org)
+
+<p class="repo-desc">Comprehensive census of coding agent harnesses.</p>
+
+<RepoStat org="prime-radiant-inc" name="alltheagents.org" week="2026-08-31" />
+
+A polish-and-launch-prep week on a repo that only turned up in last week's post as brand-new: renamed to "All the Agents," with an About page and new contribution entry points (issue forms, a PR template, site links), "other"-category entries hidden, client-side pagination with a size control added, and the site served from the `alltheagents.org` apex domain. The home page was reworked too — simplified layout, a Prime Radiant footer credit, sticky footer. Separately, the underlying census data got two content passes: entries added from the `2389-research` GitHub org, then a false-negative audit and a broader recategorization under a tightened loop-ownership definition. Contributors: **Kattni (staff)** on the site and UX work, **Jesse Vincent (staff)** on the census-data reclassification.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">AI-powered QA testing framework that uses LLMs to test web apps, CLI tools, and TUI programs from markdown story cards, returning structured pass/fail verdicts with evidence.</p>
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-08-31" />
+
+One commit: routing Bedrock/Mantle-prefixed Anthropic model ids to the Anthropic provider. Author: **Drew Ritter (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">Lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-08-31" />
+
+One commit, one merged PR: passing tool-result image blocks through to the model. Author/merger: **Jesse Vincent (staff)**.
+
+</article>
+
+<p class="caveat"><em>The remaining two active repos were bot-only this week: <code>claude-plugin-stats</code> ran its usual daily install-stats scrape and chart rebuild, and <code>terminal-bench-analysis</code> saw one automated README regeneration with no new data — no human commits on either.</em></p>
+
+</section>
