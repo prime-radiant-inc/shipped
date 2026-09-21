@@ -1,0 +1,168 @@
+---
+title: "study-skills, shepherd-pr, and scan-to-model all launch, and episodic-memory ships v1.5.0 and v1.6.0 back to back"
+week: "Week of September 7, 2026"
+dateStart: 2026-09-07
+dateEnd: 2026-09-13
+pubDate: 2026-09-11
+summary: "Three brand-new repos land in one week — prime-radiant-inc's study-skills (durable agent learning) and shepherd-pr (PR shepherding), and obra's scan-to-model (scan-to-Blender reconstruction) — while obra/episodic-memory cuts two releases in the same day, adding a fifth conversation harness and an auto-sync off switch. evener is the busiest repo again, and picks up its first outside contributors in a while."
+draft: true
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Three new repos in one week, all from the same shop: **`prime-radiant-inc/study-skills`** (a Claude Code plugin for durable agent learning), **`prime-radiant-inc/shepherd-pr`** (a portable plugin for shepherding PRs through CI and review), and **`obra/scan-to-model`** (scan-reconstruction skills and tools for Codex and Blender). Alongside them, **`obra/episodic-memory`** cuts two releases on the same day — v1.5.0 and v1.6.0 — adding a fifth conversation-harness integration and an index-bloat guard. Underneath all of that, **`prime-radiant-inc/evener`** is the busiest repo again, and for the first time in a few weeks brings in outside contributors rather than staying entirely in-house.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-09-07" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/episodic-memory](https://github.com/obra/episodic-memory)
+
+<p class="repo-desc">MCP server giving Claude a persistent, searchable memory of past conversations (no repository description set).</p>
+
+<RepoStat org="obra" name="episodic-memory" week="2026-09-07" />
+
+Two releases, same day. v1.5.0 added Cursor and opencode harness support, isolated the summarizer subprocess from the user's own MCP servers and settings, and made sidechain conversations searchable. v1.6.0 followed with a fifth conversation harness (Oh My Pi), an `EPISODIC_MEMORY_DISABLE_AUTO_SYNC` off-switch, AWS Bedrock summarization passthrough, and a guard against index bloat from oversize single messages. Underneath both: consolidated summarizer error handling (timeouts, fallbacks, a warning on metered APIs), safer install/db behavior (verifying the native binding actually loads instead of trusting exit codes; a `busy_timeout` for multi-writer safety), and CI now building and testing every PR — including from forks — on both Node 22 and 24. Contributors: **Jesse Vincent (staff)**, the large majority, plus **Ada Sen (staff)**, and one test-suite fix from outside contributor **Victor Naumik** (`vicnaum`).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/study-skills](https://github.com/prime-radiant-inc/study-skills)
+
+<p class="repo-desc">A Claude Code plugin for durable agent learning: analytical reading, a cross-linked Zettelkasten slip-box with a bundled CLI, first-person beliefs with falsifiers, experience capture, and deliberation forks.</p>
+
+<RepoStat org="prime-radiant-inc" name="study-skills" week="2026-09-07" />
+
+Brand new this week, and iterated fast right out of the gate: made the first slipbox call in a fresh install "just work," reworded skill language to address "your human partner" instead of "the user," dropped an anti-performance section from the holding-beliefs skill once its red baseline turned out never to have actually failed, and added a strict `slipbox check` flag for stale `last_reviewed` dates. Several commits say "Release vX.Y.Z" up through v0.9.0, but none of those are tagged GitHub Releases — message-only version bumps. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/shepherd-pr](https://github.com/prime-radiant-inc/shepherd-pr)
+
+<p class="repo-desc">A portable coding-agent plugin for shepherding GitHub pull requests through CI and review.</p>
+
+<RepoStat org="prime-radiant-inc" name="shepherd-pr" week="2026-09-07" />
+
+Also brand new: a one-shot PR watcher with a bounded `--count`/`--interval` batch mode, a roborev combined-review reader plus stale-PR triage tooling, a fix recognizing roborev's "Review Passed" header, a fix for a concurrent first-lock creation race on macOS, and portable plugin packaging with CI. Like study-skills, its "bump plugin to 0.2.0" commit is a message-only version bump, not a tagged release. Sole author: **Jesse Vincent (staff)** — two of this week's commits are under the alternate git identity `jesse <jesse@primeradiant.com>`, confirmed via the GitHub API to resolve to the same account.
+
+</article>
+
+<article class="repo">
+
+### [obra/scan-to-model](https://github.com/obra/scan-to-model)
+
+<p class="repo-desc">Evidence-driven scan reconstruction skills and local tools for Codex and Blender.</p>
+
+<RepoStat org="obra" name="scan-to-model" week="2026-09-07" />
+
+The third new repo this week, and immediately the most active of the three: room-drawing geometry work (coplanar boundary detection tolerant of float32 noise, non-metric presentation support, section-mark identity and direction checks), camera-segment clipping before perspective projection, native Blender-readback validation, and a running thread of "document X" commits recording reconstruction-workflow contracts alongside the code itself. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-09-07" />
+
+The busiest repo this week, narrowly ahead of superpowers-evals below. Broad simultaneous work across the hub, agent, web, sdk, and mobile layers: an AppWire TypeScript package move, delegate drive-claim handling held across send starts, restored user bubbles and terminal-agent-wash styling in the editorial transcript, and a long tail of fix/refactor work on tool dispatch, breaker-key computation, and double-indented user steers. Contributors: **Jesse Vincent (staff)** overwhelmingly, a few commits under the `evener` identity itself (the agent working autonomously, not a human — folded into neither staff nor outside), and one commit apiece from two outside contributors: **BingEdward** (GitHub login `7487`, a renamed/legacy handle) and **zerone0x**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/superpowers-evals](https://github.com/prime-radiant-inc/superpowers-evals)
+
+<p class="repo-desc">Behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs through a QA agent and grades them on workflow compliance.</p>
+
+<RepoStat org="prime-radiant-inc" name="superpowers-evals" week="2026-09-07" />
+
+A close second in activity, all direct pushes rather than merged PRs. One continuous campaign-infrastructure arc: launching and recording an "F28" path-verification campaign, fixing campaign attempt-path handling for raw file URLs and strict typing, encoding campaign attempt directory names, rejecting malformed attempt identities before hashing, and scoping the code-review qualification gate to the release workload. Sole author: **Drew Ritter (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/gauntlet](https://github.com/prime-radiant-inc/gauntlet)
+
+<p class="repo-desc">AI-powered QA testing framework that uses LLMs to test web apps, CLI tools, and TUI programs from markdown story cards, returning structured pass/fail verdicts with evidence.</p>
+
+<RepoStat org="prime-radiant-inc" name="gauntlet" week="2026-09-07" />
+
+A steady week of assessment-pipeline hardening: requiring material-claim audits before verdicts, bounding assessor evidence inspection, repairing assessment reports whose criteria arrived as reasoning markup, adding an independent evidence assessor and a simulated-user conversation role, and enabling strict assessor reports on direct Anthropic. Sole author: **Drew Ritter (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/teststrip](https://github.com/prime-radiant-inc/teststrip)
+
+<p class="repo-desc">macOS photo culling app — catalog-first, non-destructive, AI-assisted. Early development; not ready for use.</p>
+
+<RepoStat org="prime-radiant-inc" name="teststrip" week="2026-09-07" />
+
+A wave-integration week: queuing concurrent imports instead of rejecting them, detecting the real photo corpus at any depth, adopting a pre-existing sidecar's rotation at import, scope-filtering the Cull HUD's pick/reject/undecided cluster, and rotating face-box overlays with the asset's rotation override — landed through a run of integration merges from feature branches. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">Lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-09-07" />
+
+A cleanup week: redacting credentials in URLs before they reach the model, reaping only the booting agent's own orphan containers, fixing `url_fetch` to capture curl's effective URL as the redirect destination instead of misreporting the originally-requested URL, and running CI on fork PRs across all three packages. Contributors: **Ada Sen (staff)**, the majority, and **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework & software development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-09-07" />
+
+The commit count above reads zero, but the repo wasn't quiet — its merged PRs this week land on a `dev` branch, not `main`, and this blog's tooling only walks the default branch for commits, so `dev`-branch work doesn't show up as commits here (the merged-PR count is unaffected and is the real activity signal for this repo). By merged PR: a "diagnosing-superpowers" evidence-based session-recovery skill, preserved diagnostic evidence in doctor exports, native Windows PowerShell/Git Bash support for the movie-recording feature, and shared intent preserved through design and planning steps, plus a platform-support issue-template label fix. Contributors (by merged PR): **Jesse Vincent (staff)** and **Drew Ritter (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-marketplace](https://github.com/obra/superpowers-marketplace)
+
+<p class="repo-desc">Curated Claude Code plugin marketplace.</p>
+
+<RepoStat org="obra" name="superpowers-marketplace" week="2026-09-07" />
+
+Two housekeeping commits, bumping the listed `episodic-memory` plugin entry to track its two new releases above. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+<p class="caveat"><em>The remaining active repos — <code>llm-proxy</code>, <code>github-triage</code>, and <code>claude-plugin-stats</code> — each shipped a small, focused change: llm-proxy captured Claude Platform signing failures and renewed Claude Platform credentials through an assumed role (Drew Ritter); github-triage landed its initial triage tooling, a verdict schema, report builder, and action applier (Jesse Vincent); and claude-plugin-stats ran its usual fully-automated daily scrape and chart rebuild, with no human commits.</em></p>
+
+</section>

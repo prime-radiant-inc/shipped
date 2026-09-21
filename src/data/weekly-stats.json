@@ -15652,5 +15652,3914 @@
         "html_url": "https://github.com/obra/lace"
       }
     }
+  },
+  "2026-09-07": {
+    "summary": {
+      "repos_active": 14,
+      "featured_count": 4,
+      "second_tier_count": 10,
+      "commits": 748,
+      "merged_prs": 270,
+      "loc_added": 386430,
+      "loc_removed": 50688,
+      "contributors": 9,
+      "tagged_releases": 2,
+      "commit_only_bumps": 4
+    },
+    "repos": {
+      "prime-radiant-inc/llm-proxy": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 3
+          }
+        ],
+        "loc_added": 715,
+        "loc_removed": 143,
+        "merged_prs": [
+          {
+            "number": 9,
+            "title": "fix: capture Claude Platform signing failures",
+            "merged_at": "2026-09-09T02:28:27Z"
+          },
+          {
+            "number": 8,
+            "title": "feat: renew Claude Platform credentials through an assumed role",
+            "merged_at": "2026-09-09T01:56:38Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response to Claude, OpenAI, and other providers for debugging, auditing, and analysis.",
+        "html_url": "https://github.com/prime-radiant-inc/llm-proxy"
+      },
+      "prime-radiant-inc/evener": {
+        "commits": 247,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 242
+          },
+          {
+            "name": "evener",
+            "count": 3
+          },
+          {
+            "name": "BingEdward",
+            "count": 1
+          },
+          {
+            "name": "zerone0x",
+            "count": 1
+          }
+        ],
+        "loc_added": 250409,
+        "loc_removed": 22265,
+        "merged_prs": [
+          {
+            "number": 1273,
+            "title": "fix(tool): keep successful dispatches out of the semantic failure ledger",
+            "merged_at": "2026-09-13T23:17:30Z"
+          },
+          {
+            "number": 1236,
+            "title": "fix(agent): hold the drive claim across the delegate send start (#940)",
+            "merged_at": "2026-09-13T22:40:58Z"
+          },
+          {
+            "number": 1241,
+            "title": "refactor(sdk): move the AppWire TypeScript package to appwire-client/typescript (SDK A3)",
+            "merged_at": "2026-09-13T21:53:38Z"
+          },
+          {
+            "number": 1260,
+            "title": "feat(web): restore user bubble, add terminal agent wash in editorial transcript",
+            "merged_at": "2026-09-13T21:39:35Z"
+          },
+          {
+            "number": 1261,
+            "title": "fix(web): stop double-indenting a user-typed steer",
+            "merged_at": "2026-09-13T20:40:19Z"
+          },
+          {
+            "number": 1256,
+            "title": "feat(webui): autofocus composer on session load and new-session UI",
+            "merged_at": "2026-09-13T20:09:52Z"
+          },
+          {
+            "number": 1254,
+            "title": "perf(tool): compute breaker dispatch keys once per dispatch (#829)",
+            "merged_at": "2026-09-13T19:33:16Z"
+          },
+          {
+            "number": 1255,
+            "title": "fix(tool): fingerprint a root null argument body as an empty object (#829)",
+            "merged_at": "2026-09-13T19:18:38Z"
+          },
+          {
+            "number": 1238,
+            "title": "fix(web): keep a summary-less failed delegate row single-level (#1173)",
+            "merged_at": "2026-09-13T18:39:44Z"
+          },
+          {
+            "number": 1251,
+            "title": "docs(sdk): record A3's merge with #1070 and the Metro gate's second round",
+            "merged_at": "2026-09-13T18:28:19Z"
+          },
+          {
+            "number": 1182,
+            "title": "docs: SDK migration inventory and PR-by-PR plan for both frontends",
+            "merged_at": "2026-09-13T17:56:49Z"
+          },
+          {
+            "number": 1070,
+            "title": "Shared session notes (human/agent whiteboards + URL list)",
+            "merged_at": "2026-09-13T17:41:23Z"
+          },
+          {
+            "number": 1237,
+            "title": "fix(agent): fingerprint repeated tool failures by semantic call signature (#829)",
+            "merged_at": "2026-09-13T06:08:02Z"
+          },
+          {
+            "number": 1234,
+            "title": "refactor(protocol): move slashCompletion into the package (SDK C9)",
+            "merged_at": "2026-09-13T05:42:38Z"
+          },
+          {
+            "number": 1235,
+            "title": "fix(llm): stop counting thinking the adapter will not replay (#653)",
+            "merged_at": "2026-09-13T05:41:46Z"
+          },
+          {
+            "number": 1233,
+            "title": "refactor(protocol): move reconcileBatches into the package (SDK C12)",
+            "merged_at": "2026-09-13T05:26:30Z"
+          },
+          {
+            "number": 1239,
+            "title": "fix(doctor): preserve cache-write usage in API logs and doctor output (#946)",
+            "merged_at": "2026-09-13T05:18:50Z"
+          },
+          {
+            "number": 1229,
+            "title": "refactor(protocol): move composerInput into the package (SDK C5)",
+            "merged_at": "2026-09-13T05:09:06Z"
+          },
+          {
+            "number": 1176,
+            "title": "perf(test): size gate workers to the machine's spare capacity",
+            "merged_at": "2026-09-12T21:34:09Z"
+          },
+          {
+            "number": 996,
+            "title": "test(apptranscript): gate the entries projection on allocations, not elapsed time",
+            "merged_at": "2026-09-08T02:27:44Z"
+          },
+          {
+            "number": 993,
+            "title": "test(hub): give hubcore and fspaths the hub's env redirect and EVENER_* scrub",
+            "merged_at": "2026-09-08T04:46:47Z"
+          },
+          {
+            "number": 990,
+            "title": "test(hub): give each hub fixture server its own state roots",
+            "merged_at": "2026-09-08T21:39:48Z"
+          },
+          {
+            "number": 988,
+            "title": "test(hub): drop the redundant per-method dispatch loop from the handler-set test",
+            "merged_at": "2026-09-08T05:15:44Z"
+          },
+          {
+            "number": 1124,
+            "title": "Apply an editorial design system across the WebUI",
+            "merged_at": "2026-09-11T05:52:23Z"
+          },
+          {
+            "number": 1041,
+            "title": "Move mid-exchange agent timestamps out of the flow into the right margin",
+            "merged_at": "2026-09-09T04:28:30Z"
+          },
+          {
+            "number": 1038,
+            "title": "feat(web-tasks): settled group first, drop task-list progress bar",
+            "merged_at": "2026-09-09T02:40:03Z"
+          },
+          {
+            "number": 992,
+            "title": "test(agent): pin plugin-agent model listing attribution",
+            "merged_at": "2026-09-08T04:46:29Z"
+          },
+          {
+            "number": 941,
+            "title": "feat(tui): paste a Google credential JSON from the credentials panel",
+            "merged_at": "2026-09-07T04:06:12Z"
+          },
+          {
+            "number": 1142,
+            "title": "fix(web): keep the shell row's chevron on its summary line while expanded",
+            "merged_at": "2026-09-11T20:34:53Z"
+          },
+          {
+            "number": 1084,
+            "title": "feat(webui): new-session prompt offers /command and /skill autocomplete",
+            "merged_at": "2026-09-10T21:20:16Z"
+          },
+          {
+            "number": 981,
+            "title": "test(hub): pin that the hub's default roots stay inside the test env",
+            "merged_at": "2026-09-08T01:47:54Z"
+          },
+          {
+            "number": 953,
+            "title": "Revert spark-1.3-contributor max effort",
+            "merged_at": "2026-09-07T05:24:45Z"
+          },
+          {
+            "number": 997,
+            "title": "perf(w2-watchdog): share one quiet-watchdog ticker per session",
+            "merged_at": "2026-09-08T17:27:01Z"
+          },
+          {
+            "number": 974,
+            "title": "perf(watch-batch): share one journal fold; batch multi-event watch sends",
+            "merged_at": "2026-09-08T16:12:03Z"
+          },
+          {
+            "number": 1005,
+            "title": "perf(w2-pane-split): lazy seams for Spawn dialog, composer hook, RailHost",
+            "merged_at": "2026-09-08T19:21:59Z"
+          },
+          {
+            "number": 1004,
+            "title": "perf(w2-fuzz-dedupe): skip FuzzXxx reseed in make fuzz steps 2-4",
+            "merged_at": "2026-09-08T01:53:53Z"
+          },
+          {
+            "number": 1003,
+            "title": "perf(w2-lint-invoke): prebuilt evener-dev across lint chain",
+            "merged_at": "2026-09-08T01:33:19Z"
+          },
+          {
+            "number": 1002,
+            "title": "perf(w2-sleeps): event-driven daemon hold; slower pane-size poll",
+            "merged_at": "2026-09-08T01:33:48Z"
+          },
+          {
+            "number": 1000,
+            "title": "perf(w2-img-store): prefer sha-addressed image URLs over data-URIs",
+            "merged_at": "2026-09-08T16:11:32Z"
+          },
+          {
+            "number": 999,
+            "title": "perf(w2-fold-cache): generation+stat fold cache for jobstore loads",
+            "merged_at": "2026-09-08T06:18:47Z"
+          },
+          {
+            "number": 998,
+            "title": "perf(w2-tui-batch): single-decode fast path for streaming TUI deltas",
+            "merged_at": "2026-09-08T01:32:40Z"
+          },
+          {
+            "number": 986,
+            "title": "perf(w2-png): losslessly recompress docs/web-ui PNGs (-1.34MB)",
+            "merged_at": "2026-09-08T01:49:00Z"
+          },
+          {
+            "number": 1103,
+            "title": "fix(plugins): name every competing copy in duplicate diagnostics",
+            "merged_at": "2026-09-10T18:02:09Z"
+          },
+          {
+            "number": 1001,
+            "title": "perf(w2-barrel): direct imports for heavy widgets",
+            "merged_at": "2026-09-08T01:34:06Z"
+          },
+          {
+            "number": 970,
+            "title": "perf(clock-tick): scope live ticks to leaf labels (ActivityTree, Spawn)",
+            "merged_at": "2026-09-08T00:24:09Z"
+          },
+          {
+            "number": 969,
+            "title": "perf(qr-lazy): lazy-load qrcode chunk behind Mobile settings section",
+            "merged_at": "2026-09-08T02:33:51Z"
+          },
+          {
+            "number": 968,
+            "title": "perf(outputmatcher): reuse scan-window scratch buffers, CR-aware fast path",
+            "merged_at": "2026-09-08T04:03:15Z"
+          },
+          {
+            "number": 965,
+            "title": "perf(rawlines-range): single-decode transcript lines, linear cap enforcement",
+            "merged_at": "2026-09-07T21:20:55Z"
+          },
+          {
+            "number": 1010,
+            "title": "fix(flake-goal-continuation): wait for the continuation opening event before asserting",
+            "merged_at": "2026-09-08T03:56:50Z"
+          },
+          {
+            "number": 975,
+            "title": "perf(markdown-stream): throttle live re-parse via paragraphs-only window; share lexer",
+            "merged_at": "2026-09-08T17:27:13Z"
+          },
+          {
+            "number": 973,
+            "title": "perf(build-cache): rebuild linux closure instead of wiping Go cache",
+            "merged_at": "2026-09-08T00:23:07Z"
+          },
+          {
+            "number": 972,
+            "title": "perf(ci-workflows): Go cache, retention cap, fewer CI lanes",
+            "merged_at": "2026-09-08T00:23:40Z"
+          },
+          {
+            "number": 971,
+            "title": "perf(img-lazy): lazy-load and async-decode gallery thumbnails",
+            "merged_at": "2026-09-07T21:21:05Z"
+          },
+          {
+            "number": 967,
+            "title": "perf(drain-dirty): idle backoff for drain kick fan-out (ticker untouched)",
+            "merged_at": "2026-09-08T06:34:16Z"
+          },
+          {
+            "number": 966,
+            "title": "perf(dashboard-filter): single-pass filter with precomputed haystack",
+            "merged_at": "2026-09-08T00:26:55Z"
+          },
+          {
+            "number": 964,
+            "title": "perf(marshal-apilog): O(1)-amortized API-log trim sizing via envelope sizer",
+            "merged_at": "2026-09-08T02:28:49Z"
+          },
+          {
+            "number": 963,
+            "title": "perf(marshal-transcript): skip one redundant envelope re-serialize; RuneCount without alloc",
+            "merged_at": "2026-09-08T00:27:37Z"
+          },
+          {
+            "number": 1062,
+            "title": "feat(webui): drop the idle \"Older turns\" banner from the transcript",
+            "merged_at": "2026-09-09T17:10:46Z"
+          },
+          {
+            "number": 957,
+            "title": "perf: efficiency sweep \u2014 retained-search O(1) accounting, 64KiB grep buffers, drop react-router",
+            "merged_at": "2026-09-07T15:07:06Z"
+          },
+          {
+            "number": 1138,
+            "title": "test(web): own the last two act-diagnostics residuals",
+            "merged_at": "2026-09-12T02:56:06Z"
+          },
+          {
+            "number": 1064,
+            "title": "fix(web): align glyph icons with text in baseline-aligned tool rows",
+            "merged_at": "2026-09-09T18:38:24Z"
+          },
+          {
+            "number": 1046,
+            "title": "Bury session force stop in the session menu",
+            "merged_at": "2026-09-09T06:23:33Z"
+          },
+          {
+            "number": 959,
+            "title": "Hub self-update from Settings (exec-in-place restart)",
+            "merged_at": "2026-09-09T15:46:31Z"
+          },
+          {
+            "number": 954,
+            "title": "feat(webui): dedicated job_watch renderer with humanized summaries",
+            "merged_at": "2026-09-09T16:22:47Z"
+          },
+          {
+            "number": 1060,
+            "title": "fix(webui): self-source watch prose uses this session label",
+            "merged_at": "2026-09-09T16:35:57Z"
+          },
+          {
+            "number": 933,
+            "title": "fix(appserver): fence read admission across unsubscribe",
+            "merged_at": "2026-09-07T15:58:20Z"
+          },
+          {
+            "number": 1170,
+            "title": "fix(web): open a failed tool call's summary line with its body",
+            "merged_at": "2026-09-12T18:14:22Z"
+          },
+          {
+            "number": 1167,
+            "title": "fix(vertex,google): unblock Gemini models (global-only warnings, regional 404, MCP schema metadata)",
+            "merged_at": "2026-09-12T17:17:40Z"
+          },
+          {
+            "number": 1132,
+            "title": "fix(webui): update Vitest and clean test diagnostics",
+            "merged_at": "2026-09-11T05:40:18Z"
+          },
+          {
+            "number": 1130,
+            "title": "fix(webui): open agent file links in a side pane",
+            "merged_at": "2026-09-11T02:28:35Z"
+          },
+          {
+            "number": 1160,
+            "title": "fix(llm): never send a reasoning effort the model row cannot vouch for",
+            "merged_at": "2026-09-12T02:53:07Z"
+          },
+          {
+            "number": 1131,
+            "title": "fix(webui): retain new-session drafts per project",
+            "merged_at": "2026-09-11T23:52:02Z"
+          },
+          {
+            "number": 952,
+            "title": "fix: give muse-spark-1.3-contributor the max effort tier",
+            "merged_at": "2026-09-07T05:21:05Z"
+          },
+          {
+            "number": 1180,
+            "title": "fix(plugins): finish a rename without recording a clone the entry never recorded",
+            "merged_at": "2026-09-12T21:19:25Z"
+          },
+          {
+            "number": 1043,
+            "title": "fix(meter): give track a sunken --field background",
+            "merged_at": "2026-09-09T04:10:19Z"
+          },
+          {
+            "number": 1020,
+            "title": "fix(test): mark drain backoff quiescence poll tick as tripwire",
+            "merged_at": "2026-09-08T15:06:08Z"
+          },
+          {
+            "number": 1008,
+            "title": "fix(lint): restore the tag-casing and import-order lanes on main",
+            "merged_at": "2026-09-08T03:26:30Z"
+          },
+          {
+            "number": 960,
+            "title": "fix(lint): modernize the retained-output accounting test",
+            "merged_at": "2026-09-07T18:25:43Z"
+          },
+          {
+            "number": 949,
+            "title": "fix(web): preserve attached images on turn-failure Retry",
+            "merged_at": "2026-09-08T19:23:46Z"
+          },
+          {
+            "number": 1144,
+            "title": "fix(web): honor the Reasoning flag with a content-free Thinking\u2026 placeholder",
+            "merged_at": "2026-09-11T22:09:14Z"
+          },
+          {
+            "number": 1029,
+            "title": "fix(flake-wedged-close): pin hopeless-stop half-budget deterministically",
+            "merged_at": "2026-09-09T16:05:34Z"
+          },
+          {
+            "number": 1171,
+            "title": "fix(tokenauth): use a replaced Google credential, and report a refusal as one",
+            "merged_at": "2026-09-12T19:39:16Z"
+          },
+          {
+            "number": 1143,
+            "title": "fix(web): center the job-notification card's trailing controls and show its disclosure chevron",
+            "merged_at": "2026-09-11T20:46:43Z"
+          },
+          {
+            "number": 1213,
+            "title": "fix(agent): retain a child's parked-env scratch on teardown",
+            "merged_at": "2026-09-13T03:20:27Z"
+          },
+          {
+            "number": 1015,
+            "title": "fix(appwire): decode warnings into the wire type, drop phantom turnId",
+            "merged_at": "2026-09-08T06:43:59Z"
+          },
+          {
+            "number": 1011,
+            "title": "fix(hub): keep the auth controller's OAuth records where the registry reads them",
+            "merged_at": "2026-09-08T19:47:29Z"
+          },
+          {
+            "number": 958,
+            "title": "test(agent): pin named-instance cheap model to the registry",
+            "merged_at": "2026-09-07T15:08:26Z"
+          },
+          {
+            "number": 943,
+            "title": "fix(agent): settle a child's abandoned environments by disposition",
+            "merged_at": "2026-09-07T04:13:16Z"
+          },
+          {
+            "number": 1212,
+            "title": "fix(appserver): wait for the real drain in the traced-shutdown test instead of a 2s deadline",
+            "merged_at": "2026-09-13T03:20:23Z"
+          },
+          {
+            "number": 987,
+            "title": "fix(hub): classify instance Remove/SetDefault not-found as InvalidParams",
+            "merged_at": "2026-09-08T01:48:05Z"
+          },
+          {
+            "number": 1211,
+            "title": "fix(agent): record a steering turn when an error path terminates the goal",
+            "merged_at": "2026-09-13T03:20:18Z"
+          },
+          {
+            "number": 985,
+            "title": "fix(execenv): bound the work and memory a glob or grep walk can spend",
+            "merged_at": "2026-09-08T23:26:24Z"
+          },
+          {
+            "number": 1210,
+            "title": "fix(agent): claim watch-send delivery so two deliverers cannot escalate to exit 1",
+            "merged_at": "2026-09-13T03:20:13Z"
+          },
+          {
+            "number": 1220,
+            "title": "fix(evener-dev): write the agent-shards survey cache atomically",
+            "merged_at": "2026-09-13T03:20:59Z"
+          },
+          {
+            "number": 1219,
+            "title": "fix(web): export ActivityNodeLike from the protocol root",
+            "merged_at": "2026-09-13T03:20:53Z"
+          },
+          {
+            "number": 1218,
+            "title": "fix(web): omit the line range for binary tool reads",
+            "merged_at": "2026-09-13T03:20:48Z"
+          },
+          {
+            "number": 1215,
+            "title": "fix(web): mint the browser-guard Chrome profile under a short root",
+            "merged_at": "2026-09-13T03:20:43Z"
+          },
+          {
+            "number": 1214,
+            "title": "fix(llm/registry): follow symlinks when writing providers.toml",
+            "merged_at": "2026-09-13T03:20:38Z"
+          },
+          {
+            "number": 995,
+            "title": "feat(agent): let any job_watch carry a note",
+            "merged_at": "2026-09-08T06:17:09Z"
+          },
+          {
+            "number": 1093,
+            "title": "fix(tool): repair a missing final outer-object brace",
+            "merged_at": "2026-09-10T07:50:57Z"
+          },
+          {
+            "number": 620,
+            "title": "fix(tool-fluency): wire probe metrics with provider-aware classification and make --max-rounds authoritative (#187)",
+            "merged_at": "2026-09-12T23:11:04Z"
+          },
+          {
+            "number": 615,
+            "title": "fix(ci): remove dependabot gomod block that 404s on vanity-path modules",
+            "merged_at": "2026-09-12T23:11:01Z"
+          },
+          {
+            "number": 606,
+            "title": "fix(install): route npm shim write through writeExecutable ForkLock (#270)",
+            "merged_at": "2026-09-12T22:57:45Z"
+          },
+          {
+            "number": 593,
+            "title": "fix(ci): align setup-toolchain composite pins with workflow pins and add parity audit (#288)",
+            "merged_at": "2026-09-12T22:57:42Z"
+          },
+          {
+            "number": 602,
+            "title": "fix(gate): make test-timing-budget fail loudly on broken measurements (#172)",
+            "merged_at": "2026-09-13T00:10:23Z"
+          },
+          {
+            "number": 1042,
+            "title": "fix(web): align top-level intent group with the transcript content column",
+            "merged_at": "2026-09-09T02:41:53Z"
+          },
+          {
+            "number": 1090,
+            "title": "Add session reconstruction from AgentsView archives",
+            "merged_at": "2026-09-10T21:19:53Z"
+          },
+          {
+            "number": 1108,
+            "title": "feat(sdk): add qualified read-only discovery examples",
+            "merged_at": "2026-09-10T19:33:28Z"
+          },
+          {
+            "number": 1099,
+            "title": "fix(appwire): preserve steering ownership through transcript replay",
+            "merged_at": "2026-09-10T13:59:11Z"
+          },
+          {
+            "number": 1092,
+            "title": "feat(client): package the standalone TypeScript AppWire SDK",
+            "merged_at": "2026-09-10T08:32:10Z"
+          },
+          {
+            "number": 1079,
+            "title": "test(web): await provider dialog import before asserting its state",
+            "merged_at": "2026-09-09T21:26:02Z"
+          },
+          {
+            "number": 1074,
+            "title": "fix(appwire): omit absent images from steering notifications",
+            "merged_at": "2026-09-09T21:26:25Z"
+          },
+          {
+            "number": 1128,
+            "title": "Bound parallel session-list source loading",
+            "merged_at": "2026-09-10T20:49:10Z"
+          },
+          {
+            "number": 1106,
+            "title": "fix(appwire): return arrays for empty project deletion results",
+            "merged_at": "2026-09-10T18:28:44Z"
+          },
+          {
+            "number": 1094,
+            "title": "refactor(web): share pure composer and catalog helpers",
+            "merged_at": "2026-09-10T08:24:15Z"
+          },
+          {
+            "number": 1078,
+            "title": "perf(hub): skip persisted task and delegate detail in session lists",
+            "merged_at": "2026-09-09T21:20:45Z"
+          },
+          {
+            "number": 1077,
+            "title": "refactor(client): share question answer formatting with native consumers",
+            "merged_at": "2026-09-09T21:21:17Z"
+          },
+          {
+            "number": 1073,
+            "title": "fix(appwire): complete reasoning items at turn boundaries",
+            "merged_at": "2026-09-10T13:00:04Z"
+          },
+          {
+            "number": 1069,
+            "title": "fix(hub): preserve restart entrypoints across directory aliases",
+            "merged_at": "2026-09-09T18:19:25Z"
+          },
+          {
+            "number": 1067,
+            "title": "fix(hub): report actual stored credential removal on logout",
+            "merged_at": "2026-09-09T18:18:46Z"
+          },
+          {
+            "number": 1127,
+            "title": "fix(navigation): normalize empty graphs before delta comparison",
+            "merged_at": "2026-09-10T20:36:04Z"
+          },
+          {
+            "number": 1104,
+            "title": "docs(mobile): preserve historical concept sketches",
+            "merged_at": "2026-09-10T17:56:33Z"
+          },
+          {
+            "number": 1097,
+            "title": "fix(transcript): preserve interrupted turns after reload",
+            "merged_at": "2026-09-10T10:11:12Z"
+          },
+          {
+            "number": 1076,
+            "title": "fix(client): validate and publish successful AppWire handshakes",
+            "merged_at": "2026-09-10T07:01:50Z"
+          },
+          {
+            "number": 1075,
+            "title": "fix(transcript): preserve goal continuation identity on reload",
+            "merged_at": "2026-09-09T21:26:13Z"
+          },
+          {
+            "number": 1072,
+            "title": "fix(hub): return an empty array for subagent previews",
+            "merged_at": "2026-09-09T21:24:24Z"
+          },
+          {
+            "number": 1071,
+            "title": "fix(server): include build version in AppWire initialization",
+            "merged_at": "2026-09-09T21:24:15Z"
+          },
+          {
+            "number": 1068,
+            "title": "fix(hub): return an empty array when no sessions are listed",
+            "merged_at": "2026-09-09T18:19:06Z"
+          },
+          {
+            "number": 1066,
+            "title": "fix(hub): bind device authorization polls to their provider",
+            "merged_at": "2026-09-09T18:18:24Z"
+          },
+          {
+            "number": 1101,
+            "title": "test(web): retain Vite startup diagnostics in concurrent guard failures",
+            "merged_at": "2026-09-10T14:22:30Z"
+          },
+          {
+            "number": 1095,
+            "title": "fix(keybindings): reject shortcuts with no key",
+            "merged_at": "2026-09-10T07:46:52Z"
+          },
+          {
+            "number": 1083,
+            "title": "fix(web): let Vite own browser guard port allocation",
+            "merged_at": "2026-09-10T07:18:51Z"
+          },
+          {
+            "number": 1081,
+            "title": "fix(daemon): retry interrupted Linux process-exit probes",
+            "merged_at": "2026-09-09T21:18:58Z"
+          },
+          {
+            "number": 1230,
+            "title": "refactor(protocol): move catalogCommands into the package (SDK C15)",
+            "merged_at": "2026-09-13T04:38:41Z"
+          },
+          {
+            "number": 1225,
+            "title": "refactor(protocol): move the tool-call text helpers into the package (SDK C11a)",
+            "merged_at": "2026-09-13T04:20:29Z"
+          },
+          {
+            "number": 1223,
+            "title": "refactor(protocol): move activityRows into the package (SDK C13)",
+            "merged_at": "2026-09-13T03:22:35Z"
+          },
+          {
+            "number": 1222,
+            "title": "refactor(protocol): move submitRouting into the package (SDK C10)",
+            "merged_at": "2026-09-13T03:21:38Z"
+          },
+          {
+            "number": 1221,
+            "title": "feat(protocol): give docContent an injected base origin with browser and native adapters",
+            "merged_at": "2026-09-13T02:55:44Z"
+          },
+          {
+            "number": 1186,
+            "title": "build(mobile-native): typecheck every file under mobile/src and drop the dead fixtures",
+            "merged_at": "2026-09-12T21:13:32Z"
+          },
+          {
+            "number": 1082,
+            "title": "test(appwire): prevent full-queue observation from blocking admission",
+            "merged_at": "2026-09-10T01:35:27Z"
+          },
+          {
+            "number": 980,
+            "title": "test(navigation): exercise the manifest delta in the conditional read test",
+            "merged_at": "2026-09-08T00:20:51Z"
+          },
+          {
+            "number": 1227,
+            "title": "refactor(protocol): move attachmentMarkers into the package (SDK C6)",
+            "merged_at": "2026-09-13T03:57:42Z"
+          },
+          {
+            "number": 1226,
+            "title": "refactor(protocol): move the message display formatters into the package (SDK C26)",
+            "merged_at": "2026-09-13T03:43:14Z"
+          },
+          {
+            "number": 1134,
+            "title": "test(appserver): order the unsubscribe-registration assertion on the capture handoff",
+            "merged_at": "2026-09-11T06:16:48Z"
+          },
+          {
+            "number": 1065,
+            "title": "Retire the at-named legacy marketplace doctrine with a load-time migration",
+            "merged_at": "2026-09-12T20:32:31Z"
+          },
+          {
+            "number": 1021,
+            "title": "Marketplace rows open an editor sheet; marketplace/edit renames and re-sources",
+            "merged_at": "2026-09-09T16:04:28Z"
+          },
+          {
+            "number": 1017,
+            "title": "Provider sheet is the editor: rename, credential fields, protocol and surface",
+            "merged_at": "2026-09-09T04:44:51Z"
+          },
+          {
+            "number": 979,
+            "title": "Personal AGENTS.md: loaded into every session, editable in settings",
+            "merged_at": "2026-09-08T06:23:19Z"
+          },
+          {
+            "number": 947,
+            "title": "feat(webui): type ramp, reading measure, rhythm, headings, folded tool runs",
+            "merged_at": "2026-09-07T15:07:46Z"
+          },
+          {
+            "number": 1107,
+            "title": "feat(llm): default API request logging off, configurable per session and hub",
+            "merged_at": "2026-09-11T02:30:04Z"
+          },
+          {
+            "number": 1080,
+            "title": "fix(web): ride the two-level body chevron inline with the summary text",
+            "merged_at": "2026-09-09T21:19:07Z"
+          },
+          {
+            "number": 1232,
+            "title": "refactor(protocol): move askShared and deriveAskQuestions into the package (SDK C11b)",
+            "merged_at": "2026-09-13T04:44:18Z"
+          },
+          {
+            "number": 1179,
+            "title": "fix(agent): make activity size-trim continuations advance",
+            "merged_at": "2026-09-13T03:20:08Z"
+          },
+          {
+            "number": 1209,
+            "title": "feat(protocol): publish docContent as a subpath and inject its fetch",
+            "merged_at": "2026-09-13T01:54:42Z"
+          },
+          {
+            "number": 1098,
+            "title": "Preserve environment transcript identity across hub restarts",
+            "merged_at": "2026-09-13T01:36:25Z"
+          },
+          {
+            "number": 1207,
+            "title": "test(protocol): qualify the package per specifier, not only at the root",
+            "merged_at": "2026-09-13T01:33:27Z"
+          },
+          {
+            "number": 1206,
+            "title": "feat(protocol): export from the root every error helper the apps import",
+            "merged_at": "2026-09-13T00:47:54Z"
+          },
+          {
+            "number": 1189,
+            "title": "refactor(protocol): one settled-item failure predicate for both clients",
+            "merged_at": "2026-09-13T00:16:05Z"
+          },
+          {
+            "number": 1188,
+            "title": "refactor(protocol): declare AppwireClientLike in the package, not the test double",
+            "merged_at": "2026-09-13T00:04:16Z"
+          },
+          {
+            "number": 1203,
+            "title": "refactor(mobile): one usage projection for the conversation and the activity store",
+            "merged_at": "2026-09-13T00:03:41Z"
+          },
+          {
+            "number": 1196,
+            "title": "test(web): stop a released IndexedDB hold from swallowing in-flight events",
+            "merged_at": "2026-09-12T23:54:46Z"
+          },
+          {
+            "number": 1184,
+            "title": "feat(protocol): ship every protocol module in the package",
+            "merged_at": "2026-09-12T23:41:33Z"
+          },
+          {
+            "number": 1022,
+            "title": "cleanup(hub): resolve the state root once, in cmdutil.DefaultStateRoot",
+            "merged_at": "2026-09-12T19:43:45Z"
+          },
+          {
+            "number": 1178,
+            "title": "docs(plugins): include explicit-dir candidates in --enabled-plugins",
+            "merged_at": "2026-09-12T19:12:03Z"
+          },
+          {
+            "number": 1175,
+            "title": "feat(plugins): make the global enable flag \"enabled by default\"",
+            "merged_at": "2026-09-12T18:55:10Z"
+          },
+          {
+            "number": 1096,
+            "title": "Land the native iPhone checkpoint and shared session core",
+            "merged_at": "2026-09-12T01:19:36Z"
+          },
+          {
+            "number": 1105,
+            "title": "fix(hub): advertise fork capability for local sessions",
+            "merged_at": "2026-09-12T00:31:06Z"
+          },
+          {
+            "number": 1161,
+            "title": "fix(agent): stop the session namer starving reasoning models",
+            "merged_at": "2026-09-11T23:53:00Z"
+          },
+          {
+            "number": 1137,
+            "title": "fix(web): hold the transcript at the bottom when a late measurement grows it",
+            "merged_at": "2026-09-11T19:57:11Z"
+          },
+          {
+            "number": 1140,
+            "title": "test(serve): gate the idle-publication harness on the bridge's terminal projection",
+            "merged_at": "2026-09-11T19:25:07Z"
+          },
+          {
+            "number": 1139,
+            "title": "fix(web): show a tool call's own summary when it has no stated intent",
+            "merged_at": "2026-09-11T18:48:23Z"
+          },
+          {
+            "number": 1091,
+            "title": "refactor(client): share activity and job output helpers",
+            "merged_at": "2026-09-11T17:41:39Z"
+          },
+          {
+            "number": 1109,
+            "title": "fix(serve): publish terminal session boundary on shutdown",
+            "merged_at": "2026-09-11T07:59:34Z"
+          },
+          {
+            "number": 1135,
+            "title": "fix(web): bound each browser-guard readiness probe attempt",
+            "merged_at": "2026-09-11T07:09:17Z"
+          },
+          {
+            "number": 1133,
+            "title": "test(serve): gate the session-control harness on the daemon's turn claim",
+            "merged_at": "2026-09-11T06:32:12Z"
+          },
+          {
+            "number": 1110,
+            "title": "WIP: integrate compaction identity with environment replay",
+            "merged_at": "2026-09-10T19:47:41Z"
+          },
+          {
+            "number": 1102,
+            "title": "docs(mobile): record current iPhone checkpoint and remaining work",
+            "merged_at": "2026-09-10T18:07:15Z"
+          },
+          {
+            "number": 1039,
+            "title": "ci: register manual iPhone TestFlight delivery",
+            "merged_at": "2026-09-10T18:06:02Z"
+          },
+          {
+            "number": 1044,
+            "title": "feat(webui,tui): go to next/previous live session key bindings",
+            "merged_at": "2026-09-09T16:06:47Z"
+          },
+          {
+            "number": 977,
+            "title": "Allow explicit verified force stop of local session daemons",
+            "merged_at": "2026-09-09T01:59:15Z"
+          },
+          {
+            "number": 936,
+            "title": "Keep incompatible running sessions visible and reject undeliverable messages",
+            "merged_at": "2026-09-09T00:46:45Z"
+          },
+          {
+            "number": 1032,
+            "title": "fix(hub): remove unused spawner state root",
+            "merged_at": "2026-09-08T20:28:55Z"
+          },
+          {
+            "number": 962,
+            "title": "fix(navigation): serve a snapshot when a delta cannot be built",
+            "merged_at": "2026-09-07T21:20:21Z"
+          },
+          {
+            "number": 937,
+            "title": "fix: use configurable provider byte-idle timeouts without total caps",
+            "merged_at": "2026-09-07T04:22:50Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/github-triage": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 1767,
+        "loc_removed": 1,
+        "merged_prs": [
+          {
+            "number": 1,
+            "title": "Add triage tooling: verdict schema, report builder, action applier",
+            "merged_at": "2026-09-08T16:52:11Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Claude Code plugin for triaging GitHub issues and pull requests, with a security-gated PR review workflow.",
+        "html_url": "https://github.com/prime-radiant-inc/github-triage"
+      },
+      "prime-radiant-inc/gauntlet": {
+        "commits": 27,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 27
+          }
+        ],
+        "loc_added": 8197,
+        "loc_removed": 653,
+        "merged_prs": [
+          {
+            "number": 22,
+            "title": "Require material-claim audits before assessment verdicts",
+            "merged_at": "2026-09-11T07:23:41Z"
+          },
+          {
+            "number": 21,
+            "title": "Give assessment a bounded report phase and searchable evidence",
+            "merged_at": "2026-09-11T04:55:37Z"
+          },
+          {
+            "number": 20,
+            "title": "Use strict assessment reports on direct Anthropic",
+            "merged_at": "2026-09-10T20:45:36Z"
+          },
+          {
+            "number": 19,
+            "title": "Recover assessment criteria from reasoning markup",
+            "merged_at": "2026-09-10T19:09:36Z"
+          },
+          {
+            "number": 18,
+            "title": "Preserve assessment completion, evidence validity, and request costs",
+            "merged_at": "2026-09-10T06:20:24Z"
+          },
+          {
+            "number": 17,
+            "title": "Add conversation and independent assessment roles",
+            "merged_at": "2026-09-08T05:23:59Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "AI-powered QA testing framework that uses LLMs (Claude or GPT) to test web apps, CLI tools, and TUI programs from markdown story cards, returning structured pass/fail verdicts with evidence.",
+        "html_url": "https://github.com/prime-radiant-inc/gauntlet"
+      },
+      "prime-radiant-inc/superpowers-evals": {
+        "commits": 196,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 196
+          }
+        ],
+        "loc_added": 63255,
+        "loc_removed": 16368,
+        "merged_prs": [
+          {
+            "number": 70,
+            "title": "Record live F28 path verification and grading limits",
+            "merged_at": "2026-09-12T00:49:24Z"
+          },
+          {
+            "number": 69,
+            "title": "Use tool-safe attempt paths and record the fresh F28 results",
+            "merged_at": "2026-09-12T00:05:29Z"
+          },
+          {
+            "number": 68,
+            "title": "Fix campaign paths and the no-spec scenario check",
+            "merged_at": "2026-09-11T22:55:46Z"
+          },
+          {
+            "number": 67,
+            "title": "Record the focused comparison and its evidence limits",
+            "merged_at": "2026-09-11T22:19:42Z"
+          },
+          {
+            "number": 66,
+            "title": "Allow the focused comparison while code-review qualification remains unresolved",
+            "merged_at": "2026-09-11T18:07:06Z"
+          },
+          {
+            "number": 65,
+            "title": "Record failed Sonnet and Opus grading after the prompt amendment",
+            "merged_at": "2026-09-11T08:11:09Z"
+          },
+          {
+            "number": 64,
+            "title": "Freeze corrected control for the assessor prompt retry",
+            "merged_at": "2026-09-11T07:26:18Z"
+          },
+          {
+            "number": 63,
+            "title": "Record failed qualification before reduced validation comparisons",
+            "merged_at": "2026-09-11T07:01:09Z"
+          },
+          {
+            "number": 62,
+            "title": "Reduce initial validation to one paired repetition",
+            "merged_at": "2026-09-11T06:42:31Z"
+          },
+          {
+            "number": 61,
+            "title": "Make PR and release comparisons repeatable with independent measurements",
+            "merged_at": "2026-09-11T04:58:40Z"
+          },
+          {
+            "number": 60,
+            "title": "Preserve incomplete assessment accounting in campaign reports",
+            "merged_at": "2026-09-10T22:49:12Z"
+          },
+          {
+            "number": 59,
+            "title": "Record routine-use restart: checker fixed, assessment deadline blocks completion",
+            "merged_at": "2026-09-10T22:32:31Z"
+          },
+          {
+            "number": 58,
+            "title": "Use each conversation scenario\u2019s declared checker (PRI-3120)",
+            "merged_at": "2026-09-10T21:58:01Z"
+          },
+          {
+            "number": 57,
+            "title": "Use direct Anthropic for conversation graders",
+            "merged_at": "2026-09-10T20:58:23Z"
+          },
+          {
+            "number": 56,
+            "title": "Record the live re-run of the code-review smoke after the criteria repair",
+            "merged_at": "2026-09-10T19:30:56Z"
+          },
+          {
+            "number": 55,
+            "title": "Record the offline criteria-repair check for the code-review smoke",
+            "merged_at": "2026-09-10T19:02:41Z"
+          },
+          {
+            "number": 54,
+            "title": "Record the conversation code-review smoke result",
+            "merged_at": "2026-09-10T17:37:06Z"
+          },
+          {
+            "number": 53,
+            "title": "Declare the conversation code-review smoke suite",
+            "merged_at": "2026-09-10T17:14:34Z"
+          },
+          {
+            "number": 52,
+            "title": "Remove the operator scripts under docs/experiments and fence docs against code",
+            "merged_at": "2026-09-10T16:42:28Z"
+          },
+          {
+            "number": 51,
+            "title": "Key the Pi placeholder-zero pricing policy on the provisioning route",
+            "merged_at": "2026-09-10T16:38:38Z"
+          },
+          {
+            "number": 50,
+            "title": "Land conversation and PR 2236 harness fixes without the experiment runtime",
+            "merged_at": "2026-09-10T16:10:33Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Behavioral eval lab (Quorum) for the superpowers project that drives real coding-agent CLIs (Claude, Codex, Gemini, Kimi, and more) through a QA agent and grades them on workflow compliance against scenario criteria and deterministic post-checks.",
+        "html_url": "https://github.com/prime-radiant-inc/superpowers-evals"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 14,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 14
+          }
+        ],
+        "loc_added": 5095,
+        "loc_removed": 4667,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/teststrip": {
+        "commits": 30,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 30
+          }
+        ],
+        "loc_added": 4955,
+        "loc_removed": 705,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "macOS photo culling app \u2014 catalog-first, non-destructive, AI-assisted. Early development; not ready for use.",
+        "html_url": "https://github.com/prime-radiant-inc/teststrip"
+      },
+      "prime-radiant-inc/study-skills": {
+        "commits": 11,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 11
+          }
+        ],
+        "loc_added": 8644,
+        "loc_removed": 210,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "5ee719d",
+            "date": "2026-09-09T02:41:46+00:00",
+            "subject": "Release v0.9.0",
+            "version": "0.9.0"
+          },
+          {
+            "sha": "ec1156e",
+            "date": "2026-09-09T00:58:01+00:00",
+            "subject": "Release v0.8.1",
+            "version": "0.8.1"
+          },
+          {
+            "sha": "f384474",
+            "date": "2026-09-08T23:47:55+00:00",
+            "subject": "Release v0.8.0",
+            "version": "0.8.0"
+          }
+        ],
+        "featured": true,
+        "featured_reason": "created this week (2026-09-08T20:49:14Z)",
+        "description": "A Claude Code plugin for durable agent learning: analytical reading, a cross-linked Zettelkasten slip-box with a bundled CLI, first-person beliefs with falsifiers, experience capture, and deliberation forks.",
+        "html_url": "https://github.com/prime-radiant-inc/study-skills"
+      },
+      "prime-radiant-inc/shepherd-pr": {
+        "commits": 15,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 13
+          },
+          {
+            "name": "jesse",
+            "count": 2
+          }
+        ],
+        "loc_added": 5438,
+        "loc_removed": 530,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "ce25a63",
+            "date": "2026-09-12T19:32:17+00:00",
+            "subject": "chore(release): bump plugin to 0.2.0",
+            "version": "0.2.0"
+          }
+        ],
+        "featured": true,
+        "featured_reason": "created this week (2026-09-10T19:23:34Z)",
+        "description": "A portable coding-agent plugin for shepherding GitHub pull requests through CI and review.",
+        "html_url": "https://github.com/prime-radiant-inc/shepherd-pr"
+      },
+      "obra/episodic-memory": {
+        "commits": 32,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 29
+          },
+          {
+            "name": "ada-sen",
+            "count": 2
+          },
+          {
+            "name": "Victor Naumik",
+            "count": 1
+          }
+        ],
+        "loc_added": 18820,
+        "loc_removed": 3578,
+        "merged_prs": [
+          {
+            "number": 169,
+            "title": "test(show): pin the timestamp expectation to en-US/UTC like the formatter",
+            "merged_at": "2026-09-10T16:59:03Z"
+          },
+          {
+            "number": 167,
+            "title": "fix(build): allow better-sqlite3 and onnxruntime-node install scripts",
+            "merged_at": "2026-09-10T16:41:55Z"
+          },
+          {
+            "number": 166,
+            "title": "fix(summarizer): set excludeTurns on ephemeral Codex thread/fork",
+            "merged_at": "2026-09-09T19:15:20Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v1.6.0",
+            "name": "v1.6.0",
+            "published_at": "2026-09-08T20:31:04Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.5.0",
+            "name": "v1.5.0",
+            "published_at": "2026-09-08T19:05:28Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v1.6.0 published 2026-09-08T20:31:04Z; tagged release v1.5.0 published 2026-09-08T19:05:28Z",
+        "description": null,
+        "html_url": "https://github.com/obra/episodic-memory"
+      },
+      "obra/lace": {
+        "commits": 8,
+        "authors": [
+          {
+            "name": "ada-sen",
+            "count": 5
+          },
+          {
+            "name": "Jesse Vincent",
+            "count": 3
+          }
+        ],
+        "loc_added": 1855,
+        "loc_removed": 421,
+        "merged_prs": [
+          {
+            "number": 399,
+            "title": "docs: remove dead link to a helper-agents doc that was never written",
+            "merged_at": "2026-09-08T00:25:04Z"
+          },
+          {
+            "number": 397,
+            "title": "fix(url_fetch): redact credentials in URLs before they reach the model",
+            "merged_at": "2026-09-08T00:24:22Z"
+          },
+          {
+            "number": 398,
+            "title": "fix(containers): reap only the booting agent's own orphan containers",
+            "merged_at": "2026-09-08T00:20:48Z"
+          },
+          {
+            "number": 396,
+            "title": "ci: run CI on fork PRs and test all three packages",
+            "merged_at": "2026-09-08T00:04:42Z"
+          },
+          {
+            "number": 393,
+            "title": "fix: make 'npm run test:run' actually run the tests",
+            "merged_at": "2026-09-07T18:25:55Z"
+          },
+          {
+            "number": 395,
+            "title": "fix(url_fetch): capture curl's effective URL as the container runtime's finalUrl",
+            "merged_at": "2026-09-07T18:25:51Z"
+          },
+          {
+            "number": 394,
+            "title": "fix(url_fetch): stop reporting the requested URL as the redirect destination",
+            "merged_at": "2026-09-07T18:24:58Z"
+          },
+          {
+            "number": 392,
+            "title": "chore: remove stray OpenAI docs paste committed as state.txt",
+            "merged_at": "2026-09-07T18:05:10Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/scan-to-model": {
+        "commits": 162,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 162
+          }
+        ],
+        "loc_added": 17278,
+        "loc_removed": 1145,
+        "merged_prs": [
+          {
+            "number": 40,
+            "title": "Add reusable planar polygon comparison helpers",
+            "merged_at": "2026-09-12T14:04:00Z"
+          },
+          {
+            "number": 39,
+            "title": "Clarify current face ownership before overlap findings",
+            "merged_at": "2026-09-12T13:17:09Z"
+          },
+          {
+            "number": 38,
+            "title": "Test retention of packed evidence-only images",
+            "merged_at": "2026-09-12T12:28:14Z"
+          },
+          {
+            "number": 37,
+            "title": "Document Blender worker preflight and metadata reuse",
+            "merged_at": "2026-09-12T11:17:29Z"
+          },
+          {
+            "number": 36,
+            "title": "Document bytecode-safe Python CLI examples",
+            "merged_at": "2026-09-12T09:58:36Z"
+          },
+          {
+            "number": 35,
+            "title": "Document finite face comparison safeguards",
+            "merged_at": "2026-09-12T09:06:54Z"
+          },
+          {
+            "number": 34,
+            "title": "Clarify source-to-current residual evidence roles",
+            "merged_at": "2026-09-12T07:13:47Z"
+          },
+          {
+            "number": 33,
+            "title": "Speed up Blender view-layer inventory traversal",
+            "merged_at": "2026-09-12T06:28:43Z"
+          },
+          {
+            "number": 32,
+            "title": "Require explicit image-review decisions in observation finalizers",
+            "merged_at": "2026-09-12T05:14:36Z"
+          },
+          {
+            "number": 31,
+            "title": "Add optional native pixel inspection for surface patches",
+            "merged_at": "2026-09-12T05:09:41Z"
+          },
+          {
+            "number": 30,
+            "title": "Keep observation SVG labels readable",
+            "merged_at": "2026-09-12T02:16:41Z"
+          },
+          {
+            "number": 29,
+            "title": "Initialize Blender runtime before review helpers",
+            "merged_at": "2026-09-12T01:15:44Z"
+          },
+          {
+            "number": 28,
+            "title": "Bind surface samples to native tracking segments",
+            "merged_at": "2026-09-12T00:04:55Z"
+          },
+          {
+            "number": 27,
+            "title": "Capture nested image properties in Blender inventories",
+            "merged_at": "2026-09-11T23:32:39Z"
+          },
+          {
+            "number": 26,
+            "title": "Separate applied overrides from visible material checks",
+            "merged_at": "2026-09-11T22:58:14Z"
+          },
+          {
+            "number": 25,
+            "title": "Require exact tracking-segment registration scope",
+            "merged_at": "2026-09-11T22:21:04Z"
+          },
+          {
+            "number": 24,
+            "title": "Reject empty presentation sample frames",
+            "merged_at": "2026-09-11T21:37:52Z"
+          },
+          {
+            "number": 23,
+            "title": "Validate scripted presentation coverage",
+            "merged_at": "2026-09-11T21:14:52Z"
+          },
+          {
+            "number": 22,
+            "title": "Add exact coordinate inspection views",
+            "merged_at": "2026-09-11T19:40:49Z"
+          },
+          {
+            "number": 21,
+            "title": "Guard Blender world-matrix extraction by dependency graph",
+            "merged_at": "2026-09-11T18:06:51Z"
+          },
+          {
+            "number": 20,
+            "title": "Document sample review before surface fitting",
+            "merged_at": "2026-09-11T16:46:26Z"
+          },
+          {
+            "number": 19,
+            "title": "Frame Blender curves from evaluated drawable geometry",
+            "merged_at": "2026-09-11T07:35:28Z"
+          },
+          {
+            "number": 18,
+            "title": "Define physical room-sheet review manifests",
+            "merged_at": "2026-09-11T07:12:49Z"
+          },
+          {
+            "number": 17,
+            "title": "Snapshot Blender collections before visibility changes",
+            "merged_at": "2026-09-11T06:56:47Z"
+          },
+          {
+            "number": 16,
+            "title": "Add native-scale observation review crops",
+            "merged_at": "2026-09-11T06:36:57Z"
+          },
+          {
+            "number": 15,
+            "title": "Isolate Blender GUI review runtime state",
+            "merged_at": "2026-09-11T05:47:12Z"
+          },
+          {
+            "number": 14,
+            "title": "Preserve diagnostic placement dispositions across handoffs",
+            "merged_at": "2026-09-11T05:40:20Z"
+          },
+          {
+            "number": 13,
+            "title": "Require closure for Blender evidence references",
+            "merged_at": "2026-09-11T05:28:35Z"
+          },
+          {
+            "number": 12,
+            "title": "Freeze Blender review inputs before launch",
+            "merged_at": "2026-09-11T05:12:38Z"
+          },
+          {
+            "number": 10,
+            "title": "Add reproducible source-photo annotation sheets",
+            "merged_at": "2026-09-11T04:33:31Z"
+          },
+          {
+            "number": 11,
+            "title": "Decode verified 16-bit grayscale PNG depth without sample loss",
+            "merged_at": "2026-09-11T04:29:48Z"
+          },
+          {
+            "number": 9,
+            "title": "Reuse Blender layer collection order during inventory",
+            "merged_at": "2026-09-11T04:09:25Z"
+          },
+          {
+            "number": 8,
+            "title": "Document safe Blender candidate promotion paths",
+            "merged_at": "2026-09-11T04:00:06Z"
+          },
+          {
+            "number": 7,
+            "title": "Fit manufactured assemblies in a reusable common frame",
+            "merged_at": "2026-09-11T03:25:34Z"
+          },
+          {
+            "number": 6,
+            "title": "Separate source traces from rectangular component geometry",
+            "merged_at": "2026-09-10T22:05:12Z"
+          },
+          {
+            "number": 5,
+            "title": "Preserve original PDF command streams before parsing",
+            "merged_at": "2026-09-10T21:23:09Z"
+          },
+          {
+            "number": 4,
+            "title": "Separate cross-photo identity from construction state",
+            "merged_at": "2026-09-10T20:51:21Z"
+          },
+          {
+            "number": 3,
+            "title": "Keep the plugin description independent of skill count",
+            "merged_at": "2026-09-10T20:36:45Z"
+          },
+          {
+            "number": 2,
+            "title": "Add verified Street View exterior references",
+            "merged_at": "2026-09-10T19:35:48Z"
+          },
+          {
+            "number": 1,
+            "title": "Preserve photograph observations independently of model geometry",
+            "merged_at": "2026-09-10T18:13:41Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-09-10T07:00:50Z)",
+        "description": "Evidence-driven scan reconstruction skills and local tools for Codex and Blender",
+        "html_url": "https://github.com/obra/scan-to-model"
+      },
+      "obra/superpowers": {
+        "commits": 0,
+        "authors": [],
+        "loc_added": 0,
+        "loc_removed": 0,
+        "merged_prs": [
+          {
+            "number": 2275,
+            "title": "feat(movie): support native Windows PowerShell and Git Bash",
+            "merged_at": "2026-09-12T00:16:38Z"
+          },
+          {
+            "number": 2287,
+            "title": "fix: preserve diagnostic evidence in doctor exports",
+            "merged_at": "2026-09-11T22:21:18Z"
+          },
+          {
+            "number": 2236,
+            "title": "feat: add diagnosing-superpowers skill \u2014 evidence-based session diagnosis, scrubbed bug-report bundles",
+            "merged_at": "2026-09-11T22:21:17Z"
+          },
+          {
+            "number": 2250,
+            "title": "Fix platform-support issue template to apply a label that exists",
+            "merged_at": "2026-09-08T19:58:53Z"
+          },
+          {
+            "number": 2258,
+            "title": "fix: preserve shared intent through design and planning",
+            "merged_at": "2026-09-08T18:17:37Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 2,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      }
+    }
+  },
+  "2026-09-14": {
+    "summary": {
+      "repos_active": 13,
+      "featured_count": 2,
+      "second_tier_count": 11,
+      "commits": 475,
+      "merged_prs": 381,
+      "loc_added": 394542,
+      "loc_removed": 53817,
+      "contributors": 10,
+      "tagged_releases": 3,
+      "commit_only_bumps": 2
+    },
+    "repos": {
+      "prime-radiant-inc/evener": {
+        "commits": 384,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 383
+          },
+          {
+            "name": "dependabot[bot]",
+            "count": 1
+          }
+        ],
+        "loc_added": 347965,
+        "loc_removed": 44058,
+        "merged_prs": [
+          {
+            "number": 1895,
+            "title": "fix(mobile): canonical warning rows compose message and hint; short live-row ids",
+            "merged_at": "2026-09-18T22:06:51Z"
+          },
+          {
+            "number": 1910,
+            "title": "test(web): deliver the test-web interrupt to the process group (#1551)",
+            "merged_at": "2026-09-18T22:05:35Z"
+          },
+          {
+            "number": 1753,
+            "title": "fix(web): keep a summary-less delegate row single-level at tools/activity/full (#1253)",
+            "merged_at": "2026-09-18T22:01:28Z"
+          },
+          {
+            "number": 1808,
+            "title": "D6 pieces 3-5, folded: the draft-checkpoint port with settle and replaced-checkpoint adoption",
+            "merged_at": "2026-09-18T21:56:26Z"
+          },
+          {
+            "number": 1894,
+            "title": "fix(sdk): warning strings are bounded before any copy",
+            "merged_at": "2026-09-18T21:45:41Z"
+          },
+          {
+            "number": 1905,
+            "title": "agent: a steer resolves the ask boundary only when it answers it (live)",
+            "merged_at": "2026-09-18T21:35:07Z"
+          },
+          {
+            "number": 1893,
+            "title": "fix(sdk): prunedForStringify is a bounded lazy walk",
+            "merged_at": "2026-09-18T21:18:40Z"
+          },
+          {
+            "number": 1913,
+            "title": "refactor(sdk): C5 follow-ups (submission runner factory, shared types, dead method field, test title)",
+            "merged_at": "2026-09-18T20:54:13Z"
+          },
+          {
+            "number": 1889,
+            "title": "plugins: store write failures never name the store path (helpers + write sites)",
+            "merged_at": "2026-09-18T20:51:23Z"
+          },
+          {
+            "number": 1912,
+            "title": "refactor(mobile): hubConnection follow-ups (#1888 simplify)",
+            "merged_at": "2026-09-18T20:40:40Z"
+          },
+          {
+            "number": 1901,
+            "title": "refactor(sdk): submission lifecycle in the package (D25e C5)",
+            "merged_at": "2026-09-18T20:32:52Z"
+          },
+          {
+            "number": 1898,
+            "title": "fix(agent): delegates keep use_skill so skill-directed briefs work (#1427)",
+            "merged_at": "2026-09-18T20:25:20Z"
+          },
+          {
+            "number": 1819,
+            "title": "perf(hub): publish FTS index incrementally instead of rewriting it (#725)",
+            "merged_at": "2026-09-18T20:18:52Z"
+          },
+          {
+            "number": 1888,
+            "title": "refactor(mobile): ConnectionProvider over the package connection store (D28 D1)",
+            "merged_at": "2026-09-18T20:11:25Z"
+          },
+          {
+            "number": 1903,
+            "title": "fix(web): pin the frontend dep cache inside the checkout (#1586)",
+            "merged_at": "2026-09-18T20:05:42Z"
+          },
+          {
+            "number": 1899,
+            "title": "refactor(sdk): C4 follow-ups (typed timer port, lazy tripwire, host-agnostic wording, shared MutationCommit, commit+refs test)",
+            "merged_at": "2026-09-18T19:58:53Z"
+          },
+          {
+            "number": 1892,
+            "title": "fix(sdk): ask resolution is wire-authoritative (askPending gate, human-note excluded)",
+            "merged_at": "2026-09-18T19:54:19Z"
+          },
+          {
+            "number": 1829,
+            "title": "fix(sdk): a credential write retires an in-flight refresh, not a held row (#1507)",
+            "merged_at": "2026-09-18T19:45:40Z"
+          },
+          {
+            "number": 1887,
+            "title": "refactor(web): activitySummary reuses the package's panelLoadFailure (#1853)",
+            "merged_at": "2026-09-18T19:32:14Z"
+          },
+          {
+            "number": 1839,
+            "title": "test(native): pin a failed turn with queued work active (#1156)",
+            "merged_at": "2026-09-18T19:32:11Z"
+          },
+          {
+            "number": 1886,
+            "title": "refactor(sdk): pending-turn commit feed and stall tripwire in the package (D25e C4)",
+            "merged_at": "2026-09-18T19:27:18Z"
+          },
+          {
+            "number": 1859,
+            "title": "fix(sdk): image folding + warning text (#1731 piece 2/3)",
+            "merged_at": "2026-09-18T19:22:53Z"
+          },
+          {
+            "number": 1815,
+            "title": "fix(agent): repeat quiet-watchdog cadence for wedged delegates (#588)",
+            "merged_at": "2026-09-18T18:42:10Z"
+          },
+          {
+            "number": 1868,
+            "title": "test(web): isolate the periodic-discovery test.each cases (#1713)",
+            "merged_at": "2026-09-18T18:37:29Z"
+          },
+          {
+            "number": 1830,
+            "title": "fix(hub): trace the retirement resume path's lifecycle stages (#1577)",
+            "merged_at": "2026-09-18T18:37:25Z"
+          },
+          {
+            "number": 1816,
+            "title": "refactor(coverage): count coverage-gaps and e2e-cover through the Go covstmt primitive (#616)",
+            "merged_at": "2026-09-18T18:37:21Z"
+          },
+          {
+            "number": 1770,
+            "title": "fix(hub): echo originClientId on the instance mutation broadcast (#1517)",
+            "merged_at": "2026-09-18T18:18:48Z"
+          },
+          {
+            "number": 1872,
+            "title": "refactor(appwire-client): extract the chunk view into chunkview.ts (#579)",
+            "merged_at": "2026-09-18T18:15:44Z"
+          },
+          {
+            "number": 1880,
+            "title": "refactor(sdk): one target-freshness predicate for the projection fence (#1856 follow-up)",
+            "merged_at": "2026-09-18T17:45:53Z"
+          },
+          {
+            "number": 1857,
+            "title": "refactor(sdk): the web switches its projection fence to the package (D25e C3c)",
+            "merged_at": "2026-09-18T17:42:35Z"
+          },
+          {
+            "number": 1821,
+            "title": "fix(activity): discard cross-revision continuations and prove bounded paging (#450)",
+            "merged_at": "2026-09-18T17:35:05Z"
+          },
+          {
+            "number": 1856,
+            "title": "refactor(sdk): the mutation projection fence, package-only (D25e C3b)",
+            "merged_at": "2026-09-18T17:21:36Z"
+          },
+          {
+            "number": 1878,
+            "title": "fix(native): a transcript-display post-apply reply is adopted only for the mobile layout (#1822 follow-up)",
+            "merged_at": "2026-09-18T17:20:13Z"
+          },
+          {
+            "number": 1870,
+            "title": "fix(agent): widen vision caveats beyond rendered text (#486)",
+            "merged_at": "2026-09-18T17:10:31Z"
+          },
+          {
+            "number": 1874,
+            "title": "docs(sdk): joinedReasoningParagraphs comment names its real consumers (#1858 follow-up)",
+            "merged_at": "2026-09-18T16:51:49Z"
+          },
+          {
+            "number": 1835,
+            "title": "fix(skills): stop repeating the publish path when the shared cache is unusable (#1415)",
+            "merged_at": "2026-09-18T16:50:18Z"
+          },
+          {
+            "number": 1822,
+            "title": "hub: transcript-display write applied then failed is reported as applied",
+            "merged_at": "2026-09-18T16:49:50Z"
+          },
+          {
+            "number": 1869,
+            "title": "fix(mobile): receipt decoders ignore additive wire keys (#1759)",
+            "merged_at": "2026-09-18T16:43:44Z"
+          },
+          {
+            "number": 1858,
+            "title": "fix(sdk): reasoning export (#1731 piece 1/3)",
+            "merged_at": "2026-09-18T16:11:48Z"
+          },
+          {
+            "number": 1781,
+            "title": "fix(agent): cap activity envelope inputs at projection time (#1202)",
+            "merged_at": "2026-09-18T15:16:07Z"
+          },
+          {
+            "number": 1802,
+            "title": "fix(evener-dev): cap total agent-shard concurrency (#1191)",
+            "merged_at": "2026-09-18T15:16:02Z"
+          },
+          {
+            "number": 1778,
+            "title": "refactor(appwire-client): type applyNotification generically over the model (#1523)",
+            "merged_at": "2026-09-18T15:15:58Z"
+          },
+          {
+            "number": 1751,
+            "title": "refactor(web): one connectedClientPort for the store client ports (#1520)",
+            "merged_at": "2026-09-18T08:31:09Z"
+          },
+          {
+            "number": 1748,
+            "title": "refactor(mcp): share header-injecting HTTP client between mcpprobe and manager (#1497)",
+            "merged_at": "2026-09-18T08:31:05Z"
+          },
+          {
+            "number": 1809,
+            "title": "fix(repair): name the oneOf over-match instead of satisfied branch requirements (#623)",
+            "merged_at": "2026-09-18T08:25:20Z"
+          },
+          {
+            "number": 1855,
+            "title": "refactor(sdk): the mutation persistence port and target-record replacement (D25e C3a)",
+            "merged_at": "2026-09-18T08:23:00Z"
+          },
+          {
+            "number": 1790,
+            "title": "fix(appwire-client): unify spawn and launch scalar collect rule (#1444)",
+            "merged_at": "2026-09-18T08:18:26Z"
+          },
+          {
+            "number": 1783,
+            "title": "fix(agent): wake the delegate stop reconcile driver when close joins expire (#1538)",
+            "merged_at": "2026-09-18T08:15:45Z"
+          },
+          {
+            "number": 1782,
+            "title": "fix(appwire): let the turn_failed status frame settle a failed turn (#1432)",
+            "merged_at": "2026-09-18T08:15:41Z"
+          },
+          {
+            "number": 1776,
+            "title": "feat(lint): add make lint-biome using the frontend-pinned Biome (#1406)",
+            "merged_at": "2026-09-18T08:13:04Z"
+          },
+          {
+            "number": 1832,
+            "title": "refactor(appwirets): drop transcriptDisplayConfig's zero-consumer aliases (#1431)",
+            "merged_at": "2026-09-18T08:13:01Z"
+          },
+          {
+            "number": 1865,
+            "title": "hub: move keybindings post-rename and agents-doc onto writeDidApply (#1632)",
+            "merged_at": "2026-09-18T08:11:19Z"
+          },
+          {
+            "number": 1788,
+            "title": "refactor(sdk): derive rewrite-package-imports subpaths from the exports map (#1442)",
+            "merged_at": "2026-09-18T07:59:09Z"
+          },
+          {
+            "number": 1851,
+            "title": "refactor(sdk): pure queue reads belong on the core (D25e C2)",
+            "merged_at": "2026-09-18T07:47:46Z"
+          },
+          {
+            "number": 1852,
+            "title": "refactor(sdk): one usage summary shape for web and native (D18 B2)",
+            "merged_at": "2026-09-18T07:47:42Z"
+          },
+          {
+            "number": 1838,
+            "title": "test(native): mount components and hooks under vitest, pin ProvidersScreen's mount order (#1526)",
+            "merged_at": "2026-09-18T07:44:29Z"
+          },
+          {
+            "number": 1864,
+            "title": "test(server): close the ask-pending session in t.Cleanup (#1833 follow-up)",
+            "merged_at": "2026-09-18T07:43:04Z"
+          },
+          {
+            "number": 1863,
+            "title": "hub: TrustRepo's applied-write wrap is tested; two stale comments (#1834 follow-up)",
+            "merged_at": "2026-09-18T07:39:19Z"
+          },
+          {
+            "number": 1861,
+            "title": "test(plugins): assert Browse's lazy fetch reports the store change (#1672)",
+            "merged_at": "2026-09-18T07:31:32Z"
+          },
+          {
+            "number": 1843,
+            "title": "fix(web): the skill guard confirms select-all before typing the queue's second pass (#1690)",
+            "merged_at": "2026-09-18T07:31:29Z"
+          },
+          {
+            "number": 1787,
+            "title": "test(gate): exercise gate budget wiring behaviorally (#1194)",
+            "merged_at": "2026-09-18T07:29:00Z"
+          },
+          {
+            "number": 1811,
+            "title": "test(skill): skip degraded-copy tests where the process root is refused (#1416)",
+            "merged_at": "2026-09-18T07:21:38Z"
+          },
+          {
+            "number": 1833,
+            "title": "test(server): pin that a live ask_user round's status frame carries askPending",
+            "merged_at": "2026-09-18T07:12:25Z"
+          },
+          {
+            "number": 1847,
+            "title": "hub: the nil plugin-manager fallback is wired and tested (#1798 follow-up)",
+            "merged_at": "2026-09-18T07:10:49Z"
+          },
+          {
+            "number": 1849,
+            "title": "refactor(sdk): the queue preview label lives beside inputPreview (D25e C1)",
+            "merged_at": "2026-09-18T07:10:25Z"
+          },
+          {
+            "number": 1850,
+            "title": "refactor(sdk): the session-usage derivation lives in @evener/appwire-client (D18 B1)",
+            "merged_at": "2026-09-18T07:05:43Z"
+          },
+          {
+            "number": 1848,
+            "title": "docs(plans): record D14-2, D14-3' and D28 as merged in the SDK landing table",
+            "merged_at": "2026-09-18T07:00:49Z"
+          },
+          {
+            "number": 1828,
+            "title": "refactor(sdk): one readiness notion for the outbox and the dispatcher (#1695)",
+            "merged_at": "2026-09-18T06:57:57Z"
+          },
+          {
+            "number": 1818,
+            "title": "refactor(apptranscript): consolidate the derived-transcript scans",
+            "merged_at": "2026-09-18T06:57:52Z"
+          },
+          {
+            "number": 1805,
+            "title": "fix(web): re-anchor transcript to the true bottom after a late webfont swap (#917)",
+            "merged_at": "2026-09-18T06:57:47Z"
+          },
+          {
+            "number": 1769,
+            "title": "refactor(sdk): drop four unused testing/navigation fixture exports (#1455)",
+            "merged_at": "2026-09-18T06:57:42Z"
+          },
+          {
+            "number": 1834,
+            "title": "hub: broadcast every applied auth/instance/launch write even when a later step fails",
+            "merged_at": "2026-09-18T06:56:16Z"
+          },
+          {
+            "number": 1831,
+            "title": "test(appwire-client): tokenFlood.bench.ts carries the tool-output fold case (#1562)",
+            "merged_at": "2026-09-18T06:54:58Z"
+          },
+          {
+            "number": 1827,
+            "title": "fix(web): wire initActivitySummary in k7harness-entry (#1585)",
+            "merged_at": "2026-09-18T06:54:53Z"
+          },
+          {
+            "number": 1825,
+            "title": "fix(plugins): recover a pending rename marker on a listing read (#1687)",
+            "merged_at": "2026-09-18T06:54:47Z"
+          },
+          {
+            "number": 1812,
+            "title": "test(hub): refuse a mixed alias with one unverifiable and one verified claimant",
+            "merged_at": "2026-09-18T06:54:41Z"
+          },
+          {
+            "number": 1779,
+            "title": "fix(web): treat EPERM from browser-guard teardown signals as still-here (#1429)",
+            "merged_at": "2026-09-18T06:54:36Z"
+          },
+          {
+            "number": 1771,
+            "title": "fix(appwirets): emit Go field doc comments into generated TS types",
+            "merged_at": "2026-09-18T06:54:31Z"
+          },
+          {
+            "number": 1786,
+            "title": "refactor(appwire): consolidate the plain-object guard into one shared module (#1425)",
+            "merged_at": "2026-09-18T05:46:37Z"
+          },
+          {
+            "number": 1797,
+            "title": "refactor(sdk): move the disclosure oracle into the package and drop its write-only fields (#1460)",
+            "merged_at": "2026-09-18T05:46:25Z"
+          },
+          {
+            "number": 1795,
+            "title": "refactor(appwire-client): share the PluginSelectionState decode (#1445)",
+            "merged_at": "2026-09-18T05:40:06Z"
+          },
+          {
+            "number": 1798,
+            "title": "plugins: one wired manager per hub, hook is the sole notifier (#1733 follow-up)",
+            "merged_at": "2026-09-18T05:26:39Z"
+          },
+          {
+            "number": 1799,
+            "title": "fix(test): harden cgroup mount resolution for delegated roots",
+            "merged_at": "2026-09-18T04:22:00Z"
+          },
+          {
+            "number": 1774,
+            "title": "refactor(sdk): drop the unread loaded flag from CommandCatalogState",
+            "merged_at": "2026-09-18T04:19:20Z"
+          },
+          {
+            "number": 1773,
+            "title": "refactor(appwire): one MergeInputImages so the input-image rule cannot drift (#1692)",
+            "merged_at": "2026-09-18T04:19:10Z"
+          },
+          {
+            "number": 1768,
+            "title": "refactor(web): replace stale overviewSeam placeholder with settingsOverview store (#1467)",
+            "merged_at": "2026-09-18T04:18:25Z"
+          },
+          {
+            "number": 1767,
+            "title": "refactor(hub): unify the fork fence predicate and ownership-source resolvers (#1146)",
+            "merged_at": "2026-09-18T04:18:10Z"
+          },
+          {
+            "number": 1826,
+            "title": "fix(web): RepoLocation's retry test uses gateSettlements (main red since #1754 met #1755)",
+            "merged_at": "2026-09-18T04:03:57Z"
+          },
+          {
+            "number": 1772,
+            "title": "refactor(sdk): move the ask-dock actions onto the store object (#1470)",
+            "merged_at": "2026-09-18T03:28:06Z"
+          },
+          {
+            "number": 1785,
+            "title": "refactor(sdk): rename pathRows.pickableRows to pickablePathRows (#1423)",
+            "merged_at": "2026-09-18T03:23:53Z"
+          },
+          {
+            "number": 1794,
+            "title": "fix(plugins): a failed lazy fetch leaves no partial clone (#1054)",
+            "merged_at": "2026-09-18T03:22:39Z"
+          },
+          {
+            "number": 1789,
+            "title": "refactor(sdk): export one marker pattern from textareaMarkers (#1421)",
+            "merged_at": "2026-09-18T03:22:11Z"
+          },
+          {
+            "number": 1777,
+            "title": "refactor(sdk): fold ListRevision hasLive/fence into createStoreLifecycle",
+            "merged_at": "2026-09-18T03:20:40Z"
+          },
+          {
+            "number": 1775,
+            "title": "fix(hub): classify instance Remove implicit-instance refusal as InvalidParams (#989)",
+            "merged_at": "2026-09-18T03:20:15Z"
+          },
+          {
+            "number": 1763,
+            "title": "test(web): cover the spawn slash menu's arrow/mouse selection and aria-controls (#1089)",
+            "merged_at": "2026-09-18T03:16:31Z"
+          },
+          {
+            "number": 1746,
+            "title": "refactor(native): share one runGatedMutation helper across gated writes (#1710)",
+            "merged_at": "2026-09-18T03:13:53Z"
+          },
+          {
+            "number": 1747,
+            "title": "test(sshconn): fail loudly when gateHook fires before arm (#1512)",
+            "merged_at": "2026-09-18T03:13:46Z"
+          },
+          {
+            "number": 1750,
+            "title": "fix(hub): stamp an instance id on past-session thread reads (#1514)",
+            "merged_at": "2026-09-18T03:13:28Z"
+          },
+          {
+            "number": 1754,
+            "title": "fix(web): retry RepoLocation's git lookup when the hub reconnects (#1355)",
+            "merged_at": "2026-09-18T03:13:00Z"
+          },
+          {
+            "number": 1755,
+            "title": "refactor(sdk): one gateSettlements helper for the appwire-client test gates (#1715)",
+            "merged_at": "2026-09-18T03:12:41Z"
+          },
+          {
+            "number": 1756,
+            "title": "refactor(web): agentsDoc store follows onConnectionNotification (#1477)",
+            "merged_at": "2026-09-18T03:12:20Z"
+          },
+          {
+            "number": 1757,
+            "title": "refactor(webui): drop dead unavailableReason guard in spawn slash menu (#1088)",
+            "merged_at": "2026-09-18T03:11:28Z"
+          },
+          {
+            "number": 1758,
+            "title": "fix(hub): use stable sort for the command catalog (#1086)",
+            "merged_at": "2026-09-18T03:11:07Z"
+          },
+          {
+            "number": 1761,
+            "title": "refactor(sdk): rename TranscriptDisplayAdvanced to TranscriptDisplayAdvancedV1 and publish it from the root (#1430)",
+            "merged_at": "2026-09-18T03:10:37Z"
+          },
+          {
+            "number": 1762,
+            "title": "fix(hub): drop unconsumed session capability fork/resume bits (#1162)",
+            "merged_at": "2026-09-18T03:09:54Z"
+          },
+          {
+            "number": 1733,
+            "title": "plugins: broadcast every applied store write via a post-commit hook (#1634)",
+            "merged_at": "2026-09-18T03:09:44Z"
+          },
+          {
+            "number": 1765,
+            "title": "fix(webui): /model pre-start validation tolerates an unloaded catalog (#1085)",
+            "merged_at": "2026-09-18T03:08:30Z"
+          },
+          {
+            "number": 1694,
+            "title": "refactor(sdk): the mutation dispatcher lives in @evener/appwire-client/state/mutation (D27)",
+            "merged_at": "2026-09-18T03:05:22Z"
+          },
+          {
+            "number": 1764,
+            "title": "fix(mobile): a drain receipt's consumedClientMutationIds must not be empty (#1760)",
+            "merged_at": "2026-09-18T02:45:03Z"
+          },
+          {
+            "number": 1742,
+            "title": "fix(web): threads.ts's ready callback cannot begin a generation for a replaced client",
+            "merged_at": "2026-09-18T02:24:56Z"
+          },
+          {
+            "number": 1735,
+            "title": "fix(agent,web): name a drain's consumed queue intents on the queueChanged push",
+            "merged_at": "2026-09-18T02:18:10Z"
+          },
+          {
+            "number": 1745,
+            "title": "test(server): say what the live-images read test actually covers (#1730 follow-up)",
+            "merged_at": "2026-09-18T02:14:43Z"
+          },
+          {
+            "number": 1730,
+            "title": "test(server): a thread/read snapshot keeps live input images",
+            "merged_at": "2026-09-18T01:45:34Z"
+          },
+          {
+            "number": 1729,
+            "title": "fix(web): a stale client's ready callback cannot begin a generation",
+            "merged_at": "2026-09-18T01:35:15Z"
+          },
+          {
+            "number": 1728,
+            "title": "sdk: extract the ready-generation fence from keybindingsStore",
+            "merged_at": "2026-09-18T00:55:07Z"
+          },
+          {
+            "number": 1719,
+            "title": "small tweaks to writing style",
+            "merged_at": "2026-09-17T23:55:31Z"
+          },
+          {
+            "number": 1724,
+            "title": "ci: retry snapshot upload and fence it against reruns",
+            "merged_at": "2026-09-17T23:04:38Z"
+          },
+          {
+            "number": 1720,
+            "title": "fix(appwire): correct two stale comments left by #1614's simplify pass",
+            "merged_at": "2026-09-17T21:57:10Z"
+          },
+          {
+            "number": 1614,
+            "title": "fix(hub): item frames carry an explicit empty image list on removal",
+            "merged_at": "2026-09-17T21:38:16Z"
+          },
+          {
+            "number": 1718,
+            "title": "sdk: fix a comment referencing a nonexistent symbol (#1714 follow-up)",
+            "merged_at": "2026-09-17T19:46:34Z"
+          },
+          {
+            "number": 1714,
+            "title": "sdk: extract a per-store test kit for the store-lifecycle suite",
+            "merged_at": "2026-09-17T19:32:53Z"
+          },
+          {
+            "number": 1696,
+            "title": "fix(native): marketplace actions wait for an in-flight plugin write (#1502 follow-up)",
+            "merged_at": "2026-09-17T18:57:27Z"
+          },
+          {
+            "number": 1708,
+            "title": "test(sdk): closed recovers an established list exactly as reconnecting does",
+            "merged_at": "2026-09-17T18:50:48Z"
+          },
+          {
+            "number": 1707,
+            "title": "test(sdk): pin the reconnect predicate both state layers encode",
+            "merged_at": "2026-09-17T18:38:23Z"
+          },
+          {
+            "number": 1697,
+            "title": "refactor(sdk): directories + MCP settings / launch layer into state/extensions (D12)",
+            "merged_at": "2026-09-17T18:20:49Z"
+          },
+          {
+            "number": 1652,
+            "title": "build: name the missing install instead of a Metro error in test-native",
+            "merged_at": "2026-09-17T05:42:08Z"
+          },
+          {
+            "number": 1661,
+            "title": "docs: correct the chip separator rule and the AppWire qualification comment",
+            "merged_at": "2026-09-17T05:11:05Z"
+          },
+          {
+            "number": 1648,
+            "title": "fix(web): one separator for a shared chip boundary, trailing colon, and preserved draft whitespace",
+            "merged_at": "2026-09-17T04:37:47Z"
+          },
+          {
+            "number": 1646,
+            "title": "docs(web): correct the inline-chip documentation, comment and naming",
+            "merged_at": "2026-09-17T04:37:44Z"
+          },
+          {
+            "number": 1649,
+            "title": "fix(web): anchor the reported cursor to the selection's start",
+            "merged_at": "2026-09-17T04:37:51Z"
+          },
+          {
+            "number": 1647,
+            "title": "chore(web): delete dead selection helpers and close two composer coverage gaps",
+            "merged_at": "2026-09-17T05:11:02Z"
+          },
+          {
+            "number": 1670,
+            "title": "test(web): drain the attachment-marker test's encode before it returns",
+            "merged_at": "2026-09-17T05:27:38Z"
+          },
+          {
+            "number": 1650,
+            "title": "chore(sdk): declare the keybinding helper's dependency and correct appendChunk's comment",
+            "merged_at": "2026-09-17T04:37:54Z"
+          },
+          {
+            "number": 1689,
+            "title": "test(web): drive the skillguard clipboard milestone without the OS clipboard (#1662)",
+            "merged_at": "2026-09-17T16:45:06Z"
+          },
+          {
+            "number": 1686,
+            "title": "test(agent): wait for the warm run to quiesce before the committed send (#1286)",
+            "merged_at": "2026-09-17T16:42:03Z"
+          },
+          {
+            "number": 1684,
+            "title": "fix(native): canonicalize EVENER_NATIVE_DIR before cd (#1675)",
+            "merged_at": "2026-09-17T06:47:14Z"
+          },
+          {
+            "number": 1502,
+            "title": "refactor(sdk): plugins store core at @evener/appwire-client/state/extensions (D11)",
+            "merged_at": "2026-09-17T17:32:45Z"
+          },
+          {
+            "number": 1685,
+            "title": "refactor(sdk): the pending-turns projection store lives in @evener/appwire-client/state/mutation (D25c)",
+            "merged_at": "2026-09-17T17:18:35Z"
+          },
+          {
+            "number": 1682,
+            "title": "test(web): the typecheck gate and tsc -p tsconfig.json cover the same files (#1676)",
+            "merged_at": "2026-09-17T17:07:59Z"
+          },
+          {
+            "number": 1678,
+            "title": "refactor(sdk): the mutation outbox record core lives in @evener/appwire-client/state/mutation (D26)",
+            "merged_at": "2026-09-17T16:56:48Z"
+          },
+          {
+            "number": 1683,
+            "title": "Model picker: no connect entry, listing diagnostics stop at their class",
+            "merged_at": "2026-09-17T16:06:34Z"
+          },
+          {
+            "number": 1680,
+            "title": "refactor(sdk): pending-entries reconciliation at @evener/appwire-client/state/mutation (D25b)",
+            "merged_at": "2026-09-17T06:25:21Z"
+          },
+          {
+            "number": 1677,
+            "title": "fix(appwire-client): keep input images through a settle that says nothing about them",
+            "merged_at": "2026-09-17T06:24:31Z"
+          },
+          {
+            "number": 1603,
+            "title": "feat(hub): enforce lazy attachment through attached-only seams",
+            "merged_at": "2026-09-17T06:19:13Z"
+          },
+          {
+            "number": 1667,
+            "title": "fix(sdk): a client swapped through setState directly rewires the connection listener (#1623 follow-up)",
+            "merged_at": "2026-09-17T06:11:11Z"
+          },
+          {
+            "number": 1617,
+            "title": "test(sdk): the navigation store contract suite runs in the package (#1588)",
+            "merged_at": "2026-09-17T05:51:15Z"
+          },
+          {
+            "number": 1663,
+            "title": "refactor(sdk): the transcript display projector lives in @evener/appwire-client (D24 web lift)",
+            "merged_at": "2026-09-17T05:49:31Z"
+          },
+          {
+            "number": 1674,
+            "title": "test(sdk): mutation id uniqueness tests use scripted randomness (#1611 follow-up)",
+            "merged_at": "2026-09-17T05:37:38Z"
+          },
+          {
+            "number": 1664,
+            "title": "fix(web): the notes card draws its boundary as a border, not a ring",
+            "merged_at": "2026-09-17T05:20:22Z"
+          },
+          {
+            "number": 1611,
+            "title": "refactor(sdk): mutation record shapes and client identity at @evener/appwire-client/state/mutation (D25a)",
+            "merged_at": "2026-09-17T05:15:33Z"
+          },
+          {
+            "number": 1658,
+            "title": "docs(sdk): navigation docs stop claiming both apps build on the store (#1640 follow-up)",
+            "merged_at": "2026-09-17T05:05:40Z"
+          },
+          {
+            "number": 1623,
+            "title": "refactor(sdk): the connection client-swap lifecycle lives in @evener/appwire-client/state/connection (D28, web lift)",
+            "merged_at": "2026-09-17T04:46:51Z"
+          },
+          {
+            "number": 1640,
+            "title": "docs(sdk): navigation selectors README and header match what the package ships (#1630 follow-up)",
+            "merged_at": "2026-09-17T04:34:56Z"
+          },
+          {
+            "number": 1653,
+            "title": "fix(web): the notes panel drops its hint text and keeps the top edge",
+            "merged_at": "2026-09-17T04:27:01Z"
+          },
+          {
+            "number": 1651,
+            "title": "fix(web): the expanded notes panel reads as a floating card",
+            "merged_at": "2026-09-17T04:12:30Z"
+          },
+          {
+            "number": 1410,
+            "title": "feat(web): keep skill chips inline in composer",
+            "merged_at": "2026-09-17T03:19:15Z"
+          },
+          {
+            "number": 1612,
+            "title": "fix(web): the credentials pane keeps its rows through a read",
+            "merged_at": "2026-09-17T02:41:39Z"
+          },
+          {
+            "number": 1621,
+            "title": "fix(registry): list alias rows in an instance's model inventory",
+            "merged_at": "2026-09-17T02:23:49Z"
+          },
+          {
+            "number": 1631,
+            "title": "test(llm): pin the top-level context_window on its own",
+            "merged_at": "2026-09-17T02:15:30Z"
+          },
+          {
+            "number": 1630,
+            "title": "refactor(sdk): graph-shaped navigation selectors live in @evener/appwire-client/state/navigation (D15)",
+            "merged_at": "2026-09-17T01:37:48Z"
+          },
+          {
+            "number": 1636,
+            "title": "docs(server): askPending stamp comment matches the always-present field (#1629 follow-up)",
+            "merged_at": "2026-09-17T01:26:38Z"
+          },
+          {
+            "number": 1629,
+            "title": "fix(hub): thread notifications carry askPending so clients clear the pending ask without a reread (#1613)",
+            "merged_at": "2026-09-17T01:08:45Z"
+          },
+          {
+            "number": 1620,
+            "title": "fix(llm): read a gateway's top-level model limits from the chat /models listing",
+            "merged_at": "2026-09-17T00:50:04Z"
+          },
+          {
+            "number": 1609,
+            "title": "refactor(sdk): navigation limits, resource keys and snapshot materialization shared by both apps (D14-3\u2032)",
+            "merged_at": "2026-09-17T00:21:51Z"
+          },
+          {
+            "number": 1606,
+            "title": "fix(hub): recognize the jobs activity tree before translating its refs",
+            "merged_at": "2026-09-16T23:08:27Z"
+          },
+          {
+            "number": 1583,
+            "title": "fix(web): a control's own click no longer drops the keyboard (the ui jumped)",
+            "merged_at": "2026-09-16T22:54:13Z"
+          },
+          {
+            "number": 1605,
+            "title": "fix(web): host-scope the branch readout and per-host loads, and pin the forwarded method list",
+            "merged_at": "2026-09-16T22:49:43Z"
+          },
+          {
+            "number": 1601,
+            "title": "fix(web-guards): remove the Chrome profile only after the browser has exited",
+            "merged_at": "2026-09-16T21:58:43Z"
+          },
+          {
+            "number": 1604,
+            "title": "fix(web): middle-truncate the composer's repo line and ride it lower on mobile",
+            "merged_at": "2026-09-16T21:51:27Z"
+          },
+          {
+            "number": 1600,
+            "title": "docs(multi-host): reconcile specs 03-05 with the landed implementation (#1276 residuals)",
+            "merged_at": "2026-09-16T21:41:41Z"
+          },
+          {
+            "number": 1599,
+            "title": "docs(hub): multi-host residual doc comments + drop an unreachable installer-default fallback",
+            "merged_at": "2026-09-16T21:41:28Z"
+          },
+          {
+            "number": 1598,
+            "title": "fix(secret-scan): scan the worktree instead of a path the ruleset excludes",
+            "merged_at": "2026-09-16T21:20:26Z"
+          },
+          {
+            "number": 1584,
+            "title": "refactor(sdk): the navigation store core lives in @evener/appwire-client/state/navigation (D14-2)",
+            "merged_at": "2026-09-16T21:11:35Z"
+          },
+          {
+            "number": 1592,
+            "title": "fix(web): activity summary link follow-ups from #1498",
+            "merged_at": "2026-09-16T21:07:52Z"
+          },
+          {
+            "number": 1590,
+            "title": "fix(sdk): keybindings blank() matches the hub's whitespace set",
+            "merged_at": "2026-09-16T21:02:31Z"
+          },
+          {
+            "number": 1498,
+            "title": "refactor(web): the activity panel store no longer imports activitySummary (D17'')",
+            "merged_at": "2026-09-16T20:48:33Z"
+          },
+          {
+            "number": 1582,
+            "title": "fix(sdk): keybindings boundary rejects whitespace-only actions and chords (closes #1550)",
+            "merged_at": "2026-09-16T20:43:45Z"
+          },
+          {
+            "number": 1248,
+            "title": "feat(daemon): retire idle daemons safely, with resident discovery and Hub controls",
+            "merged_at": "2026-09-16T18:12:52Z"
+          },
+          {
+            "number": 1391,
+            "title": "perf(agent): reduce restore fold copies and stop attention reads",
+            "merged_at": "2026-09-16T20:36:18Z"
+          },
+          {
+            "number": 1569,
+            "title": "refactor(web): the navigation store takes its expansion persistence as a port (D14-1)",
+            "merged_at": "2026-09-16T20:11:12Z"
+          },
+          {
+            "number": 1570,
+            "title": "docs(handoff): remove the PR watcher script from the repo",
+            "merged_at": "2026-09-16T19:59:39Z"
+          },
+          {
+            "number": 1458,
+            "title": "fix(web): fence Stop and fresh-Send admission at their real boundaries",
+            "merged_at": "2026-09-16T19:43:04Z"
+          },
+          {
+            "number": 1575,
+            "title": "fix(hub): declare the Resume lifecycle trace the #1390 merge dropped",
+            "merged_at": "2026-09-16T19:32:48Z"
+          },
+          {
+            "number": 1547,
+            "title": "refactor(native): the model is live under every item frame; rows keep their appliers (D23c-2a)",
+            "merged_at": "2026-09-16T19:00:57Z"
+          },
+          {
+            "number": 1390,
+            "title": "feat(hub): add correlated Resume lifecycle diagnostics",
+            "merged_at": "2026-09-16T19:00:30Z"
+          },
+          {
+            "number": 1539,
+            "title": "test(agent): stop leaking delegate stop reconcile drivers from the job_stop live-watch tests",
+            "merged_at": "2026-09-16T18:45:22Z"
+          },
+          {
+            "number": 1552,
+            "title": "docs(handoff): mobile landing (#1116) and SDK migration queue handoff",
+            "merged_at": "2026-09-16T18:33:16Z"
+          },
+          {
+            "number": 1542,
+            "title": "fix(web): run the browser guards on a headless Linux host",
+            "merged_at": "2026-09-16T17:32:13Z"
+          },
+          {
+            "number": 1362,
+            "title": "feat(hub): host-routed spawn discovery via the admin proxy (07b)",
+            "merged_at": "2026-09-16T15:56:50Z"
+          },
+          {
+            "number": 1492,
+            "title": "refactor(sdk): navigation revalidator and invalidation core at state/navigation (D13)",
+            "merged_at": "2026-09-16T15:26:14Z"
+          },
+          {
+            "number": 1548,
+            "title": "fix(sdk): keybindings store reads after an undecodable broadcast; empty ids and chords rejected (D5 follow-ups)",
+            "merged_at": "2026-09-16T15:25:06Z"
+          },
+          {
+            "number": 1545,
+            "title": "perf(delegatestore): clone and diff only the aggregates an event touches",
+            "merged_at": "2026-09-16T15:15:16Z"
+          },
+          {
+            "number": 1489,
+            "title": "refactor(sdk): one keybindings store core for web and native (D5)",
+            "merged_at": "2026-09-16T15:02:29Z"
+          },
+          {
+            "number": 1541,
+            "title": "test(agent): config-home fork audit reads the gate the constructor receives and follows home-isolating helpers",
+            "merged_at": "2026-09-16T14:59:59Z"
+          },
+          {
+            "number": 1452,
+            "title": "fix(web): retire consumed queue intents when drain-as-steer applies",
+            "merged_at": "2026-09-16T14:58:19Z"
+          },
+          {
+            "number": 1546,
+            "title": "refactor(native): open() is the non-projected compat surface; dead artifacts after D23c-1 (follow-up to #1540)",
+            "merged_at": "2026-09-16T14:57:56Z"
+          },
+          {
+            "number": 1544,
+            "title": "docs(sdk): listingEstablished's field comment states the invariant the code keeps",
+            "merged_at": "2026-09-16T14:48:18Z"
+          },
+          {
+            "number": 1540,
+            "title": "refactor(native): the initial read is authoritative; a refused mutation rereads (D23c-1)",
+            "merged_at": "2026-09-16T14:40:39Z"
+          },
+          {
+            "number": 1532,
+            "title": "refactor(sdk): the credential store core owns the foreign-listing-change predicate, listingEstablished and the refused-write re-read",
+            "merged_at": "2026-09-16T14:31:02Z"
+          },
+          {
+            "number": 1384,
+            "title": "test(web): de-flake ConnectProviderDialog by settling the store's own listing read",
+            "merged_at": "2026-09-16T06:17:11Z"
+          },
+          {
+            "number": 1259,
+            "title": "Per-model disabled flag with hub toggle",
+            "merged_at": "2026-09-16T04:39:15Z"
+          },
+          {
+            "number": 1536,
+            "title": "test(hub): release each held roster probe by the refresh it belongs to (#1533 deadlock)",
+            "merged_at": "2026-09-16T14:15:48Z"
+          },
+          {
+            "number": 1534,
+            "title": "test(agent): session tests with a per-test config home skip the launch snapshot (go telemetry sidecar outlived TempDir)",
+            "merged_at": "2026-09-16T14:06:16Z"
+          },
+          {
+            "number": 1522,
+            "title": "refactor(native): thread-level notifications through the package reducer (D23b)",
+            "merged_at": "2026-09-16T13:54:29Z"
+          },
+          {
+            "number": 1528,
+            "title": "fix(native): commit the credential store before binding it; a remounted provider list keeps a retained read failure (D9 Lows)",
+            "merged_at": "2026-09-16T13:52:18Z"
+          },
+          {
+            "number": 1524,
+            "title": "refactor(native): the sign-in flow drives the shared credential store; authStatus on the core (D9)",
+            "merged_at": "2026-09-16T13:32:55Z"
+          },
+          {
+            "number": 1361,
+            "title": "feat(hub): remote admin proxy with a fail-closed allow-list (07a)",
+            "merged_at": "2026-09-16T13:26:34Z"
+          },
+          {
+            "number": 1521,
+            "title": "test(sdk): D8 1b Lows - the native refetch test proves the core's auth/updated refetch; chained smoke assertion",
+            "merged_at": "2026-09-16T13:05:51Z"
+          },
+          {
+            "number": 1508,
+            "title": "refactor(sdk): credential mutations and own-echo correlation in the AppWire package (D8, 1b)",
+            "merged_at": "2026-09-16T12:47:19Z"
+          },
+          {
+            "number": 1519,
+            "title": "refactor(native): older pages merge through the package's mergeOlderItemPage (D23a)",
+            "merged_at": "2026-09-16T12:45:59Z"
+          },
+          {
+            "number": 1518,
+            "title": "test(native): an older page's sha-only image routes through the real thread id (follow-up to #1515)",
+            "merged_at": "2026-09-16T12:37:03Z"
+          },
+          {
+            "number": 1302,
+            "title": "feat(hub): frontend host picker and rail host badge (component 06b)",
+            "merged_at": "2026-09-16T12:35:54Z"
+          },
+          {
+            "number": 1515,
+            "title": "refactor(native): hydrate the conversation through the package's hydrateThread (D22)",
+            "merged_at": "2026-09-16T12:18:42Z"
+          },
+          {
+            "number": 1511,
+            "title": "fix(sshconn): arm the supervisor gate before dropping the link (closes #1509)",
+            "merged_at": "2026-09-16T11:59:51Z"
+          },
+          {
+            "number": 1510,
+            "title": "test(native): accountingFor masks usage and cost independently (follow-up to #1488)",
+            "merged_at": "2026-09-16T11:53:28Z"
+          },
+          {
+            "number": 1299,
+            "title": "feat(hub): fleet-view sources, offline rows, and spawn source targeting (component 06a)",
+            "merged_at": "2026-09-16T11:37:10Z"
+          },
+          {
+            "number": 1488,
+            "title": "refactor(native): read the package's ItemModel/TurnModel; project.ts becomes the shim (D21)",
+            "merged_at": "2026-09-16T11:32:46Z"
+          },
+          {
+            "number": 1485,
+            "title": "refactor(sdk): one delegate timing/model derivation for web and native (D19')",
+            "merged_at": "2026-09-16T11:14:59Z"
+          },
+          {
+            "number": 1504,
+            "title": "hub: the skill guard records the AppWire trace and turn-block items for the continuation-leg failure (#1434)",
+            "merged_at": "2026-09-16T11:12:59Z"
+          },
+          {
+            "number": 1505,
+            "title": "fix(server): write the thread/shutdown reply before the daemon exits (closes #1501)",
+            "merged_at": "2026-09-16T11:12:15Z"
+          },
+          {
+            "number": 1296,
+            "title": "feat(hub): remote hub capability probe (component 05d)",
+            "merged_at": "2026-09-16T11:07:36Z"
+          },
+          {
+            "number": 1483,
+            "title": "refactor(sdk): credential instances listing core at @evener/appwire-client/state/credentials (D8, 1a)",
+            "merged_at": "2026-09-16T10:52:01Z"
+          },
+          {
+            "number": 1478,
+            "title": "refactor(sdk): one command catalog core for web and native (D1)",
+            "merged_at": "2026-09-16T10:29:10Z"
+          },
+          {
+            "number": 1293,
+            "title": "feat(hub): remote hub mutations and mutation-unknown mapping (multi-host 05c)",
+            "merged_at": "2026-09-16T10:22:30Z"
+          },
+          {
+            "number": 1500,
+            "title": "fix(sdk): a thrown tasks read rejects only the run's owner (follow-up to #1494)",
+            "merged_at": "2026-09-16T10:17:06Z"
+          },
+          {
+            "number": 1495,
+            "title": "evener: the wedged-delegate run checks the close tree off deadlines, not wall time (fixes #1493)",
+            "merged_at": "2026-09-16T10:14:00Z"
+          },
+          {
+            "number": 1476,
+            "title": "refactor(sdk): marketplaces store core at @evener/appwire-client/state/extensions (D10)",
+            "merged_at": "2026-09-16T10:06:55Z"
+          },
+          {
+            "number": 1494,
+            "title": "fix(sdk): tasks-panel store waiter ordering and test reset; adapter reconnect test (follow-up to #1471)",
+            "merged_at": "2026-09-16T09:56:00Z"
+          },
+          {
+            "number": 1499,
+            "title": "fix(sdk): sendBatch composes before freezing the batch (follow-up to #1475)",
+            "merged_at": "2026-09-16T09:46:02Z"
+          },
+          {
+            "number": 1496,
+            "title": "fix(mcpprobe): probe owns its HTTP transport so a process-wide idle-conn close cannot break a handshake (closes #1486)",
+            "merged_at": "2026-09-16T09:39:53Z"
+          },
+          {
+            "number": 1475,
+            "title": "refactor(sdk): ask-dock store core with explicit wiring in the AppWire package (D20)",
+            "merged_at": "2026-09-16T09:26:30Z"
+          },
+          {
+            "number": 1291,
+            "title": "feat(hub): remote hub subscription fan-out (multi-host 05b)",
+            "merged_at": "2026-09-16T09:23:18Z"
+          },
+          {
+            "number": 1487,
+            "title": "fix(native): \"Updating\u2026\" stays visible while a stale re-read is in flight (follow-up to #1484)",
+            "merged_at": "2026-09-16T09:12:29Z"
+          },
+          {
+            "number": 1482,
+            "title": "agent: the drain ladder's skill-only queued entry is pinned (follow-up to #1329)",
+            "merged_at": "2026-09-16T09:08:43Z"
+          },
+          {
+            "number": 1471,
+            "title": "refactor(sdk): one tasks-panel store core for web and native (D3)",
+            "merged_at": "2026-09-16T09:06:08Z"
+          },
+          {
+            "number": 1484,
+            "title": "fix(native): a failed re-read shows its error, not \"Updating\u2026\", on every screen (follow-up to #1462)",
+            "merged_at": "2026-09-16T08:54:11Z"
+          },
+          {
+            "number": 1466,
+            "title": "refactor(sdk): one hub-overview store core for web and native (D2)",
+            "merged_at": "2026-09-16T08:46:28Z"
+          },
+          {
+            "number": 1290,
+            "title": "feat(hub): remote hub source read path and registration (multi-host 05a)",
+            "merged_at": "2026-09-16T08:37:33Z"
+          },
+          {
+            "number": 1462,
+            "title": "fix(native): apply newer data automatically, no refresh affordance (closes #1257)",
+            "merged_at": "2026-09-16T08:34:44Z"
+          },
+          {
+            "number": 1329,
+            "title": "fix(agent): a drained steering leg runs before the input ends (the session reported idle mid-turn)",
+            "merged_at": "2026-09-16T08:33:31Z"
+          },
+          {
+            "number": 1463,
+            "title": "refactor(sdk): one launch-config store core for web and native (D7)",
+            "merged_at": "2026-09-16T08:25:18Z"
+          },
+          {
+            "number": 1474,
+            "title": "test(sshconn): compare the canonical temp path on macOS (closes #1472)",
+            "merged_at": "2026-09-16T08:16:02Z"
+          },
+          {
+            "number": 1473,
+            "title": "fix(hub): empty the roster listing before announcing a legacy daemon gone (closes #1469)",
+            "merged_at": "2026-09-16T08:13:12Z"
+          },
+          {
+            "number": 1468,
+            "title": "docs(sdk-plan): totals and A3/A4 prose after phase C landed",
+            "merged_at": "2026-09-16T08:01:56Z"
+          },
+          {
+            "number": 1461,
+            "title": "refactor(sdk): disclosure store as a framework-free factory in the AppWire package (D30)",
+            "merged_at": "2026-09-16T08:00:42Z"
+          },
+          {
+            "number": 1459,
+            "title": "docs(sdk-plan): phase C rows landed",
+            "merged_at": "2026-09-16T07:30:22Z"
+          },
+          {
+            "number": 1454,
+            "title": "refactor(sdk): move the navigation test fixtures under the package's testing alias (C2)",
+            "merged_at": "2026-09-16T07:07:31Z"
+          },
+          {
+            "number": 1457,
+            "title": "docs(web-ui): keybindings layout after C3 (follow-up to #1448)",
+            "merged_at": "2026-09-16T07:03:03Z"
+          },
+          {
+            "number": 1456,
+            "title": "transcript: AppendSynced fails closed under the lock; adopt-contract comments (A1 follow-up)",
+            "merged_at": "2026-09-16T06:57:39Z"
+          },
+          {
+            "number": 1385,
+            "title": "test(web): make the skillguard steered-turn guard load-deterministic",
+            "merged_at": "2026-09-16T06:57:06Z"
+          },
+          {
+            "number": 1287,
+            "title": "feat(hub): deploy and version auto-match (component 04b of multi-host)",
+            "merged_at": "2026-09-16T06:48:45Z"
+          },
+          {
+            "number": 1448,
+            "title": "refactor(sdk): move the keybindings group into the AppWire package behind a parser port and a store factory (C3)",
+            "merged_at": "2026-09-16T06:45:56Z"
+          },
+          {
+            "number": 1340,
+            "title": "fix(web): busy follows the thread status, not the transcript's open turn row (#1330)",
+            "merged_at": "2026-09-16T06:38:13Z"
+          },
+          {
+            "number": 1412,
+            "title": "transcript: the writer owns durability (piece A1 of the #1100 split)",
+            "merged_at": "2026-09-16T06:27:37Z"
+          },
+          {
+            "number": 1443,
+            "title": "refactor(sdk): move the spawn schema, plugin selection and harness models into the AppWire package (C17)",
+            "merged_at": "2026-09-16T06:20:26Z"
+          },
+          {
+            "number": 1441,
+            "title": "refactor(sdk): publish the navigation quartet at @evener/appwire-client/state/navigation (C1)",
+            "merged_at": "2026-09-16T05:59:43Z"
+          },
+          {
+            "number": 1428,
+            "title": "refactor(sdk): move the transcript display config into the AppWire package (C4)",
+            "merged_at": "2026-09-16T05:35:35Z"
+          },
+          {
+            "number": 1447,
+            "title": "fix(notes): flush top bar to pane edges, drop write hint, retip editor",
+            "merged_at": "2026-09-16T05:17:19Z"
+          },
+          {
+            "number": 1276,
+            "title": "docs(multi-host): design + component specs for SSH-attached hub federation",
+            "merged_at": "2026-09-16T05:15:17Z"
+          },
+          {
+            "number": 1440,
+            "title": "fix(llm): drop a redacted part's blob from the Responses estimate",
+            "merged_at": "2026-09-16T05:12:31Z"
+          },
+          {
+            "number": 1439,
+            "title": "fix(web): a programmatic caret lands in its own commit, and the skill guard awaits a reply in its turn (refs #1308)",
+            "merged_at": "2026-09-16T05:10:57Z"
+          },
+          {
+            "number": 1426,
+            "title": "refactor(sdk): move builtinInvocation into the AppWire package (C27)",
+            "merged_at": "2026-09-16T05:07:57Z"
+          },
+          {
+            "number": 1328,
+            "title": "fix(notes): decide kindless steering provenance from the mutation record",
+            "merged_at": "2026-09-16T04:50:16Z"
+          },
+          {
+            "number": 1424,
+            "title": "refactor(sdk): move the launch shared schema into the AppWire package (C18)",
+            "merged_at": "2026-09-16T04:41:11Z"
+          },
+          {
+            "number": 1370,
+            "title": "test: harden three pre-existing load/platform-sensitive test defects",
+            "merged_at": "2026-09-15T22:46:33Z"
+          },
+          {
+            "number": 1422,
+            "title": "refactor(sdk): move textareaMarkers into the AppWire package (C7)",
+            "merged_at": "2026-09-16T04:20:13Z"
+          },
+          {
+            "number": 1313,
+            "title": "fix(llm): bill unsigned thinking text for adapters that replay it",
+            "merged_at": "2026-09-16T04:11:19Z"
+          },
+          {
+            "number": 1357,
+            "title": "feat(web): replace notes sidebar with expandable session top panel",
+            "merged_at": "2026-09-16T04:05:16Z"
+          },
+          {
+            "number": 1417,
+            "title": "refactor(sdk): move the task list parser, groups and time helpers into the AppWire package (C25)",
+            "merged_at": "2026-09-16T03:54:22Z"
+          },
+          {
+            "number": 1413,
+            "title": "refactor(sdk): move the model catalog view helpers into the AppWire package (C21)",
+            "merged_at": "2026-09-16T03:22:42Z"
+          },
+          {
+            "number": 1420,
+            "title": "fix(web): keep a summary's URL whole through entity segmentation (roborev r5 followups)",
+            "merged_at": "2026-09-16T03:16:51Z"
+          },
+          {
+            "number": 1399,
+            "title": "agent,appprojector: the independent fixes from the replay work (piece A3 of the #1100 split)",
+            "merged_at": "2026-09-16T02:49:25Z"
+          },
+          {
+            "number": 1411,
+            "title": "refactor(sdk): move pathRows into the AppWire package (C22)",
+            "merged_at": "2026-09-16T02:36:57Z"
+          },
+          {
+            "number": 1398,
+            "title": "refactor(web): resolve entity ids through one entity-map context",
+            "merged_at": "2026-09-16T02:27:50Z"
+          },
+          {
+            "number": 1419,
+            "title": "test(serve): register the shutdown-identity bridge synchronously (closes #1418)",
+            "merged_at": "2026-09-16T02:15:04Z"
+          },
+          {
+            "number": 1407,
+            "title": "refactor(sdk): move the attachment limits into the AppWire package (C8)",
+            "merged_at": "2026-09-16T02:06:03Z"
+          },
+          {
+            "number": 1376,
+            "title": "fix(web): keep tool-row trailing glyphs on the words they open",
+            "merged_at": "2026-09-16T01:50:04Z"
+          },
+          {
+            "number": 1379,
+            "title": "refactor: one shell-quoting helper for the product",
+            "merged_at": "2026-09-16T01:46:35Z"
+          },
+          {
+            "number": 1405,
+            "title": "refactor(sdk): move credentialLabels into the AppWire package (C19)",
+            "merged_at": "2026-09-16T01:41:36Z"
+          },
+          {
+            "number": 1403,
+            "title": "refactor(sdk): move sourceLabel into the AppWire package (C20)",
+            "merged_at": "2026-09-16T01:18:40Z"
+          },
+          {
+            "number": 1279,
+            "title": "fix(skills): materialize bundled skills once, content-addressed",
+            "merged_at": "2026-09-16T00:40:06Z"
+          },
+          {
+            "number": 1404,
+            "title": "refactor(sdk): move reasoningEffort into the AppWire package (C16)",
+            "merged_at": "2026-09-16T00:57:52Z"
+          },
+          {
+            "number": 1396,
+            "title": "perf(agent): format the six remaining watch projections outside jm.mu",
+            "merged_at": "2026-09-16T00:51:37Z"
+          },
+          {
+            "number": 1395,
+            "title": "fix(web): a live row's meta opens on status, not a placeholder dash",
+            "merged_at": "2026-09-16T00:00:06Z"
+          },
+          {
+            "number": 1408,
+            "title": "sdk: describeAppImports' doc comment names the trees it guards",
+            "merged_at": "2026-09-16T00:50:37Z"
+          },
+          {
+            "number": 1409,
+            "title": "sdk: describe humanizeState's gloss as short, not one word",
+            "merged_at": "2026-09-16T00:38:38Z"
+          },
+          {
+            "number": 1325,
+            "title": "fix(hub): a session whose daemon exits for good never told subscribers to re-read, so the web pane never rendered it as ended",
+            "merged_at": "2026-09-16T00:37:02Z"
+          },
+          {
+            "number": 1401,
+            "title": "refactor(sdk): move the rail's session state helpers into the AppWire package (C14)",
+            "merged_at": "2026-09-16T00:20:07Z"
+          },
+          {
+            "number": 1400,
+            "title": "sdk: name the gate's test exemption and widen the package's app-import check (A4 follow-up)",
+            "merged_at": "2026-09-16T00:17:04Z"
+          },
+          {
+            "number": 1272,
+            "title": "refactor(sdk): import the AppWire package by name and delete the protocol/ seam (SDK A4)",
+            "merged_at": "2026-09-15T23:19:26Z"
+          },
+          {
+            "number": 1374,
+            "title": "perf(agent): format watch projections outside jm.mu on the status and thread-list reads",
+            "merged_at": "2026-09-15T21:36:44Z"
+          },
+          {
+            "number": 1373,
+            "title": "test(web): wait for the connect-dialog chunk instead of racing it against the query budget",
+            "merged_at": "2026-09-15T20:50:01Z"
+          },
+          {
+            "number": 1372,
+            "title": "perf(web): tick the activity tree through its own context, not the chrome's prop",
+            "merged_at": "2026-09-15T21:36:35Z"
+          },
+          {
+            "number": 1364,
+            "title": "fix(web): paint the now marker over the dots so a delivery on the clock cannot hide it",
+            "merged_at": "2026-09-15T17:54:32Z"
+          },
+          {
+            "number": 1208,
+            "title": "feat(web): show a session's live watches in the rail and the activity panel",
+            "merged_at": "2026-09-15T17:33:30Z"
+          },
+          {
+            "number": 1377,
+            "title": "fix(hub): saturate sshconn option arithmetic and correct the preflight contract comment (04a follow-up)",
+            "merged_at": "2026-09-15T21:02:39Z"
+          },
+          {
+            "number": 1381,
+            "title": "ci: escalate the golangci-lint download retry backoff",
+            "merged_at": "2026-09-15T20:50:12Z"
+          },
+          {
+            "number": 1368,
+            "title": "fix(web): entity ids in transcript summaries render as cards, never clipped",
+            "merged_at": "2026-09-15T20:21:02Z"
+          },
+          {
+            "number": 1283,
+            "title": "feat(hub): ssh channel manager (component 04a of multi-host)",
+            "merged_at": "2026-09-15T19:40:38Z"
+          },
+          {
+            "number": 1371,
+            "title": "Condense task progress prose, drop counts from menu",
+            "merged_at": "2026-09-15T19:32:09Z"
+          },
+          {
+            "number": 1136,
+            "title": "feat: guided provider connection and zero-provider first-session onboarding",
+            "merged_at": "2026-09-15T16:28:14Z"
+          },
+          {
+            "number": 1356,
+            "title": "fix(web): the composer discovers activity while a saved session's card rests",
+            "merged_at": "2026-09-15T16:21:44Z"
+          },
+          {
+            "number": 1349,
+            "title": "refactor(web): one watch-condition composer behind the card and the list",
+            "merged_at": "2026-09-15T16:21:38Z"
+          },
+          {
+            "number": 1348,
+            "title": "refactor(web): one floating-bubble scaffold behind the tooltip and the card",
+            "merged_at": "2026-09-15T16:21:33Z"
+          },
+          {
+            "number": 1344,
+            "title": "refactor(sdk): one recursive walk behind the activity index and rows",
+            "merged_at": "2026-09-15T16:21:26Z"
+          },
+          {
+            "number": 1343,
+            "title": "fix(sdk): make watchFoldKey order-canonical",
+            "merged_at": "2026-09-15T16:21:20Z"
+          },
+          {
+            "number": 1345,
+            "title": "feat(web): fold every rail section heading, chevron trailing the title",
+            "merged_at": "2026-09-15T15:16:21Z"
+          },
+          {
+            "number": 1360,
+            "title": "style(hub): keep net/url in the standard-library import group",
+            "merged_at": "2026-09-15T09:33:27Z"
+          },
+          {
+            "number": 1358,
+            "title": "feat(hub): attach bridge \u2014 AppWire over SSH stdio (component 02)",
+            "merged_at": "2026-09-15T09:06:12Z"
+          },
+          {
+            "number": 1359,
+            "title": "fix(appwire): report the latched cause on a short write, and prove cancellation unblocking",
+            "merged_at": "2026-09-15T09:06:09Z"
+          },
+          {
+            "number": 1277,
+            "title": "feat(appwire): stream transport for AppWire over SSH stdio",
+            "merged_at": "2026-09-15T08:45:59Z"
+          },
+          {
+            "number": 1245,
+            "title": "ci(native): bundle the app with Metro on every PR (#1244)",
+            "merged_at": "2026-09-15T06:45:09Z"
+          },
+          {
+            "number": 1280,
+            "title": "feat(hub): host config schema and registry (component 03)",
+            "merged_at": "2026-09-15T06:22:18Z"
+          },
+          {
+            "number": 1354,
+            "title": "fix(web): let the repo link own its tooltip",
+            "merged_at": "2026-09-15T06:01:54Z"
+          },
+          {
+            "number": 1350,
+            "title": "feat(web): name the repository as owner/repo#branch in the location line",
+            "merged_at": "2026-09-15T05:47:17Z"
+          },
+          {
+            "number": 1347,
+            "title": "test(web): cover resolveGitOrigin's real path and tighten origin handling",
+            "merged_at": "2026-09-15T06:01:42Z"
+          },
+          {
+            "number": 1346,
+            "title": "ci: retry the golangci-lint download (#1145)",
+            "merged_at": "2026-09-15T05:47:35Z"
+          },
+          {
+            "number": 1352,
+            "title": "fix(agent): pin the intent description's own wording",
+            "merged_at": "2026-09-15T05:31:39Z"
+          },
+          {
+            "number": 1327,
+            "title": "fix(web): the skill guard waits for the rail's sessions before checking them",
+            "merged_at": "2026-09-15T01:02:34Z"
+          },
+          {
+            "number": 1336,
+            "title": "fix(appwire): Message.UnmarshalJSON replaces the frame a reused receiver holds",
+            "merged_at": "2026-09-15T00:44:39Z"
+          },
+          {
+            "number": 1298,
+            "title": "feat(transcript): entity links for ids in prose and tool output",
+            "merged_at": "2026-09-15T00:06:32Z"
+          },
+          {
+            "number": 1323,
+            "title": "test(evener): hold the chained-shell drain until shell A has finalized (#1310)",
+            "merged_at": "2026-09-14T22:30:18Z"
+          },
+          {
+            "number": 1321,
+            "title": "fix(activity): keep session-level diagnostics through the parser and show them in the details view (#1316)",
+            "merged_at": "2026-09-14T22:27:58Z"
+          },
+          {
+            "number": 1314,
+            "title": "perf(notes): skip escape probes for backslash-free journals",
+            "merged_at": "2026-09-14T21:42:29Z"
+          },
+          {
+            "number": 1317,
+            "title": "fix(web): the skill guard waits for the composer to settle before typing after a drain",
+            "merged_at": "2026-09-14T21:31:33Z"
+          },
+          {
+            "number": 1315,
+            "title": "feat(web): open a depth-truncated child session directly from the activity tree (#1270)",
+            "merged_at": "2026-09-14T19:52:34Z"
+          },
+          {
+            "number": 1319,
+            "title": "test(agent): await the attention wake the resident-child fixture asserts (#1294)",
+            "merged_at": "2026-09-14T19:48:25Z"
+          },
+          {
+            "number": 1269,
+            "title": "fix(agent): fence continuations with the target session's generations, and page depth-boundary children directly",
+            "merged_at": "2026-09-14T18:05:22Z"
+          },
+          {
+            "number": 1311,
+            "title": "fix(web): the skill guard types a draft through the DOM, not one key event per character",
+            "merged_at": "2026-09-14T17:56:05Z"
+          },
+          {
+            "number": 1305,
+            "title": "Shared-notes follow-up lows: steering prefix classifier and roster fast path",
+            "merged_at": "2026-09-14T17:16:02Z"
+          },
+          {
+            "number": 1304,
+            "title": "fix: close the post-merge skills review findings (2 Mediums, 8 Lows)",
+            "merged_at": "2026-09-14T15:44:01Z"
+          },
+          {
+            "number": 1168,
+            "title": "Implement skills lifecycle and explicit selection",
+            "merged_at": "2026-09-14T05:16:10Z"
+          },
+          {
+            "number": 1312,
+            "title": "test(web): timestamp the skill guard's capability-loss handoff",
+            "merged_at": "2026-09-14T16:55:38Z"
+          },
+          {
+            "number": 1199,
+            "title": "build(deps): bump actions/upload-artifact from 6.0.0 to 7.0.1",
+            "merged_at": "2026-09-14T16:37:13Z"
+          },
+          {
+            "number": 1309,
+            "title": "ci(web): keep the skill guard's driver log and screenshots when it fails (#1308)",
+            "merged_at": "2026-09-14T11:30:30Z"
+          },
+          {
+            "number": 1307,
+            "title": "test(agent): compare plugin and skill paths by resolved path on macOS (#1306)",
+            "merged_at": "2026-09-14T10:35:15Z"
+          },
+          {
+            "number": 1249,
+            "title": "Shared-notes follow-ups (items 2-13 from PR #1070 review rounds)",
+            "merged_at": "2026-09-14T08:52:32Z"
+          },
+          {
+            "number": 1301,
+            "title": "test: compare skill paths by resolved path on macOS (#1297, #1300)",
+            "merged_at": "2026-09-14T08:23:53Z"
+          },
+          {
+            "number": 1266,
+            "title": "fix(evener-dev): build the shard binary with the caller's build flags",
+            "merged_at": "2026-09-14T06:53:51Z"
+          },
+          {
+            "number": 1295,
+            "title": "fix(web): select the skill guard's draft through the DOM, not a Ctrl+A key event",
+            "merged_at": "2026-09-14T06:10:11Z"
+          },
+          {
+            "number": 1282,
+            "title": "fix(transcript): show the open affordance only on a visible tool line",
+            "merged_at": "2026-09-14T04:34:26Z"
+          },
+          {
+            "number": 1275,
+            "title": "fix(tool): drop the exact failure store's dead streak state",
+            "merged_at": "2026-09-14T02:25:12Z"
+          },
+          {
+            "number": 1274,
+            "title": "fix(tool): keep integer literals beyond int64 exact in fingerprints",
+            "merged_at": "2026-09-14T01:12:24Z"
+          },
+          {
+            "number": 1271,
+            "title": "docs(sdk): record A3's merge and A4's start",
+            "merged_at": "2026-09-14T01:12:08Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/clearance": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Justin Burnham",
+            "count": 1
+          },
+          {
+            "name": "Joshua W. Shaevitz",
+            "count": 1
+          },
+          {
+            "name": "Windell Oskay",
+            "count": 1
+          },
+          {
+            "name": "Chris Hondl",
+            "count": 1
+          }
+        ],
+        "loc_added": 2481,
+        "loc_removed": 55,
+        "merged_prs": [
+          {
+            "number": 56,
+            "title": "Add --help flag and reject unsupported -- flags in the CLI",
+            "merged_at": "2026-09-15T22:58:35Z"
+          },
+          {
+            "number": 47,
+            "title": "Add Private Mode design spec",
+            "merged_at": "2026-09-15T22:59:01Z"
+          },
+          {
+            "number": 48,
+            "title": "Improve editor responsiveness and syntax highlighting",
+            "merged_at": "2026-09-15T22:58:51Z"
+          },
+          {
+            "number": 54,
+            "title": "Add in-app help system",
+            "merged_at": "2026-09-15T22:58:43Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Clearance product workspace: a monorepo for the Markdown viewer, currently shipping a native Swift/macOS app with structure for future shared Tauri implementations on Windows, Linux, and Android.",
+        "html_url": "https://github.com/prime-radiant-inc/clearance"
+      },
+      "prime-radiant-inc/prime-radiant-marketplace": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 4,
+        "loc_removed": 4,
+        "merged_prs": [
+          {
+            "number": 2,
+            "title": "fix: use HTTPS url sources so installs work without GitHub SSH keys",
+            "merged_at": "2026-09-15T00:19:18Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Prime Radiant's Claude Code plugin marketplace.",
+        "html_url": "https://github.com/prime-radiant-inc/prime-radiant-marketplace"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 10
+          }
+        ],
+        "loc_added": 4020,
+        "loc_removed": 2553,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/teststrip": {
+        "commits": 37,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 37
+          }
+        ],
+        "loc_added": 7266,
+        "loc_removed": 983,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.3.1",
+            "name": "v0.3.1",
+            "published_at": "2026-09-14T02:01:21Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.0",
+            "name": "v0.3.0",
+            "published_at": "2026-09-14T01:51:03Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.3.1 published 2026-09-14T02:01:21Z; tagged release v0.3.0 published 2026-09-14T01:51:03Z",
+        "description": "macOS photo culling app \u2014 catalog-first, non-destructive, AI-assisted. Early development; not ready for use.",
+        "html_url": "https://github.com/prime-radiant-inc/teststrip"
+      },
+      "prime-radiant-inc/agentic-usage-meter": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 4
+          }
+        ],
+        "loc_added": 6188,
+        "loc_removed": 18,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.2.6",
+            "name": "Agentic Usage Meter 0.2.6",
+            "published_at": "2026-09-14T18:43:22Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.2.6 published 2026-09-14T18:43:22Z",
+        "description": "macOS menu-bar meter for coding-agent subscription quotas",
+        "html_url": "https://github.com/prime-radiant-inc/agentic-usage-meter"
+      },
+      "prime-radiant-inc/awesome-superpowers": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Kattni",
+            "count": 2
+          },
+          {
+            "name": "Mat\u00edas Beccaria",
+            "count": 1
+          }
+        ],
+        "loc_added": 357,
+        "loc_removed": 2,
+        "merged_prs": [
+          {
+            "number": 4,
+            "title": "Add agent-observer to CLI & Developer Tools",
+            "merged_at": "2026-09-16T07:41:49Z"
+          },
+          {
+            "number": 3,
+            "title": "Generate the website showcase feed from README projects",
+            "merged_at": "2026-09-14T06:07:27Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/prime-radiant-inc/awesome-superpowers"
+      },
+      "prime-radiant-inc/everyharness": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 3
+          }
+        ],
+        "loc_added": 480,
+        "loc_removed": 29,
+        "merged_prs": [
+          {
+            "number": 15,
+            "title": "feat: add Muse adapter (native Muse Code)",
+            "merged_at": "2026-09-17T23:48:14Z"
+          },
+          {
+            "number": 14,
+            "title": "fix: name the offending file in frontmatter YAMLParseError (#13)",
+            "merged_at": "2026-09-17T23:47:39Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Generate a coding-agent plugin for every harness from one config file",
+        "html_url": "https://github.com/prime-radiant-inc/everyharness"
+      },
+      "prime-radiant-inc/alltheagents.org": {
+        "commits": 21,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 16
+          },
+          {
+            "name": "Kattni",
+            "count": 5
+          }
+        ],
+        "loc_added": 23995,
+        "loc_removed": 5979,
+        "merged_prs": [
+          {
+            "number": 32,
+            "title": "Add entry: Jouzu (#29)",
+            "merged_at": "2026-09-16T17:23:28Z"
+          },
+          {
+            "number": 33,
+            "title": "Add entry: Multistack (#30)",
+            "merged_at": "2026-09-16T17:22:21Z"
+          },
+          {
+            "number": 31,
+            "title": "Add entry: maki (#28)",
+            "merged_at": "2026-09-16T17:21:46Z"
+          },
+          {
+            "number": 27,
+            "title": "Require only name, URL, and search confirmation on the add-entry form",
+            "merged_at": "2026-09-15T17:05:01Z"
+          },
+          {
+            "number": 24,
+            "title": "Add entry: Datasette Agent (#22)",
+            "merged_at": "2026-09-14T03:48:13Z"
+          },
+          {
+            "number": 25,
+            "title": "Add entry: GraphCode (#23)",
+            "merged_at": "2026-09-14T03:48:03Z"
+          },
+          {
+            "number": 26,
+            "title": "Add the issue-to-PR runbook and helper",
+            "merged_at": "2026-09-14T03:46:25Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Comprehensive census of coding agent harnesses",
+        "html_url": "https://github.com/prime-radiant-inc/alltheagents.org"
+      },
+      "prime-radiant-inc/shepherd-pr": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 5
+          }
+        ],
+        "loc_added": 1168,
+        "loc_removed": 118,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [
+          {
+            "sha": "e28217c",
+            "date": "2026-09-17T19:46:02+00:00",
+            "subject": "chore(release): bump plugin to 0.3.1",
+            "version": "0.3.1"
+          },
+          {
+            "sha": "633cb35",
+            "date": "2026-09-17T02:52:25+00:00",
+            "subject": "chore(release): bump plugin to 0.3.0",
+            "version": "0.3.0"
+          }
+        ],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A portable coding-agent plugin for shepherding GitHub pull requests through CI and review.",
+        "html_url": "https://github.com/prime-radiant-inc/shepherd-pr"
+      },
+      "obra/lace": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "ada-sen",
+            "count": 1
+          }
+        ],
+        "loc_added": 550,
+        "loc_removed": 9,
+        "merged_prs": [
+          {
+            "number": 402,
+            "title": "fix(ent-protocol): mirror api_style into CatalogProviderInfoSchema (fixes #401 CI)",
+            "merged_at": "2026-09-18T05:40:48Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/scan-to-model": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 68,
+        "loc_removed": 9,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Evidence-driven scan reconstruction skills and local tools for Codex and Blender",
+        "html_url": "https://github.com/obra/scan-to-model"
+      },
+      "obra/superpowers": {
+        "commits": 0,
+        "authors": [],
+        "loc_added": 0,
+        "loc_removed": 0,
+        "merged_prs": [
+          {
+            "number": 2337,
+            "title": "chore: bump version to 6.4.1",
+            "merged_at": "2026-09-18T22:02:14Z"
+          },
+          {
+            "number": 2336,
+            "title": "docs(release-notes): retitle unreleased v6.4.0 notes as v6.4.1",
+            "merged_at": "2026-09-18T21:49:08Z"
+          },
+          {
+            "number": 2335,
+            "title": "Revert proving-it-works-with-a-movie import (#2214)",
+            "merged_at": "2026-09-18T21:27:58Z"
+          },
+          {
+            "number": 2330,
+            "title": "chore: bump version to 6.4.0",
+            "merged_at": "2026-09-18T18:37:41Z"
+          },
+          {
+            "number": 2329,
+            "title": "test(movie): expect 8 frames from the slow-capture film test",
+            "merged_at": "2026-09-18T18:30:01Z"
+          },
+          {
+            "number": 2327,
+            "title": "Release prep: v6.4.0 notes and version bump",
+            "merged_at": "2026-09-18T17:59:06Z"
+          },
+          {
+            "number": 2106,
+            "title": "feat(opencode): support OpenCode 2.0.4+ alongside V1",
+            "merged_at": "2026-09-18T04:46:20Z"
+          },
+          {
+            "number": 2317,
+            "title": "feat: add native Muse support (multiprovider)",
+            "merged_at": "2026-09-18T01:00:05Z"
+          },
+          {
+            "number": 2320,
+            "title": "Add Claude Code platform reference: a nested orchestrator for cheaper subagent-driven development",
+            "merged_at": "2026-09-18T00:21:15Z"
+          },
+          {
+            "number": 2319,
+            "title": "Reviewer judges the spec as a vision document; plans list the five implied cases most likely to bite",
+            "merged_at": "2026-09-18T00:15:06Z"
+          },
+          {
+            "number": 2318,
+            "title": "Rebuild executing-plans as a first-class inline (Native) execution mode",
+            "merged_at": "2026-09-18T00:15:05Z"
+          },
+          {
+            "number": 2135,
+            "title": "docs(testing): describe the Quorum eval lab accurately, replacing stale Drill references",
+            "merged_at": "2026-09-18T00:07:24Z"
+          },
+          {
+            "number": 2138,
+            "title": "fix(sdd): ownership markers stop same-basename plans sharing a workspace",
+            "merged_at": "2026-09-18T00:03:25Z"
+          },
+          {
+            "number": 2110,
+            "title": "feat(tdd): the project's suite defines green, not just your test file",
+            "merged_at": "2026-09-17T22:50:20Z"
+          },
+          {
+            "number": 2132,
+            "title": "docs: add Qwen Code install instructions to README",
+            "merged_at": "2026-09-17T22:49:40Z"
+          },
+          {
+            "number": 2133,
+            "title": "fix(requesting-code-review): anchor the multi-commit BASE_SHA alternative to the merge base",
+            "merged_at": "2026-09-17T22:49:05Z"
+          },
+          {
+            "number": 2134,
+            "title": "fix(sdd): invoke sdd-workspace via bash so helpers survive stripped exec bits",
+            "merged_at": "2026-09-17T22:48:31Z"
+          },
+          {
+            "number": 2136,
+            "title": "fix(sdd): reject empty or non-descendant BASE..HEAD ranges in review-package",
+            "merged_at": "2026-09-17T22:47:56Z"
+          },
+          {
+            "number": 2301,
+            "title": "Invoke bundled scripts through their interpreter in skill prose",
+            "merged_at": "2026-09-17T22:31:10Z"
+          },
+          {
+            "number": 2214,
+            "title": "feat(skills): import proving-it-works-with-a-movie skill",
+            "merged_at": "2026-09-17T22:21:42Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      }
+    }
   }
 }

@@ -1,0 +1,180 @@
+---
+title: "teststrip ships v0.3.0 and v0.3.1, agentic-usage-meter cuts v0.2.6, and clearance pulls in four outside contributors in one week"
+week: "Week of September 14, 2026"
+dateStart: 2026-09-14
+dateEnd: 2026-09-20
+pubDate: 2026-09-18
+summary: "The most recent week, still in progress: teststrip ships two point releases behind a heavy scenario-testing push, agentic-usage-meter cuts v0.2.6 with a MiniMax quota fix, and evener has its busiest week of the month. prime-radiant-inc/clearance has an unusually open week, landing four separate outside-contributor PRs, and two more outside contributions turn up on the marketplace and everyharness repos. Partial week — data runs through Friday evening, not the full calendar week."
+draft: true
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Two unrelated repos earn the featured treatment this week, both for tagged releases: **`prime-radiant-inc/teststrip`** cuts v0.3.0 and v0.3.1 behind a heavy scenario-testing push, and **`prime-radiant-inc/agentic-usage-meter`** ships v0.2.6 with a MiniMax quota fix. Underneath them, **`prime-radiant-inc/evener`** has its busiest week of either recent window, and **`prime-radiant-inc/clearance`** has an unusually open one — four separate outside contributors, each landing one PR, none of them repeats from any prior week's post. Two more outside contributions turn up elsewhere too, on the marketplace and everyharness repos. This week is still open: the data below runs through Friday evening, not the full calendar week.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-09-14" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/teststrip](https://github.com/prime-radiant-inc/teststrip)
+
+<p class="repo-desc">macOS photo culling app — catalog-first, non-destructive, AI-assisted. Early development; not ready for use.</p>
+
+<RepoStat org="prime-radiant-inc" name="teststrip" week="2026-09-14" />
+
+Two point releases, v0.3.0 and v0.3.1, landing alongside a heavy scenario-testing push: a first-ever run of the activity-00x test cards, several re-run batches across the cull/lib/app/people/import/inspect scenario families (mixed verified/fail results recorded honestly rather than smoothed over), a ⌘F search-focus delivery fix, accessibility and copy polish across import, inspector, people, and chrome, and a release-build fix bundling the face model that had gone missing from release builds. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/agentic-usage-meter](https://github.com/prime-radiant-inc/agentic-usage-meter)
+
+<p class="repo-desc">macOS menu-bar meter for coding-agent subscription quotas.</p>
+
+<RepoStat org="prime-radiant-inc" name="agentic-usage-meter" week="2026-09-14" />
+
+v0.2.6 fixes MiniMax's percentage-based coding quotas and constrains the menu dropdown's height so long account lists scroll instead of overflowing, shipped as a signed production build. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-09-14" />
+
+Its busiest week of either recent window, and no release of its own. Deep sdk/mobile/web refactor work: a pending-turn commit feed and stall tripwire moved into the shared package, a mutation projection fence unified across web and native, `ConnectionProvider` migrated onto the package's own connection store, and a run of multi-piece refactors folding earlier follow-up work back together. On the fix side: wire-authoritative ask resolution, bounded warning strings, correct credential-write/in-flight-refresh ordering, and mobile receipt decoders that now ignore additive wire keys. Contributors: **Jesse Vincent (staff)**, nearly all of it, plus one `dependabot[bot]` dependency-bump commit.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clearance](https://github.com/prime-radiant-inc/clearance)
+
+<p class="repo-desc">Clearance product workspace: a monorepo for the Markdown viewer, currently shipping a native Swift/macOS app with structure for future shared Tauri implementations on Windows, Linux, and Android.</p>
+
+<RepoStat org="prime-radiant-inc" name="clearance" week="2026-09-14" />
+
+An unusually open week for this repo: a Private Mode design spec approved, editor responsiveness and syntax highlighting improved, an in-app Help system added, and CLI `--help`/unsupported-flag rejection added — four separate PRs, each from a different outside contributor, each squash-merged. Contributors: **Justin Burnham**, **Joshua W. Shaevitz**, **Windell Oskay**, and **Chris Hondl** — none are `prime-radiant-inc` org members, and none have appeared in a prior week's post.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/alltheagents.org](https://github.com/prime-radiant-inc/alltheagents.org)
+
+<p class="repo-desc">Comprehensive census of coding agent harnesses.</p>
+
+<RepoStat org="prime-radiant-inc" name="alltheagents.org" week="2026-09-14" />
+
+A content-and-tooling week: several new harness entries added (GraphCode, Datasette Agent, and others, via a new issue-to-PR runbook), a fix pointing the NeMo Agent Toolkit entry at its real repo, the star ranking fixed to source counts only from the GitHub API rather than a stale cache, and the add-entry form loosened to require only name, URL, and a search confirmation. Contributors: **Jesse Vincent (staff)** and **Kattni (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/awesome-superpowers](https://github.com/prime-radiant-inc/awesome-superpowers)
+
+<p class="repo-desc">An agentic skills framework & software development methodology that works.</p>
+
+<RepoStat org="prime-radiant-inc" name="awesome-superpowers" week="2026-09-14" />
+
+An "agent-observer" entry added to the CLI & Developer Tools section, and the website showcase feed now generates directly from README projects instead of being hand-maintained. Contributors: outside contributor **Matías Beccaria** (`mbecca`) for the agent-observer addition, merged by **Kattni (staff)**, who wrote the showcase-feed generator herself.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/everyharness](https://github.com/prime-radiant-inc/everyharness)
+
+<p class="repo-desc">Generate a coding-agent plugin for every harness from one config file.</p>
+
+<RepoStat org="prime-radiant-inc" name="everyharness" week="2026-09-14" />
+
+A native Muse Code adapter added, and a YAMLParseError message fixed to name the offending frontmatter file instead of a generic error. The Muse adapter is Jesse's commit; the YAMLParseError fix was opened and authored by **Ada Sen (staff)** — her own commit on that PR doesn't surface in this blog's commit-count column (a shallow-clone limitation on non-squash merges flagged in an earlier post's brief), so this week's credit for that fix goes here rather than in the numbers above.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/prime-radiant-marketplace](https://github.com/prime-radiant-inc/prime-radiant-marketplace)
+
+<p class="repo-desc">Prime Radiant's Claude Code plugin marketplace.</p>
+
+<RepoStat org="prime-radiant-inc" name="prime-radiant-marketplace" week="2026-09-14" />
+
+One fix: switching install sources to HTTPS URLs so installs work without GitHub SSH keys configured. This was an outside contribution from **caioniehues**, merged by **Jesse Vincent (staff)** — the same shallow-clone limitation as everyharness above means the commit-count column credits the merge rather than the original author, so the real author is named here instead.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/shepherd-pr](https://github.com/prime-radiant-inc/shepherd-pr)
+
+<p class="repo-desc">A portable coding-agent plugin for shepherding GitHub pull requests through CI and review (new last week).</p>
+
+<RepoStat org="prime-radiant-inc" name="shepherd-pr" week="2026-09-14" />
+
+Continued iterating on its settle detector: judging each CI check name by its current run instead of a stale one, and adding shepherding lessons to the bundled skill. Two more "bump plugin" commits, both message-only version bumps rather than tagged releases. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">Lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-09-14" />
+
+One fix, mirroring `api_style` into `CatalogProviderInfoSchema` to resolve a CI failure left over from last week's PR. Author: **Ada Sen (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/scan-to-model](https://github.com/obra/scan-to-model)
+
+<p class="repo-desc">Evidence-driven scan reconstruction skills and local tools for Codex and Blender (new last week).</p>
+
+<RepoStat org="obra" name="scan-to-model" week="2026-09-14" />
+
+A much quieter week than its launch week: behavioral scenarios added for reconstruction-workflow discipline, and reconstruction work kept "bounded and outcome driven." Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework & software development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-09-14" />
+
+Its heaviest merged-PR week of either recent window — still invisible to the commit-count column above, for the same reason as last week: its PRs land on a `dev` branch, not `main`, which is the only branch this blog's tooling walks for commits. By merged PR: native Muse (multiprovider) support, a movie-recording test fix expecting a corrected frame count, a nested-orchestrator Claude Code platform reference doc, executing-plans rebuilt as a first-class inline execution mode, a "reviewer judges the spec as a vision document" change, and two version bumps (6.4.0, then 6.4.1) with matching release notes. Contributors (by merged PR): **Jesse Vincent (staff)**, the large majority; **Drew Ritter (staff)**, one PR reverting an earlier import; **Ada Sen (staff)**, one skill import; and outside contributor **GoldJohnKing**, adding OpenCode 2.0.4+ support — their first contribution to this repo.
+
+</article>
+
+<p class="caveat"><em>The remaining active repo — <code>claude-plugin-stats</code> — had only bot-driven activity again this week (the daily install-stats scrape and chart rebuild), with no human commits. <code>prime-radiant-inc/study-skills</code>, last week's new-repo feature, had zero commits or PRs this week — a one-week launch burst, then quiet.</em></p>
+
+</section>
