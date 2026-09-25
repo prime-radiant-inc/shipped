@@ -1,0 +1,132 @@
+---
+title: "blogosphere cuts its first release behind a signed macOS build pipeline, superpowers and superpowers-chrome each ship a point release, and evener picks up an outside contributor's code-signing work"
+week: "Week of September 21, 2026"
+dateStart: 2026-09-21
+dateEnd: 2026-09-27
+pubDate: 2026-09-25
+summary: "The most recent week, still in progress: obra/blogosphere cuts its first-ever tagged release, v0.1.0, behind a from-scratch signed-and-notarized macOS release pipeline; obra/superpowers ships v6.4.2 and obra/superpowers-chrome ships v3.0.6. prime-radiant-inc/evener has its busiest week by commit count, and picks up a handful of outside-contributed commits doing macOS code-signing CI work. Partial week — data runs through Friday evening, not the full calendar week."
+draft: false
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Three unrelated repos earn the featured treatment this week, all for tagged releases: **`obra/blogosphere`** cuts v0.1.0, its first release ever, behind a from-scratch signed-and-notarized macOS build pipeline; **`obra/superpowers`** ships v6.4.2; and **`obra/superpowers-chrome`** ships v3.0.6. Underneath them, **`prime-radiant-inc/evener`** has its busiest week by commit count, and picks up a handful of commits from an outside contributor doing macOS code-signing CI work. This week is still open: the data below runs through Friday evening, not the full calendar week.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-09-21" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [obra/blogosphere](https://github.com/obra/blogosphere)
+
+<p class="repo-desc">Local-first, multi-platform blogging client for an 11ty blog that lives in a GitHub repo — the repo is the database.</p>
+
+<RepoStat org="obra" name="blogosphere" week="2026-09-21" />
+
+Its first tagged release, v0.1.0, behind a from-scratch signed-and-notarized macOS release workflow: a Developer ID identity imported and matched against the configured signing identity, a `.dmg` build that gets stapled and verified, pinned actions with no saved token, and the release gated to run only on tagged commits on `main` after checks pass. Alongside the release infrastructure: a rotated Apple app-specific password propagated to every notarizing repo and org secret, a nightly-fuzz timeout fix for async property tests that were outlasting the default limit, and a string of UI polish items — an activity-popover arrow that now points at the sync button's center, syntax colors fixed to a readable accent-independent blue, draft/publish toolbar copy, and markdown line alignment fixes. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework & software development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-09-21" />
+
+Tagged release v6.4.2, "leaner plans from writing-plans" — a rewrite of the `writing-plans` skill's core philosophy: a plan is decisions, not a transcript, built around a step recipe, a proportion check, and an assumption that the reader is capable. Still mostly invisible to the commit-count column above — its work lands on a `dev` branch, not `main`, which is the only branch this blog's tooling walks for commits; the merged-PR count is the reliable signal here. By merged PR: sole author **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-chrome](https://github.com/obra/superpowers-chrome)
+
+<p class="repo-desc">Claude Code plugin for direct Chrome browser control via DevTools Protocol — zero dependencies.</p>
+
+<RepoStat org="obra" name="superpowers-chrome" week="2026-09-21" />
+
+Tagged release v3.0.6, "Secret-safe auto-capture": a fix so the plugin never auto-captures or echoes credential-shaped page content. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-09-21" />
+
+Its busiest repo of the week by commit count, in a partial (Monday–Friday) window: deep native/web refactor work — a pending-turn commit feed and stall tripwire moved into the shared package, a mutation-projection fence unified across web and native, idle-release members torn down in bounded depth waves — alongside a run of test-suite modernization (dropping fake-toolchain and npm-shim tests, porting the web and browser gates to Go) and fixes to raw-argument display, doctor audit-selector collisions, and legacy-named project-bucket lookup. Separately, macOS release-signing infrastructure work landed: importing a Developer ID identity, matching the configured signing identity, and signing and notarizing release artifacts. Contributors: **Jesse Vincent (staff)**, nearly all of it, plus <code>jtdaugh</code> {/* VERIFY jtdaugh classification with Jesse */} (outside), who did the signing/notarization CI work — a name-collision trap worth flagging: the git commit-author name on these commits is just "Jesse," which reads at a glance like Jesse Vincent, but the GitHub login and commit-author email (`jesse@Jesses-MacBook-Pro.local`, distinct from Jesse Vincent's `jesse@primeradiant.com`) both resolve to a different person, confirmed individually against the commits API for all five commits.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/terminal-bench-analysis](https://github.com/prime-radiant-inc/terminal-bench-analysis)
+
+<p class="repo-desc">Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.</p>
+
+<RepoStat org="prime-radiant-inc" name="terminal-bench-analysis" week="2026-09-21" />
+
+One security fix: a leaked Claude OAuth token redacted from a committed `result.json`, plus hardening of `fetch_data.py` against the same class of leak recurring. Landed via a scheduled `github-actions[bot]` fetch commit (automated, not a contributor) and a human follow-up fix from **Ada Sen (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/shipped](https://github.com/prime-radiant-inc/shipped)
+
+<p class="repo-desc">A weekly log of what Prime Radiant and obra shipped (this repo).</p>
+
+<RepoStat org="prime-radiant-inc" name="shipped" week="2026-09-21" />
+
+Merged the weeks-of-2026-09-07-and-2026-09-14 posts, plus the outside-contribution-count and attribution corrections that followed them. Sole author: **Ada Sen (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">Lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-09-21" />
+
+A provider/catalog-heavy week: LunaRoute catalog limits fixed and max output fit to the context window, `claude-opus-5-5` added to the static Anthropic catalog, Responses-API tool-output ordering and stateless coverage fixed, a finished delegate's container now released properly on `job_kill`, persona `connectionId` frontmatter and a `query()` connection override added, and a `deepseek-4.1-flash-background` catalog entry added. Contributors: **Jesse Vincent (staff)**, the large majority, and **Ada Sen (staff)**, one commit.
+
+</article>
+
+<article class="repo">
+
+### [obra/scan-to-model](https://github.com/obra/scan-to-model)
+
+<p class="repo-desc">Evidence-driven scan reconstruction skills and local tools for Codex and Blender (new two weeks ago).</p>
+
+<RepoStat org="obra" name="scan-to-model" week="2026-09-21" />
+
+Continued build-out: recognizable room features reviewed against source photographs, extracted captures accepted through an intake command, reconstructions grounded in coverage with full deliveries preserved, source tracking simplified to preserved originals and source IDs, and packed native, still-tour, and offline-viewer delivery formats added. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+<p class="caveat"><em>The remaining active repo — <code>claude-plugin-stats</code> — had only bot-driven activity again this week (five days of the daily install-stats scrape and chart rebuild), with no human commits.</em></p>
+
+</section>
