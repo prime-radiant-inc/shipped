@@ -83,6 +83,31 @@ WHY v2 EXISTS — THE BUGS THIS FIXES
    local `git log --numstat` at all; the fork-with-parent path already
    always uses the commits API and was never affected).
 
+4. AUTHOR/COMMITTER DATE-BASIS MISMATCH BUG (commit undercount). The
+   non-fork commit walk filters with `git log --since=X --until=Y`, which
+   (git's own default) filters on COMMITTER date. But `parse_git_log`
+   captured each commit's date from `%aI` — AUTHOR date — and
+   `summarize_commits`/`bucket_index` then bucketed by that same author-date
+   field. A squash- or rebase-merged commit whose author date predates the
+   window but whose committer date (when it actually landed on the default
+   branch) falls inside it is ADMITTED by the --since/--until filter (which
+   checks committer date) but then DROPPED by the bucketing (which checks
+   author date against the same window) — it satisfies neither bucket, so
+   it's silently excluded and only shows up as a "clock skew?" note.
+   Proven on `obra/evener` (week of 2026-08-31): mismatched-basis bucketing
+   showed 463 in-window commits; GitHub's own commits API `since`/`until`
+   (which is committer-date, matching git log's default) reports 695 for
+   the identical window; re-bucketing the same commit list by committer
+   date (`%cI`) instead of author date resolves the discrepancy (694-695,
+   full agreement modulo one boundary commit) and the "clock skew?" note's
+   232 excluded commits drops to ~0.
+   v2's fix: use committer date (`%cI`) for BOTH the filter (already true,
+   since that's git log's default with --since/--until) and the bucket
+   value, so a commit can never be admitted by one basis and rejected by
+   the other. (`tools/verify_ground_truth.py`'s `git_log_full` already made
+   this same committer-date choice independently, for the same reason —
+   see its docstring.)
+
 APPROACH
 --------
 - Non-fork repos: shallow `git clone --shallow-since=<window start - 3d>`
@@ -347,10 +372,18 @@ def git_log_numstat(repo_dir, since_dt, until_dt, ref_range="HEAD"):
     # (2+ parents) -- see MERGE-COMMIT LOC BUG in fix_merge_commit_loc()'s
     # docstring for why that flag matters: local numstat is not trustworthy
     # for merges.
+    #
+    # AUTHOR/COMMITTER DATE-BASIS MISMATCH BUG fix (see module docstring,
+    # bug 4): --since/--until above filter on COMMITTER date (git's own
+    # default). The date field captured here MUST be the same basis --
+    # %cI (committer date), not %aI (author date) -- or a commit can be
+    # admitted by the filter and then dropped by summarize_commits'
+    # bucketing, which buckets on this same field. Using %cI here makes
+    # filter and bucket agree by construction.
     cmd = [
         "git", "log", ref_range, f"--since={since_iso}", f"--until={until_iso}",
         "--numstat", "--no-color",
-        "--pretty=format:COMMIT\t%H\t%h\t%an\t%aI\t%P\t%s",
+        "--pretty=format:COMMIT\t%H\t%h\t%an\t%cI\t%P\t%s",
     ]
     ok, out, err = run_git(cmd, cwd=repo_dir, timeout=120)
     if not ok:
@@ -359,6 +392,12 @@ def git_log_numstat(repo_dir, since_dt, until_dt, ref_range="HEAD"):
 
 
 def parse_git_log(text):
+    """`date` here is COMMITTER date (%cI, see git_log_numstat) -- deliberately
+    the same basis used by the --since/--until filter that produced this
+    text, so summarize_commits' bucketing (which buckets on this field)
+    always agrees with the filter that admitted the commit in the first
+    place. See module docstring bug 4 (AUTHOR/COMMITTER DATE-BASIS
+    MISMATCH BUG)."""
     commits = []
     cur = None
     for line in text.splitlines():
@@ -494,7 +533,13 @@ def fix_merge_commit_loc(commits, login, name, token):
 
 def summarize_commits(commits, buckets):
     """Bucket a flat commit list into per-week structures with author
-    rollups and LOC totals."""
+    rollups and LOC totals.
+
+    Buckets on c["date"], which is COMMITTER date -- the same basis as the
+    --since/--until filter that produced `commits` (see git_log_numstat /
+    parse_git_log). Bucketing on author date here instead was bug 4 (see
+    module docstring): a commit admitted by the committer-date filter could
+    have an author date outside every bucket, silently dropping it."""
     weeks = [
         {"index": i + 1, "commit_count": 0, "commits": [], "authors": {}, "loc_added": 0, "loc_removed": 0}
         for i in range(len(buckets))
