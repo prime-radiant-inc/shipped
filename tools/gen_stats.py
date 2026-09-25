@@ -57,6 +57,47 @@ def parse_dt(s):
     return datetime.datetime.fromisoformat(s.replace("Z", "+00:00"))
 
 
+def contributor_identity(c):
+    """Resolve a commit to a stable per-person identity for CONTRIBUTOR
+    COUNTING (the week summary's `contributors` figure) -- NOT the same
+    thing as the per-repo `authors` display list below, which stays
+    keyed by git-config display name on purpose (it's meant to show the
+    name as it actually appears in the log).
+
+    CONTRIBUTOR-COUNTING DEDUPE FIX: the same person can commit under
+    different git-config display names in different repos -- e.g. Ada
+    Sen's commits show up as "Ada Sen" in one repo and "ada-sen" in
+    another, same email (ada.sen@primeradiant.com) and GitHub login
+    (ada-sen) both times. Counting by name double-counted her. Prefer
+    GitHub login (only available for fork-with-parent/compare-API-
+    sourced commits -- see gather.py), fall back to a normalized email
+    (available for local-git-log-sourced commits via %ae, added
+    alongside this fix), and fall back to the raw author name only for
+    recon JSON generated before this fix added login/email capture (so
+    old cached recon files don't crash, though a *report* run against
+    one won't get the fix's benefit -- regenerate the recon JSON to get
+    deduped counts for a given week).
+
+    Bots are NOT special-cased here, deliberately: they keep counting as
+    contributors, matching week-of-2026-09-14's already-committed value
+    (10 contributors including `github-actions[bot]` and
+    `dependabot[bot]` -- confirmed by recomputing that week's distinct
+    author-name count against its stored weekly-stats.json entry, which
+    matches exactly, i.e. that week had no same-person/different-name
+    collision to begin with). Each bot's email is consistent across
+    repos (e.g. `github-actions[bot]@users.noreply.github.com`), so it
+    still dedupes to exactly one identity per bot account, same as
+    before.
+    """
+    login = c.get("login")
+    if login:
+        return f"login:{login}"
+    email = c.get("email")
+    if email:
+        return f"email:{email.strip().lower()}"
+    return f"name:{c['author']}"
+
+
 def week_window(bucket):
     start = datetime.datetime.fromisoformat(bucket["start"]).replace(tzinfo=datetime.timezone.utc)
     end_inclusive_date = datetime.datetime.fromisoformat(bucket["end"]).replace(tzinfo=datetime.timezone.utc)
@@ -117,7 +158,11 @@ def build_week(data, week_idx, bucket):
         authors_dict = w.get("authors", {})
         authors_list = [{"name": name, "count": count} for name, count in
                         sorted(authors_dict.items(), key=lambda x: -x[1])]
-        all_authors.update(authors_dict.keys())
+        # Contributor COUNTING dedupes by identity (login/email), not by
+        # display name -- see contributor_identity()'s docstring. The
+        # authors_list above stays name-keyed; it's a display list, not
+        # a count.
+        all_authors.update(contributor_identity(c) for c in commits)
 
         commit_count = w.get("commit_count", len(commits))
         loc_added = w.get("loc_added", 0)

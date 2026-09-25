@@ -324,6 +324,47 @@ def get_compare(login, name, base_owner, base_branch, head_branch, token):
     return data[0], None
 
 
+def get_commit_logins(login, name, token, window_start, window_end, branch):
+    """Map full commit SHA -> GitHub login for every commit on `branch` in
+    the window, via the commits-list endpoint (server-side since/until
+    filtering) -- ONE call per ~100 commits, not one per commit.
+
+    WHY THIS EXISTS -- CONTRIBUTOR-COUNTING DEDUPE FIX. The local git-log
+    path (git_log_numstat) only has author NAME and EMAIL, no login. Email
+    alone is not a safe dedupe key: the same person can have MULTIPLE
+    verified emails and use different ones in different repos in the same
+    week (proven: Jesse Vincent/`obra` committed as jesse@primeradiant.com
+    on evener and jesse@fsck.com on lace/blogosphere/scan-to-model/
+    superpowers-chrome in the same week -- both confirmed via the commits
+    API to resolve to login `obra`). Deduping by email alone would have
+    SPLIT him into two contributors -- the mirror image of the bug this
+    fix exists to close. This function gets the login cheaply so
+    gen_stats.py can prefer it over email uniformly.
+
+    Safe to call for a fork too: this only ANNOTATES commits already
+    selected by other (fork-safe) logic, matched by exact SHA -- it never
+    adds or removes a commit from the count, so it cannot reintroduce the
+    fork-inherited-history bug (bug 2) even though this endpoint would
+    include inherited history for a fork if used naively for counting.
+    """
+    since_iso = window_start.strftime("%Y-%m-%dT%H:%M:%SZ")
+    until_iso = window_end.strftime("%Y-%m-%dT%H:%M:%SZ")
+    path = (
+        f"repos/{login}/{name}/commits?sha={branch}&since={since_iso}"
+        f"&until={until_iso}&per_page=100"
+    )
+    data, err = gh_api(path, token, paginate=True)
+    if err:
+        return {}, err
+    out = {}
+    for c in data:
+        sha = c.get("sha")
+        if not sha:
+            continue
+        out[sha] = (c.get("author") or {}).get("login")
+    return out, None
+
+
 def get_commit_stats(login, name, sha, token):
     data, err = gh_api(f"repos/{login}/{name}/commits/{sha}", token, paginate=False)
     if err:
@@ -380,10 +421,15 @@ def git_log_numstat(repo_dir, since_dt, until_dt, ref_range="HEAD"):
     # admitted by the filter and then dropped by summarize_commits'
     # bucketing, which buckets on this same field. Using %cI here makes
     # filter and bucket agree by construction.
+    # %ae (author email) is included alongside %an so downstream contributor
+    # counting can dedupe by email instead of by display name -- the same
+    # person can commit under multiple git-config names (e.g. "Ada Sen" in
+    # one repo, "ada-sen" in another) but their email is stable. See
+    # gen_stats.py's contributor-counting fix for why this matters.
     cmd = [
         "git", "log", ref_range, f"--since={since_iso}", f"--until={until_iso}",
         "--numstat", "--no-color",
-        "--pretty=format:COMMIT\t%H\t%h\t%an\t%cI\t%P\t%s",
+        "--pretty=format:COMMIT\t%H\t%h\t%an\t%ae\t%cI\t%P\t%s",
     ]
     ok, out, err = run_git(cmd, cwd=repo_dir, timeout=120)
     if not ok:
@@ -404,13 +450,13 @@ def parse_git_log(text):
         if line.startswith("COMMIT\t"):
             if cur:
                 commits.append(cur)
-            parts = line.split("\t", 6)
-            if len(parts) < 7:
+            parts = line.split("\t", 7)
+            if len(parts) < 8:
                 continue
-            _, sha, short, author, date, parents, subject = parts
+            _, sha, short, author, email, date, parents, subject = parts
             n_parents = len(parents.split())
             cur = {
-                "sha": sha, "short_sha": short, "author": author, "date": date,
+                "sha": sha, "short_sha": short, "author": author, "email": email, "date": date,
                 "subject": subject, "additions": 0, "deletions": 0, "files_changed": 0,
                 # A normal, non-merge commit has EXACTLY one parent. Anything
                 # else is untrustworthy for local-numstat LOC purposes:
@@ -558,6 +604,14 @@ def summarize_commits(commits, buckets):
                 "sha": c["short_sha"], "author": c["author"], "date": c["date"],
                 "subject": c["subject"], "additions": c["additions"],
                 "deletions": c["deletions"], "files_changed": c["files_changed"],
+                # login (fork-with-parent/compare-API path only; absent for
+                # local git-log commits) and email (present for local
+                # git-log commits via %ae; may be absent/null for API-
+                # sourced commits with no email in the response) both carry
+                # through here so gen_stats.py can dedupe contributors by
+                # identity instead of by display name. See its
+                # contributor-counting fix.
+                "login": c.get("login"), "email": c.get("email"),
             }
         )
         w["authors"][c["author"]] = w["authors"].get(c["author"], 0) + 1
@@ -731,6 +785,14 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
                             {
                                 "sha": sha, "short_sha": sha[:7],
                                 "author": c.get("commit", {}).get("author", {}).get("name", "unknown"),
+                                # login comes from the API's top-level `author`
+                                # user object (may be null for an unlinked
+                                # email) -- unlike the local git-log path,
+                                # this is free here since the compare API
+                                # response already carries it. See
+                                # gen_stats.py's contributor-counting fix.
+                                "login": (c.get("author") or {}).get("login"),
+                                "email": c.get("commit", {}).get("author", {}).get("email"),
                                 "date": cdate,
                                 "subject": (c.get("commit", {}).get("message") or "").split("\n", 1)[0],
                                 **stats,
@@ -757,6 +819,20 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
             errors["clone"] = cerr0
         if os.path.isdir(dest):
             shutil.rmtree(dest, ignore_errors=True)
+
+    # CONTRIBUTOR-COUNTING DEDUPE FIX: enrich any commit that's missing a
+    # login (i.e. came from the local git-log path, which only has
+    # name+email -- the fork-with-parent/compare-API path already sets
+    # login above) via one bounded, paginated commits-list call. See
+    # get_commit_logins()'s docstring for why email alone isn't safe.
+    if default_branch and any(c.get("login") is None for c in commits):
+        login_map, lerr = get_commit_logins(login, name, token, window_start, window_end, default_branch)
+        if lerr:
+            errors["commit_logins"] = lerr
+        else:
+            for c in commits:
+                if c.get("login") is None:
+                    c["login"] = login_map.get(c["sha"])
 
     weeks, unmatched = summarize_commits(commits, buckets)
     if unmatched:
