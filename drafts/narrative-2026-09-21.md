@@ -1,13 +1,16 @@
 # Narrative brief — week of 2026-09-21 (through 2026-09-27)
 
-Grounded in `data/recon-v2-1wk-20260925.json` (single-week gather.py run,
-`--weeks 1 --window-end 2026-09-25T22:19:28Z`, both orgs, COMMITTED
-`tools/gather.py` — i.e. WITHOUT the uncommitted author/committer-date-basis
-diff; see "gather.py basis note" below) + `src/data/weekly-stats.json`'s
-`2026-09-21` key (via `tools/gen_stats.py`, merged in — the only key
-touched; every other week's entry diffed byte-identical against `main`
-before merging). No numbers below — pure narrative themes; all figures
-render from the widgets / come from the stats JSON.
+Grounded in `data/recon-v2-1wk-20260925-committerdate.json` (single-week
+gather.py run, `--weeks 1 --window-end 2026-09-25T22:19:28Z`, both orgs,
+WITH the committer-date-basis fix cherry-picked onto this branch — commit
+`15abdcb`, cherry-picked from `fix/gather-committer-date`'s `5b07119` — so
+the counting basis now MATCHES the live `week-of-2026-09-07.mdx` and
+`week-of-2026-09-14.mdx` posts, both of which were gathered with this same
+fix applied) + `src/data/weekly-stats.json`'s `2026-09-21` key (via
+`tools/gen_stats.py`, merged in — the only key touched; every other week's
+entry diffed byte-identical against `main` before merging). No numbers
+below — pure narrative themes; all figures render from the widgets / come
+from the stats JSON.
 
 **Window is PARTIAL — same pattern as the last two posts.** Frozen
 snapshot: 2026-09-25T22:19:28Z (a Friday evening). The calendar week runs
@@ -34,20 +37,29 @@ gathered from the two prior posts' own frontmatter and prose:
 So: this is the same shape as 09-14, done on schedule. No need to wait for
 the week to close.
 
-**gather.py basis note:** this run used `main`'s committed `tools/gather.py`
-only — the uncommitted author/committer-date-basis fix (bug 4: `%aI` vs
-`%cI`) was deliberately NOT applied. That fix has been moved to branch
-`fix/gather-committer-date` (pushed, not merged) per this week's
-instructions, since changing the counting basis is a separate decision
-from this week's data. The already-committed fork-inherited-history fix
-(compare-API `ahead_by`) IS in this run, same as always. One consequence
-worth flagging: `week-of-2026-09-07.mdx` and `week-of-2026-09-14.mdx` were
-gathered WITH the bug-4 diff applied (see their narrative briefs), so this
-week's commit counts are not on a guaranteed-identical basis to the
-immediately preceding two weeks — a boundary commit landing right at a
-week edge could count differently. No evidence this actually bit anything
-this week (no repo showed a "clock skew?" note in the coverage report),
-but noting the inconsistency rather than silently smoothing over it.
+**gather.py basis note (RECONCILED):** the first pass at this week's data
+(commit `e44c8f0`) used `main`'s committed `gather.py` WITHOUT the bug-4
+(`%aI`→`%cI`) fix — inconsistent with 09-07/09-14, which were gathered
+WITH it. That's now fixed: this branch cherry-picked `fix/gather-committer-
+date`'s `5b07119` (commit `15abdcb`) and re-ran the full gather
+(`data/recon-v2-1wk-20260925-committerdate.json`, same frozen window-end
+`2026-09-25T22:19:28Z` as the first pass, so the fix is the only variable).
+**Result: zero change.** Every repo's `commit_count`, `loc_added`,
+`loc_removed`, and `merged_prs` count is identical between the two runs —
+verified by diffing both full recon JSONs and both `gen_stats.py` outputs
+programmatically, not by eyeballing the coverage report. The only per-commit
+field that differs at all is the captured `date` string on 12 commits
+across `terminal-bench-analysis`, `blogosphere`, `lace`, and
+`scan-to-model` (author-date vs. committer-date — same commits, same SHAs,
+different timestamp basis), and none of those 12 sit near a week boundary,
+so nothing flipped buckets. `src/data/weekly-stats.json`'s `2026-09-21` key
+is therefore byte-identical whether generated from the pre- or
+post-cherry-pick recon file — replaced with the post-fix version anyway,
+for provenance (so the committed data and the committed code that produced
+it agree), and diffed against parent commit `e44c8f0` to confirm all 39
+other weeks are untouched (they are). The already-committed
+fork-inherited-history fix (compare-API `ahead_by`) was in both runs, as
+always.
 
 **Coverage:** 281 repos scanned (55 `prime-radiant-inc`, 226 `obra`), zero
 fetch/clone errors, 9 repos with in-window activity. Full detail in
