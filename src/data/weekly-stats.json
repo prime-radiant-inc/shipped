@@ -19561,5 +19561,1205 @@
         "html_url": "https://github.com/obra/superpowers"
       }
     }
+  },
+  "2026-09-21": {
+    "summary": {
+      "repos_active": 9,
+      "featured_count": 3,
+      "second_tier_count": 6,
+      "commits": 367,
+      "merged_prs": 196,
+      "loc_added": 327212,
+      "loc_removed": 58016,
+      "contributors": 5,
+      "tagged_releases": 3,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "prime-radiant-inc/evener": {
+        "commits": 185,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 180
+          },
+          {
+            "name": "Jesse",
+            "count": 5
+          }
+        ],
+        "loc_added": 293329,
+        "loc_removed": 51818,
+        "merged_prs": [
+          {
+            "number": 2319,
+            "title": "feat(native): restart and reconnect recovery for in-flight mutations (recovery slice 7b)",
+            "merged_at": "2026-09-25T21:56:04Z"
+          },
+          {
+            "number": 2204,
+            "title": "fix(agent): show raw args at remaining display and signature sites",
+            "merged_at": "2026-09-25T21:59:48Z"
+          },
+          {
+            "number": 2317,
+            "title": "docs(multi-host): say when version auto-match applies, in component 04's summary",
+            "merged_at": "2026-09-25T21:09:55Z"
+          },
+          {
+            "number": 2316,
+            "title": "refactor(native): repoint the conversation seam to the shared projector and delete the private family (D24 slice 6 of 6)",
+            "merged_at": "2026-09-25T20:19:12Z"
+          },
+          {
+            "number": 2300,
+            "title": "perf(agent): tear idle-release members down in bounded depth waves",
+            "merged_at": "2026-09-25T16:15:54Z"
+          },
+          {
+            "number": 2295,
+            "title": "perf(agent): walk the delegate children index for subtree membership",
+            "merged_at": "2026-09-25T04:12:54Z"
+          },
+          {
+            "number": 2279,
+            "title": "fix(mobile-native): expose the terminal close when token acquisition fails",
+            "merged_at": "2026-09-24T19:05:45Z"
+          },
+          {
+            "number": 2130,
+            "title": "fix(agent): converge the retained-scratch pool onto the manifest at cold restore",
+            "merged_at": "2026-09-24T18:18:23Z"
+          },
+          {
+            "number": 2129,
+            "title": "fix(agent): collapse idle-release retries onto one grace timer per delegate",
+            "merged_at": "2026-09-22T03:40:53Z"
+          },
+          {
+            "number": 2104,
+            "title": "fix(agent): release a finished stable delegate's runtime at idle to stop stdio MCP server leaks",
+            "merged_at": "2026-09-21T14:47:18Z"
+          },
+          {
+            "number": 2115,
+            "title": "fix(agent): hold a cold attention restoration off release claims",
+            "merged_at": "2026-09-21T20:19:52Z"
+          },
+          {
+            "number": 2314,
+            "title": "build: stop installing evener-dev; keep it in release archives for the transition",
+            "merged_at": "2026-09-25T18:15:43Z"
+          },
+          {
+            "number": 2315,
+            "title": "test(agent): settle the idle-release fixtures past owed attention generations",
+            "merged_at": "2026-09-25T18:00:22Z"
+          },
+          {
+            "number": 2312,
+            "title": "test: drop the last npm shim; test make install's layout without the web build",
+            "merged_at": "2026-09-25T17:42:10Z"
+          },
+          {
+            "number": 2310,
+            "title": "test: drop the fake-toolchain build tests, keep the preflight and ordering checks without fakes",
+            "merged_at": "2026-09-25T17:14:55Z"
+          },
+          {
+            "number": 2309,
+            "title": "test(evener-dev): drop the web-gate tests of system behavior, name the evener-dev binary",
+            "merged_at": "2026-09-25T16:38:52Z"
+          },
+          {
+            "number": 2203,
+            "title": "fix(doctor): qualify audit follow selectors by bucket to resolve duplicate-sid collisions",
+            "merged_at": "2026-09-25T16:23:20Z"
+          },
+          {
+            "number": 2205,
+            "title": "fix(agent): enumerate legacy-named project buckets in transcript lookup",
+            "merged_at": "2026-09-25T16:14:28Z"
+          },
+          {
+            "number": 2304,
+            "title": "test(web): port the test-web gate to Go, and stop an interrupt orphaning its checks",
+            "merged_at": "2026-09-25T08:21:13Z"
+          },
+          {
+            "number": 2298,
+            "title": "test(web): port the browser gate to Go and drop its fake-toolchain tests",
+            "merged_at": "2026-09-25T06:28:15Z"
+          },
+          {
+            "number": 2288,
+            "title": "test: bound runtime pair cleanup waits",
+            "merged_at": "2026-09-25T06:11:18Z"
+          },
+          {
+            "number": 2294,
+            "title": "feat(native): durable pending rows for in-flight mutations (recovery slice 7a)",
+            "merged_at": "2026-09-25T04:56:26Z"
+          },
+          {
+            "number": 2299,
+            "title": "refactor(native): retire transcriptPresentation's duplicate classification (D24 slice 4 of 6)",
+            "merged_at": "2026-09-25T04:54:49Z"
+          },
+          {
+            "number": 2297,
+            "title": "refactor(native): projectTimeline delegates to the shared projector (D24 slice 3 of 6)",
+            "merged_at": "2026-09-25T04:13:53Z"
+          },
+          {
+            "number": 2266,
+            "title": "feat(native): shared-projector row adapter (D24 slice 1 of 6)",
+            "merged_at": "2026-09-25T03:20:06Z"
+          },
+          {
+            "number": 2292,
+            "title": "ci(tests): run the root and nonroot waves on separate runners",
+            "merged_at": "2026-09-24T23:21:42Z"
+          },
+          {
+            "number": 2290,
+            "title": "ci(tests): size the gate's budgets to the runner, not its setup load",
+            "merged_at": "2026-09-24T23:03:17Z"
+          },
+          {
+            "number": 2286,
+            "title": "test(hub): a gated live acceptance check for the remote-host settings UI",
+            "merged_at": "2026-09-24T20:17:18Z"
+          },
+          {
+            "number": 2284,
+            "title": "fix(native): route send/steer/queue/interrupt through the durable mutation runtime",
+            "merged_at": "2026-09-24T20:10:47Z"
+          },
+          {
+            "number": 2282,
+            "title": "feat(settings): sign in on a remote host for a Codex instance",
+            "merged_at": "2026-09-24T20:03:38Z"
+          },
+          {
+            "number": 2280,
+            "title": "refactor(native): eventKind classification replaces systemFamily (D24 slice 2 of 6, B4)",
+            "merged_at": "2026-09-24T19:23:19Z"
+          },
+          {
+            "number": 2281,
+            "title": "test(web): load-aware guard budgets for startup and skillguard waits",
+            "merged_at": "2026-09-24T19:18:58Z"
+          },
+          {
+            "number": 2230,
+            "title": "feat(settings): add the credential-push action to the remote-credentials pane",
+            "merged_at": "2026-09-24T18:59:38Z"
+          },
+          {
+            "number": 2265,
+            "title": "fix(native): close the #2213 paging follow-ups (presence-aware suppliers, coverage corners)",
+            "merged_at": "2026-09-24T18:32:36Z"
+          },
+          {
+            "number": 2264,
+            "title": "test(native): screen-level integration for the recovery entry and modal wiring",
+            "merged_at": "2026-09-24T18:25:46Z"
+          },
+          {
+            "number": 2260,
+            "title": "test(evener): acknowledge a retirement advance before delivering the timer",
+            "merged_at": "2026-09-24T17:54:42Z"
+          },
+          {
+            "number": 2258,
+            "title": "fix(hub): wait for a retiring daemon to exit instead of refusing the prompt",
+            "merged_at": "2026-09-24T17:49:07Z"
+          },
+          {
+            "number": 2254,
+            "title": "perf(agent): fold a resident session's attention transcript incrementally",
+            "merged_at": "2026-09-24T17:28:17Z"
+          },
+          {
+            "number": 2249,
+            "title": "fix: stop two races from moving the daemon retirement deadline",
+            "merged_at": "2026-09-24T17:25:32Z"
+          },
+          {
+            "number": 2229,
+            "title": "feat(settings): host-scope the remaining settings panes to the selected host",
+            "merged_at": "2026-09-24T17:25:16Z"
+          },
+          {
+            "number": 2211,
+            "title": "feat(web): rework the inline task card into a plan window, shared with the tasks pane",
+            "merged_at": "2026-09-24T14:21:29Z"
+          },
+          {
+            "number": 2244,
+            "title": "test(e2e): add turncpu, a scripted-provider harness for per-round daemon CPU",
+            "merged_at": "2026-09-24T17:13:35Z"
+          },
+          {
+            "number": 2255,
+            "title": "test(hub): make daemon-retirement watchdogs load-aware",
+            "merged_at": "2026-09-24T16:58:33Z"
+          },
+          {
+            "number": 2250,
+            "title": "perf(hub): slim the liveness probe \u2014 list-only root and a statusOnly thread/list",
+            "merged_at": "2026-09-24T16:34:15Z"
+          },
+          {
+            "number": 2240,
+            "title": "fix(agent): stop restored sessions retaining their decoded transcript",
+            "merged_at": "2026-09-24T16:28:41Z"
+          },
+          {
+            "number": 2214,
+            "title": "feat(web): host grouping for the rail, host-first order for the spawn form",
+            "merged_at": "2026-09-24T15:45:44Z"
+          },
+          {
+            "number": 2243,
+            "title": "perf(server): apply streamed deltas to the turn snapshot from their typed params",
+            "merged_at": "2026-09-24T16:11:03Z"
+          },
+          {
+            "number": 2242,
+            "title": "perf(agent): stop delegate cost scaling with children's token rate and count",
+            "merged_at": "2026-09-24T16:09:55Z"
+          },
+          {
+            "number": 2241,
+            "title": "perf(llm): skip API-attempt evidence when the API log discards it",
+            "merged_at": "2026-09-24T16:08:47Z"
+          },
+          {
+            "number": 2248,
+            "title": "ci(race): run the root module's race suite as two lanes, the hub and the rest",
+            "merged_at": "2026-09-24T15:44:48Z"
+          },
+          {
+            "number": 2239,
+            "title": "perf(appwire): decode each received response once, straight into the caller's type",
+            "merged_at": "2026-09-24T15:43:28Z"
+          },
+          {
+            "number": 2237,
+            "title": "perf(appwire): encode JSON-RPC frames and diagnostics once",
+            "merged_at": "2026-09-24T15:42:20Z"
+          },
+          {
+            "number": 2235,
+            "title": "feat(diag): opt-in live pprof endpoint for evener serve and evener hub",
+            "merged_at": "2026-09-24T15:41:07Z"
+          },
+          {
+            "number": 2246,
+            "title": "fix(web): make interrupted web gates wait for every step and never lose a signal",
+            "merged_at": "2026-09-24T15:28:00Z"
+          },
+          {
+            "number": 2245,
+            "title": "test(hub): fix nil-flight flake in TestNavigationServiceCommitsCanceledRefreshForLaterPublication",
+            "merged_at": "2026-09-24T15:11:27Z"
+          },
+          {
+            "number": 2247,
+            "title": "fix(native): make recovery restore record- and eligibility-aware",
+            "merged_at": "2026-09-24T14:53:50Z"
+          },
+          {
+            "number": 2236,
+            "title": "fix: read the rename verdict from the listing transport",
+            "merged_at": "2026-09-24T14:24:12Z"
+          },
+          {
+            "number": 2213,
+            "title": "refactor(native): paging onto the model; the store merges older pages and rows re-project (D23d)",
+            "merged_at": "2026-09-24T14:20:33Z"
+          },
+          {
+            "number": 2238,
+            "title": "perf(gate): keep the hub and CLI sharded under -race",
+            "merged_at": "2026-09-24T06:59:17Z"
+          },
+          {
+            "number": 2216,
+            "title": "perf(web): run the browser guards side by side, as many as the machine has spare cores",
+            "merged_at": "2026-09-24T06:41:44Z"
+          },
+          {
+            "number": 2234,
+            "title": "fix(hub): bind relays to their server and fence them with a captured lookup",
+            "merged_at": "2026-09-24T06:32:13Z"
+          },
+          {
+            "number": 2144,
+            "title": "feat: shared $-expression grammar with $(command) credentials",
+            "merged_at": "2026-09-24T06:16:14Z"
+          },
+          {
+            "number": 2233,
+            "title": "ci(web): run the frontend unit checks and the browser guards as parallel lanes",
+            "merged_at": "2026-09-24T05:05:54Z"
+          },
+          {
+            "number": 2232,
+            "title": "test(selfupdate): prove the decompression-bomb cap with a 2MB archive, not 600MB",
+            "merged_at": "2026-09-24T05:05:49Z"
+          },
+          {
+            "number": 2231,
+            "title": "test(web): settle the superseded create's refetch before scripting reload reads",
+            "merged_at": "2026-09-24T04:40:41Z"
+          },
+          {
+            "number": 2228,
+            "title": "test(sshconn): find the live test's build source from the working directory",
+            "merged_at": "2026-09-24T04:07:35Z"
+          },
+          {
+            "number": 2225,
+            "title": "fix(web): keep a bottom-following transcript pinned when its scroll port shrinks",
+            "merged_at": "2026-09-24T04:07:24Z"
+          },
+          {
+            "number": 2202,
+            "title": "feat(settings): scope settings to a selected host, with the host in the route",
+            "merged_at": "2026-09-24T03:52:48Z"
+          },
+          {
+            "number": 2218,
+            "title": "test(web): retire the skill guard's capability-loss scenario",
+            "merged_at": "2026-09-24T03:29:27Z"
+          },
+          {
+            "number": 2215,
+            "title": "test(web): prune the two layoutguard cases that no longer prove anything",
+            "merged_at": "2026-09-24T03:29:21Z"
+          },
+          {
+            "number": 2212,
+            "title": "ci: keep the Go build and golangci-lint caches warm",
+            "merged_at": "2026-09-24T03:05:44Z"
+          },
+          {
+            "number": 2223,
+            "title": "feat(native): recovery UI panel with atomic draft restore (D23 slice 5)",
+            "merged_at": "2026-09-24T01:28:13Z"
+          },
+          {
+            "number": 2224,
+            "title": "refactor(native): project transcriptMobile onto the shared transcript display store (A10)",
+            "merged_at": "2026-09-24T00:17:21Z"
+          },
+          {
+            "number": 2190,
+            "title": "feat(hub): push local credentials to a host through a fenced write",
+            "merged_at": "2026-09-23T23:43:33Z"
+          },
+          {
+            "number": 2222,
+            "title": "test(web): cover late marketplace outcomes across the whole settings page lifetime",
+            "merged_at": "2026-09-23T23:21:36Z"
+          },
+          {
+            "number": 2219,
+            "title": "fix(native): make mutation startup transactional and retryable",
+            "merged_at": "2026-09-23T23:15:31Z"
+          },
+          {
+            "number": 2221,
+            "title": "test(plugins): port the S3 migration path-scrub regressions onto current main",
+            "merged_at": "2026-09-23T23:10:01Z"
+          },
+          {
+            "number": 2220,
+            "title": "ci(ios): auto-deploy TestFlight on mobile main merges",
+            "merged_at": "2026-09-23T23:04:06Z"
+          },
+          {
+            "number": 2217,
+            "title": "fix(sandboxtest): give tests a kept temp dir, so a failing skill guard keeps its artifacts",
+            "merged_at": "2026-09-23T21:37:15Z"
+          },
+          {
+            "number": 2210,
+            "title": "feat(agent): advertise work tools' intent argument as required",
+            "merged_at": "2026-09-23T20:39:51Z"
+          },
+          {
+            "number": 2209,
+            "title": "docs(testing): write down the test conventions this round of fixes relied on",
+            "merged_at": "2026-09-23T19:53:51Z"
+          },
+          {
+            "number": 2208,
+            "title": "fix(native): keep the prior diagnostic when a marketplace removal is not ready",
+            "merged_at": "2026-09-23T19:16:37Z"
+          },
+          {
+            "number": 2207,
+            "title": "fix(native): follow-up Lows from the #1948 and #1942 reviews",
+            "merged_at": "2026-09-23T18:52:53Z"
+          },
+          {
+            "number": 2200,
+            "title": "test: give each test binary its own host temp root, including the evener processes it starts",
+            "merged_at": "2026-09-23T18:52:00Z"
+          },
+          {
+            "number": 2201,
+            "title": "feat(agent): include delegate label in send/wait result and validate at describe seam",
+            "merged_at": "2026-09-23T18:19:21Z"
+          },
+          {
+            "number": 2206,
+            "title": "fix(hub): make the navigation tier merge linear and honor cancellation",
+            "merged_at": "2026-09-23T18:18:18Z"
+          },
+          {
+            "number": 2189,
+            "title": "docs(multi-host): bring 07 remote-admin implementation status up to date",
+            "merged_at": "2026-09-23T17:25:23Z"
+          },
+          {
+            "number": 2198,
+            "title": "test(web): wait for force stop's RPC instead of racing its durable write",
+            "merged_at": "2026-09-23T17:02:16Z"
+          },
+          {
+            "number": 2196,
+            "title": "test(agent): confine the startup sweep tests to scratch they own",
+            "merged_at": "2026-09-23T16:59:03Z"
+          },
+          {
+            "number": 2199,
+            "title": "docs(doctor): align cmd selector help with bare-id cross-bucket semantics",
+            "merged_at": "2026-09-23T16:53:18Z"
+          },
+          {
+            "number": 2194,
+            "title": "test(evener): exit the daemon retirement helper when its fixture is gone",
+            "merged_at": "2026-09-23T16:30:50Z"
+          },
+          {
+            "number": 2195,
+            "title": "test: keep clipboard, transcript and TUI fixture files in test-owned dirs",
+            "merged_at": "2026-09-23T16:24:33Z"
+          },
+          {
+            "number": 2181,
+            "title": "fix: bound subprocess output waits against orphaned pipe holders",
+            "merged_at": "2026-09-23T16:24:26Z"
+          },
+          {
+            "number": 2187,
+            "title": "test(agent): prove close fences held env work with a signal, not a 2s window",
+            "merged_at": "2026-09-23T16:14:42Z"
+          },
+          {
+            "number": 2184,
+            "title": "test(selfupdate): prove the download deadline without waiting 5s for it",
+            "merged_at": "2026-09-23T16:14:36Z"
+          },
+          {
+            "number": 2183,
+            "title": "perf(dev): cut cmd/evener-dev's tests from ~42s to ~17s",
+            "merged_at": "2026-09-23T16:14:28Z"
+          },
+          {
+            "number": 2193,
+            "title": "fix(doctor): name session in turnids render and report the swept root in StateBase",
+            "merged_at": "2026-09-23T16:06:18Z"
+          },
+          {
+            "number": 2191,
+            "title": "test(agent): join session namers before settled retirement claims",
+            "merged_at": "2026-09-23T16:00:37Z"
+          },
+          {
+            "number": 2182,
+            "title": "perf(gate): shard cmd/evener's tests beside the root module",
+            "merged_at": "2026-09-23T15:57:12Z"
+          },
+          {
+            "number": 1740,
+            "title": "refactor(native): rows read from the model, older pages stay attached (D23c-2b, piece D)",
+            "merged_at": "2026-09-23T15:47:25Z"
+          },
+          {
+            "number": 2178,
+            "title": "Always emit the notification block's intent attribute",
+            "merged_at": "2026-09-23T15:37:23Z"
+          },
+          {
+            "number": 2188,
+            "title": "test(hub): clear the remote-shutdown review findings",
+            "merged_at": "2026-09-23T15:32:35Z"
+          },
+          {
+            "number": 2163,
+            "title": "fix(doctor): sweep sibling buckets from a project-bucket state base, make misses explicit",
+            "merged_at": "2026-09-23T08:55:31Z"
+          },
+          {
+            "number": 2186,
+            "title": "test(agent): stand the ask test's session in as a real delegate child",
+            "merged_at": "2026-09-23T08:13:00Z"
+          },
+          {
+            "number": 2185,
+            "title": "perf(agent): merge job activity with one map operation per record",
+            "merged_at": "2026-09-23T08:12:55Z"
+          },
+          {
+            "number": 2180,
+            "title": "test(web): share one MemoryStorage and one StubResizeObserver across the frontend tests",
+            "merged_at": "2026-09-23T08:12:48Z"
+          },
+          {
+            "number": 2159,
+            "title": "fix(hub): correlate a failed send after the resume that made it possible",
+            "merged_at": "2026-09-23T07:31:36Z"
+          },
+          {
+            "number": 2167,
+            "title": "fix(agent): deliver a prompt to a resumed session behind its recovered turn (narrow)",
+            "merged_at": "2026-09-23T07:18:19Z"
+          },
+          {
+            "number": 2162,
+            "title": "fix(agent): recover unquoted JSON keys in tool-call arguments; preserve raw text on parse failure",
+            "merged_at": "2026-09-23T07:00:01Z"
+          },
+          {
+            "number": 2161,
+            "title": "feat(agent): accept delegate name for every delegate",
+            "merged_at": "2026-09-23T06:59:58Z"
+          },
+          {
+            "number": 2170,
+            "title": "perf(gate): mint make test scratch on /dev/shm when the host has one",
+            "merged_at": "2026-09-23T06:34:58Z"
+          },
+          {
+            "number": 2179,
+            "title": "feat(hub): let the controller stop a session it did not host",
+            "merged_at": "2026-09-23T06:10:49Z"
+          },
+          {
+            "number": 2165,
+            "title": "Split the command's outcome out of the failed-job notification card",
+            "merged_at": "2026-09-23T05:25:23Z"
+          },
+          {
+            "number": 2175,
+            "title": "perf(gate): shard cmd/evener-hub's tests beside the root module",
+            "merged_at": "2026-09-23T05:22:37Z"
+          },
+          {
+            "number": 2171,
+            "title": "perf(web): drive Spawn.test.tsx's debounces with fake timers",
+            "merged_at": "2026-09-23T05:09:09Z"
+          },
+          {
+            "number": 2173,
+            "title": "fix(hub): bound launch-check output waits with WaitDelay",
+            "merged_at": "2026-09-23T04:54:23Z"
+          },
+          {
+            "number": 2172,
+            "title": "perf(web): run vitest on the vmThreads pool",
+            "merged_at": "2026-09-23T04:47:03Z"
+          },
+          {
+            "number": 2169,
+            "title": "test(agent): hold the attention generation so the delegate pin is deterministic",
+            "merged_at": "2026-09-23T04:34:22Z"
+          },
+          {
+            "number": 2174,
+            "title": "fix(dev): spread zero-cost tests across shards",
+            "merged_at": "2026-09-23T04:14:26Z"
+          },
+          {
+            "number": 2176,
+            "title": "fix(gate): hand the agent shards the gate's fuzz-owned skip",
+            "merged_at": "2026-09-23T03:56:17Z"
+          },
+          {
+            "number": 2168,
+            "title": "fix(agent): count only grace windows in the idle-release refusal test",
+            "merged_at": "2026-09-23T03:56:13Z"
+          },
+          {
+            "number": 2160,
+            "title": "fix(hub): a queued message to an exited session resumes it, like send",
+            "merged_at": "2026-09-23T01:49:50Z"
+          },
+          {
+            "number": 1738,
+            "title": "fix(native): a collision-resistant, memoized identity for a question set",
+            "merged_at": "2026-09-22T23:09:53Z"
+          },
+          {
+            "number": 2166,
+            "title": "feat(native): audit the recovery hook onto the real runtime",
+            "merged_at": "2026-09-22T22:04:10Z"
+          },
+          {
+            "number": 2164,
+            "title": "refactor(native): consolidate the retained-screen connection wiring",
+            "merged_at": "2026-09-22T21:57:54Z"
+          },
+          {
+            "number": 2157,
+            "title": "fix(native): marketplace follow-ups from the #2154, #2137, #1955 and #1922 reviews",
+            "merged_at": "2026-09-22T20:55:00Z"
+          },
+          {
+            "number": 2152,
+            "title": "Bound retained page-turn data in the conversation store (#1919 follow-up)",
+            "merged_at": "2026-09-22T20:50:00Z"
+          },
+          {
+            "number": 2155,
+            "title": "Expose a scoped native outbox recovery projection",
+            "merged_at": "2026-09-22T20:49:55Z"
+          },
+          {
+            "number": 2156,
+            "title": "fix(hub): gate the attach on protocol, not the host's build version",
+            "merged_at": "2026-09-22T19:14:25Z"
+          },
+          {
+            "number": 1983,
+            "title": "Retire each native marketplace guard on its own publication baseline",
+            "merged_at": "2026-09-22T18:39:18Z"
+          },
+          {
+            "number": 2145,
+            "title": "TUI marketplace follow-ups from the #1966 and #1976 reviews",
+            "merged_at": "2026-09-22T18:05:11Z"
+          },
+          {
+            "number": 2154,
+            "title": "Retain marketplace outcomes across native browser remounts (#1978 replacement)",
+            "merged_at": "2026-09-22T17:43:11Z"
+          },
+          {
+            "number": 2146,
+            "title": "fix(test): make cmd/evener-hub reuse Go's test cache",
+            "merged_at": "2026-09-22T06:35:22Z"
+          },
+          {
+            "number": 2137,
+            "title": "fix(native): keep applied marketplace removal guards and warnings across remounts",
+            "merged_at": "2026-09-22T16:37:30Z"
+          },
+          {
+            "number": 2140,
+            "title": "Steering ghost at the live edge: held steering renders as the provisional message it becomes",
+            "merged_at": "2026-09-22T16:27:22Z"
+          },
+          {
+            "number": 2132,
+            "title": "fix(agent): mark machinery parts structurally; keep verbatim pastes on reload",
+            "merged_at": "2026-09-22T03:28:23Z"
+          },
+          {
+            "number": 2103,
+            "title": "feat(agent): persist pasted image attachments at a durable, readable path",
+            "merged_at": "2026-09-21T21:59:08Z"
+          },
+          {
+            "number": 2142,
+            "title": "fix: Windows state-dir anchoring and sorted Turn JSON keys (follow-ups from #2132)",
+            "merged_at": "2026-09-22T06:28:03Z"
+          },
+          {
+            "number": 2143,
+            "title": "feat(agent): mnemonic branch names for delegate isolation lanes",
+            "merged_at": "2026-09-22T16:24:25Z"
+          },
+          {
+            "number": 1981,
+            "title": "Add durable native mutation runtime with hub-scoped dispatch",
+            "merged_at": "2026-09-22T16:22:19Z"
+          },
+          {
+            "number": 2138,
+            "title": "feat: install evener on remote hosts",
+            "merged_at": "2026-09-22T16:14:14Z"
+          },
+          {
+            "number": 2147,
+            "title": "feat(hub): give the deploy half of component 04 a production path",
+            "merged_at": "2026-09-22T08:10:41Z"
+          },
+          {
+            "number": 2150,
+            "title": "fix(mobile-native): surface the offline nudge rejection through the retained error",
+            "merged_at": "2026-09-22T06:53:15Z"
+          },
+          {
+            "number": 2149,
+            "title": "test(plugins): round-trip applied-removal payloads through the JSON-RPC boundary; euid skips; CLI litter dir assert",
+            "merged_at": "2026-09-22T06:44:20Z"
+          },
+          {
+            "number": 2148,
+            "title": "test(agent): make journal provenance load-bearing and pin the steer+reminder restore scan",
+            "merged_at": "2026-09-22T06:37:33Z"
+          },
+          {
+            "number": 1922,
+            "title": "feat(mobile): retained screens recover on reconnect (D28 D2a)",
+            "merged_at": "2026-09-22T05:31:07Z"
+          },
+          {
+            "number": 1976,
+            "title": "Preserve marketplace outcomes while ordering TUI reconciliation",
+            "merged_at": "2026-09-22T05:11:24Z"
+          },
+          {
+            "number": 1920,
+            "title": "feat(mobile): session usage totals from the package store (D18 B3)",
+            "merged_at": "2026-09-22T04:00:00Z"
+          },
+          {
+            "number": 1966,
+            "title": "Handle applied marketplace removals in the TUI",
+            "merged_at": "2026-09-22T03:43:09Z"
+          },
+          {
+            "number": 1955,
+            "title": "mobile: recheck live connection ownership before deferred mutations",
+            "merged_at": "2026-09-22T02:47:00Z"
+          },
+          {
+            "number": 2136,
+            "title": "fix(mobile): share projection identity helpers and close the truncation-ownership gap",
+            "merged_at": "2026-09-22T02:39:53Z"
+          },
+          {
+            "number": 1919,
+            "title": "fix(mobile): the conversation keeps its turns and wire cursor coherent across paging and rehydrate",
+            "merged_at": "2026-09-22T02:39:22Z"
+          },
+          {
+            "number": 2124,
+            "title": "fix(hub): keep the catalog graph valid with a host source attached",
+            "merged_at": "2026-09-22T01:22:43Z"
+          },
+          {
+            "number": 2135,
+            "title": "fix(native): read HubSettings overview once on an already-ready mount",
+            "merged_at": "2026-09-22T01:21:46Z"
+          },
+          {
+            "number": 1952,
+            "title": "mobile: retain loaded screens behind reconnect banners",
+            "merged_at": "2026-09-22T01:01:10Z"
+          },
+          {
+            "number": 2127,
+            "title": "fix(dev): show the failing test's output when a shard survey fails",
+            "merged_at": "2026-09-22T00:54:23Z"
+          },
+          {
+            "number": 1737,
+            "title": "refactor(native): rows are a projection of the model (D23c-2b, piece C)",
+            "merged_at": "2026-09-22T00:43:33Z"
+          },
+          {
+            "number": 2126,
+            "title": "test(hub): gate the host add/attach/forwarded-discovery check behind an opt-in",
+            "merged_at": "2026-09-22T00:38:46Z"
+          },
+          {
+            "number": 2131,
+            "title": "fix(appwire): preserve metadata-only history turns",
+            "merged_at": "2026-09-22T00:36:51Z"
+          },
+          {
+            "number": 2035,
+            "title": "appwire: expose history merge coverage and overlap",
+            "merged_at": "2026-09-21T23:23:38Z"
+          },
+          {
+            "number": 2125,
+            "title": "fix(hub): pair a row's channel with the entry it renders",
+            "merged_at": "2026-09-21T22:22:33Z"
+          },
+          {
+            "number": 2118,
+            "title": "sdk: validate each applied marketplace row before publishing",
+            "merged_at": "2026-09-21T18:43:06Z"
+          },
+          {
+            "number": 2119,
+            "title": "fix(hub): log the litter branch's failed reconcile list read",
+            "merged_at": "2026-09-21T18:38:23Z"
+          },
+          {
+            "number": 2117,
+            "title": "native+tui: label interrupted-salvage timeline notices and make TUI salvage coverage honest",
+            "merged_at": "2026-09-21T18:20:10Z"
+          },
+          {
+            "number": 2111,
+            "title": "feat(hosts): host editing and the host schema surface (08 slice 2)",
+            "merged_at": "2026-09-21T17:59:00Z"
+          },
+          {
+            "number": 2109,
+            "title": "fix(web): re-navigate unbooted guard harness pages instead of misreporting them as font failures",
+            "merged_at": "2026-09-21T16:45:38Z"
+          },
+          {
+            "number": 2098,
+            "title": "hub+daemon: stop an archived session's resident daemon promptly",
+            "merged_at": "2026-09-21T16:24:16Z"
+          },
+          {
+            "number": 2108,
+            "title": "refactor(web): consolidate the rail-seat geometry into one shared CSS module",
+            "merged_at": "2026-09-21T16:11:03Z"
+          },
+          {
+            "number": 2114,
+            "title": "feat(web): add the browser transcript draft storage port (A9)",
+            "merged_at": "2026-09-21T15:30:53Z"
+          },
+          {
+            "number": 2113,
+            "title": "fix(hub): fold the daemon's status and clear gates into the unprobed row fallback",
+            "merged_at": "2026-09-21T14:47:14Z"
+          },
+          {
+            "number": 2112,
+            "title": "feat(sdk): add the checkpointed transcript draft editor (A8)",
+            "merged_at": "2026-09-21T11:34:40Z"
+          },
+          {
+            "number": 2107,
+            "title": "fix(hub): stop withholding skillInput on cold sessions; derive list-row capabilities from the daemon",
+            "merged_at": "2026-09-21T07:16:13Z"
+          },
+          {
+            "number": 2101,
+            "title": "feat(hub): give entity hover cards the floating-layer treatment and drop their duplicate native titles",
+            "merged_at": "2026-09-21T05:43:52Z"
+          },
+          {
+            "number": 2106,
+            "title": "fix(hub): exclude delegate sessions from the model picker's Recent group",
+            "merged_at": "2026-09-21T04:48:35Z"
+          },
+          {
+            "number": 2089,
+            "title": "Exclude managed worktree lanes from recents; contain the directory picker sidebar",
+            "merged_at": "2026-09-21T01:46:26Z"
+          },
+          {
+            "number": 2105,
+            "title": "refactor(web): drop the transcript-display exports the package delegation left dead (A7)",
+            "merged_at": "2026-09-21T03:06:20Z"
+          },
+          {
+            "number": 2100,
+            "title": "fix(web): drop the welcome orientation copy",
+            "merged_at": "2026-09-21T02:39:17Z"
+          },
+          {
+            "number": 2102,
+            "title": "fix(web): register the transcript-display ready handle only while owning the rewire",
+            "merged_at": "2026-09-21T02:43:07Z"
+          },
+          {
+            "number": 2099,
+            "title": "refactor(web): delegate the transcript-display hub lifecycle to the package store (A5/A6)",
+            "merged_at": "2026-09-21T02:05:56Z"
+          },
+          {
+            "number": 2096,
+            "title": "fix(web): seat job-notification status glyphs and the thinking grid in the icon rail",
+            "merged_at": "2026-09-21T01:58:39Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/terminal-bench-analysis": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 1
+          },
+          {
+            "name": "ada-sen",
+            "count": 1
+          }
+        ],
+        "loc_added": 472,
+        "loc_removed": 448,
+        "merged_prs": [
+          {
+            "number": 10,
+            "title": "fix(security): redact leaked Claude OAuth token from result.json + harden fetch_data.py (PRI-3130)",
+            "merged_at": "2026-09-21T16:58:59Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
+        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 10
+          }
+        ],
+        "loc_added": 2735,
+        "loc_removed": 2327,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/shipped": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Ada Sen",
+            "count": 4
+          }
+        ],
+        "loc_added": 4263,
+        "loc_removed": 6,
+        "merged_prs": [
+          {
+            "number": 2,
+            "title": "Shipped posts: weeks of 2026-09-07 and 2026-09-14",
+            "merged_at": "2026-09-21T19:19:19Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A weekly log of what Prime Radiant and obra shipped.",
+        "html_url": "https://github.com/prime-radiant-inc/shipped"
+      },
+      "obra/blogosphere": {
+        "commits": 144,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 144
+          }
+        ],
+        "loc_added": 18147,
+        "loc_removed": 2984,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.1.0",
+            "name": "Blogosphere 0.1.0",
+            "published_at": "2026-09-24T16:26:56Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.1.0 published 2026-09-24T16:26:56Z",
+        "description": "Local-first, multi-platform blogging client for an 11ty blog that lives in a GitHub repo \u2014 the repo is the database",
+        "html_url": "https://github.com/obra/blogosphere"
+      },
+      "obra/lace": {
+        "commits": 9,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 8
+          },
+          {
+            "name": "ada-sen",
+            "count": 1
+          }
+        ],
+        "loc_added": 3054,
+        "loc_removed": 210,
+        "merged_prs": [
+          {
+            "number": 412,
+            "title": "fix: LunaRoute catalog limits, and fit max output into the context window",
+            "merged_at": "2026-09-24T05:20:11Z"
+          },
+          {
+            "number": 411,
+            "title": "feat(catalog): add claude-opus-5-5 to the static Anthropic catalog",
+            "merged_at": "2026-09-24T04:19:30Z"
+          },
+          {
+            "number": 410,
+            "title": "fix(providers): Responses tool outputs before merged text; stateless coverage",
+            "merged_at": "2026-09-24T04:19:26Z"
+          },
+          {
+            "number": 406,
+            "title": "fix(jobs): let job_kill release a finished delegate's container",
+            "merged_at": "2026-09-24T03:25:42Z"
+          },
+          {
+            "number": 409,
+            "title": "fix(providers): stateless Responses API for gateways without response chaining",
+            "merged_at": "2026-09-23T23:24:34Z"
+          },
+          {
+            "number": 408,
+            "title": "feat(personas): persona connectionId frontmatter and query() connection override",
+            "merged_at": "2026-09-23T20:52:45Z"
+          },
+          {
+            "number": 407,
+            "title": "feat(providers): add deepseek-4.1-flash-background to the LunaRoute catalog",
+            "merged_at": "2026-09-23T18:25:30Z"
+          },
+          {
+            "number": 403,
+            "title": "fix(providers): LunaRoute Responses-API robustness follow-ups",
+            "merged_at": "2026-09-22T02:44:07Z"
+          },
+          {
+            "number": 404,
+            "title": "fix(agent): a session can permanently lose its MCP tools when a turn starts during resume (PRI-3208)",
+            "merged_at": "2026-09-21T17:42:52Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/scan-to-model": {
+        "commits": 11,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 11
+          }
+        ],
+        "loc_added": 4005,
+        "loc_removed": 95,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Evidence-driven scan reconstruction skills and local tools for Codex and Blender",
+        "html_url": "https://github.com/obra/scan-to-model"
+      },
+      "obra/superpowers": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 61,
+        "loc_removed": 85,
+        "merged_prs": [
+          {
+            "number": 2384,
+            "title": "Release v6.4.2: leaner plans from writing-plans",
+            "merged_at": "2026-09-25T18:06:27Z"
+          },
+          {
+            "number": 2383,
+            "title": "chore: bump version to 6.4.2",
+            "merged_at": "2026-09-25T17:02:41Z"
+          },
+          {
+            "number": 2382,
+            "title": "docs(release-notes): draft v6.4.2 notes",
+            "merged_at": "2026-09-25T16:58:36Z"
+          },
+          {
+            "number": 2333,
+            "title": "writing-plans: a plan is decisions, not a transcript (step recipe, proportion check, capable reader)",
+            "merged_at": "2026-09-25T15:53:39Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v6.4.2",
+            "name": "v6.4.2",
+            "published_at": "2026-09-25T18:08:09Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v6.4.2 published 2026-09-25T18:08:09Z",
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-chrome": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 1146,
+        "loc_removed": 43,
+        "merged_prs": [
+          {
+            "number": 49,
+            "title": "Fix: never auto-capture or echo credential-shaped page content (3.0.6)",
+            "merged_at": "2026-09-23T08:57:54Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v3.0.6",
+            "name": "v3.0.6 - Secret-safe auto-capture",
+            "published_at": "2026-09-23T08:58:08Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v3.0.6 published 2026-09-23T08:58:08Z",
+        "description": "Claude Code plugin for direct Chrome browser control via DevTools Protocol - zero dependencies",
+        "html_url": "https://github.com/obra/superpowers-chrome"
+      }
+    }
   }
 }
