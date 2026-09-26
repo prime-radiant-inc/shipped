@@ -3449,7 +3449,7 @@
       "merged_prs": 52,
       "loc_added": 392183,
       "loc_removed": 89112,
-      "contributors": 7,
+      "contributors": 6,
       "tagged_releases": 20,
       "commit_only_bumps": 9
     },
@@ -4379,11 +4379,7 @@
         "authors": [
           {
             "name": "danshapiro",
-            "count": 16
-          },
-          {
-            "name": "Dan Shapiro",
-            "count": 1
+            "count": 17
           }
         ],
         "loc_added": 2901,
@@ -13968,7 +13964,7 @@
       "merged_prs": 149,
       "loc_added": 53811,
       "loc_removed": 4977,
-      "contributors": 10,
+      "contributors": 8,
       "tagged_releases": 4,
       "commit_only_bumps": 3
     },
@@ -13981,15 +13977,11 @@
             "count": 770
           },
           {
-            "name": "WilliamK112",
-            "count": 1
-          },
-          {
             "name": "ada-sen",
-            "count": 1
+            "count": 2
           },
           {
-            "name": "Ada Sen",
+            "name": "WilliamK112",
             "count": 1
           }
         ],
@@ -14849,11 +14841,7 @@
         "authors": [
           {
             "name": "danshapiro",
-            "count": 15
-          },
-          {
-            "name": "Dan Shapiro",
-            "count": 1
+            "count": 16
           }
         ],
         "loc_added": 2055,
