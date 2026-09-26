@@ -10911,7 +10911,7 @@
       "merged_prs": 5,
       "loc_added": 58574,
       "loc_removed": 20115,
-      "contributors": 12,
+      "contributors": 11,
       "tagged_releases": 5,
       "commit_only_bumps": 4
     },
@@ -11145,6 +11145,10 @@
             "count": 2
           },
           {
+            "name": "mvanhorn",
+            "count": 2
+          },
+          {
             "name": "ynyyn",
             "count": 1
           },
@@ -11154,14 +11158,6 @@
           },
           {
             "name": "samuelcsouza",
-            "count": 1
-          },
-          {
-            "name": "Matt Van Horn",
-            "count": 1
-          },
-          {
-            "name": "mvanhorn",
             "count": 1
           },
           {
@@ -15650,7 +15646,7 @@
       "merged_prs": 270,
       "loc_added": 386430,
       "loc_removed": 50688,
-      "contributors": 9,
+      "contributors": 8,
       "tagged_releases": 2,
       "commit_only_bumps": 4
     },
@@ -16910,11 +16906,7 @@
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 13
-          },
-          {
-            "name": "jesse",
-            "count": 2
+            "count": 15
           }
         ],
         "loc_added": 5438,
