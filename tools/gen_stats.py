@@ -57,6 +57,34 @@ def parse_dt(s):
     return datetime.datetime.fromisoformat(s.replace("Z", "+00:00"))
 
 
+# KNOWN-IDENTITY EMAIL ALIASES: for a handful of emails GitHub can never
+# resolve to a login (no linked account -- `author.login` is permanently
+# null for these, confirmed by direct query), so contributor_identity()'s
+# login-then-email fallback would otherwise treat them as their own
+# separate, unlinkable identity forever. Add an entry here ONLY after a
+# human confirms the real person out-of-band (never guess from name
+# similarity alone -- see the jtdaugh case, a different real person who
+# happened to share Jesse Vincent's first name).
+#
+# jesse@magic-kingdom -> obra (Jesse Vincent): confirmed by Jesse himself.
+# Seen on `jesse`-authored commits across obra/superpowers,
+# obra/superpowers-lab, obra/superpowers-marketplace,
+# obra/claude-session-driver, and prime-radiant-inc/serf (now evener) in
+# weeks 2026-03-09, 03-16, 03-23, 05-11, and 05-18 -- every single commit
+# under that email in those weeks (not just a sample; paginated through
+# the full commits list for each repo/week) uses this exact address, no
+# exceptions found.
+#
+# Deliberately NOT aliased (same investigation, different outcome):
+# jesse@localhost and jesse@paradise-park.local (both seen on
+# prime-radiant-inc/evener, week 2026-08-03, under "Jesse"/"jesse") --
+# also login-less, but NOT confirmed as Jesse Vincent (or as each other:
+# the two differ), so left as their own separate, unmerged identities.
+EMAIL_ALIASES = {
+    "jesse@magic-kingdom": "login:obra",
+}
+
+
 def contributor_identity(c):
     """Resolve a commit to a stable per-person identity for CONTRIBUTOR
     COUNTING (the week summary's `contributors` figure) -- NOT the same
@@ -94,7 +122,10 @@ def contributor_identity(c):
         return f"login:{login}"
     email = c.get("email")
     if email:
-        return f"email:{email.strip().lower()}"
+        email = email.strip().lower()
+        if email in EMAIL_ALIASES:
+            return EMAIL_ALIASES[email]
+        return f"email:{email}"
     return f"name:{c['author']}"
 
 

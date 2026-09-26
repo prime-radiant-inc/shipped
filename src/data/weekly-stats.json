@@ -712,7 +712,7 @@
       "merged_prs": 18,
       "loc_added": 1743243,
       "loc_removed": 41596,
-      "contributors": 10,
+      "contributors": 9,
       "tagged_releases": 9,
       "commit_only_bumps": 4
     },
@@ -745,12 +745,8 @@
         "commits": 251,
         "authors": [
           {
-            "name": "jesse",
-            "count": 128
-          },
-          {
             "name": "Jesse Vincent",
-            "count": 123
+            "count": 251
           }
         ],
         "loc_added": 117593,
@@ -947,11 +943,7 @@
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 12
-          },
-          {
-            "name": "jesse",
-            "count": 1
+            "count": 13
           }
         ],
         "loc_added": 2229,
@@ -1216,11 +1208,7 @@
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 8
-          },
-          {
-            "name": "jesse",
-            "count": 1
+            "count": 9
           }
         ],
         "loc_added": 10,
@@ -1296,7 +1284,7 @@
       "merged_prs": 8,
       "loc_added": 262998,
       "loc_removed": 60414,
-      "contributors": 7,
+      "contributors": 6,
       "tagged_releases": 3,
       "commit_only_bumps": 4
     },
@@ -1354,11 +1342,7 @@
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 327
-          },
-          {
-            "name": "jesse",
-            "count": 248
+            "count": 575
           }
         ],
         "loc_added": 84868,
@@ -10911,7 +10895,7 @@
       "merged_prs": 5,
       "loc_added": 58574,
       "loc_removed": 20115,
-      "contributors": 11,
+      "contributors": 10,
       "tagged_releases": 5,
       "commit_only_bumps": 4
     },
@@ -11134,11 +11118,7 @@
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 35
-          },
-          {
-            "name": "jesse",
-            "count": 12
+            "count": 47
           },
           {
             "name": "savvyinsight",
@@ -11251,7 +11231,7 @@
       "merged_prs": 3,
       "loc_added": 32899,
       "loc_removed": 9638,
-      "contributors": 7,
+      "contributors": 6,
       "tagged_releases": 12,
       "commit_only_bumps": 0
     },
@@ -11530,14 +11510,10 @@
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 18
+            "count": 19
           },
           {
             "name": "sarbojitrana",
-            "count": 1
-          },
-          {
-            "name": "jesse",
             "count": 1
           }
         ],
@@ -11611,7 +11587,7 @@
       "merged_prs": 10,
       "loc_added": 61626,
       "loc_removed": 11067,
-      "contributors": 14,
+      "contributors": 13,
       "tagged_releases": 2,
       "commit_only_bumps": 0
     },
@@ -11949,7 +11925,7 @@
         "commits": 1,
         "authors": [
           {
-            "name": "jesse",
+            "name": "Jesse Vincent",
             "count": 1
           }
         ],
@@ -11968,11 +11944,7 @@
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 1
-          },
-          {
-            "name": "jesse",
-            "count": 1
+            "count": 2
           }
         ],
         "loc_added": 3,
@@ -20529,7 +20501,7 @@
         "commits": 4,
         "authors": [
           {
-            "name": "Ada Sen",
+            "name": "ada-sen",
             "count": 4
           }
         ],
