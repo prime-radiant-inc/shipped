@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-09-18T00:00:00.000Z</updated>
+  <updated>2026-09-25T00:00:00.000Z</updated>
+  <entry>
+    <title>blogosphere cuts its first release behind a signed macOS build pipeline, superpowers and superpowers-chrome each ship a point release, and evener picks up an outside contributor&apos;s code-signing work</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-09-21" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-09-21</id>
+    <updated>2026-09-25T00:00:00.000Z</updated>
+    <published>2026-09-25T00:00:00.000Z</published>
+    <summary>The most recent week, still in progress: obra/blogosphere cuts its first-ever tagged release, v0.1.0, behind a from-scratch signed-and-notarized macOS release pipeline; obra/superpowers ships v6.4.2 and obra/superpowers-chrome ships v3.0.6. prime-radiant-inc/evener has its busiest week by commit count, and picks up a handful of outside-contributed commits doing macOS code-signing CI work. Partial week — data runs through Friday evening, not the full calendar week.</summary>
+  </entry>
   <entry>
     <title>teststrip ships v0.3.0 and v0.3.1, agentic-usage-meter cuts v0.2.6, and clearance pulls in four outside contributors in one week</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-09-14" />
