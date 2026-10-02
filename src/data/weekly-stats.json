@@ -20713,5 +20713,3986 @@
         "html_url": "https://github.com/obra/superpowers-chrome"
       }
     }
+  },
+  "2026-09-28": {
+    "summary": {
+      "repos_active": 6,
+      "featured_count": 4,
+      "second_tier_count": 2,
+      "commits": 778,
+      "merged_prs": 752,
+      "loc_added": 495694,
+      "loc_removed": 216848,
+      "contributors": 4,
+      "tagged_releases": 13,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "prime-radiant-inc/evener": {
+        "commits": 750,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 750
+          }
+        ],
+        "loc_added": 465245,
+        "loc_removed": 214872,
+        "merged_prs": [
+          {
+            "number": 3542,
+            "title": "prompt-eval: skill-following and ask-the-user tasks",
+            "merged_at": "2026-10-02T21:13:50Z"
+          },
+          {
+            "number": 3658,
+            "title": "refactor(hub): adopt mutation IDs through typed receipt fields",
+            "merged_at": "2026-10-02T15:48:37Z"
+          },
+          {
+            "number": 3659,
+            "title": "refactor(hub): share preview launch context preparation",
+            "merged_at": "2026-10-02T15:36:09Z"
+          },
+          {
+            "number": 3655,
+            "title": "fix(appsource): preserve local mutation refusal provenance",
+            "merged_at": "2026-10-02T15:25:24Z"
+          },
+          {
+            "number": 3657,
+            "title": "refactor(sdk): constrain host request ports to forwarded methods",
+            "merged_at": "2026-10-02T15:14:23Z"
+          },
+          {
+            "number": 3656,
+            "title": "fix(appsource): preserve remote admin refusal provenance",
+            "merged_at": "2026-10-02T15:04:28Z"
+          },
+          {
+            "number": 3654,
+            "title": "refactor(sdk): use scoped activity invalidations",
+            "merged_at": "2026-10-02T05:57:19Z"
+          },
+          {
+            "number": 3653,
+            "title": "refactor(appwire): share the host forwarding catalog",
+            "merged_at": "2026-10-02T05:46:50Z"
+          },
+          {
+            "number": 3651,
+            "title": "refactor(sdk): own shared host request routing",
+            "merged_at": "2026-10-02T05:32:32Z"
+          },
+          {
+            "number": 3652,
+            "title": "fix(appwire): classify remote mutation errors by provenance",
+            "merged_at": "2026-10-02T05:24:15Z"
+          },
+          {
+            "number": 3650,
+            "title": "refactor(appwire): narrow host mutation outcomes",
+            "merged_at": "2026-10-02T05:07:50Z"
+          },
+          {
+            "number": 3649,
+            "title": "refactor(appwire): share typed task-list results",
+            "merged_at": "2026-10-02T04:53:38Z"
+          },
+          {
+            "number": 3648,
+            "title": "refactor(appwire): type job detail and output results",
+            "merged_at": "2026-10-02T04:37:57Z"
+          },
+          {
+            "number": 3647,
+            "title": "fix(web): keep stopped composer controls visible at rest",
+            "merged_at": "2026-10-02T03:42:18Z"
+          },
+          {
+            "number": 3646,
+            "title": "fix(web): let the mobile sessions drawer reach its archived section",
+            "merged_at": "2026-10-02T00:46:46Z"
+          },
+          {
+            "number": 3644,
+            "title": "fix(web): remove mobile composer footer clutter",
+            "merged_at": "2026-10-01T23:26:39Z"
+          },
+          {
+            "number": 3645,
+            "title": "fix(web): keep exited-session controls open across focus transfers",
+            "merged_at": "2026-10-01T23:12:06Z"
+          },
+          {
+            "number": 3641,
+            "title": "feat(web): simplify session menu actions",
+            "merged_at": "2026-10-01T20:13:12Z"
+          },
+          {
+            "number": 3627,
+            "title": "fix(native): show latest tool intent above composer",
+            "merged_at": "2026-10-01T15:30:00Z"
+          },
+          {
+            "number": 3639,
+            "title": "test(web): cover sends during replacement restart",
+            "merged_at": "2026-10-01T15:16:31Z"
+          },
+          {
+            "number": 3629,
+            "title": "web: show attributed delegate reports in activity details",
+            "merged_at": "2026-10-01T15:03:39Z"
+          },
+          {
+            "number": 3640,
+            "title": "feat(native): answer evener/activity/read in the demo hub (S5)",
+            "merged_at": "2026-10-01T14:44:57Z"
+          },
+          {
+            "number": 3632,
+            "title": "fix(llm): prefer usable live model catalogs",
+            "merged_at": "2026-10-01T14:43:11Z"
+          },
+          {
+            "number": 3631,
+            "title": "fix(web): open the rail session status card on long press, not tap",
+            "merged_at": "2026-10-01T14:16:56Z"
+          },
+          {
+            "number": 3630,
+            "title": "Scope activity footers to session panes",
+            "merged_at": "2026-10-01T14:04:21Z"
+          },
+          {
+            "number": 3628,
+            "title": "feat(native): word working Board rows from the session's last tool intent",
+            "merged_at": "2026-10-01T13:35:57Z"
+          },
+          {
+            "number": 3579,
+            "title": "feat(web): session-history cache \u2014 cached shells, gated writes, clear and deletion",
+            "merged_at": "2026-10-01T02:34:04Z"
+          },
+          {
+            "number": 3625,
+            "title": "test(web): a real two-tab browser guard for session-cache coordination",
+            "merged_at": "2026-10-01T13:04:36Z"
+          },
+          {
+            "number": 3622,
+            "title": "docs(web): record why the outbox channel is not on the shared versioned-channel helper",
+            "merged_at": "2026-10-01T11:43:05Z"
+          },
+          {
+            "number": 3623,
+            "title": "fix(dev): test-web-browser builds the frontend before the guards",
+            "merged_at": "2026-10-01T11:43:11Z"
+          },
+          {
+            "number": 3621,
+            "title": "test(web): pin the paged guard's stillness reset",
+            "merged_at": "2026-10-01T11:42:59Z"
+          },
+          {
+            "number": 3626,
+            "title": "Hide plugin compatibility advisories below Full detail",
+            "merged_at": "2026-10-01T12:41:24Z"
+          },
+          {
+            "number": 3612,
+            "title": "Show authoritative retained delegate state in transcript cards",
+            "merged_at": "2026-10-01T11:49:00Z"
+          },
+          {
+            "number": 3611,
+            "title": "fix(web): retain Activity reading context across return and reload",
+            "merged_at": "2026-10-01T11:27:54Z"
+          },
+          {
+            "number": 3615,
+            "title": "fix(web): preserve Activity revisit order across reload",
+            "merged_at": "2026-10-01T11:50:25Z"
+          },
+          {
+            "number": 3616,
+            "title": "fix(activity): reveal full notes in expanded watches",
+            "merged_at": "2026-10-01T11:36:46Z"
+          },
+          {
+            "number": 3610,
+            "title": "fix(activity): identify watch sources and notification recipients",
+            "merged_at": "2026-10-01T11:21:48Z"
+          },
+          {
+            "number": 3613,
+            "title": "fix(activity): preserve job titles and remove dead fold failure metadata",
+            "merged_at": "2026-10-01T11:18:58Z"
+          },
+          {
+            "number": 3609,
+            "title": "fix(web): preserve session context throughout Activity navigation",
+            "merged_at": "2026-10-01T11:06:22Z"
+          },
+          {
+            "number": 3607,
+            "title": "test(hub): allow repeated retained-history hydration",
+            "merged_at": "2026-10-01T10:38:51Z"
+          },
+          {
+            "number": 3617,
+            "title": "test(web): bound editorial HTTP isolation server lifetime",
+            "merged_at": "2026-10-01T10:38:47Z"
+          },
+          {
+            "number": 3588,
+            "title": "Recover established session activity counts automatically",
+            "merged_at": "2026-10-01T10:52:58Z"
+          },
+          {
+            "number": 3602,
+            "title": "refactor(web): session-history cache follow-ups \u2014 shared IDB core, action-owned fence, shared channel, unified lifetimes",
+            "merged_at": "2026-10-01T04:44:36Z"
+          },
+          {
+            "number": 3605,
+            "title": "Keep saved-session readers subscribed when work resumes",
+            "merged_at": "2026-10-01T05:05:20Z"
+          },
+          {
+            "number": 3596,
+            "title": "Bound delegate report capture work and document activity fields",
+            "merged_at": "2026-10-01T04:39:56Z"
+          },
+          {
+            "number": 3601,
+            "title": "feat(web): compact sidebar session status",
+            "merged_at": "2026-10-01T05:26:25Z"
+          },
+          {
+            "number": 3606,
+            "title": "fix(native): locating a nested fork original reveals the top-level row carrying it",
+            "merged_at": "2026-10-01T04:46:30Z"
+          },
+          {
+            "number": 3608,
+            "title": "fix(native): archived list and activity fixture fast-follows",
+            "merged_at": "2026-10-01T04:21:33Z"
+          },
+          {
+            "number": 3584,
+            "title": "refactor(native): the phone reads provider sign-in statuses from the shared store (#3557)",
+            "merged_at": "2026-10-01T04:02:23Z"
+          },
+          {
+            "number": 3604,
+            "title": "fix(native): locating an archived session reveals it from the archived list",
+            "merged_at": "2026-10-01T03:55:36Z"
+          },
+          {
+            "number": 3599,
+            "title": "fix(native): the Board's Archived fold reads the project's archived list",
+            "merged_at": "2026-10-01T03:20:23Z"
+          },
+          {
+            "number": 3587,
+            "title": "test(agent): record the housekeeping tools in the tool-wire corpus (#3535)",
+            "merged_at": "2026-10-01T03:02:49Z"
+          },
+          {
+            "number": 3516,
+            "title": "fix(fluency): hide operator global MCP and evener-wide commands from eval probes (#3487)",
+            "merged_at": "2026-10-01T03:02:42Z"
+          },
+          {
+            "number": 3600,
+            "title": "fix(hub): evener/archived/list takes the catalog as a hint and says which it read",
+            "merged_at": "2026-10-01T02:56:44Z"
+          },
+          {
+            "number": 3595,
+            "title": "Expose compact delegate names in session activity",
+            "merged_at": "2026-10-01T02:35:56Z"
+          },
+          {
+            "number": 3594,
+            "title": "fix(native): the demo hub answers evener/archived/list and serves the archived tier empty",
+            "merged_at": "2026-10-01T01:43:58Z"
+          },
+          {
+            "number": 3593,
+            "title": "fix(native): the Project screen's Archived tab reads the archived list",
+            "merged_at": "2026-10-01T01:40:34Z"
+          },
+          {
+            "number": 3570,
+            "title": "Restore settled delegate report previews with run identity",
+            "merged_at": "2026-10-01T01:19:05Z"
+          },
+          {
+            "number": 3589,
+            "title": "refactor(appwire-client): lift the archived list store into the package, the web on it",
+            "merged_at": "2026-10-01T01:06:30Z"
+          },
+          {
+            "number": 3573,
+            "title": "fix(evener-fluency): surface responder failures and reject empty person.brief (#3498)",
+            "merged_at": "2026-10-01T00:48:19Z"
+          },
+          {
+            "number": 3586,
+            "title": "feat(agent): stamp a delegate packet's structured-result capture source (#3548)",
+            "merged_at": "2026-10-01T00:47:42Z"
+          },
+          {
+            "number": 3577,
+            "title": "fix(native): route an in-Hub notice link through a guarded dispatch (#3524)",
+            "merged_at": "2026-10-01T00:37:24Z"
+          },
+          {
+            "number": 3585,
+            "title": "fix(native): drop the related-sessions disclosure and the partial-tree notice from session lists",
+            "merged_at": "2026-10-01T00:26:36Z"
+          },
+          {
+            "number": 3580,
+            "title": "fix(fluency): a fixture commit leaves no detached git maintenance writer (#3546)",
+            "merged_at": "2026-10-01T00:18:09Z"
+          },
+          {
+            "number": 3583,
+            "title": "fix(agent): scope the turn-ending gate to answers (#3543)",
+            "merged_at": "2026-10-01T00:17:20Z"
+          },
+          {
+            "number": 3578,
+            "title": "refactor(appwire-client): remove ActivityList, which no app reads anymore",
+            "merged_at": "2026-10-01T00:10:18Z"
+          },
+          {
+            "number": 3576,
+            "title": "fix(agent): a send whose start a stop ended answers instead of waiting out max_wait (#3502)",
+            "merged_at": "2026-10-01T00:02:54Z"
+          },
+          {
+            "number": 3569,
+            "title": "Preserve displayed session activity through refresh and recovery",
+            "merged_at": "2026-09-30T23:43:44Z"
+          },
+          {
+            "number": 3574,
+            "title": "refactor(agent): driveStableDelegateAttention shares the busy predicate and drive release (#3520)",
+            "merged_at": "2026-09-30T23:58:19Z"
+          },
+          {
+            "number": 3575,
+            "title": "refactor(native): one generic Hub screen slot for pushed pages",
+            "merged_at": "2026-09-30T23:55:30Z"
+          },
+          {
+            "number": 3572,
+            "title": "fix(agent): a finalizing delegate keeps the one-shot drain live (#3531)",
+            "merged_at": "2026-09-30T23:55:23Z"
+          },
+          {
+            "number": 3571,
+            "title": "test(native): activity fixtures carry only the hub's fields; retire the demo's evener/jobs/list",
+            "merged_at": "2026-09-30T23:52:30Z"
+          },
+          {
+            "number": 3568,
+            "title": "fix(native): a job whose subagent isn't loaded says so instead of naming the coordinator",
+            "merged_at": "2026-09-30T23:19:43Z"
+          },
+          {
+            "number": 3567,
+            "title": "fix(native): show the Subagents chip only with evidence, and never as \"\u2026\"",
+            "merged_at": "2026-09-30T23:06:25Z"
+          },
+          {
+            "number": 3566,
+            "title": "fix(native): name a shell job's owner and a missing branch by title, never a ref",
+            "merged_at": "2026-09-30T22:53:48Z"
+          },
+          {
+            "number": 3562,
+            "title": "test(web): this hub's credential error never marks a remote host's same-named row (#3539)",
+            "merged_at": "2026-09-30T22:28:00Z"
+          },
+          {
+            "number": 3561,
+            "title": "Recover evicted activity cursors and avoid repeated page encoding",
+            "merged_at": "2026-09-30T21:56:10Z"
+          },
+          {
+            "number": 3558,
+            "title": "feat(web): a provider whose credential was rejected reads Error (#3539)",
+            "merged_at": "2026-09-30T22:07:29Z"
+          },
+          {
+            "number": 3493,
+            "title": "Expose session-scoped activity APIs and cut navigation over to v3",
+            "merged_at": "2026-09-30T21:08:24Z"
+          },
+          {
+            "number": 3559,
+            "title": "feat(native): the Hub home counts providers and nothing more (#3539)",
+            "merged_at": "2026-09-30T21:42:03Z"
+          },
+          {
+            "number": 3560,
+            "title": "fix(native): a model list announcement during a load or a start is read after it settles (#3539)",
+            "merged_at": "2026-09-30T21:27:55Z"
+          },
+          {
+            "number": 3556,
+            "title": "feat(native): a provider whose credential was rejected reads Error (#3539)",
+            "merged_at": "2026-09-30T20:50:16Z"
+          },
+          {
+            "number": 3555,
+            "title": "feat(native): an open model picker updates in place when the hub refreshes the list (#3539)",
+            "merged_at": "2026-09-30T20:43:14Z"
+          },
+          {
+            "number": 3554,
+            "title": "feat(web): an open model picker updates in place when the hub refreshes the list (#3539)",
+            "merged_at": "2026-09-30T20:32:08Z"
+          },
+          {
+            "number": 3553,
+            "title": "test(hub): the roster's status probe timeout is a runMain seam (#3539)",
+            "merged_at": "2026-09-30T20:21:40Z"
+          },
+          {
+            "number": 3552,
+            "title": "feat(hub): a refreshed launch model list is pushed to clients (#3539)",
+            "merged_at": "2026-09-30T20:03:22Z"
+          },
+          {
+            "number": 3551,
+            "title": "test(hub): runMain wires the session credential watch (#3539)",
+            "merged_at": "2026-09-30T19:53:51Z"
+          },
+          {
+            "number": 3550,
+            "title": "feat(hub): a session's refused credential shows as Error at once (#3539)",
+            "merged_at": "2026-09-30T19:35:26Z"
+          },
+          {
+            "number": 3549,
+            "title": "fix(hub): the hub lists providers once at startup, never on a timer (#3539)",
+            "merged_at": "2026-09-30T19:23:09Z"
+          },
+          {
+            "number": 3547,
+            "title": "feat(hub): the hub's own model listings record a rejected credential (#3539)",
+            "merged_at": "2026-09-30T18:58:51Z"
+          },
+          {
+            "number": 3528,
+            "title": "Render a delegate's report as a message with its structured result",
+            "merged_at": "2026-09-30T18:31:18Z"
+          },
+          {
+            "number": 3540,
+            "title": "feat(hub): auth status reports a credential the provider rejected (#3539)",
+            "merged_at": "2026-09-30T18:37:04Z"
+          },
+          {
+            "number": 3545,
+            "title": "fix(appwire-client): a housekeeping call with no arguments never reads as a clear",
+            "merged_at": "2026-09-30T18:07:47Z"
+          },
+          {
+            "number": 3537,
+            "title": "feat(appwire-client): the session's housekeeping tools say what they did",
+            "merged_at": "2026-09-30T17:52:54Z"
+          },
+          {
+            "number": 3541,
+            "title": "agent: check where the answer is before ending a turn",
+            "merged_at": "2026-09-30T16:43:32Z"
+          },
+          {
+            "number": 3536,
+            "title": "agent: ask about what only the user knows, with a redirection table",
+            "merged_at": "2026-09-30T16:40:54Z"
+          },
+          {
+            "number": 3538,
+            "title": "agent: report what a script does, not what it prints about itself",
+            "merged_at": "2026-09-30T16:17:23Z"
+          },
+          {
+            "number": 3534,
+            "title": "feat(native): a message to a subagent shows what it sent and what came back",
+            "merged_at": "2026-09-30T15:48:32Z"
+          },
+          {
+            "number": 3518,
+            "title": "feat(webui): show a job's full command in its log pane",
+            "merged_at": "2026-09-30T15:37:05Z"
+          },
+          {
+            "number": 3532,
+            "title": "test(native): the Cancel negative checks the detail is still open before the provider leaves",
+            "merged_at": "2026-09-30T15:31:56Z"
+          },
+          {
+            "number": 3526,
+            "title": "fix(native): Hub links stack a page instead of popping past a guarded edit",
+            "merged_at": "2026-09-30T15:28:50Z"
+          },
+          {
+            "number": 3506,
+            "title": "fix(hub): bound the search past-index fetch (#2873)",
+            "merged_at": "2026-09-30T15:23:12Z"
+          },
+          {
+            "number": 3490,
+            "title": "feat(fluency): a person: block drives --ask-responder in prompt-eval tasks",
+            "merged_at": "2026-09-30T15:21:35Z"
+          },
+          {
+            "number": 3530,
+            "title": "test(agent): the subagent corpus records a delegate_send that waits for its reply",
+            "merged_at": "2026-09-30T15:20:01Z"
+          },
+          {
+            "number": 3529,
+            "title": "test(native): a provider leaving after a closed edit shows no unsaved-edit notice",
+            "merged_at": "2026-09-30T15:19:47Z"
+          },
+          {
+            "number": 3527,
+            "title": "fix(hub): an unreadable OAuth record is an auth-status Error row (#3465)",
+            "merged_at": "2026-09-30T15:11:46Z"
+          },
+          {
+            "number": 3519,
+            "title": "refactor(agent): fold the delegate controller's per-delegate attention maps into one state struct",
+            "merged_at": "2026-09-30T15:08:33Z"
+          },
+          {
+            "number": 3525,
+            "title": "fix(native): say an open edit wasn't saved when its provider leaves the hub (#3510 M7)",
+            "merged_at": "2026-09-30T15:04:19Z"
+          },
+          {
+            "number": 3523,
+            "title": "fix(native): the provider detail publishes in a layout effect, so it paints with its content (#3510 M4)",
+            "merged_at": "2026-09-30T14:57:49Z"
+          },
+          {
+            "number": 3522,
+            "title": "agent: stop claiming the reader's app renders mermaid (#3455)",
+            "merged_at": "2026-09-30T14:55:04Z"
+          },
+          {
+            "number": 3521,
+            "title": "fix(agent): a send takes a resident child's drive guard before it commits its start",
+            "merged_at": "2026-09-30T14:52:10Z"
+          },
+          {
+            "number": 3509,
+            "title": "fix(delegate): a stop after a reported run reads stopped, not failed (#3114)",
+            "merged_at": "2026-09-30T14:50:08Z"
+          },
+          {
+            "number": 3517,
+            "title": "refactor(native): the Activity list names itself for shell jobs too",
+            "merged_at": "2026-09-30T14:45:53Z"
+          },
+          {
+            "number": 3510,
+            "title": "feat(native): a provider's detail pushes over Providers, as a host's does (device audit N3)",
+            "merged_at": "2026-09-30T14:28:59Z"
+          },
+          {
+            "number": 3512,
+            "title": "refactor(clients): share the shell job state rule and status words (#3447)",
+            "merged_at": "2026-09-30T14:28:42Z"
+          },
+          {
+            "number": 3514,
+            "title": "fix(agent): a refusal snapshot keeps the lease that refused it (#3009)",
+            "merged_at": "2026-09-30T14:11:04Z"
+          },
+          {
+            "number": 3497,
+            "title": "docs(product): record the storage-unavailable send fallback's accepted gaps (#3313)",
+            "merged_at": "2026-09-30T14:09:43Z"
+          },
+          {
+            "number": 3513,
+            "title": "fix(native): a changed document chip shows a blue dot, and says so only to VoiceOver",
+            "merged_at": "2026-09-30T14:07:16Z"
+          },
+          {
+            "number": 3511,
+            "title": "test(native): pin the short restore's quiet re-run and its one-second cap",
+            "merged_at": "2026-09-30T14:07:11Z"
+          },
+          {
+            "number": 3515,
+            "title": "fix(run): the ask responder sees every field of the ask_user call",
+            "merged_at": "2026-09-30T14:05:46Z"
+          },
+          {
+            "number": 3504,
+            "title": "fix(native): drop the dead readerHeader guard in ConversationScreen (#3433)",
+            "merged_at": "2026-09-30T13:54:53Z"
+          },
+          {
+            "number": 3489,
+            "title": "feat(run): --ask-responder answers ask_user from a command in a one-shot run",
+            "merged_at": "2026-09-30T13:49:37Z"
+          },
+          {
+            "number": 3505,
+            "title": "refactor(native): move SessionMenu actions from Action to grouped Rows",
+            "merged_at": "2026-09-30T13:45:37Z"
+          },
+          {
+            "number": 3503,
+            "title": "fix(agent): a successful delegate attention escalation ends its retry backoff, and the retry backs off from its current delay",
+            "merged_at": "2026-09-30T13:42:18Z"
+          },
+          {
+            "number": 3499,
+            "title": "hub: route the hub state stores through one atomic state-file writer (#2938)",
+            "merged_at": "2026-09-30T13:41:23Z"
+          },
+          {
+            "number": 3507,
+            "title": "fix(native): show an informational warning's hint as a quiet second line",
+            "merged_at": "2026-09-30T13:40:35Z"
+          },
+          {
+            "number": 3501,
+            "title": "refactor(native): launch memory keeps one setup per hub",
+            "merged_at": "2026-09-30T13:37:37Z"
+          },
+          {
+            "number": 3500,
+            "title": "fix(native): a saved reading position shows once the list reaches it",
+            "merged_at": "2026-09-30T13:36:12Z"
+          },
+          {
+            "number": 3495,
+            "title": "docs(design): restore the usability findings the recipe removal deleted",
+            "merged_at": "2026-09-30T13:36:16Z"
+          },
+          {
+            "number": 3496,
+            "title": "docs(native): provider detail drops default model and live sessions; the Credential line names the account (settings audit M5)",
+            "merged_at": "2026-09-30T13:29:08Z"
+          },
+          {
+            "number": 3466,
+            "title": "fix(agent): a park stops only the cold-restore drive, and parked attention a closed ancestor fences is escalated strictly",
+            "merged_at": "2026-09-30T13:11:41Z"
+          },
+          {
+            "number": 3468,
+            "title": "test(agent): one helper stands in for a finished generation's finalize tail",
+            "merged_at": "2026-09-30T13:11:36Z"
+          },
+          {
+            "number": 3467,
+            "title": "docs: remove launch recipes from the iPhone redesign",
+            "merged_at": "2026-09-30T13:11:31Z"
+          },
+          {
+            "number": 3464,
+            "title": "refactor(native): Hub home's and a sheet's status lines set in the type ramp (settings audit Lev5)",
+            "merged_at": "2026-09-30T13:11:26Z"
+          },
+          {
+            "number": 3494,
+            "title": "Reclaim superseded detached native Find intent on reopen",
+            "merged_at": "2026-09-30T08:01:31Z"
+          },
+          {
+            "number": 3492,
+            "title": "Preserve native history and Find intent across Board return",
+            "merged_at": "2026-09-30T07:45:21Z"
+          },
+          {
+            "number": 3491,
+            "title": "Cancel retained browser history when a returned pane jumps live",
+            "merged_at": "2026-09-30T07:07:03Z"
+          },
+          {
+            "number": 3485,
+            "title": "Keep unresolved older history quietly recovering",
+            "merged_at": "2026-09-30T06:32:26Z"
+          },
+          {
+            "number": 3488,
+            "title": "fix(hub): preserve credential defaults after project overrides",
+            "merged_at": "2026-09-30T06:31:01Z"
+          },
+          {
+            "number": 3486,
+            "title": "test(agent): wait for quiescence before the drain tests' explicit resumes",
+            "merged_at": "2026-09-30T06:20:09Z"
+          },
+          {
+            "number": 3484,
+            "title": "fix(hub): refuse a relative launch config root so launch.toml stays user-level (#1050)",
+            "merged_at": "2026-09-30T06:13:33Z"
+          },
+          {
+            "number": 3443,
+            "title": "fix(fluency): hide the operator's installed plugins from eval runs (#3227)",
+            "merged_at": "2026-09-30T06:11:43Z"
+          },
+          {
+            "number": 3472,
+            "title": "fix(hub): search omits subagents from the Live group",
+            "merged_at": "2026-09-30T06:05:28Z"
+          },
+          {
+            "number": 3428,
+            "title": "test(web): the archived reveal tests wait for the reveal before restoring the scroll stub",
+            "merged_at": "2026-09-30T06:02:55Z"
+          },
+          {
+            "number": 3470,
+            "title": "test: unify the loud-failing struct fillers into fuzz/reflectfill",
+            "merged_at": "2026-09-30T06:00:28Z"
+          },
+          {
+            "number": 3477,
+            "title": "fix(native): one journal gate for the Board's project and category readers (#2703)",
+            "merged_at": "2026-09-30T05:59:49Z"
+          },
+          {
+            "number": 3471,
+            "title": "Keep retained provider configuration usable by new sessions",
+            "merged_at": "2026-09-30T05:20:38Z"
+          },
+          {
+            "number": 3482,
+            "title": "Clarify retained provider probe parity",
+            "merged_at": "2026-09-30T05:51:14Z"
+          },
+          {
+            "number": 3483,
+            "title": "Declare the native test fork pool explicitly",
+            "merged_at": "2026-09-30T05:48:30Z"
+          },
+          {
+            "number": 3480,
+            "title": "fix(tui): tell a refused refresh token apart from an expired one (#2785)",
+            "merged_at": "2026-09-30T05:48:16Z"
+          },
+          {
+            "number": 3481,
+            "title": "refactor(hub): one word-character rule for search and its snippet",
+            "merged_at": "2026-09-30T05:44:28Z"
+          },
+          {
+            "number": 3474,
+            "title": "fix(appwire): turn/promoteQueuedAsSteer needs no turn in flight, and drop its dead server seam",
+            "merged_at": "2026-09-30T05:44:13Z"
+          },
+          {
+            "number": 3479,
+            "title": "Keep product recovery references current",
+            "merged_at": "2026-09-30T05:43:02Z"
+          },
+          {
+            "number": 3448,
+            "title": "Keep older history and Find recovering through page failures",
+            "merged_at": "2026-09-30T05:39:40Z"
+          },
+          {
+            "number": 3478,
+            "title": "Budget native tests from spare machine capacity",
+            "merged_at": "2026-09-30T05:38:30Z"
+          },
+          {
+            "number": 3476,
+            "title": "Keep restored MCP connections as quiet transcript history",
+            "merged_at": "2026-09-30T05:27:29Z"
+          },
+          {
+            "number": 3469,
+            "title": "Document product recovery principles and subsystem ownership",
+            "merged_at": "2026-09-30T05:23:19Z"
+          },
+          {
+            "number": 3475,
+            "title": "test(hubcore): cover the truncated update-log read and note forgetGen growth",
+            "merged_at": "2026-09-30T05:21:11Z"
+          },
+          {
+            "number": 3473,
+            "title": "fix(native): the Stop read fence and the journal readers' gate (#2703)",
+            "merged_at": "2026-09-30T05:16:13Z"
+          },
+          {
+            "number": 3437,
+            "title": "fix(agent): a steering carrier resets provenance and reports stand-down (#185)",
+            "merged_at": "2026-09-30T05:09:53Z"
+          },
+          {
+            "number": 3445,
+            "title": "test(native): pin single-writer SQLite outbox contract under separate-handle contention",
+            "merged_at": "2026-09-30T05:02:30Z"
+          },
+          {
+            "number": 3444,
+            "title": "feat(agent): metadata filters and ranked evidence for find_session_transcripts",
+            "merged_at": "2026-09-30T04:53:01Z"
+          },
+          {
+            "number": 3463,
+            "title": "feat(native): Show model on Board rows, and no orphan detail-level header (audit N5)",
+            "merged_at": "2026-09-30T04:48:26Z"
+          },
+          {
+            "number": 3462,
+            "title": "fix(tui): rank a project dashboard rollup with RollupRank (#2569)",
+            "merged_at": "2026-09-30T04:46:54Z"
+          },
+          {
+            "number": 3429,
+            "title": "fix(agent): a resolved delegate attention clears its needs_attention flag (#3410)",
+            "merged_at": "2026-09-30T04:45:28Z"
+          },
+          {
+            "number": 3460,
+            "title": "fix(selfupdate): report a failed rollback instead of swallowing it (#2379)",
+            "merged_at": "2026-09-30T04:41:01Z"
+          },
+          {
+            "number": 3454,
+            "title": "fix(execenv): refuse non-regular inputs in confined file reads (#2343)",
+            "merged_at": "2026-09-30T04:38:12Z"
+          },
+          {
+            "number": 3461,
+            "title": "Keep detached cwd test results fresh and clarify sandbox-off contracts",
+            "merged_at": "2026-09-30T04:30:15Z"
+          },
+          {
+            "number": 3432,
+            "title": "A delegate is announced idle only once it is sendable",
+            "merged_at": "2026-09-30T04:22:25Z"
+          },
+          {
+            "number": 3459,
+            "title": "refactor(agent): delegate-attention follow-ups from the /simplify pass over #3411 and #3414",
+            "merged_at": "2026-09-30T04:21:09Z"
+          },
+          {
+            "number": 3457,
+            "title": "perf(native): a cell's layout no longer re-renders the Session (G15)",
+            "merged_at": "2026-09-30T04:21:05Z"
+          },
+          {
+            "number": 3442,
+            "title": "fix: make sandbox-off file and shell cwd scope consistent",
+            "merged_at": "2026-09-30T04:10:58Z"
+          },
+          {
+            "number": 3456,
+            "title": "refactor(native): one place words a shell job, and the demo hub answers only the job's owner",
+            "merged_at": "2026-09-30T04:06:02Z"
+          },
+          {
+            "number": 3451,
+            "title": "agent: redirect the report and check habits models skipped",
+            "merged_at": "2026-09-30T03:56:27Z"
+          },
+          {
+            "number": 3436,
+            "title": "fix(agent): a delegate whose attention restore fails no longer starves its siblings",
+            "merged_at": "2026-09-30T03:55:53Z"
+          },
+          {
+            "number": 3452,
+            "title": "Keep provider-file watcher quiet after local writes",
+            "merged_at": "2026-09-30T03:41:41Z"
+          },
+          {
+            "number": 3435,
+            "title": "feat(native): a shell job's detail, with its command, how it ended and its output (shell jobs PR 2)",
+            "merged_at": "2026-09-30T03:41:34Z"
+          },
+          {
+            "number": 3439,
+            "title": "fix(agent): a child's attention waits while its parent runs without a resident runtime",
+            "merged_at": "2026-09-30T03:41:08Z"
+          },
+          {
+            "number": 3453,
+            "title": "fix(native): a document chip keeps its height when its summary lands",
+            "merged_at": "2026-09-30T03:39:47Z"
+          },
+          {
+            "number": 3426,
+            "title": "fix(agent): bound a state-dir-less job read's symlink check to the temp root (#3358)",
+            "merged_at": "2026-09-30T03:36:27Z"
+          },
+          {
+            "number": 3431,
+            "title": "agent: draw connected structure as a mermaid diagram",
+            "merged_at": "2026-09-30T03:33:51Z"
+          },
+          {
+            "number": 3441,
+            "title": "Automatically adopt repaired provider configuration",
+            "merged_at": "2026-09-30T02:52:31Z"
+          },
+          {
+            "number": 3450,
+            "title": "fix(hub): order merged catalog rows by LastActivity (#2134)",
+            "merged_at": "2026-09-30T03:24:30Z"
+          },
+          {
+            "number": 3438,
+            "title": "fix(native): opening a session lands once (G14)",
+            "merged_at": "2026-09-30T03:14:16Z"
+          },
+          {
+            "number": 3424,
+            "title": "fix(serve): the turn-failure log line says the failure's kind and status, not the provider's body",
+            "merged_at": "2026-09-30T02:46:57Z"
+          },
+          {
+            "number": 3440,
+            "title": "test(native): cover the store-free keybinding discard when a model is retained offline (#1860)",
+            "merged_at": "2026-09-30T02:43:41Z"
+          },
+          {
+            "number": 3425,
+            "title": "fix(plugins): scrub store paths from catalog read failures",
+            "merged_at": "2026-09-30T02:29:39Z"
+          },
+          {
+            "number": 3434,
+            "title": "test(selfupdate): resolve installdirs fixture roots through symlinks (#1201)",
+            "merged_at": "2026-09-30T02:28:16Z"
+          },
+          {
+            "number": 3430,
+            "title": "feat(native): shell jobs join the Activity list (shell jobs PR 1)",
+            "merged_at": "2026-09-30T02:14:16Z"
+          },
+          {
+            "number": 3414,
+            "title": "fix(agent): give up on delegate attention that can't be restored, and hand it to the root (#3404)",
+            "merged_at": "2026-09-30T02:13:27Z"
+          },
+          {
+            "number": 3421,
+            "title": "fix(web): say a delegate's not-resumable reason in words (#3362)",
+            "merged_at": "2026-09-30T01:59:43Z"
+          },
+          {
+            "number": 3427,
+            "title": "refactor(agent): route the remaining string cuts through runetrim.Cut (#3367)",
+            "merged_at": "2026-09-30T01:59:14Z"
+          },
+          {
+            "number": 3417,
+            "title": "feat(clients): a daemon warning stands out as a warning, amber, with its hint (#3387)",
+            "merged_at": "2026-09-30T00:08:00Z"
+          },
+          {
+            "number": 3423,
+            "title": "fix(diagnostic): take a usage-limit Hint's reset window from the parsed error",
+            "merged_at": "2026-09-30T00:03:12Z"
+          },
+          {
+            "number": 3420,
+            "title": "fix(native): cap the Board's hub button at xxxLarge and show its name in the Large Content Viewer",
+            "merged_at": "2026-09-29T23:48:29Z"
+          },
+          {
+            "number": 3416,
+            "title": "A delegate reads idle only once it is ready for a send",
+            "merged_at": "2026-09-29T23:43:59Z"
+          },
+          {
+            "number": 3397,
+            "title": "fix(web): clear the undelivered marker when a refresh read fails; state the fallback's at-least-once semantics",
+            "merged_at": "2026-09-29T23:33:04Z"
+          },
+          {
+            "number": 3277,
+            "title": "fix(web): dispatch a send directly when the mutation outbox cannot be written",
+            "merged_at": "2026-09-29T20:38:20Z"
+          },
+          {
+            "number": 3271,
+            "title": "feat(web): record the outbox open failures that precede a wedged IndexedDB coordinator",
+            "merged_at": "2026-09-29T17:24:10Z"
+          },
+          {
+            "number": 3419,
+            "title": "fix(native): a finished subagent's row shows its report once the tree arrives (G13 regression)",
+            "merged_at": "2026-09-29T23:29:41Z"
+          },
+          {
+            "number": 3411,
+            "title": "fix(agent): say when a provider failure pauses background updates, and resume on a model switch",
+            "merged_at": "2026-09-29T23:15:44Z"
+          },
+          {
+            "number": 3413,
+            "title": "fix(web): retry a fallback send's wire failure before surfacing (#3244)",
+            "merged_at": "2026-09-29T23:03:55Z"
+          },
+          {
+            "number": 3399,
+            "title": "fix(agent): a warning built from a failure says why (#3386)",
+            "merged_at": "2026-09-29T22:22:49Z"
+          },
+          {
+            "number": 3412,
+            "title": "refactor(native): the Launch defaults page edits the hub's global layer only (#3291)",
+            "merged_at": "2026-09-29T22:20:29Z"
+          },
+          {
+            "number": 3408,
+            "title": "A message to a subagent is one family under either name",
+            "merged_at": "2026-09-29T21:55:21Z"
+          },
+          {
+            "number": 3409,
+            "title": "perf(hubcore): tree sort computes each title once instead of per comparison",
+            "merged_at": "2026-09-29T21:48:41Z"
+          },
+          {
+            "number": 3407,
+            "title": "A recorded shell call waits in the foreground as long as it needs (#3357)",
+            "merged_at": "2026-09-29T21:37:09Z"
+          },
+          {
+            "number": 3402,
+            "title": "fix: a failed delegate-attention restore warns once per episode, says why, and shows only at Full",
+            "merged_at": "2026-09-29T21:27:11Z"
+          },
+          {
+            "number": 3405,
+            "title": "fix(agent): disclose that advertised resource caps are shared (#496)",
+            "merged_at": "2026-09-29T21:26:35Z"
+          },
+          {
+            "number": 3398,
+            "title": "Delegate and delegate_send steps say whom they messaged (per-tool steps)",
+            "merged_at": "2026-09-29T21:25:25Z"
+          },
+          {
+            "number": 3394,
+            "title": "fix(gate): bound the agent-shards runner's compile so it cannot hang the gate",
+            "merged_at": "2026-09-29T21:20:38Z"
+          },
+          {
+            "number": 3388,
+            "title": "fix(tui): browse mode is text-first; printable runes are composer text (#149)",
+            "merged_at": "2026-09-29T21:20:30Z"
+          },
+          {
+            "number": 3350,
+            "title": "fix(native): a pasted credential JSON is never shown, and the paste sheet is covered while inactive",
+            "merged_at": "2026-09-29T21:19:33Z"
+          },
+          {
+            "number": 3401,
+            "title": "fix(auth): sync the auth directory after the atomic rename (#2398)",
+            "merged_at": "2026-09-29T21:06:30Z"
+          },
+          {
+            "number": 3299,
+            "title": "feat(web): zoom activity surfaces, phase 1 - status bar + activity sidebar",
+            "merged_at": "2026-09-29T21:04:09Z"
+          },
+          {
+            "number": 3400,
+            "title": "fix(llm): surface malformed chat.completions chunks as raw passthrough events",
+            "merged_at": "2026-09-29T21:00:36Z"
+          },
+          {
+            "number": 3384,
+            "title": "fix: context-budget notices show once per clamp, and only at Full",
+            "merged_at": "2026-09-29T20:51:19Z"
+          },
+          {
+            "number": 3391,
+            "title": "feat: a failed subagent's reason names the failure: run_error, ended_without_report (#3327, PR C)",
+            "merged_at": "2026-09-29T20:48:19Z"
+          },
+          {
+            "number": 3396,
+            "title": "refactor(sdk): boot fan-out hydrates in catalog order via selectProjectSummaries (#1596)",
+            "merged_at": "2026-09-29T20:46:18Z"
+          },
+          {
+            "number": 3389,
+            "title": "A watch step opens to its rows, trigger and note in words",
+            "merged_at": "2026-09-29T20:42:03Z"
+          },
+          {
+            "number": 3381,
+            "title": "Record the subagent corpus's delegate and delegate_send for real (per-tool steps, PR 4c3)",
+            "merged_at": "2026-09-29T20:37:36Z"
+          },
+          {
+            "number": 3378,
+            "title": "fix(native): check the pod lock's shapes, CRLF and self-tests (#3305)",
+            "merged_at": "2026-09-29T20:36:48Z"
+          },
+          {
+            "number": 3393,
+            "title": "fix(hub): a force stop that races a daemon's exit succeeds (#3383)",
+            "merged_at": "2026-09-29T20:35:42Z"
+          },
+          {
+            "number": 3392,
+            "title": "docs(fuzz): record why the agent module stays compile-only in make fuzz",
+            "merged_at": "2026-09-29T20:30:18Z"
+          },
+          {
+            "number": 3390,
+            "title": "refactor(web): name the Runtime.evaluate ceiling as CDP_EVALUATE_TRIPWIRE_MS",
+            "merged_at": "2026-09-29T20:25:07Z"
+          },
+          {
+            "number": 3375,
+            "title": "feat(clients): a subagent's ending in words, never a raw code (#3327, PR B)",
+            "merged_at": "2026-09-29T20:11:47Z"
+          },
+          {
+            "number": 3382,
+            "title": "fix(hub): bind a retiring daemon mid-exit instead of refusing it (#3339)",
+            "merged_at": "2026-09-29T20:11:34Z"
+          },
+          {
+            "number": 3252,
+            "title": "feat: render mermaid diagrams inline in session messages (web + native)",
+            "merged_at": "2026-09-29T16:06:09Z"
+          },
+          {
+            "number": 3380,
+            "title": "feat(appwire): a device sign-in start reports its code expiry",
+            "merged_at": "2026-09-29T20:07:47Z"
+          },
+          {
+            "number": 3385,
+            "title": "fix(web): an archived-list refresh keeps the pages a user loaded",
+            "merged_at": "2026-09-29T20:07:41Z"
+          },
+          {
+            "number": 3377,
+            "title": "Watch steps say what they armed (per-tool steps, PR 4c2)",
+            "merged_at": "2026-09-29T20:06:01Z"
+          },
+          {
+            "number": 3360,
+            "title": "fix(providers): cap long model lists with a search on web and phone",
+            "merged_at": "2026-09-29T20:01:38Z"
+          },
+          {
+            "number": 3379,
+            "title": "chore(mobile-native): ignore xcodebuild derived-data build/ (#3325)",
+            "merged_at": "2026-09-29T19:58:28Z"
+          },
+          {
+            "number": 3376,
+            "title": "fix(web): a reveal retries a failed first archived-list fetch once",
+            "merged_at": "2026-09-29T19:58:05Z"
+          },
+          {
+            "number": 3351,
+            "title": "fix(native): a running subagent's buttons stack full width, each label on one line (N9)",
+            "merged_at": "2026-09-29T19:43:59Z"
+          },
+          {
+            "number": 3373,
+            "title": "test(native): mock react-native-webview once in the vitest setup",
+            "merged_at": "2026-09-29T19:39:13Z"
+          },
+          {
+            "number": 3371,
+            "title": "fix(web): revealing an archived session fetches its list when navigation counts none",
+            "merged_at": "2026-09-29T19:38:36Z"
+          },
+          {
+            "number": 3374,
+            "title": "perf(native): the stacks' header options keep their identity until colors or text size change",
+            "merged_at": "2026-09-29T19:37:41Z"
+          },
+          {
+            "number": 3372,
+            "title": "fix(native): draw a machine field's placeholder in the UI font (#3302)",
+            "merged_at": "2026-09-29T19:36:54Z"
+          },
+          {
+            "number": 3365,
+            "title": "fix(credentials): publish which instances have a model refresh in flight (#3278)",
+            "merged_at": "2026-09-29T19:36:26Z"
+          },
+          {
+            "number": 3370,
+            "title": "feat(hub): send the hub's own machine's OS, architecture and project roots",
+            "merged_at": "2026-09-29T19:36:07Z"
+          },
+          {
+            "number": 3356,
+            "title": "feat: a failed delegate carries its cause in an additive error field (#3327, PR A)",
+            "merged_at": "2026-09-29T19:34:48Z"
+          },
+          {
+            "number": 3352,
+            "title": "Job steps say which job and what became of it (per-tool steps, PR 4c1)",
+            "merged_at": "2026-09-29T19:34:35Z"
+          },
+          {
+            "number": 3368,
+            "title": "fix(native): the Subagents filter chips stay on one row that scrolls (N10)",
+            "merged_at": "2026-09-29T19:33:29Z"
+          },
+          {
+            "number": 3363,
+            "title": "fix(native): page titles follow Dynamic Type up to xxxLarge, in sheets and the app's own stack (N11)",
+            "merged_at": "2026-09-29T19:27:29Z"
+          },
+          {
+            "number": 3361,
+            "title": "fix(appwire-client): bound rows and nodes in decodeArchivedListSessions",
+            "merged_at": "2026-09-29T19:24:03Z"
+          },
+          {
+            "number": 3354,
+            "title": "refactor(native): one ChipStrip for the Board's and Session's chip rows (#3276)",
+            "merged_at": "2026-09-29T19:18:33Z"
+          },
+          {
+            "number": 3359,
+            "title": "fix(hub): the launch-model loader re-checks its cache inside the shared flight (#3273)",
+            "merged_at": "2026-09-29T19:16:25Z"
+          },
+          {
+            "number": 3353,
+            "title": "feat(fluency): hide the operator's personal skills from eval runs (#3227)",
+            "merged_at": "2026-09-29T19:11:57Z"
+          },
+          {
+            "number": 3355,
+            "title": "test(native): the demo hub's start delay is checked on fake time, not wall time",
+            "merged_at": "2026-09-29T19:08:28Z"
+          },
+          {
+            "number": 3348,
+            "title": "fix(hub): archived-list limit error names the limit it accepts",
+            "merged_at": "2026-09-29T19:08:12Z"
+          },
+          {
+            "number": 3342,
+            "title": "fix(lint): allowlist the built frontend dist in the gitleaks secret scan",
+            "merged_at": "2026-09-29T19:04:33Z"
+          },
+          {
+            "number": 3346,
+            "title": "perf(markdown): window the segmented live tail after a settled diagram",
+            "merged_at": "2026-09-29T19:03:28Z"
+          },
+          {
+            "number": 3347,
+            "title": "fix(native): the Session sheet keeps the model's name and names the hub's own machine (N6)",
+            "merged_at": "2026-09-29T19:03:24Z"
+          },
+          {
+            "number": 3349,
+            "title": "fix(native): the detail level's unreadable-draft discard works while the hub is away (#3245)",
+            "merged_at": "2026-09-29T18:59:32Z"
+          },
+          {
+            "number": 3345,
+            "title": "test(native): load nativeLaunchMemory at file load, not inside a test body",
+            "merged_at": "2026-09-29T18:53:38Z"
+          },
+          {
+            "number": 3338,
+            "title": "feat(native): the Board's notices come from the hub, with their session counts (S11a, N8)",
+            "merged_at": "2026-09-29T18:52:11Z"
+          },
+          {
+            "number": 3344,
+            "title": "A question step says what it asked, from a real recording (per-tool steps, PR 4b4)",
+            "merged_at": "2026-09-29T18:50:58Z"
+          },
+          {
+            "number": 3341,
+            "title": "docs(scenarios): add the native mermaid on-device verification runbook (#3197)",
+            "merged_at": "2026-09-29T18:48:19Z"
+          },
+          {
+            "number": 3326,
+            "title": "feat(native): a finished subagent's transcript row reads its outcome (audit G13)",
+            "merged_at": "2026-09-29T18:47:38Z"
+          },
+          {
+            "number": 3343,
+            "title": "fix(web): mermaid viewer owns wheel zoom and ignores horizontal wheel (#3201)",
+            "merged_at": "2026-09-29T18:47:21Z"
+          },
+          {
+            "number": 3340,
+            "title": "fix(native): bound the MermaidDiagram height cache and keep its test finder rename-proof (#3203)",
+            "merged_at": "2026-09-29T18:40:09Z"
+          },
+          {
+            "number": 3337,
+            "title": "test(hub): mermaid tspan labels, CRLF quoted boundary, and the walk-test HTML seam (#3202)",
+            "merged_at": "2026-09-29T18:36:09Z"
+          },
+          {
+            "number": 3336,
+            "title": "fix(web): mint the skillguard Chrome profile under a short root (#3198)",
+            "merged_at": "2026-09-29T18:33:02Z"
+          },
+          {
+            "number": 3322,
+            "title": "Every step line sets what the step acted on in Menlo",
+            "merged_at": "2026-09-29T18:27:09Z"
+          },
+          {
+            "number": 3323,
+            "title": "A diff's tabs expand to the next stop, so Go diffs keep their indentation",
+            "merged_at": "2026-09-29T18:03:49Z"
+          },
+          {
+            "number": 3320,
+            "title": "feat(native): a Row can end in its own control, and a catalog row's Install and Open are mini buttons (audit M13)",
+            "merged_at": "2026-09-29T18:03:24Z"
+          },
+          {
+            "number": 3321,
+            "title": "fix(native): the Live summary never wraps onto a line starting with a dot (N12)",
+            "merged_at": "2026-09-29T18:02:36Z"
+          },
+          {
+            "number": 3308,
+            "title": "feat(native): a demo session replaying every recorded tool family",
+            "merged_at": "2026-09-29T17:57:31Z"
+          },
+          {
+            "number": 3318,
+            "title": "docs(native): document regenerating the pod lock, and point check-podfile-lock at it",
+            "merged_at": "2026-09-29T17:50:24Z"
+          },
+          {
+            "number": 3319,
+            "title": "Output on the phone expands tabs to the next stop of 8 (#3317)",
+            "merged_at": "2026-09-29T17:47:47Z"
+          },
+          {
+            "number": 3314,
+            "title": "fix(native): sheet headers stop growing at xxxLarge, so Cancel and Done never break mid-word (#3311)",
+            "merged_at": "2026-09-29T17:45:08Z"
+          },
+          {
+            "number": 3315,
+            "title": "A worktree step says what the operation did (per-tool steps, PR 4b3)",
+            "merged_at": "2026-09-29T17:45:04Z"
+          },
+          {
+            "number": 3307,
+            "title": "feat(native): a Button primitive, and the sign-in sheet matches the prototype with its code's lifetime (audit L5)",
+            "merged_at": "2026-09-29T17:43:07Z"
+          },
+          {
+            "number": 3283,
+            "title": "fix(hub): forward a cursorless before to a remote host's hub (#3176)",
+            "merged_at": "2026-09-29T17:42:14Z"
+          },
+          {
+            "number": 3312,
+            "title": "fix(native): tags, row values, the Hub's status line and empty lists match the prototype (audit L1, L2, L3, L6)",
+            "merged_at": "2026-09-29T17:33:24Z"
+          },
+          {
+            "number": 3309,
+            "title": "Transcript reads and session searches say what they did (per-tool steps, PR 4b2)",
+            "merged_at": "2026-09-29T17:24:41Z"
+          },
+          {
+            "number": 3303,
+            "title": "fix(native): Host detail drops Defined in, and Host edit says once what's required (audit M3, M4)",
+            "merged_at": "2026-09-29T17:15:47Z"
+          },
+          {
+            "number": 3304,
+            "title": "feat(native): a plugin's detail says what it is, when it came, and that it's broken under the fix (audit M9)",
+            "merged_at": "2026-09-29T17:08:40Z"
+          },
+          {
+            "number": 3301,
+            "title": "A task_list step says the task it touched, and shows the list (per-tool steps, PR 4b1)",
+            "merged_at": "2026-09-29T17:07:13Z"
+          },
+          {
+            "number": 3297,
+            "title": "ci(native): check Podfile.lock against what autolinking resolves",
+            "merged_at": "2026-09-29T17:04:08Z"
+          },
+          {
+            "number": 3296,
+            "title": "feat(native): a marketplace opens as a pushed page, so the edge swipe returns to its list (hub polish 6b)",
+            "merged_at": "2026-09-29T16:46:55Z"
+          },
+          {
+            "number": 3298,
+            "title": "fix(appwire): whole list_dir footer only; bounded shell footer search (#3265 follow-up)",
+            "merged_at": "2026-09-29T16:46:43Z"
+          },
+          {
+            "number": 3300,
+            "title": "fix(native): Default detail level leads with its levels, and names the setting once (audit M12)",
+            "merged_at": "2026-09-29T16:45:06Z"
+          },
+          {
+            "number": 3265,
+            "title": "A step's evidence shows what the tool found, not its envelope (per-tool steps, PR 4a2)",
+            "merged_at": "2026-09-29T16:29:10Z"
+          },
+          {
+            "number": 3295,
+            "title": "fix(native): lock the react-native-webview pod so TestFlight's deployment install passes",
+            "merged_at": "2026-09-29T16:26:57Z"
+          },
+          {
+            "number": 3292,
+            "title": "feat(hub): navigation carries archived counts, not archived rows",
+            "merged_at": "2026-09-29T16:26:41Z"
+          },
+          {
+            "number": 3290,
+            "title": "fix(native): the Hub's More rows open inside the sheet, and the hub's own machine opens from Hosts (hub polish 6c)",
+            "merged_at": "2026-09-29T16:19:35Z"
+          },
+          {
+            "number": 3287,
+            "title": "feat(web): the rail's archived rows come from evener/archived/list",
+            "merged_at": "2026-09-29T16:13:36Z"
+          },
+          {
+            "number": 3255,
+            "title": "refactor(appwire-client): put the hub write gate under the plugin and marketplace stores",
+            "merged_at": "2026-09-29T15:58:11Z"
+          },
+          {
+            "number": 3281,
+            "title": "fix(native): a model check always ends its Checking state, and waits for the connection (5c follow-up)",
+            "merged_at": "2026-09-29T15:56:32Z"
+          },
+          {
+            "number": 3285,
+            "title": "fix(agent): grep reads the same with or without ripgrep (#3259)",
+            "merged_at": "2026-09-29T15:56:27Z"
+          },
+          {
+            "number": 3286,
+            "title": "fix(native): a host's last error in its own group, and connection state on the Hubs rows (hub polish 6a)",
+            "merged_at": "2026-09-29T15:52:21Z"
+          },
+          {
+            "number": 3282,
+            "title": "feat(web): an archived-list store over evener/archived/list",
+            "merged_at": "2026-09-29T15:47:01Z"
+          },
+          {
+            "number": 3280,
+            "title": "fix(native): typing in the composer with find open folds the queue (#3232)",
+            "merged_at": "2026-09-29T15:42:15Z"
+          },
+          {
+            "number": 3267,
+            "title": "feat(hub): evener/archived/list reads a project's archived rows a page at a time",
+            "merged_at": "2026-09-29T15:36:49Z"
+          },
+          {
+            "number": 3275,
+            "title": "feat(native): model switches and Check for new models on the provider page (hub polish 5c)",
+            "merged_at": "2026-09-29T15:32:47Z"
+          },
+          {
+            "number": 3272,
+            "title": "feat(native): the Board's nav bar and its section chips wear one Liquid Glass",
+            "merged_at": "2026-09-29T15:26:57Z"
+          },
+          {
+            "number": 3274,
+            "title": "fix(fluency): serialize concurrent git worktree adds on one repo",
+            "merged_at": "2026-09-29T15:21:20Z"
+          },
+          {
+            "number": 3256,
+            "title": "fix(native): read roots-only navigation, show the subagent chip, and reveal a subagent by its root (#3034)",
+            "merged_at": "2026-09-29T15:05:51Z"
+          },
+          {
+            "number": 3217,
+            "title": "prompt-eval: tasks for splitting work and briefing delegates, and full briefs in review packets",
+            "merged_at": "2026-09-29T15:04:06Z"
+          },
+          {
+            "number": 3268,
+            "title": "feat(native): a key or credential JSON is pasted in its own sheet (Hub polish 5b)",
+            "merged_at": "2026-09-29T15:01:21Z"
+          },
+          {
+            "number": 3269,
+            "title": "fix(native): a screen render that changes nothing a row reads re-renders no transcript row",
+            "merged_at": "2026-09-29T14:59:35Z"
+          },
+          {
+            "number": 3264,
+            "title": "feat(native): the Session's nav bar and its chips wear one Liquid Glass",
+            "merged_at": "2026-09-29T14:46:17Z"
+          },
+          {
+            "number": 3246,
+            "title": "fix(registry,credentials): create config temp files at exclusive random names (#1049)",
+            "merged_at": "2026-09-29T14:45:25Z"
+          },
+          {
+            "number": 3250,
+            "title": "ci: refresh the snapshot channel without moving a git tag",
+            "merged_at": "2026-09-29T14:34:01Z"
+          },
+          {
+            "number": 3266,
+            "title": "refactor(hub): one session order comparator, exported from hubcore",
+            "merged_at": "2026-09-29T14:34:21Z"
+          },
+          {
+            "number": 3263,
+            "title": "feat(native): a provider's facts in its group, and plain, named confirmations and errors (Hub polish 5a)",
+            "merged_at": "2026-09-29T14:31:48Z"
+          },
+          {
+            "number": 3261,
+            "title": "Remove title clustering",
+            "merged_at": "2026-09-29T14:28:06Z"
+          },
+          {
+            "number": 3257,
+            "title": "fix(web): a host switch re-resolves the spawn form's working directory",
+            "merged_at": "2026-09-29T14:26:25Z"
+          },
+          {
+            "number": 3251,
+            "title": "refactor(evener-dev): list-build-flags walks with the shard runner's parser (#1285)",
+            "merged_at": "2026-09-29T14:20:14Z"
+          },
+          {
+            "number": 3262,
+            "title": "fix(native): the keyboard coming and going re-renders only what folds, never the transcript",
+            "merged_at": "2026-09-29T14:19:12Z"
+          },
+          {
+            "number": 3238,
+            "title": "feat(native): the Session's composer moves with the keyboard (react-native-keyboard-controller)",
+            "merged_at": "2026-09-29T13:22:57Z"
+          },
+          {
+            "number": 3258,
+            "title": "The tool corpus records what the tools really print (per-tool steps, 4a1 follow-up)",
+            "merged_at": "2026-09-29T14:07:03Z"
+          },
+          {
+            "number": 2983,
+            "title": "fix(web): stop aborting an IndexedDB schema upgrade on timeout",
+            "merged_at": "2026-09-29T14:06:34Z"
+          },
+          {
+            "number": 3260,
+            "title": "fix(native): the question dock opens at its settled height after a push (#3248)",
+            "merged_at": "2026-09-29T14:04:51Z"
+          },
+          {
+            "number": 3242,
+            "title": "sdk: supersede note recovery rows in native settlement (#1938)",
+            "merged_at": "2026-09-29T13:57:51Z"
+          },
+          {
+            "number": 3237,
+            "title": "feat(native): the Hub's forms ask before unsaved input is thrown away (Hub polish 4b)",
+            "merged_at": "2026-09-29T13:54:17Z"
+          },
+          {
+            "number": 3230,
+            "title": "feat(mobile): take pageBefore from the status frames the hub relays",
+            "merged_at": "2026-09-29T13:49:15Z"
+          },
+          {
+            "number": 3254,
+            "title": "fix(hub): the host live checks decode evener/host/add's mutation union",
+            "merged_at": "2026-09-29T13:48:47Z"
+          },
+          {
+            "number": 3223,
+            "title": "A step says what it did, never its tool's name, on the web and the phone (per-tool steps, PR 4a1)",
+            "merged_at": "2026-09-29T13:38:50Z"
+          },
+          {
+            "number": 3253,
+            "title": "docs(sdk): record why the navigation boot epoch is not the shared ready fence (#1589)",
+            "merged_at": "2026-09-29T13:38:07Z"
+          },
+          {
+            "number": 3249,
+            "title": "refactor(sdk): lift the accepted-record whitelist and the carries-optimistic-input predicate into records.ts",
+            "merged_at": "2026-09-29T13:36:16Z"
+          },
+          {
+            "number": 3187,
+            "title": "fix(native): trim long sessions only while following, and page trimmed rows back (T2)",
+            "merged_at": "2026-09-29T13:32:09Z"
+          },
+          {
+            "number": 3219,
+            "title": "test(hub): live deploy-pipeline check against a disposable container host",
+            "merged_at": "2026-09-29T13:29:27Z"
+          },
+          {
+            "number": 3240,
+            "title": "fix(native): find leaves the live end before it pages older history",
+            "merged_at": "2026-09-29T13:18:18Z"
+          },
+          {
+            "number": 3243,
+            "title": "fix(native): a communicate preview keeps its row when its message is recorded",
+            "merged_at": "2026-09-29T13:17:34Z"
+          },
+          {
+            "number": 3224,
+            "title": "refactor(transcript): one shared content-vector lookup for web and native (#3181)",
+            "merged_at": "2026-09-29T13:16:09Z"
+          },
+          {
+            "number": 3233,
+            "title": "refactor(appwire-client): decode notification excerpt and prose once in the parser",
+            "merged_at": "2026-09-29T13:13:53Z"
+          },
+          {
+            "number": 3239,
+            "title": "fix(client): initialize's serverInfo and navigation let an unknown field through (#3226)",
+            "merged_at": "2026-09-29T13:12:30Z"
+          },
+          {
+            "number": 3241,
+            "title": "fix(web): a streamed reply keeps its row when history records it (#3172)",
+            "merged_at": "2026-09-29T13:10:36Z"
+          },
+          {
+            "number": 3234,
+            "title": "refactor(native): one SearchField for the Hub and New session",
+            "merged_at": "2026-09-29T13:02:53Z"
+          },
+          {
+            "number": 3213,
+            "title": "refactor(native): the session modals share the sheet header (#3109)",
+            "merged_at": "2026-09-29T13:02:29Z"
+          },
+          {
+            "number": 3231,
+            "title": "fix(hub): open-subagent control resolves delegate frames by id (#3087)",
+            "merged_at": "2026-09-29T12:56:07Z"
+          },
+          {
+            "number": 3216,
+            "title": "fix(lint): lint-package-imports flags path imports, not path text in string data",
+            "merged_at": "2026-09-29T12:52:06Z"
+          },
+          {
+            "number": 3225,
+            "title": "fix(native): sync() and flush() read clean once notes catch up after blur",
+            "merged_at": "2026-09-29T12:50:46Z"
+          },
+          {
+            "number": 3209,
+            "title": "fix(native): honest first loads, padded spinners, and no Reload in the Hub's reach (Hub polish 4a)",
+            "merged_at": "2026-09-29T12:50:30Z"
+          },
+          {
+            "number": 3229,
+            "title": "fix(hub): resolve abs against a symlinked root in openDocInRoot",
+            "merged_at": "2026-09-29T12:50:14Z"
+          },
+          {
+            "number": 3228,
+            "title": "test(hub): drain the abandoned teardown before the later retry (#3178)",
+            "merged_at": "2026-09-29T12:47:55Z"
+          },
+          {
+            "number": 3222,
+            "title": "feat(native): while you type, the session header's chips and note step aside",
+            "merged_at": "2026-09-29T12:47:23Z"
+          },
+          {
+            "number": 3221,
+            "title": "fix(hub): canceled navigation caller observes cancellation deterministically (#3126)",
+            "merged_at": "2026-09-29T12:37:10Z"
+          },
+          {
+            "number": 3211,
+            "title": "feat(native): while you type, Next steps aside and the queue folds to one line",
+            "merged_at": "2026-09-29T12:34:20Z"
+          },
+          {
+            "number": 3215,
+            "title": "agent: writing for other agents, and cutting work into pieces a delegate can take",
+            "merged_at": "2026-09-29T12:33:30Z"
+          },
+          {
+            "number": 3218,
+            "title": "fix(appwire-client): ignore unknown feature keys in initialize decode",
+            "merged_at": "2026-09-29T12:31:32Z"
+          },
+          {
+            "number": 3212,
+            "title": "test(hub): the image confinement tests name the session folder by its real path (#3188)",
+            "merged_at": "2026-09-29T12:30:38Z"
+          },
+          {
+            "number": 3180,
+            "title": "fix(native): a run never collapses on its own (S7)",
+            "merged_at": "2026-09-29T12:30:17Z"
+          },
+          {
+            "number": 3210,
+            "title": "fix(native): pin React in vitest so a frontend install cannot shadow it (#3076)",
+            "merged_at": "2026-09-29T12:25:22Z"
+          },
+          {
+            "number": 3207,
+            "title": "refactor(native): Row and SwitchRow share one RowText",
+            "merged_at": "2026-09-29T12:24:46Z"
+          },
+          {
+            "number": 3204,
+            "title": "test(make): read Makefile variables without --eval for macOS make 3.81 (#3077)",
+            "merged_at": "2026-09-29T12:19:23Z"
+          },
+          {
+            "number": 3206,
+            "title": "refactor(native): keep the launch-memory and stop-request caches on board/perHub",
+            "merged_at": "2026-09-29T12:18:43Z"
+          },
+          {
+            "number": 3195,
+            "title": "fix(native): a short transcript rests just above the composer",
+            "merged_at": "2026-09-29T12:16:02Z"
+          },
+          {
+            "number": 3205,
+            "title": "test(sdk): pin the modifier in keybindingChord tests so they are host-independent (#3085)",
+            "merged_at": "2026-09-29T12:14:37Z"
+          },
+          {
+            "number": 3193,
+            "title": "One set of words for system events, steers and token counts, on the web and the phone (transcript rows PR 3b)",
+            "merged_at": "2026-09-29T12:13:45Z"
+          },
+          {
+            "number": 3194,
+            "title": "fix(appwire): NotAccepted keeps a wrapped refusal's category and fields",
+            "merged_at": "2026-09-29T12:08:11Z"
+          },
+          {
+            "number": 3192,
+            "title": "fix(native): the Next capsule stays within 60% of the width",
+            "merged_at": "2026-09-29T11:51:51Z"
+          },
+          {
+            "number": 3191,
+            "title": "fix(native): a session's goal shows as its chip alone",
+            "merged_at": "2026-09-29T11:51:44Z"
+          },
+          {
+            "number": 3179,
+            "title": "feat(appwire): thread/turns/list takes a before boundary (T1)",
+            "merged_at": "2026-09-29T11:51:39Z"
+          },
+          {
+            "number": 3189,
+            "title": "feat(hub): a thread/start refused before any session exists says so, and Start reopens (#3184)",
+            "merged_at": "2026-09-29T11:47:50Z"
+          },
+          {
+            "number": 3190,
+            "title": "fix(native): an image the phone can't attach says why in a sentence; the limits split in two (#3166)",
+            "merged_at": "2026-09-29T11:45:12Z"
+          },
+          {
+            "number": 3185,
+            "title": "Failed turns, system events and steers read plainly on the phone (transcript rows PR 3)",
+            "merged_at": "2026-09-29T11:34:33Z"
+          },
+          {
+            "number": 3177,
+            "title": "feat(native): a New session start that fails with its sheet closed says so (#3104)",
+            "merged_at": "2026-09-29T11:05:52Z"
+          },
+          {
+            "number": 3167,
+            "title": "fix(native): a camera photo is scaled to fit before it's attached (#3099)",
+            "merged_at": "2026-09-29T10:46:47Z"
+          },
+          {
+            "number": 3175,
+            "title": "fix(native): a New session start has one owner after its sheet closes (#3104)",
+            "merged_at": "2026-09-29T10:46:40Z"
+          },
+          {
+            "number": 3160,
+            "title": "fix(native): notes fast-follow \u2014 stale link, mid-save hub note, per-keystroke draft write (#2876)",
+            "merged_at": "2026-09-29T10:28:23Z"
+          },
+          {
+            "number": 3149,
+            "title": "One rule for a subagent's state, and inline tests that bite (fast-follow to #3127)",
+            "merged_at": "2026-09-29T10:23:17Z"
+          },
+          {
+            "number": 3152,
+            "title": "fix(native): the transcript's first row survives an older page landing",
+            "merged_at": "2026-09-29T10:05:40Z"
+          },
+          {
+            "number": 3171,
+            "title": "fix(native): a streamed reply keeps its row when history records it (S6)",
+            "merged_at": "2026-09-29T10:05:34Z"
+          },
+          {
+            "number": 3151,
+            "title": "refactor(transcript): share one leading-header reader across four packages",
+            "merged_at": "2026-09-29T10:00:50Z"
+          },
+          {
+            "number": 3174,
+            "title": "test(agent): stop the finalization-hook test racing the session namer (#3059)",
+            "merged_at": "2026-09-29T10:00:22Z"
+          },
+          {
+            "number": 3170,
+            "title": "fix(hosts): show non-commit mutation arms and re-read on them",
+            "merged_at": "2026-09-29T09:59:58Z"
+          },
+          {
+            "number": 3169,
+            "title": "fix(native): the typecheck gate catches unused imports and locals (#3053)",
+            "merged_at": "2026-09-29T09:53:57Z"
+          },
+          {
+            "number": 3168,
+            "title": "fix(native): the Reader's hold follows the stack, not a blur event (#3050)",
+            "merged_at": "2026-09-29T09:48:15Z"
+          },
+          {
+            "number": 3146,
+            "title": "test(agent): deflake TestDrainStallGiveUpRechecksTheWakeEdge (#2680)",
+            "merged_at": "2026-09-29T09:42:40Z"
+          },
+          {
+            "number": 3165,
+            "title": "ci(lint): lint _darwin.go files in CI with a GOOS=darwin pass (#2928)",
+            "merged_at": "2026-09-29T09:41:37Z"
+          },
+          {
+            "number": 3164,
+            "title": "fix(hub): open /doc/image and evener/session/image paths through the session root (#2918)",
+            "merged_at": "2026-09-29T09:40:12Z"
+          },
+          {
+            "number": 3142,
+            "title": "feat(native): the transcript and the Board run under their bars' glass",
+            "merged_at": "2026-09-29T09:38:24Z"
+          },
+          {
+            "number": 3163,
+            "title": "feat(native): Android Find, find by URL/query, one search-field style",
+            "merged_at": "2026-09-29T09:33:12Z"
+          },
+          {
+            "number": 3162,
+            "title": "fix(fluency): label harness steering as Evener, not the user (#2907)",
+            "merged_at": "2026-09-29T09:28:14Z"
+          },
+          {
+            "number": 3161,
+            "title": "fix(native): announce changing lines where iOS ignores the live region (#2903)",
+            "merged_at": "2026-09-29T09:23:39Z"
+          },
+          {
+            "number": 3157,
+            "title": "fix(native): plainText drops inline HTML tags outside code spans",
+            "merged_at": "2026-09-29T09:22:58Z"
+          },
+          {
+            "number": 3159,
+            "title": "refactor(sandbox): extract the repeated post-rename scratch-manifest commit discriminator",
+            "merged_at": "2026-09-29T09:13:40Z"
+          },
+          {
+            "number": 3115,
+            "title": "fix(appwire): a landed uncertain draft save no longer reads as a conflict",
+            "merged_at": "2026-09-29T09:13:16Z"
+          },
+          {
+            "number": 3117,
+            "title": "docs(web): paging docs and comments name the trigger #2963 kept, not the sentinel it removed",
+            "merged_at": "2026-09-29T09:11:10Z"
+          },
+          {
+            "number": 3141,
+            "title": "docs(specs): remove the crash-fencing spec and retire its references (comp08 pass 3)",
+            "merged_at": "2026-09-29T09:08:53Z"
+          },
+          {
+            "number": 3158,
+            "title": "test(hub): resolve hubLogfFor's sink once so it cannot race a stderr swap",
+            "merged_at": "2026-09-29T09:07:10Z"
+          },
+          {
+            "number": 3155,
+            "title": "fix(native): a Board search reveal clamps a tall row and keeps search on a stale project (#2747)",
+            "merged_at": "2026-09-29T08:58:26Z"
+          },
+          {
+            "number": 3154,
+            "title": "test(hub): date the tombstone-survive fixture relative to now",
+            "merged_at": "2026-09-29T08:47:45Z"
+          },
+          {
+            "number": 3150,
+            "title": "fix(llm): classify a refused Codex sign-in as sign-in required (#2705)",
+            "merged_at": "2026-09-29T08:45:27Z"
+          },
+          {
+            "number": 3153,
+            "title": "fix(native): the row menu follows the shown rows, and its handlers are set after commit (#2745)",
+            "merged_at": "2026-09-29T08:44:59Z"
+          },
+          {
+            "number": 3145,
+            "title": "feat(native): Board search and notice follow-ups (#2665)",
+            "merged_at": "2026-09-29T08:34:44Z"
+          },
+          {
+            "number": 3133,
+            "title": "feat(native): the Hub's legacy forms become grouped-list forms, saved from the header (Hub polish 3)",
+            "merged_at": "2026-09-29T08:23:54Z"
+          },
+          {
+            "number": 3147,
+            "title": "test(native): one shared storage fake, and the menu helpers in the sheets suite (#2687)",
+            "merged_at": "2026-09-29T08:23:30Z"
+          },
+          {
+            "number": 3143,
+            "title": "fix(native): the Subagents chip counts failures the way the list does",
+            "merged_at": "2026-09-29T08:20:06Z"
+          },
+          {
+            "number": 3127,
+            "title": "Subagent rows read their subagent at every level (transcript rows PR 2)",
+            "merged_at": "2026-09-29T08:18:28Z"
+          },
+          {
+            "number": 3144,
+            "title": "test(hub): share the remote-row navigation projection setup (#2670)",
+            "merged_at": "2026-09-29T08:13:23Z"
+          },
+          {
+            "number": 3132,
+            "title": "test(web): flush the projection after the outer act, not inside it (#2599)",
+            "merged_at": "2026-09-29T08:11:33Z"
+          },
+          {
+            "number": 3139,
+            "title": "test(agent): join the child writers before the root-close flake returns",
+            "merged_at": "2026-09-29T07:59:23Z"
+          },
+          {
+            "number": 3140,
+            "title": "refactor(hub): one shared reader for a thread row's facts (#2638)",
+            "merged_at": "2026-09-29T07:59:09Z"
+          },
+          {
+            "number": 3136,
+            "title": "feat(native): the bottom bars wear the system's Liquid Glass",
+            "merged_at": "2026-09-29T07:55:55Z"
+          },
+          {
+            "number": 3097,
+            "title": "test(tool-fluency): guard fixture writes against the ETXTBSY fork race",
+            "merged_at": "2026-09-29T07:55:29Z"
+          },
+          {
+            "number": 3125,
+            "title": "fix(native): a reading position restores once, and older pages wait for your scroll",
+            "merged_at": "2026-09-29T07:51:23Z"
+          },
+          {
+            "number": 3137,
+            "title": "test(web): Composer mount helpers await the mount's projection refresh (#2614)",
+            "merged_at": "2026-09-29T07:50:36Z"
+          },
+          {
+            "number": 3131,
+            "title": "refactor(hub): remove the crash-fencing execution machinery (comp08 pass 2b)",
+            "merged_at": "2026-09-29T07:42:56Z"
+          },
+          {
+            "number": 3130,
+            "title": "fix(hub): attention watcher notifies for remote-host sessions (#2529)",
+            "merged_at": "2026-09-29T07:40:40Z"
+          },
+          {
+            "number": 3105,
+            "title": "PR G of the roots-only navigation design",
+            "merged_at": "2026-09-29T07:38:47Z"
+          },
+          {
+            "number": 3123,
+            "title": "fix(native): admin errors state what didn't load, never ask to retry",
+            "merged_at": "2026-09-29T07:36:46Z"
+          },
+          {
+            "number": 3118,
+            "title": "test(web): guard the read-only transcript pane's paged open",
+            "merged_at": "2026-09-29T07:33:44Z"
+          },
+          {
+            "number": 3103,
+            "title": "fix(native): the transcript keeps a fixed room at its end",
+            "merged_at": "2026-09-29T07:33:28Z"
+          },
+          {
+            "number": 3092,
+            "title": "feat(native): the session's bottom bar runs to the screen's edge",
+            "merged_at": "2026-09-29T07:33:04Z"
+          },
+          {
+            "number": 3112,
+            "title": "test(hub): scale the relay resync wait to the test deadline (#2977)",
+            "merged_at": "2026-09-29T07:28:11Z"
+          },
+          {
+            "number": 3124,
+            "title": "fix(execenv): anchor confined list_dir entry metadata to the directory fd",
+            "merged_at": "2026-09-29T07:21:41Z"
+          },
+          {
+            "number": 3101,
+            "title": "feat(native): the Hub's modal sheets share one header (Hub polish 2)",
+            "merged_at": "2026-09-29T07:21:37Z"
+          },
+          {
+            "number": 3122,
+            "title": "fix(native): VoiceOver hears \"Options shown\" only when they show",
+            "merged_at": "2026-09-29T07:19:22Z"
+          },
+          {
+            "number": 3113,
+            "title": "A parent's stop packet says the subagent was stopped (fast-follow to #3075)",
+            "merged_at": "2026-09-29T07:17:46Z"
+          },
+          {
+            "number": 3106,
+            "title": "fix(native): phase 5's device pass, its fixes and screenshots (phase 5, PR 13b)",
+            "merged_at": "2026-09-29T07:16:53Z"
+          },
+          {
+            "number": 3119,
+            "title": "fix(web): the paged transcript guard fails fast on an auto-load-at-open regression",
+            "merged_at": "2026-09-29T07:16:46Z"
+          },
+          {
+            "number": 3121,
+            "title": "fix(native): the projects list drops its pull to refresh (#3066)",
+            "merged_at": "2026-09-29T07:07:40Z"
+          },
+          {
+            "number": 3120,
+            "title": "fix(native): size the Session title's nav span to the Back count and type scale (#3063)",
+            "merged_at": "2026-09-29T07:04:50Z"
+          },
+          {
+            "number": 3116,
+            "title": "refactor(hub): remove the fencing execution surfaces from the hub and wire (comp08 pass 2a)",
+            "merged_at": "2026-09-29T07:02:02Z"
+          },
+          {
+            "number": 3088,
+            "title": "feat(native): typing your own answer, the question dock shows only the question",
+            "merged_at": "2026-09-29T06:58:11Z"
+          },
+          {
+            "number": 3098,
+            "title": "fix(native): following the live end resumes when you scroll back to it",
+            "merged_at": "2026-09-29T06:56:43Z"
+          },
+          {
+            "number": 3080,
+            "title": "refactor(native): the Reader route carries one session ref (#2871)",
+            "merged_at": "2026-09-29T06:51:44Z"
+          },
+          {
+            "number": 3111,
+            "title": "refactor(hubcore): one ProbeResult constructor from the thread row (#2962)",
+            "merged_at": "2026-09-29T06:48:44Z"
+          },
+          {
+            "number": 3071,
+            "title": "fix(native): a long question or approval scrolls inside its dock",
+            "merged_at": "2026-09-29T06:44:48Z"
+          },
+          {
+            "number": 3110,
+            "title": "fix(native): Discard on a draft ghost clears its outbox row too",
+            "merged_at": "2026-09-29T06:43:59Z"
+          },
+          {
+            "number": 3108,
+            "title": "fix(native): the Detail level menu marks the level with no hub config",
+            "merged_at": "2026-09-29T06:42:56Z"
+          },
+          {
+            "number": 3095,
+            "title": "fix(hub): check format=raw before reading the doc file (#2925)",
+            "merged_at": "2026-09-29T06:37:17Z"
+          },
+          {
+            "number": 3075,
+            "title": "Delegate and job notifications as clean cards (transcript rows PR 1)",
+            "merged_at": "2026-09-29T06:37:14Z"
+          },
+          {
+            "number": 3100,
+            "title": "refactor(client): share one plain-object guard for stored and wire JSON (#2936)",
+            "merged_at": "2026-09-29T06:31:54Z"
+          },
+          {
+            "number": 3094,
+            "title": "refactor(native): move the Session sheet's rows onto the shared grouped list",
+            "merged_at": "2026-09-29T06:27:35Z"
+          },
+          {
+            "number": 3096,
+            "title": "fix(native): a subagent's screen reads its coordinator's tree under the thread it reads now",
+            "merged_at": "2026-09-29T06:26:16Z"
+          },
+          {
+            "number": 3022,
+            "title": "fix(web): load the command catalog on connect, not first palette open",
+            "merged_at": "2026-09-29T06:23:38Z"
+          },
+          {
+            "number": 3078,
+            "title": "fix(sshconn): a canceled supervisor stands down without the host gate (#2919)",
+            "merged_at": "2026-09-29T06:24:01Z"
+          },
+          {
+            "number": 3093,
+            "title": "test(hostfence): keep ambient host processes and spawn timing out of the script tests",
+            "merged_at": "2026-09-29T06:23:26Z"
+          },
+          {
+            "number": 3074,
+            "title": "refactor(hub): remove the crash-fencing bootstrap/first-contact stack (comp08 pass 1)",
+            "merged_at": "2026-09-29T06:22:12Z"
+          },
+          {
+            "number": 3082,
+            "title": "PR F of the roots-only navigation design",
+            "merged_at": "2026-09-29T06:21:59Z"
+          },
+          {
+            "number": 3091,
+            "title": "test(agent): make ContentWindow test deterministic with the injected clock (#2924)",
+            "merged_at": "2026-09-29T06:13:21Z"
+          },
+          {
+            "number": 3084,
+            "title": "fix(native): a row's label keeps its words; a value that won't fit moves under it (Hub polish 1b)",
+            "merged_at": "2026-09-29T06:12:47Z"
+          },
+          {
+            "number": 3089,
+            "title": "test(hostfence): fix the nonce-carrier kill flake (#2922)",
+            "merged_at": "2026-09-29T06:10:28Z"
+          },
+          {
+            "number": 3083,
+            "title": "fix(native): four demo-fleet follow-ups and the Board's turn sync (#2872)",
+            "merged_at": "2026-09-29T06:10:19Z"
+          },
+          {
+            "number": 3081,
+            "title": "fix(native): document chip follow-ups from #2900",
+            "merged_at": "2026-09-29T06:04:30Z"
+          },
+          {
+            "number": 3073,
+            "title": "fix(server): a thread snapshot owns its access pointer (#2883)",
+            "merged_at": "2026-09-29T06:02:08Z"
+          },
+          {
+            "number": 3072,
+            "title": "PR H of the roots-only navigation design",
+            "merged_at": "2026-09-29T05:52:37Z"
+          },
+          {
+            "number": 3079,
+            "title": "fix(native): the Reader's comment follow-ups from #2866 (phase 4)",
+            "merged_at": "2026-09-29T05:51:20Z"
+          },
+          {
+            "number": 3064,
+            "title": "feat(native): New session like this, and a Session started banner (phase 5, PR 11)",
+            "merged_at": "2026-09-29T05:47:07Z"
+          },
+          {
+            "number": 3067,
+            "title": "feat(native): grouped lists own their spacing, icon hairlines and ink-mid secondary text (Hub polish 1)",
+            "merged_at": "2026-09-29T05:41:44Z"
+          },
+          {
+            "number": 3070,
+            "title": "fix(native): the last connection wall goes, and DESIGN.md describes the sheets (phase 5, PR 13a)",
+            "merged_at": "2026-09-29T05:41:31Z"
+          },
+          {
+            "number": 3023,
+            "title": "perf(hub): log navigation build phase timings and counters",
+            "merged_at": "2026-09-29T05:39:54Z"
+          },
+          {
+            "number": 3042,
+            "title": "test(hostfence): keep ambient host processes out of the reused-identity kill test",
+            "merged_at": "2026-09-29T05:30:08Z"
+          },
+          {
+            "number": 3039,
+            "title": "PR E of the roots-only navigation design",
+            "merged_at": "2026-09-29T05:28:57Z"
+          },
+          {
+            "number": 3021,
+            "title": "perf(appoverlay): append streamed text into a buffer instead of recopying the prefix",
+            "merged_at": "2026-09-29T05:27:35Z"
+          },
+          {
+            "number": 3037,
+            "title": "refactor(hub): one helper fills a row's live facts (#2506)",
+            "merged_at": "2026-09-29T05:23:02Z"
+          },
+          {
+            "number": 2941,
+            "title": "feat(hub): orphan-resolve and the BoundaryEntry wire union (08c slice 20)",
+            "merged_at": "2026-09-28T23:43:48Z"
+          },
+          {
+            "number": 2982,
+            "title": "feat(delegate): per-delegation durable artifacts directory (#2456)",
+            "merged_at": "2026-09-29T05:17:10Z"
+          },
+          {
+            "number": 3038,
+            "title": "test: resolve temp paths so the macOS /var-vs-/private/var family passes (#2497)",
+            "merged_at": "2026-09-29T05:17:03Z"
+          },
+          {
+            "number": 3041,
+            "title": "feat(hub): the production first-contact caller drives hostfence.Bootstrap (08c slice 21b)",
+            "merged_at": "2026-09-29T02:57:10Z"
+          },
+          {
+            "number": 3032,
+            "title": "fix(evener-tui): cancel reconnect work on TUI exit (#2392)",
+            "merged_at": "2026-09-29T05:16:56Z"
+          },
+          {
+            "number": 2964,
+            "title": "fix(web): attribute guard boot deaths across iframe loaderIds and recorded-null sends (#2116)",
+            "merged_at": "2026-09-29T05:16:45Z"
+          },
+          {
+            "number": 3018,
+            "title": "fix(worktree): failed sidecar writes clean up and never tear provenance (#2377)",
+            "merged_at": "2026-09-29T05:11:10Z"
+          },
+          {
+            "number": 2963,
+            "title": "fix(web): opening a session with history no longer scrolls back from the latest",
+            "merged_at": "2026-09-29T03:49:36Z"
+          },
+          {
+            "number": 3062,
+            "title": "feat(native): plugins, access, branch and more options in New session (phase 5, PR 10)",
+            "merged_at": "2026-09-29T04:59:20Z"
+          },
+          {
+            "number": 3052,
+            "title": "fix(native): long titles, model chip name, pills inset, one subagent time",
+            "merged_at": "2026-09-29T04:58:25Z"
+          },
+          {
+            "number": 2794,
+            "title": "docs(agents): the full test suite runs faster in CI than locally",
+            "merged_at": "2026-09-29T04:28:06Z"
+          },
+          {
+            "number": 3051,
+            "title": "feat(native): the demo stages alerts and the offline states, with the phase's screenshots (phase 6, PR G)",
+            "merged_at": "2026-09-29T04:26:36Z"
+          },
+          {
+            "number": 3049,
+            "title": "feat(native): the New session sheet (phase 5, PR 9)",
+            "merged_at": "2026-09-29T04:19:34Z"
+          },
+          {
+            "number": 3045,
+            "title": "feat(native): Plugins in the Hub (phase 5, PR 7)",
+            "merged_at": "2026-09-29T03:53:40Z"
+          },
+          {
+            "number": 3047,
+            "title": "fix(native): Providers fast-follow from #3040 review (phase 5, PR 6)",
+            "merged_at": "2026-09-29T03:47:37Z"
+          },
+          {
+            "number": 3044,
+            "title": "feat(native): messages you left behind send themselves (phase 6, PR I)",
+            "merged_at": "2026-09-29T03:38:33Z"
+          },
+          {
+            "number": 3040,
+            "title": "feat(native): Providers and sign-in in the Hub (phase 5, PR 6)",
+            "merged_at": "2026-09-29T03:34:36Z"
+          },
+          {
+            "number": 3000,
+            "title": "perf(hub): serve the model picker's launch list from a cache",
+            "merged_at": "2026-09-29T03:25:37Z"
+          },
+          {
+            "number": 3046,
+            "title": "fix(hosts): an edit sends the pair its form opened on, never retried (phase 5, PR 5b fast-follow)",
+            "merged_at": "2026-09-29T03:24:05Z"
+          },
+          {
+            "number": 3043,
+            "title": "fix(native): a Board change that can't go now is held, never refused (phase 6)",
+            "merged_at": "2026-09-29T03:18:17Z"
+          },
+          {
+            "number": 3017,
+            "title": "feat(web): the current-work goal row carries the goal's live status",
+            "merged_at": "2026-09-29T03:13:58Z"
+          },
+          {
+            "number": 3036,
+            "title": "feat(native): edit and remove hosts in the Hub over a shared guarded core (phase 5, PR 5b)",
+            "merged_at": "2026-09-29T03:04:00Z"
+          },
+          {
+            "number": 3026,
+            "title": "feat(hub): location alias for subagent refs (PR C of the roots-only navigation design)",
+            "merged_at": "2026-09-29T02:58:03Z"
+          },
+          {
+            "number": 3029,
+            "title": "prompt-eval: tasks allow added tests and fail only when existing test lines are removed",
+            "merged_at": "2026-09-29T02:53:07Z"
+          },
+          {
+            "number": 3020,
+            "title": "feat(native): hold Board actions taken offline and send them on reconnect (phase 6 PR H)",
+            "merged_at": "2026-09-29T02:53:03Z"
+          },
+          {
+            "number": 3024,
+            "title": "feat(native): alerts wait while you read, and Next serves them first (phase 6, PR D)",
+            "merged_at": "2026-09-29T02:37:04Z"
+          },
+          {
+            "number": 3031,
+            "title": "test(native): silence react-test-renderer's deprecation warning in suite output (#2433)",
+            "merged_at": "2026-09-29T02:29:52Z"
+          },
+          {
+            "number": 3027,
+            "title": "feat(web): subagent tally chip on live roots (PR D of the roots-only navigation design)",
+            "merged_at": "2026-09-29T02:29:40Z"
+          },
+          {
+            "number": 3025,
+            "title": "feat(hub): RootIndex, non-probing Lookup, subagent discriminator (PR B of the roots-only navigation design)",
+            "merged_at": "2026-09-29T02:29:32Z"
+          },
+          {
+            "number": 2862,
+            "title": "feat(hub,web): sending a prompt resumes a session, with no Resume step",
+            "merged_at": "2026-09-29T02:28:53Z"
+          },
+          {
+            "number": 3033,
+            "title": "fix(hub): projectKeyForStateDir returns the project ID",
+            "merged_at": "2026-09-29T02:23:42Z"
+          },
+          {
+            "number": 3028,
+            "title": "agent: a five-step fix process, and four sections trimmed to what they need",
+            "merged_at": "2026-09-29T02:21:19Z"
+          },
+          {
+            "number": 2949,
+            "title": "feat(hub): the bootstrap-attempt fence, helperInstalled, and first-contact delivery (08c slice 21)",
+            "merged_at": "2026-09-29T02:09:31Z"
+          },
+          {
+            "number": 3012,
+            "title": "fix(agent): make the model catalog fetch cancellation contract explicit (#2369)",
+            "merged_at": "2026-09-29T02:11:37Z"
+          },
+          {
+            "number": 3001,
+            "title": "feat(native): Hubs, pairing and first run (phase 5, PR 4)",
+            "merged_at": "2026-09-29T02:08:42Z"
+          },
+          {
+            "number": 3030,
+            "title": "fix(native): Display and detail level failures read true (phase 5, PR 3 fast-follow)",
+            "merged_at": "2026-09-29T02:07:39Z"
+          },
+          {
+            "number": 2981,
+            "title": "fix(gate): measure package wall time in test-timing-budget (#172)",
+            "merged_at": "2026-09-29T01:49:33Z"
+          },
+          {
+            "number": 3007,
+            "title": "feat(native): Display in the Hub (phase 5, PR 3)",
+            "merged_at": "2026-09-29T01:48:50Z"
+          },
+          {
+            "number": 3013,
+            "title": "test(gate): pin the hermetic module-runner contract end to end (#2371)",
+            "merged_at": "2026-09-29T01:48:32Z"
+          },
+          {
+            "number": 3014,
+            "title": "fix(appwire): retain transport provenance instead of reclassifying peer InternalError by text (#2384)",
+            "merged_at": "2026-09-29T01:46:04Z"
+          },
+          {
+            "number": 3016,
+            "title": "fix(execenv): own buffered command output so a timeout can't abandon a live copier (#2378)",
+            "merged_at": "2026-09-29T01:44:25Z"
+          },
+          {
+            "number": 3010,
+            "title": "fix(webui): make a durably deleted thread terminal for hydration (#2381)",
+            "merged_at": "2026-09-29T01:43:35Z"
+          },
+          {
+            "number": 3011,
+            "title": "feat(native): Hosts in the Hub (phase 5, PR 5a)",
+            "merged_at": "2026-09-29T01:35:23Z"
+          },
+          {
+            "number": 3006,
+            "title": "fix(auth): serialize concurrent OpenAI token refreshes per record (#2370)",
+            "merged_at": "2026-09-29T01:28:28Z"
+          },
+          {
+            "number": 3005,
+            "title": "pre-commit hook that formats staged TypeScript (make hooks)",
+            "merged_at": "2026-09-29T01:25:49Z"
+          },
+          {
+            "number": 3003,
+            "title": "feat(native): in-app alert banners (phase 6, PR C)",
+            "merged_at": "2026-09-29T01:18:18Z"
+          },
+          {
+            "number": 3004,
+            "title": "fix(hub): navigation build was quadratic in past sessions x roster",
+            "merged_at": "2026-09-29T00:58:13Z"
+          },
+          {
+            "number": 3008,
+            "title": "feat(native): Send while offline (phase 6, PR F)",
+            "merged_at": "2026-09-29T00:58:00Z"
+          },
+          {
+            "number": 2996,
+            "title": "test(hub): harden the live acceptance harness per roborev's review (#2287)",
+            "merged_at": "2026-09-29T00:49:50Z"
+          },
+          {
+            "number": 2986,
+            "title": "chore(release): drop evener-dev from release archives",
+            "merged_at": "2026-09-29T00:45:20Z"
+          },
+          {
+            "number": 3002,
+            "title": "fix(native): a hub update's restart always ends, and a dev build is never asked to update (phase 5, PR 2 fast-follow)",
+            "merged_at": "2026-09-29T00:33:38Z"
+          },
+          {
+            "number": 2998,
+            "title": "fix(agent): an in-flight round keeps its dispatch-time fallback chain (#2335)",
+            "merged_at": "2026-09-29T00:33:31Z"
+          },
+          {
+            "number": 2997,
+            "title": "fix(tokenauth): bind the Codex account header to the current auth record (#2367)",
+            "merged_at": "2026-09-29T00:32:00Z"
+          },
+          {
+            "number": 2965,
+            "title": "fix(web): clear the published marker when the client is replaced",
+            "merged_at": "2026-09-29T00:31:30Z"
+          },
+          {
+            "number": 2906,
+            "title": "fix(web): the narrow composer carries Stop and Steer in the session menu",
+            "merged_at": "2026-09-29T00:29:18Z"
+          },
+          {
+            "number": 2999,
+            "title": "fix(agent): bound the job-manager close wait by the inherited close budget (#2363)",
+            "merged_at": "2026-09-29T00:28:26Z"
+          },
+          {
+            "number": 2985,
+            "title": "feat(native): the shared hub-update client, About and hub updates (phase 5, PR 2)",
+            "merged_at": "2026-09-29T00:23:49Z"
+          },
+          {
+            "number": 2995,
+            "title": "agent: read what is there, and any retention note, before deleting",
+            "merged_at": "2026-09-29T00:15:01Z"
+          },
+          {
+            "number": 2992,
+            "title": "test(agent): settle the retirement escalation denial through a resolved path (#1974)",
+            "merged_at": "2026-09-29T00:12:46Z"
+          },
+          {
+            "number": 2990,
+            "title": "feat(native): the in-app alert center and haptics (phase 6, PR B)",
+            "merged_at": "2026-09-29T00:12:38Z"
+          },
+          {
+            "number": 2993,
+            "title": "feat(native): Discard and Send now for your own undelivered messages (phase 6, PR E)",
+            "merged_at": "2026-09-29T00:08:01Z"
+          },
+          {
+            "number": 2991,
+            "title": "fix(native): phase 4's device pass, fixes and frames 15-18",
+            "merged_at": "2026-09-28T23:59:51Z"
+          },
+          {
+            "number": 2987,
+            "title": "fix(hooks): own and reap a command hook's process group (#2361)",
+            "merged_at": "2026-09-28T23:49:55Z"
+          },
+          {
+            "number": 2978,
+            "title": "perf(hub): slim the delegate roster on thread/read",
+            "merged_at": "2026-09-28T23:46:09Z"
+          },
+          {
+            "number": 2984,
+            "title": "perf(native): truncateItem keeps a row's identity when the bound cuts nothing",
+            "merged_at": "2026-09-28T23:45:24Z"
+          },
+          {
+            "number": 2974,
+            "title": "feat(native): one connection clock, and no text asks you to reconnect (phase 6, PR A)",
+            "merged_at": "2026-09-28T23:44:32Z"
+          },
+          {
+            "number": 2979,
+            "title": "refactor(agent): single-home the stop-finish and settled-finish decisions (#638)",
+            "merged_at": "2026-09-28T23:27:46Z"
+          },
+          {
+            "number": 2980,
+            "title": "feat(native): the demo fleet's subagents and documents (phase 4, PR 9)",
+            "merged_at": "2026-09-28T23:25:45Z"
+          },
+          {
+            "number": 2972,
+            "title": "fix(native): restore the omitted set in intent_sequence order",
+            "merged_at": "2026-09-28T23:20:58Z"
+          },
+          {
+            "number": 2947,
+            "title": "feat(native): the New session's rules, memory and host-routed reads (phase 5, PR 8)",
+            "merged_at": "2026-09-28T23:18:50Z"
+          },
+          {
+            "number": 2971,
+            "title": "refactor(sdk): type the navigation codec's key tables against types.gen.ts",
+            "merged_at": "2026-09-28T23:17:34Z"
+          },
+          {
+            "number": 2976,
+            "title": "docs(native): recapture frame 14 against the merged demo",
+            "merged_at": "2026-09-28T23:15:59Z"
+          },
+          {
+            "number": 2975,
+            "title": "refactor(native): use ui.tsx's allowFontScaling instead of inline Platform checks",
+            "merged_at": "2026-09-28T23:15:39Z"
+          },
+          {
+            "number": 2970,
+            "title": "fix(tui): honor injected streams instead of mutating package seams (#2346)",
+            "merged_at": "2026-09-28T23:12:47Z"
+          },
+          {
+            "number": 2973,
+            "title": "test(agent): size context-window warning tests from the standing request",
+            "merged_at": "2026-09-28T23:12:04Z"
+          },
+          {
+            "number": 2960,
+            "title": "feat(native): demo sessions and the Session's screenshots (phase 3, PR 13)",
+            "merged_at": "2026-09-28T23:06:14Z"
+          },
+          {
+            "number": 2968,
+            "title": "fix(native): abandon the NavigationPages re-read flight on cancel (#2466)",
+            "merged_at": "2026-09-28T23:03:37Z"
+          },
+          {
+            "number": 2969,
+            "title": "fix(web): one host read per registry recovery, and none for a removed host",
+            "merged_at": "2026-09-28T23:02:44Z"
+          },
+          {
+            "number": 2966,
+            "title": "perf(native): simplify mutation outbox dispatch and recovery reads",
+            "merged_at": "2026-09-28T22:59:28Z"
+          },
+          {
+            "number": 2967,
+            "title": "fix(native): a swipe in a sheet no longer fires the row's press (#2952)",
+            "merged_at": "2026-09-28T22:58:47Z"
+          },
+          {
+            "number": 2959,
+            "title": "feat(native): demo data for New session and the Hub (phase 5, PR 12)",
+            "merged_at": "2026-09-28T22:53:18Z"
+          },
+          {
+            "number": 2955,
+            "title": "fix(mobile): the subagent tree paces and folds notification reloads",
+            "merged_at": "2026-09-28T22:52:13Z"
+          },
+          {
+            "number": 2961,
+            "title": "feat(hub): rows name their model (S17, phase 7 PR 36)",
+            "merged_at": "2026-09-28T22:46:11Z"
+          },
+          {
+            "number": 2958,
+            "title": "docs(mobile): record the 2026-09-28 iPhone redesign rulings",
+            "merged_at": "2026-09-28T22:38:49Z"
+          },
+          {
+            "number": 2901,
+            "title": "fix(hostfence): a zombie is not live work; script tests drive ordering",
+            "merged_at": "2026-09-28T22:38:37Z"
+          },
+          {
+            "number": 2926,
+            "title": "prompt-eval: three non-code tasks, a judgment reviewer prompt, and two scoring fixes",
+            "merged_at": "2026-09-28T22:36:06Z"
+          },
+          {
+            "number": 2945,
+            "title": "fix(appwire-client): ActivityList stops refetching the whole tree on every notification",
+            "merged_at": "2026-09-28T22:35:35Z"
+          },
+          {
+            "number": 2954,
+            "title": "feat(native): Continue reading, and the Activity sheet retired (phase 4, PR 8)",
+            "merged_at": "2026-09-28T22:28:23Z"
+          },
+          {
+            "number": 2940,
+            "title": "docs(plans): full plan for S17 model on rows, S18 worktree launches, S8 hub recipes (phase 7 PRs 36-39)",
+            "merged_at": "2026-09-28T22:22:10Z"
+          },
+          {
+            "number": 2951,
+            "title": "fix(native): a direct subagent stop names the coordinator's thread as it reads now (#2930 fast-follow)",
+            "merged_at": "2026-09-28T22:18:50Z"
+          },
+          {
+            "number": 2942,
+            "title": "fix(appserver): evener/jobs/list dispatches concurrently",
+            "merged_at": "2026-09-28T22:16:24Z"
+          },
+          {
+            "number": 2946,
+            "title": "fix(native): format the 12 mobile/src files #2902 left unformatted",
+            "merged_at": "2026-09-28T22:10:28Z"
+          },
+          {
+            "number": 2930,
+            "title": "feat(native): a subagent's screen, a direct Stop, and Ask coordinator to stop it (phase 4, PR 3)",
+            "merged_at": "2026-09-28T22:09:43Z"
+          },
+          {
+            "number": 2943,
+            "title": "style(mobile): format mobile/src to the new native Biome config",
+            "merged_at": "2026-09-28T22:08:38Z"
+          },
+          {
+            "number": 2937,
+            "title": "chore(native): format mobile/src to the native Biome config (fixes main's native job)",
+            "merged_at": "2026-09-28T21:59:22Z"
+          },
+          {
+            "number": 2914,
+            "title": "feat(hub): the production spawn paths arm the pre-spawn boundary and intent (08c slice 19b)",
+            "merged_at": "2026-09-28T21:25:47Z"
+          },
+          {
+            "number": 2902,
+            "title": "chore(native): a Biome formatter config for the mobile src trees (#1157)",
+            "merged_at": "2026-09-28T21:19:25Z"
+          },
+          {
+            "number": 2934,
+            "title": "feat(native): the Hub sheet (phase 5, PR 1)",
+            "merged_at": "2026-09-28T21:18:06Z"
+          },
+          {
+            "number": 2932,
+            "title": "fix(native): a flick never fires a swipe row's full-swipe action (#2920)",
+            "merged_at": "2026-09-28T21:12:48Z"
+          },
+          {
+            "number": 2929,
+            "title": "feat: documents in remote sessions (S7, phase 7 PR 35)",
+            "merged_at": "2026-09-28T20:57:41Z"
+          },
+          {
+            "number": 2927,
+            "title": "execenv: wrap the underlying error in darwin boundary errors, as Linux does",
+            "merged_at": "2026-09-28T20:54:11Z"
+          },
+          {
+            "number": 2921,
+            "title": "feat: a document read names its revision (S9, phase 7 PR 34)",
+            "merged_at": "2026-09-28T20:39:35Z"
+          },
+          {
+            "number": 2626,
+            "title": "feat(prompt-eval): tooling to measure the prompt rewrite",
+            "merged_at": "2026-09-28T20:36:51Z"
+          },
+          {
+            "number": 2923,
+            "title": "feat(native): swipes on ghosts, links and the Session title (phase 3 PR 12)",
+            "merged_at": "2026-09-28T20:34:34Z"
+          },
+          {
+            "number": 2912,
+            "title": "feat(native): the Subagents list (phase 4, PR 2)",
+            "merged_at": "2026-09-28T20:29:15Z"
+          },
+          {
+            "number": 2917,
+            "title": "feat(native): a turn that ends while you watch a session marks it seen",
+            "merged_at": "2026-09-28T20:09:54Z"
+          },
+          {
+            "number": 2911,
+            "title": "docs(plans): full plan for S9 document revisions and S7 remote documents (phase 7 PRs 34-35)",
+            "merged_at": "2026-09-28T20:02:29Z"
+          },
+          {
+            "number": 2916,
+            "title": "agent: the main session works as a seasoned expert in whatever the work is",
+            "merged_at": "2026-09-28T19:50:15Z"
+          },
+          {
+            "number": 2915,
+            "title": "feat(native): moving between sessions (phase 3, PR 11)",
+            "merged_at": "2026-09-28T19:23:34Z"
+          },
+          {
+            "number": 2843,
+            "title": "feat(hub): the fence-takeover, bounded kill/wait, and the fencing quarantine (08c slice 18)",
+            "merged_at": "2026-09-28T18:57:42Z"
+          },
+          {
+            "number": 2908,
+            "title": "feat(native): Commands and skills, and Find in session (phase 3, PR 10)",
+            "merged_at": "2026-09-28T18:43:51Z"
+          },
+          {
+            "number": 2905,
+            "title": "test(hub): sync the first-turn pre-turn window on the park, not the wire",
+            "merged_at": "2026-09-28T18:38:41Z"
+          },
+          {
+            "number": 2900,
+            "title": "feat(native): document chips and Files & artifacts (phase 4, PR 7)",
+            "merged_at": "2026-09-28T18:36:01Z"
+          },
+          {
+            "number": 2847,
+            "title": "feat(hub): the local orphan boundary, pre-spawn intent, and boot local reap (08c slice 19)",
+            "merged_at": "2026-09-28T18:00:42Z"
+          },
+          {
+            "number": 2896,
+            "title": "feat(hub): the phone can stop a subagent directly (S6b, phase 7 PR 31)",
+            "merged_at": "2026-09-28T17:51:21Z"
+          },
+          {
+            "number": 2891,
+            "title": "fix(web): name the Codex sign-in button after its instance, and pin the scheme (#2285)",
+            "merged_at": "2026-09-28T17:44:02Z"
+          },
+          {
+            "number": 2887,
+            "title": "fix(sdk): absent checks and canonicalJson(undefined) handle the undefined sentinel (#1918)",
+            "merged_at": "2026-09-28T17:38:41Z"
+          },
+          {
+            "number": 2893,
+            "title": "refactor(mobile): keep the transcript footer's derived token scope apart from cumulative fields",
+            "merged_at": "2026-09-28T17:37:03Z"
+          },
+          {
+            "number": 2898,
+            "title": "feat(native): the Session sheet and the model sheet (phase 3, PR 6)",
+            "merged_at": "2026-09-28T17:32:36Z"
+          },
+          {
+            "number": 2897,
+            "title": "agent: write for a busy reader, claim only what you proved",
+            "merged_at": "2026-09-28T17:29:24Z"
+          },
+          {
+            "number": 2888,
+            "title": "fix(plugins): report a rename left between the two names in StoreChanged (#1800)",
+            "merged_at": "2026-09-28T17:28:38Z"
+          },
+          {
+            "number": 2889,
+            "title": "test(mutation): share one MutationOutboxStorage conformance suite across hosts (#1927)",
+            "merged_at": "2026-09-28T17:23:50Z"
+          },
+          {
+            "number": 2892,
+            "title": "fix(sdk): a keyless history alias no longer bridges conflicting transcript keys",
+            "merged_at": "2026-09-28T17:17:42Z"
+          },
+          {
+            "number": 2894,
+            "title": "feat(native): open a document from Notes & links (phase 4, PR 5b)",
+            "merged_at": "2026-09-28T17:12:24Z"
+          },
+          {
+            "number": 2881,
+            "title": "docs(transcript): describe the reader split in decodeStrictJSON's comment (#2782)",
+            "merged_at": "2026-09-28T17:12:13Z"
+          },
+          {
+            "number": 2895,
+            "title": "test(native): name the demo fleet location refs by their derived id",
+            "merged_at": "2026-09-28T17:02:24Z"
+          },
+          {
+            "number": 2886,
+            "title": "docs: name the legacy AppWire client's real path (#2819)",
+            "merged_at": "2026-09-28T16:55:09Z"
+          },
+          {
+            "number": 2882,
+            "title": "perf(native): the reachability sweep skips files that cannot name the deleted directory (#2780)",
+            "merged_at": "2026-09-28T16:44:47Z"
+          },
+          {
+            "number": 2885,
+            "title": "fix(hub): search validates an ended session's project ID like the navigation tree",
+            "merged_at": "2026-09-28T16:41:06Z"
+          },
+          {
+            "number": 2866,
+            "title": "feat(native): comments and review in the Reader (phase 4, PR 6)",
+            "merged_at": "2026-09-28T16:39:09Z"
+          },
+          {
+            "number": 2769,
+            "title": "feat(native): Notes & links (phase 3, PR 5)",
+            "merged_at": "2026-09-28T16:38:05Z"
+          },
+          {
+            "number": 2884,
+            "title": "fix(mobile): give the demo fleet sessions real-shaped ids so its rows offer Archive",
+            "merged_at": "2026-09-28T16:37:44Z"
+          },
+          {
+            "number": 2867,
+            "title": "feat(server): stop one subagent without its tree (S6a, phase 7 PR 30)",
+            "merged_at": "2026-09-28T16:32:33Z"
+          },
+          {
+            "number": 2855,
+            "title": "fix(mobile-native): the demo fleet serves the location navigation read",
+            "merged_at": "2026-09-28T16:29:05Z"
+          },
+          {
+            "number": 2880,
+            "title": "fix(mobile): dispose the Board's settled list when the hook unmounts (#2777)",
+            "merged_at": "2026-09-28T16:28:02Z"
+          },
+          {
+            "number": 2865,
+            "title": "feat: a session's sandbox mode and network on the thread read (S15, phase 7 PR 32)",
+            "merged_at": "2026-09-28T16:25:26Z"
+          },
+          {
+            "number": 2857,
+            "title": "fix(mobile-native): word a failed first pin read as a load, not a previous change",
+            "merged_at": "2026-09-28T16:24:12Z"
+          },
+          {
+            "number": 2875,
+            "title": "fix(native): a typed /shutdown keeps the session open (ruling 19)",
+            "merged_at": "2026-09-28T16:24:03Z"
+          },
+          {
+            "number": 2878,
+            "title": "test(mobile): trim the retained page-turn bound fixture to 28 cycles (#2753)",
+            "merged_at": "2026-09-28T16:22:47Z"
+          },
+          {
+            "number": 2879,
+            "title": "refactor(native): drop the recovery projection's canRestore, redundant with restoreOffered (#2773)",
+            "merged_at": "2026-09-28T16:17:24Z"
+          },
+          {
+            "number": 2877,
+            "title": "fix(mobile): reset hideAnswerMessages' asked flag and stop mutating the shared question fixture",
+            "merged_at": "2026-09-28T16:15:32Z"
+          },
+          {
+            "number": 2776,
+            "title": "feat(hub): search scopes, archived flag and message hits (S14b, phase 7 PR 25)",
+            "merged_at": "2026-09-28T16:12:22Z"
+          },
+          {
+            "number": 2874,
+            "title": "fix(paging): compare positions by Sub so the ordering is symmetric (#2729)",
+            "merged_at": "2026-09-28T16:09:40Z"
+          },
+          {
+            "number": 2856,
+            "title": "feat(doctor): structured session locations for non-reproducible sessions",
+            "merged_at": "2026-09-28T16:03:32Z"
+          },
+          {
+            "number": 2795,
+            "title": "fix(retention): a lease-owning binding no consumer names no longer wedges a restore",
+            "merged_at": "2026-09-28T16:02:12Z"
+          },
+          {
+            "number": 2870,
+            "title": "fix(native): a toast lets taps and scrolls through to the content behind it (#2702)",
+            "merged_at": "2026-09-28T15:58:59Z"
+          },
+          {
+            "number": 2869,
+            "title": "fix(mobile): a split cluster's single-member row keeps its turnId",
+            "merged_at": "2026-09-28T15:57:26Z"
+          },
+          {
+            "number": 2868,
+            "title": "fix(native): a turn's time marker is written once when rows interleave (#2693)",
+            "merged_at": "2026-09-28T15:56:21Z"
+          },
+          {
+            "number": 2864,
+            "title": "perf(native): memoize ConversationScreen's renderItem and fork callback",
+            "merged_at": "2026-09-28T15:53:34Z"
+          },
+          {
+            "number": 2791,
+            "title": "docs(mobile): phase 2 Board screenshots, device checks and demo hub additions (phase 2, Task 17)",
+            "merged_at": "2026-09-28T15:52:44Z"
+          },
+          {
+            "number": 2848,
+            "title": "docs(sdk): describe draftCheckpointPort's current shape, drop roadmap comment (#1793)",
+            "merged_at": "2026-09-28T15:40:39Z"
+          },
+          {
+            "number": 2851,
+            "title": "fix(plugins): Remove reports a failed delete-after-save like RemoveMarketplace (#1643)",
+            "merged_at": "2026-09-28T15:39:50Z"
+          },
+          {
+            "number": 2861,
+            "title": "fix(native): the session sheet's Stop runtime respects the Shut down states (#2683)",
+            "merged_at": "2026-09-28T15:39:32Z"
+          },
+          {
+            "number": 2859,
+            "title": "test: fix the appwire overflow deadline race and the transcriptindex package timeout",
+            "merged_at": "2026-09-28T15:38:19Z"
+          },
+          {
+            "number": 2858,
+            "title": "fix(transcriptindex): clear #2700's leftover-row Lows",
+            "merged_at": "2026-09-28T15:37:03Z"
+          },
+          {
+            "number": 2853,
+            "title": "agent: every reply goes through the result tool; size pieces before delegating",
+            "merged_at": "2026-09-28T15:34:53Z"
+          },
+          {
+            "number": 2846,
+            "title": "feat(sdk): publish which layouts a transcript hub transition changed (#1559)",
+            "merged_at": "2026-09-28T15:31:50Z"
+          },
+          {
+            "number": 2788,
+            "title": "fix(hub): a rename finishes even when it can't carry the refresh-refusal marker",
+            "merged_at": "2026-09-28T15:31:08Z"
+          },
+          {
+            "number": 2854,
+            "title": "fix(hub): land server Lows batch 5 and finish its two review findings (#2664)",
+            "merged_at": "2026-09-28T15:23:05Z"
+          },
+          {
+            "number": 2790,
+            "title": "feat(native): the ask dock (phase 3, PR 3)",
+            "merged_at": "2026-09-28T15:21:01Z"
+          },
+          {
+            "number": 2852,
+            "title": "agent: real-round write-side test for the compaction replay tail (#1151)",
+            "merged_at": "2026-09-28T15:19:28Z"
+          },
+          {
+            "number": 2850,
+            "title": "perf(sdk): memoize each ask_user item's parse across transcript folds",
+            "merged_at": "2026-09-28T15:15:53Z"
+          },
+          {
+            "number": 2845,
+            "title": "fix(native): fold the organization draft backend onto the shared draft backend (#1702)",
+            "merged_at": "2026-09-28T15:12:56Z"
+          },
+          {
+            "number": 2787,
+            "title": "fix(native): the Reader keeps your step across an identical re-read, and PR 9 checks it in the simulator",
+            "merged_at": "2026-09-28T15:10:14Z"
+          },
+          {
+            "number": 2849,
+            "title": "fix(web): transcript write failures ride hubErrors, not the store-wide hubError",
+            "merged_at": "2026-09-28T15:09:46Z"
+          },
+          {
+            "number": 2844,
+            "title": "test(api-package): the qualifier checks the build files list covers every shipped module (#1639)",
+            "merged_at": "2026-09-28T15:01:18Z"
+          },
+          {
+            "number": 2842,
+            "title": "feat(hub): the crash-fencing epoch model and the remote lease wrapper (08c slice 17)",
+            "merged_at": "2026-09-28T14:03:05Z"
+          },
+          {
+            "number": 2840,
+            "title": "feat(hub): the deploy pipeline's cross-file commit intents and boot reconciliation (08b \u00a77, \u00a79)",
+            "merged_at": "2026-09-28T13:39:06Z"
+          },
+          {
+            "number": 2841,
+            "title": "feat(hub): the corrupt operation store quarantines in custody-first order (08b slice 8)",
+            "merged_at": "2026-09-28T13:17:38Z"
+          },
+          {
+            "number": 2839,
+            "title": "feat(hub/settings): remnant teardown retry/recover and orphan resolve-first affordances (08b slice 16)",
+            "merged_at": "2026-09-28T12:38:21Z"
+          },
+          {
+            "number": 2836,
+            "title": "feat(hub): operation-store retention, compaction, dedup tombstones, and the cursor-invalidated refusal (08b \u00a74, \u00a78, \u00a711)",
+            "merged_at": "2026-09-28T10:59:32Z"
+          },
+          {
+            "number": 2838,
+            "title": "feat(hub): the Hosts operations polling, progress/terminal render, and replay (08b slice 15)",
+            "merged_at": "2026-09-28T10:58:19Z"
+          },
+          {
+            "number": 2806,
+            "title": "fix(web): the Markdown widget composes with its host, not past it",
+            "merged_at": "2026-09-28T09:56:16Z"
+          },
+          {
+            "number": 2833,
+            "title": "fix(plugins): a failed store-lock acquisition no longer leaks the lock path",
+            "merged_at": "2026-09-28T09:43:35Z"
+          },
+          {
+            "number": 2823,
+            "title": "feat(hub): the Hosts deploy/restart actions with plan confirmation (08b slice 14)",
+            "merged_at": "2026-09-28T09:35:26Z"
+          },
+          {
+            "number": 2830,
+            "title": "perf(sdk): cut navigation snapshot validation from five passes to two (#2478)",
+            "merged_at": "2026-09-28T09:22:37Z"
+          },
+          {
+            "number": 2835,
+            "title": "fix(instances): a clear-only edit on an implicit instance writes no shadow (#1024)",
+            "merged_at": "2026-09-28T09:19:03Z"
+          },
+          {
+            "number": 2837,
+            "title": "fix(agent): a mutation-named turn's interrupt marker names the turn it cut short",
+            "merged_at": "2026-09-28T09:18:15Z"
+          },
+          {
+            "number": 2832,
+            "title": "fix(sdk): state/navigation re-exports names explicitly so tsx loads it",
+            "merged_at": "2026-09-28T09:13:23Z"
+          },
+          {
+            "number": 2814,
+            "title": "test(web): drop redundant file-level afterEach(cleanup)",
+            "merged_at": "2026-09-28T09:07:09Z"
+          },
+          {
+            "number": 2834,
+            "title": "fix(web): unwire the threads store when connectionStore.client becomes null (#1749)",
+            "merged_at": "2026-09-28T09:05:02Z"
+          },
+          {
+            "number": 2829,
+            "title": "fix(hub): NeedsYou rows carry the stable workspace ref",
+            "merged_at": "2026-09-28T08:52:20Z"
+          },
+          {
+            "number": 2804,
+            "title": "fix(agent): keep the #1879 attention-retry pause on the retry callback",
+            "merged_at": "2026-09-28T08:52:14Z"
+          },
+          {
+            "number": 2825,
+            "title": "fix(tui): show raw bytes for a healed communicate with no recoverable message (#2535)",
+            "merged_at": "2026-09-28T08:49:48Z"
+          },
+          {
+            "number": 2831,
+            "title": "fix(native): inline code follows Dynamic Type in agent messages",
+            "merged_at": "2026-09-28T08:48:54Z"
+          },
+          {
+            "number": 2816,
+            "title": "feat(hub): the deploy pipeline's operations read, pagination, and cursors (08b \u00a78, \u00a710, \u00a711)",
+            "merged_at": "2026-09-28T08:47:55Z"
+          },
+          {
+            "number": 2828,
+            "title": "test(hubcore): one helper for the ReadSpawnedThread setup",
+            "merged_at": "2026-09-28T08:46:51Z"
+          },
+          {
+            "number": 2709,
+            "title": "refactor(mobile): read older pages and rehydrate through the shared v6 read path",
+            "merged_at": "2026-09-28T08:36:55Z"
+          },
+          {
+            "number": 2826,
+            "title": "fix(serve): join the idle-retirement goroutine before serve returns",
+            "merged_at": "2026-09-28T08:33:56Z"
+          },
+          {
+            "number": 2827,
+            "title": "fix(activity): load a page requested as ActivityList finishes loading (#2527)",
+            "merged_at": "2026-09-28T08:33:41Z"
+          },
+          {
+            "number": 2824,
+            "title": "fix(jobstore): surface trailing observation errors in path snapshot readers",
+            "merged_at": "2026-09-28T08:25:03Z"
+          },
+          {
+            "number": 2822,
+            "title": "test(cli): hold the unreachable port so a probe cannot reuse it (#2556)",
+            "merged_at": "2026-09-28T08:23:50Z"
+          },
+          {
+            "number": 2821,
+            "title": "docs(scenarios): confirm the branch build instead of grepping prompt prose (#2540)",
+            "merged_at": "2026-09-28T08:21:20Z"
+          },
+          {
+            "number": 2820,
+            "title": "test(web): fold seven inline IndexedDB write holds into holdNextWriteTransaction",
+            "merged_at": "2026-09-28T08:20:19Z"
+          },
+          {
+            "number": 2812,
+            "title": "fix(appwire-client): drop the pre-ready ping exemption and correct two stale comments",
+            "merged_at": "2026-09-28T08:14:09Z"
+          },
+          {
+            "number": 2686,
+            "title": "fix(transcriptindex): fail a skewed-schema sidecar into a rebuild, report only changed turns, lighten the rebuild test",
+            "merged_at": "2026-09-28T08:10:08Z"
+          },
+          {
+            "number": 2809,
+            "title": "docs(appwire-client): the README ownership summary keeps mutation reconciliation in the package (#2406)",
+            "merged_at": "2026-09-28T08:09:16Z"
+          },
+          {
+            "number": 2818,
+            "title": "perf(tui): decode tool-row raw arguments once",
+            "merged_at": "2026-09-28T08:09:04Z"
+          },
+          {
+            "number": 2817,
+            "title": "docs(doctor): name projRef's real callers and cite #2205 in the symlink comment",
+            "merged_at": "2026-09-28T08:06:19Z"
+          },
+          {
+            "number": 2815,
+            "title": "fix(agent): background reminder tells the truth in a one-shot run (#2644)",
+            "merged_at": "2026-09-28T08:01:04Z"
+          },
+          {
+            "number": 2813,
+            "title": "feat(hub): gate released last \u2014 the mutation reservation spans the manager's Remove/Update teardown (08b slice 13b)",
+            "merged_at": "2026-09-28T07:59:33Z"
+          },
+          {
+            "number": 2810,
+            "title": "fix(appwire-client): jitter reconnect backoff across clients (#2405)",
+            "merged_at": "2026-09-28T07:57:41Z"
+          },
+          {
+            "number": 2811,
+            "title": "fix(appwire-client): ignore a non-object WireMessage envelope before dereferencing (#2404)",
+            "merged_at": "2026-09-28T07:48:08Z"
+          },
+          {
+            "number": 2797,
+            "title": "fix(test-api-package): install or name the AppWire package deps (#1326)",
+            "merged_at": "2026-09-28T07:44:20Z"
+          },
+          {
+            "number": 2807,
+            "title": "fix(hubedge): reject browser-normalized external auth redirects (#2407)",
+            "merged_at": "2026-09-28T07:43:25Z"
+          },
+          {
+            "number": 2805,
+            "title": "fix(delegate): a steered message to a parked delegate is now consumed",
+            "merged_at": "2026-09-28T07:41:55Z"
+          },
+          {
+            "number": 2799,
+            "title": "fix(schema): real cross-process session-meta lock on Windows",
+            "merged_at": "2026-09-28T07:39:36Z"
+          },
+          {
+            "number": 2802,
+            "title": "test(server): a racing resync no longer fails the thread-history harness",
+            "merged_at": "2026-09-28T07:37:33Z"
+          },
+          {
+            "number": 2659,
+            "title": "feat(hub): deploy the hub's own build by default; add -no-deploy",
+            "merged_at": "2026-09-28T07:35:54Z"
+          },
+          {
+            "number": 2808,
+            "title": "docs(architecture): the TUI control path is AppWire, not hubapi HTTP (#2408)",
+            "merged_at": "2026-09-28T07:35:46Z"
+          },
+          {
+            "number": 2798,
+            "title": "fix(tool-fluency): live/CLI harnesses opt into the enforced sandbox",
+            "merged_at": "2026-09-28T07:35:02Z"
+          },
+          {
+            "number": 2803,
+            "title": "refactor(agent): delete the dead observer-link shutdown machinery",
+            "merged_at": "2026-09-28T07:29:00Z"
+          },
+          {
+            "number": 2801,
+            "title": "test(agent): wait on the shell's real close completion in the cancel-ordering pin",
+            "merged_at": "2026-09-28T07:26:51Z"
+          },
+          {
+            "number": 2800,
+            "title": "docs(sandbox): describe live enforcement and both breaker keys (#2403)",
+            "merged_at": "2026-09-28T07:21:59Z"
+          },
+          {
+            "number": 2792,
+            "title": "fix(retention): a lost scratch directory or pin no longer wedges a restore",
+            "merged_at": "2026-09-28T06:46:55Z"
+          },
+          {
+            "number": 2781,
+            "title": "fix(web): a failed tool call no longer auto-opens in the transcript",
+            "merged_at": "2026-09-28T06:33:27Z"
+          },
+          {
+            "number": 2789,
+            "title": "fix(web): the task prompt renders at the caption step, not prose size",
+            "merged_at": "2026-09-28T06:29:05Z"
+          },
+          {
+            "number": 2771,
+            "title": "docs(plans): full plan for S6 direct subagent stop, S15 session access, S16 transcript history (phase 7 PRs 30-33)",
+            "merged_at": "2026-09-28T06:02:56Z"
+          },
+          {
+            "number": 2755,
+            "title": "fix(auth): a refused Codex refresh needs a sign-in (S11b, phase 7 PR 23)",
+            "merged_at": "2026-09-28T06:02:01Z"
+          },
+          {
+            "number": 2765,
+            "title": "remove the no_project_prompts setting",
+            "merged_at": "2026-09-28T06:01:39Z"
+          },
+          {
+            "number": 2784,
+            "title": "feat(native): the Reader (phase 4, PR 5a)",
+            "merged_at": "2026-09-28T06:00:29Z"
+          },
+          {
+            "number": 2718,
+            "title": "feat(hub): the operation-owned attach-under-gate primitive and restart reattach (08b slice 13)",
+            "merged_at": "2026-09-28T05:57:35Z"
+          },
+          {
+            "number": 2778,
+            "title": "fix(native): the Board's wash runs its full fade, and a touch on the skeleton holds no empty Board",
+            "merged_at": "2026-09-28T05:31:05Z"
+          },
+          {
+            "number": 2772,
+            "title": "fix(native): cwdRelative, setext headings, comment ids, submittedHere: RoboRev fast-follow to #2762 and #2767",
+            "merged_at": "2026-09-28T05:21:58Z"
+          },
+          {
+            "number": 2766,
+            "title": "feat(native): queued messages and the outbox, inline (phase 3, PR 2)",
+            "merged_at": "2026-09-28T05:15:42Z"
+          },
+          {
+            "number": 2768,
+            "title": "feat(native): select mode, and a Board that holds still (phase 2, PR 4c)",
+            "merged_at": "2026-09-28T05:12:11Z"
+          },
+          {
+            "number": 2767,
+            "title": "feat(native): send to a session from a screen above it (phase 4, PR 1)",
+            "merged_at": "2026-09-28T05:06:18Z"
+          },
+          {
+            "number": 2737,
+            "title": "fix(native): the Session's attention order matches the Board, and chips debounce with the connection bar",
+            "merged_at": "2026-09-28T05:02:23Z"
+          },
+          {
+            "number": 2748,
+            "title": "fix(sessionlog): bound each record so the reader can read back what the writer accepts",
+            "merged_at": "2026-09-28T05:01:39Z"
+          },
+          {
+            "number": 2746,
+            "title": "fix(contextmgr): surface opt-in memory strategy summarization failures",
+            "merged_at": "2026-09-28T04:58:44Z"
+          },
+          {
+            "number": 2760,
+            "title": "test(agent): pin installation-ID durability across session restore",
+            "merged_at": "2026-09-28T04:51:20Z"
+          },
+          {
+            "number": 2754,
+            "title": "fix(agent): surface the observer-link shutdown timeout instead of swallowing it",
+            "merged_at": "2026-09-28T04:47:25Z"
+          },
+          {
+            "number": 2759,
+            "title": "test(bundled): pin agent capability metadata, not prompt prose (#2401)",
+            "merged_at": "2026-09-28T04:46:06Z"
+          },
+          {
+            "number": 2758,
+            "title": "fix(sessionlog): separate a torn final line before the next append (#2394)",
+            "merged_at": "2026-09-28T04:46:00Z"
+          },
+          {
+            "number": 2756,
+            "title": "test(fuzz): give the program-fuzz targets real input domains (#2400)",
+            "merged_at": "2026-09-28T04:45:54Z"
+          },
+          {
+            "number": 2732,
+            "title": "feat(hub): the message search index (S14a, phase 7 PR 24)",
+            "merged_at": "2026-09-28T04:40:58Z"
+          },
+          {
+            "number": 2762,
+            "title": "feat(native): the Reader's document foundations (phase 4, PR 4)",
+            "merged_at": "2026-09-28T04:32:52Z"
+          },
+          {
+            "number": 2750,
+            "title": "fix(llmcall): validate --format before the schema-mode branch (#2399)",
+            "merged_at": "2026-09-28T04:17:54Z"
+          },
+          {
+            "number": 2744,
+            "title": "fix(native): S5 activity-poll fast-follow (RoboRev #2651 findings)",
+            "merged_at": "2026-09-28T04:13:41Z"
+          },
+          {
+            "number": 2752,
+            "title": "fix(native): Retry, sign-in, image pager, answers and subagent times: RoboRev fast-follow to #2742",
+            "merged_at": "2026-09-28T04:08:22Z"
+          },
+          {
+            "number": 2733,
+            "title": "fix(appwire-client): surface isolated subscriber failures through a diagnostic seam",
+            "merged_at": "2026-09-28T04:03:16Z"
+          },
+          {
+            "number": 2704,
+            "title": "feat(native): search's Projects results and project tap (phase 2, p2y)",
+            "merged_at": "2026-09-28T03:55:35Z"
+          },
+          {
+            "number": 2723,
+            "title": "fix(execenv): surface real remove failures instead of reporting a deleted path (#2376)",
+            "merged_at": "2026-09-28T03:54:46Z"
+          },
+          {
+            "number": 2721,
+            "title": "feat(native): the long-press menu on Board rows (phase 2, PR 4b)",
+            "merged_at": "2026-09-28T03:54:40Z"
+          },
+          {
+            "number": 2738,
+            "title": "fix(envctx): key the disk-pressure cache on the workspace cwd (#2389)",
+            "merged_at": "2026-09-28T03:54:00Z"
+          },
+          {
+            "number": 2739,
+            "title": "fix(contextmgr): checkpoint pairs writes with results, not attempts (#2351)",
+            "merged_at": "2026-09-28T03:48:43Z"
+          },
+          {
+            "number": 2688,
+            "title": "fix(agent): bound job output descriptor walk to the projects dir",
+            "merged_at": "2026-09-28T03:47:39Z"
+          },
+          {
+            "number": 2740,
+            "title": "fix(tui): the model picker uses the registry's dated-suffix rule (#2391)",
+            "merged_at": "2026-09-28T03:47:09Z"
+          },
+          {
+            "number": 2706,
+            "title": "fix(agent): retry durability for recorded COMMUNICATE and completions, then fail closed; notice payload validation; recovery marker ordering",
+            "merged_at": "2026-09-28T03:42:11Z"
+          },
+          {
+            "number": 2742,
+            "title": "feat(native): the rest of the transcript (phase 3, PR 9)",
+            "merged_at": "2026-09-28T03:41:29Z"
+          },
+          {
+            "number": 2726,
+            "title": "feat(hub): the Board's notices from the hub (S11a, phase 7 PR 22)",
+            "merged_at": "2026-09-28T03:41:24Z"
+          },
+          {
+            "number": 2694,
+            "title": "feat(native): the Session's nav bar, \u22ef menu with detail levels, context chips and connection bar (phase 3, PR 4)",
+            "merged_at": "2026-09-28T03:36:05Z"
+          },
+          {
+            "number": 2700,
+            "title": "fix(read-model): stale below-floor reads answer cursor-stale, CatchUpTo re-scans leftover updates, backfill accumulates by snapshot identity",
+            "merged_at": "2026-09-28T03:31:08Z"
+          },
+          {
+            "number": 2651,
+            "title": "feat(native): the Board's pulse meters and quiet labels read the hub (S5)",
+            "merged_at": "2026-09-28T03:24:26Z"
+          },
+          {
+            "number": 2728,
+            "title": "feat(hub): Finished rows open with the agent's last words (S1d hub, phase 7 PR 11)",
+            "merged_at": "2026-09-28T03:17:31Z"
+          },
+          {
+            "number": 2731,
+            "title": "fix(native): step evidence and read retries, RoboRev fast-follow to #2717",
+            "merged_at": "2026-09-28T03:17:17Z"
+          },
+          {
+            "number": 2722,
+            "title": "fix(agent/task): deep-copy task snapshots and clone caller deps at the store boundary",
+            "merged_at": "2026-09-28T03:16:26Z"
+          },
+          {
+            "number": 2719,
+            "title": "fix(doctor): surface sessions with corrupt metadata instead of omitting them (#2358)",
+            "merged_at": "2026-09-28T03:16:48Z"
+          },
+          {
+            "number": 2716,
+            "title": "test(evener-fuzzcov): the gap-input fuzz target asserts its parser and consumer oracles",
+            "merged_at": "2026-09-28T03:14:56Z"
+          },
+          {
+            "number": 2727,
+            "title": "agent: rewrite the system prompt prose",
+            "merged_at": "2026-09-28T03:12:30Z"
+          },
+          {
+            "number": 2714,
+            "title": "fix(session): snapshot history for AfterAction so attention cannot race it (#2348)",
+            "merged_at": "2026-09-28T03:01:51Z"
+          },
+          {
+            "number": 2717,
+            "title": "feat(native): step evidence and scrolling (phase 3, PR 8)",
+            "merged_at": "2026-09-28T02:51:16Z"
+          },
+          {
+            "number": 2698,
+            "title": "agent: one system prompt template",
+            "merged_at": "2026-09-28T02:51:37Z"
+          },
+          {
+            "number": 2658,
+            "title": "fix(agent): every subagent keeps its own-job supervision tools (#2645)",
+            "merged_at": "2026-09-28T02:38:48Z"
+          },
+          {
+            "number": 2679,
+            "title": "fix(contextmgr): keep the original task when a checkpoint sheds to budget",
+            "merged_at": "2026-09-28T02:37:46Z"
+          },
+          {
+            "number": 2713,
+            "title": "fix(repair): omit the unchecked example when a branch supplies the required list (#622 review)",
+            "merged_at": "2026-09-28T02:35:04Z"
+          },
+          {
+            "number": 2711,
+            "title": "feat(hub): Failed rows say why (S1c, phase 7 PR 9)",
+            "merged_at": "2026-09-28T02:30:28Z"
+          },
+          {
+            "number": 2712,
+            "title": "docs(mobile): plan S11 and S14 in full as server PRs 22 to 25",
+            "merged_at": "2026-09-28T02:28:45Z"
+          },
+          {
+            "number": 2701,
+            "title": "test(execenv): branch the fuzz TMPDIR oracle on session-temp support",
+            "merged_at": "2026-09-28T02:27:00Z"
+          },
+          {
+            "number": 2696,
+            "title": "fix(plugins): hand back the aside clone when a swap's restore fails (#1033)",
+            "merged_at": "2026-09-28T02:25:35Z"
+          },
+          {
+            "number": 2707,
+            "title": "fix(agent): stop admission observes caller cancellation before the fence (#2341)",
+            "merged_at": "2026-09-28T02:24:53Z"
+          },
+          {
+            "number": 2710,
+            "title": "fix(evener-tui): close the hub client on startup failure and TUI exit (#2347)",
+            "merged_at": "2026-09-28T02:17:05Z"
+          },
+          {
+            "number": 2586,
+            "title": "docs(mobile): the phase 6 plan, part 3: what you left behind sends itself",
+            "merged_at": "2026-09-28T02:08:32Z"
+          },
+          {
+            "number": 2575,
+            "title": "feat(native): the transcript's reading surface (phase 3, PR 7)",
+            "merged_at": "2026-09-28T02:07:36Z"
+          },
+          {
+            "number": 2699,
+            "title": "feat(native): swipe actions on Board rows (phase 2, PR 4a)",
+            "merged_at": "2026-09-28T02:02:57Z"
+          },
+          {
+            "number": 2697,
+            "title": "test(web): pin the in-flight credential check against the store's own post-save refresh (#1435)",
+            "merged_at": "2026-09-28T01:58:56Z"
+          },
+          {
+            "number": 2690,
+            "title": "fix(repair): read a branch-level enum from its combinator arm (#622)",
+            "merged_at": "2026-09-28T01:50:56Z"
+          },
+          {
+            "number": 2588,
+            "title": "docs(mobile): the phase 6 plan, part 2: in-app alerts, the Board hold, and the screenshots",
+            "merged_at": "2026-09-28T01:47:34Z"
+          },
+          {
+            "number": 2578,
+            "title": "feat(native): the status tray and one Send (phase 3, PR 1)",
+            "merged_at": "2026-09-28T01:46:00Z"
+          },
+          {
+            "number": 2691,
+            "title": "docs(mobile): a handoff memo for landing the iPhone redesign",
+            "merged_at": "2026-09-28T01:45:56Z"
+          },
+          {
+            "number": 2689,
+            "title": "fix(native): a live session shows once in Board search",
+            "merged_at": "2026-09-28T01:45:52Z"
+          },
+          {
+            "number": 2673,
+            "title": "fix(web): gate applyHubChange on the transcript display section's support",
+            "merged_at": "2026-09-28T01:43:23Z"
+          },
+          {
+            "number": 2650,
+            "title": "test(web): a test body that outlives its test stops at its Testing Library waits (#2607)",
+            "merged_at": "2026-09-28T01:35:19Z"
+          },
+          {
+            "number": 2682,
+            "title": "fix(native): the hub's seen marker keeps what it should and prunes every Board row (S4 fast-follow)",
+            "merged_at": "2026-09-28T01:30:26Z"
+          },
+          {
+            "number": 2672,
+            "title": "fix(evener): route the seeding warning through injected stderr (Fixes #2390)",
+            "merged_at": "2026-09-28T01:26:37Z"
+          },
+          {
+            "number": 2621,
+            "title": "feat(hub): the deploy pipeline's remnants and teardown repair (08b slice 12)",
+            "merged_at": "2026-09-28T01:24:22Z"
+          },
+          {
+            "number": 2674,
+            "title": "perf(web): derive the live transcript projection once per revision",
+            "merged_at": "2026-09-28T01:15:55Z"
+          },
+          {
+            "number": 2671,
+            "title": "fix(build): fail make install when a managed binary copy fails (#2380)",
+            "merged_at": "2026-09-28T01:15:26Z"
+          },
+          {
+            "number": 2668,
+            "title": "fix(wire): bound hub and daemon HTTP header and idle deadlines",
+            "merged_at": "2026-09-28T01:10:05Z"
+          },
+          {
+            "number": 2675,
+            "title": "feat(hub): rows name the first pending question (S1b hub, phase 7 PR 8)",
+            "merged_at": "2026-09-28T01:07:00Z"
+          },
+          {
+            "number": 2634,
+            "title": "feat(native): Board notices and search (phase 2, PR 5)",
+            "merged_at": "2026-09-28T01:04:20Z"
+          },
+          {
+            "number": 2663,
+            "title": "test(web): a test whose teardown throws no longer leaks into the next test (#2604)",
+            "merged_at": "2026-09-28T00:55:49Z"
+          },
+          {
+            "number": 2625,
+            "title": "feat(native): the Board uses the hub's seen marker (phase 2, PR 7)",
+            "merged_at": "2026-09-28T00:47:04Z"
+          },
+          {
+            "number": 2667,
+            "title": "fix(ci): retry the gitleaks install so a transient fetch cannot fail a green branch",
+            "merged_at": "2026-09-28T00:46:52Z"
+          },
+          {
+            "number": 2475,
+            "title": "feat: transcript is the only history read model (activation)",
+            "merged_at": "2026-09-28T00:38:23Z"
+          },
+          {
+            "number": 2662,
+            "title": "fix(web): the trailing held-steer stack reads the session measure itself",
+            "merged_at": "2026-09-28T00:25:36Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v0.3.4",
+            "name": "v0.3.4",
+            "published_at": "2026-10-01T09:41:30Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.3",
+            "name": "v0.3.3",
+            "published_at": "2026-09-30T22:42:54Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.2",
+            "name": "v0.3.2",
+            "published_at": "2026-09-30T16:55:15Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.1",
+            "name": "v0.3.1",
+            "published_at": "2026-09-30T06:38:54Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.0",
+            "name": "v0.3.0",
+            "published_at": "2026-09-29T13:38:51Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.2.5",
+            "name": "v0.2.5",
+            "published_at": "2026-09-29T12:50:38Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.2.4",
+            "name": "v0.2.4",
+            "published_at": "2026-09-29T02:59:39Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.2.3",
+            "name": "v0.2.3",
+            "published_at": "2026-09-29T00:26:26Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.2.2",
+            "name": "v0.2.2",
+            "published_at": "2026-09-28T20:07:52Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.2.1",
+            "name": "v0.2.1",
+            "published_at": "2026-09-28T17:54:51Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.2.0",
+            "name": "v0.2.0",
+            "published_at": "2026-09-28T15:52:25Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.3.4 published 2026-10-01T09:41:30Z; tagged release v0.3.3 published 2026-09-30T22:42:54Z; tagged release v0.3.2 published 2026-09-30T16:55:15Z; tagged release v0.3.1 published 2026-09-30T06:38:54Z; tagged release v0.3.0 published 2026-09-29T13:38:51Z; tagged release v0.2.5 published 2026-09-29T12:50:38Z; tagged release v0.2.4 published 2026-09-29T02:59:39Z; tagged release v0.2.3 published 2026-09-29T00:26:26Z; tagged release v0.2.2 published 2026-09-28T20:07:52Z; tagged release v0.2.1 published 2026-09-28T17:54:51Z; tagged release v0.2.0 published 2026-09-28T15:52:25Z",
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 10
+          }
+        ],
+        "loc_added": 518,
+        "loc_removed": 439,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/agentic-usage-meter": {
+        "commits": 8,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 8
+          }
+        ],
+        "loc_added": 1162,
+        "loc_removed": 79,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.2.7",
+            "name": "Agentic Usage Meter 0.2.7",
+            "published_at": "2026-09-28T22:52:06Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.2.7 published 2026-09-28T22:52:06Z",
+        "description": "macOS menu-bar meter for coding-agent subscription quotas",
+        "html_url": "https://github.com/prime-radiant-inc/agentic-usage-meter"
+      },
+      "obra/lace": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "ada-sen",
+            "count": 2
+          }
+        ],
+        "loc_added": 278,
+        "loc_removed": 8,
+        "merged_prs": [
+          {
+            "number": 417,
+            "title": "docs: document the recall tool",
+            "merged_at": "2026-09-30T15:25:52Z"
+          },
+          {
+            "number": 416,
+            "title": "docs: add CONTRIBUTING.md",
+            "merged_at": "2026-09-30T15:25:48Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/muse-skills": {
+        "commits": 6,
+        "authors": [
+          {
+            "name": "file-integrity",
+            "count": 6
+          }
+        ],
+        "loc_added": 26112,
+        "loc_removed": 1316,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-09-29T13:02:55Z)",
+        "description": null,
+        "html_url": "https://github.com/obra/muse-skills"
+      },
+      "obra/superpowers-chrome": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "ada-sen",
+            "count": 2
+          }
+        ],
+        "loc_added": 2379,
+        "loc_removed": 134,
+        "merged_prs": [
+          {
+            "number": 54,
+            "title": "fix(mcp): render dialog artifacts for the midFlight click/select/eval shape",
+            "merged_at": "2026-09-30T15:39:38Z"
+          },
+          {
+            "number": 52,
+            "title": "Fix: eval/extract/attr leaking data-sen-secret content past the guard",
+            "merged_at": "2026-09-30T15:31:44Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v3.0.8",
+            "name": "v3.0.8 - data-sen-secret marking (an accident guard, not a boundary) and dialog text kept off disk",
+            "published_at": "2026-09-30T15:40:03Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v3.0.8 published 2026-09-30T15:40:03Z",
+        "description": "Claude Code plugin for direct Chrome browser control via DevTools Protocol - zero dependencies",
+        "html_url": "https://github.com/obra/superpowers-chrome"
+      }
+    }
   }
 }
