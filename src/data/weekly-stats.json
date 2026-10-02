@@ -20717,12 +20717,12 @@
   "2026-09-28": {
     "summary": {
       "repos_active": 6,
-      "featured_count": 3,
-      "second_tier_count": 3,
+      "featured_count": 4,
+      "second_tier_count": 2,
       "commits": 778,
       "merged_prs": 752,
-      "loc_added": 469582,
-      "loc_removed": 215532,
+      "loc_added": 495694,
+      "loc_removed": 216848,
       "contributors": 4,
       "tagged_releases": 13,
       "commit_only_bumps": 0
@@ -24651,11 +24651,10 @@
         "merged_prs": [],
         "tagged_releases": [],
         "commit_only_bumps": [],
-        "featured": false,
-        "featured_reason": null,
+        "featured": true,
+        "featured_reason": "created this week (2026-09-29T13:02:55Z)",
         "description": null,
-        "html_url": "https://github.com/obra/muse-skills",
-        "loc_suppressed": true
+        "html_url": "https://github.com/obra/muse-skills"
       },
       "obra/superpowers-chrome": {
         "commits": 2,

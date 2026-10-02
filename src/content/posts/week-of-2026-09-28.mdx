@@ -1,17 +1,17 @@
 ---
-title: "evener cuts eleven releases in one week, superpowers-chrome patches a credential-marker leak in eval/extract/attr, and agentic-usage-meter ships banked-reset visibility"
+title: "evener ships v0.2.0 through v0.3.4, superpowers-chrome closes a credential-marker leak in eval/extract/attr, and agentic-usage-meter adds banked-reset visibility"
 week: "Week of September 28, 2026"
 dateStart: 2026-09-28
 dateEnd: 2026-10-04
 pubDate: 2026-10-02
-summary: "The most recent week, still in progress: prime-radiant-inc/evener cuts eleven tagged releases, v0.2.0 through v0.3.4, its heaviest release cadence yet; obra/superpowers-chrome ships v3.0.8, closing a credential-marker leak in eval/extract/attr; and prime-radiant-inc/agentic-usage-meter ships v0.2.7, adding visibility into banked subscription resets. A new repo, obra/muse-skills, lands as daily automated snapshots rather than hand-authored work. Partial week — data runs through Friday evening, not the full calendar week."
+summary: "This is a partial week — data runs through Friday evening, not the full calendar week — in which prime-radiant-inc/evener, prime-radiant-inc/agentic-usage-meter, and obra/superpowers-chrome shipped tagged releases, and obra/muse-skills launched as a new repo of automated daily skill snapshots."
 draft: false
 ---
 
 import WeekSummary from '../../components/WeekSummary.astro';
 import RepoStat from '../../components/RepoStat.astro';
 
-Three repos shipped tagged releases this week: **`prime-radiant-inc/evener`** cuts eleven, v0.2.0 through v0.3.4, its heaviest release cadence yet; **`obra/superpowers-chrome`** ships v3.0.8, closing a credential-marker leak in `eval`/`extract`/`attr`; and **`prime-radiant-inc/agentic-usage-meter`** ships v0.2.7, adding visibility into banked subscription resets. This week is still open: the data below runs through Friday evening, not the full calendar week.
+This is a partial week — data runs through Friday evening, not the full calendar week — in which **`prime-radiant-inc/evener`**, **`prime-radiant-inc/agentic-usage-meter`**, and **`obra/superpowers-chrome`** shipped tagged releases.
 
 <section class="summary">
 
@@ -33,7 +33,7 @@ Three repos shipped tagged releases this week: **`prime-radiant-inc/evener`** cu
 
 <RepoStat org="prime-radiant-inc" name="evener" week="2026-09-28" />
 
-Eleven tagged releases this week, v0.2.0 through v0.3.4 (the version numbering skips straight from v0.2.5 to v0.3.0 — nothing missing, just not sequential by tenths). The work underneath spans several threads: a continuing native/mobile push — an in-progress iPhone redesign, a phased "Board" notices-and-search feature, and hub navigation changes (pairing, first run, hosts in the hub) — alongside a long tail of fast-follow fixes against review findings; a hub/appwire/sdk typing refactor, sharing typed receipt fields for mutation IDs, scoped activity invalidations, and host-forwarding and task-list result types across the client/server boundary; and credential/auth handling in the hub, including a refreshed launch model list pushed to clients and a refused credential surfacing as an error immediately. Smaller items: web composer UI cleanup and a performance pass, caching the model picker's launch list and computing hub tree-sort titles once instead of per comparison. Sole author: **Jesse Vincent (staff)**.
+Tagged releases v0.2.0 through v0.3.4. Work spanned a continuing native/mobile push — an in-progress iPhone redesign, a phased "Board" notices-and-search feature, and hub navigation changes (pairing, first run, hosts in the hub) — alongside fast-follow fixes against review findings; a hub/appwire/sdk typing refactor sharing typed receipt fields for mutation IDs, scoped activity invalidations, and host-forwarding and task-list result types across the client/server boundary; and credential/auth handling in the hub, including a refreshed launch model list pushed to clients and a refused credential surfacing as an error immediately. Also landed: web composer UI cleanup, and a performance pass caching the model picker's launch list and computing hub tree-sort titles once instead of per comparison. Sole author: **Jesse Vincent (staff)**.
 
 </article>
 
@@ -45,7 +45,7 @@ Eleven tagged releases this week, v0.2.0 through v0.3.4 (the version numbering s
 
 <RepoStat org="prime-radiant-inc" name="agentic-usage-meter" week="2026-09-28" />
 
-Tagged release v0.2.7. Added visibility into "banked" subscription resets for Codex and Claude — fetching the banked reset counts and individual grants and showing them as an expandable list with expiry dates — then tightened the existing UI by collapsing banked resets into a single subscription-count row and keeping credit balances readable in account rows. Also fixed a packaging issue that was losing structured SwiftPM resource-bundle metadata. One more commit landed after the release: clearing live browser session data before removing a profile. Sole author: **Jesse Vincent (staff)**.
+Tagged release v0.2.7. Added visibility into "banked" subscription resets for Codex and Claude — fetching the banked reset counts and individual grants and showing them as an expandable list with expiry dates — then tightened the existing UI by collapsing banked resets into a single subscription-count row and keeping credit balances readable in account rows. Also fixed a packaging issue that was losing structured SwiftPM resource-bundle metadata, and, separately, cleared live browser session data before removing a profile. Sole author: **Jesse Vincent (staff)**.
 
 </article>
 
@@ -57,7 +57,19 @@ Tagged release v0.2.7. Added visibility into "banked" subscription resets for Co
 
 <RepoStat org="obra" name="superpowers-chrome" week="2026-09-28" />
 
-Tagged release v3.0.8. A real security fix: the existing `data-sen-secret` DOM-marker guard only caught credential-shaped content when a caller read back full serialized HTML, so `eval`, `extract`, and `attr` calls that returned plain text or a bare attribute value could still leak a marked secret's value verbatim — reported by a downstream user, confirmed reproducible on v3.0.6, and fixed by checking the live DOM for the marker before any of those code paths run. A follow-up fix corrected how dialog text renders when an action triggers a native browser dialog mid-flight, which had been showing "unknown" and "???" placeholders instead of the dialog's actual text and accept/dismiss instructions. Both merged PRs and the release: **Ada Sen (staff)**. Two PRs opened but not merged this window remain open as of the snapshot: Ada Sen's own follow-up scrubbing password/one-time-code fields from capture, and an outside contributor's (`sophieow`) addition of a `CHROME_WS_HEADLESS` environment variable.
+Tagged release v3.0.8. The existing `data-sen-secret` DOM-marker guard only caught credential-shaped content when a caller read back full serialized HTML, so `eval`, `extract`, and `attr` calls that returned plain text or a bare attribute value could still leak a marked secret's value verbatim — reported by a downstream user, confirmed reproducible on v3.0.6, and fixed by checking the live DOM for the marker before any of those code paths run. A follow-up fix corrected how dialog text renders when an action triggers a native browser dialog mid-flight, which had been showing "unknown" and "???" placeholders instead of the dialog's actual text and accept/dismiss instructions. Sole author: **Ada Sen (staff)**. Open but not yet merged as of the snapshot: Ada Sen's own follow-up scrubbing password/one-time-code fields from capture, and an outside contributor's (`sophieow`) addition of a `CHROME_WS_HEADLESS` environment variable.
+
+</article>
+
+<article class="repo">
+
+### [obra/muse-skills](https://github.com/obra/muse-skills)
+
+<p class="repo-desc">No repository description set.</p>
+
+<RepoStat org="obra" name="muse-skills" week="2026-09-28" />
+
+A new repo of automated daily skill snapshots, under a git identity with no linked GitHub account; no human commits to attribute.
 
 </article>
 
@@ -75,19 +87,7 @@ Tagged release v3.0.8. A real security fix: the existing `data-sen-secret` DOM-m
 
 <RepoStat org="obra" name="lace" week="2026-09-28" />
 
-Two small docs PRs: a CONTRIBUTING.md, including a correction to match the actual pre-commit hook configuration and review follow-ups scoping the self-merge rule and documenting test-suite skip conditions; and documentation for the repo's `recall` tool, correcting its advertised exclusion syntax from a leading `-` to the actual `NOT` operator and documenting read/thread size caps and what the redaction list matches. **Ada Sen (staff)**, with Jesse Vincent co-authoring both.
-
-</article>
-
-<article class="repo">
-
-### [obra/muse-skills](https://github.com/obra/muse-skills)
-
-<p class="repo-desc">No repository description set.</p>
-
-<RepoStat org="obra" name="muse-skills" week="2026-09-28" />
-
-A new repo this week: six commits, all automated daily snapshots (plus one small README add), committed under a git identity with no linked GitHub account. No merged PRs, no releases, and no human commit to attribute this to.
+Shipped a CONTRIBUTING.md — including a correction to match the actual pre-commit hook configuration, plus review follow-ups scoping the self-merge rule and documenting test-suite skip conditions — and documentation for the repo's `recall` tool, correcting its advertised exclusion syntax from a leading `-` to the actual `NOT` operator and documenting read/thread size caps and what the redaction list matches. **Ada Sen (staff)**, with Jesse Vincent co-authoring.
 
 </article>
 
