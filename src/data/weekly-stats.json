@@ -20721,8 +20721,8 @@
       "second_tier_count": 2,
       "commits": 778,
       "merged_prs": 752,
-      "loc_added": 495694,
-      "loc_removed": 216848,
+      "loc_added": 469582,
+      "loc_removed": 215532,
       "contributors": 4,
       "tagged_releases": 13,
       "commit_only_bumps": 0
@@ -24654,7 +24654,8 @@
         "featured": true,
         "featured_reason": "created this week (2026-09-29T13:02:55Z)",
         "description": null,
-        "html_url": "https://github.com/obra/muse-skills"
+        "html_url": "https://github.com/obra/muse-skills",
+        "loc_suppressed": true
       },
       "obra/superpowers-chrome": {
         "commits": 2,

@@ -64,6 +64,14 @@ function fmt(n: number) {
 <li><strong>{fmt(s.commits)}</strong> commits</li>
 <li><strong>{fmt(s.merged_prs)}</strong> merged PRs</li>
 <li><strong>+{fmt(s.loc_added)} / −{fmt(s.loc_removed)}</strong> lines</li>
-<li><strong>{fmt(s.contributors)}</strong> contributors</li>
+{/* s.contributors is tools/gen_stats.py's contributor_identity()-deduped
+   count of distinct commit identities for the week -- bots and
+   unresolved/no-GitHub-account identities included, deliberately, by
+   that function's own docstring (verified against week-of-2026-09-14's
+   stored count of 10, which includes github-actions[bot] and
+   dependabot[bot]). Labeled "commit identities," not "contributors," so
+   the number matches what it has always counted, here and on every
+   prior week this component has ever rendered. */}
+<li><strong>{fmt(s.contributors)}</strong> commit identities</li>
 <li><strong>{fmt(s.tagged_releases)}</strong> tagged releases</li>
 </ul>
