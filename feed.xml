@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-09-25T00:00:00.000Z</updated>
+  <updated>2026-10-02T00:00:00.000Z</updated>
+  <entry>
+    <title>evener ships v0.2.0 through v0.3.4, superpowers-chrome closes a credential-marker leak in eval/extract/attr, and agentic-usage-meter adds banked-reset visibility</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-09-28" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-09-28</id>
+    <updated>2026-10-02T00:00:00.000Z</updated>
+    <published>2026-10-02T00:00:00.000Z</published>
+    <summary>This is a partial week — data runs through Friday evening, not the full calendar week — in which prime-radiant-inc/evener, prime-radiant-inc/agentic-usage-meter, and obra/superpowers-chrome shipped tagged releases, and obra/muse-skills launched as a new repo of automated daily skill snapshots.</summary>
+  </entry>
   <entry>
     <title>blogosphere cuts its first release behind a signed macOS build pipeline, superpowers and superpowers-chrome each ship a point release, and evener picks up an outside contributor&apos;s code-signing work</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-09-21" />
