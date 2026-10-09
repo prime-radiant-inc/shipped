@@ -1,17 +1,17 @@
 ---
-title: "evener ships v0.3.7 behind a finished memory index, superpowers-chrome defaults to redacting secrets exposed at page load, and a new repo debuts a morning-routine board"
+title: "evener tags v0.3.7 and finishes a generated memory index, superpowers-chrome defaults to redacting secrets exposed at page load, and a new repo debuts a morning-routine board"
 week: "Week of October 5, 2026"
 dateStart: 2026-10-05
 dateEnd: 2026-10-11
 pubDate: 2026-10-09
-summary: "Partial week — data runs through Friday evening, not the full calendar week. prime-radiant-inc/evener ships v0.3.7 behind a newly-finished generated memory index and a completed notification-semantics cleanup; obra/superpowers-chrome ships v3.0.11, defaulting to redacting secrets present at page load; and a new repo, obra/morning-routine-board, debuts as a from-scratch chore-checklist PWA built in a single day."
+summary: "Partial week — data runs through Friday evening, not the full calendar week. prime-radiant-inc/evener tags v0.3.7 and finishes a generated memory index, with two of three notification-semantics cleanup PRs landing; obra/superpowers-chrome ships v3.0.11, defaulting to redacting secrets present at page load; and a new repo, obra/morning-routine-board, debuts as a from-scratch chore-checklist PWA built in a single day."
 draft: false
 ---
 
 import WeekSummary from '../../components/WeekSummary.astro';
 import RepoStat from '../../components/RepoStat.astro';
 
-Three things anchor this partial week: **`prime-radiant-inc/evener`** ships v0.3.7 behind a newly-finished generated memory index and a completed notification-semantics cleanup; **`obra/superpowers-chrome`** ships v3.0.11, closing a gap where secrets visible at page *load* time weren't redacted by default; and a brand-new repo, **`obra/morning-routine-board`**, debuts as a from-scratch chore-checklist PWA Jesse built for his kids in a single day. This week is still open: the data below runs through Friday evening, not the full calendar week.
+Three things anchor this partial week: **`prime-radiant-inc/evener`** tags v0.3.7 and finishes a generated memory index, with two of the three notification-semantics cleanup PRs landing; **`obra/superpowers-chrome`** ships v3.0.11, closing a gap where secrets visible at page *load* time weren't redacted by default; and a brand-new repo, **`obra/morning-routine-board`**, debuts as a from-scratch chore-checklist PWA Jesse built for his kids in a single day. This week is still open: the data below runs through Friday evening, not the full calendar week.
 
 <section class="summary">
 
@@ -33,7 +33,7 @@ Three things anchor this partial week: **`prime-radiant-inc/evener`** ships v0.3
 
 <RepoStat org="prime-radiant-inc" name="evener" week="2026-10-05" />
 
-Tagged release v0.3.7 (a bare version-number release, no further release-note text — same pattern as prior evener releases). The week's PRs cluster into a few finished threads rather than one single feature: a **generated memory index**, built out end-to-end as a numbered series through its final review-fixes pass — memory pages now project an index generated from page frontmatter instead of a hand-written one, with overflow handling, a size cap, and the index gated on whether the skill it points to is actually loadable; a completed **notification-semantics cleanup** — a reply is only treated as "needs your reply" when it reads like an actual question, a plain reply no longer notifies, and a "needs response" state now waits out a quiet period before resting instead of firing immediately; and a **delegate reply-threading fix cluster** — a `delegate_send` reply or wait can now carry earlier queued results instead of losing them, delegate updates route to each live ancestor subagent's own thread, and a nested stable delegate is correctly attributed to its parent delegate's session. Alongside those: a broad native test-hardening pass wrapping previously-unwrapped synchronous store updates across many screens, dropping the Board's manual "mark as read"/"mark as unread" controls now that read-state tracks automatically on the phone, a fix for reading a `SKILL.md` missing its opening frontmatter delimiter, and further iPhone-redesign spec cleanup. Sole author: **Jesse Vincent (staff)**.
+Tagged release v0.3.7 (a bare version-number release, no further release-note text — same pattern as prior evener releases). The week's PRs cluster into a few finished threads rather than one single feature: a **generated memory index**, built out end-to-end as a numbered series through its final review-fixes pass — memory pages now project an index generated from page frontmatter instead of a hand-written one, with overflow handling, a size cap, and the index gated on whether the skill it points to is actually loadable; two of the three PRs in a **notification-semantics cleanup** — a reply is only treated as "needs your reply" when it reads like an actual question, a plain reply no longer notifies, and a "needs response" state now waits out a quiet period before resting instead of firing immediately; and a **delegate reply-threading fix cluster** — a `delegate_send` reply or wait can now carry earlier queued results instead of losing them, delegate updates route to each live ancestor subagent's own thread, and a nested stable delegate is correctly attributed to its parent delegate's session. Alongside those: a broad native test-hardening pass wrapping previously-unwrapped synchronous store updates across many screens, dropping the Board's manual "mark as read"/"mark as unread" controls now that read-state tracks automatically on the phone, a fix for reading a `SKILL.md` missing its opening frontmatter delimiter, and further iPhone-redesign spec cleanup. Sole author: **Jesse Vincent (staff)**.
 
 </article>
 
