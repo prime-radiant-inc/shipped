@@ -24695,5 +24695,1609 @@
         "html_url": "https://github.com/obra/superpowers-chrome"
       }
     }
+  },
+  "2026-10-05": {
+    "summary": {
+      "repos_active": 10,
+      "featured_count": 3,
+      "second_tier_count": 7,
+      "commits": 300,
+      "merged_prs": 277,
+      "loc_added": 119283,
+      "loc_removed": 39705,
+      "contributors": 5,
+      "tagged_releases": 2,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "prime-radiant-inc/evener": {
+        "commits": 265,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 265
+          }
+        ],
+        "loc_added": 113260,
+        "loc_removed": 39264,
+        "merged_prs": [
+          {
+            "number": 4147,
+            "title": "prompt(memory): keep approvals, sign-offs and plan status out of memory",
+            "merged_at": "2026-10-09T22:08:11Z"
+          },
+          {
+            "number": 4143,
+            "title": "fix(skill): read a SKILL.md missing its opening frontmatter delimiter",
+            "merged_at": "2026-10-09T19:31:39Z"
+          },
+          {
+            "number": 4120,
+            "title": "memory: final-review fixes for the generated index (generated index, 8/8)",
+            "merged_at": "2026-10-09T19:18:03Z"
+          },
+          {
+            "number": 4140,
+            "title": "feat(native): drop the Board's manual Mark as read and Mark as unread (phone part 2, 1/3)",
+            "merged_at": "2026-10-09T18:36:42Z"
+          },
+          {
+            "number": 4139,
+            "title": "feat: a needs_response rest waits a quiet period before resting awaiting (needs-you quiet period 2/3)",
+            "merged_at": "2026-10-09T18:36:38Z"
+          },
+          {
+            "number": 4136,
+            "title": "feat: needs-your-reply notifies like a question; a plain reply no longer notifies",
+            "merged_at": "2026-10-09T17:27:07Z"
+          },
+          {
+            "number": 4115,
+            "title": "memory-lab: index-overflow scenario; index checks for both builds (generated index, 7/7)",
+            "merged_at": "2026-10-09T17:17:23Z"
+          },
+          {
+            "number": 4135,
+            "title": "feat: STATUS_SETTLED carries a rest settled outside a turn (needs-you quiet period 1/3)",
+            "merged_at": "2026-10-09T17:00:11Z"
+          },
+          {
+            "number": 4114,
+            "title": "memory: teach frontmatter and the generated index (generated index, 6/7)",
+            "merged_at": "2026-10-09T11:24:28Z"
+          },
+          {
+            "number": 4113,
+            "title": "memory: refuse index writes, stamp pages, read the generated index (generated index, 5/7)",
+            "merged_at": "2026-10-09T10:49:33Z"
+          },
+          {
+            "number": 4109,
+            "title": "memory: sessions project the generated index (generated index, 4/7)",
+            "merged_at": "2026-10-09T08:29:51Z"
+          },
+          {
+            "number": 4130,
+            "title": "fix(native): the questions alert switch names needs-your-reply alerts",
+            "merged_at": "2026-10-09T07:58:38Z"
+          },
+          {
+            "number": 4129,
+            "title": "feat(native): awaiting without a question is Needs you on the phone",
+            "merged_at": "2026-10-09T07:45:09Z"
+          },
+          {
+            "number": 4126,
+            "title": "feat(web): awaiting without a question reads Needs you and outranks work",
+            "merged_at": "2026-10-09T07:33:29Z"
+          },
+          {
+            "number": 4107,
+            "title": "memory: migrate a hand-written index into page frontmatter (generated index, 3/7)",
+            "merged_at": "2026-10-09T06:54:10Z"
+          },
+          {
+            "number": 4125,
+            "title": "feat(hub): awaiting without a question reads Needs you and ranks with questions",
+            "merged_at": "2026-10-09T06:24:33Z"
+          },
+          {
+            "number": 4123,
+            "title": "docs: end_reason paragraph covers who gets it and what keeps a session idle",
+            "merged_at": "2026-10-09T06:24:23Z"
+          },
+          {
+            "number": 4121,
+            "title": "fix(agent): warm idle delegates no longer count as work in settle",
+            "merged_at": "2026-10-09T03:08:06Z"
+          },
+          {
+            "number": 4117,
+            "title": "fix(agent): hide end_reason where nobody can answer",
+            "merged_at": "2026-10-09T03:08:02Z"
+          },
+          {
+            "number": 4122,
+            "title": "test(native): wait for the automatic note-save retry instead of counting timer turns",
+            "merged_at": "2026-10-09T03:07:59Z"
+          },
+          {
+            "number": 4112,
+            "title": "fix(agent): a plain reply rests idle; only needs_response or a question rests awaiting",
+            "merged_at": "2026-10-09T00:59:42Z"
+          },
+          {
+            "number": 4106,
+            "title": "memory: render a scope's index and its 8 KiB projection (generated index, 2/7)",
+            "merged_at": "2026-10-09T00:50:27Z"
+          },
+          {
+            "number": 4103,
+            "title": "memory: read each page into an index entry (generated index, 1/7)",
+            "merged_at": "2026-10-09T00:20:50Z"
+          },
+          {
+            "number": 4116,
+            "title": "fix(agent): give tests a long memory boundary budget by default",
+            "merged_at": "2026-10-09T00:18:43Z"
+          },
+          {
+            "number": 4111,
+            "title": "test(agent): run the memory continuation test on a fake clock",
+            "merged_at": "2026-10-08T23:14:11Z"
+          },
+          {
+            "number": 4102,
+            "title": "test(web): reader geometry dispatches scroll events in the next frame's scroll steps",
+            "merged_at": "2026-10-08T22:52:34Z"
+          },
+          {
+            "number": 4105,
+            "title": "feat(agent): communicate takes end_reason on root sessions",
+            "merged_at": "2026-10-08T22:28:06Z"
+          },
+          {
+            "number": 4097,
+            "title": "repair: judge null on a combinator property by its branches",
+            "merged_at": "2026-10-08T20:51:18Z"
+          },
+          {
+            "number": 4101,
+            "title": "test(web): reader tests wait for the frame a browser delivers scroll events in",
+            "merged_at": "2026-10-08T20:46:30Z"
+          },
+          {
+            "number": 4094,
+            "title": "test(cascadeguard): accept the root's real resting status after the queued turn",
+            "merged_at": "2026-10-08T20:29:02Z"
+          },
+          {
+            "number": 4096,
+            "title": "fix(web): a retained reader's restore landing is not read as content growing below the end",
+            "merged_at": "2026-10-08T20:28:58Z"
+          },
+          {
+            "number": 4092,
+            "title": "test: make three tests pass under macOS's /var temp link",
+            "merged_at": "2026-10-08T20:22:46Z"
+          },
+          {
+            "number": 4089,
+            "title": "memory-lab: a stage workspace is work or work plus digits",
+            "merged_at": "2026-10-08T20:20:19Z"
+          },
+          {
+            "number": 4091,
+            "title": "repair: treat a null on any optional argument its schema refuses as absent",
+            "merged_at": "2026-10-08T20:11:04Z"
+          },
+          {
+            "number": 4090,
+            "title": "fix(agent): read_transcript treats a null optional field on a session ref as absent",
+            "merged_at": "2026-10-08T19:16:20Z"
+          },
+          {
+            "number": 4075,
+            "title": "memory-lab: keep session state out of the results tree under --work-root",
+            "merged_at": "2026-10-08T18:59:19Z"
+          },
+          {
+            "number": 4084,
+            "title": "fix(web): a native scrolling key's gesture marker lasts three frames",
+            "merged_at": "2026-10-08T17:50:45Z"
+          },
+          {
+            "number": 4082,
+            "title": "fix(server): Server.Close waits for histories a replace or release is still closing (#4064)",
+            "merged_at": "2026-10-08T17:29:48Z"
+          },
+          {
+            "number": 4081,
+            "title": "fix(hub): release a session's alias locks before forwarding its retire (#4052)",
+            "merged_at": "2026-10-08T17:29:40Z"
+          },
+          {
+            "number": 4079,
+            "title": "test(web): skillguard's slash-menu and attachment-remove presses hit-test in the turn they measure",
+            "merged_at": "2026-10-08T16:55:55Z"
+          },
+          {
+            "number": 4076,
+            "title": "test(web): pressRailRowExpr's tests drop their hit-test stub after each case",
+            "merged_at": "2026-10-08T16:55:48Z"
+          },
+          {
+            "number": 4077,
+            "title": "fix(tool): task_list reasoning_effort description matches update behavior",
+            "merged_at": "2026-10-08T15:42:46Z"
+          },
+          {
+            "number": 4074,
+            "title": "test(web): backgroundjobsguard opens the Jobs sidebar through one helper that waits out its slide",
+            "merged_at": "2026-10-08T15:30:53Z"
+          },
+          {
+            "number": 4072,
+            "title": "test(web): openSession presses its rail row in the turn it finds and hit-tests it",
+            "merged_at": "2026-10-08T15:30:45Z"
+          },
+          {
+            "number": 4070,
+            "title": "fix(web): the cascade track keeps the drilled leaf revealed when the pane narrows",
+            "merged_at": "2026-10-08T15:30:37Z"
+          },
+          {
+            "number": 4047,
+            "title": "test(web): job-output paging waits out a wheel gesture that started at the output's edge",
+            "merged_at": "2026-10-08T15:30:29Z"
+          },
+          {
+            "number": 4067,
+            "title": "Compaction: framing markers are not same-line section content",
+            "merged_at": "2026-10-08T08:43:44Z"
+          },
+          {
+            "number": 4066,
+            "title": "fix(server): closing a thread history waits for its reads in flight (#4013)",
+            "merged_at": "2026-10-08T08:38:05Z"
+          },
+          {
+            "number": 4060,
+            "title": "fix(tui): show a padded earlier-result status as web and phone do",
+            "merged_at": "2026-10-08T08:37:58Z"
+          },
+          {
+            "number": 4057,
+            "title": "fix(agent): a manual retire waits for the session namer to settle (#3921)",
+            "merged_at": "2026-10-08T08:37:50Z"
+          },
+          {
+            "number": 4058,
+            "title": "task_list: one table of update placeholders, covering every optional field",
+            "merged_at": "2026-10-08T08:12:41Z"
+          },
+          {
+            "number": 4063,
+            "title": "bookkeeping: count memory deletes; a refused task_list call reads nothing back",
+            "merged_at": "2026-10-08T08:02:11Z"
+          },
+          {
+            "number": 4056,
+            "title": "test(native): pin ProjectsScreen's ready gate on reading an unloaded archived list",
+            "merged_at": "2026-10-08T07:42:44Z"
+          },
+          {
+            "number": 4001,
+            "title": "Compaction: treat an empty or non-summary reply as a summarizer failure",
+            "merged_at": "2026-10-08T07:42:25Z"
+          },
+          {
+            "number": 4062,
+            "title": "test(web): build activity-changed notifications with the shared builder",
+            "merged_at": "2026-10-08T07:41:01Z"
+          },
+          {
+            "number": 4050,
+            "title": "bookkeeping: judge writes by their result; task_list per #4021",
+            "merged_at": "2026-10-08T07:38:39Z"
+          },
+          {
+            "number": 4059,
+            "title": "test: one activityChangedNotification builder in appwire-client's testing",
+            "merged_at": "2026-10-08T07:30:03Z"
+          },
+          {
+            "number": 4054,
+            "title": "test(native): move the last local settles onto the testkit helpers",
+            "merged_at": "2026-10-08T07:18:57Z"
+          },
+          {
+            "number": 4053,
+            "title": "test(native): emit ProjectsScreen's connection changes inside act",
+            "merged_at": "2026-10-08T07:18:50Z"
+          },
+          {
+            "number": 4043,
+            "title": "test(jobstore): make the post-read observation fault follow a real change (#3980)",
+            "merged_at": "2026-10-08T07:16:15Z"
+          },
+          {
+            "number": 4041,
+            "title": "refactor(jobstore): remove the unused path-based closed-output grep (#3975)",
+            "merged_at": "2026-10-08T07:16:05Z"
+          },
+          {
+            "number": 4038,
+            "title": "test(hub): close the doc-worktree session before its daemon",
+            "merged_at": "2026-10-08T07:15:56Z"
+          },
+          {
+            "number": 4033,
+            "title": "fix(tui): show a delegate_send's reply and the earlier results it carried (#3956)",
+            "merged_at": "2026-10-08T07:15:48Z"
+          },
+          {
+            "number": 4024,
+            "title": "test(agent): supervision quiescence waits for the child's session namer (#4009)",
+            "merged_at": "2026-10-08T07:15:39Z"
+          },
+          {
+            "number": 4049,
+            "title": "memory-lab: make an existing run-providers dir owner-only (#4007 round 5)",
+            "merged_at": "2026-10-08T07:11:51Z"
+          },
+          {
+            "number": 4048,
+            "title": "test(native): land NewSessionSheet's held start inside act",
+            "merged_at": "2026-10-08T07:08:09Z"
+          },
+          {
+            "number": 4021,
+            "title": "task_list: one placeholder normalizer for dispatch and the failure breaker",
+            "merged_at": "2026-10-08T07:02:30Z"
+          },
+          {
+            "number": 4046,
+            "title": "test(native): act-wrap QueueSheet's and ModelPicker's store changes",
+            "merged_at": "2026-10-08T06:59:47Z"
+          },
+          {
+            "number": 4007,
+            "title": "memory-lab: force compaction with --context-window and measure post-compaction reconstruction",
+            "merged_at": "2026-10-08T06:45:25Z"
+          },
+          {
+            "number": 4044,
+            "title": "test(native): let the testkit unmount four suites' trees inside act",
+            "merged_at": "2026-10-08T06:43:42Z"
+          },
+          {
+            "number": 4042,
+            "title": "test(native): wait on useNativeMutationRecovery's rendered result inside act",
+            "merged_at": "2026-10-08T06:43:35Z"
+          },
+          {
+            "number": 4030,
+            "title": "fix(web): a measurement correction leaves a native key's marker for the key's own scroll",
+            "merged_at": "2026-10-08T06:37:32Z"
+          },
+          {
+            "number": 4040,
+            "title": "test(mobile): capture and assert the read-fence failure the test triggers",
+            "merged_at": "2026-10-08T06:28:00Z"
+          },
+          {
+            "number": 4025,
+            "title": "test(native): one testkit settleMicrotasks for the suites that settle without a timer",
+            "merged_at": "2026-10-08T06:27:53Z"
+          },
+          {
+            "number": 4039,
+            "title": "test(native): bind NewSessionForm's store inside act",
+            "merged_at": "2026-10-08T06:20:25Z"
+          },
+          {
+            "number": 4036,
+            "title": "test(native): import ReaderScreen statically in BoardScreen's suite",
+            "merged_at": "2026-10-08T06:11:13Z"
+          },
+          {
+            "number": 4027,
+            "title": "test(native): one testkit settle for the reader and subagent suites",
+            "merged_at": "2026-10-08T06:04:19Z"
+          },
+          {
+            "number": 4034,
+            "title": "test(native): import nativeStopRequests once, outside its tests' timeouts",
+            "merged_at": "2026-10-08T06:04:11Z"
+          },
+          {
+            "number": 3992,
+            "title": "agent: drop the idle \"Consider creating a task list\" nudge",
+            "merged_at": "2026-10-08T05:55:03Z"
+          },
+          {
+            "number": 4032,
+            "title": "test(native): one activityChanged builder for the activity-changed notification",
+            "merged_at": "2026-10-08T05:49:21Z"
+          },
+          {
+            "number": 4028,
+            "title": "test(native): one testkit until for waiting on wire or store state",
+            "merged_at": "2026-10-08T05:49:14Z"
+          },
+          {
+            "number": 4018,
+            "title": "test(hub): close the daemon server before its state directory is removed (#3994)",
+            "merged_at": "2026-10-08T05:42:32Z"
+          },
+          {
+            "number": 4011,
+            "title": "test(agent): read supervision snapshots' uncontended keys once no lock is busy (#3985)",
+            "merged_at": "2026-10-08T05:42:23Z"
+          },
+          {
+            "number": 4026,
+            "title": "test(native): use the testkit settle where suites named it flush",
+            "merged_at": "2026-10-08T05:37:09Z"
+          },
+          {
+            "number": 4017,
+            "title": "feat(web): render compact_context calls with a dedicated descriptor",
+            "merged_at": "2026-10-08T05:31:06Z"
+          },
+          {
+            "number": 3981,
+            "title": "fix(web): record a native scrolling key's movement when its smooth scroll starts a frame late",
+            "merged_at": "2026-10-08T05:24:30Z"
+          },
+          {
+            "number": 4023,
+            "title": "test(web): guards send no native key codes; cascadeguard drills once the sidebar has slid in",
+            "merged_at": "2026-10-08T05:24:26Z"
+          },
+          {
+            "number": 4019,
+            "title": "fix(web): a reader completes clamped measurement scrolls while anchorToEnd is off",
+            "merged_at": "2026-10-08T05:24:21Z"
+          },
+          {
+            "number": 4014,
+            "title": "test(native): one testkit settle for the suites that wait a timer turn",
+            "merged_at": "2026-10-08T05:16:51Z"
+          },
+          {
+            "number": 4012,
+            "title": "test(native): read BoardScreen's hold through one heldIn on boardHoldKey",
+            "merged_at": "2026-10-08T05:16:44Z"
+          },
+          {
+            "number": 4005,
+            "title": "fix(web): let sends survive a storage-blocked reconcile (#3969)",
+            "merged_at": "2026-10-08T05:12:06Z"
+          },
+          {
+            "number": 4010,
+            "title": "test(native): dispose the hub sheet suites' controllers after each test",
+            "merged_at": "2026-10-08T04:43:01Z"
+          },
+          {
+            "number": 3984,
+            "title": "task_list: placeholder fields on update change nothing; [0] clears dependencies",
+            "merged_at": "2026-10-08T04:38:32Z"
+          },
+          {
+            "number": 4008,
+            "title": "test(native): unmount NewSessionForm and HostPicker before disposing their readers",
+            "merged_at": "2026-10-08T04:35:40Z"
+          },
+          {
+            "number": 4000,
+            "title": "fix(agent): a delegate_send wait carries every result queued ahead of it (#3951)",
+            "merged_at": "2026-10-08T04:30:51Z"
+          },
+          {
+            "number": 3983,
+            "title": "perf(jobstore): validate output metadata once per descriptor read (#3903)",
+            "merged_at": "2026-10-08T04:30:44Z"
+          },
+          {
+            "number": 4003,
+            "title": "refactor(native): decode a receipt's turnId and queueEntryIds from its kind's keys",
+            "merged_at": "2026-10-08T04:21:57Z"
+          },
+          {
+            "number": 4004,
+            "title": "test(native): check a project's Unpin waits in the hold behind its Pin",
+            "merged_at": "2026-10-08T04:21:50Z"
+          },
+          {
+            "number": 3998,
+            "title": "refactor(native): remove the unused captureUnconfirmedInput",
+            "merged_at": "2026-10-08T04:08:57Z"
+          },
+          {
+            "number": 3997,
+            "title": "test(native): declare the navigation suites' empty page once",
+            "merged_at": "2026-10-08T04:08:45Z"
+          },
+          {
+            "number": 3996,
+            "title": "test(native): let in-flight updates land before three tests end",
+            "merged_at": "2026-10-08T03:54:32Z"
+          },
+          {
+            "number": 3995,
+            "title": "test(native): act-wrap the subagent suites' synchronous store notifications",
+            "merged_at": "2026-10-08T03:54:24Z"
+          },
+          {
+            "number": 3991,
+            "title": "test(native): let the testkit unmount HubSettingsScreen's reconnect trees",
+            "merged_at": "2026-10-08T03:49:03Z"
+          },
+          {
+            "number": 3990,
+            "title": "test(native): settle sessionSeen's hook updates inside act",
+            "merged_at": "2026-10-08T03:42:29Z"
+          },
+          {
+            "number": 3988,
+            "title": "test(native): unmount the hub sheet pages before disposing their readers",
+            "merged_at": "2026-10-08T03:27:48Z"
+          },
+          {
+            "number": 3986,
+            "title": "test(native): act-wrap ShellJobScreen's synchronous store notifications",
+            "merged_at": "2026-10-08T03:20:47Z"
+          },
+          {
+            "number": 3970,
+            "title": "repair: treat an optional enum argument sent as \"\" or null as absent",
+            "merged_at": "2026-10-08T03:15:16Z"
+          },
+          {
+            "number": 3977,
+            "title": "test(native): mount every test tree through the testkit render",
+            "merged_at": "2026-10-08T03:14:09Z"
+          },
+          {
+            "number": 3973,
+            "title": "refactor(native): remove the conversation store's unused steer action",
+            "merged_at": "2026-10-08T03:14:02Z"
+          },
+          {
+            "number": 3982,
+            "title": "test(native): settle BoardScreen's async updates inside act",
+            "merged_at": "2026-10-08T03:05:01Z"
+          },
+          {
+            "number": 3974,
+            "title": "fix(agent): grep closed job output through the fd-checked open (#3902)",
+            "merged_at": "2026-10-08T02:58:44Z"
+          },
+          {
+            "number": 3971,
+            "title": "refactor(appwire-client): one per-read demand reset in SessionActivityStore",
+            "merged_at": "2026-10-08T02:53:02Z"
+          },
+          {
+            "number": 3967,
+            "title": "docs: home universal frontend dev lessons from memory gardening",
+            "merged_at": "2026-10-07T18:35:35Z"
+          },
+          {
+            "number": 3965,
+            "title": "Memory: gate the index's skill pointer on the skill being loadable; round size notes up",
+            "merged_at": "2026-10-07T15:23:27Z"
+          },
+          {
+            "number": 3961,
+            "title": "Memory: point at the gardening-memory skill when an index or page is too long",
+            "merged_at": "2026-10-07T14:57:12Z"
+          },
+          {
+            "number": 3960,
+            "title": "feat(clients): show the earlier results a delegate_send wait carried (#3906)",
+            "merged_at": "2026-10-07T14:52:23Z"
+          },
+          {
+            "number": 3958,
+            "title": "test(native): every suite unmounts its trees before its own afterEach cleanup (#3929 fast-follow)",
+            "merged_at": "2026-10-07T14:52:15Z"
+          },
+          {
+            "number": 3964,
+            "title": "fix(appwire-client): a nested stable delegate belongs to its parent delegate's session",
+            "merged_at": "2026-10-07T08:11:14Z"
+          },
+          {
+            "number": 3963,
+            "title": "test(agent): pin delegate update routing for released and parent-owned rows; honor cancellation after the fold",
+            "merged_at": "2026-10-07T08:11:07Z"
+          },
+          {
+            "number": 3962,
+            "title": "Memory refresh: a real record seam for memory_read; restore seeds from projections only",
+            "merged_at": "2026-10-07T07:44:53Z"
+          },
+          {
+            "number": 3950,
+            "title": "fix(agent): a delegate_send wait carries a result its caller is holding (#3906)",
+            "merged_at": "2026-10-07T07:29:39Z"
+          },
+          {
+            "number": 3943,
+            "title": "fix(agent): route delegate updates to each live ancestor subagent's thread",
+            "merged_at": "2026-10-07T07:21:25Z"
+          },
+          {
+            "number": 3932,
+            "title": "Memory refresh: notice other sessions' changes to pages the session read",
+            "merged_at": "2026-10-07T07:20:12Z"
+          },
+          {
+            "number": 3957,
+            "title": "test(agent): the earlier-results ref test pins the condensed card (#3954 Low)",
+            "merged_at": "2026-10-07T07:09:15Z"
+          },
+          {
+            "number": 3929,
+            "title": "test(native): the testkit unmounts every tree a test mounted (#3924)",
+            "merged_at": "2026-10-07T06:55:46Z"
+          },
+          {
+            "number": 3954,
+            "title": "test(agent): pin earlier results under truncation and when several (#3906 Lows)",
+            "merged_at": "2026-10-07T06:42:52Z"
+          },
+          {
+            "number": 3955,
+            "title": "native: remove the service's and store's unused drain path",
+            "merged_at": "2026-10-07T06:38:35Z"
+          },
+          {
+            "number": 3945,
+            "title": "feat(agent): a delegate_send reply can carry earlier results (#3906)",
+            "merged_at": "2026-10-07T06:30:39Z"
+          },
+          {
+            "number": 3948,
+            "title": "native: send typed /steer, /queue and /interrupt through the durable outbox",
+            "merged_at": "2026-10-07T06:27:20Z"
+          },
+          {
+            "number": 3941,
+            "title": "feat(agent): transcripts render a delegate_send reply's earlier results (#3906)",
+            "merged_at": "2026-10-07T05:54:22Z"
+          },
+          {
+            "number": 3938,
+            "title": "feat(agent): one delegate tool call may commit several deliveries in its turn (#3906)",
+            "merged_at": "2026-10-07T05:54:18Z"
+          },
+          {
+            "number": 3917,
+            "title": "web(session): Send resumes a recovery-fenced session",
+            "merged_at": "2026-10-07T05:38:35Z"
+          },
+          {
+            "number": 3940,
+            "title": "native: /drain-as-steer through the outbox, and remove the service's direct promote and drain",
+            "merged_at": "2026-10-07T05:35:31Z"
+          },
+          {
+            "number": 3946,
+            "title": "refactor(agent): build SessionOwnedDelegateIDs on the shared subtree walk",
+            "merged_at": "2026-10-07T05:30:10Z"
+          },
+          {
+            "number": 3919,
+            "title": "Drop the per-step 'mark task N as done' task_list reminder",
+            "merged_at": "2026-10-07T04:59:08Z"
+          },
+          {
+            "number": 3937,
+            "title": "native: send Steer now and Steer all now through the durable outbox",
+            "merged_at": "2026-10-07T04:48:32Z"
+          },
+          {
+            "number": 3934,
+            "title": "fix(agent): a subagent's thread lists the delegates in its own subtree",
+            "merged_at": "2026-10-07T04:38:03Z"
+          },
+          {
+            "number": 3936,
+            "title": "test(web): ActivityPeek finds the peek's row before act(), not inside it",
+            "merged_at": "2026-10-07T04:32:55Z"
+          },
+          {
+            "number": 3933,
+            "title": "test(web): cascadeguard checks a height-only change keeps the reading line",
+            "merged_at": "2026-10-07T04:32:49Z"
+          },
+          {
+            "number": 3930,
+            "title": "test(web): browser guards name the tab they connect to",
+            "merged_at": "2026-10-07T04:32:42Z"
+          },
+          {
+            "number": 3926,
+            "title": "test(web): shellguard measures in a tab it names, not the first one listed",
+            "merged_at": "2026-10-07T03:47:51Z"
+          },
+          {
+            "number": 3920,
+            "title": "fix(web): a height-only viewport change keeps the reading line in place",
+            "merged_at": "2026-10-07T03:47:45Z"
+          },
+          {
+            "number": 3925,
+            "title": "test(native): unmount every ProvidersPage tree when its test ends (#3916)",
+            "merged_at": "2026-10-07T03:47:29Z"
+          },
+          {
+            "number": 3923,
+            "title": "test(hub): retire e2e daemons until the retire is accepted (#3876)",
+            "merged_at": "2026-10-07T03:47:23Z"
+          },
+          {
+            "number": 3922,
+            "title": "Memory refresh: deliver other sessions' index changes as one block per turn",
+            "merged_at": "2026-10-07T03:34:05Z"
+          },
+          {
+            "number": 3914,
+            "title": "Memory refresh: full index only at start, resume and compaction; no echo of own writes",
+            "merged_at": "2026-10-07T03:08:47Z"
+          },
+          {
+            "number": 3918,
+            "title": "test(agent): a closed job file grown past its record total is refused",
+            "merged_at": "2026-10-07T01:45:06Z"
+          },
+          {
+            "number": 3900,
+            "title": "fix(web): width reflow keeps the reader's reading line in place",
+            "merged_at": "2026-10-07T01:44:57Z"
+          },
+          {
+            "number": 3897,
+            "title": "fix(web): clip the activity sidebar's entrance so it can't scroll the page",
+            "merged_at": "2026-10-07T01:44:50Z"
+          },
+          {
+            "number": 3915,
+            "title": "Memory lab: bookkeeping parses sed, perl and grep operands",
+            "merged_at": "2026-10-07T00:01:52Z"
+          },
+          {
+            "number": 3907,
+            "title": "refactor(agent): read closed job output through jobstore's fd-checked view",
+            "merged_at": "2026-10-06T23:29:52Z"
+          },
+          {
+            "number": 3901,
+            "title": "Memory lab: plan scenarios check behavior; bookkeeping counts shell ledger writes",
+            "merged_at": "2026-10-06T23:24:31Z"
+          },
+          {
+            "number": 3911,
+            "title": "Show native memory refreshes as compact disclosures",
+            "merged_at": "2026-10-06T23:03:17Z"
+          },
+          {
+            "number": 3893,
+            "title": "test(sandbox): compare scratch paths against the canonical temp dir",
+            "merged_at": "2026-10-06T22:15:45Z"
+          },
+          {
+            "number": 3912,
+            "title": "Remove the session memory scope",
+            "merged_at": "2026-10-06T22:13:04Z"
+          },
+          {
+            "number": 3904,
+            "title": "web(session): a version-mismatch fence is a degraded notice, not a kill button",
+            "merged_at": "2026-10-06T22:05:46Z"
+          },
+          {
+            "number": 3910,
+            "title": "fix(sdk): a read dropped because its view left still refreshes an unknown count",
+            "merged_at": "2026-10-06T21:35:13Z"
+          },
+          {
+            "number": 3896,
+            "title": "fix(sdk): a release resets its collection's backoff; tests for recovery and release during replacement",
+            "merged_at": "2026-10-06T21:13:51Z"
+          },
+          {
+            "number": 3868,
+            "title": "fix(agent): refuse a closed output file larger than its lifetime total",
+            "merged_at": "2026-10-06T20:57:35Z"
+          },
+          {
+            "number": 3881,
+            "title": "test(hub): compare the cascade overlap skill by its resolved path",
+            "merged_at": "2026-10-06T20:57:27Z"
+          },
+          {
+            "number": 3887,
+            "title": "test(web): cascadeguard reads a settled source anchor away from row edges",
+            "merged_at": "2026-10-06T20:57:20Z"
+          },
+          {
+            "number": 3891,
+            "title": "Record status in one place; task list holds task progress",
+            "merged_at": "2026-10-06T20:38:58Z"
+          },
+          {
+            "number": 3883,
+            "title": "fix(web): keep the reader's backward rule while a retained placement pends",
+            "merged_at": "2026-10-06T20:22:26Z"
+          },
+          {
+            "number": 3888,
+            "title": "refactor(sdk): one stale check for every step of an activity read",
+            "merged_at": "2026-10-06T20:09:58Z"
+          },
+          {
+            "number": 3884,
+            "title": "Show memory refreshes as compact disclosures",
+            "merged_at": "2026-10-06T20:00:45Z"
+          },
+          {
+            "number": 3878,
+            "title": "test(web): activity fakes answer the scope they are asked for",
+            "merged_at": "2026-10-06T18:53:18Z"
+          },
+          {
+            "number": 3872,
+            "title": "fix(web): the liveness line holds its subagent count before a turn starts",
+            "merged_at": "2026-10-06T18:03:26Z"
+          },
+          {
+            "number": 3875,
+            "title": "fix(plugins): a ref is a branch when checkout left a local branch of that name",
+            "merged_at": "2026-10-06T18:03:18Z"
+          },
+          {
+            "number": 3870,
+            "title": "fix(web): Overview and Activity action counts include subagents at every depth",
+            "merged_at": "2026-10-06T17:37:36Z"
+          },
+          {
+            "number": 3866,
+            "title": "fix(plugins): pinned marketplaces are not recloned, no-op refreshes broadcast nothing, removal drops the clone lock",
+            "merged_at": "2026-10-06T16:57:48Z"
+          },
+          {
+            "number": 3858,
+            "title": "Memory guidance: one-fact pages, run details out of durable memory, fix log pages you read",
+            "merged_at": "2026-10-06T16:43:49Z"
+          },
+          {
+            "number": 3850,
+            "title": "jobstore: compact job output only past twice the cap",
+            "merged_at": "2026-10-06T16:02:46Z"
+          },
+          {
+            "number": 3838,
+            "title": "test(web): guards share one check for a button that refuses a click",
+            "merged_at": "2026-10-06T15:54:30Z"
+          },
+          {
+            "number": 3846,
+            "title": "agent: closed job output reads start at the visible start",
+            "merged_at": "2026-10-06T15:37:51Z"
+          },
+          {
+            "number": 3863,
+            "title": "feat: open assistant filenames from their owning session worktree",
+            "merged_at": "2026-10-06T15:16:45Z"
+          },
+          {
+            "number": 3862,
+            "title": "fix(web): the Agents chip, sidebar and cascade count subagents at every depth",
+            "merged_at": "2026-10-06T10:42:24Z"
+          },
+          {
+            "number": 3861,
+            "title": "Memory lab: reject duplicate arms",
+            "merged_at": "2026-10-06T10:01:23Z"
+          },
+          {
+            "number": 3845,
+            "title": "feat(plugins): refresh marketplaces before an update check",
+            "merged_at": "2026-10-06T09:57:40Z"
+          },
+          {
+            "number": 3849,
+            "title": "fix(native): a session's reveal reads the catalog its location names",
+            "merged_at": "2026-10-06T09:57:35Z"
+          },
+          {
+            "number": 3860,
+            "title": "Memory lab: require stages and validate arms",
+            "merged_at": "2026-10-06T09:50:32Z"
+          },
+          {
+            "number": 3859,
+            "title": "Memory lab: neutral work paths, page-hygiene scenarios, stricter scenario checks",
+            "merged_at": "2026-10-06T09:39:05Z"
+          },
+          {
+            "number": 3854,
+            "title": "feat: render memory tool calls with dedicated step renderers",
+            "merged_at": "2026-10-06T09:04:12Z"
+          },
+          {
+            "number": 3690,
+            "title": "fix(web): restore shared session-list status indicators in cascade spines",
+            "merged_at": "2026-10-06T08:32:56Z"
+          },
+          {
+            "number": 3848,
+            "title": "feat: archived lists send the revision they hold and skip an unchanged re-read",
+            "merged_at": "2026-10-06T06:52:48Z"
+          },
+          {
+            "number": 3852,
+            "title": "web: an interrupted notice never folds into a group of system messages",
+            "merged_at": "2026-10-06T06:52:44Z"
+          },
+          {
+            "number": 3853,
+            "title": "jobstore: keep a running checksum of job output instead of re-hashing per append",
+            "merged_at": "2026-10-06T06:52:12Z"
+          },
+          {
+            "number": 3843,
+            "title": "jobstore: readers see job output from a visible start, not the file's first byte",
+            "merged_at": "2026-10-06T06:27:00Z"
+          },
+          {
+            "number": 3847,
+            "title": "fix(tui): re-read an open Browse catalog after a reconnect",
+            "merged_at": "2026-10-06T05:32:55Z"
+          },
+          {
+            "number": 3842,
+            "title": "Memory lab: cleanup never masks a check result; tighter scenario and flag validation",
+            "merged_at": "2026-10-06T05:27:51Z"
+          },
+          {
+            "number": 3841,
+            "title": "fix(web): say the hub's count of running subagents in the liveness line",
+            "merged_at": "2026-10-06T05:25:43Z"
+          },
+          {
+            "number": 3835,
+            "title": "feat(hub): locate a session in its own catalog and read a project from it",
+            "merged_at": "2026-10-06T05:25:36Z"
+          },
+          {
+            "number": 3840,
+            "title": "Memory lab fast-follow: portable scenarios, structured delegate check, cleanup and validation",
+            "merged_at": "2026-10-06T04:51:13Z"
+          },
+          {
+            "number": 3839,
+            "title": "fix(tui): re-run the plugin update check when the connection comes back",
+            "merged_at": "2026-10-06T04:49:14Z"
+          },
+          {
+            "number": 3824,
+            "title": "fix(plugins): upgrade relative-source plugins from their refreshed marketplace",
+            "merged_at": "2026-10-06T04:49:06Z"
+          },
+          {
+            "number": 3810,
+            "title": "feat(hub): give archived lists a revision a client can fence on",
+            "merged_at": "2026-10-06T04:48:58Z"
+          },
+          {
+            "number": 3768,
+            "title": "Memory lab: measure memory and whiteboard prompting across sessions",
+            "merged_at": "2026-10-06T04:32:27Z"
+          },
+          {
+            "number": 3837,
+            "title": "native: the last screens draw their buttons with Button, and the legacy Action goes",
+            "merged_at": "2026-10-06T04:28:24Z"
+          },
+          {
+            "number": 3834,
+            "title": "native: the Launch settings screens draw their buttons with Button",
+            "merged_at": "2026-10-06T04:14:10Z"
+          },
+          {
+            "number": 3833,
+            "title": "native: the pin screens draw their buttons with Button",
+            "merged_at": "2026-10-06T04:14:05Z"
+          },
+          {
+            "number": 3832,
+            "title": "native: Projects, session deletion and fork editors draw their buttons with Button",
+            "merged_at": "2026-10-06T04:14:01Z"
+          },
+          {
+            "number": 3831,
+            "title": "native: the keyboard shortcuts screen draws its buttons with Button",
+            "merged_at": "2026-10-06T04:13:57Z"
+          },
+          {
+            "number": 3826,
+            "title": "test(web): guard clicks by text and column action find and click in one page turn",
+            "merged_at": "2026-10-06T04:13:52Z"
+          },
+          {
+            "number": 3830,
+            "title": "test(web): backgroundjobsguard polls for the producer's acknowledgement",
+            "merged_at": "2026-10-06T04:13:48Z"
+          },
+          {
+            "number": 3829,
+            "title": "fix: Lows from #3781, #3782, #3786 and #3800",
+            "merged_at": "2026-10-06T04:13:43Z"
+          },
+          {
+            "number": 3822,
+            "title": "native: an interrupted model round reads as a plain notice line, as on the web",
+            "merged_at": "2026-10-06T04:13:36Z"
+          },
+          {
+            "number": 3836,
+            "title": "fix(web): open agent cascades in the secondary pane",
+            "merged_at": "2026-10-06T04:11:24Z"
+          },
+          {
+            "number": 3825,
+            "title": "native: Button learns the legacy Action's looks, so its sites can move without changing a screen",
+            "merged_at": "2026-10-06T03:42:45Z"
+          },
+          {
+            "number": 3828,
+            "title": "fix(native): Reader words keep a code span's spaces beside a dropped tag, and a NUL",
+            "merged_at": "2026-10-06T03:40:20Z"
+          },
+          {
+            "number": 3816,
+            "title": "test(web): cascadeguard reveals the next subagent page without a stale click",
+            "merged_at": "2026-10-06T03:34:24Z"
+          },
+          {
+            "number": 3817,
+            "title": "native: the gate's two expected warnings each get an owner",
+            "merged_at": "2026-10-06T03:31:03Z"
+          },
+          {
+            "number": 3798,
+            "title": "refactor(web): delete the Activity tree's unreachable continuation strips",
+            "merged_at": "2026-10-06T03:26:34Z"
+          },
+          {
+            "number": 3823,
+            "title": "appwire-client: the critical system kinds comment says the set decides visibility only",
+            "merged_at": "2026-10-06T03:25:31Z"
+          },
+          {
+            "number": 3820,
+            "title": "fix(native): Reader words keep one space at a dropped tag and a cell's escaped pipe",
+            "merged_at": "2026-10-06T03:20:58Z"
+          },
+          {
+            "number": 3815,
+            "title": "native demo: a root owns its nested subagents' delegates, as a daemon does",
+            "merged_at": "2026-10-06T03:16:29Z"
+          },
+          {
+            "number": 3813,
+            "title": "native: tray and Board comments say the hub's two subagent counts agree",
+            "merged_at": "2026-10-06T03:16:23Z"
+          },
+          {
+            "number": 3802,
+            "title": "native: the tray, a subagent's row and its Activity line count waited-on subagents one way",
+            "merged_at": "2026-10-06T03:11:58Z"
+          },
+          {
+            "number": 3792,
+            "title": "test(web): open shellguard's floating fixture only once Dockview is ready",
+            "merged_at": "2026-10-06T03:10:42Z"
+          },
+          {
+            "number": 3803,
+            "title": "native: the Activity list's Quiet test runs on fake timers",
+            "merged_at": "2026-10-06T03:02:26Z"
+          },
+          {
+            "number": 3806,
+            "title": "test(web): start every shellguard measurement page with empty storage",
+            "merged_at": "2026-10-06T03:02:00Z"
+          },
+          {
+            "number": 3805,
+            "title": "fix(native): skill and delegate evidence shows its images",
+            "merged_at": "2026-10-06T03:01:21Z"
+          },
+          {
+            "number": 3801,
+            "title": "fix(native): the Reader reads a block's words from marked's tokens",
+            "merged_at": "2026-10-06T03:01:15Z"
+          },
+          {
+            "number": 3811,
+            "title": "refactor: share the prompt event kinds and check the phone covers every kind",
+            "merged_at": "2026-10-06T02:59:15Z"
+          },
+          {
+            "number": 3800,
+            "title": "fix(hub): resolve a project key held by several catalogs one way",
+            "merged_at": "2026-10-06T02:49:13Z"
+          },
+          {
+            "number": 3791,
+            "title": "fix(tui): offer plugin Upgrade only when an update is available",
+            "merged_at": "2026-10-06T02:49:09Z"
+          },
+          {
+            "number": 3795,
+            "title": "refactor(appwire-client): remove fenceRootSession and graftContinuationTree",
+            "merged_at": "2026-10-06T02:48:30Z"
+          },
+          {
+            "number": 3796,
+            "title": "fix(hub): one rule for a session's running subagents",
+            "merged_at": "2026-10-06T02:34:43Z"
+          },
+          {
+            "number": 3786,
+            "title": "fix(appserver): give each remote host its own forwarded-read pool",
+            "merged_at": "2026-10-06T02:34:40Z"
+          },
+          {
+            "number": 3782,
+            "title": "fix(web): show a refused Spawn catalog read with a Retry",
+            "merged_at": "2026-10-06T02:34:35Z"
+          },
+          {
+            "number": 3781,
+            "title": "fix(plugins): bound a whole plugin update check under the clients' timeout",
+            "merged_at": "2026-10-06T02:34:31Z"
+          },
+          {
+            "number": 3793,
+            "title": "native: a silent subagent's row and Activity line turn Quiet on their own",
+            "merged_at": "2026-10-06T02:33:48Z"
+          },
+          {
+            "number": 3784,
+            "title": "native: show a promoted or drained queue as steering until the agent takes it",
+            "merged_at": "2026-10-06T02:33:33Z"
+          },
+          {
+            "number": 3789,
+            "title": "refactor(appwire-client): derive known event kinds from the generated list",
+            "merged_at": "2026-10-06T02:18:36Z"
+          },
+          {
+            "number": 3783,
+            "title": "test(frontend): stop every Crashpad-leak stand-in, even when the test dies",
+            "merged_at": "2026-10-06T02:18:32Z"
+          },
+          {
+            "number": 3787,
+            "title": "native: say just now, not 0s ago, for a document or session that changed under a minute ago",
+            "merged_at": "2026-10-06T02:14:07Z"
+          },
+          {
+            "number": 3779,
+            "title": "MemoryDelegate only when the session scope is readable",
+            "merged_at": "2026-10-06T00:55:51Z"
+          },
+          {
+            "number": 3776,
+            "title": "Memory guidance renders from the system template",
+            "merged_at": "2026-10-06T00:41:28Z"
+          },
+          {
+            "number": 3777,
+            "title": "fix: host-request and plugin-update Lows (pool log, shared scripted remote, no-marketplace warning, timeout comment)",
+            "merged_at": "2026-10-06T00:34:13Z"
+          },
+          {
+            "number": 3772,
+            "title": "Whiteboard fast-follow: indented steer text, a browser guard, demo fidelity",
+            "merged_at": "2026-10-06T00:12:23Z"
+          },
+          {
+            "number": 3771,
+            "title": "fix: plugin-update fast-follows (re-ask after reconnect, focus, warnings, tests)",
+            "merged_at": "2026-10-06T00:10:28Z"
+          },
+          {
+            "number": 3770,
+            "title": "Session memory directories appear on first write, not on read",
+            "merged_at": "2026-10-05T23:41:43Z"
+          },
+          {
+            "number": 3769,
+            "title": "feat(phone): offer plugin Upgrade only when the hub found an update",
+            "merged_at": "2026-10-05T23:22:48Z"
+          },
+          {
+            "number": 3765,
+            "title": "fix(activity): quiet background histories and page live job output",
+            "merged_at": "2026-10-05T23:01:11Z"
+          },
+          {
+            "number": 3767,
+            "title": "feat(web): offer plugin Upgrade only when the hub found an update",
+            "merged_at": "2026-10-05T23:01:07Z"
+          },
+          {
+            "number": 3762,
+            "title": "Whiteboards keep line breaks; the agent whiteboard is a manager's capsule",
+            "merged_at": "2026-10-05T22:54:05Z"
+          },
+          {
+            "number": 3764,
+            "title": "feat(hub): evener/plugin/checkUpdates and PluginEntry.updateAvailable",
+            "merged_at": "2026-10-05T22:38:50Z"
+          },
+          {
+            "number": 3766,
+            "title": "test: pin forwarded-dispatch order without a sleep, and that the request pool drains",
+            "merged_at": "2026-10-05T21:50:28Z"
+          },
+          {
+            "number": 3763,
+            "title": "fix(hub): run forwarded host reads off the browser's serial worker",
+            "merged_at": "2026-10-05T19:15:55Z"
+          },
+          {
+            "number": 3756,
+            "title": "feat(plugins): check git-backed plugins' remotes for updates",
+            "merged_at": "2026-10-05T18:42:37Z"
+          },
+          {
+            "number": 3751,
+            "title": "Session memory: a third scope for working notes about the current work",
+            "merged_at": "2026-10-05T18:38:45Z"
+          },
+          {
+            "number": 3760,
+            "title": "feat(mobile-native): approval history row in the transcript (S16)",
+            "merged_at": "2026-10-05T17:58:23Z"
+          },
+          {
+            "number": 3757,
+            "title": "feat(web): approval history row in the transcript (S16)",
+            "merged_at": "2026-10-05T17:36:17Z"
+          },
+          {
+            "number": 3749,
+            "title": "Scratch fast-follows: delegate-as-root tree, failed launches, daemon temp dir, restore test",
+            "merged_at": "2026-10-05T17:28:16Z"
+          },
+          {
+            "number": 3746,
+            "title": "Fix macOS F_GETPATH reading an empty path after a stack move",
+            "merged_at": "2026-10-05T15:53:56Z"
+          },
+          {
+            "number": 3745,
+            "title": "Read the scratch name under its lock; mark the old scratch plan superseded",
+            "merged_at": "2026-10-05T16:49:47Z"
+          },
+          {
+            "number": 3743,
+            "title": "Delete the scratch retention tests",
+            "merged_at": "2026-10-05T14:33:08Z"
+          },
+          {
+            "number": 3742,
+            "title": "Scratch lives until the session is archived; remove scratch retention",
+            "merged_at": "2026-10-05T15:02:57Z"
+          },
+          {
+            "number": 3752,
+            "title": "feat(agent): record a human's Allow or Deny as transcript history (S16)",
+            "merged_at": "2026-10-05T17:14:28Z"
+          },
+          {
+            "number": 3755,
+            "title": "fix(mobile-native): call the session's documents sheet Files",
+            "merged_at": "2026-10-05T17:13:41Z"
+          },
+          {
+            "number": 3753,
+            "title": "docs(mobile): drop shared artifacts from the iPhone redesign spec",
+            "merged_at": "2026-10-05T17:02:35Z"
+          },
+          {
+            "number": 3740,
+            "title": "Memory guidance says when to save, read and correct",
+            "merged_at": "2026-10-05T06:25:03Z"
+          },
+          {
+            "number": 3739,
+            "title": "fix(web): float session cards beside the sidebar",
+            "merged_at": "2026-10-05T05:49:04Z"
+          },
+          {
+            "number": 3736,
+            "title": "fix(web): remove redundant activity task summaries and align row padding",
+            "merged_at": "2026-10-05T05:00:15Z"
+          },
+          {
+            "number": 3730,
+            "title": "feat(memory): add scoped free-form personal and project memory",
+            "merged_at": "2026-10-05T03:20:15Z"
+          },
+          {
+            "number": 3693,
+            "title": "fix: update native dependencies and isolate editorial fixtures",
+            "merged_at": "2026-10-05T01:30:24Z"
+          },
+          {
+            "number": 3732,
+            "title": "fix(agent): re-drive a child whose attention drive was refused on a held guard",
+            "merged_at": "2026-10-05T00:24:09Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v0.3.7",
+            "name": "v0.3.7",
+            "published_at": "2026-10-08T06:28:31Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.3.7 published 2026-10-08T06:28:31Z",
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/terminal-bench-analysis": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 110,
+        "loc_removed": 3,
+        "merged_prs": [
+          {
+            "number": 11,
+            "title": "Serve Datasette Lite from the project root",
+            "merged_at": "2026-10-05T16:08:00Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
+        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 10
+          }
+        ],
+        "loc_added": 280,
+        "loc_removed": 266,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/everyharness": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 75,
+        "loc_removed": 2,
+        "merged_prs": [
+          {
+            "number": 17,
+            "title": "ci: publish to npm on v* tags via OIDC trusted publishing",
+            "merged_at": "2026-10-08T02:53:06Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Generate a coding-agent plugin for every harness from one config file",
+        "html_url": "https://github.com/prime-radiant-inc/everyharness"
+      },
+      "obra/claude-session-driver": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 102,
+        "loc_removed": 9,
+        "merged_prs": [
+          {
+            "number": 34,
+            "title": "fix(launch): accept Claude's trust dialog when it defaults to \"No, exit\"",
+            "merged_at": "2026-10-06T15:50:18Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Launch, control, and monitor other Claude Code sessions as workers via tmux",
+        "html_url": "https://github.com/obra/claude-session-driver"
+      },
+      "obra/lace": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 3
+          },
+          {
+            "name": "reeve-sen",
+            "count": 1
+          }
+        ],
+        "loc_added": 687,
+        "loc_removed": 55,
+        "merged_prs": [
+          {
+            "number": 424,
+            "title": "fix(mcp): don't cache a tool list built from an incomplete MCP discovery",
+            "merged_at": "2026-10-08T05:15:09Z"
+          },
+          {
+            "number": 423,
+            "title": "fix(projection): don't warn on an intentional persona rerender within a compaction era",
+            "merged_at": "2026-10-07T05:06:46Z"
+          },
+          {
+            "number": 422,
+            "title": "feat(rpc): ent/session/rerender_persona \u2014 re-render a session's frozen prompt without compacting",
+            "merged_at": "2026-10-07T04:49:20Z"
+          },
+          {
+            "number": 420,
+            "title": "feat(providers): add glm-5.3-vision and glm-5.3-vision-background to the LunaRoute catalog",
+            "merged_at": "2026-10-05T18:15:01Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/morning-routine-board": {
+        "commits": 12,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 12
+          }
+        ],
+        "loc_added": 2078,
+        "loc_removed": 34,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-10-09T20:07:36Z)",
+        "description": "Morning routine checklist for two kids on a wall-mounted iPad",
+        "html_url": "https://github.com/obra/morning-routine-board"
+      },
+      "obra/muse-skills": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "file-integrity",
+            "count": 5
+          }
+        ],
+        "loc_added": 2204,
+        "loc_removed": 9033,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/muse-skills",
+        "loc_suppressed": true
+      },
+      "obra/superpowers": {
+        "commits": 0,
+        "authors": [],
+        "loc_added": 0,
+        "loc_removed": 0,
+        "merged_prs": [
+          {
+            "number": 2483,
+            "title": "brainstorming: close the skip-path gap in #2482's defaults rule",
+            "merged_at": "2026-10-09T21:32:33Z"
+          },
+          {
+            "number": 2482,
+            "title": "brainstorming: find out which choices about how it gets made they want to own",
+            "merged_at": "2026-10-09T03:17:20Z"
+          },
+          {
+            "number": 2479,
+            "title": "feat(antigravity): native plugin manifest for the Antigravity Marketplace",
+            "merged_at": "2026-10-08T04:15:27Z"
+          },
+          {
+            "number": 2463,
+            "title": "brainstorming: rebuild around drawing out intent",
+            "merged_at": "2026-10-06T23:57:53Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-chrome": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "ada-sen",
+            "count": 1
+          }
+        ],
+        "loc_added": 2691,
+        "loc_removed": 72,
+        "merged_prs": [
+          {
+            "number": 61,
+            "title": "Fix: secrets present at page load (hidden #init_key_code, known-sensitive URLs) no longer written to disk",
+            "merged_at": "2026-10-07T00:03:43Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v3.0.11",
+            "name": "v3.0.11 - Default redaction for secrets present at page load; known-sensitive URLs suppressed outright",
+            "published_at": "2026-10-07T03:53:39Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v3.0.11 published 2026-10-07T03:53:39Z",
+        "description": "Claude Code plugin for direct Chrome browser control via DevTools Protocol - zero dependencies",
+        "html_url": "https://github.com/obra/superpowers-chrome"
+      }
+    }
   }
 }

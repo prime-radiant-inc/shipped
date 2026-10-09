@@ -1,0 +1,144 @@
+---
+title: "evener ships v0.3.7 behind a finished memory index, superpowers-chrome defaults to redacting secrets exposed at page load, and a new repo debuts a morning-routine board"
+week: "Week of October 5, 2026"
+dateStart: 2026-10-05
+dateEnd: 2026-10-11
+pubDate: 2026-10-09
+summary: "Partial week — data runs through Friday evening, not the full calendar week. prime-radiant-inc/evener ships v0.3.7 behind a newly-finished generated memory index and a completed notification-semantics cleanup; obra/superpowers-chrome ships v3.0.11, defaulting to redacting secrets present at page load; and a new repo, obra/morning-routine-board, debuts as a from-scratch chore-checklist PWA built in a single day."
+draft: false
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+Three things anchor this partial week: **`prime-radiant-inc/evener`** ships v0.3.7 behind a newly-finished generated memory index and a completed notification-semantics cleanup; **`obra/superpowers-chrome`** ships v3.0.11, closing a gap where secrets visible at page *load* time weren't redacted by default; and a brand-new repo, **`obra/morning-routine-board`**, debuts as a from-scratch chore-checklist PWA Jesse built for his kids in a single day. This week is still open: the data below runs through Friday evening, not the full calendar week.
+
+<section class="summary">
+
+## The week in numbers
+
+<WeekSummary week="2026-10-05" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-10-05" />
+
+Tagged release v0.3.7 (a bare version-number release, no further release-note text — same pattern as prior evener releases). The week's PRs cluster into a few finished threads rather than one single feature: a **generated memory index**, built out end-to-end as a numbered series through its final review-fixes pass — memory pages now project an index generated from page frontmatter instead of a hand-written one, with overflow handling, a size cap, and the index gated on whether the skill it points to is actually loadable; a completed **notification-semantics cleanup** — a reply is only treated as "needs your reply" when it reads like an actual question, a plain reply no longer notifies, and a "needs response" state now waits out a quiet period before resting instead of firing immediately; and a **delegate reply-threading fix cluster** — a `delegate_send` reply or wait can now carry earlier queued results instead of losing them, delegate updates route to each live ancestor subagent's own thread, and a nested stable delegate is correctly attributed to its parent delegate's session. Alongside those: a broad native test-hardening pass wrapping previously-unwrapped synchronous store updates across many screens, dropping the Board's manual "mark as read"/"mark as unread" controls now that read-state tracks automatically on the phone, a fix for reading a `SKILL.md` missing its opening frontmatter delimiter, and further iPhone-redesign spec cleanup. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-chrome](https://github.com/obra/superpowers-chrome)
+
+<p class="repo-desc">Claude Code plugin for direct Chrome browser control via DevTools Protocol — zero dependencies.</p>
+
+<RepoStat org="obra" name="superpowers-chrome" week="2026-10-05" />
+
+Tagged release v3.0.11, "Default redaction for secrets present at page load; known-sensitive URLs suppressed outright." Secrets visible at page *load* time — a hidden `#init_key_code` field, and known-sensitive URLs — weren't being redacted by default, relying instead on capture logic that only triggered later in a session; now both are suppressed outright, with new test coverage added for the credential guard, the HTML-scrub page script, the secret-pattern matcher, and the sensitive-URL matcher. Sole author: **Ada Sen (staff)**. Several other PRs remain open but unmerged this window, including two of Ada Sen's own follow-ups and an outside contributor's long-standing `CHROME_WS_HEADLESS` addition — not counted as shipped since nothing of theirs merged this window.
+
+</article>
+
+<article class="repo">
+
+### [obra/morning-routine-board](https://github.com/obra/morning-routine-board)
+
+<p class="repo-desc">Morning routine checklist for two kids on a wall-mounted iPad.</p>
+
+<RepoStat org="obra" name="morning-routine-board" week="2026-10-05" />
+
+A new repo, created this week — a personal project, not a company product, built essentially start-to-finish in a single day: a config model for kids and tasks, a localStorage-backed store for config and daily check-offs, day-boundary logic for when the board resets, a board view-model and screen with a daily reset, a hidden settings screen behind a long-press gesture, offline support via a service worker plus Home Screen metadata, a README with iPad setup and deploy notes, and a same-day review-findings fix (single service-worker registration, a storage-access guard, a Safari 12 settings-launch fix). Committed directly, no PRs, no releases. Sole author: **Jesse Vincent (staff)**.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">Lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-10-05" />
+
+A smaller week: `glm-5.3-vision` and `glm-5.3-vision-background` added to the LunaRoute model catalog, an MCP fix so an incomplete MCP discovery no longer gets cached as the final tool list, a projection fix to stop warning on an intentional persona re-render inside a compaction era, and a new RPC (`session/rerender_persona`) to re-render a session's frozen prompt without a full compaction. Contributors: **Jesse Vincent (staff)**, three PRs, and **reeve-sen (staff)**, one PR (the LunaRoute catalog addition).
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework & software development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-10-05" />
+
+The commit count above reads zero, but the repo wasn't quiet — its merged PRs this week land on a `dev` branch, not `main`, and this blog's tooling only walks the default branch for commits, so `dev`-branch work doesn't show up as commits here (the merged-PR count is unaffected and is the real activity signal for this repo). By merged PR: two "brainstorming" design explorations (closing a skip-path gap in an earlier defaults rule, and probing which choices around how work gets made people want to own), a further brainstorming pass on rebuilding around drawing out intent, and a native plugin manifest for the Antigravity Marketplace. Contributors (by merged PR): **Jesse Vincent (staff)**, three, and **Ada Sen (staff)**, one.
+
+</article>
+
+<article class="repo">
+
+### [obra/muse-skills](https://github.com/obra/muse-skills)
+
+<p class="repo-desc">No repository description set.</p>
+
+<RepoStat org="obra" name="muse-skills" week="2026-10-05" />
+
+Commits look automated (a daily cadence, under a git identity with no linked GitHub account); not confirmed. No human commits to attribute.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/terminal-bench-analysis](https://github.com/prime-radiant-inc/terminal-bench-analysis)
+
+<p class="repo-desc">Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.</p>
+
+<RepoStat org="prime-radiant-inc" name="terminal-bench-analysis" week="2026-10-05" />
+
+One merged PR: serving Datasette Lite from the project root. Sole contributor: **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/claude-session-driver](https://github.com/obra/claude-session-driver)
+
+<p class="repo-desc">Launch, control, and monitor other Claude Code sessions as workers via tmux.</p>
+
+<RepoStat org="obra" name="claude-session-driver" week="2026-10-05" />
+
+One merged PR: a launch fix so the trust dialog is accepted correctly even when it defaults to "No, exit." Sole contributor: **Jesse Vincent (staff)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/everyharness](https://github.com/prime-radiant-inc/everyharness)
+
+<p class="repo-desc">Generate a coding-agent plugin for every harness from one config file.</p>
+
+<RepoStat org="prime-radiant-inc" name="everyharness" week="2026-10-05" />
+
+One merged PR: wiring npm publish on `v*` tags via OIDC trusted publishing. Sole contributor: **Jesse Vincent (staff)**.
+
+</article>
+
+<p class="caveat"><em>The remaining active repo — <code>claude-plugin-stats</code> — had only bot-driven activity again this week (five days of the daily install-stats scrape and chart rebuild), with no human commits.</em></p>
+
+</section>
