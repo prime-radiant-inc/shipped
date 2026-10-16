@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-10-09T00:00:00.000Z</updated>
+  <updated>2026-10-16T00:00:00.000Z</updated>
+  <entry>
+    <title>evener tags v0.3.8 after a week-long copy-oracle test-hardening push, and evener-client-playdate debuts as a native Playdate handheld client</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-10-12" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-10-12</id>
+    <updated>2026-10-16T00:00:00.000Z</updated>
+    <published>2026-10-16T00:00:00.000Z</published>
+    <summary>Partial week — data runs through Friday evening, not the full calendar week. prime-radiant-inc/evener tags v0.3.8 after a week running a sustained copy-oracle test-hardening campaign, a web-UI widget-library migration, device-pairing work, and a hardened per-test timing gate. A new repo, prime-radiant-inc/evener-client-playdate, also debuts as a native Playdate handheld client for evener with voice composition and direct Tailscale connectivity.</summary>
+  </entry>
   <entry>
     <title>evener tags v0.3.7 and finishes a generated memory index, superpowers-chrome defaults to redacting secrets exposed at page load, and a new repo debuts a morning-routine board</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-10-05" />
