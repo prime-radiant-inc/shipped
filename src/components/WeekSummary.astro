@@ -55,14 +55,22 @@ if (expectedLocAdded !== s.loc_added || expectedLocRemoved !== s.loc_removed) {
 function fmt(n: number) {
   return n.toLocaleString('en-US');
 }
+
+// Singular/plural helper for every count label below -- "1 tagged
+// releases" (and the same bug on repos/commits/PRs/identities) was wrong.
+// `singular` is the bare noun ("release"); `plural` defaults to
+// `singular + 's'` since every label here pluralizes regularly.
+function noun(n: number, singular: string, plural: string = `${singular}s`) {
+  return n === 1 ? singular : plural;
+}
 ---
 
 <h2>The week in numbers</h2>
 
 <ul class="stats">
-<li><strong>{fmt(s.repos_active)}</strong> repos active ({s.featured_count} featured, {s.second_tier_count} also shipped)</li>
-<li><strong>{fmt(s.commits)}</strong> commits</li>
-<li><strong>{fmt(s.merged_prs)}</strong> merged PRs</li>
+<li><strong>{fmt(s.repos_active)}</strong> {noun(s.repos_active, 'repo')} active ({s.featured_count} featured, {s.second_tier_count} also shipped)</li>
+<li><strong>{fmt(s.commits)}</strong> {noun(s.commits, 'commit')}</li>
+<li><strong>{fmt(s.merged_prs)}</strong> merged {noun(s.merged_prs, 'PR')}</li>
 <li><strong>+{fmt(s.loc_added)} / −{fmt(s.loc_removed)}</strong> lines</li>
 {/* s.contributors is tools/gen_stats.py's contributor_identity()-deduped
    count of distinct commit identities for the week -- bots and
@@ -72,6 +80,6 @@ function fmt(n: number) {
    dependabot[bot]). Labeled "commit identities," not "contributors," so
    the number matches what it has always counted, here and on every
    prior week this component has ever rendered. */}
-<li><strong>{fmt(s.contributors)}</strong> commit identities</li>
-<li><strong>{fmt(s.tagged_releases)}</strong> tagged releases</li>
+<li><strong>{fmt(s.contributors)}</strong> commit {noun(s.contributors, 'identity', 'identities')}</li>
+<li><strong>{fmt(s.tagged_releases)}</strong> tagged {noun(s.tagged_releases, 'release')}</li>
 </ul>
