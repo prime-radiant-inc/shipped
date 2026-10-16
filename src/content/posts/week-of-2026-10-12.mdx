@@ -1,17 +1,17 @@
 ---
-title: "evener-client-playdate debuts as a native Playdate handheld client, while evener runs a week-long copy-oracle test-hardening campaign"
+title: "evener tags v0.3.8 after a week-long copy-oracle test-hardening push, and evener-client-playdate debuts as a native Playdate handheld client"
 week: "Week of October 12, 2026"
 dateStart: 2026-10-12
 dateEnd: 2026-10-18
 pubDate: 2026-10-16
-summary: "Partial week — data runs through Friday evening, not the full calendar week. A new repo, prime-radiant-inc/evener-client-playdate, debuts as a native Playdate handheld client for evener with voice composition and direct Tailscale connectivity. No tagged releases this week. evener itself is the busiest repo again, running a sustained copy-oracle test-hardening campaign alongside a web-UI widget-library migration, device-pairing work, and a hardened per-test timing gate."
+summary: "Partial week — data runs through Friday evening, not the full calendar week. prime-radiant-inc/evener tags v0.3.8 after a week running a sustained copy-oracle test-hardening campaign, a web-UI widget-library migration, device-pairing work, and a hardened per-test timing gate. A new repo, prime-radiant-inc/evener-client-playdate, also debuts as a native Playdate handheld client for evener with voice composition and direct Tailscale connectivity."
 draft: false
 ---
 
 import WeekSummary from '../../components/WeekSummary.astro';
 import RepoStat from '../../components/RepoStat.astro';
 
-A new repo, **`prime-radiant-inc/evener-client-playdate`**, debuts this week as a native Playdate handheld client for evener, with voice composition and direct Tailscale connectivity — the only item getting the featured treatment this time, since no repo cut a tagged release. **`prime-radiant-inc/evener`** is the busiest repo again regardless, running a sustained "copy-oracle" test-hardening campaign across nearly the whole week alongside a web-UI widget-library migration, device-pairing work, and an incrementally hardened per-test timing gate. This week is still open: the data below runs through Friday evening, not the full calendar week.
+**`prime-radiant-inc/evener`** tags v0.3.8 this week, after a week running a sustained "copy-oracle" test-hardening campaign alongside a web-UI widget-library migration, device-pairing work, and an incrementally hardened per-test timing gate. A new repo, **`prime-radiant-inc/evener-client-playdate`**, also debuts this week as a native Playdate handheld client for evener, with voice composition and direct Tailscale connectivity. This week is still open: the data below runs through Friday evening, not the full calendar week.
 
 <section class="summary">
 
@@ -24,6 +24,18 @@ A new repo, **`prime-radiant-inc/evener-client-playdate`**, debuts this week as 
 <section class="featured">
 
 ## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-10-12" />
+
+Tagged release v0.3.8 (a bare version-number release, auto-generated changelog, no further release-note text — same pattern as prior evener releases). By far the most active repo this week. The work clusters into a few sustained threads rather than one single feature: a **large "copy-oracle" test-hardening campaign** spanning nearly the whole week and touching web, native, hub, agent, TUI, sandbox, frontend, and appwire-client tests — converting assertions on literal copy/wording into assertions on structural state, markers, error sentinels/types, or toast kinds, backed by new tooling to catch regressions of the same kind (a copy-oracle inventory of wording-only tests, a CI ratchet against new ones, and that inventory tool itself later ported from Python to Go and TypeScript); a **web-UI migration onto the shared widget library**, done in explicit waves with a final follow-up and "last leftovers" pass; **device/mobile pairing work** (shared device invitations plus native Hub pairing, pairing destinations kept visible on narrow screens, automatic Hub-destination discovery for mobile pairing, clarified phone QR/sound-pairing codes); a **per-test timing "gate" hardened incrementally** to fail loudly on a malformed testing-budget config instead of silently, then segmented by test class, with some runner-bound classes returned to warn-only per a dated ruling; and **entry-backed background transcripts**, landed as a feature and then followed by a repair pass for defects the review found. Alongside those: memory work (pages that say when to recall themselves, a `memory_write` taking `when`/`body` fields, index lines linking the page path instead of the title), execenv/sandbox read-capping, several LLM/vision provider fixes, hub reliability fixes, and a run of changes landing right at the window's close: Stop taking the composer's slot with the status line lifting to the title, a floating compose button on the Board replacing its bottom bar, the session UI trimmed (dropping the like-this control for a copyable id and a smaller composer), settings reorganized with plugin sources unified, and delegate report messages preserved in more detail. Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
 
 <article class="repo">
 
@@ -45,25 +57,13 @@ A new repo, created this week — a native client for the Playdate handheld, bui
 
 <article class="repo">
 
-### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
-
-<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
-
-<RepoStat org="prime-radiant-inc" name="evener" week="2026-10-12" />
-
-No tagged release this week, but by far the most active repo. The work clusters into a few sustained threads rather than one single feature: a **large "copy-oracle" test-hardening campaign** spanning nearly the whole week and touching web, native, hub, agent, TUI, sandbox, frontend, and appwire-client tests — converting assertions on literal copy/wording into assertions on structural state, markers, error sentinels/types, or toast kinds, backed by new tooling to catch regressions of the same kind (a copy-oracle inventory of wording-only tests, a CI ratchet against new ones, and that inventory tool itself later ported from Python to Go and TypeScript); a **web-UI migration onto the shared widget library**, done in explicit waves with a final follow-up and "last leftovers" pass; **device/mobile pairing work** (shared device invitations plus native Hub pairing, pairing destinations kept visible on narrow screens, automatic Hub-destination discovery for mobile pairing, clarified phone QR/sound-pairing codes); a **per-test timing "gate" hardened incrementally** to fail loudly on a malformed testing-budget config instead of silently, then segmented by test class, with a couple of runner-bound classes returned to warn-only per a dated ruling; and **entry-backed background transcripts**, landed as a feature and then followed by a repair pass addressing eleven defects the branch review found. Alongside those: memory work (pages that say when to recall themselves, a `memory_write` taking `when`/`body` fields, index lines linking the page path instead of the title), execenv/sandbox read-capping, several LLM/vision provider fixes, hub reliability fixes, and two native UI changes landing at the end of the window — Stop taking the composer's slot with the status line lifting to the title, and a floating compose button on the Board replacing its bottom bar. Sole author: **Jesse Vincent (staff, `obra`)**.
-
-</article>
-
-<article class="repo">
-
 ### [prime-radiant-inc/maintaining-documentation](https://github.com/prime-radiant-inc/maintaining-documentation)
 
 <p class="repo-desc">A coding-agent skill that keeps a project's docs true to the code and useful to their readers, for every harness.</p>
 
 <RepoStat org="prime-radiant-inc" name="maintaining-documentation" week="2026-10-12" />
 
-A young repo (created just before this window opened) tagging its first minor version, 0.2.0, via one merged PR ("Reader-centered doc writing: reader brief, doc types, reader test"). This window: a copyedit pass that runs a fresh subagent against the project's bundled Strunk guide and then a second pass checking the resulting word-diff for changed claims — evaluated against 8 docs, with the copyedited version winning all 8 blind reader comparisons and the drift check flagging about 7 of roughly 210 changed sentences; the `writing-clearly-and-concisely` skill bundled in wholesale from `obra/the-elements-of-style` (public-domain Strunk text); then renamed to `copyediting-docs` to avoid colliding with the standalone skill, with its guide cut by about a third — composition rules kept word-for-word, punctuation/usage trimmed by deletion only, reaching parity against full-text copyedits in blind judging. Sole author: **Jesse Vincent (staff, `obra`)**.
+A young repo (created just before this window opened), with one merged PR this window — reader-centered doc writing: a reader brief, doc types, and a reader test. Also: a copyedit pass that runs a fresh subagent against the project's bundled Strunk guide and then a second pass checking the resulting word-diff for changed claims, evaluated in blind reader comparisons; the `writing-clearly-and-concisely` skill bundled in wholesale from `obra/the-elements-of-style` (public-domain Strunk text); then renamed to `copyediting-docs` to avoid colliding with the standalone skill, with its guide trimmed — composition rules kept word-for-word, punctuation/usage trimmed by deletion only, reaching parity against full-text copyedits in blind judging. No tags or releases on this repo. Sole author: **Jesse Vincent (staff, `obra`)**.
 
 </article>
 

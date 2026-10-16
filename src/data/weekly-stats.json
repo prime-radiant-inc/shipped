@@ -26303,28 +26303,43 @@
   "2026-10-12": {
     "summary": {
       "repos_active": 7,
-      "featured_count": 1,
-      "second_tier_count": 6,
-      "commits": 233,
-      "merged_prs": 204,
-      "loc_added": 186078,
-      "loc_removed": 55738,
+      "featured_count": 2,
+      "second_tier_count": 5,
+      "commits": 236,
+      "merged_prs": 207,
+      "loc_added": 188178,
+      "loc_removed": 56675,
       "contributors": 3,
-      "tagged_releases": 0,
+      "tagged_releases": 1,
       "commit_only_bumps": 0
     },
     "repos": {
       "prime-radiant-inc/evener": {
-        "commits": 188,
+        "commits": 191,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 188
+            "count": 191
           }
         ],
-        "loc_added": 177452,
-        "loc_removed": 50476,
+        "loc_added": 179552,
+        "loc_removed": 51413,
         "merged_prs": [
+          {
+            "number": 4722,
+            "title": "fix(agent): preserve detailed delegate report messages",
+            "merged_at": "2026-10-16T22:23:55Z"
+          },
+          {
+            "number": 4723,
+            "title": "feat(web): organize settings and unify plugin sources",
+            "merged_at": "2026-10-16T22:10:07Z"
+          },
+          {
+            "number": 4724,
+            "title": "feat(native): trim the session UI \u2014 no like-this, copyable id, smaller composer",
+            "merged_at": "2026-10-16T22:09:57Z"
+          },
           {
             "number": 4721,
             "title": "feat(native): float a compose button on the Board, and drop its bottom bar",
@@ -27261,10 +27276,18 @@
             "merged_at": "2026-10-12T00:15:47Z"
           }
         ],
-        "tagged_releases": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.3.8",
+            "name": "v0.3.8",
+            "published_at": "2026-10-16T22:17:58Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
         "commit_only_bumps": [],
-        "featured": false,
-        "featured_reason": null,
+        "featured": true,
+        "featured_reason": "tagged release v0.3.8 published 2026-10-16T22:17:58Z",
         "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
         "html_url": "https://github.com/prime-radiant-inc/evener"
       },

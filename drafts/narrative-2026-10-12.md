@@ -52,10 +52,18 @@ of window) — a native Playdate handheld client for evener, with voice
 composition and direct Tailscale connectivity. Sole author: Jesse Vincent
 (`obra`).
 
-**No tagged releases this week.** Zero releases, zero tags landed in any
-of the 7 active repos in-window (confirmed both via `gather.py`'s
-`releases_in_window` field and `repo-report`'s per-repo releases/tags
-sections — all read "(none)").
+**One tagged release this week: `prime-radiant-inc/evener` v0.3.8**,
+published 2026-10-16T22:17:58Z (not a draft, not a prerelease) — landed
+AFTER the original 2026-10-16T22:08:30Z gather snapshot, so it's only in
+this data because `gather.py`/`gen_stats.py` were re-run with a later
+window-end (2026-10-16T22:45:50Z) that covers it. Re-running also picked
+up three more evener PRs merged between the two snapshots (#4722, #4723,
+#4724). Body is GitHub's standard auto-generated "What's Changed" PR list
+back to v0.3.7 (same as every other evener release checked — v0.3.5,
+v0.3.6, v0.3.7 all have the same auto-generated body shape); the release
+itself is a bare version-number tag, no custom name or hand-written
+notes, consistent with prior evener releases. No other repo released or
+tagged anything in-window.
 
 **Two near-misses on the "new repo" window, NOT featured:** both
 `prime-radiant-inc/maintaining-documentation` (created 2026-10-11T22:46:05Z)
@@ -63,6 +71,18 @@ and `obra/picksandshovels` (created 2026-10-11T22:31:49Z) were created
 roughly 1–1.5 hours before the Monday 00:00 UTC window-start cutoff —
 correctly excluded by the mechanical rule, not a judgment call, but worth
 knowing why they read as "also shipped" below rather than "featured."
+
+**Window timezone, confirmed UTC.** `tools/gather.py`'s `week_buckets()`
+anchors Monday 00:00 in `datetime.timezone.utc` explicitly, and every
+timestamp in the recon JSON (`window_start_utc`, `window_end_utc`,
+commit/PR/release dates) is UTC — matching the convention established in
+every prior week's gather run. Checked specifically because two cells sit
+close to the boundary in Pacific time: `maintaining-documentation`'s 4
+commits (2026-10-12T02:20–03:12Z) are Sunday evening in Pacific but Monday
+in UTC, and `evener-client-playdate`'s creation (2026-10-12T03:33:27Z) is
+similarly Sunday 20:33 PT but Monday in UTC. Since the established window
+is UTC, both stay in-window and the new-repo featured trigger for
+`evener-client-playdate` stands.
 
 **LOC suppression, applied per the established mechanical rule** (commit
 02a56bd's rule, reused verbatim in 42f4a95: flag any (week, repo) cell
@@ -87,10 +107,9 @@ arithmetic.
 
 ### prime-radiant-inc/evener
 
-188 commits, 187 merged PRs, sole author Jesse Vincent (`obra`, in-org).
-No releases this week (first evener week in a while with no tag). The
-week's PRs cluster into a few sustained threads rather than one single
-feature:
+191 commits, 190 merged PRs, sole author Jesse Vincent (`obra`, in-org).
+Tagged release v0.3.8 — see the release note above. The week's PRs
+cluster into a few sustained threads rather than one single feature:
 
 - **A large, sustained "copy-oracle" test-hardening campaign** spanning
   nearly the whole week and touching almost every subsystem — web, native,
@@ -119,8 +138,8 @@ feature:
   class and enforcing it, with a couple of runner-bound test classes
   returned to warn-only per a dated ruling (2026-10-14).
 - **Entry-backed background transcripts**, landed as a feature through the
-  legacy-retirement path and then followed by a repair pass addressing
-  eleven defects the branch review found.
+  legacy-retirement path and then followed by a repair pass for defects
+  the branch review found.
 
 Alongside those: memory work (pages that say when to recall themselves,
 `memory_write` taking `when`/`body` as fields, memory index lines linking
@@ -132,10 +151,13 @@ blocks, a single shared rule for wire image detail, sending
 `thinkingLevel` vs. `thinkingBudget` to the right Google row shapes), hub
 reliability fixes (breaking a relay read-acknowledgement deadlock,
 preserving heartbeat writes during request intake, repairing
-transcript-index sidecars off the daemonless read path), and a pair of
-native UI changes landing right at the end of the window: Stop taking the
-composer's slot with the status line lifting to the title, and a floating
-compose button on the Board replacing its bottom bar.
+transcript-index sidecars off the daemonless read path), and a run of
+changes landing right at the window's close: Stop taking the composer's
+slot with the status line lifting to the title, a floating compose button
+on the Board replacing its bottom bar, the session UI trimmed (dropping
+the like-this control for a copyable id and a smaller composer), settings
+reorganized with plugin sources unified, and delegate report messages
+preserved in more detail.
 
 Sole author throughout: **Jesse Vincent (`obra`, in-org)**.
 
@@ -168,22 +190,23 @@ in-org)**.
 
 Not a new repo by the mechanical rule (created ~1.5 hours before the
 window-start cutoff — see note above), but a young one (7 total commits
-in its history, 4 of which fall in this window) and the only repo this
-week with a tagged minor-version PR (0.2.0). It's a coding-agent skill
-for keeping a project's docs honest against the code. This window: a
-copyedit pass that runs a fresh subagent against the project's bundled
-Strunk guide and then a second pass checking the resulting word-diff for
-changed claims (eval'd against 8 docs: the copyedited version won all 8
-blind reader comparisons, and the drift check flagged 7 of roughly 210
-changed sentences); the `writing-clearly-and-concisely` skill bundled in
-wholesale from `obra/the-elements-of-style` (public-domain Strunk text);
-that bundled skill then renamed to `copyediting-docs` to avoid colliding
-with the standalone skill of a similar name, and its guide cut by about a
-third (composition rules kept word-for-word, punctuation/usage trimmed by
-deletion only, reaching parity against full-text copyedits in blind
-judging). One merged PR (#1, "Reader-centered doc writing: reader brief,
-doc types, reader test," tagging 0.2.0). Sole author: **Jesse Vincent
-(`obra`, in-org)**.
+in its history, 4 of which fall in this window). It's a coding-agent
+skill for keeping a project's docs honest against the code. No tags or
+releases on this repo — the "(0.2.0)" in merged PR #1's title
+("Reader-centered doc writing: reader brief, doc types, reader test
+(0.2.0)") reflects the project's `plugin.json` version, which already
+read 0.2.0 before this window opened; not a release landing this week,
+and dropped from the post accordingly. This window: a copyedit pass that
+runs a fresh subagent against the project's bundled Strunk guide and then
+a second pass checking the resulting word-diff for changed claims,
+evaluated in blind reader comparisons; the `writing-clearly-and-concisely`
+skill bundled in wholesale from `obra/the-elements-of-style`
+(public-domain Strunk text); that bundled skill then renamed to
+`copyediting-docs` to avoid colliding with the standalone skill of a
+similar name, with its guide trimmed (composition rules kept
+word-for-word, punctuation/usage trimmed by deletion only, reaching
+parity against full-text copyedits in blind judging). Sole author:
+**Jesse Vincent (`obra`, in-org)**.
 
 ### obra/lace
 
