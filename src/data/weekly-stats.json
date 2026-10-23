@@ -27490,5 +27490,843 @@
         "html_url": "https://github.com/obra/picksandshovels"
       }
     }
+  },
+  "2026-10-19": {
+    "summary": {
+      "repos_active": 10,
+      "featured_count": 2,
+      "second_tier_count": 8,
+      "commits": 135,
+      "merged_prs": 117,
+      "loc_added": 133990,
+      "loc_removed": 15496,
+      "contributors": 6,
+      "tagged_releases": 4,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "prime-radiant-inc/llm-proxy": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "Ada Sen",
+            "count": 4
+          },
+          {
+            "name": "ada-sen",
+            "count": 2
+          },
+          {
+            "name": "Drew Ritter",
+            "count": 1
+          }
+        ],
+        "loc_added": 4270,
+        "loc_removed": 94,
+        "merged_prs": [
+          {
+            "number": 10,
+            "title": "fix(pri-3457): prune llm-proxy request logs by age and size cap",
+            "merged_at": "2026-10-20T19:54:51Z"
+          },
+          {
+            "number": 12,
+            "title": "fix: close idle and date-rolled-over session log files in Logger",
+            "merged_at": "2026-10-20T19:48:33Z"
+          },
+          {
+            "number": 11,
+            "title": "Preserve optional model-call correlation in captures",
+            "merged_at": "2026-10-19T23:42:27Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Transparent logging proxy for LLM API traffic that auto-configures clients and records every request and response to Claude, OpenAI, and other providers for debugging, auditing, and analysis.",
+        "html_url": "https://github.com/prime-radiant-inc/llm-proxy"
+      },
+      "prime-radiant-inc/evener": {
+        "commits": 94,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 92
+          },
+          {
+            "name": "dependabot[bot]",
+            "count": 2
+          }
+        ],
+        "loc_added": 125858,
+        "loc_removed": 15075,
+        "merged_prs": [
+          {
+            "number": 4926,
+            "title": "fix(atif): report cache-read and prompt-wire token totals (#4562)",
+            "merged_at": "2026-10-23T20:58:34Z"
+          },
+          {
+            "number": 4920,
+            "title": "fix(agent): skip retirement admission for superseded retry ticks",
+            "merged_at": "2026-10-23T20:15:24Z"
+          },
+          {
+            "number": 4918,
+            "title": "fix(transcript): break the prepend measurement update loop (#457)",
+            "merged_at": "2026-10-23T20:00:49Z"
+          },
+          {
+            "number": 4919,
+            "title": "fix(memory): scope-root-relative search result paths (#4206)",
+            "merged_at": "2026-10-23T19:39:19Z"
+          },
+          {
+            "number": 4917,
+            "title": "fix(execenv): preserve detached TMPDIR after provisioning failure",
+            "merged_at": "2026-10-23T19:07:32Z"
+          },
+          {
+            "number": 4921,
+            "title": "docs(execenv): align detached TMPDIR environment reference",
+            "merged_at": "2026-10-23T19:34:07Z"
+          },
+          {
+            "number": 4903,
+            "title": "fix(native): park goal replacements apart and reconcile split labels",
+            "merged_at": "2026-10-23T19:21:13Z"
+          },
+          {
+            "number": 4908,
+            "title": "fix(agent): preserve schemas for renamed result tools",
+            "merged_at": "2026-10-23T18:46:42Z"
+          },
+          {
+            "number": 4910,
+            "title": "fix(google): deliver PDF documents without duplicate tool media",
+            "merged_at": "2026-10-23T18:18:46Z"
+          },
+          {
+            "number": 4913,
+            "title": "fix(transcript): preserve user turns in bounded ranges",
+            "merged_at": "2026-10-23T17:58:29Z"
+          },
+          {
+            "number": 4902,
+            "title": "Native: carry recovered draft ownership through identity-changing resume",
+            "merged_at": "2026-10-23T17:39:40Z"
+          },
+          {
+            "number": 4911,
+            "title": "feat(webui): eyebrow labels on PropertyList rows",
+            "merged_at": "2026-10-23T17:21:38Z"
+          },
+          {
+            "number": 4909,
+            "title": "fix(tools): keep trailing result notes atomic at the character cap",
+            "merged_at": "2026-10-23T17:19:46Z"
+          },
+          {
+            "number": 4907,
+            "title": "fix(contextmgr): summarize parked searches as refused",
+            "merged_at": "2026-10-23T16:44:27Z"
+          },
+          {
+            "number": 4891,
+            "title": "test(retry): verify durable continuation settlement",
+            "merged_at": "2026-10-23T15:28:09Z"
+          },
+          {
+            "number": 4897,
+            "title": "fix(cascade): share scope title resolution",
+            "merged_at": "2026-10-23T14:34:10Z"
+          },
+          {
+            "number": 4899,
+            "title": "test(composer): own async projection boundaries (#4896)",
+            "merged_at": "2026-10-23T14:14:58Z"
+          },
+          {
+            "number": 4900,
+            "title": "test(cache): make metadata fixture independent of the wall clock",
+            "merged_at": "2026-10-23T13:53:55Z"
+          },
+          {
+            "number": 4894,
+            "title": "test(web): pin nested child phone focus on current placement",
+            "merged_at": "2026-10-23T12:22:05Z"
+          },
+          {
+            "number": 4895,
+            "title": "test(composer): settle stale recovery projection before peer reads",
+            "merged_at": "2026-10-23T12:08:10Z"
+          },
+          {
+            "number": 4892,
+            "title": "fix(native): preserve unsent comments beyond the reading cache limit",
+            "merged_at": "2026-10-23T11:25:14Z"
+          },
+          {
+            "number": 4885,
+            "title": "test(activity): guard near-limit intent geometry at phone widths",
+            "merged_at": "2026-10-23T10:33:26Z"
+          },
+          {
+            "number": 4890,
+            "title": "test(composer): settle reopened recovery projection before storage assertion",
+            "merged_at": "2026-10-23T10:09:13Z"
+          },
+          {
+            "number": 4888,
+            "title": "test(web): cover display cross-tab sync in real browser tabs",
+            "merged_at": "2026-10-23T08:58:49Z"
+          },
+          {
+            "number": 4882,
+            "title": "test(cascadeguard): a real dotted ancestor spine and its accessible label",
+            "merged_at": "2026-10-23T08:41:50Z"
+          },
+          {
+            "number": 4817,
+            "title": "fix: edit and remove queued messages across browser and native",
+            "merged_at": "2026-10-23T08:09:51Z"
+          },
+          {
+            "number": 4883,
+            "title": "feat(hub): advertise forwarded actions for remote sessions",
+            "merged_at": "2026-10-23T08:05:01Z"
+          },
+          {
+            "number": 4876,
+            "title": "test(hub): pin relay pending-delivery capacity",
+            "merged_at": "2026-10-23T07:34:30Z"
+          },
+          {
+            "number": 4870,
+            "title": "feat(settings): provider connection follow-ups to #4805",
+            "merged_at": "2026-10-23T07:02:04Z"
+          },
+          {
+            "number": 4840,
+            "title": "fix(hub): fast-follow #4805 with retry source and race test",
+            "merged_at": "2026-10-22T19:51:16Z"
+          },
+          {
+            "number": 4805,
+            "title": "feat(hub): one card for provider connection in every state",
+            "merged_at": "2026-10-22T15:52:43Z"
+          },
+          {
+            "number": 4873,
+            "title": "fix(native): let a tap reach a file link in assistant prose",
+            "merged_at": "2026-10-23T06:31:00Z"
+          },
+          {
+            "number": 4866,
+            "title": "fix(notifications): preserve literal body entities",
+            "merged_at": "2026-10-23T05:34:59Z"
+          },
+          {
+            "number": 4865,
+            "title": "test(reader): deliver resize observations after held frame callbacks",
+            "merged_at": "2026-10-23T05:10:29Z"
+          },
+          {
+            "number": 4867,
+            "title": "fix(transcript): absorb recorded overlay notices after Stop",
+            "merged_at": "2026-10-23T04:57:28Z"
+          },
+          {
+            "number": 4639,
+            "title": "build(deps): bump actions/setup-node from 7.0.0 to 7.1.0",
+            "merged_at": "2026-10-23T04:42:56Z"
+          },
+          {
+            "number": 4849,
+            "title": "fix(sshconn): upgrade hosts that report an incompatible protocol",
+            "merged_at": "2026-10-23T04:18:14Z"
+          },
+          {
+            "number": 4641,
+            "title": "build(deps): bump actions/upload-artifact from 4 to 7",
+            "merged_at": "2026-10-23T03:43:53Z"
+          },
+          {
+            "number": 4856,
+            "title": "fix(native): offer Unarchive for pinned archived Board sessions",
+            "merged_at": "2026-10-23T03:28:15Z"
+          },
+          {
+            "number": 4860,
+            "title": "fix(shellguard): share witness failures and pin the read bound",
+            "merged_at": "2026-10-23T02:37:23Z"
+          },
+          {
+            "number": 4859,
+            "title": "test(delegates): preserve empty deliveries in stale-finish snapshots",
+            "merged_at": "2026-10-23T02:22:38Z"
+          },
+          {
+            "number": 4857,
+            "title": "fix(web): keep ordinary mobile Back to one history transition",
+            "merged_at": "2026-10-23T02:04:48Z"
+          },
+          {
+            "number": 4848,
+            "title": "Fix hub endpoint Low findings from #4767",
+            "merged_at": "2026-10-23T01:41:27Z"
+          },
+          {
+            "number": 4853,
+            "title": "test(sandbox): exercise fresh-session scratch on clear after cleanup",
+            "merged_at": "2026-10-23T01:24:14Z"
+          },
+          {
+            "number": 4852,
+            "title": "fix(e2e): load fake429 with registry schema 2",
+            "merged_at": "2026-10-23T01:07:12Z"
+          },
+          {
+            "number": 4855,
+            "title": "fix(hub): lint browserguard fixtures without changing evidence contracts",
+            "merged_at": "2026-10-23T00:51:13Z"
+          },
+          {
+            "number": 4851,
+            "title": "fix(e2e): describe affinity session ids in turn-controls guidance",
+            "merged_at": "2026-10-23T00:37:27Z"
+          },
+          {
+            "number": 4850,
+            "title": "docs(fakellm): correct session affinity configuration key",
+            "merged_at": "2026-10-23T00:23:26Z"
+          },
+          {
+            "number": 4767,
+            "title": "Clean up hub endpoint configuration and discovery",
+            "merged_at": "2026-10-22T23:15:03Z"
+          },
+          {
+            "number": 4780,
+            "title": "perf(test): build the live-stack binaries before the suite runs",
+            "merged_at": "2026-10-21T05:31:52Z"
+          },
+          {
+            "number": 4782,
+            "title": "feat(llm): honor a gateway's per-model no-effort verdict",
+            "merged_at": "2026-10-21T18:20:14Z"
+          },
+          {
+            "number": 4781,
+            "title": "feat(llm): read a gateway's per-model dialect and token spelling",
+            "merged_at": "2026-10-21T06:22:54Z"
+          },
+          {
+            "number": 4842,
+            "title": "fix(serve): keep SIGTERM handled while thread/shutdown tears down",
+            "merged_at": "2026-10-22T20:44:38Z"
+          },
+          {
+            "number": 4835,
+            "title": "feat(native): file links in assistant prose open the Reader",
+            "merged_at": "2026-10-22T15:48:37Z"
+          },
+          {
+            "number": 4838,
+            "title": "fix(native): retry recovery from a queued Send, and never resume for an uncertain send",
+            "merged_at": "2026-10-22T16:25:28Z"
+          },
+          {
+            "number": 4830,
+            "title": "feat(hub): split binary install from hub restart",
+            "merged_at": "2026-10-22T08:35:34Z"
+          },
+          {
+            "number": 4811,
+            "title": "Send resumes a fenced session on web and phone",
+            "merged_at": "2026-10-22T06:20:39Z"
+          },
+          {
+            "number": 4833,
+            "title": "fix(plugins): keep source ref refusals typed through marketplace edits",
+            "merged_at": "2026-10-22T05:47:19Z"
+          },
+          {
+            "number": 4834,
+            "title": "refactor(agent): one prompt for the current step, one plan for a root workflow",
+            "merged_at": "2026-10-22T04:59:31Z"
+          },
+          {
+            "number": 4829,
+            "title": "feat(agent): give a delegate its whole plan at startup",
+            "merged_at": "2026-10-22T04:24:40Z"
+          },
+          {
+            "number": 4828,
+            "title": "feat(plugins): let marketplace add name a branch or tag",
+            "merged_at": "2026-10-22T04:03:52Z"
+          },
+          {
+            "number": 4821,
+            "title": "fix(onboarding): verify credentials and return to the draft automatically",
+            "merged_at": "2026-10-22T03:45:18Z"
+          },
+          {
+            "number": 4822,
+            "title": "fix(web): file links in assistant prose open the document pane",
+            "merged_at": "2026-10-22T02:25:02Z"
+          },
+          {
+            "number": 4809,
+            "title": "fix(plugins): keep managed Git metadata private and retire its scan",
+            "merged_at": "2026-10-21T09:56:01Z"
+          },
+          {
+            "number": 4806,
+            "title": "fix(evener): resume Codex models from the provider's live roster",
+            "merged_at": "2026-10-21T09:20:07Z"
+          },
+          {
+            "number": 4813,
+            "title": "perf: sample context metrics and pressure once per publication",
+            "merged_at": "2026-10-21T06:45:19Z"
+          },
+          {
+            "number": 4808,
+            "title": "fix(docs): repair user journeys and verify operator runbooks",
+            "merged_at": "2026-10-21T05:50:54Z"
+          },
+          {
+            "number": 4812,
+            "title": "fix(web): badge a failed tool call's cross on the kind icon's corner",
+            "merged_at": "2026-10-21T05:42:58Z"
+          },
+          {
+            "number": 4784,
+            "title": "fix(hub): connect compatible hosts without forcing deployment",
+            "merged_at": "2026-10-21T03:58:41Z"
+          },
+          {
+            "number": 4804,
+            "title": "fix(agent): paused attention no longer masks a failed turn",
+            "merged_at": "2026-10-21T01:46:23Z"
+          },
+          {
+            "number": 4777,
+            "title": "fix(agent): restore sessions when their temp dir is gone",
+            "merged_at": "2026-10-21T01:12:07Z"
+          },
+          {
+            "number": 4795,
+            "title": "fix(plugins): preserve published revisions for existing sessions",
+            "merged_at": "2026-10-20T23:36:06Z"
+          },
+          {
+            "number": 4796,
+            "title": "perf(registry): share immutable catalog capability maps",
+            "merged_at": "2026-10-20T21:16:37Z"
+          },
+          {
+            "number": 4790,
+            "title": "fix(web): adopt draft-aware Stop placement across widths",
+            "merged_at": "2026-10-20T20:26:02Z"
+          },
+          {
+            "number": 4789,
+            "title": "fix(llm): retry a gateway in-band error frame instead of calling it permanent",
+            "merged_at": "2026-10-20T19:15:40Z"
+          },
+          {
+            "number": 4786,
+            "title": "fix: Retry continues failed turns without replaying prompts",
+            "merged_at": "2026-10-20T18:03:30Z"
+          },
+          {
+            "number": 4766,
+            "title": "fix(llm): recover rejected JPEGs without losing original images",
+            "merged_at": "2026-10-20T17:39:44Z"
+          },
+          {
+            "number": 4765,
+            "title": "perf(hub): skip discarded totals on history pages",
+            "merged_at": "2026-10-20T02:23:11Z"
+          },
+          {
+            "number": 4759,
+            "title": "fix(llm): read a gateway's per-model reasoning ladder from /models",
+            "merged_at": "2026-10-20T01:43:56Z"
+          },
+          {
+            "number": 4762,
+            "title": "perf(hub): check saved session existence without hydration",
+            "merged_at": "2026-10-20T01:28:05Z"
+          },
+          {
+            "number": 4718,
+            "title": "perf(web): share floating-label pointer tracking; scope hovercard cancellation to active gestures (#3737, #3643)",
+            "merged_at": "2026-10-20T01:09:20Z"
+          },
+          {
+            "number": 4717,
+            "title": "fix(execenv): close three residual holes in the deleted-anchor guard (#4703)",
+            "merged_at": "2026-10-20T01:10:29Z"
+          },
+          {
+            "number": 4760,
+            "title": "perf(hub): deduplicate failed project lookups per capture",
+            "merged_at": "2026-10-20T00:51:43Z"
+          },
+          {
+            "number": 4757,
+            "title": "perf(agent): remove unused request history snapshot",
+            "merged_at": "2026-10-20T00:22:05Z"
+          },
+          {
+            "number": 4711,
+            "title": "perf(transcriptindex): size scan buffers to unread bytes",
+            "merged_at": "2026-10-19T23:42:03Z"
+          },
+          {
+            "number": 4754,
+            "title": "fix(agent): the low-context nudge lists skill names only",
+            "merged_at": "2026-10-19T21:01:49Z"
+          },
+          {
+            "number": 4753,
+            "title": "feat(native): refine the iPhone design for Apple conventions",
+            "merged_at": "2026-10-19T15:52:49Z"
+          },
+          {
+            "number": 4752,
+            "title": "docs: repair stale references and close the audit's gaps",
+            "merged_at": "2026-10-19T04:49:40Z"
+          },
+          {
+            "number": 4751,
+            "title": "fix(native): a rebuilt client's resume keeps the transcript on screen",
+            "merged_at": "2026-10-19T03:15:32Z"
+          },
+          {
+            "number": 4750,
+            "title": "feat(native): split background jobs from subagents into Agents and Jobs lists",
+            "merged_at": "2026-10-19T02:48:27Z"
+          },
+          {
+            "number": 4749,
+            "title": "fix(web): align native browser bounds with guard viewports",
+            "merged_at": "2026-10-19T02:38:45Z"
+          },
+          {
+            "number": 4744,
+            "title": "docs: audit user guides and publish tested CLI/web tutorial tours",
+            "merged_at": "2026-10-19T01:51:44Z"
+          },
+          {
+            "number": 4743,
+            "title": "feat(native): share a session attachment through the iOS share sheet",
+            "merged_at": "2026-10-19T01:09:34Z"
+          },
+          {
+            "number": 4748,
+            "title": "fix(web): match provider completion label to caller",
+            "merged_at": "2026-10-19T00:19:04Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v0.3.16",
+            "name": "v0.3.16",
+            "published_at": "2026-10-23T06:37:04Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.15",
+            "name": "v0.3.15",
+            "published_at": "2026-10-19T15:58:19Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.14",
+            "name": "v0.3.14",
+            "published_at": "2026-10-19T03:19:22Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.3.16 published 2026-10-23T06:37:04Z; tagged release v0.3.15 published 2026-10-19T15:58:19Z; tagged release v0.3.14 published 2026-10-19T03:19:22Z",
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/github-triage": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 7
+          },
+          {
+            "name": "Drew Ritter",
+            "count": 3
+          }
+        ],
+        "loc_added": 1045,
+        "loc_removed": 61,
+        "merged_prs": [
+          {
+            "number": 3,
+            "title": "Read the session id from CLAUDE_CODE_SESSION_ID, not a ps|awk pipeline",
+            "merged_at": "2026-10-21T18:32:30Z"
+          },
+          {
+            "number": 2,
+            "title": "apply-triage-actions: close as completed or duplicate, not only not planned",
+            "merged_at": "2026-10-21T18:32:12Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Claude Code plugin for triaging GitHub issues and pull requests, with a security-gated PR review workflow.",
+        "html_url": "https://github.com/prime-radiant-inc/github-triage"
+      },
+      "prime-radiant-inc/terminal-bench-analysis": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 2
+          }
+        ],
+        "loc_added": 3,
+        "loc_removed": 3,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
+        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
+      },
+      "prime-radiant-inc/prime-radiant-marketplace": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 18,
+        "loc_removed": 4,
+        "merged_prs": [
+          {
+            "number": 4,
+            "title": "Add maintaining-documentation; fix SSH sources",
+            "merged_at": "2026-10-21T05:28:19Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Prime Radiant's Claude Code plugin marketplace.",
+        "html_url": "https://github.com/prime-radiant-inc/prime-radiant-marketplace"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 8,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 8
+          }
+        ],
+        "loc_added": 99,
+        "loc_removed": 79,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "obra/lace": {
+        "commits": 6,
+        "authors": [
+          {
+            "name": "Drew Ritter",
+            "count": 4
+          },
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 2238,
+        "loc_removed": 74,
+        "merged_prs": [
+          {
+            "number": 434,
+            "title": "fix(mcp): use a runtime-owned execution metadata namespace",
+            "merged_at": "2026-10-22T21:01:08Z"
+          },
+          {
+            "number": 433,
+            "title": "feat(mcp): forward trusted execution context for opted-in host servers",
+            "merged_at": "2026-10-22T18:43:38Z"
+          },
+          {
+            "number": 431,
+            "title": "feat(catalog): add claude-haiku-5-5 and make it the default small model (PRI-3517)",
+            "merged_at": "2026-10-21T19:04:07Z"
+          },
+          {
+            "number": 430,
+            "title": "feat(agent): include fallbacks for persona @includes (PRI-3512)",
+            "merged_at": "2026-10-21T07:20:39Z"
+          },
+          {
+            "number": 429,
+            "title": "Add diagnostic model and worker turn correlation",
+            "merged_at": "2026-10-19T23:50:31Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/muse-skills": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "file-integrity",
+            "count": 4
+          }
+        ],
+        "loc_added": 458,
+        "loc_removed": 105,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/muse-skills"
+      },
+      "obra/superpowers": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 2
+          }
+        ],
+        "loc_added": 927,
+        "loc_removed": 14379,
+        "merged_prs": [
+          {
+            "number": 2598,
+            "title": "fix(pi): stop resources_discover from bypassing package skill filters",
+            "merged_at": "2026-10-22T22:13:53Z"
+          },
+          {
+            "number": 2594,
+            "title": "fix(hooks): fall back to zsh, or exit quietly, when bash is missing on Unix (#2503)",
+            "merged_at": "2026-10-22T22:05:26Z"
+          },
+          {
+            "number": 2593,
+            "title": "fix(hooks): start no child processes in the SessionStart hook (#2081)",
+            "merged_at": "2026-10-22T22:04:16Z"
+          },
+          {
+            "number": 2592,
+            "title": "fix(hooks): add a powershell form of the SessionStart command for Copilot on Windows (#2189)",
+            "merged_at": "2026-10-22T22:02:53Z"
+          },
+          {
+            "number": 2581,
+            "title": "Release v7.0.1: brainstorming retune, skills that better survive compaction, contribution templates",
+            "merged_at": "2026-10-21T21:00:50Z"
+          },
+          {
+            "number": 2571,
+            "title": "brainstorming: lay out approaches, write a design doc at every size, and never skip without consent (#2530)",
+            "merged_at": "2026-10-21T19:35:05Z"
+          },
+          {
+            "number": 2565,
+            "title": "subagent-driven-development: move situational guidance into references/ and test that skills stay under 20k",
+            "merged_at": "2026-10-21T19:34:51Z"
+          },
+          {
+            "number": 2564,
+            "title": "writing-skills: move supporting docs and situational guidance into references/",
+            "merged_at": "2026-10-21T19:34:40Z"
+          },
+          {
+            "number": 2563,
+            "title": "executing-plans: drop the redundant Example Workflow so SKILL.md fits under the compaction cut",
+            "merged_at": "2026-10-21T19:34:27Z"
+          },
+          {
+            "number": 2570,
+            "title": "Templates: require a human-written summary and the filer's instructions (cherry-pick to main)",
+            "merged_at": "2026-10-20T20:13:38Z"
+          },
+          {
+            "number": 2569,
+            "title": "Templates: require a human-written summary and the filer's instructions",
+            "merged_at": "2026-10-20T19:43:53Z"
+          },
+          {
+            "number": 2560,
+            "title": "brainstorming: look before asking, play back what they want, and only offer to skip when they didn't ask (#2530)",
+            "merged_at": "2026-10-20T06:37:50Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v7.0.1",
+            "name": "v7.0.1",
+            "published_at": "2026-10-21T21:05:11Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v7.0.1 published 2026-10-21T21:05:11Z",
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers",
+        "loc_suppressed": true
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 1,
+        "loc_removed": 1,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      }
+    }
   }
 }
