@@ -27496,17 +27496,17 @@
       "repos_active": 10,
       "featured_count": 2,
       "second_tier_count": 8,
-      "commits": 135,
+      "commits": 139,
       "merged_prs": 117,
-      "loc_added": 133990,
-      "loc_removed": 15496,
+      "loc_added": 134525,
+      "loc_removed": 15514,
       "contributors": 6,
       "tagged_releases": 4,
       "commit_only_bumps": 0
     },
     "repos": {
       "prime-radiant-inc/llm-proxy": {
-        "commits": 7,
+        "commits": 8,
         "authors": [
           {
             "name": "Ada Sen",
@@ -27518,11 +27518,11 @@
           },
           {
             "name": "Drew Ritter",
-            "count": 1
+            "count": 2
           }
         ],
-        "loc_added": 4270,
-        "loc_removed": 94,
+        "loc_added": 4703,
+        "loc_removed": 103,
         "merged_prs": [
           {
             "number": 10,
@@ -28063,7 +28063,7 @@
         "html_url": "https://github.com/prime-radiant-inc/evener"
       },
       "prime-radiant-inc/github-triage": {
-        "commits": 10,
+        "commits": 11,
         "authors": [
           {
             "name": "Jesse Vincent",
@@ -28071,11 +28071,11 @@
           },
           {
             "name": "Drew Ritter",
-            "count": 3
+            "count": 4
           }
         ],
-        "loc_added": 1045,
-        "loc_removed": 61,
+        "loc_added": 1129,
+        "loc_removed": 66,
         "merged_prs": [
           {
             "number": 3,
@@ -28114,15 +28114,15 @@
         "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
       },
       "prime-radiant-inc/prime-radiant-marketplace": {
-        "commits": 1,
+        "commits": 3,
         "authors": [
           {
             "name": "Jesse Vincent",
-            "count": 1
+            "count": 3
           }
         ],
-        "loc_added": 18,
-        "loc_removed": 4,
+        "loc_added": 36,
+        "loc_removed": 8,
         "merged_prs": [
           {
             "number": 4,

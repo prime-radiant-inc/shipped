@@ -12,6 +12,94 @@ bodies, and release text. No numbers below — pure narrative; every figure
 in the post renders from the `WeekSummary`/`RepoStat` widgets off
 `src/data/weekly-stats.json`.
 
+**CORRECTION PASS (Cadence review of the original `73a5844` draft),
+applied on top of Ada's prose edit `2597aeb`:**
+
+1. **`obra/muse-skills` moved out of its own article into the bot-only
+   caveat line.** Its 4 commits are all the unresolved `file-integrity
+   @local` automated identity — no human commits — so it gets the same
+   treatment as `claude-plugin-stats`/`terminal-bench-analysis` per the
+   established rule (no human commits = caveat line, not a full
+   `RepoStat` article). Confirmed it still counts normally in every
+   `WeekSummary` total (`repos_active`, `second_tier_count`, `commits`,
+   etc.) — that data comes from `src/data/weekly-stats.json`'s
+   `repos` dict, which is generated purely from git activity and doesn't
+   change based on how the prose chooses to display a repo; only the
+   MDX's inline `<RepoStat>` widget call was removed. Same split already
+   in effect for `claude-plugin-stats` in the 2026-10-12 post (counted in
+   that week's totals, no inline widget).
+
+2. **Three commit-count chips were wrong** — a real `gather.py` data bug,
+   not a display bug. Root cause: `clone_shallow()`
+   (`tools/gather.py:383-406`) runs `git clone --shallow-since=<window
+   start - 3 days>`, and for a merge commit whose non-default-branch
+   parent chain needs history older than that cutoff, git's shallow
+   negotiation can graft the merge commit itself as a synthetic root —
+   erasing its OWN parent pointers (not just corrupting its LOC, which is
+   the already-documented and partially-handled case in
+   `fix_merge_commit_loc()`'s docstring, `tools/gather.py:492-555`). When
+   that happens, any sibling non-merge commit reachable ONLY through the
+   erased parent edge vanishes from the walk entirely — undercounting
+   the commit list/count, not just the LOC. Reproduced directly on all
+   three flagged repos by re-running `--shallow-since=2026-10-16` against
+   each and inspecting `.git/shallow`:
+   - `prime-radiant-marketplace`: merge `647395d` grafted (shows
+     `parents=` empty instead of its real two parents), which made
+     `27cbc43` and `4c536bf` (both real, committer-date-in-window
+     commits) unreachable. Chip said 1 commit; corrected to 3.
+   - `llm-proxy`: merge `918d41c` (#11) grafted, dropping `06c12cc`
+     (Drew Ritter's real commit under that PR). Chip said 7 (Drew: 1);
+     corrected to 8 (Drew: 2 — matches Cadence's read exactly).
+   - `github-triage`: merge `d942237` (#2) grafted, dropping `9b37d4a`
+     (Drew Ritter). Separately — NOT a bug — 4 other commits
+     (`64a15db`, `cab365c`, `e8a997e`, `e124e57`) have an August 12
+     author date but an October 22 committer date (rebased before
+     merge); `gather.py` deliberately filters AND buckets on committer
+     date (`tools/gather.py:417-423`, `584-588`), so those 4 correctly
+     count as in-window — that part was already right. Chip said 10;
+     corrected to 11 (the 10 committer-date-correct commits PLUS the one
+     the graft had dropped).
+
+   Fix applied: cloned all three repos FULLY (no `--shallow-since`) and
+   re-ran `gather.py`'s own `git_log_numstat()` /
+   `fix_merge_commit_loc()` / `get_commit_logins()` / `summarize_commits()`
+   functions directly against the clean clone (imported `tools/gather.py`
+   as a module — same code path, same committer-date basis, same
+   merge-commits-count rule, merge LOC still resolved via GitHub's
+   per-commit API exactly as `fix_merge_commit_loc` already does for
+   every parent-count-!=1 commit) — i.e., the exact output `gather.py`
+   itself would have produced had the shallow clone not grafted. Spliced
+   the corrected `weeks[0]` (commits/authors/loc_added/loc_removed) back
+   into `data/recon-v2-1wk-20261023.json` for just these 3 repos (left
+   `merged_prs` — sourced from a separate, unaffected GitHub API call —
+   untouched), re-ran `tools/gen_stats.py` on the patched recon JSON,
+   re-applied the `loc_suppressed` flag to `obra/superpowers` (unaffected
+   by this bug; still the only cell over the churn/commit>3000
+   threshold), and overwrote just the `2026-10-19` key in
+   `src/data/weekly-stats.json`, then `--recompute-summaries`. Diffed
+   against the prior commit (`2597aeb`): only the `2026-10-19` key
+   changed, every other week byte-identical.
+
+   **Did NOT change the rule** — merges still count, committer date is
+   still the basis, both exactly as `tools/gather.py` already specifies.
+   Only fed it a non-grafted clone so its own rule could run correctly.
+
+   **Wider bug, not fixed elsewhere:** this shallow-clone graft class can
+   hit ANY week/repo where a merge's non-default-branch-side history
+   needs to reach back further than `window_start - 3 days`. Checked the
+   other 4 small active repos this week (`claude-plugin-stats`,
+   `terminal-bench-analysis`, `superpowers-marketplace`, `muse-skills`)
+   by diffing shallow-vs-full clone commit counts — no mismatch on any of
+   them. Did NOT exhaustively check `evener`/`lace`/`superpowers` (large
+   histories, expensive full clones) since Cadence didn't flag those and
+   their chip numbers weren't in question. Per instruction, no other
+   week's `weekly-stats.json` data was touched — flagging for Ada/Cadence
+   that a real fix belongs in `tools/gather.py` itself (e.g., detect the
+   graft — parent count != 1 on a commit that also appears in
+   `.git/shallow` — and fall back to a full clone for that repo, the same
+   fallback `clone_shallow()` already has for an outright failed shallow
+   clone) rather than being re-discovered and hand-patched per week.
+
 **Window is PARTIAL.** Frozen snapshot: 2026-10-23T22:10:22Z (today, Friday
 afternoon/evening Pacific). The calendar week runs 2026-10-19 through
 2026-10-25 (Mon–Sun); this data covers Monday through Friday evening only —
@@ -232,7 +320,9 @@ contributors; none of them have commits in this window.
 
 ### prime-radiant-inc/llm-proxy
 
-Contributors: Ada Sen (`ada-sen`, staff) and Drew Ritter (`arittr`, staff).
+**Commit count corrected 7 → 8 in the accuracy pass** (shallow-clone graft
+dropped Drew Ritter's `06c12cc`; see CORRECTION PASS above). Contributors:
+Ada Sen (`ada-sen`, staff) and Drew Ritter (`arittr`, staff, now 2 commits).
 3 merged PRs. Log-pruning defaults flipped to fully OFF (0 days / 0 bytes)
 in the bare binary — Jesse's call that pruning should only be on by
 default for colleague boxes via sen-core's docker-compose, which sets it
@@ -248,8 +338,13 @@ session's date directory rolls over, reopening on the next write.
 
 ### prime-radiant-inc/github-triage
 
-Contributors: Drew Ritter (`arittr`, staff) and Jesse Vincent (`obra`,
-staff). 2 merged PRs. `apply-triage-actions` can now close an item as
+**Commit count corrected 10 → 11 in the accuracy pass** (shallow-clone
+graft dropped Drew Ritter's `9b37d4a`; see CORRECTION PASS above —
+separately, 4 other commits have an Aug 12 author date / Oct 22 committer
+date from a pre-merge rebase, which was already correctly handled by
+`gather.py`'s committer-date basis, not a bug). Contributors: Drew Ritter
+(`arittr`, staff, now 4 commits) and Jesse Vincent (`obra`, staff). 2
+merged PRs. `apply-triage-actions` can now close an item as
 completed or duplicate (previously everything closed as "not planned,"
 losing the real reason and never linking duplicates to their canonical).
 The session-id lookup now reads `CLAUDE_CODE_SESSION_ID` directly instead
@@ -265,7 +360,10 @@ on items proposed twice).
 
 ### prime-radiant-inc/prime-radiant-marketplace
 
-Sole author: Jesse Vincent (`obra`, staff). 1 merged PR. Added the
+**Commit count corrected 1 → 3 in the accuracy pass** (shallow-clone graft
+erased merge `647395d`'s parent pointers, dropping `27cbc43` and `4c536bf`
+entirely; see CORRECTION PASS above). Sole author: Jesse Vincent (`obra`,
+staff), now 3 commits. 1 merged PR. Added the
 `maintaining-documentation` plugin to the marketplace catalog, and fixed
 two other entries (`shepherd-pr`, `study-skills`) that were added in
 parallel with an earlier HTTPS fix and kept GitHub-SSH-style sources,
@@ -285,18 +383,18 @@ metadata (session/turn IDs) is forwarded to opted-in host MCP servers,
 fails closed when the trusted IDs are absent, and was moved to a
 runtime-owned namespace (`io.lace.execution`) rather than a shared one.
 
-### prime-radiant-inc/claude-plugin-stats and prime-radiant-inc/terminal-bench-analysis
+### prime-radiant-inc/claude-plugin-stats, prime-radiant-inc/terminal-bench-analysis, and obra/muse-skills — all caveat-line, no human commits
 
-Bot-only again this window — `github-actions[bot]`'s daily scrape/rebuild
-(claude-plugin-stats, 8 commits) and daily README regen with no new data
-(terminal-bench-analysis, 2 commits). No human commits to attribute,
-same treatment as every prior week these repos have appeared.
-
-### obra/muse-skills
-
-All 4 commits under the unresolved `file-integrity@local` identity — same
-automated daily-snapshot pattern as every prior week. No human commits to
-attribute.
+All three folded into the post's bot-only caveat paragraph (not a full
+article/`RepoStat`), matching the established no-human-commits rule.
+`claude-plugin-stats` and `terminal-bench-analysis` are genuinely
+bot-authored: `github-actions[bot]`'s daily scrape/rebuild (8 commits) and
+daily README regen with no new data (2 commits), respectively.
+`obra/muse-skills` is the unresolved `file-integrity@local` identity (4
+commits, same automated daily-snapshot pattern as every prior week it's
+appeared) — moved here from its own article in the correction pass above.
+All three still count normally in `WeekSummary`'s totals; only the inline
+`RepoStat` widget was omitted for them in the prose.
 
 ### obra/superpowers-marketplace
 
