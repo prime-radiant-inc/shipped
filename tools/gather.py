@@ -108,6 +108,40 @@ WHY v2 EXISTS — THE BUGS THIS FIXES
    this same committer-date choice independently, for the same reason —
    see its docstring.)
 
+5. SHALLOW-BOUNDARY MERGE COMMIT UNDERCOUNT BUG. Bug 3 above documents
+   `clone_shallow`'s shallow negotiation grafting a boundary MERGE commit
+   as a synthetic root (no parents) when one of its two parent chains needs
+   more history than `--shallow-since` allows, and how that corrupts the
+   merge's own LOC. But the graft doesn't just corrupt that one commit's
+   diff -- it ERASES the edge to whichever parent's chain was cut. Any
+   commit reachable ONLY through that erased parent (not also an ancestor
+   of the other parent) is not merely mis-attributed, it's absent from the
+   clone's object graph entirely: `git log` can't walk to an edge that no
+   longer exists, so the commit is silently missing from both the commit
+   list and the count -- not something `fix_merge_commit_loc` can repair,
+   since it only replaces stats for commits already in the walk.
+   Found 2026-10-23 while fixing the week-of-2026-10-19 post: this is what
+   actually made that week's marketplace/llm-proxy/github-triage commit
+   counts too low (hand-corrected for that one week in ca8f10f, which
+   flagged the general case for a proper fix here rather than per-week
+   patching).
+   v2's fix: after a shallow clone succeeds, inspect `.git/shallow` --
+   every SHA listed there is a boundary commit git grafted parentless. A
+   boundary that legitimately satisfies `--shallow-since` should date from
+   comfortably BEFORE the window (that's the whole point of the 3-day
+   buffer in `since_str`); one dated AT OR AFTER the window's start, or one
+   whose object isn't even resolvable locally (observed: the grafted
+   merge's own stale pre-graft boundary entries can point to objects that
+   were never actually fetched), means the graft point landed inside the
+   range we need complete history for. Detected via
+   `_shallow_boundary_unsafe`; when true, `clone_shallow` runs `git fetch
+   --unshallow` on the same clone (cheaper than re-cloning: only the
+   missing history is fetched) before returning, restoring the real parent
+   graph so the subsequent `git log` in `git_log_numstat` walks it intact.
+   If the unshallow attempt itself fails, falls back to a fresh full clone
+   -- the same fail-safe-via-full-clone philosophy `clone_shallow` already
+   uses when the initial shallow clone fails outright.
+
 APPROACH
 --------
 - Non-fork repos: shallow `git clone --shallow-since=<window start - 3d>`
@@ -380,12 +414,54 @@ def get_commit_stats(login, name, sha, token):
 
 # ------------------------------------------------------------------ git log --
 
+def _shallow_boundary_unsafe(repo_dir, since_dt):
+    """True if `repo_dir`'s `.git/shallow` contains a boundary commit that
+    lands the shallow-clone graft inside (or after) the window, instead of
+    comfortably before it -- the SHALLOW-BOUNDARY MERGE COMMIT UNDERCOUNT
+    BUG (see module docstring, bug 5). A boundary that legitimately
+    satisfies `--shallow-since=<since_dt - 3 days>` should date from before
+    `since_dt`; one dated at/after `since_dt`, or one whose object can't
+    even be resolved locally (observed on the grafted merge's stale
+    pre-graft boundary entries), means a parent edge needed for complete
+    in-window history may have been erased."""
+    shallow_path = os.path.join(repo_dir, ".git", "shallow")
+    if not os.path.isfile(shallow_path):
+        return False
+    with open(shallow_path) as f:
+        boundary_shas = [line.strip() for line in f if line.strip()]
+    for sha in boundary_shas:
+        ok, out, _err = run_git(["git", "log", "-1", "--format=%cI", sha], cwd=repo_dir, timeout=30)
+        if not ok or not out.strip():
+            # Boundary SHA isn't resolvable locally at all -- treat
+            # conservatively as unsafe rather than assume it's harmless.
+            return True
+        try:
+            boundary_dt = parse_dt(out.strip())
+        except ValueError:
+            return True
+        if boundary_dt >= since_dt:
+            return True
+    return False
+
+
+def _unshallow(repo_dir):
+    ok, _out, err = run_git(["git", "fetch", "--quiet", "--unshallow"], cwd=repo_dir, timeout=180)
+    return ok, err
+
+
 def clone_shallow(clone_url, branch, since_dt, dest):
     """Shallow-clone since (window start - 3 days). Falls back to a full
     clone if the shallow-since clone fails — observed on at least one small
     repo (`fatal: error processing shallow info: 4`), apparently a
     server-side quirk with very short histories; a full clone of a small
-    repo is cheap anyway."""
+    repo is cheap anyway.
+
+    Also guards against the SHALLOW-BOUNDARY MERGE COMMIT UNDERCOUNT BUG
+    (module docstring, bug 5): if the shallow clone succeeded but its
+    `.git/shallow` boundary landed inside the window (`_shallow_boundary_unsafe`),
+    unshallow the same clone (or, failing that, re-clone fully) before
+    returning, so callers always see a complete parent graph for the
+    window they're about to count."""
     since_str = (since_dt - datetime.timedelta(days=3)).strftime("%Y-%m-%d")
     cmd = [
         "git", "clone", "--quiet", "--single-branch", "--branch", branch,
@@ -393,6 +469,21 @@ def clone_shallow(clone_url, branch, since_dt, dest):
     ]
     ok, _, err = run_git(cmd, timeout=180)
     if ok:
+        if _shallow_boundary_unsafe(dest, since_dt):
+            ok_un, err_un = _unshallow(dest)
+            if ok_un:
+                return True, None
+            # Unshallow failed -- fall through to a fresh full clone rather
+            # than risk silently undercounting on a corrupted boundary.
+            if os.path.isdir(dest):
+                shutil.rmtree(dest, ignore_errors=True)
+            cmd_full = ["git", "clone", "--quiet", "--single-branch", "--branch", branch, clone_url, dest]
+            ok_full, _, err_full = run_git(cmd_full, timeout=180)
+            if ok_full:
+                return True, None
+            if os.path.isdir(dest):
+                shutil.rmtree(dest, ignore_errors=True)
+            return False, f"unshallow_failed=({err_un.strip()[:120]}) full_fallback_failed=({err_full.strip()[:120]})"
         return True, None
     if os.path.isdir(dest):
         shutil.rmtree(dest, ignore_errors=True)
