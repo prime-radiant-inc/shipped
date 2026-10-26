@@ -20716,12 +20716,12 @@
   },
   "2026-09-28": {
     "summary": {
-      "repos_active": 6,
+      "repos_active": 7,
       "featured_count": 4,
-      "second_tier_count": 2,
-      "commits": 778,
+      "second_tier_count": 3,
+      "commits": 779,
       "merged_prs": 752,
-      "loc_added": 469582,
+      "loc_added": 469583,
       "loc_removed": 215532,
       "contributors": 4,
       "tagged_releases": 13,
@@ -24564,6 +24564,24 @@
         "featured_reason": "tagged release v0.3.4 published 2026-10-01T09:41:30Z; tagged release v0.3.3 published 2026-09-30T22:42:54Z; tagged release v0.3.2 published 2026-09-30T16:55:15Z; tagged release v0.3.1 published 2026-09-30T06:38:54Z; tagged release v0.3.0 published 2026-09-29T13:38:51Z; tagged release v0.2.5 published 2026-09-29T12:50:38Z; tagged release v0.2.4 published 2026-09-29T02:59:39Z; tagged release v0.2.3 published 2026-09-29T00:26:26Z; tagged release v0.2.2 published 2026-09-28T20:07:52Z; tagged release v0.2.1 published 2026-09-28T17:54:51Z; tagged release v0.2.0 published 2026-09-28T15:52:25Z",
         "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
         "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/terminal-bench-analysis": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 1,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
+        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
       },
       "prime-radiant-inc/claude-plugin-stats": {
         "commits": 10,
