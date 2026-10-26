@@ -251,7 +251,24 @@ def build_week(data, week_idx, bucket):
         "commit_only_bumps": commit_only_bump_count,
     }
 
-    return {"summary": summary, "repos": repos_out}
+    result = {"summary": summary, "repos": repos_out}
+    # CUTOFF-WINDOW-NO-MERGES MODE (see tools/gather.py module docstring,
+    # bug 6): a recon bucket produced by `gather.py --cutoff` carries exact
+    # `cutoff`/`prev_cutoff` timestamps (added there, not just a calendar
+    # start/end date). Carry them straight through onto this week's own
+    # entry in weekly-stats.json -- this IS the "record it going forward"
+    # field rule 2 asks for: once a week has these, the NEXT invocation of
+    # `gather.py --cutoff` (via resolve_prev_cutoff) can read `cutoff` back
+    # out as its own --prev-cutoff, without a human re-typing or guessing
+    # it. A bucket without these keys (every existing recon file, and any
+    # future calendar-mode run) adds NEITHER key here -- this is exactly
+    # why every already-published week's weekly-stats.json entry stays
+    # byte-identical: the key is only ever added, never defaulted in.
+    if bucket.get("cutoff"):
+        result["cutoff"] = bucket["cutoff"]
+    if bucket.get("prev_cutoff"):
+        result["prev_cutoff"] = bucket["prev_cutoff"]
+    return result
 
 
 def recompute_summaries(weekly_stats):

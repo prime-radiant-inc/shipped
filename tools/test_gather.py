@@ -197,3 +197,118 @@ def test_shallow_boundary_unsafe_false_for_boundary_safely_before_window(boundar
         cwd=str(tmp_path),
     )
     assert gather._shallow_boundary_unsafe(dest, window_start) is False
+
+
+# ------------------------------------------------- CUTOFF-WINDOW-NO-MERGES --
+# Tests for cutoff_window_bucket() / resolve_prev_cutoff() (module docstring
+# in gather.py, bug 6). Two accuracy-reviewer rules, new posts only:
+#   a. cutoff-to-cutoff window: (prev_cutoff, cutoff], not calendar Mon-Sun.
+#   b. merges count for neither commits nor lines (author counts included).
+# These operate on plain commit dicts (the shape parse_git_log/
+# git_log_numstat produce) directly -- no real git repo needed, unlike the
+# shallow-clone tests above.
+
+def _mk_commit(sha, date_iso, n_parents=1, author="Test Author", additions=10, deletions=2, subject="a commit"):
+    return {
+        "sha": sha, "short_sha": sha[:7], "author": author, "email": "test@example.com",
+        "date": date_iso, "subject": subject, "additions": additions, "deletions": deletions,
+        "files_changed": 1, "loc_untrusted": n_parents != 1, "n_parents": n_parents,
+    }
+
+
+def test_cutoff_window_bucket_excludes_merge_from_counts():
+    """A merge commit (n_parents > 1) must contribute 0 to commit_count,
+    loc_added, loc_removed, and the author's per-commit tally -- even
+    though it has real (non-zero) additions/deletions attached (simulating
+    fix_merge_commit_loc's GitHub-API-corrected LOC for that merge). It
+    still appears in the returned commits list, flagged is_merge, for
+    narrative/subject-line use."""
+    prev_cutoff = datetime.datetime(2026, 11, 1, tzinfo=datetime.timezone.utc)
+    cutoff = datetime.datetime(2026, 11, 8, tzinfo=datetime.timezone.utc)
+    commits = [
+        _mk_commit("a" * 40, "2026-11-02T00:00:00+00:00", n_parents=1, author="Ada", additions=5, deletions=1),
+        _mk_commit(
+            "b" * 40, "2026-11-03T00:00:00+00:00", n_parents=2, author="Ada",
+            additions=630, deletions=266, subject="Merge feature into main",
+        ),
+        _mk_commit("c" * 40, "2026-11-04T00:00:00+00:00", n_parents=1, author="Drew", additions=7, deletions=3),
+    ]
+    week = gather.cutoff_window_bucket(commits, prev_cutoff, cutoff)
+
+    assert week["commit_count"] == 2, "the merge must not add to commit_count"
+    assert week["loc_added"] == 12, "the merge's 630 additions must not add to loc_added (5 + 7 only)"
+    assert week["loc_removed"] == 4, "the merge's 266 deletions must not add to loc_removed (1 + 3 only)"
+    assert week["authors"] == {"Ada": 1, "Drew": 1}, "the merge must not add to Ada's author tally"
+
+    merge_entries = [c for c in week["commits"] if c["sha"] == ("b" * 40)[:7]]
+    assert len(merge_entries) == 1, "the merge commit should still appear in the commits list"
+    assert merge_entries[0]["is_merge"] is True
+    non_merge_shas = {c["sha"] for c in week["commits"] if not c["is_merge"]}
+    assert non_merge_shas == {("a" * 40)[:7], ("c" * 40)[:7]}
+
+
+def test_cutoff_window_bucket_boundary_exclusive_start_inclusive_end():
+    """Window is (prev_cutoff, cutoff]: a commit dated exactly AT
+    prev_cutoff belongs to the PREVIOUS post and must be excluded; one
+    dated exactly AT cutoff belongs to THIS post and must be included.
+    Commits one second on either side of each boundary confirm the cut is
+    at the boundary itself, not rounded to a day."""
+    prev_cutoff = datetime.datetime(2026, 11, 1, 12, 0, 0, tzinfo=datetime.timezone.utc)
+    cutoff = datetime.datetime(2026, 11, 8, 18, 30, 0, tzinfo=datetime.timezone.utc)
+    commits = [
+        _mk_commit("1" * 40, "2026-11-01T11:59:59+00:00", subject="before prev_cutoff, excluded"),
+        _mk_commit("2" * 40, "2026-11-01T12:00:00+00:00", subject="exactly at prev_cutoff, excluded"),
+        _mk_commit("3" * 40, "2026-11-01T12:00:01+00:00", subject="just after prev_cutoff, included"),
+        _mk_commit("4" * 40, "2026-11-08T18:29:59+00:00", subject="just before cutoff, included"),
+        _mk_commit("5" * 40, "2026-11-08T18:30:00+00:00", subject="exactly at cutoff, included"),
+        _mk_commit("6" * 40, "2026-11-08T18:30:01+00:00", subject="just after cutoff, excluded"),
+    ]
+    week = gather.cutoff_window_bucket(commits, prev_cutoff, cutoff)
+    counted_shas = {c["sha"] for c in week["commits"]}
+
+    assert counted_shas == {("3" * 40)[:7], ("4" * 40)[:7], ("5" * 40)[:7]}, (
+        f"expected exactly the 3 in-(prev_cutoff, cutoff]-window commits, got {sorted(counted_shas)}"
+    )
+    assert week["commit_count"] == 3
+
+
+def test_resolve_prev_cutoff_explicit_arg_wins(tmp_path):
+    """An explicit --prev-cutoff always wins, even if a stats file with a
+    recorded cutoff also exists."""
+    stats_path = tmp_path / "weekly-stats.json"
+    stats_path.write_text('{"2026-10-19": {"cutoff": "2026-10-23T22:10:22+00:00"}}')
+    resolved = gather.resolve_prev_cutoff("2026-11-01T00:00:00Z", str(stats_path))
+    assert resolved == datetime.datetime(2026, 11, 1, tzinfo=datetime.timezone.utc)
+
+
+def test_resolve_prev_cutoff_reads_most_recent_recorded_value(tmp_path):
+    """With no explicit --prev-cutoff, fall back to the most recently
+    published week's own recorded `cutoff` field."""
+    stats_path = tmp_path / "weekly-stats.json"
+    stats_path.write_text(
+        '{"2026-10-19": {"cutoff": "2026-10-23T22:10:22+00:00"}, '
+        '"2026-10-26": {"cutoff": "2026-10-30T20:00:00+00:00"}, '
+        '"2026-09-28": {"summary": {}}}'
+    )
+    resolved = gather.resolve_prev_cutoff(None, str(stats_path))
+    assert resolved == datetime.datetime(2026, 10, 30, 20, 0, 0, tzinfo=datetime.timezone.utc)
+
+
+def test_resolve_prev_cutoff_missing_raises(tmp_path):
+    """No explicit --prev-cutoff AND no week in the stats file carries a
+    `cutoff` field (e.g. every published week predates this mode, exactly
+    today's real state of src/data/weekly-stats.json) -- must error out
+    rather than invent a default window."""
+    stats_path = tmp_path / "weekly-stats.json"
+    stats_path.write_text('{"2026-10-19": {"summary": {}, "repos": {}}}')
+    with pytest.raises(SystemExit):
+        gather.resolve_prev_cutoff(None, str(stats_path))
+
+
+def test_resolve_prev_cutoff_missing_file_raises(tmp_path):
+    """No explicit --prev-cutoff AND the stats file doesn't exist at all --
+    must still error out, not crash with an unrelated exception or silently
+    pick a default."""
+    missing_path = tmp_path / "does-not-exist.json"
+    with pytest.raises(SystemExit):
+        gather.resolve_prev_cutoff(None, str(missing_path))
