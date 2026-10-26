@@ -172,3 +172,78 @@ def test_guard_against_shrink_allows_equal_or_growing():
     grown["2026-03-02"] = {}
     gen_stats.guard_against_shrink(same, existing, force=False)
     gen_stats.guard_against_shrink(grown, existing, force=False)
+
+
+# ---------------------------------------- corrupt/unreadable --out file --
+# Reeve's re-review of d48d8a3: main() turned ANY read error on --out
+# (OSError OR json.JSONDecodeError) into `existing = {}`, so a corrupt or
+# unreadable file was treated exactly like "first run, nothing published
+# yet" -- which hands guard_against_shrink an empty `existing` and makes it
+# compare against 0, so it can never fire. Reproduced by appending one
+# garbage line to a copy of a real multi-week file and running a one-week
+# recon against it: wrote 1 week, no error, no --force needed.
+#
+# Fix: only FileNotFoundError (the legitimate "nothing here yet" case) is
+# treated as empty. Any other read/parse error exits non-zero, names the
+# file, and writes nothing.
+
+def test_corrupt_existing_file_refuses_and_leaves_file_untouched(tmp_path):
+    out_path = str(tmp_path / "weekly-stats.json")
+    good_data = _write_existing(out_path, EXISTING_WEEKS)
+    with open(out_path, "a") as f:
+        f.write("\nthis is not json at all {{{\n")  # corrupt it, like Reeve's repro
+    corrupt_bytes = open(out_path, "rb").read()
+
+    recon_path = _recon(tmp_path, [
+        {"index": 1, "start": "2026-03-02", "end": "2026-03-08",
+         "cutoff": "2026-03-08T20:00:00+00:00", "prev_cutoff": "2026-03-01T20:00:00+00:00"},
+    ])
+
+    with pytest.raises(SystemExit) as exc_info:
+        _run_main([recon_path, "--out", out_path])
+    assert exc_info.value.code != 0
+
+    # file on disk must be byte-for-byte untouched by the refused write
+    assert open(out_path, "rb").read() == corrupt_bytes
+
+
+def test_unreadable_existing_file_refuses_and_leaves_file_untouched(tmp_path):
+    """A file that exists but can't be opened (permission denied, not a
+    parse error) must also refuse, not get treated as empty."""
+    out_path = str(tmp_path / "weekly-stats.json")
+    _write_existing(out_path, EXISTING_WEEKS)
+    before_bytes = open(out_path, "rb").read()
+    os.chmod(out_path, 0o000)
+    try:
+        if os.access(out_path, os.R_OK):
+            pytest.skip("running as a user that bypasses file permissions (e.g. root)")
+
+        recon_path = _recon(tmp_path, [
+            {"index": 1, "start": "2026-03-02", "end": "2026-03-08",
+             "cutoff": "2026-03-08T20:00:00+00:00", "prev_cutoff": "2026-03-01T20:00:00+00:00"},
+        ])
+
+        with pytest.raises(SystemExit) as exc_info:
+            _run_main([recon_path, "--out", out_path])
+        assert exc_info.value.code != 0
+    finally:
+        os.chmod(out_path, 0o644)
+
+    assert open(out_path, "rb").read() == before_bytes
+
+
+def test_missing_existing_file_is_still_treated_as_empty(tmp_path):
+    """The legitimate case -- --out doesn't exist yet (first run) -- must
+    still work with no --force, unaffected by the corrupt-file fix."""
+    out_path = str(tmp_path / "weekly-stats.json")
+    assert not os.path.exists(out_path)
+
+    recon_path = _recon(tmp_path, [
+        {"index": 1, "start": "2026-03-02", "end": "2026-03-08",
+         "cutoff": "2026-03-08T20:00:00+00:00", "prev_cutoff": "2026-03-01T20:00:00+00:00"},
+    ])
+    _run_main([recon_path, "--out", out_path])
+
+    with open(out_path) as f:
+        result = json.load(f)
+    assert list(result) == ["2026-03-02"]

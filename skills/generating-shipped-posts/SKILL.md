@@ -102,6 +102,16 @@ python3 tools/gather.py --cutoff 2026-11-08T18:30:00Z \
   published week carries one yet, the run errors instead of guessing a
   default window — pass `--prev-cutoff` explicitly for the first post under
   this mode.
+- **Check `data/coverage-report.md` before publishing a cutoff-chained
+  post.** `gather.py` still writes the recon (with its `cutoff` field) even
+  when some repos errored (clone/API failures etc.) — it does not hold back
+  the cutoff just because coverage was incomplete. Under cutoff chaining,
+  THIS run's `cutoff` becomes the NEXT post's `--prev-cutoff` once
+  published, so a quietly-incomplete week doesn't just affect its own post
+  — a repo's errored-out commits in that window are gone for good, not
+  picked up later. Confirm the coverage report is clean (or that any
+  listed errors are genuinely nothing-to-count, not a transient failure)
+  before treating a post's numbers, and its `cutoff`, as final.
 
 ### Turning a recon into `weekly-stats.json` (`tools/gen_stats.py`)
 

@@ -28,6 +28,7 @@ import json
 import os
 import re
 import sys
+import tempfile
 
 # ---- exact copies from tools/make_briefs_corrected.py — keep in sync ----
 
@@ -272,6 +273,30 @@ def build_week(data, week_idx, bucket):
     return result
 
 
+def atomic_write(path, content):
+    """Write `content` (a str) to `path` without ever leaving a partial or
+    corrupt file behind if the process dies mid-write: write to a temp
+    file in the same directory, then atomically `os.replace` it into
+    place. (PR #4 re-review, non-blocking: a plain `open(path, 'w')`
+    truncates the file immediately, before any new content lands -- a
+    crash or kill between the truncate and the write leaves exactly the
+    kind of corrupt file the --out guard above now refuses to paper over
+    as "empty". This closes the most likely way to ever get there.)
+    """
+    directory = os.path.dirname(os.path.abspath(path)) or "."
+    fd, tmp_path = tempfile.mkstemp(dir=directory, prefix=os.path.basename(path) + ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w") as f:
+            f.write(content)
+        os.replace(tmp_path, path)
+    except BaseException:
+        try:
+            os.remove(tmp_path)
+        except OSError:
+            pass
+        raise
+
+
 def merge_weeks(existing, new_weeks):
     """Merge a recon's weeks into an existing weekly-stats.json's data.
 
@@ -283,6 +308,15 @@ def merge_weeks(existing, new_weeks):
     exactly ONE week bucket, safe to run against the full multi-week
     weekly-stats.json: it can only ever ADD or REPLACE its own single
     week, never drop any other week.
+
+    KEY ORDER (PR #4 review, non-blocking): `dict.update` appends any
+    brand-new key (a week not already in `existing`, e.g. a backfilled
+    older week published out of order) at the END of iteration order --
+    so the resulting dict's key order is insertion order, not
+    chronological. Harmless today: both gen_stats.py's own callers and
+    the Astro components that read weekly-stats.json look a week up by
+    its date-string key, never by position. Noted here so a future reader
+    doesn't assume (or rely on) chronological file order.
 
     Does not mutate either input.
     """
@@ -378,9 +412,7 @@ def main():
             weekly_stats = json.load(f)
         changed = recompute_summaries(weekly_stats)
         out_path = args.out if args.out != "src/data/weekly-stats.json" else args.recompute_summaries
-        with open(out_path, "w") as f:
-            json.dump(weekly_stats, f, indent=2)
-            f.write("\n")
+        atomic_write(out_path, json.dumps(weekly_stats, indent=2) + "\n")
         print(f"recomputed summaries -> {out_path}")
         for week_key, old_a, old_r, new_a, new_r, sup in changed:
             print(
@@ -407,20 +439,37 @@ def main():
     # the complete file either way, since its new_weeks IS the full set;
     # an incremental --cutoff recon (one bucket) now only ever touches its
     # own week. See merge_weeks()/guard_against_shrink() above.
-    existing = {}
-    if os.path.isfile(args.out):
-        try:
-            with open(args.out) as f:
-                existing = json.load(f)
-        except (json.JSONDecodeError, OSError):
-            existing = {}
+    #
+    # CORRUPT/UNREADABLE --out FIX (PR #4 re-review): only a genuinely
+    # MISSING file (FileNotFoundError -- the legitimate "nothing published
+    # yet" first run) is treated as empty. Any other read failure --
+    # json.JSONDecodeError (corrupt contents) or any other OSError (e.g.
+    # PermissionError) -- used to also fall through to `existing = {}`,
+    # which handed guard_against_shrink an empty baseline it can never
+    # shrink below, silently defeating it. Reproduced: append one garbage
+    # line to a real multi-week file, run a one-week recon against it --
+    # old code wrote 1 week, no error, no --force. Now it exits non-zero,
+    # names the file, and writes nothing.
+    try:
+        with open(args.out) as f:
+            existing = json.load(f)
+    except FileNotFoundError:
+        existing = {}
+    except (OSError, json.JSONDecodeError) as e:
+        sys.exit(
+            f"ERROR: could not read existing {args.out} to merge into "
+            f"({type(e).__name__}: {e}). Refusing to treat an unreadable "
+            "or corrupt file as empty -- that would silently defeat "
+            "guard_against_shrink (it would have nothing to compare "
+            "against). Fix or remove the file by hand if starting fresh "
+            "is actually what you want."
+        )
 
     merged = merge_weeks(existing, new_weeks)
     guard_against_shrink(merged, existing, args.force)
 
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
-    with open(args.out, "w") as f:
-        json.dump(merged, f, indent=2)
+    atomic_write(args.out, json.dumps(merged, indent=2))
     print(
         f"wrote {args.out} ({len(new_weeks)} week(s) from recon merged into "
         f"{len(existing)} existing -> {len(merged)} total)"

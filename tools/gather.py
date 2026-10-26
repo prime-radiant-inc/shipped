@@ -242,6 +242,29 @@ def parse_dt(s):
     return datetime.datetime.fromisoformat(s.replace("Z", "+00:00"))
 
 
+def atomic_write(path, content):
+    """Write `content` (a str) to `path` without ever leaving a partial or
+    corrupt file behind if the process dies mid-write: write to a temp
+    file in the same directory, then atomically `os.replace` it into
+    place. (PR #4 re-review, non-blocking: a plain `open(path, 'w')`
+    truncates immediately, before any new content lands -- a crash or
+    kill between the truncate and the write leaves a corrupt file. See
+    the matching helper and its rationale in gen_stats.py.)
+    """
+    directory = os.path.dirname(os.path.abspath(path)) or "."
+    fd, tmp_path = tempfile.mkstemp(dir=directory, prefix=os.path.basename(path) + ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w") as f:
+            f.write(content)
+        os.replace(tmp_path, path)
+    except BaseException:
+        try:
+            os.remove(tmp_path)
+        except OSError:
+            pass
+        raise
+
+
 def parse_utc_cutoff_arg(s, flag_name):
     """Parse an ISO8601 timestamp for --cutoff/--prev-cutoff and require it
     to be UTC (offset exactly +00:00, including a bare 'Z' suffix).
@@ -1355,14 +1378,12 @@ def main():
         "repos": all_results,
     }
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
-    with open(out_path, "w") as f:
-        json.dump(out, f, indent=2)
+    atomic_write(out_path, json.dumps(out, indent=2))
     print(f"wrote {out_path} ({len(all_results)} repos)", file=sys.stderr)
 
     report = build_coverage_report(out)
     os.makedirs(os.path.dirname(args.report_out) or ".", exist_ok=True)
-    with open(args.report_out, "w") as f:
-        f.write(report)
+    atomic_write(args.report_out, report)
     print(f"wrote {args.report_out}", file=sys.stderr)
 
 
