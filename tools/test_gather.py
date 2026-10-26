@@ -312,3 +312,110 @@ def test_resolve_prev_cutoff_missing_file_raises(tmp_path):
     missing_path = tmp_path / "does-not-exist.json"
     with pytest.raises(SystemExit):
         gather.resolve_prev_cutoff(None, str(missing_path))
+
+
+# ------------------------------------------- fork compare-API n_parents --
+# PR #4 review, non-blocking 1: commits arriving via the fork-ahead-of-
+# parent compare-API path (process_repo's `cmp_data = get_compare(...)`
+# branch) previously had no `n_parents` key at all. cutoff_window_bucket's
+# merge check (`c.get("n_parents", 1) > 1`) defaults a missing key to 1, so
+# a merge commit arriving via this path would be silently counted instead
+# of excluded. Fix: compare_commit_to_dict() reads the compare API's own
+# `parents` array (same shape GitHub's regular commits API uses) and sets
+# n_parents from its length.
+
+def _compare_api_commit(sha, n_parents, date="2026-11-02T00:00:00Z", author_name="Jesse Vincent", login="jvincent"):
+    """Shape of one entry in the compare API's `commits` list (GitHub docs:
+    GET /repos/{owner}/{repo}/compare/{base}...{head}), trimmed to the
+    fields compare_commit_to_dict() reads."""
+    return {
+        "sha": sha,
+        "commit": {
+            "author": {"name": author_name, "email": "jesse@example.com", "date": date},
+            "message": "a commit\n\nbody text",
+        },
+        "author": {"login": login},
+        "parents": [{"sha": "p" * 40} for _ in range(n_parents)],
+    }
+
+
+def test_compare_commit_to_dict_sets_n_parents_from_parents_array():
+    """A real merge arriving via the compare API (2 parents) must be
+    tagged n_parents=2, not left unset/defaulted to 1."""
+    c = _compare_api_commit("m" * 40, n_parents=2)
+    stats = {"additions": 630, "deletions": 266, "files_changed": 12}
+    result = gather.compare_commit_to_dict(c, c["commit"]["author"]["date"], stats)
+    assert result["n_parents"] == 2
+
+
+def test_compare_commit_to_dict_normal_commit_n_parents_one():
+    c = _compare_api_commit("a" * 40, n_parents=1)
+    stats = {"additions": 5, "deletions": 1, "files_changed": 1}
+    result = gather.compare_commit_to_dict(c, c["commit"]["author"]["date"], stats)
+    assert result["n_parents"] == 1
+
+
+def test_compare_commit_to_dict_missing_parents_field_defaults_to_one():
+    """Defensive fallback only -- not observed in practice, but if GitHub
+    ever omitted `parents` entirely, assume non-merge (1) rather than
+    crash."""
+    c = _compare_api_commit("a" * 40, n_parents=1)
+    del c["parents"]
+    stats = {"additions": 5, "deletions": 1, "files_changed": 1}
+    result = gather.compare_commit_to_dict(c, c["commit"]["author"]["date"], stats)
+    assert result["n_parents"] == 1
+
+
+def test_compare_commit_merge_excluded_from_cutoff_window_counts():
+    """End-to-end through cutoff_window_bucket: a merge built via
+    compare_commit_to_dict must be excluded from commit_count/loc, exactly
+    like a merge from the local git-log path."""
+    prev_cutoff = datetime.datetime(2026, 11, 1, tzinfo=datetime.timezone.utc)
+    cutoff = datetime.datetime(2026, 11, 8, tzinfo=datetime.timezone.utc)
+    normal = gather.compare_commit_to_dict(
+        _compare_api_commit("a" * 40, n_parents=1, date="2026-11-02T00:00:00Z"),
+        "2026-11-02T00:00:00Z", {"additions": 5, "deletions": 1, "files_changed": 1},
+    )
+    merge = gather.compare_commit_to_dict(
+        _compare_api_commit("b" * 40, n_parents=2, date="2026-11-03T00:00:00Z"),
+        "2026-11-03T00:00:00Z", {"additions": 630, "deletions": 266, "files_changed": 12},
+    )
+    week = gather.cutoff_window_bucket([normal, merge], prev_cutoff, cutoff)
+    assert week["commit_count"] == 1, "the compare-API merge must not be counted"
+    assert week["loc_added"] == 5
+    assert week["loc_removed"] == 1
+
+
+# --------------------------------------------- --cutoff/--prev-cutoff UTC --
+# PR #4 review, non-blocking 2: WeekSummary.astro's fmtCutoff() slices the
+# stored ISO string and labels it "UTC" without checking the offset. A
+# --cutoff/--prev-cutoff given in a non-UTC offset (or no offset at all)
+# would display the wrong wall-clock time, still labeled UTC. Fix:
+# parse_utc_cutoff_arg() rejects anything but an explicit UTC offset.
+
+def test_parse_utc_cutoff_arg_accepts_z_suffix():
+    dt = gather.parse_utc_cutoff_arg("2026-11-08T18:30:00Z", "--cutoff")
+    assert dt == datetime.datetime(2026, 11, 8, 18, 30, 0, tzinfo=datetime.timezone.utc)
+
+
+def test_parse_utc_cutoff_arg_accepts_explicit_plus_zero_offset():
+    dt = gather.parse_utc_cutoff_arg("2026-11-08T18:30:00+00:00", "--cutoff")
+    assert dt == datetime.datetime(2026, 11, 8, 18, 30, 0, tzinfo=datetime.timezone.utc)
+
+
+def test_parse_utc_cutoff_arg_rejects_non_utc_offset():
+    with pytest.raises(SystemExit):
+        gather.parse_utc_cutoff_arg("2026-11-08T13:30:00-05:00", "--cutoff")
+
+
+def test_parse_utc_cutoff_arg_rejects_naive_timestamp():
+    """No offset at all is ambiguous, not "assume UTC" -- reject it too."""
+    with pytest.raises(SystemExit):
+        gather.parse_utc_cutoff_arg("2026-11-08T18:30:00", "--cutoff")
+
+
+def test_resolve_prev_cutoff_rejects_non_utc_explicit_offset(tmp_path):
+    stats_path = tmp_path / "weekly-stats.json"
+    stats_path.write_text("{}")
+    with pytest.raises(SystemExit):
+        gather.resolve_prev_cutoff("2026-11-01T00:00:00-05:00", str(stats_path))

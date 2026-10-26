@@ -48,9 +48,40 @@ deleted once real weekly posts exist.
 
 ## Regenerating data
 
+Two modes, both in `tools/gather.py`:
+
+**Calendar mode (original, full/backfill recons)** — N calendar (Mon-Sun)
+week buckets ending at `--window-end` (default: now):
+
 ```
 python3 tools/gather.py --weeks 8
 ```
+
+Output: `data/recon-<N>wk-<YYYYMMDD>.json`.
+
+**Cutoff-window mode (`--cutoff`, current/ongoing posts)** — one bucket
+covering `(--prev-cutoff, --cutoff]` instead of a calendar week, with merge
+commits excluded from commit/line/author counts (see the gather.py module
+docstring, bug 6):
+
+```
+python3 tools/gather.py --cutoff 2026-11-08T18:30:00Z \
+    [--prev-cutoff 2026-11-01T12:00:00Z]
+```
+
+- `--cutoff`/`--prev-cutoff` **must be UTC** — `Z` suffix or an explicit
+  `+00:00` offset. Any other offset, or a naive timestamp with no offset at
+  all, is rejected with a non-zero exit: `WeekSummary.astro`'s
+  `fmtCutoff()` displays the stored value labeled "UTC" verbatim with no
+  offset conversion, so anything else would show the wrong wall-clock time
+  on the published post.
+- `--prev-cutoff` is optional. If omitted, it's resolved from the most
+  recently published week's own recorded `cutoff` field in `--stats-json`
+  (default `src/data/weekly-stats.json`) — see `resolve_prev_cutoff()`. If
+  no week there has one yet (nothing has been published under this mode),
+  the run errors rather than guessing a window.
+
+Output: `data/recon-cutoff-<YYYYMMDD>.json`.
 
 Requires a GitHub token in the `GH_TOKEN` (or `GITHUB_TOKEN`) environment
 variable. This subagent's environment gets that token from Ada's credential
@@ -60,7 +91,31 @@ environment when it runs; see the docstring in `tools/gather.py`. Public
 repos only; forks are excluded from the "created in window" FEATURED trigger
 (their `created_at` is the fork date, not the upstream project's).
 
-Output: `data/recon-<N>wk-<YYYYMMDD>.json`.
+### Turning a recon into `weekly-stats.json` (`tools/gen_stats.py`)
+
+```
+python3 tools/gen_stats.py data/recon-cutoff-20261108.json --out src/data/weekly-stats.json
+```
+
+`gen_stats.py` **merges** the recon's weeks into the existing `--out` file
+rather than replacing it outright: any week already in `--out` that isn't
+in this recon's `week_buckets` is left completely untouched; any week that
+IS in the recon (new or already-published) is added/replaced. This is what
+makes it safe to run a `--cutoff` recon — which always has exactly ONE week
+bucket — against the full, many-week `weekly-stats.json`: it can only ever
+touch its own week.
+
+As a second, independent safety net, `gen_stats.py` **refuses to write**
+(non-zero exit) if the result would have fewer weeks than the file already
+had — pass `--force` if shrinking the file is actually what you want (e.g.
+deliberately dropping a week). See `merge_weeks()`/`guard_against_shrink()`
+in `tools/gen_stats.py` and `tools/test_gen_stats.py` for the tests.
+
+### Tests
+
+```
+python3 -m pytest tools/ -v
+```
 
 ## Deploy target
 

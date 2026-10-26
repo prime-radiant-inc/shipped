@@ -73,6 +73,55 @@ there is provably zero activity *within* the window:
   has been observed on at least one very-small repo and is a cheap,
   reliable fallback.
 
+### Cutoff-window mode (`gather.py --cutoff`) — current/ongoing posts
+
+For the post currently being written (as opposed to a historical
+full/backfill recon), prefer `--cutoff` over `--weeks`:
+
+```
+python3 tools/gather.py --cutoff 2026-11-08T18:30:00Z \
+    [--prev-cutoff 2026-11-01T12:00:00Z]
+```
+
+- The window is `(prev_cutoff, cutoff]` — exclusive start, inclusive end —
+  not a calendar Mon-Sun week, so back-to-back posts never double-count or
+  skip a commit landing exactly on the boundary.
+- Merge commits (2+ parents) count for NEITHER commits nor lines (author
+  counts included) — only non-merge commits move the totals. A merge still
+  appears in the week's commit list (flagged `is_merge`) for subject-line
+  narrative use, and merged-PR listings are unaffected (PR data, not
+  commit-graph nodes).
+- **`--cutoff`/`--prev-cutoff` must be UTC** — `Z` suffix or an explicit
+  `+00:00` offset; anything else (another offset, or no offset at all) is
+  rejected with a clear error. `WeekSummary.astro`'s `fmtCutoff()` displays
+  the stored value labeled "UTC" with no conversion, so a non-UTC value
+  would silently show the wrong time on the published post.
+- Omit `--prev-cutoff` to resolve it automatically from the most recently
+  published week's own recorded `cutoff` field (`resolve_prev_cutoff()`,
+  reading `--stats-json`, default `src/data/weekly-stats.json`). If no
+  published week carries one yet, the run errors instead of guessing a
+  default window — pass `--prev-cutoff` explicitly for the first post under
+  this mode.
+
+### Turning a recon into `weekly-stats.json` (`tools/gen_stats.py`)
+
+```
+python3 tools/gen_stats.py data/recon-cutoff-20261108.json --out src/data/weekly-stats.json
+```
+
+`gen_stats.py` **merges** the recon's weeks into whatever is already at
+`--out` — any week in the existing file that this recon's `week_buckets`
+doesn't cover is left completely untouched; any week the recon DOES cover
+(new or a correction to an already-published one) is added/replaced. This
+is what makes a `--cutoff` recon (always exactly ONE week bucket) safe to
+run against the full, many-week file — **never** point it at a fresh
+`out = {}`-style full rewrite expecting the old weeks to survive by magic;
+the merge is what protects them.
+
+As a backstop, `gen_stats.py` refuses (non-zero exit) to write a result
+with FEWER weeks than the existing file already has — pass `--force` only
+if shrinking the file is actually intended.
+
 ## Data-integrity rules
 
 Write these into the prose, honestly — don't just apply them silently:

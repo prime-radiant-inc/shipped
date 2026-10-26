@@ -242,6 +242,32 @@ def parse_dt(s):
     return datetime.datetime.fromisoformat(s.replace("Z", "+00:00"))
 
 
+def parse_utc_cutoff_arg(s, flag_name):
+    """Parse an ISO8601 timestamp for --cutoff/--prev-cutoff and require it
+    to be UTC (offset exactly +00:00, including a bare 'Z' suffix).
+
+    PR #4 review, non-blocking 2: WeekSummary.astro's fmtCutoff() just
+    slices the stored ISO string (`iso.replace('T', ' ').slice(0, 16)`) and
+    labels the result "UTC" in the post's cutoff note -- it does not look
+    at the offset at all. A --cutoff/--prev-cutoff given in any other
+    offset (or none at all -- a naive timestamp, whose offset is undefined)
+    would still get labeled "UTC" on the page while actually showing a
+    different wall-clock time. Rejecting a non-UTC offset here, at the
+    point the human types it in, closes that instead of letting a wrong
+    display ship silently.
+    """
+    dt = parse_dt(s)
+    if dt.tzinfo is None or dt.utcoffset() != datetime.timedelta(0):
+        offset = "none (naive timestamp)" if dt.tzinfo is None else str(dt.utcoffset())
+        sys.exit(
+            f"ERROR: {flag_name} must be UTC (offset 'Z' or '+00:00'), got "
+            f"{s!r} (offset {offset}). WeekSummary.astro's fmtCutoff() "
+            "displays this value labeled 'UTC' verbatim, so a non-UTC "
+            "offset would show the wrong time on the published post."
+        )
+    return dt
+
+
 def week_buckets(n_weeks, window_end):
     """Return n_weeks (start, end_exclusive) datetime tuples, Mon-Sun, the
     last one ending at window_end (partial week if window_end isn't a
@@ -383,6 +409,46 @@ def get_compare(login, name, base_owner, base_branch, head_branch, token):
     if err:
         return None, err
     return data[0], None
+
+
+def compare_commit_to_dict(c, cdate, stats):
+    """Build gather.py's commit dict for one entry of the compare API's
+    `commits` list (the fork-ahead-of-parent path in process_repo).
+
+    N_PARENTS FIX (PR #4 review, non-blocking 1): the compare API's commit
+    object carries a top-level `parents` array (same shape as the regular
+    commits API -- one entry per parent, each with at least a `sha`), so
+    parent count is available here exactly like the local git-log path
+    (see parse_git_log's `n_parents`). Previously this path left
+    `n_parents` unset entirely, and cutoff_window_bucket()'s merge-
+    exclusion check (`c.get("n_parents", 1) > 1`) defaults a missing key to
+    1 -- so a merge commit arriving via this path (a fork whose own commits
+    include a merge) would default to "not a merge" and get counted, the
+    exact thing rule b (merges count for nothing) exists to prevent.
+    `len(c["parents"])` closes that: 1 for a normal commit, 2+ for a real
+    merge. Only if GitHub's response is ever missing the field entirely
+    (not observed; defensive only) do we fall back to the old "assume 1"
+    default, since assuming non-merge is the conservative choice.
+    """
+    parents = c.get("parents")
+    n_parents = len(parents) if parents is not None else 1
+    sha = c["sha"]
+    return {
+        "sha": sha, "short_sha": sha[:7],
+        "author": c.get("commit", {}).get("author", {}).get("name", "unknown"),
+        # login comes from the API's top-level `author`
+        # user object (may be null for an unlinked
+        # email) -- unlike the local git-log path,
+        # this is free here since the compare API
+        # response already carries it. See
+        # gen_stats.py's contributor-counting fix.
+        "login": (c.get("author") or {}).get("login"),
+        "email": c.get("commit", {}).get("author", {}).get("email"),
+        "date": cdate,
+        "subject": (c.get("commit", {}).get("message") or "").split("\n", 1)[0],
+        "n_parents": n_parents,
+        **stats,
+    }
 
 
 def get_commit_logins(login, name, token, window_start, window_end, branch):
@@ -823,7 +889,7 @@ def resolve_prev_cutoff(explicit_prev_cutoff, stats_path):
     publish at least one post under this mode first.
     """
     if explicit_prev_cutoff:
-        return parse_dt(explicit_prev_cutoff)
+        return parse_utc_cutoff_arg(explicit_prev_cutoff, "--prev-cutoff")
     if stats_path and os.path.isfile(stats_path):
         try:
             with open(stats_path) as f:
@@ -1012,23 +1078,7 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
                         stats, serr = get_commit_stats(login, name, sha, token)
                         if serr:
                             stats = {"additions": 0, "deletions": 0, "files_changed": 0}
-                        commits.append(
-                            {
-                                "sha": sha, "short_sha": sha[:7],
-                                "author": c.get("commit", {}).get("author", {}).get("name", "unknown"),
-                                # login comes from the API's top-level `author`
-                                # user object (may be null for an unlinked
-                                # email) -- unlike the local git-log path,
-                                # this is free here since the compare API
-                                # response already carries it. See
-                                # gen_stats.py's contributor-counting fix.
-                                "login": (c.get("author") or {}).get("login"),
-                                "email": c.get("commit", {}).get("author", {}).get("email"),
-                                "date": cdate,
-                                "subject": (c.get("commit", {}).get("message") or "").split("\n", 1)[0],
-                                **stats,
-                            }
-                        )
+                        commits.append(compare_commit_to_dict(c, cdate, stats))
     else:
         dest = os.path.join(tmp_root, name)
         ok, cerr0 = clone_shallow(repo["clone_url"], default_branch, window_start, dest)
@@ -1232,7 +1282,7 @@ def main():
     token = get_token()
 
     if args.cutoff:
-        cutoff = parse_dt(args.cutoff)
+        cutoff = parse_utc_cutoff_arg(args.cutoff, "--cutoff")
         prev_cutoff = resolve_prev_cutoff(args.prev_cutoff, args.stats_json)
         if not prev_cutoff < cutoff:
             sys.exit(f"ERROR: --prev-cutoff ({prev_cutoff.isoformat()}) must be before --cutoff ({cutoff.isoformat()})")
