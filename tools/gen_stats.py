@@ -27,6 +27,7 @@ import datetime
 import json
 import os
 import re
+import sys
 
 # ---- exact copies from tools/make_briefs_corrected.py — keep in sync ----
 
@@ -271,6 +272,47 @@ def build_week(data, week_idx, bucket):
     return result
 
 
+def merge_weeks(existing, new_weeks):
+    """Merge a recon's weeks into an existing weekly-stats.json's data.
+
+    A pure key-set union: any week in `existing` that is NOT present in
+    `new_weeks` is carried through untouched (byte-for-byte, since we never
+    even look at its value); any week present in `new_weeks` -- whether or
+    not it was already in `existing` -- takes the new value. This is what
+    makes a `--cutoff`-mode recon (tools/gather.py), which always produces
+    exactly ONE week bucket, safe to run against the full multi-week
+    weekly-stats.json: it can only ever ADD or REPLACE its own single
+    week, never drop any other week.
+
+    Does not mutate either input.
+    """
+    merged = dict(existing)
+    merged.update(new_weeks)
+    return merged
+
+
+def guard_against_shrink(merged, existing, force):
+    """Refuse (SystemExit, non-zero) to proceed if `merged` would have
+    FEWER weeks than `existing` already has -- i.e. writing it would
+    silently drop already-published weeks -- unless `force` is true.
+
+    This is a defense-in-depth backstop, independent of `merge_weeks`
+    above: a pure key-set union can never by itself produce a shrink, so
+    under normal operation this guard should never fire. It exists for
+    every OTHER way `main()` could end up writing a smaller result (a
+    stale/misconfigured --out, a future change to the merge itself, a
+    hand-edited recon) -- see PR #4 review: "the next step of this feature
+    wipes published history."
+    """
+    if len(merged) < len(existing) and not force:
+        sys.exit(
+            f"ERROR: refusing to write {len(merged)} week(s) -- the "
+            f"existing file already has {len(existing)}. This would "
+            f"silently drop {len(existing) - len(merged)} already-published "
+            "week(s). Pass --force if this is deliberate."
+        )
+
+
 def recompute_summaries(weekly_stats):
     """Belt-and-suspenders regen mode: operates directly on an EXISTING
     src/data/weekly-stats.json (as opposed to the full recon-json pipeline
@@ -319,6 +361,16 @@ def main():
             "(defaults to the input path, i.e. in place)."
         ),
     )
+    ap.add_argument(
+        "--force",
+        action="store_true",
+        help=(
+            "Allow writing --out with fewer weeks than it currently has "
+            "(see guard_against_shrink). Only needed if you deliberately "
+            "intend to drop already-published week(s); normal incremental "
+            "(--cutoff-mode) runs never need this."
+        ),
+    )
     args = ap.parse_args()
 
     if args.recompute_summaries:
@@ -343,15 +395,36 @@ def main():
         ap.error("recon_json is required unless --recompute-summaries is given")
 
     data = json.load(open(args.recon_json))
-    out = {}
+    new_weeks = {}
     for week_idx, bucket in enumerate(data["week_buckets"]):
         # Date key, not ordinal -- e.g. "2026-06-22". See module docstring.
-        out[bucket["start"]] = build_week(data, week_idx, bucket)
+        new_weeks[bucket["start"]] = build_week(data, week_idx, bucket)
+
+    # MERGE, DON'T REPLACE (PR #4 review, blocking): load whatever is
+    # already at --out (if anything) and merge this recon's weeks into it,
+    # rather than starting from `{}`. A full from-scratch recon (every
+    # week_buckets entry covering the repo's whole history) still produces
+    # the complete file either way, since its new_weeks IS the full set;
+    # an incremental --cutoff recon (one bucket) now only ever touches its
+    # own week. See merge_weeks()/guard_against_shrink() above.
+    existing = {}
+    if os.path.isfile(args.out):
+        try:
+            with open(args.out) as f:
+                existing = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            existing = {}
+
+    merged = merge_weeks(existing, new_weeks)
+    guard_against_shrink(merged, existing, args.force)
 
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w") as f:
-        json.dump(out, f, indent=2)
-    print(f"wrote {args.out}")
+        json.dump(merged, f, indent=2)
+    print(
+        f"wrote {args.out} ({len(new_weeks)} week(s) from recon merged into "
+        f"{len(existing)} existing -> {len(merged)} total)"
+    )
 
 
 if __name__ == "__main__":
