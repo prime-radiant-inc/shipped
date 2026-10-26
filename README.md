@@ -111,6 +111,16 @@ had — pass `--force` if shrinking the file is actually what you want (e.g.
 deliberately dropping a week). See `merge_weeks()`/`guard_against_shrink()`
 in `tools/gen_stats.py` and `tools/test_gen_stats.py` for the tests.
 
+That guard only works if it can actually read the existing file: an
+unreadable or corrupt `--out` (bad permissions, truncated/invalid JSON) is
+**not** treated as "nothing published yet" — only a genuinely missing file
+is. Anything else that fails to read exits non-zero, names the file, and
+writes nothing, rather than silently treating a corrupt file as empty (which
+would hand the shrink guard nothing to compare against). Both of
+`gen_stats.py`'s writes, and both of `gather.py`'s, also write via a
+temp-file-plus-rename (`atomic_write()`), so a crash mid-write can't leave a
+corrupt file in the first place.
+
 ### Tests
 
 ```
