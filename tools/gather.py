@@ -142,6 +142,33 @@ WHY v2 EXISTS — THE BUGS THIS FIXES
    -- the same fail-safe-via-full-clone philosophy `clone_shallow` already
    uses when the initial shallow clone fails outright.
 
+6. CUTOFF-WINDOW-NO-MERGES MODE (opt-in, new posts only). The calendar
+   Mon-Sun bucketing above (and every bug-fix described for it) is
+   UNCHANGED and remains the default -- existing/backfilled posts must
+   keep reproducing byte-identical output. This is a separate, additive
+   mode, activated only by passing `--cutoff`, for two accuracy-reviewer
+   rules that apply going forward:
+     a. CUTOFF TO CUTOFF, not Mon-Sun: a post covers commits with
+        committer date in the half-open-then-closed interval
+        (`prev_cutoff`, `cutoff`] -- strictly after the previous
+        published post's own recorded cutoff, up to and including this
+        post's cutoff. `prev_cutoff` must come from a RECORDED value
+        (the previous post's own `cutoff` field in
+        src/data/weekly-stats.json, written by this same mode) or an
+        explicit `--prev-cutoff`; see `resolve_prev_cutoff` --
+        deliberately no silent default, since guessing a window is the
+        exact mistake this rule exists to prevent.
+     b. MERGES COUNT FOR NEITHER COMMITS NOR LINES. A commit with more
+        than one parent (a real merge -- now that bug 5's fix keeps the
+        shallow clone's parent graph intact, `n_parents` reliably means
+        what it says) contributes nothing to commit_count, loc_added,
+        loc_removed, or the per-author commit tally. It still appears in
+        the week's `commits` list (flagged `is_merge`), same as before,
+        for subject-line narrative material -- only the TOTALS exclude
+        it. Merged-PR listings are untouched by this: a merged PR is
+        GitHub PR data, not a commit-graph node, and was never counted
+        via commit parentage. See `cutoff_window_bucket`.
+
 APPROACH
 --------
 - Non-fork repos: shallow `git clone --shallow-since=<window start - 3d>`
@@ -565,6 +592,14 @@ def parse_git_log(text):
                 #     this case -- it has to be "parents != 1". See
                 #     fix_merge_commit_loc() for the full diagnosis.
                 "loc_untrusted": n_parents != 1,
+                # Raw parent count, kept separately from loc_untrusted (which
+                # folds the 0-parent graft case into the same "!= 1" test).
+                # cutoff_window_bucket's merges-count-for-nothing rule needs
+                # the real ">1" merge test specifically -- a genuine 0-parent
+                # repo-root commit is not a merge and must still count
+                # normally under CUTOFF-WINDOW-NO-MERGES MODE (see module
+                # docstring, bug 6).
+                "n_parents": n_parents,
             }
         elif line.strip() and cur is not None:
             fields = line.split("\t")
@@ -711,7 +746,112 @@ def summarize_commits(commits, buckets):
     return weeks, unmatched
 
 
-def process_repo(login, kind, repo, token, buckets, window_start, window_end, tmp_root):
+def cutoff_window_bucket(commits, prev_cutoff, cutoff):
+    """CUTOFF-WINDOW-NO-MERGES MODE's replacement for summarize_commits +
+    bucket_index, producing a SINGLE week-shaped dict (same shape
+    summarize_commits' per-bucket dict has, so downstream code -- PR
+    attachment, entry['weeks'], gen_stats.py -- doesn't need to know which
+    mode produced it). See module docstring, bug 6.
+
+    Two deliberate differences from summarize_commits/bucket_index:
+
+    1. WINDOW IS (prev_cutoff, cutoff], not calendar Mon<=d<Sun. A commit
+       counts iff its committer date is STRICTLY AFTER prev_cutoff and AT
+       OR BEFORE cutoff -- exclusive start, inclusive end. A commit dated
+       exactly at prev_cutoff was already covered by the PREVIOUS post
+       (whose own cutoff that value is) and must not count twice; a commit
+       dated exactly at cutoff belongs to THIS post, not the next one.
+
+    2. MERGES COUNT FOR NEITHER COMMITS NOR LINES. A commit with more than
+       one parent (c["n_parents"] > 1 -- the real merge test; see
+       parse_git_log's n_parents field) contributes 0 to commit_count,
+       loc_added, loc_removed, and the per-author tally, author counts
+       included. It's still appended to the returned `commits` list
+       (flagged `is_merge: True`) so narrative/subject-line use -- the
+       same reason fix_merge_commit_loc keeps merges in the walk instead
+       of `--no-merges` -- still sees it. Commits sourced from the fork
+       ahead-of-parent/compare-API path never carry `n_parents` (GitHub's
+       compare API doesn't surface parent count in the shape gather.py
+       reads here); default to 1 (non-merge) for those, same as
+       loc_untrusted-style code elsewhere defaults missing parent info to
+       the common case rather than guessing it's a merge.
+    """
+    week = {"commit_count": 0, "commits": [], "authors": {}, "loc_added": 0, "loc_removed": 0}
+    for c in commits:
+        dt = parse_dt(c["date"])
+        if not (prev_cutoff < dt <= cutoff):
+            continue
+        is_merge = c.get("n_parents", 1) > 1
+        week["commits"].append(
+            {
+                "sha": c["short_sha"], "author": c["author"], "date": c["date"],
+                "subject": c["subject"], "additions": c["additions"],
+                "deletions": c["deletions"], "files_changed": c["files_changed"],
+                "login": c.get("login"), "email": c.get("email"),
+                "is_merge": is_merge,
+            }
+        )
+        if is_merge:
+            continue
+        week["commit_count"] += 1
+        week["authors"][c["author"]] = week["authors"].get(c["author"], 0) + 1
+        week["loc_added"] += c["additions"]
+        week["loc_removed"] += c["deletions"]
+    return week
+
+
+def resolve_prev_cutoff(explicit_prev_cutoff, stats_path):
+    """Resolve the previous published post's cutoff for CUTOFF-WINDOW-
+    NO-MERGES MODE (module docstring, bug 6, rule a). Precedence:
+
+    1. `explicit_prev_cutoff` (the --prev-cutoff CLI arg), if given --
+       always wins, since an explicit human-provided value is more
+       trustworthy than anything inferred.
+    2. The most recently published week's own recorded `cutoff` field in
+       `stats_path` (src/data/weekly-stats.json), if any week there
+       carries one. This field is written going forward by this same
+       mode (see gen_stats.py's build_week) -- weeks published before
+       this mode existed never recorded an exact cutoff (frontmatter
+       dateEnd is a calendar Sunday, not the real generation cutoff; nothing
+       else in the repo records it more precisely), so they are never used
+       as an implicit source here.
+
+    If neither is available, exits with an error rather than falling back
+    to *any* computed default (e.g. "now minus a week", or the window's
+    own start) -- that would be exactly the silently-picked guess rule a
+    forbids. The caller must either pass --prev-cutoff explicitly or
+    publish at least one post under this mode first.
+    """
+    if explicit_prev_cutoff:
+        return parse_dt(explicit_prev_cutoff)
+    if stats_path and os.path.isfile(stats_path):
+        try:
+            with open(stats_path) as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            data = {}
+        recorded = [
+            (week_key, week.get("cutoff"))
+            for week_key, week in data.items()
+            if isinstance(week, dict) and week.get("cutoff")
+        ]
+        if recorded:
+            # Week keys are ISO start dates (see gen_stats.py module
+            # docstring) -- they sort chronologically as plain strings, so
+            # the lexicographically last entry is the most recently
+            # published week.
+            recorded.sort(key=lambda kv: kv[0])
+            return parse_dt(recorded[-1][1])
+    sys.exit(
+        "ERROR: no previous cutoff recorded (no week in "
+        f"{stats_path} carries a `cutoff` field) and --prev-cutoff was not "
+        "given. Refusing to invent a default window -- pass --prev-cutoff "
+        "explicitly, or publish at least one post under cutoff-window mode "
+        "first."
+    )
+
+
+def process_repo(login, kind, repo, token, buckets, window_start, window_end, tmp_root, prev_cutoff=None, cutoff=None):
     name = repo["name"]
     is_fork = repo["fork"]
     is_archived = repo["archived"]
@@ -925,7 +1065,18 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
                 if c.get("login") is None:
                     c["login"] = login_map.get(c["sha"])
 
-    weeks, unmatched = summarize_commits(commits, buckets)
+    if cutoff is not None:
+        # CUTOFF-WINDOW-NO-MERGES MODE (module docstring, bug 6): one
+        # cutoff-to-cutoff bucket, merges excluded from totals. `buckets`
+        # (still a single (prev_cutoff, cutoff]-ish tuple built by main())
+        # is intentionally NOT used for commit bucketing here -- only for
+        # the merged-PR bucket_index assignment below, which this mode
+        # does not change (rule a/b are about commit/line counting, not
+        # about which merged PRs are listed).
+        weeks = [cutoff_window_bucket(commits, prev_cutoff, cutoff)]
+        unmatched = []
+    else:
+        weeks, unmatched = summarize_commits(commits, buckets)
     if unmatched:
         entry["notes"].append(f"{len(unmatched)} commit(s) had dates outside all buckets (clock skew?), excluded")
 
@@ -947,11 +1098,13 @@ def process_repo(login, kind, repo, token, buckets, window_start, window_end, tm
     return entry
 
 
-def process_account(login, kind, token, buckets, window_start, window_end, tmp_root, log=sys.stderr):
+def process_account(login, kind, token, buckets, window_start, window_end, tmp_root, log=sys.stderr,
+                     prev_cutoff=None, cutoff=None):
     repos = list_public_repos(login, kind, token)
     results = []
     for i, r in enumerate(repos):
-        entry = process_repo(login, kind, r, token, buckets, window_start, window_end, tmp_root)
+        entry = process_repo(login, kind, r, token, buckets, window_start, window_end, tmp_root,
+                              prev_cutoff=prev_cutoff, cutoff=cutoff)
         results.append(entry)
         tc = entry.get("total_commits_in_window", 0)
         print(f"[{login}] {i + 1}/{len(repos)} {r['name']} commits={tc} fork={r['fork']}", file=log)
@@ -1056,12 +1209,51 @@ def main():
     ap.add_argument("--orgs", type=str, default=None, help="comma-separated subset of account logins to scan")
     ap.add_argument("--out", type=str, default=None, help="output JSON path")
     ap.add_argument("--report-out", type=str, default="data/coverage-report.md", help="coverage report path")
+    ap.add_argument(
+        "--cutoff", type=str, default=None,
+        help="ISO8601 UTC timestamp. Activates CUTOFF-WINDOW-NO-MERGES MODE (see module docstring, "
+        "bug 6) for a SINGLE bucket covering (prev-cutoff, cutoff] instead of --weeks calendar "
+        "Mon-Sun buckets ending at --window-end. Merge commits are excluded from commit/line/author "
+        "totals in this mode. --weeks/--window-end are ignored when this is given.",
+    )
+    ap.add_argument(
+        "--prev-cutoff", type=str, default=None,
+        help="ISO8601 UTC timestamp for the previous published post's cutoff (only used with --cutoff). "
+        "If omitted, resolved from the most recently published week's own `cutoff` field in "
+        "--stats-json. No default is invented if neither is available -- the run errors instead.",
+    )
+    ap.add_argument(
+        "--stats-json", type=str, default="src/data/weekly-stats.json",
+        help="path to read a recorded previous cutoff from, when --prev-cutoff is not given "
+        "(only used with --cutoff).",
+    )
     args = ap.parse_args()
 
     token = get_token()
-    window_end = parse_dt(args.window_end) if args.window_end else datetime.datetime.now(datetime.timezone.utc)
-    buckets = week_buckets(args.weeks, window_end)
-    window_start = buckets[0][0]
+
+    if args.cutoff:
+        cutoff = parse_dt(args.cutoff)
+        prev_cutoff = resolve_prev_cutoff(args.prev_cutoff, args.stats_json)
+        if not prev_cutoff < cutoff:
+            sys.exit(f"ERROR: --prev-cutoff ({prev_cutoff.isoformat()}) must be before --cutoff ({cutoff.isoformat()})")
+        window_start, window_end = prev_cutoff, cutoff
+        # Single-element buckets list: only used downstream for the
+        # merged-PR bucket_index assignment (unaffected by this mode) and
+        # for empty/dormant-repo placeholder week dicts, both of which just
+        # need ONE bucket spanning the whole window. Actual commit
+        # bucketing in this mode goes through cutoff_window_bucket instead
+        # (see process_repo), not bucket_index, so this tuple's exact
+        # boundary semantics (end-exclusive) don't need to match rule a's
+        # (end-inclusive) -- nudge the end forward 1 second so a commit
+        # dated exactly at `cutoff` still falls inside it for those other
+        # uses.
+        buckets = [(window_start, window_end + datetime.timedelta(seconds=1))]
+    else:
+        cutoff = None
+        prev_cutoff = None
+        window_end = parse_dt(args.window_end) if args.window_end else datetime.datetime.now(datetime.timezone.utc)
+        buckets = week_buckets(args.weeks, window_end)
+        window_start = buckets[0][0]
 
     accounts = ACCOUNTS
     if args.orgs:
@@ -1073,21 +1265,42 @@ def main():
         all_results = []
         for acct in accounts:
             all_results.extend(
-                process_account(acct["login"], acct["kind"], token, buckets, window_start, window_end, tmp_root)
+                process_account(acct["login"], acct["kind"], token, buckets, window_start, window_end, tmp_root,
+                                 prev_cutoff=prev_cutoff, cutoff=cutoff)
             )
     finally:
         shutil.rmtree(tmp_root, ignore_errors=True)
 
-    out_path = args.out or f"data/recon-v2-{args.weeks}wk-{window_end.strftime('%Y%m%d')}.json"
+    if args.cutoff:
+        out_path = args.out or f"data/recon-cutoff-{cutoff.strftime('%Y%m%d')}.json"
+        week_buckets_out = [
+            {
+                "index": 1,
+                "start": window_start.date().isoformat(),
+                "end": window_end.date().isoformat(),
+                # Exact timestamps -- see gen_stats.py's build_week, which
+                # carries these two straight through onto the emitted
+                # weekly-stats.json week dict (and only then, conditionally
+                # -- an older recon file without these keys produces no new
+                # keys there either, which is how existing weeks stay
+                # byte-identical).
+                "cutoff": cutoff.isoformat(),
+                "prev_cutoff": prev_cutoff.isoformat(),
+            }
+        ]
+    else:
+        out_path = args.out or f"data/recon-v2-{args.weeks}wk-{window_end.strftime('%Y%m%d')}.json"
+        week_buckets_out = [
+            {"index": i + 1, "start": s.date().isoformat(), "end": (e - datetime.timedelta(days=1)).date().isoformat()}
+            for i, (s, e) in enumerate(buckets)
+        ]
+
     out = {
         "generated_at_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "window_start_utc": window_start.isoformat(),
         "window_end_utc": window_end.isoformat(),
         "weeks_requested": args.weeks,
-        "week_buckets": [
-            {"index": i + 1, "start": s.date().isoformat(), "end": (e - datetime.timedelta(days=1)).date().isoformat()}
-            for i, (s, e) in enumerate(buckets)
-        ],
+        "week_buckets": week_buckets_out,
         "accounts_queried": {a["login"]: a["kind"] for a in accounts},
         "repos": all_results,
     }
