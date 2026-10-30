@@ -1,0 +1,106 @@
+---
+title: "streamlinear ships label/state/assignee parity across the MCP tool and CLI in two releases, evener runs a two-track internal refactor wave, and shepherd-pr fixes its own severity counter"
+week: "Week of October 26, 2026"
+dateStart: 2026-10-26
+dateEnd: 2026-11-01
+pubDate: 2026-10-30
+summary: "Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/streamlinear tags v1.2.0 and v1.2.1, bringing label, state, and assignee handling to parity between its MCP tool and CLI. prime-radiant-inc/evener tags v0.3.17 across a large two-track internal refactor of its agent/hub/web/native code plus two small outside-contributed fixes. prime-radiant-inc/shepherd-pr tags v0.3.2, fixing its own review-severity counter. obra/model-training-journal launches as a new repo: a public, static-site engineering journal for a small-model training run."
+draft: false
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+**`prime-radiant-inc/streamlinear`** tags **v1.2.0** and **v1.2.1** the same day, bringing label, state, and assignee handling to parity between its MCP tool and its CLI. **`prime-radiant-inc/evener`** tags **v0.3.17** across a large two-track internal refactor of its agent, hub, web, and native code. **`prime-radiant-inc/shepherd-pr`** tags **v0.3.2**, fixing its own review-severity counter. **`obra/model-training-journal`** launches as a new repo: a public engineering journal documenting a small-model training run. This week is still open: the data below runs cutoff-to-cutoff through Friday evening, not the full calendar week.
+
+<section class="summary">
+
+<WeekSummary week="2026-10-26" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/streamlinear](https://github.com/prime-radiant-inc/streamlinear)
+
+<p class="repo-desc">A lightweight Linear MCP server for Claude Code that exposes one tool with action dispatch (search, get, update, comment, create, graphql, help) using ~500 tokens instead of the standard MCP's ~17,000.</p>
+
+<RepoStat org="prime-radiant-inc" name="streamlinear" week="2026-10-26" />
+
+Two tagged releases, both with real hand-written notes. **v1.2.0**: labels wired into `create`/`update` (names resolve against the workspace label list, clearing the list on update, and an unknown label errors out listing the available options), `state` and UUID-based `assignee` support on `create`/`update`, a new `STREAMLINEAR_POST_ONLY` mode that disables `search`/`get`/`graphql` so an agent can create and update issues without ever reading issue content, `@mention` conversion to Linear profile links when a mention matches exactly one workspace user, a dependency refresh (zod 4, the MCP SDK to 1.32) that cleared every open Dependabot security advisory, and a new end-to-end test suite driving the built MCP server over stdio against a stubbed Linear API. **v1.2.1**, same day: the CLI's own `create`/`update` gained the same labels/state/assignee options to match the MCP tool, the search assignee filter now accepts UUIDs so "assignee" means the same thing everywhere, a CLI crash when `--labels` was omitted got fixed, and `npm run build` on Windows now goes through a Node script calling esbuild's API instead of a shell pipeline that mis-quoted arguments there. Contributors: **Jesse Vincent (staff, `obra`)** and **Ada Sen (staff)** — one commit, honoring assignee/state/UUID-assignee on create/update — plus 12 `dependabot[bot]` version-bump commits.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-10-26" />
+
+Tagged release v0.3.17 — a bare version tag with GitHub's standard auto-generated changelog, no hand-written notes, consistent with every prior evener release. By far the most active repo again. The dominant thread this week is a large, two-track internal refactor run under branch tags `W1-*` and `W2-*` across the `agent`, `hub`, `web`, `native`, and `appwire-client` code: long functions split into named phases, leaf packages extracted (memory pages, host resources, frontmatter editors), and dozens of hand-rolled test-fixture copies replaced by a handful of shared helpers (one `connectFakeClient`/`connectReadyFakeClient` pair standing in for duplicated setup across many test files), running in parallel with a "Wave 2" documentation audit closing and ruling on review findings. Outside the refactor: host records moved to live in the operation store with `hub.toml` keeping only the host list; a provider-connection-card fast-follow; queued-message edit/remove unified across browser and native; a single-owner Retry-eligibility path shared between browser and native; small web-UI additions (a "Comic Chat" client, floating next-needs-you controls, a compact activity sidebar); and a Gemini-gateway fix retrying a model-not-found 404 on custom base URLs. Two small outside-contributed fixes also landed: a bounded command-hook-output-capture fix and a `.gitignore` trailing-slash cleanup. In-org author: **Jesse Vincent (staff, `obra`)**, plus two outside contributors (**`anubhavgupta121`**, **`wangyusheng1985`**) each landing one small fix, and two `dependabot[bot]` commits.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/shepherd-pr](https://github.com/prime-radiant-inc/shepherd-pr)
+
+<p class="repo-desc">A portable coding-agent plugin for shepherding GitHub pull requests through CI and review.</p>
+
+<RepoStat org="prime-radiant-inc" name="shepherd-pr" week="2026-10-26" />
+
+Tagged release v0.3.2, with a real hand-written release note: `roborev-review.sh` now counts review findings under severity headings in the shape RoboRev's combined comment actually uses (`### High` and similar), where it previously reported `severities=-` on every review that had findings; `pr-settle.sh` and `stale-prs.sh` consume the same corrected counts. Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/model-training-journal](https://github.com/obra/model-training-journal)
+
+<p class="repo-desc">An AI-assisted engineering journal: small-model training methods, measurements, failures, and limitations.</p>
+
+<RepoStat org="obra" name="model-training-journal" week="2026-10-26" />
+
+A brand-new repo, created mid-window and published to GitHub Pages: a public engineering journal for a small-model training run, built as a deterministic static site (no CDN, no remote fonts, no tracking JavaScript beyond a snapshot-age clock) with static SVG charts, explicitly excluding any raw logs, model weights, dataset copies, or credentials from the repository itself. Its 22 commits this week are its entire history so far, moving from an initial published entry through a run of numbered checkpoint updates, a plain-language-companion and evidence-dashboard addition, and a "V6 first checkpoint and run boundary" post. All 22 commits land under an identity called "Journal automation," with no linked GitHub account — consistent with the project's own stated build process of committing generated pages for review before publication, but not confirmed as Jesse's own tooling versus anyone else's. This repo's line-count chip is intentionally hidden: its churn is almost entirely generated checkpoint and chart artifacts rather than hand-written content, well past this blog's threshold for suppressing a LOC figure that would otherwise look like fabricated or inflated "work."
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/clipfan](https://github.com/prime-radiant-inc/clipfan)
+
+<p class="repo-desc">Clipboard sync daemon for Mac + remote tmux fleet. Mirrors macOS pasteboard to remote OS clipboards and tmux paste buffers. Enables image paste into Claude Code/Codex over SSH without OSC 52 or Xvfb.</p>
+
+<RepoStat org="prime-radiant-inc" name="clipfan" week="2026-10-26" />
+
+Two outside-contributed Mac-client fixes, merged by Jesse: the Add Peer sheet now scrolls for large tailnets, and the command panel's history refreshes every time it opens. Contributor: outside contributor **Will McDonald** (`wemcdonald`).
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">Lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-10-26" />
+
+A memory subsystem landed in stages: an ownership-and-permissions foundation, then automatic extraction and recall built on top of it, with a same-week fix to the automatic-extraction image/search/sidecar boundaries and a fencing pass over memory-metadata writes to close lifecycle races. Also: a sticky temporary request-context API over Ent that preserves request context through an OpenAI streaming fallback (plus two small provider/tool-ordering fixes folded into the same work), a Gemini-gateway fix retrying a model-not-found 404 on custom base URLs, a new model-catalog entry (LunaRoute's `glm-5.3` and `glm-5.3-background`), three small tool-contract fixes for `todo_write`/`job_output` (case-insensitive job-id matching, refusing an id the session never returned, accepting `read_tool_result`'s slicing parameters), and a fix so an inject into an idle session correctly starts an internal turn. Contributors: **Jesse Vincent** and **Ada Sen** (both staff, `obra`/`ada-sen`).
+
+</article>
+
+<p class="caveat"><em>Three more active repos this week had no human commits to attribute — <code>prime-radiant-inc/claude-plugin-stats</code> (the daily install-stats scrape and chart rebuild) and <code>prime-radiant-inc/terminal-bench-analysis</code> (a daily README regeneration with no new data) are bot-only, and <code>obra/muse-skills</code>' commits again look automated (a daily cadence, under a git identity with no linked GitHub account), though that isn't confirmed. Separately, <code>prime-radiant-inc/shipped</code> — this repo — merged two fixes to its own data-gathering pipeline this window: a shallow-clone merge-boundary undercount fix, and cutoff-to-cutoff windowing that excludes merge commits from every count. Sole author: Ada Sen.</em></p>
+
+</section>

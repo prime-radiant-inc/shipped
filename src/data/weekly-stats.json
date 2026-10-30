@@ -28346,5 +28346,2810 @@
         "html_url": "https://github.com/obra/superpowers-marketplace"
       }
     }
+  },
+  "2026-10-26": {
+    "summary": {
+      "repos_active": 10,
+      "featured_count": 4,
+      "second_tier_count": 6,
+      "commits": 643,
+      "merged_prs": 509,
+      "loc_added": 416642,
+      "loc_removed": 630183,
+      "contributors": 9,
+      "tagged_releases": 4,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "prime-radiant-inc/streamlinear": {
+        "commits": 23,
+        "authors": [
+          {
+            "name": "dependabot[bot]",
+            "count": 12
+          },
+          {
+            "name": "Jesse Vincent",
+            "count": 10
+          },
+          {
+            "name": "Ada Sen",
+            "count": 1
+          }
+        ],
+        "loc_added": 40429,
+        "loc_removed": 7492,
+        "merged_prs": [
+          {
+            "number": 42,
+            "title": "release: v1.2.1",
+            "merged_at": "2026-10-30T04:54:40Z"
+          },
+          {
+            "number": 41,
+            "title": "ci: run the pre-commit check for direct-child files",
+            "merged_at": "2026-10-30T04:40:01Z"
+          },
+          {
+            "number": 40,
+            "title": "fix: crash in CLI create and update without a --labels flag",
+            "merged_at": "2026-10-30T04:33:18Z"
+          },
+          {
+            "number": 39,
+            "title": "feat: add labels, state, and assignee options to the CLI",
+            "merged_at": "2026-10-30T04:07:08Z"
+          },
+          {
+            "number": 38,
+            "title": "fix: build dist through a Node script so npm run build works on Windows",
+            "merged_at": "2026-10-30T03:51:00Z"
+          },
+          {
+            "number": 37,
+            "title": "release: v1.2.0",
+            "merged_at": "2026-10-30T02:39:20Z"
+          },
+          {
+            "number": 32,
+            "title": "fix: wire labels into create and update",
+            "merged_at": "2026-10-30T01:03:59Z"
+          },
+          {
+            "number": 36,
+            "title": "feat: convert @mentions to Linear profile links in create and comments",
+            "merged_at": "2026-10-30T02:04:13Z"
+          },
+          {
+            "number": 35,
+            "title": "feat: add post-only mode to keep agents from reading issue content",
+            "merged_at": "2026-10-30T01:25:41Z"
+          },
+          {
+            "number": 31,
+            "title": "chore(deps): bump ajv from 8.17.1 to 8.20.0 in /mcp",
+            "merged_at": "2026-10-29T23:19:27Z"
+          },
+          {
+            "number": 30,
+            "title": "chore(deps): bump @hono/node-server from 1.19.14 to 2.1.5 in /mcp",
+            "merged_at": "2026-10-29T23:19:22Z"
+          },
+          {
+            "number": 24,
+            "title": "chore(deps): bump zod from 3.25.76 to 4.6.7 in /mcp",
+            "merged_at": "2026-10-29T23:17:39Z"
+          },
+          {
+            "number": 28,
+            "title": "chore(deps): bump fast-uri from 3.1.5 to 3.1.9 in /mcp",
+            "merged_at": "2026-10-29T22:46:49Z"
+          },
+          {
+            "number": 27,
+            "title": "chore(deps): bump qs from 6.15.2 to 6.17.1 in /mcp",
+            "merged_at": "2026-10-29T22:46:44Z"
+          },
+          {
+            "number": 25,
+            "title": "chore(deps): bump hono from 4.13.0 to 4.13.14 in /mcp",
+            "merged_at": "2026-10-29T22:46:39Z"
+          },
+          {
+            "number": 26,
+            "title": "chore(deps): bump @modelcontextprotocol/sdk from 1.25.1 to 1.32.0 in /mcp",
+            "merged_at": "2026-10-29T22:46:34Z"
+          },
+          {
+            "number": 22,
+            "title": "Fix create/update to honor assignee, state, and UUID assignees",
+            "merged_at": "2026-10-29T22:38:54Z"
+          },
+          {
+            "number": 21,
+            "title": "chore(deps): bump fast-uri from 3.1.0 to 3.1.5 in /mcp",
+            "merged_at": "2026-10-29T22:06:28Z"
+          },
+          {
+            "number": 20,
+            "title": "chore(deps): bump hono from 4.11.3 to 4.13.0 in /mcp",
+            "merged_at": "2026-10-29T22:06:22Z"
+          },
+          {
+            "number": 14,
+            "title": "chore(deps-dev): bump esbuild from 0.20.2 to 0.28.1 in /mcp",
+            "merged_at": "2026-10-29T22:06:14Z"
+          },
+          {
+            "number": 12,
+            "title": "chore(deps): bump qs from 6.14.0 to 6.15.2 in /mcp",
+            "merged_at": "2026-10-29T22:06:09Z"
+          },
+          {
+            "number": 9,
+            "title": "chore(deps): bump path-to-regexp from 8.3.0 to 8.4.2 in /mcp",
+            "merged_at": "2026-10-29T22:06:03Z"
+          },
+          {
+            "number": 7,
+            "title": "chore(deps): bump @hono/node-server from 1.19.7 to 1.19.14 in /mcp",
+            "merged_at": "2026-10-29T22:05:58Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v1.2.1",
+            "name": "v1.2.1",
+            "published_at": "2026-10-30T04:59:48Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v1.2.0",
+            "name": "v1.2.0",
+            "published_at": "2026-10-30T03:04:03Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v1.2.1 published 2026-10-30T04:59:48Z; tagged release v1.2.0 published 2026-10-30T03:04:03Z",
+        "description": "A lightweight Linear MCP server for Claude Code that exposes one tool with action dispatch (search, get, update, comment, create, graphql, help) using ~500 tokens instead of the standard MCP's ~17,000.",
+        "html_url": "https://github.com/prime-radiant-inc/streamlinear"
+      },
+      "prime-radiant-inc/evener": {
+        "commits": 554,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 549
+          },
+          {
+            "name": "anubhavgupta121",
+            "count": 2
+          },
+          {
+            "name": "dependabot[bot]",
+            "count": 2
+          },
+          {
+            "name": "\u7389\u5347",
+            "count": 1
+          }
+        ],
+        "loc_added": 358247,
+        "loc_removed": 620293,
+        "merged_prs": [
+          {
+            "number": 5497,
+            "title": "docs(agents): fix roborev findings in proportion and file the rest",
+            "merged_at": "2026-10-30T19:55:58Z"
+          },
+          {
+            "number": 5480,
+            "title": "refactor(hub): share teardown retry/recover claim and finalize blocks (W1-30 hub-app-host-15)",
+            "merged_at": "2026-10-30T19:10:16Z"
+          },
+          {
+            "number": 5485,
+            "title": "fix(llm): chatcompletions carries PDF documents as file parts",
+            "merged_at": "2026-10-30T17:27:40Z"
+          },
+          {
+            "number": 5492,
+            "title": "fix(agent): the vision side-channel declines documents its route cannot carry",
+            "merged_at": "2026-10-30T10:47:54Z"
+          },
+          {
+            "number": 5490,
+            "title": "ci: post the merge-group failure on every PR it drops",
+            "merged_at": "2026-10-30T09:18:53Z"
+          },
+          {
+            "number": 5414,
+            "title": "docs(audit): Wave 2 close and Wave 3 rulings (2026-10-28)",
+            "merged_at": "2026-10-30T00:08:31Z"
+          },
+          {
+            "number": 5482,
+            "title": "refactor(hub): host manager seams are installed once from the manager (W2-11 q3)",
+            "merged_at": "2026-10-30T07:11:11Z"
+          },
+          {
+            "number": 5487,
+            "title": "fix(native): scope the vitest gate's discovery to the checkout",
+            "merged_at": "2026-10-30T07:03:03Z"
+          },
+          {
+            "number": 5484,
+            "title": "fix(cli): plugin install swallowed a trailing --yes and still demanded it",
+            "merged_at": "2026-10-30T06:48:51Z"
+          },
+          {
+            "number": 5483,
+            "title": "fix(execenv): reap the process group at command end, not only on a held pipe",
+            "merged_at": "2026-10-30T06:39:23Z"
+          },
+          {
+            "number": 5476,
+            "title": "fix factual claims in AGENTS.md and tool-description gaps",
+            "merged_at": "2026-10-30T06:14:25Z"
+          },
+          {
+            "number": 5467,
+            "title": "prompt: ask-when-it-matters counterweight and assertion-conflict stop rule",
+            "merged_at": "2026-10-30T06:14:21Z"
+          },
+          {
+            "number": 5477,
+            "title": "refactor(hub): the reserved record sections leave Config (W2-13 B6)",
+            "merged_at": "2026-10-30T05:16:01Z"
+          },
+          {
+            "number": 5475,
+            "title": "refactor(hub): delete the two-file live protocol the store replaced (W2-13 B5)",
+            "merged_at": "2026-10-30T04:17:25Z"
+          },
+          {
+            "number": 5428,
+            "title": "feat(hub): host records live in the operation store; hub.toml keeps the hosts (W2-13 B4)",
+            "merged_at": "2026-10-30T03:41:10Z"
+          },
+          {
+            "number": 5003,
+            "title": "perf(markdown): prove the provenance frame once, not per tokenizer call",
+            "merged_at": "2026-10-30T03:57:23Z"
+          },
+          {
+            "number": 5466,
+            "title": "fix(transcriptindex): per-projection index sidecars stop mixed-build rebuild ping-pong",
+            "merged_at": "2026-10-30T03:38:50Z"
+          },
+          {
+            "number": 4739,
+            "title": "fix(hooks): bound command hook output capture (#4561)",
+            "merged_at": "2026-10-30T03:07:00Z"
+          },
+          {
+            "number": 4664,
+            "title": "test(web): reuse indexeddb open wedge in diagnostic tests",
+            "merged_at": "2026-10-30T02:12:05Z"
+          },
+          {
+            "number": 5449,
+            "title": "fix(web): preserve filename links across popout updates",
+            "merged_at": "2026-10-30T02:09:13Z"
+          },
+          {
+            "number": 5463,
+            "title": "test(layoutguard): capture Comic source-position failure evidence",
+            "merged_at": "2026-10-30T02:08:42Z"
+          },
+          {
+            "number": 4773,
+            "title": "build(deps): bump actions/setup-go from 6 to 7",
+            "merged_at": "2026-10-30T01:54:48Z"
+          },
+          {
+            "number": 5454,
+            "title": "fix(gate): judge the timing ratchet's failure limits against the run's own slowdown",
+            "merged_at": "2026-10-30T01:37:56Z"
+          },
+          {
+            "number": 4658,
+            "title": "fix(hub): size the producer acknowledgement wait for the payload it drains",
+            "merged_at": "2026-10-30T01:32:03Z"
+          },
+          {
+            "number": 5455,
+            "title": "test(comicguard): snapshot the page and its timer lag when a journey throws",
+            "merged_at": "2026-10-30T01:21:58Z"
+          },
+          {
+            "number": 5465,
+            "title": "test(budget): rebaseline hostops to the slowest recent CI run",
+            "merged_at": "2026-10-30T01:13:23Z"
+          },
+          {
+            "number": 5453,
+            "title": "test(hub): child discovery reads follow the locked answer's automatic retry",
+            "merged_at": "2026-10-30T00:58:05Z"
+          },
+          {
+            "number": 5456,
+            "title": "test(agent): memory-eval shell denial accepts any nonzero exit status",
+            "merged_at": "2026-10-30T00:44:29Z"
+          },
+          {
+            "number": 4647,
+            "title": "fix: drop trailing slash from node_modules in mobile-native/.gitignore",
+            "merged_at": "2026-10-30T00:24:06Z"
+          },
+          {
+            "number": 5442,
+            "title": "test(web): shared deferred replaces 14 local copies (W1-53, part 8)",
+            "merged_at": "2026-10-30T00:16:56Z"
+          },
+          {
+            "number": 4772,
+            "title": "build(deps): bump actions/upload-pages-artifact from 4 to 5",
+            "merged_at": "2026-10-30T00:14:28Z"
+          },
+          {
+            "number": 5417,
+            "title": "refactor(hub): forceStopThread as named phases (W2-11)",
+            "merged_at": "2026-10-30T00:09:54Z"
+          },
+          {
+            "number": 5415,
+            "title": "test: fold appwire and plugins covtest files (W1-54)",
+            "merged_at": "2026-10-30T00:09:54Z"
+          },
+          {
+            "number": 5460,
+            "title": "ci: pin Linux runners to ubuntu-24.04",
+            "merged_at": "2026-10-29T23:25:44Z"
+          },
+          {
+            "number": 5366,
+            "title": "refactor(stores): the foreground open races source settlement instead of the 250ms lookup deadline",
+            "merged_at": "2026-10-29T21:33:56Z"
+          },
+          {
+            "number": 5444,
+            "title": "test: separate the release commit-lookup failure scenarios",
+            "merged_at": "2026-10-29T17:29:19Z"
+          },
+          {
+            "number": 5446,
+            "title": "refactor(gate): one parser for the timing ratchet's rows (GAPS M5)",
+            "merged_at": "2026-10-29T15:53:03Z"
+          },
+          {
+            "number": 5445,
+            "title": "refactor(config): generate the knob table, delete knobs nothing reads (GAPS M3)",
+            "merged_at": "2026-10-29T14:04:58Z"
+          },
+          {
+            "number": 5443,
+            "title": "fix(agent): find_session_transcripts stops its content scan when cancelled (M2)",
+            "merged_at": "2026-10-29T10:02:22Z"
+          },
+          {
+            "number": 5378,
+            "title": "test: refresh the coverage corpus so envvars, auth and llm clear their floors again",
+            "merged_at": "2026-10-29T09:45:10Z"
+          },
+          {
+            "number": 5437,
+            "title": "fix(agent): evener/jobs/list carries the request context into the tree build (M2)",
+            "merged_at": "2026-10-29T09:30:02Z"
+          },
+          {
+            "number": 5436,
+            "title": "fix(agent): worktree prune sweeps inherit the request context (M2)",
+            "merged_at": "2026-10-29T09:02:02Z"
+          },
+          {
+            "number": 5439,
+            "title": "fix(agent): read_transcript honors the tool call's context (M2)",
+            "merged_at": "2026-10-29T07:55:03Z"
+          },
+          {
+            "number": 5430,
+            "title": "build(go): one version string for the auth module (G6)",
+            "merged_at": "2026-10-29T06:47:58Z"
+          },
+          {
+            "number": 5440,
+            "title": "test(web): resetConnectionStoreForTests replaces hand-spelled idle resets in 154 files (W1-53, part 7)",
+            "merged_at": "2026-10-29T06:44:40Z"
+          },
+          {
+            "number": 5435,
+            "title": "chore(ops): list-context-roots.sh and context-root convention (M2)",
+            "merged_at": "2026-10-29T06:42:45Z"
+          },
+          {
+            "number": 5431,
+            "title": "build(lint): tracked-file size budget (G4, M6)",
+            "merged_at": "2026-10-29T06:03:23Z"
+          },
+          {
+            "number": 5438,
+            "title": "refactor(appwire-client): revision and lifecycle helpers leave the state/extensions subpath (W2-14 Q2)",
+            "merged_at": "2026-10-29T05:46:22Z"
+          },
+          {
+            "number": 5432,
+            "title": "test(web): shared connectFakeClient takes a connection state (W1-53, part 6)",
+            "merged_at": "2026-10-29T05:03:29Z"
+          },
+          {
+            "number": 5429,
+            "title": "refactor(hub): component-tagged slog logger (M1)",
+            "merged_at": "2026-10-29T04:36:24Z"
+          },
+          {
+            "number": 5427,
+            "title": "test(sshconn): launch-check conditions name their target, first file ported (W2-19 PR 12c)",
+            "merged_at": "2026-10-29T04:05:27Z"
+          },
+          {
+            "number": 5422,
+            "title": "test(fuzz): cap and coverage-prune harvested corpora (G3)",
+            "merged_at": "2026-10-29T03:36:13Z"
+          },
+          {
+            "number": 5420,
+            "title": "build(js): one exact pin for the shared JS toolchain, enforced by lint (G5)",
+            "merged_at": "2026-10-29T02:59:41Z"
+          },
+          {
+            "number": 5425,
+            "title": "test(sshconn): deploy tests answer operations, not command text (W2-19 PR 12b)",
+            "merged_at": "2026-10-29T02:27:38Z"
+          },
+          {
+            "number": 5424,
+            "title": "feat(hostops): store the hub's host-record family beside the operation records (W2-13 B3)",
+            "merged_at": "2026-10-29T02:27:38Z"
+          },
+          {
+            "number": 5419,
+            "title": "test(hub): host mutation crash matrix over a real hub.toml and operation store (W2-13 B1)",
+            "merged_at": "2026-10-29T01:28:01Z"
+          },
+          {
+            "number": 5423,
+            "title": "refactor(hub): host records and the host set load and commit through one hostRecordStore (W2-13 B2)",
+            "merged_at": "2026-10-29T00:43:01Z"
+          },
+          {
+            "number": 5421,
+            "title": "test(sshconn): version tests answer operations, not command text (W2-19 PR 12a)",
+            "merged_at": "2026-10-28T23:59:13Z"
+          },
+          {
+            "number": 5416,
+            "title": "refactor(hub): tree builder as one method per tier (W2-11)",
+            "merged_at": "2026-10-28T23:59:13Z"
+          },
+          {
+            "number": 5413,
+            "title": "test: delete assertion-free coverage-padding tests (W1-54)",
+            "merged_at": "2026-10-28T21:47:30Z"
+          },
+          {
+            "number": 5412,
+            "title": "test(web): cut threads.stopDurability.test.ts at the describe's tests (W2-19 follow-up)",
+            "merged_at": "2026-10-28T20:37:46Z"
+          },
+          {
+            "number": 5410,
+            "title": "test(execenv): split glob_budget_test.go by concern (W2-19 PR 4)",
+            "merged_at": "2026-10-28T20:37:46Z"
+          },
+          {
+            "number": 5411,
+            "title": "test(sshconn): fake hosts answer operations, not command text (W2-19 PR 11)",
+            "merged_at": "2026-10-28T19:37:21Z"
+          },
+          {
+            "number": 5403,
+            "title": "test(web): split Session.test.tsx by topic (W2-19 PR 6d)",
+            "merged_at": "2026-10-28T19:35:31Z"
+          },
+          {
+            "number": 5409,
+            "title": "test(hub): newTestWebServer defaults its state roots to the test's own temp dirs (W2-19 PR 10)",
+            "merged_at": "2026-10-28T19:21:01Z"
+          },
+          {
+            "number": 5408,
+            "title": "test(appwire-client): split sessionActivityStore.test.ts in two (W2-19 PR 7)",
+            "merged_at": "2026-10-28T19:21:01Z"
+          },
+          {
+            "number": 5407,
+            "title": "test(native): split PluginsPage.test.tsx by topic (W2-19 PR 8c)",
+            "merged_at": "2026-10-28T19:05:28Z"
+          },
+          {
+            "number": 5400,
+            "title": "test(web): split Composer.test.tsx by topic (W2-19 PR 6c)",
+            "merged_at": "2026-10-28T18:53:10Z"
+          },
+          {
+            "number": 5405,
+            "title": "test(native): split BoardScreen.test.tsx by topic (W2-19 PR 8b)",
+            "merged_at": "2026-10-28T18:52:06Z"
+          },
+          {
+            "number": 5404,
+            "title": "test(native): split ConversationScreen.send.test.tsx by topic (W2-19 PR 8a)",
+            "merged_at": "2026-10-28T18:51:28Z"
+          },
+          {
+            "number": 5406,
+            "title": "test(hub): pin the attach-first handoff on a post-attach restore failure (W1-30 fast-follow)",
+            "merged_at": "2026-10-28T18:50:18Z"
+          },
+          {
+            "number": 5402,
+            "title": "test(native): split conversation.test.ts by topic (W2-19 PR 9)",
+            "merged_at": "2026-10-28T18:50:18Z"
+          },
+          {
+            "number": 5399,
+            "title": "test(web): Spawn tests share one readyClient, fixtures and lifecycle hooks (W2-19 fast-follow)",
+            "merged_at": "2026-10-28T18:33:17Z"
+          },
+          {
+            "number": 5401,
+            "title": "refactor(hub): split the host operation worker and start path into phases (W1-30)",
+            "merged_at": "2026-10-28T18:14:16Z"
+          },
+          {
+            "number": 5394,
+            "title": "test(web): split AppShell.test.tsx by topic (W2-19 PR 6a)",
+            "merged_at": "2026-10-28T18:01:28Z"
+          },
+          {
+            "number": 5398,
+            "title": "docs: drop stale thread-store line anchors (W2-15 step 10)",
+            "merged_at": "2026-10-28T17:56:41Z"
+          },
+          {
+            "number": 5396,
+            "title": "test(web): split threads.sessionActions.test.ts by topic (W2-19 PR 6b)",
+            "merged_at": "2026-10-28T17:45:53Z"
+          },
+          {
+            "number": 5397,
+            "title": "refactor(web): one conflict-mapping request helper and named options for hydration refresh and composer intents (W2-15 steps 7 and 8)",
+            "merged_at": "2026-10-28T17:26:52Z"
+          },
+          {
+            "number": 5395,
+            "title": "refactor(hub): host mutations share admission, lock and finish helpers (W1-30)",
+            "merged_at": "2026-10-28T17:26:52Z"
+          },
+          {
+            "number": 5393,
+            "title": "fix(scripts): test-inventory resolves its scratch directory to an absolute path",
+            "merged_at": "2026-10-28T17:26:52Z"
+          },
+          {
+            "number": 5392,
+            "title": "test(web): split Spawn.test.tsx by topic (W2-19 PR 5)",
+            "merged_at": "2026-10-28T17:15:00Z"
+          },
+          {
+            "number": 5391,
+            "title": "refactor(web): extract entryTranscriptRoutes from the thread store (W2-15 step 4)",
+            "merged_at": "2026-10-28T16:54:36Z"
+          },
+          {
+            "number": 5382,
+            "title": "docs(testing): test file layout rules and a test-name inventory script (W2-19 PR 1-2)",
+            "merged_at": "2026-10-28T16:38:46Z"
+          },
+          {
+            "number": 5387,
+            "title": "test(web): shared connectReadyFakeClient in 7 more test files (W1-53, part 5)",
+            "merged_at": "2026-10-28T16:34:24Z"
+          },
+          {
+            "number": 5390,
+            "title": "refactor(llm): Codex gpt-6 overlay rows share one gpt-6* glob (W2-13 D6; D5 closed)",
+            "merged_at": "2026-10-28T16:33:25Z"
+          },
+          {
+            "number": 5389,
+            "title": "refactor(evener): serve's retirement requests as serveRetirement methods (W2-10 PR 9d)",
+            "merged_at": "2026-10-28T16:33:25Z"
+          },
+          {
+            "number": 5386,
+            "title": "test(hub): split app_rpc_test.go by topic (W2-19 PR 3)",
+            "merged_at": "2026-10-28T16:17:21Z"
+          },
+          {
+            "number": 5388,
+            "title": "fix(hub): local daemon treats closed-write shapes as transport loss (W1-31 step 2)",
+            "merged_at": "2026-10-28T16:01:49Z"
+          },
+          {
+            "number": 5385,
+            "title": "refactor(web): extract thread owners and the wired client from the thread store (W2-15 step 4a)",
+            "merged_at": "2026-10-28T15:44:49Z"
+          },
+          {
+            "number": 5384,
+            "title": "refactor(hub): instance edit and Remove as named phases (W2-11)",
+            "merged_at": "2026-10-28T15:38:53Z"
+          },
+          {
+            "number": 5381,
+            "title": "refactor(evener): serve's event bridge and mutation runner as serveBridge methods (W2-10 PR 9c)",
+            "merged_at": "2026-10-28T15:29:03Z"
+          },
+          {
+            "number": 5383,
+            "title": "docs(appwire): drop review-history and kata citations from comments (W2-14 follow-up)",
+            "merged_at": "2026-10-28T15:28:45Z"
+          },
+          {
+            "number": 5380,
+            "title": "refactor(contextmgr): drop summarizeWithLLM and summarizeWithLLMSteered (W2-04 follow-up)",
+            "merged_at": "2026-10-28T15:16:46Z"
+          },
+          {
+            "number": 5379,
+            "title": "refactor(native): plugin ages use the shared timeAgo (W1-37)",
+            "merged_at": "2026-10-28T15:07:46Z"
+          },
+          {
+            "number": 5372,
+            "title": "test(credentials): await ProviderConnection edit calls by event, not wall clock",
+            "merged_at": "2026-10-28T09:08:29Z"
+          },
+          {
+            "number": 5375,
+            "title": "refactor(web): extract cacheLifetime from the thread store (W2-15 step 3)",
+            "merged_at": "2026-10-28T08:29:02Z"
+          },
+          {
+            "number": 5374,
+            "title": "refactor(agent): drop mirror worktree/sandbox tool-result DTOs (W2-06 Q2)",
+            "merged_at": "2026-10-28T08:26:18Z"
+          },
+          {
+            "number": 5370,
+            "title": "docs(appwire-client): drop legacy-renderer pointers and review-history citations from comments (W2-14 PR 11)",
+            "merged_at": "2026-10-28T07:37:31Z"
+          },
+          {
+            "number": 5364,
+            "title": "refactor(agent): rename stableDelegate identifiers to delegate (W2-06 PR 5)",
+            "merged_at": "2026-10-28T07:35:43Z"
+          },
+          {
+            "number": 5369,
+            "title": "test(native): re-derive the conversation test dedup on the (service, ref) API (-1,885 lines)",
+            "merged_at": "2026-10-28T07:31:56Z"
+          },
+          {
+            "number": 5365,
+            "title": "refactor(appwire-client): one REFETCH_DEBOUNCE_MS and named state barrels (W2-14 PR 8)",
+            "merged_at": "2026-10-28T07:06:15Z"
+          },
+          {
+            "number": 5349,
+            "title": "refactor(native): move the reader's list cell out of the conversation screen (W2-18 PR 8a)",
+            "merged_at": "2026-10-28T06:31:56Z"
+          },
+          {
+            "number": 5190,
+            "title": "feat(web): add live Comic Chat client",
+            "merged_at": "2026-10-28T06:29:10Z"
+          },
+          {
+            "number": 5363,
+            "title": "docs(product): point native recovery docs at the split conversation store modules (W2-18 PR 10)",
+            "merged_at": "2026-10-28T06:22:42Z"
+          },
+          {
+            "number": 5362,
+            "title": "refactor(appwire-client): settleMutation tail and listing.ts for the credential instances store (W2-14 PR 9)",
+            "merged_at": "2026-10-28T06:15:29Z"
+          },
+          {
+            "number": 5361,
+            "title": "test(agent): session-keyed descendant watch clear authority (W2-02 question 5)",
+            "merged_at": "2026-10-28T06:12:38Z"
+          },
+          {
+            "number": 5360,
+            "title": "test(appwire-client): split reducer.test.ts by the module each test exercises (W2-14)",
+            "merged_at": "2026-10-28T06:05:27Z"
+          },
+          {
+            "number": 5359,
+            "title": "refactor(agent): split the fold phase and compaction claim out of two long functions (W2-07 step 12)",
+            "merged_at": "2026-10-28T05:45:49Z"
+          },
+          {
+            "number": 5356,
+            "title": "refactor(native): move the composer draft and image selection into useComposerDraft (W2-18 PR 8c)",
+            "merged_at": "2026-10-28T05:45:49Z"
+          },
+          {
+            "number": 5358,
+            "title": "refactor(appwire-client): move cache codec to transcriptCache.ts; reducer.ts is the notification fold (W2-14 PR 7)",
+            "merged_at": "2026-10-28T05:39:05Z"
+          },
+          {
+            "number": 5357,
+            "title": "refactor(evener): serve's live session and exit ownership in one type (W2-10 PR 9b)",
+            "merged_at": "2026-10-28T05:35:13Z"
+          },
+          {
+            "number": 5344,
+            "title": "fix(agent): a cold-restored delegate joins the tree's turn budget (W2-05 step 4)",
+            "merged_at": "2026-10-28T05:17:44Z"
+          },
+          {
+            "number": 5330,
+            "title": "refactor(agent): split prepareSubagentRunFromSelection into phases (W2-05 step 7)",
+            "merged_at": "2026-10-28T05:17:44Z"
+          },
+          {
+            "number": 5355,
+            "title": "refactor(native): move Find in session into useFindInSession (W2-18 PR 8b)",
+            "merged_at": "2026-10-28T05:15:04Z"
+          },
+          {
+            "number": 5354,
+            "title": "refactor(evener): serve status mappers move to serve_status.go (W2-10 PR 9a)",
+            "merged_at": "2026-10-28T05:09:46Z"
+          },
+          {
+            "number": 5353,
+            "title": "refactor(appwire-client): move versioned history and overlay to transcriptHistory.ts (W2-14 PR 6)",
+            "merged_at": "2026-10-28T05:09:46Z"
+          },
+          {
+            "number": 5352,
+            "title": "test(web): readModuleCss replaces hand-rolled CSS reads in 14 test files (W1-53, part 4)",
+            "merged_at": "2026-10-28T05:09:46Z"
+          },
+          {
+            "number": 5350,
+            "title": "test(native): drop per-file expo-crypto mocks the setup file provides (W1-48)",
+            "merged_at": "2026-10-28T05:09:46Z"
+          },
+          {
+            "number": 5348,
+            "title": "refactor(native): move the Board's search state into useBoardSearch (W2-18 PR 7b)",
+            "merged_at": "2026-10-28T05:09:46Z"
+          },
+          {
+            "number": 5351,
+            "title": "docs(audit): Wave 2 follow-up decisions (2026-10-28)",
+            "merged_at": "2026-10-28T04:46:08Z"
+          },
+          {
+            "number": 5347,
+            "title": "refactor(hub): one transport-loss core for the local and remote sources (W1-31 step 2, shared part)",
+            "merged_at": "2026-10-28T04:46:08Z"
+          },
+          {
+            "number": 5346,
+            "title": "refactor(agent): drop the exported SteeringQueueSnapshot test seam (W1-23)",
+            "merged_at": "2026-10-28T04:46:08Z"
+          },
+          {
+            "number": 5345,
+            "title": "refactor(native): one shut-down prompt, one category name bound, no render-time ref writes (W2-18 PR 7)",
+            "merged_at": "2026-10-28T04:33:59Z"
+          },
+          {
+            "number": 5329,
+            "title": "refactor(agent): simplify the drain loop's repeated guards (W2-05 step 6)",
+            "merged_at": "2026-10-28T04:30:40Z"
+          },
+          {
+            "number": 5339,
+            "title": "refactor(evener): one resolveLaunchSettings for run and serve (W2-10 PR 8)",
+            "merged_at": "2026-10-28T04:22:37Z"
+          },
+          {
+            "number": 5342,
+            "title": "test(web): shared connectReadyFakeClient in 14 more test files (W1-53, part 3)",
+            "merged_at": "2026-10-28T04:20:13Z"
+          },
+          {
+            "number": 5341,
+            "title": "refactor(execenv): move the file ops into local_files.go (W2-08 PR 5b)",
+            "merged_at": "2026-10-28T04:14:39Z"
+          },
+          {
+            "number": 5343,
+            "title": "refactor(appwire-client): move tool-call fold and turn merge to turnHistoryMerge.ts (W2-14 PR 5)",
+            "merged_at": "2026-10-28T04:13:35Z"
+          },
+          {
+            "number": 5338,
+            "title": "test(hub): order the remap-read barrier on the delta's own subscription (W1-69b)",
+            "merged_at": "2026-10-28T04:13:35Z"
+          },
+          {
+            "number": 5328,
+            "title": "refactor(agent): send path extractions (W2-05 step 5)",
+            "merged_at": "2026-10-28T04:07:24Z"
+          },
+          {
+            "number": 5336,
+            "title": "refactor(hub): runMain as named startup phases (W2-10 PR 6b)",
+            "merged_at": "2026-10-28T04:04:52Z"
+          },
+          {
+            "number": 5340,
+            "title": "refactor(native): share one submission between send and queue (W2-18 PR 6)",
+            "merged_at": "2026-10-28T04:02:00Z"
+          },
+          {
+            "number": 5337,
+            "title": "fix(web): a held pane keeps a reader when its opening misses the cache lookup deadline (W1-69a)",
+            "merged_at": "2026-10-28T03:56:14Z"
+          },
+          {
+            "number": 5335,
+            "title": "refactor(native): one timestamp parse and one pluralizer (W1-37)",
+            "merged_at": "2026-10-28T03:43:22Z"
+          },
+          {
+            "number": 5334,
+            "title": "refactor(appwire-client): move wire-item hydration to transcriptItems.ts (W2-14 PR 4)",
+            "merged_at": "2026-10-28T03:43:22Z"
+          },
+          {
+            "number": 5327,
+            "title": "test(agent): differential test of fresh vs restored delegate child config (W2-05 step 4)",
+            "merged_at": "2026-10-28T03:43:22Z"
+          },
+          {
+            "number": 5321,
+            "title": "fix(contextmgr): session-log summary carries partner messages its checkpoint folded",
+            "merged_at": "2026-10-28T03:43:22Z"
+          },
+          {
+            "number": 5331,
+            "title": "refactor(native): move the pure reread and page merge steps out of the store (W2-18 PR 5c)",
+            "merged_at": "2026-10-28T03:37:13Z"
+          },
+          {
+            "number": 5326,
+            "title": "fix(appwire): urls/remove retry-safe, local admission Invalid, types.go comment sweep (W2-12)",
+            "merged_at": "2026-10-28T03:16:20Z"
+          },
+          {
+            "number": 5324,
+            "title": "refactor(web): drop the test-only prefs.transcript and showCost slice (W1-63c)",
+            "merged_at": "2026-10-28T03:05:42Z"
+          },
+          {
+            "number": 5323,
+            "title": "refactor(appwire-client): move cache validators to transcriptValidators.ts (W2-14 PR 3)",
+            "merged_at": "2026-10-28T03:05:42Z"
+          },
+          {
+            "number": 5322,
+            "title": "refactor(native): own the deferred trailing reread in a module (W2-18 PR 5b)",
+            "merged_at": "2026-10-28T03:00:09Z"
+          },
+          {
+            "number": 5320,
+            "title": "refactor(agent): extract memorypages leaf package (W2-03 step 3)",
+            "merged_at": "2026-10-28T02:33:34Z"
+          },
+          {
+            "number": 5319,
+            "title": "refactor(agent): move frontmatter key-line editors into internal/frontmatter (W2-03 step 2)",
+            "merged_at": "2026-10-28T01:35:39Z"
+          },
+          {
+            "number": 5318,
+            "title": "refactor(agent): extract hostresources leaf package (W2-03 step 1)",
+            "merged_at": "2026-10-28T01:10:06Z"
+          },
+          {
+            "number": 5316,
+            "title": "refactor(agent): delete the unused subagentStopGated test hook (W2-07 step 11)",
+            "merged_at": "2026-10-28T00:30:25Z"
+          },
+          {
+            "number": 5315,
+            "title": "test(agent): live settle vs restore resting-state equivalence (W2-07 step 9)",
+            "merged_at": "2026-10-28T00:00:58Z"
+          },
+          {
+            "number": 5314,
+            "title": "refactor(agent): one owner for the SESSION_END latch (W2-07 step 7)",
+            "merged_at": "2026-10-27T23:33:18Z"
+          },
+          {
+            "number": 5313,
+            "title": "refactor(agent): split releaseRuntimeOnce into closeTerminal and releaseForRetirement (W2-07 step 6)",
+            "merged_at": "2026-10-27T23:02:29Z"
+          },
+          {
+            "number": 5312,
+            "title": "refactor(agent): move close and runtime release to session_close.go (W2-07 step 5)",
+            "merged_at": "2026-10-27T22:11:52Z"
+          },
+          {
+            "number": 5311,
+            "title": "refactor(agent): split session_notes_rpc.go by job (W2-07 step 4)",
+            "merged_at": "2026-10-27T21:53:41Z"
+          },
+          {
+            "number": 5310,
+            "title": "refactor(agent): move testConfig to session_testhooks.go (W2-07 step 3)",
+            "merged_at": "2026-10-27T21:35:27Z"
+          },
+          {
+            "number": 5309,
+            "title": "refactor(agent): delete dead close-stop-join hooks (W2-07 step 2)",
+            "merged_at": "2026-10-27T21:22:29Z"
+          },
+          {
+            "number": 5308,
+            "title": "docs(agent): correct the Session lock contract (W2-07 step 1)",
+            "merged_at": "2026-10-27T21:09:39Z"
+          },
+          {
+            "number": 5306,
+            "title": "refactor(agent): keep the quiet-watch hub on its owner Session (W2-05 step 3)",
+            "merged_at": "2026-10-27T20:41:57Z"
+          },
+          {
+            "number": 5305,
+            "title": "test(agent): pin quiet-watch hub behavior before moving it off the global (W2-05 step 2)",
+            "merged_at": "2026-10-27T19:49:11Z"
+          },
+          {
+            "number": 5302,
+            "title": "refactor(agent): split delegate_runtime.go by lifecycle stage (W2-05 step 1)",
+            "merged_at": "2026-10-27T18:45:47Z"
+          },
+          {
+            "number": 5304,
+            "title": "ops: merge-enqueue reads --wait as decimal and never sleeps past it",
+            "merged_at": "2026-10-27T18:16:44Z"
+          },
+          {
+            "number": 5297,
+            "title": "ops: add merge-enqueue.sh and point AGENTS.md at it",
+            "merged_at": "2026-10-27T17:49:07Z"
+          },
+          {
+            "number": 5301,
+            "title": "refactor(execenv): drop the gitignore cost estimator for one high cap (W2-08 PR 14)",
+            "merged_at": "2026-10-27T18:04:34Z"
+          },
+          {
+            "number": 5299,
+            "title": "refactor(hub): runMain diagnostics, endpoint and banner phases (W2-10 PR 6a)",
+            "merged_at": "2026-10-27T17:30:41Z"
+          },
+          {
+            "number": 5303,
+            "title": "refactor(evener): one definition of the launch flags shared by run and serve (W2-10 PR 7)",
+            "merged_at": "2026-10-27T17:58:13Z"
+          },
+          {
+            "number": 5282,
+            "title": "refactor(hub): one flag-presence helper for hub command lines (W2-10 PR 3)",
+            "merged_at": "2026-10-27T15:06:25Z"
+          },
+          {
+            "number": 5281,
+            "title": "refactor(cmdutil): share launch helpers with tool-fluency (W2-10 PR 2)",
+            "merged_at": "2026-10-27T14:07:02Z"
+          },
+          {
+            "number": 5280,
+            "title": "refactor(hub): one launch-check subprocess helper (W2-10 PR 1)",
+            "merged_at": "2026-10-27T13:32:03Z"
+          },
+          {
+            "number": 5300,
+            "title": "refactor(execenv): one DirEntry builder behind the list_dir walks (W2-08 PR 11)",
+            "merged_at": "2026-10-27T17:49:24Z"
+          },
+          {
+            "number": 5295,
+            "title": "refactor(execenv): launchers share launchEnv and launchExecutable (W2-08 PR 10)",
+            "merged_at": "2026-10-27T17:19:09Z"
+          },
+          {
+            "number": 5298,
+            "title": "docs(agent): drop review history from session tool comments (W2-06 PR 12)",
+            "merged_at": "2026-10-27T17:17:50Z"
+          },
+          {
+            "number": 5293,
+            "title": "refactor(execenv): one directory walk behind both native grep arms (W2-08 PR 9)",
+            "merged_at": "2026-10-27T17:06:51Z"
+          },
+          {
+            "number": 5289,
+            "title": "test(hub): pin runMain's shutdown order (W2-10 PR 5)",
+            "merged_at": "2026-10-27T16:55:18Z"
+          },
+          {
+            "number": 5288,
+            "title": "refactor(hub): single archive/favorite hook wiring, drop dead nil guard (W2-10 PR 4)",
+            "merged_at": "2026-10-27T15:59:43Z"
+          },
+          {
+            "number": 5296,
+            "title": "refactor(agent): name the prune sweeps by purpose, share the merge-check wrapper (W2-06 PR 5, sweeps only)",
+            "merged_at": "2026-10-27T16:53:06Z"
+          },
+          {
+            "number": 5230,
+            "title": "fix(web): bound the mobile directory picker's recents share so the browse pane stays usable",
+            "merged_at": "2026-10-27T16:37:31Z"
+          },
+          {
+            "number": 5292,
+            "title": "refactor(agent): extract execTool hook steps and errorResult (W2-06 PR 9)",
+            "merged_at": "2026-10-27T16:37:31Z"
+          },
+          {
+            "number": 5291,
+            "title": "refactor(execenv): one fileTarget behind the file-op dispatch sites (W2-08 PR 8)",
+            "merged_at": "2026-10-27T16:37:31Z"
+          },
+          {
+            "number": 5287,
+            "title": "refactor(agent): split worktreeRemove into named steps (W2-06 PR 10)",
+            "merged_at": "2026-10-27T16:12:45Z"
+          },
+          {
+            "number": 5284,
+            "title": "refactor(execenv): delete wrapper-only ReadFileAndBytes and EditFileWith (W2-08 PR 6)",
+            "merged_at": "2026-10-27T15:30:37Z"
+          },
+          {
+            "number": 5285,
+            "title": "refactor(agent): share one string-list decoder (W2-06 PR 7)",
+            "merged_at": "2026-10-27T15:25:34Z"
+          },
+          {
+            "number": 5279,
+            "title": "test(execenv): file-op denial parity table across dispatch arms (W2-08 PR 7)",
+            "merged_at": "2026-10-27T15:17:31Z"
+          },
+          {
+            "number": 5286,
+            "title": "refactor(agent): drop jobToolRegistrar for a register func (W2-06 PR 11)",
+            "merged_at": "2026-10-27T14:48:49Z"
+          },
+          {
+            "number": 5283,
+            "title": "refactor(agent): gather tool-argument decoders in session_tool_args.go (W2-06 PR 6)",
+            "merged_at": "2026-10-27T14:13:21Z"
+          },
+          {
+            "number": 5272,
+            "title": "test(agent): characterize tool-argument decoders (W2-06 PR 1)",
+            "merged_at": "2026-10-27T13:59:21Z"
+          },
+          {
+            "number": 5278,
+            "title": "refactor(execenv): split local.go into named files (W2-08 moves)",
+            "merged_at": "2026-10-27T13:37:28Z"
+          },
+          {
+            "number": 5271,
+            "title": "refactor(agent): split session_tools_jobs.go by tool (W2-06 PR 3)",
+            "merged_at": "2026-10-27T13:25:15Z"
+          },
+          {
+            "number": 5269,
+            "title": "refactor(agent): split session_tools.go by job (W2-06 PR 2)",
+            "merged_at": "2026-10-27T13:12:53Z"
+          },
+          {
+            "number": 5277,
+            "title": "refactor(server): decide/run split and journal type for thread/clear (W2-12 PR 10)",
+            "merged_at": "2026-10-27T13:01:09Z"
+          },
+          {
+            "number": 5275,
+            "title": "refactor(appserver): one unsubscribe entry point and target (W2-12 PR 8)",
+            "merged_at": "2026-10-27T12:47:45Z"
+          },
+          {
+            "number": 5276,
+            "title": "test(contextmgr): split context_manager_test.go by concern (W2-04 PR 6)",
+            "merged_at": "2026-10-27T12:32:45Z"
+          },
+          {
+            "number": 5273,
+            "title": "test(server): pin every exit of thread/clear; fix unpersisted receipt kept in memory (W2-12 PR 9)",
+            "merged_at": "2026-10-27T12:23:39Z"
+          },
+          {
+            "number": 5274,
+            "title": "refactor(contextmgr): finish the context_manager.go split (W2-04 PR 5)",
+            "merged_at": "2026-10-27T12:05:50Z"
+          },
+          {
+            "number": 5267,
+            "title": "refactor(appserver): one subscription admission resolver (W2-12 PR 7)",
+            "merged_at": "2026-10-27T11:52:56Z"
+          },
+          {
+            "number": 5270,
+            "title": "refactor(agent): split session_tools_worktree.go by lifecycle (W2-06 PR 4)",
+            "merged_at": "2026-10-27T11:47:53Z"
+          },
+          {
+            "number": 5268,
+            "title": "refactor(contextmgr): split the summarization fold out of context_manager.go (W2-04 PR 4)",
+            "merged_at": "2026-10-27T11:38:49Z"
+          },
+          {
+            "number": 5265,
+            "title": "test(appserver): pin subscription admission dispositions (W2-12 PR 6)",
+            "merged_at": "2026-10-27T11:38:49Z"
+          },
+          {
+            "number": 5266,
+            "title": "refactor(agent): split configureWatchWithHooks (W2-02 PR 9)",
+            "merged_at": "2026-10-27T11:23:44Z"
+          },
+          {
+            "number": 5263,
+            "title": "refactor(contextmgr): split checkpoint and partner carry out of context_manager.go (W2-04 PR 3)",
+            "merged_at": "2026-10-27T11:07:39Z"
+          },
+          {
+            "number": 5264,
+            "title": "refactor(server): split appwire_runtime.go by responsibility (W2-12 PR 5)",
+            "merged_at": "2026-10-27T10:45:06Z"
+          },
+          {
+            "number": 5262,
+            "title": "test(agent): pin the order each condition-fire rail runs its effects (W2-02 PR 7)",
+            "merged_at": "2026-10-27T10:39:56Z"
+          },
+          {
+            "number": 5261,
+            "title": "refactor(agent): watchTeardown owns the mark and rollback pair (W2-02 PR 6)",
+            "merged_at": "2026-10-27T10:26:34Z"
+          },
+          {
+            "number": 5255,
+            "title": "refactor(appwire): split types.go by domain (W2-12 PR 3)",
+            "merged_at": "2026-10-27T10:15:56Z"
+          },
+          {
+            "number": 5259,
+            "title": "refactor(contextmgr): split summary prompt, summarization routing and elicitation out of context_manager.go (W2-04 PR 2)",
+            "merged_at": "2026-10-27T10:10:11Z"
+          },
+          {
+            "number": 5260,
+            "title": "refactor(native): own the durable pending-row binding in a module (W2-18 PR 5a)",
+            "merged_at": "2026-10-27T10:05:20Z"
+          },
+          {
+            "number": 5256,
+            "title": "refactor(appserver): split server.go by responsibility (W2-12 PR 4)",
+            "merged_at": "2026-10-27T10:00:33Z"
+          },
+          {
+            "number": 5257,
+            "title": "test(agent): pin watch restore after a failed teardown persist (W2-02 PR 5)",
+            "merged_at": "2026-10-27T09:56:52Z"
+          },
+          {
+            "number": 5258,
+            "title": "refactor(native): own transient warnings and the bounded-text cache in modules (W2-18 PR 4)",
+            "merged_at": "2026-10-27T09:33:09Z"
+          },
+          {
+            "number": 5254,
+            "title": "refactor(web): extract threadsErrors and recoveryFence (W2-15 step 2)",
+            "merged_at": "2026-10-27T09:33:09Z"
+          },
+          {
+            "number": 5253,
+            "title": "refactor(agent): delete the duplicate watchConfig.id field (W2-02 PR 4)",
+            "merged_at": "2026-10-27T09:22:37Z"
+          },
+          {
+            "number": 5248,
+            "title": "refactor(contextmgr): split observation masking and tool-output parsing out of context_manager.go (W2-04 PR 1)",
+            "merged_at": "2026-10-27T09:17:22Z"
+          },
+          {
+            "number": 5251,
+            "title": "refactor(native): move the pure row transforms out of the conversation store (W2-18 PR 3)",
+            "merged_at": "2026-10-27T09:07:31Z"
+          },
+          {
+            "number": 5249,
+            "title": "test(appwire-client): errors.test.ts reads all appwire Go files (W2-12 PR 2)",
+            "merged_at": "2026-10-27T08:59:17Z"
+          },
+          {
+            "number": 5252,
+            "title": "refactor(web): delete hostRouting and mutationDispatcher shims (W2-15 step 1)",
+            "merged_at": "2026-10-27T08:56:39Z"
+          },
+          {
+            "number": 5250,
+            "title": "refactor(native): move the Board leaf components into BoardLeaves (W2-18 PR 2)",
+            "merged_at": "2026-10-27T08:54:00Z"
+          },
+          {
+            "number": 5247,
+            "title": "refactor(appwire): hoist mutation required-fields table (W2-12 PR 1)",
+            "merged_at": "2026-10-27T08:50:24Z"
+          },
+          {
+            "number": 5246,
+            "title": "refactor(agent): drop the validateWatchSendTarget pass-through (W2-02 PR 3)",
+            "merged_at": "2026-10-27T08:48:28Z"
+          },
+          {
+            "number": 5245,
+            "title": "test(web): the ended-prepend failure names how the keyed row was lost (W1-69f)",
+            "merged_at": "2026-10-27T08:42:34Z"
+          },
+          {
+            "number": 5244,
+            "title": "test(gate): budget build-cache-bound packages, sparse oversized fixtures, unclass the multi-stack E2E (W1-69e)",
+            "merged_at": "2026-10-27T08:42:34Z"
+          },
+          {
+            "number": 5243,
+            "title": "test(hub): rendezvous fixture publishes by rename; settle the supervisor before the restart (W1-69d)",
+            "merged_at": "2026-10-27T08:42:34Z"
+          },
+          {
+            "number": 5242,
+            "title": "test(web): the reconnect check accepts the new-connection read the model applied (W1-69c)",
+            "merged_at": "2026-10-27T08:42:34Z"
+          },
+          {
+            "number": 5241,
+            "title": "test(server): recover the failed thread before the rebuild test waits on publishing (W1-69b)",
+            "merged_at": "2026-10-27T08:42:34Z"
+          },
+          {
+            "number": 5240,
+            "title": "test(web): drive the credentials restart through the fake clock (W1-69a)",
+            "merged_at": "2026-10-27T08:22:52Z"
+          },
+          {
+            "number": 5236,
+            "title": "refactor(appwire-client): move warning fold to warningFold.ts (W2-14 PR 2)",
+            "merged_at": "2026-10-27T08:29:39Z"
+          },
+          {
+            "number": 5237,
+            "title": "refactor(native): fold mobile/src into mobile-native/src/conversation (W2-18 PR 1)",
+            "merged_at": "2026-10-27T08:20:28Z"
+          },
+          {
+            "number": 5239,
+            "title": "refactor(agent): job record snapshots use JobRecord.Clone (W2-02 PR 2)",
+            "merged_at": "2026-10-27T08:13:52Z"
+          },
+          {
+            "number": 5238,
+            "title": "refactor(appserver,server): drop test-only Subscribe and SetStatus (W1-20 item 4)",
+            "merged_at": "2026-10-27T08:13:26Z"
+          },
+          {
+            "number": 5235,
+            "title": "refactor(repair): drop issue and review-round narration from explain.go comments (W2-09)",
+            "merged_at": "2026-10-27T08:13:26Z"
+          },
+          {
+            "number": 5234,
+            "title": "test(appwire-client): pin reducer export surface (W2-14 PR 1)",
+            "merged_at": "2026-10-27T07:51:53Z"
+          },
+          {
+            "number": 5233,
+            "title": "refactor(jobstore): JobRecord.Clone owns the deep copy (W2-02 PR 1)",
+            "merged_at": "2026-10-27T07:43:45Z"
+          },
+          {
+            "number": 5231,
+            "title": "fix(web): bound the resolved-escalation record per ref",
+            "merged_at": "2026-10-27T07:18:39Z"
+          },
+          {
+            "number": 5229,
+            "title": "fix(doctor): drop deleted-plan path from apilog caveat (W1-58 follow-up)",
+            "merged_at": "2026-10-27T06:28:42Z"
+          },
+          {
+            "number": 5228,
+            "title": "refactor(web): thought durations use shared formatDurationMs (W1-37)",
+            "merged_at": "2026-10-27T06:15:26Z"
+          },
+          {
+            "number": 5056,
+            "title": "test: five-lane suite reduction with coverage parity; fix held-pane stranding in threads",
+            "merged_at": "2026-10-27T05:52:59Z"
+          },
+          {
+            "number": 5227,
+            "title": "test(hubcore): escape the contention fixture path in its SQLite URI (W1-33c follow-up)",
+            "merged_at": "2026-10-27T05:37:00Z"
+          },
+          {
+            "number": 5226,
+            "title": "docs: delete remaining stale implementation plans (W1-58)",
+            "merged_at": "2026-10-27T05:37:00Z"
+          },
+          {
+            "number": 5222,
+            "title": "test(cascadeguard): follow the delegate cursor; baseline Return at the settled reader (W1-69b)",
+            "merged_at": "2026-10-27T05:22:37Z"
+          },
+          {
+            "number": 5218,
+            "title": "refactor(agent): delete sendInput and startOrSteerSubagentRun, retire agent-message steering kind (W1-22d)",
+            "merged_at": "2026-10-27T05:16:15Z"
+          },
+          {
+            "number": 5221,
+            "title": "test(sshconn): fixture lock table for the systemd fallback subtests (W1-69f)",
+            "merged_at": "2026-10-27T05:15:02Z"
+          },
+          {
+            "number": 5212,
+            "title": "refactor(web): stop dual-writing transcript display to legacy prefs keys (W1-63b)",
+            "merged_at": "2026-10-27T05:15:01Z"
+          },
+          {
+            "number": 5211,
+            "title": "refactor(hubcore): classify retryable SQLite errors by driver code (W1-33c)",
+            "merged_at": "2026-10-27T05:08:58Z"
+          },
+          {
+            "number": 5223,
+            "title": "test(backgroundjobsguard): paging waits for the rendered bottom; keep the paging evidence (W1-69d)",
+            "merged_at": "2026-10-27T05:07:33Z"
+          },
+          {
+            "number": 5220,
+            "title": "refactor(sshconn): deployOpts replaces the deploy-selection ladder and variadics (W1-34)",
+            "merged_at": "2026-10-27T05:07:33Z"
+          },
+          {
+            "number": 5214,
+            "title": "refactor(appwire-client): scoped host read as a framework-free store; native stops importing the web tree (W1-41b)",
+            "merged_at": "2026-10-27T05:07:33Z"
+          },
+          {
+            "number": 5210,
+            "title": "docs(debt-audit): record 2026-10-27 Wave 1 decisions",
+            "merged_at": "2026-10-27T05:07:33Z"
+          },
+          {
+            "number": 5213,
+            "title": "refactor(hub): drop hub.hosts.json sidecar migration and store write-poisoning (W1-60)",
+            "merged_at": "2026-10-27T04:12:35Z"
+          },
+          {
+            "number": 5207,
+            "title": "docs: trim the testing guide to present-tense rules (W1-57)",
+            "merged_at": "2026-10-27T03:53:58Z"
+          },
+          {
+            "number": 5208,
+            "title": "W1-67: delete Session.FollowUp and its drain rung",
+            "merged_at": "2026-10-27T03:49:36Z"
+          },
+          {
+            "number": 5204,
+            "title": "test(web): shared connection helpers in 20 more test files (W1-53, part 2)",
+            "merged_at": "2026-10-27T03:11:55Z"
+          },
+          {
+            "number": 5205,
+            "title": "refactor(agent): drop the unused public Session queue API (W1-23)",
+            "merged_at": "2026-10-27T03:04:46Z"
+          },
+          {
+            "number": 5202,
+            "title": "refactor(hub): one lockMutation for the instance write preamble (W2-11)",
+            "merged_at": "2026-10-27T03:04:46Z"
+          },
+          {
+            "number": 5206,
+            "title": "feat(web): Live chord defers to a dialog in the focused reader's window (W2-17)",
+            "merged_at": "2026-10-27T03:01:03Z"
+          },
+          {
+            "number": 5203,
+            "title": "refactor(hub): appwire.LocalSourceID for the controller source (W1-36 remainder)",
+            "merged_at": "2026-10-27T03:00:47Z"
+          },
+          {
+            "number": 5201,
+            "title": "test(native): single expo-symbols mock; wire-method suites on FakeClient (W1-48)",
+            "merged_at": "2026-10-27T02:39:45Z"
+          },
+          {
+            "number": 5200,
+            "title": "refactor(hub): split app_host_manage.go by concern (W2-11)",
+            "merged_at": "2026-10-27T02:38:22Z"
+          },
+          {
+            "number": 5199,
+            "title": "refactor(web): split NavigationRail reveal, root loads and pin-section dialogs into hooks (W2-17)",
+            "merged_at": "2026-10-27T02:25:48Z"
+          },
+          {
+            "number": 5181,
+            "title": "test: shared gittest package for git fixtures (W1-52)",
+            "merged_at": "2026-10-27T02:21:48Z"
+          },
+          {
+            "number": 5197,
+            "title": "refactor(native): delete the write-only phone ActivityStore (W1-43)",
+            "merged_at": "2026-10-27T02:08:57Z"
+          },
+          {
+            "number": 5196,
+            "title": "refactor(sshconn): split manager.go by concern (W2-11)",
+            "merged_at": "2026-10-27T02:08:40Z"
+          },
+          {
+            "number": 5193,
+            "title": "refactor(hub): the relay facade is hubRelay itself (W2-11)",
+            "merged_at": "2026-10-27T02:01:00Z"
+          },
+          {
+            "number": 5192,
+            "title": "test(llm): registry Caps clone/merge and MarshalConfig keep every field (W2-13 D3, D4)",
+            "merged_at": "2026-10-27T01:56:48Z"
+          },
+          {
+            "number": 5191,
+            "title": "refactor(llm): Resolve and modelDisabled share one layer replay (W2-13 D1, D2)",
+            "merged_at": "2026-10-27T01:35:55Z"
+          },
+          {
+            "number": 5195,
+            "title": "refactor(web): move the live-session demand machine into liveSessionController (W2-17)",
+            "merged_at": "2026-10-27T01:56:48Z"
+          },
+          {
+            "number": 5194,
+            "title": "refactor(agent): drop the constant-true stableController gate (W1-22c)",
+            "merged_at": "2026-10-27T01:50:41Z"
+          },
+          {
+            "number": 5188,
+            "title": "test(delegatestore): match store and delegate lookup errors by sentinel (W1-50, agent stores)",
+            "merged_at": "2026-10-27T01:37:01Z"
+          },
+          {
+            "number": 5187,
+            "title": "refactor(appwire-client): one delegate join rule; phone store reads reducer exports (W1-42)",
+            "merged_at": "2026-10-27T01:26:19Z"
+          },
+          {
+            "number": 5186,
+            "title": "refactor(web): drop the rail's non-graph resource path (W2-17)",
+            "merged_at": "2026-10-27T01:19:30Z"
+          },
+          {
+            "number": 5179,
+            "title": "refactor(hub): one ref grammar (W1-36)",
+            "merged_at": "2026-10-26T22:08:06Z"
+          },
+          {
+            "number": 5185,
+            "title": "refactor(agent): delete trackAndLaunchPreparedSubagent and releasePreparedTreeSlot (W1-22b)",
+            "merged_at": "2026-10-26T22:07:22Z"
+          },
+          {
+            "number": 5184,
+            "title": "refactor(hub): startRelayOnce is four phases and a relaySupervisor (W2-11)",
+            "merged_at": "2026-10-26T22:03:16Z"
+          },
+          {
+            "number": 5180,
+            "title": "test(web): shared connection reset, ready fake client, comment-stripping CSS read (W1-53, part 1)",
+            "merged_at": "2026-10-26T22:00:47Z"
+          },
+          {
+            "number": 5176,
+            "title": "refactor(hub): runtime defaults apply through per-type field tables (W2-13 C3)",
+            "merged_at": "2026-10-26T22:00:47Z"
+          },
+          {
+            "number": 5178,
+            "title": "docs(agents): RoboRev's app approval gates the merge queue",
+            "merged_at": "2026-10-26T22:00:47Z"
+          },
+          {
+            "number": 5173,
+            "title": "refactor: one rune-truncation and one-line helper (W1-08)",
+            "merged_at": "2026-10-26T22:00:47Z"
+          },
+          {
+            "number": 5160,
+            "title": "refactor(state): one XDG state-root resolver with no HOME-less fallback (W1-04)",
+            "merged_at": "2026-10-26T21:31:44Z"
+          },
+          {
+            "number": 5167,
+            "title": "refactor(appwire-client): one shared-notes write gate, mermaid fence rules and sanitize config (W1-41c)",
+            "merged_at": "2026-10-26T21:31:44Z"
+          },
+          {
+            "number": 5177,
+            "title": "test(web): seed Rail tests with normalized resources (W2-17)",
+            "merged_at": "2026-10-26T21:25:00Z"
+          },
+          {
+            "number": 5172,
+            "title": "refactor(hub): relay read, prepare and start are hubRelay methods (W2-11)",
+            "merged_at": "2026-10-26T21:21:13Z"
+          },
+          {
+            "number": 5165,
+            "title": "refactor(agent): delete unwired cancelAgent and legacy reserve hooks (W1-22a)",
+            "merged_at": "2026-10-26T21:20:50Z"
+          },
+          {
+            "number": 5175,
+            "title": "test(agent): adopt agenttest response builders (W1-51a)",
+            "merged_at": "2026-10-26T21:00:05Z"
+          },
+          {
+            "number": 5174,
+            "title": "refactor(hub): treeLive owns the live lookups behind the navigation tree (W2-11)",
+            "merged_at": "2026-10-26T20:55:51Z"
+          },
+          {
+            "number": 5171,
+            "title": "refactor(appsource): shared forwarders for uniform source RPCs (W1-35b)",
+            "merged_at": "2026-10-26T20:55:51Z"
+          },
+          {
+            "number": 5169,
+            "title": "refactor(hostops): one progress/result decode, shared store key sets (W1-35c)",
+            "merged_at": "2026-10-26T20:54:45Z"
+          },
+          {
+            "number": 5166,
+            "title": "refactor(web): tracked and watched thread hydration share one path (W1-46)",
+            "merged_at": "2026-10-26T20:54:45Z"
+          },
+          {
+            "number": 5170,
+            "title": "docs(web): drop review-round and dead-file provenance from Spawn comments (W2-16)",
+            "merged_at": "2026-10-26T20:43:05Z"
+          },
+          {
+            "number": 5162,
+            "title": "refactor(server,agent): share retry-safe mutation and activity list plumbing (W1-20)",
+            "merged_at": "2026-10-26T20:42:46Z"
+          },
+          {
+            "number": 5168,
+            "title": "refactor: one item-position comparator, appwire.LocalSourceID (W1-35a)",
+            "merged_at": "2026-10-26T20:35:47Z"
+          },
+          {
+            "number": 5164,
+            "title": "refactor(web): move the rail resource adapter into railResources.ts (W2-17)",
+            "merged_at": "2026-10-26T20:29:44Z"
+          },
+          {
+            "number": 5159,
+            "title": "refactor(appwire-client): composer verb map and host constants stated once (W1-41d)",
+            "merged_at": "2026-10-26T20:29:44Z"
+          },
+          {
+            "number": 5163,
+            "title": "refactor(hub): launch merge uses mergeScalar and mergePtr (W2-13 C2)",
+            "merged_at": "2026-10-26T20:23:29Z"
+          },
+          {
+            "number": 5161,
+            "title": "test: mechanical renames and stale-citation cleanup (W1-55)",
+            "merged_at": "2026-10-26T20:15:51Z"
+          },
+          {
+            "number": 5157,
+            "title": "fix(web): directory picker initial path no longer replaces text under a fresh selection (tutorial-flake)",
+            "merged_at": "2026-10-26T20:08:25Z"
+          },
+          {
+            "number": 5120,
+            "title": "refactor(hub): one liveSessionNode for the Live leaf and the Needs-you row (W2-11)",
+            "merged_at": "2026-10-26T20:07:04Z"
+          },
+          {
+            "number": 5154,
+            "title": "refactor: export git pointer helpers and one PathUnder (W1-07)",
+            "merged_at": "2026-10-26T20:04:59Z"
+          },
+          {
+            "number": 5158,
+            "title": "refactor(hub): relay fanout and session acquisition are hubRelay methods (W2-11)",
+            "merged_at": "2026-10-26T19:54:14Z"
+          },
+          {
+            "number": 5156,
+            "title": "refactor(web): Spawn finishBusy and resolveSpawnBuiltinLaunch (W2-16)",
+            "merged_at": "2026-10-26T19:51:49Z"
+          },
+          {
+            "number": 5144,
+            "title": "refactor(hubcore): reflect-walked rosterFingerprint with a coverage guard (W1-33b)",
+            "merged_at": "2026-10-26T19:47:13Z"
+          },
+          {
+            "number": 5155,
+            "title": "refactor(agent): one untrackStopLocked helper (W1-24)",
+            "merged_at": "2026-10-26T19:42:10Z"
+          },
+          {
+            "number": 5153,
+            "title": "refactor(appwire-client): own the ANSI parser and mermaid forbid list (W1-41a)",
+            "merged_at": "2026-10-26T19:42:10Z"
+          },
+          {
+            "number": 5139,
+            "title": "test(agent): launch test delegates through the stable create path (W1-21)",
+            "merged_at": "2026-10-26T19:34:20Z"
+          },
+          {
+            "number": 5124,
+            "title": "test(agent): build prepared delegate children through the stable create path (W1-21)",
+            "merged_at": "2026-10-26T17:16:58Z"
+          },
+          {
+            "number": 5152,
+            "title": "refactor(web): one next needs-you rule in needsYouActions (W2-17)",
+            "merged_at": "2026-10-26T19:34:19Z"
+          },
+          {
+            "number": 5147,
+            "title": "test(hub): pin every launch Layer field through the pipeline (W2-13 C1)",
+            "merged_at": "2026-10-26T19:34:20Z"
+          },
+          {
+            "number": 5151,
+            "title": "refactor(web): Composer and QueueStrip share one submit protocol (W1-44)",
+            "merged_at": "2026-10-26T19:31:24Z"
+          },
+          {
+            "number": 5150,
+            "title": "refactor(web): share the slash-completion menu between Composer and Spawn (W2-16)",
+            "merged_at": "2026-10-26T19:31:24Z"
+          },
+          {
+            "number": 5149,
+            "title": "refactor(appwire-client): cache validators read key lists from generated types (W1-13)",
+            "merged_at": "2026-10-26T19:20:08Z"
+          },
+          {
+            "number": 5148,
+            "title": "refactor(web): extract reader-gesture tracking from useTranscriptScroll (W2-16)",
+            "merged_at": "2026-10-26T19:18:39Z"
+          },
+          {
+            "number": 5133,
+            "title": "test(hub): delete coverage-padding cov_* fuzz replays (W1-54)",
+            "merged_at": "2026-10-26T19:18:39Z"
+          },
+          {
+            "number": 5122,
+            "title": "refactor(hub): hubThreadFork as named phases (W2-11)",
+            "merged_at": "2026-10-26T19:18:39Z"
+          },
+          {
+            "number": 5121,
+            "title": "refactor(hub): forceStopThread validation, entry drain and descendant fences as named phases (W2-11)",
+            "merged_at": "2026-10-26T19:14:04Z"
+          },
+          {
+            "number": 5119,
+            "title": "refactor(hub): classifyMissedProbe and one subagentStatesFromDelegates (W2-11)",
+            "merged_at": "2026-10-26T18:51:05Z"
+          },
+          {
+            "number": 5145,
+            "title": "refactor: migrate remaining atomic writers to fsatomic, delete sync predicates (W1-03)",
+            "merged_at": "2026-10-26T18:42:02Z"
+          },
+          {
+            "number": 5118,
+            "title": "refactor(hub): relay state lives on hubRelay with methods (W2-11)",
+            "merged_at": "2026-10-26T18:42:02Z"
+          },
+          {
+            "number": 5146,
+            "title": "refactor(agent): one skeleton for client-mutation handlers, shared claim announce (W1-19)",
+            "merged_at": "2026-10-26T18:33:00Z"
+          },
+          {
+            "number": 5143,
+            "title": "refactor(hubcore): one writeTx for PinSectionStore retries (W1-33a)",
+            "merged_at": "2026-10-26T18:26:14Z"
+          },
+          {
+            "number": 5142,
+            "title": "refactor(agent): split the rest of job_watch.go by concern (W2-01)",
+            "merged_at": "2026-10-26T18:24:51Z"
+          },
+          {
+            "number": 5141,
+            "title": "refactor(native): shared checkpoint predicates and one column-add step (W1-40b)",
+            "merged_at": "2026-10-26T18:20:11Z"
+          },
+          {
+            "number": 5088,
+            "title": "refactor: one whole-transcript reader and one failure counter (W1-06)",
+            "merged_at": "2026-10-26T18:18:57Z"
+          },
+          {
+            "number": 5140,
+            "title": "refactor(outbox): one receipt-settlement retention rule for both adapters (W1-40a)",
+            "merged_at": "2026-10-26T18:09:55Z"
+          },
+          {
+            "number": 5123,
+            "title": "feat(web): palette shortcut legend follows rebound chords (W2-17)",
+            "merged_at": "2026-10-26T18:04:15Z"
+          },
+          {
+            "number": 5084,
+            "title": "test(sshconn): keep the initial owner lookup off the ambient lock table (W1-69)",
+            "merged_at": "2026-10-26T18:01:45Z"
+          },
+          {
+            "number": 5077,
+            "title": "fix(web): fold the resolved escalation into the transcript repository (W1-69)",
+            "merged_at": "2026-10-26T18:01:45Z"
+          },
+          {
+            "number": 5097,
+            "title": "refactor(web): Spawn uses launchConfigStoreForHost; share scoped host read (W1-45)",
+            "merged_at": "2026-10-26T17:57:31Z"
+          },
+          {
+            "number": 5131,
+            "title": "test(hub): fix TestHubRelayReconnectAfterPendingRead flake",
+            "merged_at": "2026-10-26T17:49:58Z"
+          },
+          {
+            "number": 5130,
+            "title": "ci(docs): upload sanitized web tour failure diagnostics (tutorial-diag)",
+            "merged_at": "2026-10-26T17:49:58Z"
+          },
+          {
+            "number": 5101,
+            "title": "W1-61: share the regular-file copier in plugin source copy",
+            "merged_at": "2026-10-26T17:43:45Z"
+          },
+          {
+            "number": 5132,
+            "title": "refactor(appwire): generate Go-owned enums and shipped defaults for the clients (W1-12)",
+            "merged_at": "2026-10-26T17:40:11Z"
+          },
+          {
+            "number": 5126,
+            "title": "refactor(web): move useTranscriptViewRegistration, rename captureElementView (W2-16)",
+            "merged_at": "2026-10-26T17:40:11Z"
+          },
+          {
+            "number": 5127,
+            "title": "refactor(hub): scratch reconciler takes its stores, not a WebConfig (W2-13 A2)",
+            "merged_at": "2026-10-26T17:32:27Z"
+          },
+          {
+            "number": 5073,
+            "title": "refactor(hub): shared ErrorData read/stamp helpers and mutation-unknown builders (W1-31)",
+            "merged_at": "2026-10-26T17:32:27Z"
+          },
+          {
+            "number": 5137,
+            "title": "refactor(sshconn): split ensureOnce into phases and share the deploy tail (W1-34)",
+            "merged_at": "2026-10-26T17:26:28Z"
+          },
+          {
+            "number": 5117,
+            "title": "refactor(llm): typed credential MissingReason, merge gate credential twins (W1-28)",
+            "merged_at": "2026-10-26T17:18:59Z"
+          },
+          {
+            "number": 5135,
+            "title": "refactor(agent): share NewSession and Restore's identical construction steps (W1-18)",
+            "merged_at": "2026-10-26T17:12:41Z"
+          },
+          {
+            "number": 5136,
+            "title": "refactor(hub): one resolver for doc and image paths (W1-68)",
+            "merged_at": "2026-10-26T17:09:07Z"
+          },
+          {
+            "number": 5125,
+            "title": "refactor(hub): drop never-written stash spelling and compensating-sidecar alias (W1-60)",
+            "merged_at": "2026-10-26T17:09:07Z"
+          },
+          {
+            "number": 5129,
+            "title": "refactor(agent): move the watch send rail and Session child drive out of job_watch.go (W2-01)",
+            "merged_at": "2026-10-26T17:06:27Z"
+          },
+          {
+            "number": 5128,
+            "title": "refactor(hub): write hub.toml through fsatomic, drop local sync predicates (W1-02 part 1)",
+            "merged_at": "2026-10-26T17:04:52Z"
+          },
+          {
+            "number": 5115,
+            "title": "refactor(client): one stuck rule across web and phone (W1-39)",
+            "merged_at": "2026-10-26T16:48:52Z"
+          },
+          {
+            "number": 5134,
+            "title": "docs(audit): count every Wave 2 entry in the startable total",
+            "merged_at": "2026-10-26T16:36:24Z"
+          },
+          {
+            "number": 5138,
+            "title": "ci: run the required checks for main's merge queue",
+            "merged_at": "2026-10-26T16:24:31Z"
+          },
+          {
+            "number": 5116,
+            "title": "test(hub): wait for reconnect supervisor in completed-effect recovery test",
+            "merged_at": "2026-10-26T15:57:01Z"
+          },
+          {
+            "number": 5100,
+            "title": "refactor(hub): one teardown claim and one instant formatter (W1-30)",
+            "merged_at": "2026-10-26T15:31:16Z"
+          },
+          {
+            "number": 5112,
+            "title": "fix: recovery over lockdown for plugin files, legacy delegate state and endpoint flows (W1-65)",
+            "merged_at": "2026-10-26T15:16:48Z"
+          },
+          {
+            "number": 5114,
+            "title": "refactor(agent): one backoffTimer for the seven generation-guarded retry rails (W1-16)",
+            "merged_at": "2026-10-26T14:53:48Z"
+          },
+          {
+            "number": 5065,
+            "title": "docs(audit): Wave 0 outcomes, flake tally, two roadmap corrections",
+            "merged_at": "2026-10-26T14:34:01Z"
+          },
+          {
+            "number": 5071,
+            "title": "fix(gate): rebaseline the timing ratchet from CI (W1-56a)",
+            "merged_at": "2026-10-26T14:23:35Z"
+          },
+          {
+            "number": 5113,
+            "title": "refactor(delegates): one agent mapper to the wire delegate row (W1-11)",
+            "merged_at": "2026-10-26T14:00:56Z"
+          },
+          {
+            "number": 5108,
+            "title": "refactor(agent): move watch frame rendering and routing to watch_frame.go (W2-01)",
+            "merged_at": "2026-10-26T13:46:01Z"
+          },
+          {
+            "number": 5105,
+            "title": "chore(tools): remove the memory-lab experiment (G1)",
+            "merged_at": "2026-10-26T13:32:56Z"
+          },
+          {
+            "number": 5111,
+            "title": "fix(browserguard): wait for the anchored live row in the second tab before reading it (W1-69c)",
+            "merged_at": "2026-10-26T12:58:13Z"
+          },
+          {
+            "number": 5075,
+            "title": "refactor: shared durable writer execsupport/fsatomic and the fixed-name .tmp writers (W1-01)",
+            "merged_at": "2026-10-26T12:46:04Z"
+          },
+          {
+            "number": 5109,
+            "title": "refactor(hub): fold host retention knobs into one default policy (W2-13 A1)",
+            "merged_at": "2026-10-26T12:28:41Z"
+          },
+          {
+            "number": 5110,
+            "title": "refactor(web): move view anchors and scroll predicates out of useTranscriptScroll (W2-16)",
+            "merged_at": "2026-10-26T12:15:22Z"
+          },
+          {
+            "number": 5104,
+            "title": "refactor(agent): one schema.ToolIntent for the three transcript readers (W1-63)",
+            "merged_at": "2026-10-26T12:01:58Z"
+          },
+          {
+            "number": 5107,
+            "title": "refactor(web): collapse dockHostChunk onto chunkRetry (W2-17)",
+            "merged_at": "2026-10-26T11:43:56Z"
+          },
+          {
+            "number": 5106,
+            "title": "refactor(hub): move relay types and free functions out of app_relay.go (W2-11)",
+            "merged_at": "2026-10-26T11:33:13Z"
+          },
+          {
+            "number": 5103,
+            "title": "refactor(llm): dedupe Generate/StreamGenerate internals (W1-27)",
+            "merged_at": "2026-10-26T11:19:55Z"
+          },
+          {
+            "number": 5102,
+            "title": "refactor(contextmgr): one applyLayer and resetMeasurement for the compaction layers (W1-66)",
+            "merged_at": "2026-10-26T11:01:41Z"
+          },
+          {
+            "number": 5099,
+            "title": "refactor(hub): delete the stale remnant-fence and last-known seams (W1-30)",
+            "merged_at": "2026-10-26T10:12:59Z"
+          },
+          {
+            "number": 5098,
+            "title": "refactor(client): one attention-class derivation (W1-38)",
+            "merged_at": "2026-10-26T09:51:35Z"
+          },
+          {
+            "number": 5083,
+            "title": "test(hub): wait for the dropped channel's supervisor before the next restart (W1-69)",
+            "merged_at": "2026-10-26T08:56:14Z"
+          },
+          {
+            "number": 5096,
+            "title": "refactor(agent): share one backoffDelay helper (W1-15)",
+            "merged_at": "2026-10-26T08:37:43Z"
+          },
+          {
+            "number": 5066,
+            "title": "fix(make): keep merge-approval-gate scratch inside TMPDIR (W1-56b)",
+            "merged_at": "2026-10-26T08:23:27Z"
+          },
+          {
+            "number": 5094,
+            "title": "refactor(delegates): alias server.DelegateStatusInfo, carry latest_intent (W1-10)",
+            "merged_at": "2026-10-26T08:13:23Z"
+          },
+          {
+            "number": 5095,
+            "title": "refactor(hub): handler skeleton, one resume relay, wrapper vars, endpoint assertion check (W1-32)",
+            "merged_at": "2026-10-26T07:52:42Z"
+          },
+          {
+            "number": 5087,
+            "title": "fix(skillguard): press Edit on the settled queued row (W1-69a)",
+            "merged_at": "2026-10-26T07:18:29Z"
+          },
+          {
+            "number": 5085,
+            "title": "test: ratchet error-message phrase assertions per test file (W1-49)",
+            "merged_at": "2026-10-26T06:34:19Z"
+          },
+          {
+            "number": 5089,
+            "title": "refactor(llm): StreamRunner.Finish and one credential-material Merge (W1-26)",
+            "merged_at": "2026-10-26T06:20:51Z"
+          },
+          {
+            "number": 5076,
+            "title": "refactor(agent): delete the four experimental context strategies (W1-66)",
+            "merged_at": "2026-10-26T06:07:05Z"
+          },
+          {
+            "number": 5093,
+            "title": "W1-62: share legacy home-root inventory, log failed memory migration",
+            "merged_at": "2026-10-26T05:53:58Z"
+          },
+          {
+            "number": 5070,
+            "title": "refactor(hub): one preserveUnowned for the host record tables (W1-29a)",
+            "merged_at": "2026-10-26T05:06:50Z"
+          },
+          {
+            "number": 5072,
+            "title": "refactor(client): one duration formatter family (W1-37)",
+            "merged_at": "2026-10-26T04:52:55Z"
+          },
+          {
+            "number": 5069,
+            "title": "refactor(web): delete four unused widgets (W1-47)",
+            "merged_at": "2026-10-26T04:38:15Z"
+          },
+          {
+            "number": 5082,
+            "title": "test(agent): drop the racy provider-silence assertion after a failed delegate start (W1-69)",
+            "merged_at": "2026-10-26T04:01:13Z"
+          },
+          {
+            "number": 5078,
+            "title": "refactor(agent): derive event kind from the payload (W1-17)",
+            "merged_at": "2026-10-26T03:48:06Z"
+          },
+          {
+            "number": 5086,
+            "title": "fix(cascadeguard): wait for a quiet scroll and resize window before opening the attention list (W1-69a)",
+            "merged_at": "2026-10-26T03:29:51Z"
+          },
+          {
+            "number": 5079,
+            "title": "refactor(appwire): export shared clone helpers, delete the copies (W1-09)",
+            "merged_at": "2026-10-26T03:15:13Z"
+          },
+          {
+            "number": 5081,
+            "title": "docs: delete completed implementation plans (W1-58)",
+            "merged_at": "2026-10-26T02:58:10Z"
+          },
+          {
+            "number": 5080,
+            "title": "fix(browserguard): keep the driver page visible through the two-tab fence phase (W1-69a)",
+            "merged_at": "2026-10-26T02:48:36Z"
+          },
+          {
+            "number": 5067,
+            "title": "refactor(llm): delete private dead code (W1-25)",
+            "merged_at": "2026-10-26T00:02:11Z"
+          },
+          {
+            "number": 5074,
+            "title": "refactor: one session on-disk layout helper (W1-05)",
+            "merged_at": "2026-10-25T23:48:40Z"
+          },
+          {
+            "number": 5068,
+            "title": "docs(product): version-skew compatibility policy (W1-59)",
+            "merged_at": "2026-10-25T22:55:48Z"
+          },
+          {
+            "number": 5064,
+            "title": "refactor(agent): move test-only wrappers out of production (W0-12)",
+            "merged_at": "2026-10-25T20:34:57Z"
+          },
+          {
+            "number": 5063,
+            "title": "refactor: delete the unused root frontmatter package (W0-04)",
+            "merged_at": "2026-10-25T20:23:27Z"
+          },
+          {
+            "number": 5057,
+            "title": "refactor(agent): move test-only createShell into a test helper (W0-03)",
+            "merged_at": "2026-10-25T20:06:00Z"
+          },
+          {
+            "number": 5058,
+            "title": "fix: cut model-facing and CLI text at rune boundaries (W0-20)",
+            "merged_at": "2026-10-25T20:00:07Z"
+          },
+          {
+            "number": 5054,
+            "title": "fix(agent): explicit 10000 ms command timeout is kept (W0-19)",
+            "merged_at": "2026-10-25T19:52:26Z"
+          },
+          {
+            "number": 5061,
+            "title": "fix(hub): Settings shows the configured spawn timeout (W0-24)",
+            "merged_at": "2026-10-25T19:42:25Z"
+          },
+          {
+            "number": 5033,
+            "title": "docs(audit): tech-debt, slop and duplication audit + cleanup roadmap",
+            "merged_at": "2026-10-25T19:38:42Z"
+          },
+          {
+            "number": 5062,
+            "title": "chore: remove broken live-compaction shell harness (W0-16)",
+            "merged_at": "2026-10-25T19:37:56Z"
+          },
+          {
+            "number": 5060,
+            "title": "fix(appitempaging): share appwire's thread-item and turn clones",
+            "merged_at": "2026-10-25T19:31:21Z"
+          },
+          {
+            "number": 5059,
+            "title": "docs: restore mcpServers exception in naming guide (W0-15 follow-up)",
+            "merged_at": "2026-10-25T19:23:46Z"
+          },
+          {
+            "number": 5046,
+            "title": "refactor: delete the remote host capability probe (W0-09)",
+            "merged_at": "2026-10-25T19:15:29Z"
+          },
+          {
+            "number": 5038,
+            "title": "refactor(hub): delete dead tree memo, spawn wrappers, delegate reconcile chain (W0-07)",
+            "merged_at": "2026-10-25T19:13:47Z"
+          },
+          {
+            "number": 5042,
+            "title": "refactor: delete dead appwire client, server status and appserver surface (W0-10)",
+            "merged_at": "2026-10-25T19:13:11Z"
+          },
+          {
+            "number": 5055,
+            "title": "docs: fix stale paths, env-var contradictions, finished plans (W0-15)",
+            "merged_at": "2026-10-25T19:09:59Z"
+          },
+          {
+            "number": 5049,
+            "title": "docs(agents): add code convention rules (debt W0-01)",
+            "merged_at": "2026-10-25T19:09:50Z"
+          },
+          {
+            "number": 5050,
+            "title": "chore(web): delete design-mockup harnesses for shipped designs",
+            "merged_at": "2026-10-25T19:03:56Z"
+          },
+          {
+            "number": 5047,
+            "title": "refactor(jobstore): delete path-based output snapshot readers (W0-13)",
+            "merged_at": "2026-10-25T19:00:13Z"
+          },
+          {
+            "number": 5039,
+            "title": "chore(lint): move test-only helpers into tests, enable nolintlint (W0-02)",
+            "merged_at": "2026-10-25T18:59:40Z"
+          },
+          {
+            "number": 5053,
+            "title": "refactor(web): delete dead entry-transcript fixture route and test exports (W0-27)",
+            "merged_at": "2026-10-25T18:58:42Z"
+          },
+          {
+            "number": 5048,
+            "title": "refactor(sshconn): one registration-identity predicate, export sentinels directly",
+            "merged_at": "2026-10-25T18:54:56Z"
+          },
+          {
+            "number": 5051,
+            "title": "fix(plugin): report ambiguous bare slash commands instead of a random pick",
+            "merged_at": "2026-10-25T18:52:08Z"
+          },
+          {
+            "number": 5052,
+            "title": "docs: fix dangling screenshot pointer in web-ui decisions (W0-14 follow-up)",
+            "merged_at": "2026-10-25T18:50:21Z"
+          },
+          {
+            "number": 5037,
+            "title": "fix(agent): fork and aside accept transcript lines over 10 MiB (W0-17)",
+            "merged_at": "2026-10-25T18:45:34Z"
+          },
+          {
+            "number": 5044,
+            "title": "refactor(ts): dedupe wire constants, delete dead prefs aliases (W0-25)",
+            "merged_at": "2026-10-25T18:43:37Z"
+          },
+          {
+            "number": 5035,
+            "title": "docs: delete 301 unreferenced evidence images (W0-14)",
+            "merged_at": "2026-10-25T18:36:49Z"
+          },
+          {
+            "number": 5045,
+            "title": "refactor(native): remove the pending mutation record",
+            "merged_at": "2026-10-25T18:34:47Z"
+          },
+          {
+            "number": 5034,
+            "title": "fix(llm): bound Vertex model listing with the listing timeout",
+            "merged_at": "2026-10-25T18:23:45Z"
+          },
+          {
+            "number": 5040,
+            "title": "refactor(sshconn): delete the superseded port-based restart/health ladder",
+            "merged_at": "2026-10-25T18:21:35Z"
+          },
+          {
+            "number": 5041,
+            "title": "refactor(agent): delete dead and test-only APIs in sub-packages (W0-11)",
+            "merged_at": "2026-10-25T18:14:29Z"
+          },
+          {
+            "number": 5043,
+            "title": "refactor: delete dead hubapi, hubcore, appsource and hostops surface (W0-08)",
+            "merged_at": "2026-10-25T18:11:50Z"
+          },
+          {
+            "number": 5036,
+            "title": "fix(appwire-client): checkpoint validator accepts current delegate fields",
+            "merged_at": "2026-10-25T17:49:48Z"
+          },
+          {
+            "number": 5032,
+            "title": "refactor(native): retain failed submissions through a dedicated marker",
+            "merged_at": "2026-10-25T17:11:18Z"
+          },
+          {
+            "number": 5029,
+            "title": "fix(web): share the deferred-portal seam across Popover and the directory picker (#4986)",
+            "merged_at": "2026-10-25T17:08:30Z"
+          },
+          {
+            "number": 5031,
+            "title": "fix(web): one section-demand rule for needs-you, the palette and Live (#4958)",
+            "merged_at": "2026-10-25T16:55:49Z"
+          },
+          {
+            "number": 4993,
+            "title": "refactor(web): read the send/queue decision directly in the composer",
+            "merged_at": "2026-10-25T05:32:07Z"
+          },
+          {
+            "number": 4992,
+            "title": "refactor(mobile): remove the write-only pendingSend field",
+            "merged_at": "2026-10-25T05:26:26Z"
+          },
+          {
+            "number": 4991,
+            "title": "refactor(web): route the composer press through the send/queue gate",
+            "merged_at": "2026-10-25T05:25:42Z"
+          },
+          {
+            "number": 5009,
+            "title": "refactor(native): extract the any-mutation click-to-commit marker",
+            "merged_at": "2026-10-25T15:42:39Z"
+          },
+          {
+            "number": 5004,
+            "title": "feat(native): return a local mutation admission from submit",
+            "merged_at": "2026-10-25T08:11:06Z"
+          },
+          {
+            "number": 5020,
+            "title": "fix(cascadeguard): reveal inactive delegates beside current rows",
+            "merged_at": "2026-10-25T13:00:18Z"
+          },
+          {
+            "number": 5010,
+            "title": "fix(atif): inclusive prompt totals and fold-copy dedup (#4924, #4925)",
+            "merged_at": "2026-10-25T11:52:05Z"
+          },
+          {
+            "number": 5014,
+            "title": "fix(google): exclude cached content from InputTokens (#4923)",
+            "merged_at": "2026-10-25T11:51:53Z"
+          },
+          {
+            "number": 5015,
+            "title": "fix(agent): stop advertising the unwired canonical communicate placeholder (#4906)",
+            "merged_at": "2026-10-25T11:38:13Z"
+          },
+          {
+            "number": 5019,
+            "title": "refactor(agent): drop the redundant closed-phase guard from attention drive",
+            "merged_at": "2026-10-25T11:34:34Z"
+          },
+          {
+            "number": 5013,
+            "title": "fix(native): measure padded swipe rows' edge band from the screen (#4943)",
+            "merged_at": "2026-10-25T11:21:13Z"
+          },
+          {
+            "number": 5017,
+            "title": "fix(prompts): make detached guidance follow the environment (#4922)",
+            "merged_at": "2026-10-25T11:08:13Z"
+          },
+          {
+            "number": 5016,
+            "title": "fix(agent): show a nested delegate to its creator and ancestors (#4904)",
+            "merged_at": "2026-10-25T10:51:54Z"
+          },
+          {
+            "number": 5011,
+            "title": "fix(web): refuse stale needs-you palette rows (#4953)",
+            "merged_at": "2026-10-25T10:23:39Z"
+          },
+          {
+            "number": 5006,
+            "title": "docs: correct compact_context request path and note_to_self rule",
+            "merged_at": "2026-10-25T09:46:22Z"
+          },
+          {
+            "number": 5008,
+            "title": "test(composer): own the held recovery gate in act (#4942, #4998)",
+            "merged_at": "2026-10-25T09:12:03Z"
+          },
+          {
+            "number": 5001,
+            "title": "refactor(agent): simplify delegate attention stop and retirement evidence (#4280)",
+            "merged_at": "2026-10-25T07:31:12Z"
+          },
+          {
+            "number": 4996,
+            "title": "docs: plan the native pendingMutation removal",
+            "merged_at": "2026-10-25T06:56:17Z"
+          },
+          {
+            "number": 4995,
+            "title": "docs: deprecate decideSubmitRoute and correct the ForkScreen plan",
+            "merged_at": "2026-10-25T06:45:11Z"
+          },
+          {
+            "number": 4994,
+            "title": "fix(agent): record eval completion from the session input boundary",
+            "merged_at": "2026-10-25T06:44:54Z"
+          },
+          {
+            "number": 4988,
+            "title": "refactor(schema): derive harness-context turn-kind lists from one predicate (#4538)",
+            "merged_at": "2026-10-25T06:30:36Z"
+          },
+          {
+            "number": 4982,
+            "title": "docs(context): document compact_context reload_skills (#3999)",
+            "merged_at": "2026-10-25T05:17:22Z"
+          },
+          {
+            "number": 4985,
+            "title": "fix(web): resolve the owning realm in sheet, directorypicker and textarea (#4915 part 2)",
+            "merged_at": "2026-10-25T05:12:15Z"
+          },
+          {
+            "number": 4989,
+            "title": "fix(retirement): pre-check job, watch, journal and attention evidence (#4528)",
+            "merged_at": "2026-10-25T05:12:52Z"
+          },
+          {
+            "number": 4990,
+            "title": "fix(shell): make the outside-cwd refusal actionable (#4332)",
+            "merged_at": "2026-10-25T05:10:28Z"
+          },
+          {
+            "number": 4972,
+            "title": "refactor(delegatestore): drive journal kinds from one table",
+            "merged_at": "2026-10-25T04:47:04Z"
+          },
+          {
+            "number": 4976,
+            "title": "docs(agent): list memory context among the bookkeeping turn kinds (#4536)",
+            "merged_at": "2026-10-25T04:41:06Z"
+          },
+          {
+            "number": 4984,
+            "title": "docs(activity): document the pulse-meter read and pin SessionActivity",
+            "merged_at": "2026-10-25T04:13:29Z"
+          },
+          {
+            "number": 4978,
+            "title": "fix(webui): share the shell truncation note with tailFold (#4443)",
+            "merged_at": "2026-10-25T03:51:59Z"
+          },
+          {
+            "number": 4974,
+            "title": "fix(web): cache pairing Vite runs outside shared node_modules",
+            "merged_at": "2026-10-25T03:51:33Z"
+          },
+          {
+            "number": 4854,
+            "title": "feat(web): add floating next-needs-you controls",
+            "merged_at": "2026-10-24T17:26:00Z"
+          },
+          {
+            "number": 4977,
+            "title": "fix(web): resolve the owning document realm in the hovercard (#4915 part 1b)",
+            "merged_at": "2026-10-25T03:25:28Z"
+          },
+          {
+            "number": 4966,
+            "title": "fix(web): resolve the owning document realm in the menu (#4915 part 1a)",
+            "merged_at": "2026-10-25T03:11:50Z"
+          },
+          {
+            "number": 4970,
+            "title": "fix(agent): role preloads honor the receiver's skill availability (#4455)",
+            "merged_at": "2026-10-25T02:16:52Z"
+          },
+          {
+            "number": 4969,
+            "title": "refactor(web): adopt the shared send/queue gate in the composer",
+            "merged_at": "2026-10-25T01:43:37Z"
+          },
+          {
+            "number": 4965,
+            "title": "refactor(send): share the send/queue gate, adopt it in native",
+            "merged_at": "2026-10-25T00:49:08Z"
+          },
+          {
+            "number": 4954,
+            "title": "fix(webui): keep restored transcript range through responsive reopen",
+            "merged_at": "2026-10-25T00:32:34Z"
+          },
+          {
+            "number": 4955,
+            "title": "fix(web): a settled needs-you page owns completion (#4912)",
+            "merged_at": "2026-10-24T20:21:08Z"
+          },
+          {
+            "number": 4961,
+            "title": "refactor(retry): one shared eligibility decision for browser and native",
+            "merged_at": "2026-10-24T19:14:06Z"
+          },
+          {
+            "number": 4956,
+            "title": "fix(web): refuse stale next-needs-you list rows",
+            "merged_at": "2026-10-24T19:02:27Z"
+          },
+          {
+            "number": 4946,
+            "title": "fix(native): Session usability follow-ups for #2988",
+            "merged_at": "2026-10-24T18:47:02Z"
+          },
+          {
+            "number": 4952,
+            "title": "refactor(web): use the shared submission guard for Retry",
+            "merged_at": "2026-10-24T18:36:18Z"
+          },
+          {
+            "number": 4950,
+            "title": "test(native): stop the leaked mutation discovery interval between cases",
+            "merged_at": "2026-10-24T18:27:50Z"
+          },
+          {
+            "number": 4949,
+            "title": "chore(native): delete dead useReadRetry hook",
+            "merged_at": "2026-10-24T18:25:52Z"
+          },
+          {
+            "number": 4947,
+            "title": "docs: client state cleanup design",
+            "merged_at": "2026-10-24T18:14:31Z"
+          },
+          {
+            "number": 4944,
+            "title": "fix(native): measure the Board swipe edge band from the screen (#2703)",
+            "merged_at": "2026-10-24T17:52:47Z"
+          },
+          {
+            "number": 4938,
+            "title": "fix(skills): recheck availability for staged deliveries on resume",
+            "merged_at": "2026-10-24T11:30:19Z"
+          },
+          {
+            "number": 4940,
+            "title": "fix(delegate): deliver reports whole up to 50,000 characters",
+            "merged_at": "2026-10-24T11:14:48Z"
+          },
+          {
+            "number": 4936,
+            "title": "feat(webui): compact activity sidebar rows",
+            "merged_at": "2026-10-24T08:48:33Z"
+          },
+          {
+            "number": 4937,
+            "title": "fix(chatcompletions): preserve raw bytes through XML rescue (#2725)",
+            "merged_at": "2026-10-24T08:25:34Z"
+          },
+          {
+            "number": 4871,
+            "title": "feat(retry): one-owner Retry eligibility across browser and native",
+            "merged_at": "2026-10-24T01:20:24Z"
+          },
+          {
+            "number": 4934,
+            "title": "Web: preserve recovery attachment bytes when a peer consumes a stale recovery",
+            "merged_at": "2026-10-24T00:52:38Z"
+          },
+          {
+            "number": 4932,
+            "title": "fix(skillguard): show the virtualized transcript tail before reply waits (#4823)",
+            "merged_at": "2026-10-24T00:40:30Z"
+          },
+          {
+            "number": 4928,
+            "title": "fix(shell): advertise detached only where the environment supports it",
+            "merged_at": "2026-10-24T00:12:19Z"
+          },
+          {
+            "number": 4931,
+            "title": "fix(hub): honor session skill availability in composer catalogs (#4456)",
+            "merged_at": "2026-10-23T23:57:27Z"
+          },
+          {
+            "number": 4930,
+            "title": "fix(agent): fence worktree-lane handoffs over the delegate subtree (#2067)",
+            "merged_at": "2026-10-23T22:28:58Z"
+          },
+          {
+            "number": 4929,
+            "title": "fix(agent): revalidate the turn gate against a replaced transcript writer",
+            "merged_at": "2026-10-23T22:11:03Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v0.3.17",
+            "name": "v0.3.17",
+            "published_at": "2026-10-26T04:23:26Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.3.17 published 2026-10-26T04:23:26Z",
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/terminal-bench-analysis": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 2
+          }
+        ],
+        "loc_added": 4,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
+        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
+      },
+      "prime-radiant-inc/clipfan": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Will McDonald",
+            "count": 2
+          }
+        ],
+        "loc_added": 61,
+        "loc_removed": 33,
+        "merged_prs": [
+          {
+            "number": 11,
+            "title": "fix(mac): make the Add Peer sheet scroll for large tailnets",
+            "merged_at": "2026-10-29T19:13:00Z"
+          },
+          {
+            "number": 10,
+            "title": "fix(mac): refresh history every time the command panel opens",
+            "merged_at": "2026-10-29T19:12:39Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Clipboard sync daemon for Mac + remote tmux fleet. Mirrors macOS pasteboard to remote OS clipboards and tmux paste buffers. Enables image paste into Claude Code/Codex over SSH without OSC 52 or Xvfb.",
+        "html_url": "https://github.com/prime-radiant-inc/clipfan"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 7
+          }
+        ],
+        "loc_added": 7,
+        "loc_removed": 7,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/shipped": {
+        "commits": 8,
+        "authors": [
+          {
+            "name": "Ada Sen",
+            "count": 8
+          }
+        ],
+        "loc_added": 2809,
+        "loc_removed": 107,
+        "merged_prs": [
+          {
+            "number": 4,
+            "title": "gather.py: cutoff-to-cutoff windowing with merges excluded from counts",
+            "merged_at": "2026-10-26T20:01:48Z"
+          },
+          {
+            "number": 3,
+            "title": "gather.py: fix shallow-clone merge-boundary commit undercount",
+            "merged_at": "2026-10-26T17:54:52Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A weekly log of what Prime Radiant and obra shipped.",
+        "html_url": "https://github.com/prime-radiant-inc/shipped"
+      },
+      "prime-radiant-inc/shepherd-pr": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 3
+          }
+        ],
+        "loc_added": 90,
+        "loc_removed": 35,
+        "merged_prs": [
+          {
+            "number": 4,
+            "title": "fix(shepherd-pr): keep inline severities beside severity headings",
+            "merged_at": "2026-10-30T20:33:43Z"
+          },
+          {
+            "number": 3,
+            "title": "fix(shepherd-pr): count findings under severity headings",
+            "merged_at": "2026-10-30T20:00:20Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v0.3.2",
+            "name": "v0.3.2",
+            "published_at": "2026-10-30T21:24:45Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.3.2 published 2026-10-30T21:24:45Z",
+        "description": "A portable coding-agent plugin for shepherding GitHub pull requests through CI and review.",
+        "html_url": "https://github.com/prime-radiant-inc/shepherd-pr"
+      },
+      "obra/lace": {
+        "commits": 17,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 14
+          },
+          {
+            "name": "ada-sen",
+            "count": 3
+          }
+        ],
+        "loc_added": 7332,
+        "loc_removed": 488,
+        "merged_prs": [
+          {
+            "number": 446,
+            "title": "Derive memories automatically from retained sources",
+            "merged_at": "2026-10-30T05:31:36Z"
+          },
+          {
+            "number": 445,
+            "title": "Add internal memory ownership and permissions",
+            "merged_at": "2026-10-30T03:17:47Z"
+          },
+          {
+            "number": 442,
+            "title": "Add sticky temporary request context with set, peek, and clear",
+            "merged_at": "2026-10-30T01:54:48Z"
+          },
+          {
+            "number": 441,
+            "title": "Fix Gemini SDK configuration and tool-result ordering",
+            "merged_at": "2026-10-30T01:43:43Z"
+          },
+          {
+            "number": 439,
+            "title": "fix(providers): retry a gateway's model-not-found 404 on custom base URLs (PRI-3609)",
+            "merged_at": "2026-10-29T22:39:33Z"
+          },
+          {
+            "number": 440,
+            "title": "feat(catalog): add LunaRoute's canonical glm-5.3 and glm-5.3-background (PRI-3609)",
+            "merged_at": "2026-10-29T22:38:22Z"
+          },
+          {
+            "number": 437,
+            "title": "fix(tools): todo_write's job-id refusal names real ids and matches case-insensitively",
+            "merged_at": "2026-10-28T23:30:26Z"
+          },
+          {
+            "number": 438,
+            "title": "fix(tools): job_output accepts read_tool_result's slicing params (PRI-3606)",
+            "merged_at": "2026-10-28T21:38:31Z"
+          },
+          {
+            "number": 436,
+            "title": "fix(tools): todo_write refuses a job id this session never returned (PRI-3362)",
+            "merged_at": "2026-10-28T21:37:32Z"
+          },
+          {
+            "number": 435,
+            "title": "fix(session): an inject into an idle session starts an internal turn (PRI-3545)",
+            "merged_at": "2026-10-26T22:14:36Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/model-training-journal": {
+        "commits": 22,
+        "authors": [
+          {
+            "name": "Journal automation",
+            "count": 22
+          }
+        ],
+        "loc_added": 163165,
+        "loc_removed": 7432,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-10-26T04:27:41Z)",
+        "description": "An AI-assisted engineering journal: small-model training methods, measurements, failures, and limitations.",
+        "html_url": "https://github.com/obra/model-training-journal",
+        "loc_suppressed": true
+      },
+      "obra/muse-skills": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "file-integrity",
+            "count": 5
+          }
+        ],
+        "loc_added": 7663,
+        "loc_removed": 1726,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/muse-skills"
+      }
+    },
+    "cutoff": "2026-10-30T23:01:41+00:00",
+    "prev_cutoff": "2026-10-23T22:10:22+00:00"
   }
 }
