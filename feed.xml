@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-10-23T00:00:00.000Z</updated>
+  <updated>2026-10-30T00:00:00.000Z</updated>
+  <entry>
+    <title>streamlinear ships label/state/assignee parity across the MCP tool and CLI in two releases, evener runs a two-track internal refactor wave, and shepherd-pr fixes its own severity counter</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-10-26" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-10-26</id>
+    <updated>2026-10-30T00:00:00.000Z</updated>
+    <published>2026-10-30T00:00:00.000Z</published>
+    <summary>Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/streamlinear tags v1.2.0 and v1.2.1, bringing label, state, and assignee handling to parity between its MCP tool and CLI. prime-radiant-inc/evener tags v0.3.17 across a large two-track internal refactor of its agent/hub/web/native code plus two small outside-contributed fixes. prime-radiant-inc/shepherd-pr tags v0.3.2, fixing its own review-severity counter. obra/model-training-journal launches as a new repo: a public, static-site engineering journal for a small-model training run.</summary>
+  </entry>
   <entry>
     <title>evener cuts three releases on an LLM-gateway and backlog-issue sweep, while superpowers retunes brainstorming for v7.0.1</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-10-19" />
