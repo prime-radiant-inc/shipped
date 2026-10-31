@@ -430,7 +430,19 @@ def main():
     new_weeks = {}
     for week_idx, bucket in enumerate(data["week_buckets"]):
         # Date key, not ordinal -- e.g. "2026-06-22". See module docstring.
-        new_weeks[bucket["start"]] = build_week(data, week_idx, bucket)
+        # Cutoff-window buckets (tools/gather.py --cutoff) carry an
+        # explicit "week_label" -- the Monday of the calendar week
+        # containing the cutoff -- distinct from "start" (the real,
+        # sub-week window boundary build_week() uses above for its
+        # created-this-week/released-this-week filtering). Keying by
+        # "start" in that mode keys by the PREVIOUS cutoff's date instead
+        # of the post's own week (bug 7: week-of-2026-10-26 got keyed
+        # "2026-10-23", a Friday, and had to be renamed by hand). A
+        # calendar-mode bucket (or any older recon file) carries no
+        # "week_label" key at all, so it falls back to "start" exactly as
+        # before -- byte-identical.
+        key = bucket.get("week_label") or bucket["start"]
+        new_weeks[key] = build_week(data, week_idx, bucket)
 
     # MERGE, DON'T REPLACE (PR #4 review, blocking): load whatever is
     # already at --out (if anything) and merge this recon's weeks into it,

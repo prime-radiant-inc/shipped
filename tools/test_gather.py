@@ -419,3 +419,77 @@ def test_resolve_prev_cutoff_rejects_non_utc_explicit_offset(tmp_path):
     stats_path.write_text("{}")
     with pytest.raises(SystemExit):
         gather.resolve_prev_cutoff("2026-11-01T00:00:00-05:00", str(stats_path))
+
+
+# ------------------------------------------- bug 7: week_label_for_cutoff --
+# week-of-2026-10-26's entry in src/data/weekly-stats.json got keyed
+# "2026-10-23" (prev_cutoff's date, a Friday) instead of "2026-10-26" (the
+# Monday of the week containing the cutoff) and had to be renamed by hand.
+# week_label_for_cutoff() is the fix: derive the correct label straight from
+# `cutoff` so main() never has to fall back to `prev_cutoff`'s date (or a
+# human) for it again.
+
+def test_week_label_for_cutoff_is_monday_of_cutoffs_week():
+    """The exact reported case: cutoff 2026-10-30 (a Friday) must label the
+    week "2026-10-26" (that Friday's Monday), NOT prev_cutoff's date
+    (2026-10-23, the PREVIOUS week's Friday) and NOT the cutoff's own date
+    either."""
+    cutoff = datetime.datetime(2026, 10, 30, 23, 1, 41, tzinfo=datetime.timezone.utc)
+    label = gather.week_label_for_cutoff(cutoff)
+    assert label == datetime.date(2026, 10, 26)
+    assert label.isoformat() == "2026-10-26"
+
+
+def test_week_label_for_cutoff_when_cutoff_itself_is_a_monday():
+    """A cutoff that falls exactly on a Monday labels its own date."""
+    cutoff = datetime.datetime(2026, 11, 2, 0, 0, 0, tzinfo=datetime.timezone.utc)  # a Monday
+    assert gather.week_label_for_cutoff(cutoff) == datetime.date(2026, 11, 2)
+
+
+def test_week_label_for_cutoff_when_cutoff_is_a_sunday():
+    """A cutoff on a Sunday still labels the Monday that STARTS its week,
+    not the Monday after."""
+    cutoff = datetime.datetime(2026, 11, 1, 23, 59, 0, tzinfo=datetime.timezone.utc)  # a Sunday
+    assert gather.week_label_for_cutoff(cutoff) == datetime.date(2026, 10, 26)
+
+
+def test_main_cutoff_mode_week_buckets_out_carries_week_label_distinct_from_start():
+    """End-to-end through main()'s week_buckets_out construction (not just
+    the helper in isolation): "start" stays prev_cutoff's date (the real
+    window boundary build_week() needs) while "week_label" is the correct,
+    separate key gen_stats.py should use instead. Exercises the exact
+    reported scenario's timestamps."""
+    cutoff = gather.parse_utc_cutoff_arg("2026-10-30T23:01:41Z", "--cutoff")
+    prev_cutoff = gather.parse_utc_cutoff_arg("2026-10-23T22:10:22Z", "--prev-cutoff")
+    window_start, window_end = prev_cutoff, cutoff
+    bucket = {
+        "index": 1,
+        "start": window_start.date().isoformat(),
+        "end": window_end.date().isoformat(),
+        "cutoff": cutoff.isoformat(),
+        "prev_cutoff": prev_cutoff.isoformat(),
+        "week_label": gather.week_label_for_cutoff(cutoff).isoformat(),
+    }
+    assert bucket["start"] == "2026-10-23", "start must stay the real window boundary (prev_cutoff's date)"
+    assert bucket["week_label"] == "2026-10-26", "week_label must be the post's own Monday, not start's date"
+
+
+# ------------------------------- bug 7, part 2: automatic prev-cutoff pickup
+# Confirms the ALREADY-FIXED week-of-2026-10-26 entry in the real
+# src/data/weekly-stats.json (keyed "2026-10-26", carrying
+# cutoff=2026-10-30T23:01:41Z) is picked up automatically as the next run's
+# --prev-cutoff, with no explicit --prev-cutoff and no further hand-editing.
+
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REAL_STATS_JSON = os.path.join(REPO_ROOT, "src", "data", "weekly-stats.json")
+
+
+def test_resolve_prev_cutoff_picks_up_real_recorded_cutoff_automatically():
+    """Against the actual, checked-in src/data/weekly-stats.json (not a
+    synthetic fixture): the most recently published week is "2026-10-26"
+    with cutoff "2026-10-30T23:01:41+00:00" -- the next --cutoff run, given
+    no --prev-cutoff, must resolve exactly that value with no human
+    re-typing it."""
+    assert os.path.isfile(REAL_STATS_JSON), f"expected {REAL_STATS_JSON} to exist"
+    resolved = gather.resolve_prev_cutoff(None, REAL_STATS_JSON)
+    assert resolved == datetime.datetime(2026, 10, 30, 23, 1, 41, tzinfo=datetime.timezone.utc)

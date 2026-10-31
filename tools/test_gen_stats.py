@@ -247,3 +247,54 @@ def test_missing_existing_file_is_still_treated_as_empty(tmp_path):
     with open(out_path) as f:
         result = json.load(f)
     assert list(result) == ["2026-03-02"]
+
+
+# --------------------------------------- bug 7: week_label vs start key --
+# The exact reported bug: week-of-2026-10-26's cutoff-mode recon had
+# "start": "2026-10-23" (prev_cutoff's date, a Friday -- the real window
+# boundary) but belonged to the week labeled "2026-10-26" (the Monday of
+# the week containing the cutoff). Keying by "start" produced the wrong
+# key and had to be renamed by hand in src/data/weekly-stats.json. A
+# bucket that carries "week_label" (tools/gather.py's fix) must be keyed by
+# THAT, not by "start".
+
+def test_cutoff_bucket_with_week_label_is_keyed_by_week_label_not_start(tmp_path):
+    out_path = str(tmp_path / "weekly-stats.json")
+
+    recon_path = _recon(tmp_path, [
+        {
+            "index": 1,
+            "start": "2026-10-23",  # prev_cutoff's date -- NOT the week key
+            "end": "2026-10-30",
+            "cutoff": "2026-10-30T23:01:41+00:00",
+            "prev_cutoff": "2026-10-23T22:10:22+00:00",
+            "week_label": "2026-10-26",  # the Monday of the cutoff's week -- the correct key
+        },
+    ])
+    _run_main([recon_path, "--out", out_path])
+
+    with open(out_path) as f:
+        result = json.load(f)
+    assert list(result) == ["2026-10-26"], (
+        "must be keyed by week_label (the post's own Monday), not by start "
+        "(prev_cutoff's date) -- this is the exact bug 7 regression"
+    )
+    assert result["2026-10-26"]["cutoff"] == "2026-10-30T23:01:41+00:00"
+    assert result["2026-10-26"]["prev_cutoff"] == "2026-10-23T22:10:22+00:00"
+
+
+def test_cutoff_bucket_without_week_label_still_keys_by_start(tmp_path):
+    """Backward compatibility: a bucket with no "week_label" key at all
+    (every existing recon file, and any future calendar-mode run) must
+    still key by "start" exactly as before -- byte-identical."""
+    out_path = str(tmp_path / "weekly-stats.json")
+
+    recon_path = _recon(tmp_path, [
+        {"index": 1, "start": "2026-03-02", "end": "2026-03-08",
+         "cutoff": "2026-03-08T20:00:00+00:00", "prev_cutoff": "2026-03-01T20:00:00+00:00"},
+    ])
+    _run_main([recon_path, "--out", out_path])
+
+    with open(out_path) as f:
+        result = json.load(f)
+    assert list(result) == ["2026-03-02"]

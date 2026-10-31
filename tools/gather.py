@@ -306,6 +306,35 @@ def week_buckets(n_weeks, window_end):
     return buckets
 
 
+def week_label_for_cutoff(cutoff):
+    """The Monday (date, UTC) of the calendar week containing `cutoff` --
+    this is the post's own week label (gen_stats.py's "WEEKS ARE KEYED BY
+    ISO START DATE" rule; frontmatter `dateStart`), NOT the same thing as
+    the cutoff-window's actual start (`prev_cutoff`'s date).
+
+    Bug 7 (accuracy-reviewer report on week-of-2026-10-26): CUTOFF-WINDOW-
+    NO-MERGES MODE's week_buckets_out entry used to set "start" to
+    `prev_cutoff.date().isoformat()` and main() keyed the week by that
+    same "start" field -- so the week-of-2026-10-26 post, whose
+    prev_cutoff fell on Friday 2026-10-23, got keyed "2026-10-23" in
+    src/data/weekly-stats.json instead of "2026-10-26" and had to be
+    renamed by hand. "start" still has to be the real (sub-week) window
+    boundary for build_week()'s created-this-week/released-this-week
+    filtering, so it can't just be swapped for the Monday -- hence this
+    is carried as its own, separate "week_label" field instead (see
+    main()), which gen_stats.py's key selection prefers when present.
+
+    Deriving this is a deterministic function of `cutoff` alone (every
+    timestamp has exactly one containing calendar week), not a guess --
+    unlike `prev_cutoff`, there's no "which previously-published value do
+    I trust" ambiguity here for an explicit flag to resolve, so there's
+    nothing an extra `--week-label` CLI arg would add except another
+    place to hand-type (and mistype) the same value `cutoff` already
+    pins down.
+    """
+    return (cutoff - datetime.timedelta(days=cutoff.weekday())).date()
+
+
 def bucket_index(dt, buckets):
     for i, (s, e) in enumerate(buckets):
         if s <= dt < e:
@@ -1359,6 +1388,15 @@ def main():
                 # byte-identical).
                 "cutoff": cutoff.isoformat(),
                 "prev_cutoff": prev_cutoff.isoformat(),
+                # Bug 7: "start" above is `prev_cutoff`'s date, the real
+                # (sub-week) window boundary -- gen_stats.py's build_week
+                # needs that for its created-this-week/released-this-week
+                # filtering, so it can't double as the week's own label.
+                # "week_label" is the separate, correct key: the Monday of
+                # the calendar week containing `cutoff` -- see
+                # week_label_for_cutoff() and gen_stats.py's main(), which
+                # prefers this field over "start" when present.
+                "week_label": week_label_for_cutoff(cutoff).isoformat(),
             }
         ]
     else:
