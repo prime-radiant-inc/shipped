@@ -87,10 +87,11 @@ for any of them). `clipfan` has taken outside contributions before (an
 outside cross-platform-install PR in the 2026-08-10 week), so this isn't
 a new pattern for this repo.
 
-`anubhavgupta121` and `wangyusheng1985` (display name 玉升) each landed one
-small, PR-tracked fix on `prime-radiant-inc/evener` (`#4739`/`#4561`
-bounded-hook-output-capture fix, `#4647` a `.gitignore` trailing-slash
-fix, `#4664` a diagnostic-test IndexedDB wedge reuse) — neither is an org
+`anubhavgupta121` landed two small, PR-tracked fixes on
+`prime-radiant-inc/evener` (`#4739`/`#4561` bounded-hook-output-capture,
+`f0c0033`; `#4647` a `.gitignore` trailing-slash fix, `d66ff59`), and
+`wangyusheng1985` (display name 玉升) landed one (`#4664`, a diagnostic-test
+IndexedDB wedge reuse, `bb8af08`) — neither is an org
 member, both via the same clean-signal non-member pattern as `wemcdonald`.
 Classified **outside**, same reasoning, no ambiguity.
 
