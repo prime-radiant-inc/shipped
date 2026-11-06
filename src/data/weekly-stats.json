@@ -31151,5 +31151,1011 @@
     },
     "cutoff": "2026-10-30T23:01:41+00:00",
     "prev_cutoff": "2026-10-23T22:10:22+00:00"
+  },
+  "2026-11-02": {
+    "summary": {
+      "repos_active": 19,
+      "featured_count": 8,
+      "second_tier_count": 11,
+      "commits": 152,
+      "merged_prs": 110,
+      "loc_added": 168817,
+      "loc_removed": 41988,
+      "contributors": 7,
+      "tagged_releases": 12,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "prime-radiant-inc/evener": {
+        "commits": 83,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 83
+          }
+        ],
+        "loc_added": 137847,
+        "loc_removed": 38014,
+        "merged_prs": [
+          {
+            "number": 5685,
+            "title": "fix(voice): stop republishing the armed state on classifier score",
+            "merged_at": "2026-11-06T22:41:46Z"
+          },
+          {
+            "number": 5680,
+            "title": "feat(voice): local Hey Evener wake word with a trial harness",
+            "merged_at": "2026-11-06T21:23:56Z"
+          },
+          {
+            "number": 5678,
+            "title": "fix(agent): quiet watchdog repeats name the measured silence",
+            "merged_at": "2026-11-06T18:13:48Z"
+          },
+          {
+            "number": 5673,
+            "title": "fix(web): finish the palette selection and tap-fixture lows",
+            "merged_at": "2026-11-06T16:22:09Z"
+          },
+          {
+            "number": 5665,
+            "title": "fix(web): repair five structural UX failures",
+            "merged_at": "2026-11-06T13:52:15Z"
+          },
+          {
+            "number": 5670,
+            "title": "Warn once per streak of identical summary failures; route sample counts; exhaustion fixture",
+            "merged_at": "2026-11-06T15:20:06Z"
+          },
+          {
+            "number": 5671,
+            "title": "test(voice): clear live-env keys in the default-provider arm test",
+            "merged_at": "2026-11-06T12:47:15Z"
+          },
+          {
+            "number": 5655,
+            "title": "fix(voice): arm directly and use the frontier realtime model",
+            "merged_at": "2026-11-06T11:59:10Z"
+          },
+          {
+            "number": 5664,
+            "title": "fix(ops): wait for merge-ref runs of workflows the PR branch cannot dispatch",
+            "merged_at": "2026-11-06T11:13:47Z"
+          },
+          {
+            "number": 5661,
+            "title": "feat(ops): add pr-ci-watchdog for GitHub's dropped pull_request events",
+            "merged_at": "2026-11-06T10:32:56Z"
+          },
+          {
+            "number": 5658,
+            "title": "test(agent): flush deferred deliveries before driving orphan-arm attention (#5564)",
+            "merged_at": "2026-11-06T11:23:35Z"
+          },
+          {
+            "number": 5654,
+            "title": "fix(transcript-cache): read-certificate coverage and older-frontier provenance (#4648, #4651, #5585, #5586)",
+            "merged_at": "2026-11-06T11:21:37Z"
+          },
+          {
+            "number": 5650,
+            "title": "fix(delegate-views): creator attribution, released status, aria-expanded (#4878, #5012, #5021)",
+            "merged_at": "2026-11-06T11:09:11Z"
+          },
+          {
+            "number": 5657,
+            "title": "feat(agent): resample rejected summarizer replies before failing",
+            "merged_at": "2026-11-06T10:54:13Z"
+          },
+          {
+            "number": 5652,
+            "title": "test(backgroundtranscriptguard): compose the reconnect window from overlapping reads (#4638)",
+            "merged_at": "2026-11-06T10:32:56Z"
+          },
+          {
+            "number": 5644,
+            "title": "fix(hub): retain daemon-gone deliveries through a joining read; atomic relay wait seam (#4684, #4880)",
+            "merged_at": "2026-11-06T09:44:35Z"
+          },
+          {
+            "number": 5649,
+            "title": "perf(llm): trim DataURI copies, skip image-digest marshal, use file_url (#5488, #5489, #5491)",
+            "merged_at": "2026-11-06T09:25:52Z"
+          },
+          {
+            "number": 5645,
+            "title": "test(browserguard): atomic rendezvous publish and shared reveal gate; diagnose deleted-ref and renderer gaps (#4964, #5018, #4794, #5024)",
+            "merged_at": "2026-11-06T08:57:41Z"
+          },
+          {
+            "number": 5646,
+            "title": "test: consolidate the IndexedDB pump, journal paths, and test fixtures (#5639, #5501, #5450, #5630 partial, #5525 partial)",
+            "merged_at": "2026-11-06T08:43:12Z"
+          },
+          {
+            "number": 5647,
+            "title": "fix(plugins): refuse blocking and substituted plugin metadata reads (#4847)",
+            "merged_at": "2026-11-06T08:29:48Z"
+          },
+          {
+            "number": 5648,
+            "title": "fix(frontmatter): reject duplicate resolved keys and trailing YAML (#4701, #4698)",
+            "merged_at": "2026-11-06T08:00:34Z"
+          },
+          {
+            "number": 5631,
+            "title": "fix(voice): close the four low findings from #5618",
+            "merged_at": "2026-11-06T06:56:38Z"
+          },
+          {
+            "number": 5638,
+            "title": "feat(web): replace the beige palette with cool neutral surfaces",
+            "merged_at": "2026-11-06T04:40:36Z"
+          },
+          {
+            "number": 5637,
+            "title": "fix(web): align the intent-group cap and name the plugin wait",
+            "merged_at": "2026-11-06T04:29:42Z"
+          },
+          {
+            "number": 5636,
+            "title": "feat(web): give the web UI a visible editorial identity",
+            "merged_at": "2026-11-06T03:14:58Z"
+          },
+          {
+            "number": 5632,
+            "title": "test(web): share the activitybar round-trip tests' handler and warm-up",
+            "merged_at": "2026-11-06T01:34:09Z"
+          },
+          {
+            "number": 5626,
+            "title": "test(web): root-cause the AppShell cascade and live-nav load flakes (#4679, #4688)",
+            "merged_at": "2026-11-06T01:24:40Z"
+          },
+          {
+            "number": 5618,
+            "title": "feat(voice): add opt-in native conversations with a manager",
+            "merged_at": "2026-11-06T01:00:03Z"
+          },
+          {
+            "number": 5625,
+            "title": "fix(hub): keep sidebar project and session order stable",
+            "merged_at": "2026-11-06T00:58:49Z"
+          },
+          {
+            "number": 5624,
+            "title": "fix(ask_user): parse the single-question shorthand in the shared client",
+            "merged_at": "2026-11-06T00:58:49Z"
+          },
+          {
+            "number": 5627,
+            "title": "fix(test): converge activitybar refresh walks on their awaited read span",
+            "merged_at": "2026-11-06T00:54:41Z"
+          },
+          {
+            "number": 5617,
+            "title": "fix(ios): derive TestFlight marketing version from the release tag",
+            "merged_at": "2026-11-04T21:34:37Z"
+          },
+          {
+            "number": 5614,
+            "title": "feat(native): add Start as Manager to new session",
+            "merged_at": "2026-11-04T17:19:34Z"
+          },
+          {
+            "number": 5611,
+            "title": "fix(test): stabilize two load-sensitive CI lanes",
+            "merged_at": "2026-11-04T15:11:42Z"
+          },
+          {
+            "number": 5609,
+            "title": "feat(manager): add global top-level roster watch",
+            "merged_at": "2026-11-04T06:03:36Z"
+          },
+          {
+            "number": 5547,
+            "title": "fix(stores): every Retry mints a fresh fenced row \u2014 the send-intent endpoint",
+            "merged_at": "2026-11-04T05:20:30Z"
+          },
+          {
+            "number": 5584,
+            "title": "fix(hub): refresh discovery before preparing the effort relay",
+            "merged_at": "2026-11-03T19:52:52Z"
+          },
+          {
+            "number": 5604,
+            "title": "fix(deps): update vulnerable web and native dependencies",
+            "merged_at": "2026-11-03T19:29:05Z"
+          },
+          {
+            "number": 5600,
+            "title": "fix(agent): keep delegate activity endings in their settled generation",
+            "merged_at": "2026-11-03T17:03:01Z"
+          },
+          {
+            "number": 5594,
+            "title": "fix(appwire): preserve session bindings across lifecycle races",
+            "merged_at": "2026-11-03T17:03:01Z"
+          },
+          {
+            "number": 5587,
+            "title": "fix(web): keep a cursorless seed's older demand from latching exhausted",
+            "merged_at": "2026-11-03T13:23:26Z"
+          },
+          {
+            "number": 5601,
+            "title": "test(agent): share one deadline between the orphan-arm wake drive and its tripwire",
+            "merged_at": "2026-11-03T13:03:29Z"
+          },
+          {
+            "number": 5595,
+            "title": "test(agent): consolidate scripted adapters behind a mutex-owning engine",
+            "merged_at": "2026-11-03T08:20:00Z"
+          },
+          {
+            "number": 5597,
+            "title": "fix(agent): stop transcript fit probes after budget overflow",
+            "merged_at": "2026-11-03T07:13:39Z"
+          },
+          {
+            "number": 5592,
+            "title": "feat(web): add Start as Manager to the session launch form",
+            "merged_at": "2026-11-03T05:58:57Z"
+          },
+          {
+            "number": 5583,
+            "title": "web: a delivery-uncertain message is a queue row like any other",
+            "merged_at": "2026-11-03T05:23:45Z"
+          },
+          {
+            "number": 5589,
+            "title": "feat(agent): let a Manager create a session on any reachable host",
+            "merged_at": "2026-11-03T04:39:38Z"
+          },
+          {
+            "number": 5588,
+            "title": "fix(test): make three load-sensitive CI lanes load-tolerant",
+            "merged_at": "2026-11-03T03:47:20Z"
+          },
+          {
+            "number": 5573,
+            "title": "chore(llm): delete the dead OrderedEffortLevels helper (#5570)",
+            "merged_at": "2026-11-03T02:20:38Z"
+          },
+          {
+            "number": 5582,
+            "title": "fix(hub): project pending mutation authors into the controller namespace",
+            "merged_at": "2026-11-03T01:57:06Z"
+          },
+          {
+            "number": 5558,
+            "title": "feat(web): pick reasoning effort on a not-running session",
+            "merged_at": "2026-11-03T01:44:48Z"
+          },
+          {
+            "number": 5577,
+            "title": "fix(web): name the mounted inventory when the Verbosity count drifts",
+            "merged_at": "2026-11-03T01:21:13Z"
+          },
+          {
+            "number": 5579,
+            "title": "Remove Comic Chat from the hub web UI",
+            "merged_at": "2026-11-03T00:38:35Z"
+          },
+          {
+            "number": 5498,
+            "title": "feat(manager): manage reachable sessions through existing human controls",
+            "merged_at": "2026-11-02T22:34:31Z"
+          },
+          {
+            "number": 5565,
+            "title": "feat(web): unfoldable thinking traces with a Thinking-open-by-default verbosity switch",
+            "merged_at": "2026-11-02T21:40:24Z"
+          },
+          {
+            "number": 5572,
+            "title": "fix(llm): registry rank-orders served effort ladders at resolve (#5551)",
+            "merged_at": "2026-11-02T20:13:48Z"
+          },
+          {
+            "number": 5569,
+            "title": "docs: lift durable memory into evergreen references, fix three workarounds",
+            "merged_at": "2026-11-02T20:01:16Z"
+          },
+          {
+            "number": 5568,
+            "title": "fix(models): launch contract serves appwire.ModelDescriptor rows wholesale (#5554)",
+            "merged_at": "2026-11-02T17:12:49Z"
+          },
+          {
+            "number": 5566,
+            "title": "Restore the capability probe's behavior tests",
+            "merged_at": "2026-11-02T11:32:09Z"
+          },
+          {
+            "number": 5544,
+            "title": "Serve a session's scratch directory from the doc routes",
+            "merged_at": "2026-11-02T10:48:38Z"
+          },
+          {
+            "number": 5533,
+            "title": "fix(stores): range-aware completeness closes the window-blindness and fast-refusal strands",
+            "merged_at": "2026-11-02T10:26:40Z"
+          },
+          {
+            "number": 5561,
+            "title": "test(agent): drive the retained child's wake-edge until its turn starts (#5556)",
+            "merged_at": "2026-11-02T09:12:00Z"
+          },
+          {
+            "number": 5562,
+            "title": "fix(agent): synchronize the fake adapter script against concurrent drives",
+            "merged_at": "2026-11-02T08:37:50Z"
+          },
+          {
+            "number": 5559,
+            "title": "feat(agent): refuse waiting_on_work when nothing can wake the session",
+            "merged_at": "2026-11-02T07:27:01Z"
+          },
+          {
+            "number": 5548,
+            "title": "feat(web): pace failed resume drives behind both identities' Stop fences",
+            "merged_at": "2026-11-02T07:11:07Z"
+          },
+          {
+            "number": 5555,
+            "title": "fix(models): effort ladders in the launch contract and ranked pickers",
+            "merged_at": "2026-11-02T05:27:32Z"
+          },
+          {
+            "number": 5552,
+            "title": "fix(cli): plugin auto-upgrade and marketplace browse teach the accepted flag order",
+            "merged_at": "2026-11-02T00:49:52Z"
+          },
+          {
+            "number": 5549,
+            "title": "fix(cli): plugin commands reject trailing arguments instead of dropping them",
+            "merged_at": "2026-11-01T23:26:12Z"
+          },
+          {
+            "number": 5499,
+            "title": "feat(agent): prune gains an operator-directed orphaned-delegate reclaim arm",
+            "merged_at": "2026-11-01T22:10:11Z"
+          },
+          {
+            "number": 5545,
+            "title": "test(web): await the resume drive's request, not its microtask schedule",
+            "merged_at": "2026-11-01T20:38:54Z"
+          },
+          {
+            "number": 5546,
+            "title": "fix(agent): record and restore communicate's terminal verdict as typed state",
+            "merged_at": "2026-11-01T19:53:44Z"
+          },
+          {
+            "number": 5543,
+            "title": "fix(agent): release the minted livelock before a failed construction returns",
+            "merged_at": "2026-11-01T18:23:57Z"
+          },
+          {
+            "number": 5538,
+            "title": "fix(hub): every resume's rendezvous wait is bounded by the resume budget",
+            "merged_at": "2026-11-01T03:48:15Z"
+          },
+          {
+            "number": 5511,
+            "title": "feat(worktree): prune reports owner liveness for locked delegate lanes",
+            "merged_at": "2026-10-31T18:05:49Z"
+          },
+          {
+            "number": 5441,
+            "title": "Refine Comic panels, Markdown, and subchat placement",
+            "merged_at": "2026-10-31T09:08:30Z"
+          },
+          {
+            "number": 5518,
+            "title": "ci: bound hosted lint module concurrency",
+            "merged_at": "2026-10-31T08:51:27Z"
+          },
+          {
+            "number": 5508,
+            "title": "fix(model): a mid-turn model pick queues for the next turn; at-rest picks stick",
+            "merged_at": "2026-10-31T08:25:25Z"
+          },
+          {
+            "number": 5495,
+            "title": "fix(web): preserve conversation ownership across host handoff",
+            "merged_at": "2026-10-31T03:45:49Z"
+          },
+          {
+            "number": 5512,
+            "title": "Web: useThreadClaim releases only an acquired claim",
+            "merged_at": "2026-10-31T02:48:49Z"
+          },
+          {
+            "number": 5504,
+            "title": "fix(docs): scope tutorial session launch to the rail",
+            "merged_at": "2026-10-31T02:29:52Z"
+          },
+          {
+            "number": 5510,
+            "title": "test(valueexpr): retain escaped-child startup failure evidence",
+            "merged_at": "2026-10-31T01:57:36Z"
+          },
+          {
+            "number": 5505,
+            "title": "Web: drop openPane redundant focus writes",
+            "merged_at": "2026-10-31T00:48:35Z"
+          },
+          {
+            "number": 5332,
+            "title": "Web: composer seat ownership core",
+            "merged_at": "2026-10-31T00:04:45Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v0.3.23",
+            "name": "v0.3.23",
+            "published_at": "2026-11-06T22:45:39Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.22",
+            "name": "v0.3.22",
+            "published_at": "2026-11-06T21:28:38Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.21",
+            "name": "v0.3.21",
+            "published_at": "2026-11-06T12:04:20Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.20",
+            "name": "v0.3.20",
+            "published_at": "2026-11-06T07:00:23Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.19",
+            "name": "v0.3.19",
+            "published_at": "2026-11-06T01:04:23Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.3.18",
+            "name": "v0.3.18",
+            "published_at": "2026-11-04T19:58:04Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.3.23 published 2026-11-06T22:45:39Z; tagged release v0.3.22 published 2026-11-06T21:28:38Z; tagged release v0.3.21 published 2026-11-06T12:04:20Z; tagged release v0.3.20 published 2026-11-06T07:00:23Z; tagged release v0.3.19 published 2026-11-06T01:04:23Z; tagged release v0.3.18 published 2026-11-04T19:58:04Z",
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/terminal-bench-analysis": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 1
+          }
+        ],
+        "loc_added": 1,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Fetches detailed JSON results from the Terminal Bench 2 leaderboard, loads them into SQLite, and publishes queryable analysis via Datasette.",
+        "html_url": "https://github.com/prime-radiant-inc/terminal-bench-analysis"
+      },
+      "prime-radiant-inc/prime-radiant-marketplace": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 14,
+        "loc_removed": 0,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Prime Radiant's Claude Code plugin marketplace.",
+        "html_url": "https://github.com/prime-radiant-inc/prime-radiant-marketplace"
+      },
+      "prime-radiant-inc/clipfan": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Will McDonald",
+            "count": 2
+          }
+        ],
+        "loc_added": 13,
+        "loc_removed": 0,
+        "merged_prs": [
+          {
+            "number": 13,
+            "title": "release: v1.0.13",
+            "merged_at": "2026-11-04T18:04:22Z"
+          },
+          {
+            "number": 12,
+            "title": "fix(mac): stamp DAEMON_VERSION into locally built app bundle",
+            "merged_at": "2026-11-04T17:55:13Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v1.0.13",
+            "name": "v1.0.13",
+            "published_at": "2026-11-04T18:10:01Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v1.0.13 published 2026-11-04T18:10:01Z",
+        "description": "Clipboard sync daemon for Mac + remote tmux fleet. Mirrors macOS pasteboard to remote OS clipboards and tmux paste buffers. Enables image paste into Claude Code/Codex over SSH without OSC 52 or Xvfb.",
+        "html_url": "https://github.com/prime-radiant-inc/clipfan"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 7
+          }
+        ],
+        "loc_added": 7,
+        "loc_removed": 7,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/shipped": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Ada Sen",
+            "count": 3
+          }
+        ],
+        "loc_added": 23507,
+        "loc_removed": 10,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A weekly log of what Prime Radiant and obra shipped.",
+        "html_url": "https://github.com/prime-radiant-inc/shipped",
+        "loc_suppressed": true
+      },
+      "prime-radiant-inc/shepherd-pr": {
+        "commits": 6,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 6
+          }
+        ],
+        "loc_added": 1316,
+        "loc_removed": 786,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "v0.4.1",
+            "name": "v0.4.1",
+            "published_at": "2026-11-03T03:55:48Z",
+            "prerelease": false,
+            "draft": false
+          },
+          {
+            "tag": "v0.4.0",
+            "name": "v0.4.0",
+            "published_at": "2026-11-01T23:10:11Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v0.4.1 published 2026-11-03T03:55:48Z; tagged release v0.4.0 published 2026-11-01T23:10:11Z",
+        "description": "A portable coding-agent plugin for shepherding GitHub pull requests through CI and review.",
+        "html_url": "https://github.com/prime-radiant-inc/shepherd-pr"
+      },
+      "prime-radiant-inc/external-sandbox-container": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "Simon Willison",
+            "count": 5
+          }
+        ],
+        "loc_added": 336,
+        "loc_removed": 28,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "0.1.2",
+            "name": "0.1.2",
+            "published_at": "2026-11-06T22:02:46Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release 0.1.2 published 2026-11-06T22:02:46Z",
+        "description": "Python sandbox server wrapping Apple Containers",
+        "html_url": "https://github.com/prime-radiant-inc/external-sandbox-container"
+      },
+      "prime-radiant-inc/external-sandbox-v86": {
+        "commits": 10,
+        "authors": [
+          {
+            "name": "Simon Willison",
+            "count": 10
+          }
+        ],
+        "loc_added": 2993,
+        "loc_removed": 607,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Node.js sandbox server wrapping v86 and Alpine Linux",
+        "html_url": "https://github.com/prime-radiant-inc/external-sandbox-v86"
+      },
+      "prime-radiant-inc/external-sandbox": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Simon Willison",
+            "count": 2
+          }
+        ],
+        "loc_added": 410,
+        "loc_removed": 4,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Tools for running coding agents against external sandboxes",
+        "html_url": "https://github.com/prime-radiant-inc/external-sandbox"
+      },
+      "prime-radiant-inc/external-sandbox-quicksand": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Simon Willison",
+            "count": 2
+          }
+        ],
+        "loc_added": 385,
+        "loc_removed": 32,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "0.1.0",
+            "name": "0.1.0",
+            "published_at": "2026-11-06T22:26:17Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release 0.1.0 published 2026-11-06T22:26:17Z",
+        "description": "Run a remote sandbox using Microsoft's Quicksand QEMU library",
+        "html_url": "https://github.com/prime-radiant-inc/external-sandbox-quicksand"
+      },
+      "prime-radiant-inc/agent-session-archiver": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 3
+          }
+        ],
+        "loc_added": 866,
+        "loc_removed": 543,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-11-01T23:52:43Z)",
+        "description": "Archive original agent session traces across hosts over SSH, independently of viewers.",
+        "html_url": "https://github.com/prime-radiant-inc/agent-session-archiver"
+      },
+      "prime-radiant-inc/toolsmith": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 3
+          }
+        ],
+        "loc_added": 8519,
+        "loc_removed": 13,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "created this week (2026-11-06T17:48:27Z)",
+        "description": "Stops coding agents from writing throwaway helper scripts: a toolsmith subagent builds and catalogs reusable tools",
+        "html_url": "https://github.com/prime-radiant-inc/toolsmith"
+      },
+      "obra/dotfiles": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 5,
+        "loc_removed": 2,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/dotfiles"
+      },
+      "obra/lace": {
+        "commits": 9,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 9
+          }
+        ],
+        "loc_added": 9264,
+        "loc_removed": 549,
+        "merged_prs": [
+          {
+            "number": 451,
+            "title": "fix(reminders): never overwrite an unreadable reminders.json (#448)",
+            "merged_at": "2026-11-06T05:21:15Z"
+          },
+          {
+            "number": 456,
+            "title": "Avoid repeated source scans during automatic recall",
+            "merged_at": "2026-11-04T03:51:09Z"
+          },
+          {
+            "number": 455,
+            "title": "Add independently configurable automatic recall",
+            "merged_at": "2026-11-03T20:08:07Z"
+          },
+          {
+            "number": 454,
+            "title": "Keep the latest applicable decision as memory's known state",
+            "merged_at": "2026-11-03T19:48:51Z"
+          },
+          {
+            "number": 452,
+            "title": "Keep retained historical sources usable for memory revisions",
+            "merged_at": "2026-11-03T19:35:25Z"
+          },
+          {
+            "number": 453,
+            "title": "Run workspace-stats with the existing serial subprocess tests",
+            "merged_at": "2026-11-03T19:31:19Z"
+          },
+          {
+            "number": 450,
+            "title": "Preserve tool response order when resuming sessions",
+            "merged_at": "2026-11-03T15:50:45Z"
+          },
+          {
+            "number": 449,
+            "title": "feat(reminders): lace-agent reminders ensure host CLI",
+            "merged_at": "2026-11-03T06:54:28Z"
+          },
+          {
+            "number": 447,
+            "title": "Reconcile changed facts and attach current accounts to manual recall",
+            "merged_at": "2026-10-31T03:21:07Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Lightweight agentic coding environment",
+        "html_url": "https://github.com/obra/lace"
+      },
+      "obra/model-training-journal": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "Journal automation",
+            "count": 7
+          }
+        ],
+        "loc_added": 5629,
+        "loc_removed": 2890,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "An AI-assisted engineering journal: small-model training methods, measurements, failures, and limitations.",
+        "html_url": "https://github.com/obra/model-training-journal",
+        "loc_suppressed": true
+      },
+      "obra/muse-skills": {
+        "commits": 5,
+        "authors": [
+          {
+            "name": "file-integrity",
+            "count": 5
+          }
+        ],
+        "loc_added": 5302,
+        "loc_removed": 1160,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/muse-skills"
+      },
+      "obra/superpowers": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 1538,
+        "loc_removed": 240,
+        "merged_prs": [
+          {
+            "number": 2657,
+            "title": "Release v7.0.2: brainstorming tuning, harness bootstrap fixes, SDD helper fixes",
+            "merged_at": "2026-11-03T22:17:08Z"
+          },
+          {
+            "number": 2656,
+            "title": "docs(release-notes): draft v7.0.2 notes",
+            "merged_at": "2026-11-03T02:39:25Z"
+          },
+          {
+            "number": 2654,
+            "title": "fix(systematic-debugging): ship pressure scenarios under tests/, not in the skill (#2277)",
+            "merged_at": "2026-11-02T22:41:44Z"
+          },
+          {
+            "number": 2644,
+            "title": "brainstorming: ask why first, no filler questions, a design to react to (#2530)",
+            "merged_at": "2026-11-02T22:40:21Z"
+          },
+          {
+            "number": 2609,
+            "title": "fix(codex): accept linked git worktrees in the package and sync scripts",
+            "merged_at": "2026-11-02T22:39:14Z"
+          },
+          {
+            "number": 2608,
+            "title": "fix(brainstorming): resolve a relative --project-dir before start-server.sh cds (#2524)",
+            "merged_at": "2026-11-02T22:37:39Z"
+          },
+          {
+            "number": 2607,
+            "title": "skills(sdd, executing-plans): run helpers by absolute path from the working tree (#2429, #2525)",
+            "merged_at": "2026-11-02T22:36:16Z"
+          },
+          {
+            "number": 2606,
+            "title": "fix(sdd): helpers act on the current directory's repo like git, with -C to override (#2429)",
+            "merged_at": "2026-11-02T22:01:03Z"
+          },
+          {
+            "number": 2605,
+            "title": "fix(sdd): task-brief refuses a brief that an unclosed code fence would run to EOF (#2436)",
+            "merged_at": "2026-11-02T21:50:42Z"
+          },
+          {
+            "number": 2604,
+            "title": "fix(sdd): task-brief finds alphanumeric task IDs and explains non-English headings (#2459, #2496)",
+            "merged_at": "2026-11-02T21:49:28Z"
+          },
+          {
+            "number": 2602,
+            "title": "fix(sdd): print a Windows-readable workspace path (#2307)",
+            "merged_at": "2026-11-02T21:48:42Z"
+          },
+          {
+            "number": 2601,
+            "title": "fix(opencode): inject the V2 bootstrap on compaction and generate requests",
+            "merged_at": "2026-11-02T21:38:19Z"
+          },
+          {
+            "number": 2600,
+            "title": "fix(opencode): don't mistake a prompt that mentions EXTREMELY_IMPORTANT for the bootstrap",
+            "merged_at": "2026-11-02T20:50:43Z"
+          },
+          {
+            "number": 2597,
+            "title": "fix(opencode): tell the model skill ids are bare names (#2583)",
+            "merged_at": "2026-11-02T20:49:56Z"
+          },
+          {
+            "number": 2596,
+            "title": "fix(hermes): skip the controller bootstrap for delegate_task children (#2536)",
+            "merged_at": "2026-11-02T20:47:05Z"
+          },
+          {
+            "number": 2595,
+            "title": "fix(pi): inject the bootstrap on every prompt, not just the first (#2083)",
+            "merged_at": "2026-11-02T20:45:30Z"
+          }
+        ],
+        "tagged_releases": [
+          {
+            "tag": "v7.0.2",
+            "name": "v7.0.2",
+            "published_at": "2026-11-03T22:17:54Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release v7.0.2 published 2026-11-03T22:17:54Z",
+        "description": "An agentic skills framework & software development methodology that works.",
+        "html_url": "https://github.com/obra/superpowers"
+      },
+      "obra/superpowers-marketplace": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 1,
+        "loc_removed": 1,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Curated Claude Code plugin marketplace",
+        "html_url": "https://github.com/obra/superpowers-marketplace"
+      }
+    },
+    "cutoff": "2026-11-06T23:17:46+00:00",
+    "prev_cutoff": "2026-10-30T23:01:41+00:00"
   }
 }

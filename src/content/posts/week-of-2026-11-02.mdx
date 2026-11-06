@@ -1,0 +1,214 @@
+---
+title: "evener closes out its refactor wave across six patch releases, shepherd-pr teaches itself a repo's merge gates, agent-session-archiver and toolsmith launch as new repos, and Simon Willison's external-sandbox family ships its first two public releases"
+week: "Week of November 2, 2026"
+dateStart: 2026-11-02
+dateEnd: 2026-11-08
+pubDate: 2026-11-06
+summary: "Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/evener tags six patch releases (v0.3.18–v0.3.23), finishing last week's internal refactor and moving into voice, web-UI, and hub fixes. prime-radiant-inc/shepherd-pr tags v0.4.0 and v0.4.1, teaching itself a repository's merge gates before a push. prime-radiant-inc/agent-session-archiver and prime-radiant-inc/toolsmith launch as new repos. prime-radiant-inc/external-sandbox-container and prime-radiant-inc/external-sandbox-quicksand, both from outside contributor Simon Willison, cut their first public releases. prime-radiant-inc/clipfan tags v1.0.13 and obra/superpowers tags v7.0.2."
+draft: false
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+**`prime-radiant-inc/evener`** tags six patch releases this week (**v0.3.18** through **v0.3.23**), finishing last week's internal refactor and settling into voice, web-UI, and hub fixes. **`prime-radiant-inc/shepherd-pr`** tags **v0.4.0** and **v0.4.1**, teaching itself a repository's own merge gates before a push. Two new repos launch: **`prime-radiant-inc/agent-session-archiver`** and **`prime-radiant-inc/toolsmith`**. Outside contributor **Simon Willison**'s `external-sandbox` family of sandbox-wrapper repos ships its first two public releases, on **`external-sandbox-container`** and **`external-sandbox-quicksand`**. **`prime-radiant-inc/clipfan`** tags **v1.0.13** and **`obra/superpowers`** tags **v7.0.2**. This week is still open: the data below runs cutoff-to-cutoff through Friday evening, not the full calendar week.
+
+<section class="summary">
+
+<WeekSummary week="2026-11-02" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-11-02" />
+
+Six tagged patch releases, each a bare version tag with GitHub's auto-generated changelog. The run finishes last week's two-track internal refactor and turns to steady bug-fixing: a local "Hey Evener" wake-word detector with a trial harness, arming the realtime voice model directly instead of through a classifier layer, and quieting a duplicate watchdog-silence report; a web UI with a deliberate visual identity replacing the old beige palette, unfoldable "Thinking" traces open by default, and a batch of structural UX repairs; hub/session plumbing keeping sidebar project order stable, bounding every resume wait by its own budget, and projecting pending mutation authorship into the right namespace; and stabilization work across several load-sensitive CI lanes. Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/shepherd-pr](https://github.com/prime-radiant-inc/shepherd-pr)
+
+<p class="repo-desc">A portable coding-agent plugin for shepherding GitHub pull requests through CI and review.</p>
+
+<RepoStat org="prime-radiant-inc" name="shepherd-pr" week="2026-11-02" />
+
+Two tagged releases, both with hand-written notes. **v0.4.0**: `pr-settle.py` now discovers a repository's own merge gates — its base branch, that branch's required status checks and approving reviews, merge-queue rules, and whether the repo runs RoboRev — before a push, printed up front with a new `--gates` flag; a single `--until auto|settled|approved|merged` flag replaces separate modes, covering CI-only, approval-gated, and merge-queue repos, with `auto` as the default and every final line carrying a `next=` status. **v0.4.1**: that new default `auto` wait now correctly reports a still-needed human approval instead of waiting on it. Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/agent-session-archiver](https://github.com/prime-radiant-inc/agent-session-archiver)
+
+<p class="repo-desc">Archive original agent session traces across hosts over SSH, independently of viewers.</p>
+
+<RepoStat org="prime-radiant-inc" name="agent-session-archiver" week="2026-11-02" />
+
+A brand-new repo: a design document for archiving the original traces of agent sessions across hosts over SSH, kept independent of whatever tool later views them, followed by an initial implementation built around rsync with configurable per-host harness roots, and a pass resolving fresh review findings against that design. Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/toolsmith](https://github.com/prime-radiant-inc/toolsmith)
+
+<p class="repo-desc">Stops coding agents from writing throwaway helper scripts: a toolsmith subagent builds and catalogs reusable tools</p>
+
+<RepoStat org="prime-radiant-inc" name="toolsmith" week="2026-11-02" />
+
+Also brand-new: a subagent whose purpose is stopping coding agents from writing one-off throwaway helper scripts, building and cataloging reusable tools instead. Shipped as an initial plugin release named "toolsmith," with install docs covering both the Claude Code marketplace and Codex. Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox-container](https://github.com/prime-radiant-inc/external-sandbox-container)
+
+<p class="repo-desc">Python sandbox server wrapping Apple Containers</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox-container" week="2026-11-02" />
+
+Cuts its first tagged release, noted simply as an initial public release: Apache 2.0 licensing, CI running ruff and the unit test suite, and prep work for publishing to PyPI. Sole author: outside contributor **Simon Willison** (`simonw`).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox-quicksand](https://github.com/prime-radiant-inc/external-sandbox-quicksand)
+
+<p class="repo-desc">Run a remote sandbox using Microsoft's Quicksand QEMU library</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox-quicksand" week="2026-11-02" />
+
+Also cuts its first tagged release, with the same "initial public release" note and an Apache 2.0 licensing pass. Sole author: outside contributor **Simon Willison** (`simonw`).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/clipfan](https://github.com/prime-radiant-inc/clipfan)
+
+<p class="repo-desc">Clipboard sync daemon for Mac + remote tmux fleet. Mirrors macOS pasteboard to remote OS clipboards and tmux paste buffers. Enables image paste into Claude Code/Codex over SSH without OSC 52 or Xvfb.</p>
+
+<RepoStat org="prime-radiant-inc" name="clipfan" week="2026-11-02" />
+
+Tags v1.0.13, fixing a Mac-client bug where a locally built app bundle reported a stale placeholder version instead of the real release version. Contributed and merged by outside contributor **Will McDonald** (`wemcdonald`).
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers](https://github.com/obra/superpowers)
+
+<p class="repo-desc">An agentic skills framework & software development methodology that works.</p>
+
+<RepoStat org="obra" name="superpowers" week="2026-11-02" />
+
+Tags v7.0.2, further tuning the brainstorming skill: it asks fewer questions, leads by asking why, and offers choices to pick from when there's a real decision to make instead of an open-ended question. The release also fixes bootstrap problems on six harnesses and hardens the SDD and executing-plans helper scripts against being pointed at the wrong repository or task. Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/prime-radiant-marketplace](https://github.com/prime-radiant-inc/prime-radiant-marketplace)
+
+<p class="repo-desc">Prime Radiant's Claude Code plugin marketplace.</p>
+
+<RepoStat org="prime-radiant-inc" name="prime-radiant-marketplace" week="2026-11-02" />
+
+One commit, adding the new toolsmith plugin to the marketplace listing. Author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox-v86](https://github.com/prime-radiant-inc/external-sandbox-v86)
+
+<p class="repo-desc">Node.js sandbox server wrapping v86 and Alpine Linux</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox-v86" week="2026-11-02" />
+
+Continuing housekeeping on the sandbox-wrapper family: third-party license notices shipped alongside the guest image, an `npx` quick-start added to the README, a dependency bump clearing an npm audit warning, and the npm package moved to the repository root ahead of publishing through npm's trusted-publishing flow. Author: outside contributor **Simon Willison** (`simonw`).
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox](https://github.com/prime-radiant-inc/external-sandbox)
+
+<p class="repo-desc">Tools for running coding agents against external sandboxes</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox" week="2026-11-02" />
+
+Small housekeeping across the same sandbox family: Apache 2.0 licensing, and pointing its v86 references at that sibling repo's new root location. Author: outside contributor **Simon Willison** (`simonw`).
+
+</article>
+
+<article class="repo">
+
+### [obra/dotfiles](https://github.com/obra/dotfiles)
+
+<p class="repo-desc">Jesse's personal dotfiles.</p>
+
+<RepoStat org="obra" name="dotfiles" week="2026-11-02" />
+
+One commit, routing agent helper-tool use through the new toolsmith plugin instead of writing throwaway scripts. Author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">Lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-11-02" />
+
+Continuing last week's memory-subsystem work: opt-in automatic recall before answering, avoiding repeated source scans during that recall, reconciling changed facts and attaching current accounts onto manual recall, preserving the latest applicable known state during extraction, a guard against ever overwriting an unreadable reminders file, and preserving tool-response order across session resumes. Author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/model-training-journal](https://github.com/obra/model-training-journal)
+
+<p class="repo-desc">An AI-assisted engineering journal: small-model training methods, measurements, failures, and limitations.</p>
+
+<RepoStat org="obra" name="model-training-journal" week="2026-11-02" />
+
+Continues its daily publishing cadence from launch week: a controlled weight-edit research note alongside the current 1B-parameter snapshot, a "clean 1B" pivot with its measured learning limits, B4 results against a matched-size comparison, a microbatch-sweep finding a warm-start speedup, and reviewed scores for the V6, V7, and V8 checkpoints. All of it lands under an identity called "Journal automation," with no linked GitHub account. The line-count chip is hidden again this week, for the same reason as last week: the diff is dominated by the site's generated per-page snapshot-age stamps and dashboard data, not authored content.
+
+</article>
+
+<article class="repo">
+
+### [obra/superpowers-marketplace](https://github.com/obra/superpowers-marketplace)
+
+<p class="repo-desc">Curated Claude Code plugin marketplace.</p>
+
+<RepoStat org="obra" name="superpowers-marketplace" week="2026-11-02" />
+
+One commit, bumping the listed superpowers version to match this week's v7.0.2 release. Author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<p class="caveat"><em>Four more active repos this week had no human commits to attribute, or are this blog's own tooling — not pictured above with their own stats. <code>prime-radiant-inc/claude-plugin-stats</code> (the daily install-stats scrape and chart rebuild) and <code>prime-radiant-inc/terminal-bench-analysis</code> (a README regeneration with no new data) are bot-only. <code>obra/muse-skills</code>' commits again look automated, under a git identity with no linked GitHub account, mixing routine dependency and config updates with what reads like a new Home Assistant integration — still unconfirmed whether a human is behind it. Separately, <code>prime-radiant-inc/shipped</code> — this repo — drafted, edited, and corrected last week's post for evener's outside-contributor attribution; its line-count chip is suppressed here too, for the same kind of reason as model-training-journal's above — this window's diff is dominated by a committed raw recon-data file, not prose. Sole author: Ada Sen (staff).</em></p>
+
+</section>
