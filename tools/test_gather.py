@@ -12,6 +12,7 @@ Run with: python3 -m pytest tools/test_gather.py -v
 file://, no network access).
 """
 import datetime
+import json
 import os
 import subprocess
 import sys
@@ -486,10 +487,38 @@ REAL_STATS_JSON = os.path.join(REPO_ROOT, "src", "data", "weekly-stats.json")
 
 def test_resolve_prev_cutoff_picks_up_real_recorded_cutoff_automatically():
     """Against the actual, checked-in src/data/weekly-stats.json (not a
-    synthetic fixture): the most recently published week is "2026-10-26"
-    with cutoff "2026-10-30T23:01:41+00:00" -- the next --cutoff run, given
-    no --prev-cutoff, must resolve exactly that value with no human
-    re-typing it."""
+    synthetic fixture): whichever week is currently the most recently
+    published one, its own recorded `cutoff` field is what the next
+    --cutoff run, given no --prev-cutoff, must resolve -- with no human
+    re-typing it.
+
+    Deliberately does NOT hardcode which week that is or what its cutoff
+    value is -- week-of-2026-10-26 was "the most recent" when this test
+    was written, but every subsequent published week (week-of-2026-11-02
+    and onward) shifts that, and a hardcoded expected datetime would go
+    stale and fail on every single future publish even though nothing
+    was actually broken (exactly what happened the first time: this test
+    failed on the week-of-2026-11-02 draft branch for no reason other
+    than a new, later week existing). Instead, independently re-derive
+    the expected value from the same file by the same documented
+    contract (gen_stats.py's "WEEKS ARE KEYED BY ISO START DATE" rule --
+    keys sort chronologically as plain strings, so the lexicographically
+    last key with a recorded `cutoff` is the most recent one) and assert
+    resolve_prev_cutoff() agrees with that -- so this test stays green
+    forever as new weeks get published, and still exercises the real,
+    checked-in file (encoding, real key shapes, a real multi-week file)
+    rather than a synthetic one.
+    """
     assert os.path.isfile(REAL_STATS_JSON), f"expected {REAL_STATS_JSON} to exist"
+    with open(REAL_STATS_JSON) as f:
+        real_data = json.load(f)
+    weeks_with_cutoff = sorted(
+        week_key
+        for week_key, week in real_data.items()
+        if isinstance(week, dict) and week.get("cutoff")
+    )
+    assert weeks_with_cutoff, f"expected at least one week with a recorded cutoff in {REAL_STATS_JSON}"
+    expected = gather.parse_dt(real_data[weeks_with_cutoff[-1]]["cutoff"])
+
     resolved = gather.resolve_prev_cutoff(None, REAL_STATS_JSON)
-    assert resolved == datetime.datetime(2026, 10, 30, 23, 1, 41, tzinfo=datetime.timezone.utc)
+    assert resolved == expected
