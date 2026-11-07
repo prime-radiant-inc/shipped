@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-10-30T00:00:00.000Z</updated>
+  <updated>2026-11-06T00:00:00.000Z</updated>
+  <entry>
+    <title>evener closes out its refactor wave across six patch releases, shepherd-pr teaches itself a repo&apos;s merge gates, agent-session-archiver and toolsmith launch as new repos, and Simon Willison&apos;s external-sandbox family ships its first two public releases</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-11-02" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-11-02</id>
+    <updated>2026-11-06T00:00:00.000Z</updated>
+    <published>2026-11-06T00:00:00.000Z</published>
+    <summary>Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/evener tags six patch releases (v0.3.18–v0.3.23), finishing last week&apos;s internal refactor and moving into voice, web-UI, and hub fixes. prime-radiant-inc/shepherd-pr tags v0.4.0 and v0.4.1, teaching itself a repository&apos;s merge gates before a push. prime-radiant-inc/agent-session-archiver and prime-radiant-inc/toolsmith launch as new repos. prime-radiant-inc/external-sandbox-container and prime-radiant-inc/external-sandbox-quicksand, both from Simon Willison, cut their first public releases. prime-radiant-inc/clipfan tags v1.0.13 and obra/superpowers tags v7.0.2.</summary>
+  </entry>
   <entry>
     <title>streamlinear ships label/state/assignee parity across the MCP tool and CLI in two releases, evener runs a two-track internal refactor wave, and shepherd-pr fixes its own severity counter</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-10-26" />
