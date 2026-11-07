@@ -32,12 +32,13 @@ check.
 |---|---|---|---|
 | `obra` | Jesse Vincent | **in-org** (`prime-radiant-inc` member, staff) | evener, shepherd-pr, agent-session-archiver, toolsmith, prime-radiant-marketplace, obra/dotfiles, obra/lace, obra/superpowers, obra/superpowers-marketplace |
 | `ada-sen` | Ada Sen | **in-org** (staff; owner) | prime-radiant-inc/shipped |
-| `simonw` | Simon Willison | **outside** | external-sandbox-container, external-sandbox-v86, external-sandbox, external-sandbox-quicksand |
+| `simonw` | Simon Willison | **in-org / staff, this week only** (see correction below) | external-sandbox-container, external-sandbox-v86, external-sandbox, external-sandbox-quicksand |
 | `wemcdonald` | Will McDonald | **outside** | clipfan |
 
 No ambiguous identities this window — every human commit resolves to a
-clean GitHub login with an established classification from prior weeks'
-briefs, no guessing required.
+clean GitHub login. `simonw` was initially drafted outside, per the prior
+weeks' precedent below, then corrected after Jesse confirmed directly
+(not a guess either way).
 
 `obra` and `ada-sen` are confirmed `prime-radiant-inc` members at commit
 time (live roster check; every commit this window falls inside the last
@@ -47,24 +48,32 @@ staff only for his own employed weeks) does not appear as a contributor
 anywhere this window — checked, no commits under "mhat" or any variant
 name, so his employment window never came into play.
 
-**`simonw` (Simon Willison) is flagged for attention, not ambiguity:** he
-*is* literally present in the live `prime-radiant-inc` org-members roster
-(has been for many weeks running), but is classified **outside** anyway,
-per this blog's long-established, repeatedly-confirmed precedent (see
-`drafts/narrative-2026-10-26.md` and `drafts/narrative-2026-10-19.md`,
-both of which list him in the same roster check and then classify him
-outside "on the same single signal, no ASK JESSE needed"). He authored
-100% of the commits on all four `external-sandbox-*` repos this window —
-a connected family of sandbox-wrapper tools (Apple Containers, v86/Alpine,
-Microsoft Quicksand) that are legitimately owned by `prime-radiant-inc`
-(not forks) but are entirely his own authored work, under a personal
-`@gmail.com` address, with no other `prime-radiant-inc` commits anywhere
-in the blog's history under his login. Org membership here reads as
-repo-administration access, not employment — same call every prior week
-made, not a new judgment. Not re-litigated or re-flagged as ambiguous
-here; noted for visibility since this is the first week his repos make up
-a meaningfully large share (4 of 19 active repos, 2 of them featured via
-first releases).
+**CORRECTION, post-Cadence-accuracy-pass on `a79eec1`: `simonw` (Simon
+Willison) is in-house, per Jesse directly.** This draft originally
+classified him **outside**, on this blog's long-established precedent
+(see `drafts/narrative-2026-10-26.md` and `drafts/narrative-2026-10-19.md`,
+both of which list him in the same live org-members roster check and then
+classify him outside "on the same single signal, no ASK JESSE needed") —
+that precedent turns out to have been wrong, or at least stale: Jesse
+confirmed Simon Willison is in-house/staff. Corrected here to **in-org /
+staff, this week only** (per Ada's instruction — not asserting he was
+staff for any other week this blog has covered, since those weren't
+re-confirmed and aren't being revised). The prose in
+`src/content/posts/week-of-2026-11-02.mdx` now reads e.g. "Sole author:
+**Simon Willison (staff, \`simonw\`)**." on all four `external-sandbox-*`
+articles, matching the existing in-org phrasing pattern (cf. "Jesse
+Vincent (staff, \`obra\`)"), with "outside contributor" removed
+everywhere it applied to him (the four per-repo attribution lines plus
+the summary frontmatter and intro paragraph). Past posts are NOT being
+edited — this correction is scoped to week-of-2026-11-02 only. He
+authored 100% of the commits on all four `external-sandbox-*` repos this
+window — a connected family of sandbox-wrapper tools (Apple Containers,
+v86/Alpine, Microsoft Quicksand) that are legitimately owned by
+`prime-radiant-inc` (not forks), under a personal `@gmail.com` address.
+Flagging for whoever reviews future weeks: the "outside, despite being in
+the org roster" precedent this blog relied on for several weeks running
+should probably be revisited rather than assumed next time his login
+shows up, now that it's been contradicted by a direct answer from Jesse.
 
 `wemcdonald` (Will McDonald) merged `clipfan`'s v1.0.13 release PR himself
 this window (as well as authoring the fix inside it) — a personal
