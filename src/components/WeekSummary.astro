@@ -94,20 +94,7 @@ const cutoffNote = data.cutoff && data.prev_cutoff
    stored count of 10, which includes github-actions[bot] and
    dependabot[bot]). Labeled "commit identities," not "contributors," so
    the number matches what it has always counted, here and on every
-   prior week this component has ever rendered.
-
-   "(incl. bots)" added per week-of-2026-11-09's accuracy pass: that
-   week's prose correctly credits two PR authors (arimu1,
-   hxzmn7f5dp-jpg on obra/private-journal-mcp) who never appear in this
-   per-commit-identity count at all -- their work only landed via a
-   regular merge commit whose own git identity is the person who ran
-   the merge, not the PR author -- so this number was never going to
-   equal every human actually credited in the post to begin with.
-   Spelling out "(incl. bots)" makes the number's actual scope (commit
-   authorship, bots and unresolved identities included, deliberately)
-   unambiguous without attempting a separate "human contributors" count
-   this data model can't produce correctly (it would need PR-level
-   authorship, not commit-level). */}
-<li><strong>{fmt(s.contributors)}</strong> commit {noun(s.contributors, 'identity', 'identities')} (incl. bots)</li>
+   prior week this component has ever rendered. */}
+<li><strong>{fmt(s.contributors)}</strong> commit {noun(s.contributors, 'identity', 'identities')}</li>
 <li><strong>{fmt(s.tagged_releases)}</strong> tagged {noun(s.tagged_releases, 'release')}</li>
 </ul>{cutoffNote && <p class="cutoff-note">{cutoffNote}</p>}
