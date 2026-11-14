@@ -32165,8 +32165,8 @@
       "second_tier_count": 9,
       "commits": 557,
       "merged_prs": 504,
-      "loc_added": 291965,
-      "loc_removed": 132353,
+      "loc_added": 278530,
+      "loc_removed": 132321,
       "contributors": 12,
       "tagged_releases": 7,
       "commit_only_bumps": 1
@@ -34627,7 +34627,8 @@
         "featured": false,
         "featured_reason": null,
         "description": "A weekly log of what Prime Radiant and obra shipped.",
-        "html_url": "https://github.com/prime-radiant-inc/shipped"
+        "html_url": "https://github.com/prime-radiant-inc/shipped",
+        "loc_suppressed": true
       },
       "prime-radiant-inc/shepherd-pr": {
         "commits": 3,

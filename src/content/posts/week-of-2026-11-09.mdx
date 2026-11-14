@@ -1,0 +1,130 @@
+---
+title: "evener tags seven patch releases across agent, web, and hub fixes, and external-sandbox-pi launches as a new repo bringing Pi's coding tools into the External Sandbox family"
+week: "Week of November 9, 2026"
+dateStart: 2026-11-09
+dateEnd: 2026-11-15
+pubDate: 2026-11-13
+summary: "Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/evener tags seven patch releases (v0.3.24–v0.3.30), continuing steady fixes across its agent, web, and hub code. prime-radiant-inc/external-sandbox-pi launches as a new repo: a Pi extension that routes Pi's coding tools through an External Sandbox server."
+draft: false
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+**`prime-radiant-inc/evener`** tags seven patch releases this week (**v0.3.24** through **v0.3.30**), continuing steady fixes across its agent, web, and hub code. **`prime-radiant-inc/external-sandbox-pi`** launches as a new repo: a Pi extension that routes Pi's coding tools through an External Sandbox server. This week is still open: the data below runs cutoff-to-cutoff through Friday evening, not the full calendar week.
+
+<section class="summary">
+
+<WeekSummary week="2026-11-09" />
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-11-09" />
+
+Seven tagged patch releases (**v0.3.24** through **v0.3.30**), each a bare version tag with GitHub's auto-generated changelog. A hub/plugin-UI unification thread runs through the week: one marketplace screen for installing plugins and managing their sources, and plugin details that now expand inline instead of opening a slide-out sheet. Web and native converge on a shared design: one palette across both surfaces, the resting composer folding to one line, a single pending-message stack for undelivered messages, and native landscape support with safe-area insets (including dual-display iPhones). The voice surface consolidates to one status line and one action. Agent-side reliability work continues: coordinating rate-limit storms across sessions, waiting for quota instead of re-kicking failing turns, telling callers how to recover a failed model provider, and configurable per-model context-compaction thresholds. A large tail of fixes and tests runs across agent, web, hub, native, sandbox, execenv, and CI lanes. In-org author: **Jesse Vincent (staff, `obra`)**, plus outside contributions from **NopeCharon** (Asish), **jay23606** (Jay), and **mikemikimike**, and routine `dependabot[bot]` version bumps.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox-pi](https://github.com/prime-radiant-inc/external-sandbox-pi)
+
+<p class="repo-desc">Pi extension that runs Pi's coding tools and ! commands inside an External Sandbox</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox-pi" week="2026-11-09" />
+
+A brand-new repo: a Pi coding-agent extension that routes Pi's `bash`, `read`, `write`, `edit`, `grep`, `find`, and `ls` tools, plus the user's `!` commands, through an External Sandbox server over its health and exec-websocket protocol, and fails closed when the sandbox is unavailable. Built for Pi 1.5, with tests covering the protocol client, the guest helper, the extension itself, and end-to-end runs against the real Pi using a scripted model. Small follow-ups tightened an error message's punctuation and added, then trimmed, README badges pending an actual GitHub release to link to. Sole author: **Simon Willison (staff, `simonw`)**.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/shepherd-pr](https://github.com/prime-radiant-inc/shepherd-pr)
+
+<p class="repo-desc">A portable coding-agent plugin for shepherding GitHub pull requests through CI and review.</p>
+
+<RepoStat org="prime-radiant-inc" name="shepherd-pr" week="2026-11-09" />
+
+Two merged PRs: the plugin now ends its own turn once CI is merely running rather than polling it to completion, reading only the failed job's filtered log instead of pulling multi-megabyte CI logs into context (#6); and a settle-detection fix stops treating a stale pre-push "changes requested" review decision as still blocking, and now waits for required checks that haven't yet reported instead of treating their absence as settled (#7). The plugin's own version bumped from 0.4.2 to 0.4.3 across those same commits, though no GitHub Release was tagged this window. Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox](https://github.com/prime-radiant-inc/external-sandbox)
+
+<p class="repo-desc">Tools for running coding agents against external sandboxes</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox" week="2026-11-09" />
+
+One commit: removing the now-redundant `pi` folder from this repo now that it has its own standalone `external-sandbox-pi` package. Author: **Simon Willison (staff, `simonw`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox-v86](https://github.com/prime-radiant-inc/external-sandbox-v86)
+
+<p class="repo-desc">Node.js sandbox server wrapping v86 and Alpine Linux</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox-v86" week="2026-11-09" />
+
+Small housekeeping: README badges added, then the changelog badge specifically removed pending an actual GitHub release to point it at. Author: **Simon Willison (staff, `simonw`)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/lace](https://github.com/obra/lace)
+
+<p class="repo-desc">Lightweight agentic coding environment.</p>
+
+<RepoStat org="obra" name="lace" week="2026-11-09" />
+
+Continues building out an automatic/semantic memory-recall subsystem: resuming indexing catch-up from committed file offsets, bounding recall to one indexed shortlist, scoring and ranking across full-text-search pages, closing memory-index connections after each response, avoiding double-loading of recall originals, and keeping the main thread responsive during local embedding. Alongside that: reporting OpenAI's cached-input-token usage correctly, compacting past a breakpoint after a failed turn, reporting the model's context window on turn-end usage, and adding Claude Sonnet 5.5 to the shared Anthropic model catalog. Contributors: **Jesse Vincent (staff, `obra`)** and **Drew Ritter (staff, `arittr`)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/winpepper](https://github.com/obra/winpepper)
+
+<p class="repo-desc">Windows-native local dictation. Hold a hotkey, speak, release — cleaned-up words appear in the focused app. Parakeet TDT v3 ASR + LlamaSharp cleanup, all local.</p>
+
+<RepoStat org="obra" name="winpepper" week="2026-11-09" />
+
+One commit: a README trim, removing a "Try it risk-free" section. Outside contributor: **Dan Shapiro** (`danshapiro`).
+
+</article>
+
+<article class="repo">
+
+### [obra/private-journal-mcp](https://github.com/obra/private-journal-mcp)
+
+<p class="repo-desc">A lightweight MCP server that provides Claude with a private journaling capability to process feelings and thoughts</p>
+
+<RepoStat org="obra" name="private-journal-mcp" week="2026-11-09" />
+
+A release-adjacent week: a fix so a failed journal-entry embedding-index write is reported instead of silently claimed successful (#29), a fix that stops blocking the MCP `initialize` handshake on embedding warm-up (#22), a `.claude-plugin/plugin.json` addition for marketplace validation (#25), a Windows test-suite portability fix (#28), and an adaptation of an earlier shared-directory fix to match the new write-result type from the indexing fix above. Those fixes shipped bundled in a `v2.0.2` tag alongside dependency updates (#30), though no formal GitHub Release was published this window. The indexing-visibility fix, the release itself, and a filename-filter test addition (#31) are **Ada Sen (staff, `ada-sen`)**'s; the Windows portability fix is outside contributor **AndrewSpell**'s; the plugin-manifest fix is outside contributor **arimu1**'s; and the MCP-handshake fix is outside contributor **hxzmn7f5dp-jpg**'s. **Jesse Vincent (staff, `obra`)** merged the branches in.
+
+</article>
+
+<p class="caveat"><em>Three more active repos this window had no human commits to attribute, or are this blog's own tooling — not pictured above with their own stats. <code>prime-radiant-inc/claude-plugin-stats</code> (the daily install-stats scrape and chart rebuild) is bot-only, all under <code>github-actions[bot]</code>. <code>obra/muse-skills</code>' commits are again dated daily "skills snapshot" entries under a git identity called <code>file-integrity</code>, which has no linked GitHub account — still unconfirmed whether a human is behind it. Separately, <code>prime-radiant-inc/shipped</code> — this repo — drafted and corrected last week's post (including the <code>simonw</code> attribution correction) and hardened a regression test; its line-count chip is suppressed here for the same kind of reason as past weeks' data-dump cells — this window's diff is dominated by committing the previous week's raw recon-data file, not prose. Sole author: Ada Sen (staff).</em></p>
+
+</section>
