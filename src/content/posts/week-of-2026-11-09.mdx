@@ -4,14 +4,14 @@ week: "Week of November 9, 2026"
 dateStart: 2026-11-09
 dateEnd: 2026-11-15
 pubDate: 2026-11-13
-summary: "Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/evener tags seven patch releases (v0.3.24–v0.3.30), continuing steady fixes across its agent, web, and hub code. prime-radiant-inc/external-sandbox-pi launches as a new repo: a Pi extension that routes Pi's coding tools through an External Sandbox server."
+summary: "Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/evener tags seven patch releases (v0.3.24–v0.3.30), covering hub/plugin-UI unification, a shared web/native design, and agent-side reliability work. prime-radiant-inc/external-sandbox-pi launches as a new repo: a Pi extension that routes Pi's coding tools through an External Sandbox server."
 draft: false
 ---
 
 import WeekSummary from '../../components/WeekSummary.astro';
 import RepoStat from '../../components/RepoStat.astro';
 
-**`prime-radiant-inc/evener`** tags seven patch releases this week (**v0.3.24** through **v0.3.30**), continuing steady fixes across its agent, web, and hub code. **`prime-radiant-inc/external-sandbox-pi`** launches as a new repo: a Pi extension that routes Pi's coding tools through an External Sandbox server. This week is still open: the data below runs cutoff-to-cutoff through Friday evening, not the full calendar week.
+**`prime-radiant-inc/evener`** tags seven patch releases this week (**v0.3.24** through **v0.3.30**), covering hub/plugin-UI unification, a shared web/native design, and agent-side reliability work. **`prime-radiant-inc/external-sandbox-pi`** launches as a new repo: a Pi extension that routes Pi's coding tools through an External Sandbox server. This week is still open: the data below runs cutoff-to-cutoff through Friday evening, not the full calendar week.
 
 <section class="summary">
 
@@ -121,7 +121,7 @@ One commit: a README trim, removing a "Try it risk-free" section. Outside contri
 
 <RepoStat org="obra" name="private-journal-mcp" week="2026-11-09" />
 
-A release-adjacent week: a fix so a failed journal-entry embedding-index write is reported instead of silently claimed successful (#29), a fix that stops blocking the MCP `initialize` handshake on embedding warm-up (#22), a `.claude-plugin/plugin.json` addition for marketplace validation (#25), a Windows test-suite portability fix (#28), and an adaptation of an earlier shared-directory fix to match the new write-result type from the indexing fix above. Those fixes shipped bundled in a `v2.0.2` tag alongside dependency updates (#30), though no formal GitHub Release was published this window. The indexing-visibility fix, the release itself, and a filename-filter test addition (#31) are **Ada Sen (staff, `ada-sen`)**'s; the Windows portability fix is outside contributor **AndrewSpell**'s; the plugin-manifest fix is outside contributor **arimu1**'s; and the MCP-handshake fix is outside contributor **hxzmn7f5dp-jpg**'s. **Jesse Vincent (staff, `obra`)** merged the branches in.
+A fix so a failed journal-entry embedding-index write is reported instead of silently claimed successful (#29), a fix that stops blocking the MCP `initialize` handshake on embedding warm-up (#22), a `.claude-plugin/plugin.json` addition for marketplace validation (#25), a Windows test-suite portability fix (#28), and an adaptation of an earlier shared-directory fix to match the new write-result type from the indexing fix above. **Ada Sen**'s release PR (#30), merged by **Jesse Vincent**, is tagged `v2.0.2` alongside those fixes and a round of dependency updates; no GitHub Release object was published this window. **Ada Sen (staff, `ada-sen`)** authored the indexing-visibility fix (#29) and the filename-filter test addition (#31). PRs #28, #25, and #22 were regular merges by **Jesse Vincent (staff, `obra`)**, credited respectively to outside contributors **AndrewSpell**, **arimu1**, and **hxzmn7f5dp-jpg**.
 
 </article>
 
