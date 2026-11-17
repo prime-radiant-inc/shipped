@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-11-06T00:00:00.000Z</updated>
+  <updated>2026-11-13T00:00:00.000Z</updated>
+  <entry>
+    <title>evener tags seven patch releases across agent, web, and hub fixes, and external-sandbox-pi launches as a new repo bringing Pi&apos;s coding tools into the External Sandbox family</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-11-09" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-11-09</id>
+    <updated>2026-11-13T00:00:00.000Z</updated>
+    <published>2026-11-13T00:00:00.000Z</published>
+    <summary>Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/evener tags seven patch releases (v0.3.24–v0.3.30), covering hub/plugin-UI unification, a shared web/native design, and agent-side reliability work. prime-radiant-inc/external-sandbox-pi launches as a new repo: a Pi extension that routes Pi&apos;s coding tools through an External Sandbox server.</summary>
+  </entry>
   <entry>
     <title>evener closes out its refactor wave across six patch releases, shepherd-pr teaches itself a repo&apos;s merge gates, agent-session-archiver and toolsmith launch as new repos, and Simon Willison&apos;s external-sandbox family ships its first two public releases</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-11-02" />
