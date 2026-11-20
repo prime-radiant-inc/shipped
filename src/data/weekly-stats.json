@@ -34980,5 +34980,2282 @@
     },
     "cutoff": "2026-11-13T23:55:21+00:00",
     "prev_cutoff": "2026-11-06T23:17:46+00:00"
+  },
+  "2026-11-16": {
+    "summary": {
+      "repos_active": 12,
+      "featured_count": 3,
+      "second_tier_count": 9,
+      "commits": 434,
+      "merged_prs": 401,
+      "loc_added": 220968,
+      "loc_removed": 35393,
+      "contributors": 7,
+      "tagged_releases": 3,
+      "commit_only_bumps": 0
+    },
+    "repos": {
+      "prime-radiant-inc/evener": {
+        "commits": 379,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 375
+          },
+          {
+            "name": "Asish",
+            "count": 3
+          },
+          {
+            "name": "Huyvux12",
+            "count": 1
+          }
+        ],
+        "loc_added": 210493,
+        "loc_removed": 33540,
+        "merged_prs": [
+          {
+            "number": 7098,
+            "title": "ci(ios): note that the download steps' digest-mismatch line is the action's input",
+            "merged_at": "2026-11-20T22:39:24Z"
+          },
+          {
+            "number": 7204,
+            "title": "fix(agent): stop counting a drain-abandoned branch in the subagent hold (#7007)",
+            "merged_at": "2026-11-20T22:52:56Z"
+          },
+          {
+            "number": 7153,
+            "title": "test(agent): drop section headings that introduce no test",
+            "merged_at": "2026-11-20T22:42:20Z"
+          },
+          {
+            "number": 7143,
+            "title": "fix(sandbox): confine restricted Seatbelt outbound to granted roots (#4180)",
+            "merged_at": "2026-11-20T22:41:34Z"
+          },
+          {
+            "number": 7180,
+            "title": "test(agent): await the activity publish floor and the drive's flush",
+            "merged_at": "2026-11-20T22:35:46Z"
+          },
+          {
+            "number": 7198,
+            "title": "perf(apptranscript): read fragment boundaries from the first and last run",
+            "merged_at": "2026-11-20T22:32:49Z"
+          },
+          {
+            "number": 7165,
+            "title": "test(agent): drop duplicate watch-args, outcome, and preseeded tests",
+            "merged_at": "2026-11-20T22:23:58Z"
+          },
+          {
+            "number": 7195,
+            "title": "fix(agent): skip a clear drain-hold update when no hold is outstanding",
+            "merged_at": "2026-11-20T22:09:54Z"
+          },
+          {
+            "number": 7194,
+            "title": "test(hub): drop the child read the root subscription made redundant",
+            "merged_at": "2026-11-20T22:04:45Z"
+          },
+          {
+            "number": 7193,
+            "title": "fix(frontend): always take refcounted claim in acquireUnreadThreadClaim",
+            "merged_at": "2026-11-20T22:04:45Z"
+          },
+          {
+            "number": 7192,
+            "title": "test(agent): await the foreign lane lock and the finalization drain",
+            "merged_at": "2026-11-20T22:04:45Z"
+          },
+          {
+            "number": 7188,
+            "title": "ci(ios): expire qualification diagnostics after 7 days",
+            "merged_at": "2026-11-20T21:53:40Z"
+          },
+          {
+            "number": 7163,
+            "title": "test(agent): drop duplicate watch-condition and watch-key tests",
+            "merged_at": "2026-11-20T21:38:28Z"
+          },
+          {
+            "number": 7187,
+            "title": "test(sandbox): round-trip every probe outcome row through the report",
+            "merged_at": "2026-11-20T21:34:11Z"
+          },
+          {
+            "number": 7171,
+            "title": "test(agent): drop duplicate stable-sandbox-policy test",
+            "merged_at": "2026-11-20T21:32:22Z"
+          },
+          {
+            "number": 7170,
+            "title": "test(agent): drop duplicate mutation-snapshot and restore-input tests",
+            "merged_at": "2026-11-20T21:32:22Z"
+          },
+          {
+            "number": 7173,
+            "title": "test(hub): await subscription routing and retirement with testwait",
+            "merged_at": "2026-11-20T21:29:06Z"
+          },
+          {
+            "number": 7161,
+            "title": "test(agent): drop duplicate quiet-watch and transcript-ref tests",
+            "merged_at": "2026-11-20T21:15:00Z"
+          },
+          {
+            "number": 7184,
+            "title": "test(agent): guard the transcript record budget and exact argument replay",
+            "merged_at": "2026-11-20T21:13:07Z"
+          },
+          {
+            "number": 7152,
+            "title": "test(web): guard the rail menu's focus restore against a focus-triggered scroll",
+            "merged_at": "2026-11-20T21:13:07Z"
+          },
+          {
+            "number": 7168,
+            "title": "test(agent): drop duplicate preseeded, restore-io, and provenance tests",
+            "merged_at": "2026-11-20T21:03:57Z"
+          },
+          {
+            "number": 7172,
+            "title": "test(hub): await subscription teardown with testwait",
+            "merged_at": "2026-11-20T21:01:56Z"
+          },
+          {
+            "number": 7176,
+            "title": "test(agent): bound awaitSignal by the test budget, not a fixed 30s",
+            "merged_at": "2026-11-20T20:56:14Z"
+          },
+          {
+            "number": 7162,
+            "title": "test(agent): drop duplicate job-stop, watch-send and activity-label tests",
+            "merged_at": "2026-11-20T20:55:21Z"
+          },
+          {
+            "number": 7166,
+            "title": "test(agent,hub): drop duplicate worktree and project-delete tests",
+            "merged_at": "2026-11-20T20:51:52Z"
+          },
+          {
+            "number": 7157,
+            "title": "test(hub): pin a recorded communicate against a later steering turn",
+            "merged_at": "2026-11-20T20:49:31Z"
+          },
+          {
+            "number": 7160,
+            "title": "test(agent): drop duplicate subagent tool-list tests",
+            "merged_at": "2026-11-20T20:39:43Z"
+          },
+          {
+            "number": 7164,
+            "title": "test(agent): drop duplicate nil-controller attention tests",
+            "merged_at": "2026-11-20T20:35:44Z"
+          },
+          {
+            "number": 7158,
+            "title": "test(agent): drop duplicate watch-pure and delegate-notice tests",
+            "merged_at": "2026-11-20T20:35:44Z"
+          },
+          {
+            "number": 7155,
+            "title": "test(agent): drop duplicate structured-result and queue tests",
+            "merged_at": "2026-11-20T20:35:44Z"
+          },
+          {
+            "number": 7156,
+            "title": "test(agent): guard saved input usage on its prefix and target",
+            "merged_at": "2026-11-20T20:32:07Z"
+          },
+          {
+            "number": 7127,
+            "title": "test(agent): drop struct-literal tautologies from restore tests",
+            "merged_at": "2026-11-20T20:29:38Z"
+          },
+          {
+            "number": 7123,
+            "title": "test(agent): drop struct-literal tautologies from worktree and mutation tests",
+            "merged_at": "2026-11-20T20:15:15Z"
+          },
+          {
+            "number": 7151,
+            "title": "fix(hub): render a communicate delivery in its own turn on the replay read",
+            "merged_at": "2026-11-20T20:06:54Z"
+          },
+          {
+            "number": 7129,
+            "title": "refactor(web): retire the dead ActivityPanel sheet and ActivityTree (#6800)",
+            "merged_at": "2026-11-20T20:02:20Z"
+          },
+          {
+            "number": 7139,
+            "title": "test(agent): drop tautological transcript and subagent constant pins",
+            "merged_at": "2026-11-20T20:01:15Z"
+          },
+          {
+            "number": 7125,
+            "title": "test(agent): drop struct-literal tautologies from restore branch tests",
+            "merged_at": "2026-11-20T20:01:15Z"
+          },
+          {
+            "number": 7124,
+            "title": "test(agent): remove dead skips and compile-only test wrappers",
+            "merged_at": "2026-11-20T20:01:15Z"
+          },
+          {
+            "number": 7146,
+            "title": "test(agent): read the seeded child task store through the retained session",
+            "merged_at": "2026-11-20T19:56:50Z"
+          },
+          {
+            "number": 7137,
+            "title": "fix(agent): price only the reasoning the Responses wire sends",
+            "merged_at": "2026-11-20T19:50:15Z"
+          },
+          {
+            "number": 7144,
+            "title": "test(agent): make the drain-hold interleaving deterministic",
+            "merged_at": "2026-11-20T19:49:59Z"
+          },
+          {
+            "number": 7135,
+            "title": "fix(agent): keep the newer workspace roster decision across a stale probe",
+            "merged_at": "2026-11-20T19:49:59Z"
+          },
+          {
+            "number": 7134,
+            "title": "fix(llm,agent): normalize live tool-call ends and keep spelled batch input (#6965)",
+            "merged_at": "2026-11-20T19:49:59Z"
+          },
+          {
+            "number": 7107,
+            "title": "fix(apptranscript): fold an interrupted recovery completion into the full read",
+            "merged_at": "2026-11-20T19:37:58Z"
+          },
+          {
+            "number": 7132,
+            "title": "docs(web): point the shared ask parser at NormalizeAskUserArgs",
+            "merged_at": "2026-11-20T19:19:25Z"
+          },
+          {
+            "number": 7136,
+            "title": "test(hub): wait for the sweep rebuild published index",
+            "merged_at": "2026-11-20T19:12:47Z"
+          },
+          {
+            "number": 7128,
+            "title": "test(hub): replace fixed fan-out waits with synctest quiescence",
+            "merged_at": "2026-11-20T19:12:30Z"
+          },
+          {
+            "number": 7120,
+            "title": "test(agent): drop struct-literal tautologies from start branch tests",
+            "merged_at": "2026-11-20T19:12:30Z"
+          },
+          {
+            "number": 7122,
+            "title": "test(agent): drop struct-literal tautologies from attention and reclaim tests",
+            "merged_at": "2026-11-20T19:10:49Z"
+          },
+          {
+            "number": 7126,
+            "title": "test(agent): drop remaining struct-literal tautologies from delivery tests",
+            "merged_at": "2026-11-20T18:53:37Z"
+          },
+          {
+            "number": 7105,
+            "title": "fix(agent): announce recorded executions after the history can read them (#6816)",
+            "merged_at": "2026-11-20T18:51:19Z"
+          },
+          {
+            "number": 7117,
+            "title": "test(agent): drop struct-literal tautologies from delivery branch tests",
+            "merged_at": "2026-11-20T18:46:43Z"
+          },
+          {
+            "number": 7118,
+            "title": "test(agent): drop struct-literal tautologies from watch branch tests",
+            "merged_at": "2026-11-20T18:42:01Z"
+          },
+          {
+            "number": 7119,
+            "title": "test(agent): drop struct-literal tautologies from job-watch and subagent tests",
+            "merged_at": "2026-11-20T18:39:43Z"
+          },
+          {
+            "number": 7116,
+            "title": "test(web): wait for the fold commit in the composer outside-press guard (#6825)",
+            "merged_at": "2026-11-20T18:35:43Z"
+          },
+          {
+            "number": 7114,
+            "title": "docs(web): say which focused rows a shortening placement pass reveals",
+            "merged_at": "2026-11-20T18:30:30Z"
+          },
+          {
+            "number": 7109,
+            "title": "test(agent): drive the inline ack-append failure through a real tool round",
+            "merged_at": "2026-11-20T18:23:24Z"
+          },
+          {
+            "number": 7110,
+            "title": "test(transcript): guard damaged argument spelling recovery and stale-index rebuild",
+            "merged_at": "2026-11-20T18:20:57Z"
+          },
+          {
+            "number": 7108,
+            "title": "fix(server): drop a stale copied quota wait when the live sample is silent",
+            "merged_at": "2026-11-20T18:20:57Z"
+          },
+          {
+            "number": 7010,
+            "title": "fix(appwire): stamp bootGeneration on delegate/overlay frames and retire replaced-source holds",
+            "merged_at": "2026-11-20T18:09:41Z"
+          },
+          {
+            "number": 7103,
+            "title": "test(agent): assert the exact replayed reasoning IDs and document the ResponsesIncomplete window (#6958)",
+            "merged_at": "2026-11-20T17:10:44Z"
+          },
+          {
+            "number": 7078,
+            "title": "docs(web): give the composer's unbacked-image repair in its shipped order",
+            "merged_at": "2026-11-20T17:07:53Z"
+          },
+          {
+            "number": 7046,
+            "title": "fix(agent): keep quota wait stamps monotonic across restores",
+            "merged_at": "2026-11-20T16:37:19Z"
+          },
+          {
+            "number": 7092,
+            "title": "fix(chatcompletions): converge the live reasoning preview and reassemble details by item identity",
+            "merged_at": "2026-11-20T16:18:05Z"
+          },
+          {
+            "number": 7093,
+            "title": "fix(native-ios): warm the run simulator before the measured journeys (#5992)",
+            "merged_at": "2026-11-20T15:58:29Z"
+          },
+          {
+            "number": 6871,
+            "title": "fix(llm): price the tool schema the builder emits, not the one the tool advertises (#6846)",
+            "merged_at": "2026-11-20T15:02:07Z"
+          },
+          {
+            "number": 7077,
+            "title": "ci(ios): fetch five commits of history for the qualification checkout",
+            "merged_at": "2026-11-20T13:46:50Z"
+          },
+          {
+            "number": 7085,
+            "title": "test(llm): accept the Codex Lite strict fallback in the Responses fuzzer",
+            "merged_at": "2026-11-20T13:25:21Z"
+          },
+          {
+            "number": 6869,
+            "title": "fix(agent): refuse a stable delegate's model-bearing turn without a lease (#2340)",
+            "merged_at": "2026-11-20T13:24:16Z"
+          },
+          {
+            "number": 7044,
+            "title": "ci(ios): build the journeys runtime pair beside the app build",
+            "merged_at": "2026-11-20T12:05:23Z"
+          },
+          {
+            "number": 7072,
+            "title": "docs(session-activity): saved-read deletion fence and quota-wait Stage 3 coverage",
+            "merged_at": "2026-11-20T11:52:35Z"
+          },
+          {
+            "number": 7071,
+            "title": "fix(hub): stop reporting a quarantine aside path that moved",
+            "merged_at": "2026-11-20T11:37:03Z"
+          },
+          {
+            "number": 7068,
+            "title": "fix(llm): strip the foreign Responses reasoning item id (#6970)",
+            "merged_at": "2026-11-20T11:34:15Z"
+          },
+          {
+            "number": 7066,
+            "title": "perf(agent): memoize the main-root walk per directory for one search",
+            "merged_at": "2026-11-20T11:22:38Z"
+          },
+          {
+            "number": 7063,
+            "title": "test(agent): cover a corroborated legacy-owner journal with a finish",
+            "merged_at": "2026-11-20T10:41:07Z"
+          },
+          {
+            "number": 7052,
+            "title": "fix(hub): keep a daemon-gone resync for a route that binds mid-pass",
+            "merged_at": "2026-11-20T10:36:58Z"
+          },
+          {
+            "number": 7051,
+            "title": "fix(activity): keep revealed inactive agents rows visible across later pages",
+            "merged_at": "2026-11-20T10:36:58Z"
+          },
+          {
+            "number": 7042,
+            "title": "fix(llm): settle Responses calls, reasoning parts and phases (#7003)",
+            "merged_at": "2026-11-20T10:07:42Z"
+          },
+          {
+            "number": 7050,
+            "title": "fix(jobstore): report a notification whose job has no finish",
+            "merged_at": "2026-11-20T10:07:25Z"
+          },
+          {
+            "number": 7047,
+            "title": "perf(hub): validate transcript candidates without regrouping the page",
+            "merged_at": "2026-11-20T10:03:12Z"
+          },
+          {
+            "number": 6855,
+            "title": "fix(agent): derive a delegate's tool ceiling from what the child can register (#6210)",
+            "merged_at": "2026-11-20T10:03:12Z"
+          },
+          {
+            "number": 7041,
+            "title": "test(apptranscript): unexport the entry-based projection",
+            "merged_at": "2026-11-20T09:31:51Z"
+          },
+          {
+            "number": 7039,
+            "title": "docs(doctor): describe job-journal partial results and the line-cap contract",
+            "merged_at": "2026-11-20T09:17:37Z"
+          },
+          {
+            "number": 7035,
+            "title": "fix(appwire): clone the observation's terminal flag and causal record",
+            "merged_at": "2026-11-20T08:59:56Z"
+          },
+          {
+            "number": 7038,
+            "title": "test(agent): dedupe the authorship gated adapter",
+            "merged_at": "2026-11-20T08:59:56Z"
+          },
+          {
+            "number": 7034,
+            "title": "fix(activity): keep an open inactive Agents group open as its coordinator settles",
+            "merged_at": "2026-11-20T08:56:17Z"
+          },
+          {
+            "number": 7029,
+            "title": "fix(web): fold Duo landscape composer into one line",
+            "merged_at": "2026-11-20T08:44:47Z"
+          },
+          {
+            "number": 7033,
+            "title": "test(agent): pin Chat tool-argument replay after local repair",
+            "merged_at": "2026-11-20T08:40:11Z"
+          },
+          {
+            "number": 7031,
+            "title": "test(jobstore): drop duplicate loadOrderedForTest closed-store rows",
+            "merged_at": "2026-11-20T08:31:09Z"
+          },
+          {
+            "number": 7024,
+            "title": "ci: share the race-agent cache kind and prune one generation per kind",
+            "merged_at": "2026-11-20T07:56:54Z"
+          },
+          {
+            "number": 7021,
+            "title": "fix(client): keep the zero-delay retry chip on a wait-free read",
+            "merged_at": "2026-11-20T07:18:19Z"
+          },
+          {
+            "number": 7019,
+            "title": "fix(agent): exact activity row counts and drop the test-only LoadOrdered read",
+            "merged_at": "2026-11-20T06:44:24Z"
+          },
+          {
+            "number": 6984,
+            "title": "ci(ios): cache the simulator build's DerivedData on main",
+            "merged_at": "2026-11-20T01:24:46Z"
+          },
+          {
+            "number": 6993,
+            "title": "test(agent): add loopback HTTP byte-identical prefix replay suite",
+            "merged_at": "2026-11-20T04:46:18Z"
+          },
+          {
+            "number": 6959,
+            "title": "fix(agent): freeze launch system prompt across restores, root forks, and env swaps",
+            "merged_at": "2026-11-20T04:21:43Z"
+          },
+          {
+            "number": 7000,
+            "title": "feat(activity): render Overview Agents tab as live subtree with open spinners and drain waits",
+            "merged_at": "2026-11-20T03:54:43Z"
+          },
+          {
+            "number": 6960,
+            "title": "fix(llm): unify Responses stream settlement and incomplete recovery",
+            "merged_at": "2026-11-20T01:51:24Z"
+          },
+          {
+            "number": 6867,
+            "title": "fix(web): refuse a send whose adopted image marker has no bytes (#4826)",
+            "merged_at": "2026-11-20T01:37:27Z"
+          },
+          {
+            "number": 6992,
+            "title": "test(agent): diagnose the waitForTestSignal child by its exit status (#6814)",
+            "merged_at": "2026-11-20T01:25:45Z"
+          },
+          {
+            "number": 6989,
+            "title": "fix(web): consume Space on the Menu popup when no row has focus (#6942)",
+            "merged_at": "2026-11-20T01:25:45Z"
+          },
+          {
+            "number": 6994,
+            "title": "fix(web): keep markdown table columns readable when one cell's content dominates",
+            "merged_at": "2026-11-20T00:54:10Z"
+          },
+          {
+            "number": 6968,
+            "title": "feat(envctx): report launch-prompt runtime facts as append-only diffs",
+            "merged_at": "2026-11-19T22:37:48Z"
+          },
+          {
+            "number": 6981,
+            "title": "perf(native-ios): replace two fixed 10s journey waits with positive waits",
+            "merged_at": "2026-11-19T20:31:10Z"
+          },
+          {
+            "number": 6982,
+            "title": "docs(voice): scope model and lock instructions to voice-enabled builds",
+            "merged_at": "2026-11-19T20:26:16Z"
+          },
+          {
+            "number": 6979,
+            "title": "ci(ios): split the qualification lane into build and journeys jobs",
+            "merged_at": "2026-11-19T19:07:45Z"
+          },
+          {
+            "number": 6978,
+            "title": "fix(ios): exclude the voice module from native app builds",
+            "merged_at": "2026-11-19T19:07:45Z"
+          },
+          {
+            "number": 6976,
+            "title": "Drop the legacy unstamped quota-wait fallback",
+            "merged_at": "2026-11-19T19:06:14Z"
+          },
+          {
+            "number": 6857,
+            "title": "fix(activity): bound and own the live activity fold (#811)",
+            "merged_at": "2026-11-19T18:28:55Z"
+          },
+          {
+            "number": 6949,
+            "title": "feat(web): render the quota wait's pending half on the pane and row (Stage 3)",
+            "merged_at": "2026-11-19T16:29:16Z"
+          },
+          {
+            "number": 6863,
+            "title": "fix(native): report a model pick the recycled binding disposed (#6696)",
+            "merged_at": "2026-11-19T15:53:28Z"
+          },
+          {
+            "number": 6929,
+            "title": "feat(client): reconcile quota waits by stamp across the read cut (Stage 2)",
+            "merged_at": "2026-11-19T15:37:29Z"
+          },
+          {
+            "number": 6966,
+            "title": "fix(llm): enforce cross-provider fallback provenance and cut over cont-req-v3: (#6891)",
+            "merged_at": "2026-11-19T15:36:01Z"
+          },
+          {
+            "number": 6903,
+            "title": "feat(appwire): stamp quota waits and terminal statuses (quota-wait Stage 0)",
+            "merged_at": "2026-11-19T14:39:35Z"
+          },
+          {
+            "number": 6860,
+            "title": "fix(merge-enqueue): mint scratch the launcher owns, and stop what it started (#6530)",
+            "merged_at": "2026-11-19T14:02:13Z"
+          },
+          {
+            "number": 6948,
+            "title": "fix(llm): preserve tool-call argument spelling losslessly across cold restore",
+            "merged_at": "2026-11-19T12:55:11Z"
+          },
+          {
+            "number": 6899,
+            "title": "Quota wait visibility: clean-room spec (fixes #6657)",
+            "merged_at": "2026-11-19T12:45:41Z"
+          },
+          {
+            "number": 6862,
+            "title": "fix(agent): order a stop's quiet against the release that ends it (#5713)",
+            "merged_at": "2026-11-19T12:35:08Z"
+          },
+          {
+            "number": 6951,
+            "title": "fix(chatcompletions): stream mixed-reasoning parity and lossless reasoning_details",
+            "merged_at": "2026-11-19T12:24:46Z"
+          },
+          {
+            "number": 6950,
+            "title": "feat(llm): replay completed Responses plaintext reasoning by default",
+            "merged_at": "2026-11-19T10:33:39Z"
+          },
+          {
+            "number": 6940,
+            "title": "feat(llm): replay full-history Chat Completions reasoning by default",
+            "merged_at": "2026-11-19T09:42:38Z"
+          },
+          {
+            "number": 6922,
+            "title": "Remove Return button and duplicate desktop activity bar from subagent view",
+            "merged_at": "2026-11-19T08:48:00Z"
+          },
+          {
+            "number": 6870,
+            "title": "fix(agent): read retained job history by the owner its job ID encodes (#449)",
+            "merged_at": "2026-11-19T08:48:00Z"
+          },
+          {
+            "number": 6849,
+            "title": "fix(mergeq): decide the merge-queue outcome from what the run observed (#6530)",
+            "merged_at": "2026-11-19T08:34:02Z"
+          },
+          {
+            "number": 6847,
+            "title": "fix(web): re-anchor the Menu on a window resize instead of closing it (#6337)",
+            "merged_at": "2026-11-19T08:22:58Z"
+          },
+          {
+            "number": 6859,
+            "title": "fix(agent): publish a close drain's lost-result warning without executing plans (#6308)",
+            "merged_at": "2026-11-19T06:54:25Z"
+          },
+          {
+            "number": 6843,
+            "title": "fix(agent): rank admissible project evidence in find_session_transcripts (#6263)",
+            "merged_at": "2026-11-19T05:56:26Z"
+          },
+          {
+            "number": 6900,
+            "title": "Retain typed Responses reasoning parts across cold restore",
+            "merged_at": "2026-11-19T04:04:16Z"
+          },
+          {
+            "number": 6848,
+            "title": "fix(llm): certify a schema for strict mode only when it is verifiably equivalent (#6200)",
+            "merged_at": "2026-11-19T03:57:11Z"
+          },
+          {
+            "number": 6915,
+            "title": "Honor empty incomplete Responses settlements",
+            "merged_at": "2026-11-19T03:44:47Z"
+          },
+          {
+            "number": 6910,
+            "title": "Preserve assistant item order in Responses history",
+            "merged_at": "2026-11-19T01:59:18Z"
+          },
+          {
+            "number": 6901,
+            "title": "Preserve scalar replay in non-streaming mixed Chat reasoning",
+            "merged_at": "2026-11-19T01:57:58Z"
+          },
+          {
+            "number": 6908,
+            "title": "feat(server): materialize a delegate's quota wait on its projected thread (Stage 1)",
+            "merged_at": "2026-11-19T01:57:27Z"
+          },
+          {
+            "number": 6907,
+            "title": "Count populated signed Chat reasoning details once",
+            "merged_at": "2026-11-19T00:55:48Z"
+          },
+          {
+            "number": 6854,
+            "title": "fix(agent): honour a stamped entry's own turn id in the whole-file projection (#1166)",
+            "merged_at": "2026-11-19T00:30:34Z"
+          },
+          {
+            "number": 6880,
+            "title": "Settle repeated Responses function calls by their issued IDs",
+            "merged_at": "2026-11-18T22:06:38Z"
+          },
+          {
+            "number": 6878,
+            "title": "test(hub): fail a resync wait when the notification stream closes (#6861)",
+            "merged_at": "2026-11-18T21:06:08Z"
+          },
+          {
+            "number": 6850,
+            "title": "Preserve system prompt whitespace in provider requests",
+            "merged_at": "2026-11-18T20:10:06Z"
+          },
+          {
+            "number": 6845,
+            "title": "fix(jobstore): report integrity diagnostics for retained job history (#449)",
+            "merged_at": "2026-11-18T19:32:19Z"
+          },
+          {
+            "number": 6835,
+            "title": "fix(hub): ask the roster about the identity the lookup found, and only when a saved read fails (#6832, #6834)",
+            "merged_at": "2026-11-18T16:36:02Z"
+          },
+          {
+            "number": 6836,
+            "title": "test(appwire): assert both subscribers and every caller's cancellation shape (#6833)",
+            "merged_at": "2026-11-18T16:30:39Z"
+          },
+          {
+            "number": 6831,
+            "title": "fix(appwire): stop a canceled caller from closing the shared websocket (#6824)",
+            "merged_at": "2026-11-18T15:39:09Z"
+          },
+          {
+            "number": 6828,
+            "title": "fix(hub): stamp unknown owner on a failed saved-history fallback (#6815)",
+            "merged_at": "2026-11-18T15:27:57Z"
+          },
+          {
+            "number": 6829,
+            "title": "test(hub): pin what a cleared Manager watch may still deliver (#6822)",
+            "merged_at": "2026-11-18T14:10:48Z"
+          },
+          {
+            "number": 6702,
+            "title": "feat(appwire): expose admission's call-level ask resolution so answer recaps match calls (#6323)",
+            "merged_at": "2026-11-18T10:54:29Z"
+          },
+          {
+            "number": 6812,
+            "title": "fix(schema): narrow the livelock flock arm to linux || darwin (#6796)",
+            "merged_at": "2026-11-18T10:31:12Z"
+          },
+          {
+            "number": 6808,
+            "title": "test(agent): cap waitForTestSignal's guard under the binary deadline (#6788)",
+            "merged_at": "2026-11-18T10:17:22Z"
+          },
+          {
+            "number": 6809,
+            "title": "test(agent): tell a starved probe launch apart from a bound kill (#6801)",
+            "merged_at": "2026-11-18T10:14:43Z"
+          },
+          {
+            "number": 6806,
+            "title": "test(web): make the ActivityTree wait fixture create the competition it pins (#6795)",
+            "merged_at": "2026-11-18T09:53:33Z"
+          },
+          {
+            "number": 6803,
+            "title": "fix(layoutguard): count a rescue only where the floor-off pass measured starvation (#6791)",
+            "merged_at": "2026-11-18T09:40:53Z"
+          },
+          {
+            "number": 6805,
+            "title": "test(agent): keep the supervision snapshot nonblocking and name the goal fixture's turn boundaries (#6753)",
+            "merged_at": "2026-11-18T09:23:07Z"
+          },
+          {
+            "number": 6804,
+            "title": "test(agent): assert the published history is not aliased, not that a race fired (#6748)",
+            "merged_at": "2026-11-18T09:16:02Z"
+          },
+          {
+            "number": 6790,
+            "title": "test(sandbox): report a failed probe launch and assert adoption, not the flag (#6755)",
+            "merged_at": "2026-11-18T07:53:26Z"
+          },
+          {
+            "number": 6749,
+            "title": "fix(web): keep the activity row's name legible beside a near-limit intent (#4881)",
+            "merged_at": "2026-11-18T07:33:15Z"
+          },
+          {
+            "number": 6787,
+            "title": "test(agent): receive the namer-entry signal instead of polling it (#6772)",
+            "merged_at": "2026-11-18T06:34:10Z"
+          },
+          {
+            "number": 6781,
+            "title": "test(agent): give the fold allocation fixture one copy of each margin check (#6733)",
+            "merged_at": "2026-11-18T05:52:21Z"
+          },
+          {
+            "number": 6760,
+            "title": "fix(agent): coalesce empty progress ticks so a quiet job stops waking the model (#501)",
+            "merged_at": "2026-11-18T05:06:18Z"
+          },
+          {
+            "number": 6726,
+            "title": "test(agent): join the authorship test's namer goroutine without the close budget (#6628)",
+            "merged_at": "2026-11-18T04:52:51Z"
+          },
+          {
+            "number": 6761,
+            "title": "fix(web): stop iOS text autosizing growing the rail caption line",
+            "merged_at": "2026-11-18T04:44:21Z"
+          },
+          {
+            "number": 6713,
+            "title": "fix(delegates): a delegate waiting on its own shell says so on its row (#6693)",
+            "merged_at": "2026-11-18T04:23:16Z"
+          },
+          {
+            "number": 6747,
+            "title": "fix(hub): surface the operation store's quarantine signal in hub health (#5522)",
+            "merged_at": "2026-11-18T04:19:17Z"
+          },
+          {
+            "number": 6741,
+            "title": "fix(sandbox): stop the bwrap capability probe leaving adopted zombies (#4755)",
+            "merged_at": "2026-11-18T03:16:13Z"
+          },
+          {
+            "number": 6737,
+            "title": "test(agent): adopt agenttest.Script for fakeAdapter \u2014 constructor migration (#5593)",
+            "merged_at": "2026-11-18T03:02:49Z"
+          },
+          {
+            "number": 6745,
+            "title": "fix(web): surface a failed Needs you page and name a detached paging row (#6706)",
+            "merged_at": "2026-11-18T02:39:17Z"
+          },
+          {
+            "number": 6739,
+            "title": "fix(agent): reopen a standalone-resumed delegate's recorded scratch owner",
+            "merged_at": "2026-11-18T02:21:39Z"
+          },
+          {
+            "number": 6729,
+            "title": "test(agent): pin one entry per accepted mutation across a steer reattach (#6467)",
+            "merged_at": "2026-11-18T01:20:51Z"
+          },
+          {
+            "number": 6708,
+            "title": "fix(agent): render a fold copy once in the public transcript (#6700)",
+            "merged_at": "2026-11-18T01:09:53Z"
+          },
+          {
+            "number": 6728,
+            "title": "perf(agent): stop handing a dead copy of the published history to fold callers (#6448)",
+            "merged_at": "2026-11-18T00:56:33Z"
+          },
+          {
+            "number": 6718,
+            "title": "docs(agent): state the transcript door's real invariant (#6513)",
+            "merged_at": "2026-11-18T00:52:38Z"
+          },
+          {
+            "number": 6731,
+            "title": "test(web): drain the composer's press-deferred writes in act (#6668)",
+            "merged_at": "2026-11-18T00:51:52Z"
+          },
+          {
+            "number": 6723,
+            "title": "docs(agent): state what the transcript door orders, not a retired mechanism (#6513)",
+            "merged_at": "2026-11-18T00:43:43Z"
+          },
+          {
+            "number": 6712,
+            "title": "fix(llm): end an SSE line at a bare CR, not only at LF",
+            "merged_at": "2026-11-18T00:42:02Z"
+          },
+          {
+            "number": 6717,
+            "title": "docs/test(worktree): document manage_worktree list paging and drop summary phrasing checks",
+            "merged_at": "2026-11-18T00:35:47Z"
+          },
+          {
+            "number": 6714,
+            "title": "test(agent): assert structured refusals instead of error copy (#6550)",
+            "merged_at": "2026-11-18T00:31:48Z"
+          },
+          {
+            "number": 6720,
+            "title": "refactor(web): retire unused activity scroll anchor hook",
+            "merged_at": "2026-11-18T00:22:11Z"
+          },
+          {
+            "number": 6715,
+            "title": "refactor(agent,tool): remove test-only normalizeAskUserArgs and normalizeAskArgs wrappers",
+            "merged_at": "2026-11-18T00:20:35Z"
+          },
+          {
+            "number": 6716,
+            "title": "fix(prompt-eval): account for every baseline rep in the report header (#6601)",
+            "merged_at": "2026-11-18T00:18:31Z"
+          },
+          {
+            "number": 6707,
+            "title": "fix(web): reveal all downloaded inactive agents",
+            "merged_at": "2026-11-17T23:58:15Z"
+          },
+          {
+            "number": 6705,
+            "title": "fix(web): make the document gesture lock agree with the touch-zoom gate (#6471)",
+            "merged_at": "2026-11-17T23:55:13Z"
+          },
+          {
+            "number": 6704,
+            "title": "agent emit: test the five provenance Clone sites and fix emitWithProvenance's inverted comment (#6622)",
+            "merged_at": "2026-11-17T23:55:13Z"
+          },
+          {
+            "number": 6703,
+            "title": "fix(web): give the Needs you band its own overflow row (#6343)",
+            "merged_at": "2026-11-17T23:50:27Z"
+          },
+          {
+            "number": 6689,
+            "title": "fix(hub): show a usage-limit wait in the session pane, surviving reload (#6657)",
+            "merged_at": "2026-11-17T23:50:27Z"
+          },
+          {
+            "number": 6701,
+            "title": "perf(transcriptindex): retain the awaiting assistant turn by value (#6432)",
+            "merged_at": "2026-11-17T23:48:41Z"
+          },
+          {
+            "number": 6698,
+            "title": "test(prompt-eval): run the harness's tests in CI",
+            "merged_at": "2026-11-17T23:38:32Z"
+          },
+          {
+            "number": 6697,
+            "title": "test(server): join the authorship turns the tests start on every exit path (#6628)",
+            "merged_at": "2026-11-17T23:30:41Z"
+          },
+          {
+            "number": 6692,
+            "title": "test(web): say what the recovery test's frozen clock actually does (#6645)",
+            "merged_at": "2026-11-17T23:24:57Z"
+          },
+          {
+            "number": 6691,
+            "title": "test(agent): pin that a delegate's final turn self-finalizes with no root wake",
+            "merged_at": "2026-11-17T23:16:40Z"
+          },
+          {
+            "number": 6690,
+            "title": "fix(execenv): report an argv start refusal as bash's 126 or 127",
+            "merged_at": "2026-11-17T23:14:10Z"
+          },
+          {
+            "number": 6684,
+            "title": "fix(prompt-eval): stop reanalyse erasing pass verdicts and stop unknown tail shares printing as 0% (#6597, #6598)",
+            "merged_at": "2026-11-17T23:08:58Z"
+          },
+          {
+            "number": 6687,
+            "title": "fix(web): wait for the daemon queued row before the skillguard drain press (#6678)",
+            "merged_at": "2026-11-17T23:03:09Z"
+          },
+          {
+            "number": 6685,
+            "title": "hub: record the past sweep digest only when Rebuild covered the tree (#6659)",
+            "merged_at": "2026-11-17T23:03:09Z"
+          },
+          {
+            "number": 6683,
+            "title": "fix(agent): a rejected model pick no longer cancels a valid earlier pick (#6621)",
+            "merged_at": "2026-11-17T23:03:09Z"
+          },
+          {
+            "number": 6680,
+            "title": "test: prove the already-fired wake test on a real pidfd, and make transport-lost differ from transport-lost-retried (#6629, #6623)",
+            "merged_at": "2026-11-17T23:03:09Z"
+          },
+          {
+            "number": 6667,
+            "title": "perf(hub): bound the hidden-history walk a live thread read performs (#4689)",
+            "merged_at": "2026-11-17T22:52:48Z"
+          },
+          {
+            "number": 6688,
+            "title": "fix(prompt-eval): a timeout and an unmeasured pass both stop reading as passes (#6605, #6606)",
+            "merged_at": "2026-11-17T22:49:01Z"
+          },
+          {
+            "number": 6686,
+            "title": "perf(web): parse the live tail window once per frame, not twice (#6669)",
+            "merged_at": "2026-11-17T22:46:19Z"
+          },
+          {
+            "number": 6677,
+            "title": "feat(web): automatically page activity sidebar collections",
+            "merged_at": "2026-11-17T22:41:43Z"
+          },
+          {
+            "number": 6682,
+            "title": "knobs: register GOGC so the collector target is a documented knob (#6599)",
+            "merged_at": "2026-11-17T22:30:44Z"
+          },
+          {
+            "number": 6679,
+            "title": "refactor(llm): remove dead stream-accumulator code and fix the SSE test table (#6607, #6608)",
+            "merged_at": "2026-11-17T22:29:30Z"
+          },
+          {
+            "number": 6675,
+            "title": "perf(web): size the markdown analysis cache to its own working set (#6602) and release it on an in-place settle (#6644)",
+            "merged_at": "2026-11-17T22:26:33Z"
+          },
+          {
+            "number": 6673,
+            "title": "hub: fix the three #6632 lows from #6617",
+            "merged_at": "2026-11-17T22:24:41Z"
+          },
+          {
+            "number": 6676,
+            "title": "test(web): load the selected pane before measuring the phone handoff (#6661)",
+            "merged_at": "2026-11-17T22:20:08Z"
+          },
+          {
+            "number": 6674,
+            "title": "fix(hub): run the past rebuild and message-search refresh on separate loops (#6652)",
+            "merged_at": "2026-11-17T22:20:08Z"
+          },
+          {
+            "number": 6670,
+            "title": "fix(hub): bound the identity open retry at one busy_timeout, not eight (#6650)",
+            "merged_at": "2026-11-17T22:20:08Z"
+          },
+          {
+            "number": 6663,
+            "title": "perf(hub): digest only the metas the gated rebuild reads (#6424)",
+            "merged_at": "2026-11-17T22:20:08Z"
+          },
+          {
+            "number": 6672,
+            "title": "test(web): cover the incremental projector's start-index guard (#6633)",
+            "merged_at": "2026-11-17T22:17:31Z"
+          },
+          {
+            "number": 6671,
+            "title": "perf(web): share one tail scan between splitLiveWindow's two gates (#6643)",
+            "merged_at": "2026-11-17T22:10:15Z"
+          },
+          {
+            "number": 6666,
+            "title": "docs(execenv): fix the matcher-cache comments, drop the live-tree glob test and the false listings metric (#6649)",
+            "merged_at": "2026-11-17T22:09:37Z"
+          },
+          {
+            "number": 6660,
+            "title": "test(execenv): pin grep's two ripgrep launches and its over-cap note (#6426)",
+            "merged_at": "2026-11-17T22:09:37Z"
+          },
+          {
+            "number": 6665,
+            "title": "perf(transcriptindex): grow the record buffer by doubling on a cold rebuild (#6432)",
+            "merged_at": "2026-11-17T22:09:01Z"
+          },
+          {
+            "number": 6655,
+            "title": "agent: wake runnable input when retirement admission reopens (#6468)",
+            "merged_at": "2026-11-17T22:09:01Z"
+          },
+          {
+            "number": 6664,
+            "title": "test(transcript): correct the resume corpus entry counts (#6604)",
+            "merged_at": "2026-11-17T22:00:16Z"
+          },
+          {
+            "number": 6662,
+            "title": "fix(transcriptindex): prune superseded index sidecars after a durable rebuild (#5520)",
+            "merged_at": "2026-11-17T22:00:16Z"
+          },
+          {
+            "number": 6658,
+            "title": "perf(hub): stamp a relayed status frame in one JSON pass instead of four (#6421)",
+            "merged_at": "2026-11-17T22:00:16Z"
+          },
+          {
+            "number": 6651,
+            "title": "perf(agent): skip the target-projection copy when nothing changes (#6448)",
+            "merged_at": "2026-11-17T22:00:16Z"
+          },
+          {
+            "number": 6641,
+            "title": "perf(transcript): decode each resumed entry once instead of twice (#6418)",
+            "merged_at": "2026-11-17T22:00:16Z"
+          },
+          {
+            "number": 6654,
+            "title": "fix(llm): keep Codex model discovery current",
+            "merged_at": "2026-11-17T21:24:41Z"
+          },
+          {
+            "number": 6637,
+            "title": "perf(execenv): read only the requested window from a large file (#6427)",
+            "merged_at": "2026-11-17T21:10:38Z"
+          },
+          {
+            "number": 6631,
+            "title": "perf(hub): skip the 60 s past-index rebuild when no session meta moved, keep the message-search refresh ungated (#6424)",
+            "merged_at": "2026-11-17T21:00:33Z"
+          },
+          {
+            "number": 6646,
+            "title": "perf(jobstore): fold a borrowed event view on Load cache misses (#4797)",
+            "merged_at": "2026-11-17T20:59:23Z"
+          },
+          {
+            "number": 6642,
+            "title": "perf(transcript): decode resume entry lines on a bounded pool (#4668)",
+            "merged_at": "2026-11-17T20:51:36Z"
+          },
+          {
+            "number": 6636,
+            "title": "fix(hub): retry the index.db connection open when WAL transition loses a lock race",
+            "merged_at": "2026-11-17T20:44:42Z"
+          },
+          {
+            "number": 6653,
+            "title": "test(appserver): make the fanout seeding comment match the golden README (#6616)",
+            "merged_at": "2026-11-17T20:42:14Z"
+          },
+          {
+            "number": 6647,
+            "title": "perf(composer): read the queued-message projection once per press, key the native recovery lookup (#4816)",
+            "merged_at": "2026-11-17T20:36:21Z"
+          },
+          {
+            "number": 6648,
+            "title": "test(cmd/evener): run the collector-tuning entry test under its own GOGC (#6600)",
+            "merged_at": "2026-11-17T20:29:04Z"
+          },
+          {
+            "number": 6640,
+            "title": "fix(web): keep an away reader's pill through a zero-height row collapse (#4962)",
+            "merged_at": "2026-11-17T20:07:11Z"
+          },
+          {
+            "number": 6614,
+            "title": "perf(glob,ignore): one walk per brace expansion and a reused .gitignore matcher (#6429)",
+            "merged_at": "2026-11-17T20:04:29Z"
+          },
+          {
+            "number": 6639,
+            "title": "test(web): freeze the clock in the entry-production recovery convergence test (#6583)",
+            "merged_at": "2026-11-17T19:53:59Z"
+          },
+          {
+            "number": 6635,
+            "title": "perf(webui): release the markdown analysis cache for settled messages (#6603)",
+            "merged_at": "2026-11-17T19:53:59Z"
+          },
+          {
+            "number": 6620,
+            "title": "perf(markdown): reparse only a bounded tail per live delta for block-carrying streams (#6440)",
+            "merged_at": "2026-11-17T19:50:26Z"
+          },
+          {
+            "number": 6634,
+            "title": "test(appserver): correct the fanout golden README, the delivery-gate comment, and dead scaffolding (#6616)",
+            "merged_at": "2026-11-17T19:35:07Z"
+          },
+          {
+            "number": 6625,
+            "title": "perf(web): reuse per-turn projections instead of reprojecting the transcript per delta (#6419)",
+            "merged_at": "2026-11-17T19:25:30Z"
+          },
+          {
+            "number": 6630,
+            "title": "refactor(contextmgr): drop the estimator's orphaned parts function, pin its cost and arithmetic (#6609)",
+            "merged_at": "2026-11-17T19:24:53Z"
+          },
+          {
+            "number": 6617,
+            "title": "perf(hub): serve the attention and notices snapshots from one 5 s wake (#6422)",
+            "merged_at": "2026-11-17T19:24:53Z"
+          },
+          {
+            "number": 6596,
+            "title": "perf(transcriptindex): decode each entry line in place on a cold rebuild (#6432)",
+            "merged_at": "2026-11-17T19:19:31Z"
+          },
+          {
+            "number": 6627,
+            "title": "test(hub): pin the daemon waiter's poll bound and no-missed-wake ordering (#6435)",
+            "merged_at": "2026-11-17T19:13:20Z"
+          },
+          {
+            "number": 6624,
+            "title": "test(agent): hold the session lock around the nested-parent cfg write (#6613)",
+            "merged_at": "2026-11-17T19:04:45Z"
+          },
+          {
+            "number": 6612,
+            "title": "perf(llm): encode the request body without reflection (#6409)",
+            "merged_at": "2026-11-17T18:58:47Z"
+          },
+          {
+            "number": 6588,
+            "title": "fix(hub): make the transport-lost discovery case wait for the listener to stop accepting (#6535)",
+            "merged_at": "2026-11-17T18:54:43Z"
+          },
+          {
+            "number": 6619,
+            "title": "perf(agent): adopt the emit path's provenance stamp instead of copying it twice (#6413)",
+            "merged_at": "2026-11-17T18:48:37Z"
+          },
+          {
+            "number": 6611,
+            "title": "perf(hub): decode and encode each notification once per fanout, not per subscriber (#6420)",
+            "merged_at": "2026-11-17T18:33:41Z"
+          },
+          {
+            "number": 6615,
+            "title": "perf(llm): stamp the generation tool catalog once instead of per estimate (#6437)",
+            "merged_at": "2026-11-17T18:28:11Z"
+          },
+          {
+            "number": 6594,
+            "title": "perf(llm): scan SSE lines into one reused buffer, hand the payload off uncopied",
+            "merged_at": "2026-11-17T18:20:02Z"
+          },
+          {
+            "number": 6590,
+            "title": "perf(llm): project the partial response on read instead of rebuilding per delta (#6411)",
+            "merged_at": "2026-11-17T18:04:17Z"
+          },
+          {
+            "number": 6595,
+            "title": "perf(transcript): reuse the per-block analysis across streamed deltas (#6455)",
+            "merged_at": "2026-11-17T17:51:42Z"
+          },
+          {
+            "number": 6593,
+            "title": "test(transcript): pin resume outcomes, and why the prefix decode is load-bearing (#6418)",
+            "merged_at": "2026-11-17T17:51:42Z"
+          },
+          {
+            "number": 6591,
+            "title": "perf(runtime): raise the collector target to 200 in evener's entry point (#6408)",
+            "merged_at": "2026-11-17T17:51:42Z"
+          },
+          {
+            "number": 6592,
+            "title": "perf(contextmgr): price each turn as it is walked, not through a rebuilt message list (#6439)",
+            "merged_at": "2026-11-17T17:51:03Z"
+          },
+          {
+            "number": 6575,
+            "title": "perf(execenv): run a metacharacter-free command as argv instead of sh -c (#6447)",
+            "merged_at": "2026-11-17T17:19:06Z"
+          },
+          {
+            "number": 6587,
+            "title": "fix(settings): cancel a keybinding capture on the completed click, not the press (#6551)",
+            "merged_at": "2026-11-17T17:07:25Z"
+          },
+          {
+            "number": 6584,
+            "title": "test(web): await entry-production convergence instead of wall-clock polls (#5630)",
+            "merged_at": "2026-11-17T17:07:25Z"
+          },
+          {
+            "number": 6589,
+            "title": "test(agent): drive the delegate_send fetch turn by its input, not request order (#6579)",
+            "merged_at": "2026-11-17T16:46:18Z"
+          },
+          {
+            "number": 6580,
+            "title": "fix(hub): claim \"needs you\" only when a session does",
+            "merged_at": "2026-11-17T13:57:12Z"
+          },
+          {
+            "number": 6068,
+            "title": "feat(agent): watches never end after 50 deliveries, never re-feed, and mark echoes of the watcher's own messages",
+            "merged_at": "2026-11-17T11:42:01Z"
+          },
+          {
+            "number": 6585,
+            "title": "perf(overlay): remove the per-delta slice and params allocations (#6542)",
+            "merged_at": "2026-11-17T10:54:45Z"
+          },
+          {
+            "number": 6581,
+            "title": "test(virtuallist): make the prepend settle independent of wall clock (#6502)",
+            "merged_at": "2026-11-17T10:32:22Z"
+          },
+          {
+            "number": 6576,
+            "title": "perf(agent): attribute tool-definition work to the round-timing field that names it (#6434)",
+            "merged_at": "2026-11-17T09:46:13Z"
+          },
+          {
+            "number": 6578,
+            "title": "fix(agent): stop the delegate subtree without waiting on a receipt that cannot arrive (#6561)",
+            "merged_at": "2026-11-17T09:33:09Z"
+          },
+          {
+            "number": 6577,
+            "title": "test(agent): attribute request-preparation allocations without a background subtraction (#6086)",
+            "merged_at": "2026-11-17T09:33:08Z"
+          },
+          {
+            "number": 6573,
+            "title": "test(execenv): benchmark spawn-environment derivation against the spawn (#6431)",
+            "merged_at": "2026-11-17T09:19:57Z"
+          },
+          {
+            "number": 6571,
+            "title": "perf(web): pause the rendering clocks while the tab is hidden (#6425)",
+            "merged_at": "2026-11-17T09:10:46Z"
+          },
+          {
+            "number": 6574,
+            "title": "test(stores): pin the cross-tab wake at both read-path promote-recovery retires (#6554)",
+            "merged_at": "2026-11-17T08:38:53Z"
+          },
+          {
+            "number": 6570,
+            "title": "perf(llm): carry a chunk's raw tool arguments through the first decode (#6407)",
+            "merged_at": "2026-11-17T08:38:53Z"
+          },
+          {
+            "number": 6572,
+            "title": "fix(composer): fold on a completed click that a control stopped propagating (#6552)",
+            "merged_at": "2026-11-17T08:34:10Z"
+          },
+          {
+            "number": 6569,
+            "title": "fix(effort): label an unset effort by the tier it resolves to (#6566)",
+            "merged_at": "2026-11-17T08:14:55Z"
+          },
+          {
+            "number": 6568,
+            "title": "fix(sdk): refuse a newer but incomplete appwire-client install",
+            "merged_at": "2026-11-17T08:13:49Z"
+          },
+          {
+            "number": 6567,
+            "title": "fix(agent): report an effort tier only when the wire carries it",
+            "merged_at": "2026-11-17T06:40:28Z"
+          },
+          {
+            "number": 6564,
+            "title": "feat(rail): name a running job's intent instead of its command",
+            "merged_at": "2026-11-17T04:57:11Z"
+          },
+          {
+            "number": 6557,
+            "title": "feat(web): show the effective reasoning-effort tier on the closed composer trigger (#6281)",
+            "merged_at": "2026-11-17T03:57:58Z"
+          },
+          {
+            "number": 6565,
+            "title": "fix(agent): report a default effort tier only when the wire carries it",
+            "merged_at": "2026-11-17T03:11:26Z"
+          },
+          {
+            "number": 6563,
+            "title": "test(hub): let the rebound's subscriber count settle before asserting it (#6562)",
+            "merged_at": "2026-11-17T01:07:43Z"
+          },
+          {
+            "number": 6559,
+            "title": "perf(appwire): decode a large response result into its request's target (#6451)",
+            "merged_at": "2026-11-16T23:56:10Z"
+          },
+          {
+            "number": 6560,
+            "title": "perf(agent): copy only the turns a context sample has not walked (#6441)",
+            "merged_at": "2026-11-16T22:49:18Z"
+          },
+          {
+            "number": 6558,
+            "title": "perf(web): copy one shard per changed frame instead of the whole thread map (#6454)",
+            "merged_at": "2026-11-16T22:49:18Z"
+          },
+          {
+            "number": 6507,
+            "title": "perf(execenv): batch output-store barriers to the finish and skip needless dir fsyncs (#6401) (#6402)",
+            "merged_at": "2026-11-16T22:49:18Z"
+          },
+          {
+            "number": 6556,
+            "title": "docs(delegate): document the accepted-but-not-yet-durable window (#569)",
+            "merged_at": "2026-11-16T22:39:29Z"
+          },
+          {
+            "number": 6555,
+            "title": "fix(wire): a retired or discarded promote wakes sibling tabs out of the stale projection",
+            "merged_at": "2026-11-16T22:16:24Z"
+          },
+          {
+            "number": 6483,
+            "title": "fix(wire): a refused promote whose entry already delivered renders nothing",
+            "merged_at": "2026-11-16T18:58:23Z"
+          },
+          {
+            "number": 6549,
+            "title": "fix(mcp): redial a server whose first connect failed (#6126)",
+            "merged_at": "2026-11-16T22:19:01Z"
+          },
+          {
+            "number": 6553,
+            "title": "fix(composer): fold on the completed click so transcript controls keep theirs",
+            "merged_at": "2026-11-16T22:16:40Z"
+          },
+          {
+            "number": 6543,
+            "title": "test(hub): poll the projected cwd with internal/testwait (#6498)",
+            "merged_at": "2026-11-16T21:19:08Z"
+          },
+          {
+            "number": 6548,
+            "title": "perf(doctor): decode only the API log page a read renders (#6456)",
+            "merged_at": "2026-11-16T21:11:49Z"
+          },
+          {
+            "number": 6544,
+            "title": "perf(agent): bound the TOOL_CALL_END output to the excerpt a cold reader renders (#6444)",
+            "merged_at": "2026-11-16T20:41:30Z"
+          },
+          {
+            "number": 6547,
+            "title": "perf(hub): preallocate and stop copying node values in the tree build (#6453)",
+            "merged_at": "2026-11-16T20:23:14Z"
+          },
+          {
+            "number": 6546,
+            "title": "perf(llm): encode replayed image attachments once per payload (#6452)",
+            "merged_at": "2026-11-16T20:23:14Z"
+          },
+          {
+            "number": 6538,
+            "title": "fix(transcript): hide the memory refresh at the Chat and Intent levels",
+            "merged_at": "2026-11-16T20:04:40Z"
+          },
+          {
+            "number": 6545,
+            "title": "fix(hub): lose the discovery daemon only after a live read fails (#6535)",
+            "merged_at": "2026-11-16T20:04:40Z"
+          },
+          {
+            "number": 6540,
+            "title": "docs(agent): correct the environment-event ordering comments (#1150)",
+            "merged_at": "2026-11-16T20:04:40Z"
+          },
+          {
+            "number": 6541,
+            "title": "test(agent): keep the nested create's parent generation open (#6532)",
+            "merged_at": "2026-11-16T19:52:08Z"
+          },
+          {
+            "number": 6503,
+            "title": "fix(mobile): hide the answer a question row recaps, prose or composed (#6328)",
+            "merged_at": "2026-11-16T19:52:08Z"
+          },
+          {
+            "number": 6537,
+            "title": "test(hub): bound the relay departure hang guard instead of a latency deadline",
+            "merged_at": "2026-11-16T19:35:16Z"
+          },
+          {
+            "number": 6539,
+            "title": "test(hub): wait for the projected cwd before worktree document reads (#6498)",
+            "merged_at": "2026-11-16T19:13:41Z"
+          },
+          {
+            "number": 6496,
+            "title": "test(web): what a reconnect retains (#6293)",
+            "merged_at": "2026-11-16T19:08:41Z"
+          },
+          {
+            "number": 6534,
+            "title": "docs(agent): retire the false turn-split justification on the transcript door (#6513)",
+            "merged_at": "2026-11-16T18:20:32Z"
+          },
+          {
+            "number": 6510,
+            "title": "perf(hub): keep one index.db handle per store instead of one per call (#6415)",
+            "merged_at": "2026-11-16T18:04:12Z"
+          },
+          {
+            "number": 6533,
+            "title": "test(hub): pin session_seen and hub_identity sync levels (#6501)",
+            "merged_at": "2026-11-16T17:53:08Z"
+          },
+          {
+            "number": 6531,
+            "title": "perf(hub): retire an idle relay on its subscribers' departure (#6423)",
+            "merged_at": "2026-11-16T17:42:14Z"
+          },
+          {
+            "number": 6528,
+            "title": "fix(llm): refuse an adapter's nil stream instead of panicking in pump (#6412)",
+            "merged_at": "2026-11-16T17:32:23Z"
+          },
+          {
+            "number": 6514,
+            "title": "ops: name the merge-group run in merge-enqueue drop output",
+            "merged_at": "2026-11-16T17:29:05Z"
+          },
+          {
+            "number": 6529,
+            "title": "perf(execenv): count over-cap files from the search's own listing (#6426)",
+            "merged_at": "2026-11-16T17:19:27Z"
+          },
+          {
+            "number": 6523,
+            "title": "perf(transcript): index turn windows and derived totals (#6416, #6417)",
+            "merged_at": "2026-11-16T17:16:15Z"
+          },
+          {
+            "number": 6522,
+            "title": "perf(agent): narrow the emit critical section (#6450)",
+            "merged_at": "2026-11-16T16:27:27Z"
+          },
+          {
+            "number": 6336,
+            "title": "feat(web): find in session",
+            "merged_at": "2026-11-16T16:14:51Z"
+          },
+          {
+            "number": 6526,
+            "title": "perf(transcriptindex): memoize DerivedTotals on the turn table epoch (#6417)",
+            "merged_at": "2026-11-16T16:03:33Z"
+          },
+          {
+            "number": 6525,
+            "title": "perf(hub): park the daemon waiter on the exit signal instead of polling (#6435)",
+            "merged_at": "2026-11-16T15:38:58Z"
+          },
+          {
+            "number": 6524,
+            "title": "perf(agent): decode the communicate preview incrementally (#6410)",
+            "merged_at": "2026-11-16T15:30:34Z"
+          },
+          {
+            "number": 6521,
+            "title": "perf(agent): memoize the context estimate on historyRevision (#6441)",
+            "merged_at": "2026-11-16T11:52:57Z"
+          },
+          {
+            "number": 6512,
+            "title": "perf(tool): hash the repetition fingerprint with maphash, not SHA-256 (#6428)",
+            "merged_at": "2026-11-16T11:13:31Z"
+          },
+          {
+            "number": 6515,
+            "title": "fix(agent): arm the retry a non-root delivery owes and name the refusing predicate",
+            "merged_at": "2026-11-16T09:00:32Z"
+          },
+          {
+            "number": 6511,
+            "title": "fix(agent): derive the delegate advertisement from the grant rule (#6209)",
+            "merged_at": "2026-11-16T08:49:04Z"
+          },
+          {
+            "number": 6518,
+            "title": "fix(web): veto the pinch Safari keeps because touch-action cannot reach it",
+            "merged_at": "2026-11-16T08:34:24Z"
+          },
+          {
+            "number": 6516,
+            "title": "perf(agent): reuse the transcript entry buffer across appends (#6457)",
+            "merged_at": "2026-11-16T08:09:26Z"
+          },
+          {
+            "number": 6517,
+            "title": "perf(agent): build the fallback request once a fallback runs (#6442)",
+            "merged_at": "2026-11-16T08:05:41Z"
+          },
+          {
+            "number": 6509,
+            "title": "perf(execenv): number lines from raw bytes without a whole-file copy (#6427)",
+            "merged_at": "2026-11-16T06:21:05Z"
+          },
+          {
+            "number": 6508,
+            "title": "perf(agent): record the assistant turn without a per-round transcript fsync (#6400)",
+            "merged_at": "2026-11-16T06:06:43Z"
+          },
+          {
+            "number": 6497,
+            "title": "fix(doctor): thread the caller's ctx through the report surfaces (#6347)",
+            "merged_at": "2026-11-16T05:32:39Z"
+          },
+          {
+            "number": 6504,
+            "title": "perf(llm): sync the API log at the settlement boundary (#6405)",
+            "merged_at": "2026-11-16T05:17:20Z"
+          },
+          {
+            "number": 6500,
+            "title": "test(web): derive each test's wait deadline from its own vitest timeout (#5373)",
+            "merged_at": "2026-11-16T05:07:34Z"
+          },
+          {
+            "number": 6499,
+            "title": "docs(agent): state activityRootTitle's actual predicate (#6307)",
+            "merged_at": "2026-11-16T05:02:24Z"
+          },
+          {
+            "number": 6495,
+            "title": "test(makelint): tie go.work use list to the Makefile module lists (#6296)",
+            "merged_at": "2026-11-16T04:44:07Z"
+          },
+          {
+            "number": 6487,
+            "title": "test(web): judge the interruption release by the follow state that classified it (#6395)",
+            "merged_at": "2026-11-16T04:43:50Z"
+          },
+          {
+            "number": 6489,
+            "title": "perf(execenv): apply a run of same-file patch updates in one pass (#6430)",
+            "merged_at": "2026-11-16T04:36:23Z"
+          },
+          {
+            "number": 6492,
+            "title": "perf(hub): open index.db stores with synchronous=NORMAL (#6414)",
+            "merged_at": "2026-11-16T04:32:29Z"
+          },
+          {
+            "number": 6488,
+            "title": "test(appwire-client): compare update_goal verbs structurally (#6276)",
+            "merged_at": "2026-11-16T04:30:56Z"
+          },
+          {
+            "number": 6494,
+            "title": "test(e2e): wait out a retiring voice subscription in post-close baselines (#6291)",
+            "merged_at": "2026-11-16T04:26:51Z"
+          },
+          {
+            "number": 6486,
+            "title": "test(agenttest): one counting reader for the bounded-read tests (#6333)",
+            "merged_at": "2026-11-16T04:22:10Z"
+          },
+          {
+            "number": 6491,
+            "title": "fix(agent): name the root ancestor crumb from the session's label (#6307)",
+            "merged_at": "2026-11-16T04:15:28Z"
+          },
+          {
+            "number": 6474,
+            "title": "docs(agent): say the runtime records the brief in Task, not Description (#6306)",
+            "merged_at": "2026-11-16T04:05:49Z"
+          },
+          {
+            "number": 6485,
+            "title": "test(hub): bind the refused-MCP fixture on 127.0.0.2 (#6477)",
+            "merged_at": "2026-11-16T03:56:51Z"
+          },
+          {
+            "number": 6484,
+            "title": "fix(ops): decide a merge-enqueue wait from the PR's own state (#6480)",
+            "merged_at": "2026-11-16T03:51:34Z"
+          },
+          {
+            "number": 6481,
+            "title": "perf(llm): price the tool list without re-serializing it every round (#6406)",
+            "merged_at": "2026-11-16T03:38:01Z"
+          },
+          {
+            "number": 6482,
+            "title": "fix(ci): compare the dependency review with the base branch merge base (#6396)",
+            "merged_at": "2026-11-16T03:28:12Z"
+          },
+          {
+            "number": 6473,
+            "title": "test(mcpprobe): bind the refused-probe target on 127.0.0.2 (#6397)",
+            "merged_at": "2026-11-16T03:01:12Z"
+          },
+          {
+            "number": 6476,
+            "title": "fix(appwire): name the parsed quiet duration for the silence it carries (#5677)",
+            "merged_at": "2026-11-16T02:53:17Z"
+          },
+          {
+            "number": 6479,
+            "title": "fix(hooks): warn at load on a Claude-style mcp__ hook matcher (#6374)",
+            "merged_at": "2026-11-16T02:40:43Z"
+          },
+          {
+            "number": 6478,
+            "title": "fix(doctor): cap one line at the bounded legacy-failure scan's window (#6348)",
+            "merged_at": "2026-11-16T02:28:55Z"
+          },
+          {
+            "number": 6475,
+            "title": "fix(agent): read upgrade transcripts through 64 KiB scan buffers (#6370)",
+            "merged_at": "2026-11-16T02:24:35Z"
+          },
+          {
+            "number": 6472,
+            "title": "fix(provider): surface the communicate output bind failure instead of skipping it (#6366)",
+            "merged_at": "2026-11-16T01:27:36Z"
+          },
+          {
+            "number": 6469,
+            "title": "perf(agent): read the mutation journal in place for the serve loop's probes",
+            "merged_at": "2026-11-16T01:19:08Z"
+          },
+          {
+            "number": 6470,
+            "title": "fix(web): touch screens never zoom the hub UI",
+            "merged_at": "2026-11-16T01:17:22Z"
+          },
+          {
+            "number": 6465,
+            "title": "feat(wire): queue snapshots carry per-entry image counts",
+            "merged_at": "2026-11-16T00:15:04Z"
+          },
+          {
+            "number": 6461,
+            "title": "fix(web): two composers of one ref keep independent recovery exclusions",
+            "merged_at": "2026-11-15T23:27:51Z"
+          },
+          {
+            "number": 6459,
+            "title": "fix(web): a foreign queue arrival bumps the new-content pill",
+            "merged_at": "2026-11-15T22:17:00Z"
+          },
+          {
+            "number": 6466,
+            "title": "test(agent): extract the sessionActivityIndexes cache-eviction block into one shared helper (#6305)",
+            "merged_at": "2026-11-16T00:07:55Z"
+          },
+          {
+            "number": 6462,
+            "title": "fix(agent): probe for pending user input so a lost wake cannot strand accepted work",
+            "merged_at": "2026-11-15T23:48:04Z"
+          },
+          {
+            "number": 6399,
+            "title": "fix(agent): keep a half-applied fold invisible to concurrent readers",
+            "merged_at": "2026-11-15T19:40:08Z"
+          },
+          {
+            "number": 6350,
+            "title": "feat(lint): sweep golangci-lint caches of disposed worktrees",
+            "merged_at": "2026-11-15T11:22:47Z"
+          },
+          {
+            "number": 6458,
+            "title": "fix(web): preserve message identity through queue handoffs",
+            "merged_at": "2026-11-15T09:05:24Z"
+          },
+          {
+            "number": 6371,
+            "title": "feat(agent): carry the child ref on the delegate activity frame (#4258 item 5)",
+            "merged_at": "2026-11-15T07:41:52Z"
+          },
+          {
+            "number": 6130,
+            "title": "fix(native): follow identity-changing resumes across screens (#4837)",
+            "merged_at": "2026-11-15T06:43:19Z"
+          },
+          {
+            "number": 6398,
+            "title": "fix(web): stop transcript timestamps jittering and slow the tick to 5s",
+            "merged_at": "2026-11-15T05:19:01Z"
+          },
+          {
+            "number": 6344,
+            "title": "feat(web): a motion guide, overlay exits, a sliding thumb and phone pane slides",
+            "merged_at": "2026-11-15T02:21:52Z"
+          },
+          {
+            "number": 6375,
+            "title": "fix(execenv): a glob filter overrides the grep hidden/gitignore defaults",
+            "merged_at": "2026-11-15T01:26:48Z"
+          },
+          {
+            "number": 6303,
+            "title": "fix(agent): withhold the fold's compaction markers when a staged tail write fails",
+            "merged_at": "2026-11-15T01:41:42Z"
+          },
+          {
+            "number": 6372,
+            "title": "test(llm): adopt the parallel-by-default test convention",
+            "merged_at": "2026-11-15T01:30:04Z"
+          },
+          {
+            "number": 6108,
+            "title": "docs(spec): input admission \u2014 one place where input enters a model request",
+            "merged_at": "2026-11-15T01:57:21Z"
+          },
+          {
+            "number": 6125,
+            "title": "feat(sandbox): start sandboxed sessions unconfirmed when the host check times out",
+            "merged_at": "2026-11-15T01:56:28Z"
+          },
+          {
+            "number": 6373,
+            "title": "perf(markdown): gate Marked's setext probes at the next possible setext underline (#5002)",
+            "merged_at": "2026-11-15T01:21:21Z"
+          },
+          {
+            "number": 6356,
+            "title": "perf(history): derive a ReadAt cut from the nearest committed records",
+            "merged_at": "2026-11-15T01:19:08Z"
+          },
+          {
+            "number": 6358,
+            "title": "fix(execenv): stop numbering the synthetic EOF row in read windows",
+            "merged_at": "2026-11-15T01:18:25Z"
+          },
+          {
+            "number": 6335,
+            "title": "feat(web): show the rail's Live list as Needs you / Working / Idle bands",
+            "merged_at": "2026-11-15T01:18:25Z"
+          },
+          {
+            "number": 6334,
+            "title": "feat(web): session facts in Details, and a camera choice for Android attach",
+            "merged_at": "2026-11-15T01:18:25Z"
+          },
+          {
+            "number": 6394,
+            "title": "test(agent): give the history allocation ceiling one value per lane",
+            "merged_at": "2026-11-15T00:49:25Z"
+          },
+          {
+            "number": 6388,
+            "title": "fix(tool): deep-copy schema maps when cloning a registry",
+            "merged_at": "2026-11-14T23:35:23Z"
+          },
+          {
+            "number": 6393,
+            "title": "fix(agent): reject FIFO and symlinked journals in the past-session job reader",
+            "merged_at": "2026-11-14T23:24:24Z"
+          },
+          {
+            "number": 6392,
+            "title": "fix(hub): redact credentials in the opt-in HTTP recorder",
+            "merged_at": "2026-11-14T23:23:52Z"
+          },
+          {
+            "number": 6391,
+            "title": "fix(appserver): bound the subscribed-read notification buffer",
+            "merged_at": "2026-11-14T23:23:40Z"
+          },
+          {
+            "number": 6390,
+            "title": "fix(chatcompletions): one reasoning extraction for stream and non-stream",
+            "merged_at": "2026-11-14T23:23:33Z"
+          },
+          {
+            "number": 6389,
+            "title": "fix(llm): drop credential headers when a redirect changes host",
+            "merged_at": "2026-11-14T23:23:08Z"
+          },
+          {
+            "number": 6387,
+            "title": "fix(sessionlog): keep a failed append out of memory and compaction",
+            "merged_at": "2026-11-14T23:22:46Z"
+          },
+          {
+            "number": 6386,
+            "title": "fix(fuzz): stop fuzz-bisect clobbering a pre-existing corpus file",
+            "merged_at": "2026-11-14T23:22:33Z"
+          },
+          {
+            "number": 6385,
+            "title": "fix(command): keep @file expansion inside the working directory",
+            "merged_at": "2026-11-14T23:22:16Z"
+          },
+          {
+            "number": 6367,
+            "title": "docs(hooks): MCP hook matchers see the registered <server>__<tool> name (#6207)",
+            "merged_at": "2026-11-14T16:03:20Z"
+          },
+          {
+            "number": 6368,
+            "title": "fix(agent): validate delegate result schemas as draft 2020-12 before they reach the wire",
+            "merged_at": "2026-11-14T15:46:02Z"
+          },
+          {
+            "number": 6369,
+            "title": "fix(delegatestore,linecap): read journals through 64 KiB scan buffers",
+            "merged_at": "2026-11-14T15:44:54Z"
+          },
+          {
+            "number": 6357,
+            "title": "fix(web): one inline transcript row for every undelivered user message",
+            "merged_at": "2026-11-14T11:40:42Z"
+          },
+          {
+            "number": 6359,
+            "title": "docs(test): memory tags comma-split truth, drop read-hint prose check (#6259)",
+            "merged_at": "2026-11-14T09:13:10Z"
+          },
+          {
+            "number": 6232,
+            "title": "fix(hub): probe the merged MCP config set sessions use",
+            "merged_at": "2026-11-14T07:59:13Z"
+          },
+          {
+            "number": 6338,
+            "title": "feat(web): open a session at its unseen reply",
+            "merged_at": "2026-11-14T04:19:43Z"
+          },
+          {
+            "number": 6355,
+            "title": "test(agent): drop watch-inspect not-found prose checks (#6278)",
+            "merged_at": "2026-11-14T03:41:40Z"
+          },
+          {
+            "number": 6353,
+            "title": "fix(sandbox): carry InfraReadRoots into the spawned read roots in ReadAnywhere modes",
+            "merged_at": "2026-11-14T03:09:04Z"
+          },
+          {
+            "number": 6346,
+            "title": "fix(doctor): prefer the exact resolved tool name in Count",
+            "merged_at": "2026-11-14T01:06:33Z"
+          },
+          {
+            "number": 6349,
+            "title": "fix(doctor): bound the tree node's legacy-failure jobs scan",
+            "merged_at": "2026-11-14T01:03:58Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.",
+        "html_url": "https://github.com/prime-radiant-inc/evener"
+      },
+      "prime-radiant-inc/slackline": {
+        "commits": 1,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 1
+          }
+        ],
+        "loc_added": 71,
+        "loc_removed": 7,
+        "merged_prs": [
+          {
+            "number": 4,
+            "title": "fix(read): return the newest replies of a long thread, in order (PRI-3813)",
+            "merged_at": "2026-11-19T22:34:25Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A single-binary Go CLI that gives AI agents a Slack identity to send messages, read channels, and stream real-time events, with admin tooling to provision new bots.",
+        "html_url": "https://github.com/prime-radiant-inc/slackline"
+      },
+      "prime-radiant-inc/claude-plugin-stats": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "github-actions[bot]",
+            "count": 7
+          }
+        ],
+        "loc_added": 7,
+        "loc_removed": 7,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Daily scrape of Claude Code plugin install stats",
+        "html_url": "https://github.com/prime-radiant-inc/claude-plugin-stats"
+      },
+      "prime-radiant-inc/shipped": {
+        "commits": 4,
+        "authors": [
+          {
+            "name": "Ada Sen",
+            "count": 4
+          }
+        ],
+        "loc_added": 22115,
+        "loc_removed": 49,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "A weekly log of what Prime Radiant and obra shipped.",
+        "html_url": "https://github.com/prime-radiant-inc/shipped",
+        "loc_suppressed": true
+      },
+      "prime-radiant-inc/alltheagents.org": {
+        "commits": 9,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 9
+          }
+        ],
+        "loc_added": 2948,
+        "loc_removed": 8,
+        "merged_prs": [
+          {
+            "number": 55,
+            "title": "Add 51 entries from the 2026-11-18 Hacker News sweep",
+            "merged_at": "2026-11-19T04:30:17Z"
+          },
+          {
+            "number": 53,
+            "title": "Add entry: Sage (#46)",
+            "merged_at": "2026-11-18T21:34:32Z"
+          },
+          {
+            "number": 49,
+            "title": "Add entry: counselors (#42)",
+            "merged_at": "2026-11-18T21:33:35Z"
+          },
+          {
+            "number": 52,
+            "title": "Fix entry: atlarix (#45)",
+            "merged_at": "2026-11-18T21:29:31Z"
+          },
+          {
+            "number": 51,
+            "title": "Add entry: TecAdRiseBot (#44)",
+            "merged_at": "2026-11-18T21:29:22Z"
+          },
+          {
+            "number": 50,
+            "title": "Add entry: Docker Agent (#43)",
+            "merged_at": "2026-11-18T21:28:40Z"
+          },
+          {
+            "number": 48,
+            "title": "Add entry: Hermes Agent (#41)",
+            "merged_at": "2026-11-18T21:28:17Z"
+          },
+          {
+            "number": 47,
+            "title": "Add entry: YYLO (#40)",
+            "merged_at": "2026-11-18T21:27:53Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Comprehensive census of coding agent harnesses",
+        "html_url": "https://github.com/prime-radiant-inc/alltheagents.org"
+      },
+      "prime-radiant-inc/external-sandbox-container": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Simon Willison",
+            "count": 3
+          }
+        ],
+        "loc_added": 192,
+        "loc_removed": 17,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "0.2.0",
+            "name": "0.2.0",
+            "published_at": "2026-11-16T22:24:56Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release 0.2.0 published 2026-11-16T22:24:56Z",
+        "description": "Python sandbox server wrapping Apple Containers",
+        "html_url": "https://github.com/prime-radiant-inc/external-sandbox-container"
+      },
+      "prime-radiant-inc/external-sandbox-v86": {
+        "commits": 2,
+        "authors": [
+          {
+            "name": "Simon Willison",
+            "count": 2
+          }
+        ],
+        "loc_added": 142,
+        "loc_removed": 18,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "0.4.0",
+            "name": "0.4.0",
+            "published_at": "2026-11-16T22:24:54Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release 0.4.0 published 2026-11-16T22:24:54Z",
+        "description": "Node.js sandbox server wrapping v86 and Alpine Linux",
+        "html_url": "https://github.com/prime-radiant-inc/external-sandbox-v86"
+      },
+      "prime-radiant-inc/external-sandbox": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Simon Willison",
+            "count": 3
+          }
+        ],
+        "loc_added": 18,
+        "loc_removed": 20,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Tools for running coding agents against external sandboxes",
+        "html_url": "https://github.com/prime-radiant-inc/external-sandbox"
+      },
+      "prime-radiant-inc/external-sandbox-quicksand": {
+        "commits": 3,
+        "authors": [
+          {
+            "name": "Simon Willison",
+            "count": 3
+          }
+        ],
+        "loc_added": 165,
+        "loc_removed": 14,
+        "merged_prs": [],
+        "tagged_releases": [
+          {
+            "tag": "0.2.0",
+            "name": "0.2.0",
+            "published_at": "2026-11-16T22:24:57Z",
+            "prerelease": false,
+            "draft": false
+          }
+        ],
+        "commit_only_bumps": [],
+        "featured": true,
+        "featured_reason": "tagged release 0.2.0 published 2026-11-16T22:24:57Z",
+        "description": "Run a remote sandbox using Microsoft's Quicksand QEMU library",
+        "html_url": "https://github.com/prime-radiant-inc/external-sandbox-quicksand"
+      },
+      "prime-radiant-inc/agent-session-archiver": {
+        "commits": 8,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 8
+          }
+        ],
+        "loc_added": 970,
+        "loc_removed": 255,
+        "merged_prs": [
+          {
+            "number": 3,
+            "title": "Keep superseded transcript versions instead of refusing rewrites",
+            "merged_at": "2026-11-17T05:43:29Z"
+          },
+          {
+            "number": 2,
+            "title": "Add a script that installs one version on every endpoint",
+            "merged_at": "2026-11-17T03:57:54Z"
+          },
+          {
+            "number": 1,
+            "title": "Implement SSH-based agent session archiving",
+            "merged_at": "2026-11-17T03:37:01Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Archive original agent session traces across hosts over SSH, independently of viewers.",
+        "html_url": "https://github.com/prime-radiant-inc/agent-session-archiver"
+      },
+      "obra/blogosphere": {
+        "commits": 8,
+        "authors": [
+          {
+            "name": "Jesse Vincent",
+            "count": 8
+          }
+        ],
+        "loc_added": 1646,
+        "loc_removed": 426,
+        "merged_prs": [
+          {
+            "number": 7,
+            "title": "Record build 0.1.0.5 and how to read a startup error screen",
+            "merged_at": "2026-11-14T09:56:54Z"
+          },
+          {
+            "number": 6,
+            "title": "Fix \"database is locked\" when creating the schema on iOS",
+            "merged_at": "2026-11-14T09:46:17Z"
+          },
+          {
+            "number": 5,
+            "title": "Fix the iOS launch crash by moving to tauri 2.12",
+            "merged_at": "2026-11-14T07:02:14Z"
+          },
+          {
+            "number": 4,
+            "title": "Document installing the ad-hoc iOS build on a phone",
+            "merged_at": "2026-11-14T06:36:14Z"
+          },
+          {
+            "number": 3,
+            "title": "Fix ad-hoc script permissions and iOS config it reads",
+            "merged_at": "2026-11-14T05:04:01Z"
+          },
+          {
+            "number": 2,
+            "title": "Distribute iOS builds ad-hoc to registered devices",
+            "merged_at": "2026-11-14T04:46:03Z"
+          },
+          {
+            "number": 1,
+            "title": "Make Linux a first-class platform: CI, releases, and a working keychain",
+            "merged_at": "2026-11-14T02:09:20Z"
+          }
+        ],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": "Local-first, multi-platform blogging client for an 11ty blog that lives in a GitHub repo \u2014 the repo is the database",
+        "html_url": "https://github.com/obra/blogosphere"
+      },
+      "obra/muse-skills": {
+        "commits": 7,
+        "authors": [
+          {
+            "name": "file-integrity",
+            "count": 7
+          }
+        ],
+        "loc_added": 4316,
+        "loc_removed": 1081,
+        "merged_prs": [],
+        "tagged_releases": [],
+        "commit_only_bumps": [],
+        "featured": false,
+        "featured_reason": null,
+        "description": null,
+        "html_url": "https://github.com/obra/muse-skills"
+      }
+    },
+    "cutoff": "2026-11-20T23:05:00+00:00",
+    "prev_cutoff": "2026-11-13T23:55:21+00:00"
   }
 }

@@ -1,0 +1,144 @@
+---
+title: "Simon Willison's external-sandbox family tags three hardening releases locking the managed proxy down by default, and evener posts a release-free week of quota-wait, reasoning-replay, and test-suite cleanup"
+week: "Week of November 16, 2026"
+dateStart: 2026-11-16
+dateEnd: 2026-11-22
+pubDate: 2026-11-20
+summary: "Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/external-sandbox-container, external-sandbox-v86, and external-sandbox-quicksand tag 0.2.0, 0.4.0, and 0.2.0, all three adding a flag to start the managed proxy with every destination denied by default; container and quicksand also add upstream TLS verification against the system trust store. prime-radiant-inc/evener tags no release this week — a contrast with the prior week's burst of seven — but keeps shipping quota-wait reliability work, reasoning-replay fixes, and a large test-suite cleanup."
+draft: false
+---
+
+import WeekSummary from '../../components/WeekSummary.astro';
+import RepoStat from '../../components/RepoStat.astro';
+
+**Simon Willison**'s `external-sandbox` family ships its next round of hardening: **`prime-radiant-inc/external-sandbox-container`** tags **0.2.0**, **`prime-radiant-inc/external-sandbox-v86`** tags **0.4.0**, and **`prime-radiant-inc/external-sandbox-quicksand`** tags **0.2.0**, all three adding a flag to start the managed proxy with every destination denied by default; the container and Quicksand backends also add upstream TLS verification against the system trust store this round. **`prime-radiant-inc/evener`** tags no release this week — a sharp contrast with the prior week's burst of seven patch releases — but keeps shipping quota-wait reliability work, reasoning-replay fixes, and a large test-suite cleanup. This week is still open: the data below runs cutoff-to-cutoff through Friday evening, not the full calendar week.
+
+<section class="summary">
+
+<WeekSummary week="2026-11-16" />
+
+<p class="cutoff-note">Commit identities include bot accounts.</p>
+
+</section>
+
+<section class="featured">
+
+## Featured
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox-container](https://github.com/prime-radiant-inc/external-sandbox-container)
+
+<p class="repo-desc">Python sandbox server wrapping Apple Containers</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox-container" week="2026-11-16" />
+
+Tags **0.2.0**. Two changes land ahead of the release: a new `--proxy` flag that starts the managed proxy with every destination denied by default instead of open-by-default, and verification of upstream TLS against the system trust store instead of trusting it blindly. Sole author: **Simon Willison (staff, `simonw`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox-v86](https://github.com/prime-radiant-inc/external-sandbox-v86)
+
+<p class="repo-desc">Node.js sandbox server wrapping v86 and Alpine Linux</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox-v86" week="2026-11-16" />
+
+Tags **0.4.0**. Gets the same `--proxy` deny-by-default flag as its container and Quicksand siblings this window, but not the TLS-verification change. Sole author: **Simon Willison (staff, `simonw`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox-quicksand](https://github.com/prime-radiant-inc/external-sandbox-quicksand)
+
+<p class="repo-desc">Run a remote sandbox using Microsoft's Quicksand QEMU library</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox-quicksand" week="2026-11-16" />
+
+Tags **0.2.0**. Same pair of changes as `external-sandbox-container`: the deny-by-default `--proxy` flag and upstream TLS verification against the system trust store. Sole author: **Simon Willison (staff, `simonw`)**.
+
+</article>
+
+</section>
+
+<section class="second-tier">
+
+## Also shipped
+
+<article class="repo">
+
+### [prime-radiant-inc/evener](https://github.com/prime-radiant-inc/evener)
+
+<p class="repo-desc">A coding agent: give it a prompt and it reads, writes, runs commands, and searches code in a loop until the work is done, using native tool-calling across OpenAI, Anthropic, and Google models.</p>
+
+<RepoStat org="prime-radiant-inc" name="evener" week="2026-11-16" />
+
+By far the busiest repo this window, as in every prior week, but with no tagged release. A reliability cluster around "quota wait" bookkeeping continues: reconciling waits by timestamp across a read cut, keeping quota-wait stamps monotonic across restores, dropping a legacy unstamped fallback, and rendering the pending half of a quota wait on the pane and row. Session/transcript handling gets a parallel push: replaying tool-call argument bytes losslessly across restore, settling Responses-API calls and reasoning parts consistently, pricing only the reasoning the Responses wire actually sends, and converging the live reasoning preview with reassembled details by item identity — aimed at keeping cross-provider LLM fallback coherent. A security fix confines the sandbox's restricted Seatbelt outbound network access to explicitly granted roots. The week's largest single thread is test-suite cleanup: a long run of commits drops duplicate and tautological tests across the agent and hub layers, removes dead skips and compile-only test wrappers, and replaces fixed timeouts with budget-aware waits. In-org author: **Jesse Vincent (staff, `obra`)**, plus outside contributions from **Asish** (`NopeCharon`) and a first-time outside contributor, **Huyvux12**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/agent-session-archiver](https://github.com/prime-radiant-inc/agent-session-archiver)
+
+<p class="repo-desc">Archive original agent session traces across hosts over SSH, independently of viewers.</p>
+
+<RepoStat org="prime-radiant-inc" name="agent-session-archiver" week="2026-11-16" />
+
+This repo predates the window, but this is effectively its coming-out: it goes from essentially untouched to a working tool. A first real implementation lands SSH-based archiving of agent session traces across hosts (#1), followed by a deployment script that installs one version everywhere (#2). A bug where legitimately-superseded transcript versions were being refused instead of kept gets fixed and hardened, including a recovery-scoping test and a check that rejects superseded name collisions (#3). Further hardening streams captures over SSH instead of staging them for rsync, confines received batches to trace members, reports a refused source cleanup alongside the pull's own error, and rejects batch entries that shadow recovery markers as directories. Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/slackline](https://github.com/prime-radiant-inc/slackline)
+
+<p class="repo-desc">A single-binary Go CLI that gives AI agents a Slack identity to send messages, read channels, and stream real-time events, with admin tooling to provision new bots.</p>
+
+<RepoStat org="prime-radiant-inc" name="slackline" week="2026-11-16" />
+
+One fix: long Slack threads now return their newest replies in chronological order instead of out of order (#4). Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/alltheagents.org](https://github.com/prime-radiant-inc/alltheagents.org)
+
+<p class="repo-desc">Comprehensive census of coding agent harnesses</p>
+
+<RepoStat org="prime-radiant-inc" name="alltheagents.org" week="2026-11-16" />
+
+The usual steady drip of census entries: 51 new agent-harness listings added from a 2026-11-18 Hacker News sweep, plus a handful of individually-submitted entries (counselors, Sage, atlarix, TecAdRiseBot, Docker Agent, Hermes Agent, YYLO), and one entry's slug corrected (Sage → `sage-zhangzhengeric`). Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<article class="repo">
+
+### [prime-radiant-inc/external-sandbox](https://github.com/prime-radiant-inc/external-sandbox)
+
+<p class="repo-desc">Tools for running coding agents against external sandboxes</p>
+
+<RepoStat org="prime-radiant-inc" name="external-sandbox" week="2026-11-16" />
+
+Small polish, no release: example host paths in reports are now shown under `/Users/example` instead of a real-looking path, a local-directory column is trimmed from the project table, and a stale rename note is removed from the README. Sole author: **Simon Willison (staff, `simonw`)**.
+
+</article>
+
+<article class="repo">
+
+### [obra/blogosphere](https://github.com/obra/blogosphere)
+
+<p class="repo-desc">Local-first, multi-platform blogging client for an 11ty blog that lives in a GitHub repo — the repo is the database</p>
+
+<RepoStat org="obra" name="blogosphere" week="2026-11-16" />
+
+A concentrated push to make the client reliably installable and runnable. Linux becomes a first-class platform: CI, releases, and a working keychain (#1), with a quick follow-up fix for a release race where two parallel jobs could both try to create the same release. iOS gets ad-hoc distribution to registered devices with setup documentation (#2, #3, #4), plus two crash/lockup fixes: an upgrade to Tauri 2.12 that resolves the iOS launch crash (#5), and a fix for a "database is locked" error hit when the schema is first created (#6). A build note records how to read a startup error screen (#7). Sole author: **Jesse Vincent (staff, `obra`)**.
+
+</article>
+
+<p class="caveat"><em>Two more active repos this window had no human commits to attribute, or are this blog's own tooling — not pictured above with their own stats. <code>prime-radiant-inc/claude-plugin-stats</code> (the daily install-stats scrape and chart rebuild) is bot-only, all under <code>github-actions[bot]</code>. <code>obra/muse-skills</code>' commits are again dated daily "skills snapshot" entries under a git identity called <code>file-integrity</code>, which has no linked GitHub account — still unconfirmed whether a human is behind it. Separately, <code>prime-radiant-inc/shipped</code> — this repo — drafted and corrected last week's post and reverted an unrelated component change; its line-count chip is suppressed here for the same kind of reason as past weeks' data-dump cells — this window's diff is dominated by committing the previous week's raw recon-data file, not prose. Sole author: Ada Sen (staff).</em></p>
+
+</section>
