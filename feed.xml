@@ -5,7 +5,15 @@
   <link href="https://prime-radiant-inc.github.io/shipped/feed.xml" rel="self" />
   <link href="https://prime-radiant-inc.github.io/shipped/" />
   <id>https://prime-radiant-inc.github.io/shipped/</id>
-  <updated>2026-11-13T00:00:00.000Z</updated>
+  <updated>2026-11-20T00:00:00.000Z</updated>
+  <entry>
+    <title>Simon Willison&apos;s external-sandbox family tags three hardening releases locking the managed proxy down by default, and evener posts a release-free week of quota-wait, reasoning-replay, and test-suite cleanup</title>
+    <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-11-16" />
+    <id>https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-11-16</id>
+    <updated>2026-11-20T00:00:00.000Z</updated>
+    <published>2026-11-20T00:00:00.000Z</published>
+    <summary>Partial week — data runs cutoff-to-cutoff through Friday evening, not the full calendar week. prime-radiant-inc/external-sandbox-container, external-sandbox-v86, and external-sandbox-quicksand tag 0.2.0, 0.4.0, and 0.2.0, all three adding a flag to start the managed proxy with every destination denied by default; container and quicksand also add upstream TLS verification against the system trust store. prime-radiant-inc/evener tags no release this week — a contrast with the prior week&apos;s burst of seven — but keeps shipping quota-wait reliability work, reasoning-replay fixes, and a large test-suite cleanup.</summary>
+  </entry>
   <entry>
     <title>evener tags seven patch releases across agent, web, and hub fixes, and external-sandbox-pi launches as a new repo bringing Pi&apos;s coding tools into the External Sandbox family</title>
     <link href="https://prime-radiant-inc.github.io/shipped/posts/week-of-2026-11-09" />
